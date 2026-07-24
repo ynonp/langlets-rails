@@ -43,6 +43,9 @@ application.register("bridge--native-audio-feedback", Bridge__NativeAudioFeedbac
 import Bridge__NativeTokenController from "./bridge/native_token_controller"
 application.register("bridge--native-token", Bridge__NativeTokenController)
 
+import Bridge__NotificationPreferenceController from "./bridge/notification_preference_controller"
+application.register("bridge--notification-preference", Bridge__NotificationPreferenceController)
+
 import Bridge__ProgressHapticController from "./bridge/progress_haptic_controller"
 application.register("bridge--progress-haptic", Bridge__ProgressHapticController)
 

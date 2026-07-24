@@ -22,6 +22,15 @@ module App
       head :unprocessable_entity
     end
 
+    # Turning notifications off is installation-scoped: remove only the token
+    # handed over by this device, and only when it belongs to the signed-in user.
+    def destroy
+      return head :unprocessable_entity if params[:token].blank?
+
+      current_user.device_tokens.where(token: params[:token]).delete_all
+      head :no_content
+    end
+
     private
 
     # A debug build and an App Store build on the same phone get different tokens,

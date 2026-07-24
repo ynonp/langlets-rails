@@ -89,6 +89,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             AppleAuthComponent.self,
             TabBadgeComponent.self,
             PushComponent.self,
+            NotificationPreferenceComponent.self,
             NativeTokenComponent.self,
             ApplePurchaseComponent.self
         ])

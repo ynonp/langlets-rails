@@ -49,6 +49,25 @@ module App
       assert_equal 1, @user.device_tokens.count
     end
 
+    test "unregisters this user's device token" do
+      DeviceToken.register!(user: @user, token: TOKEN)
+
+      delete app_device_tokens_path, params: { token: TOKEN }, headers: NATIVE
+
+      assert_response :no_content
+      assert_equal 0, @user.device_tokens.count
+    end
+
+    test "cannot unregister another user's device token" do
+      other = User.create!(email: "other-device@example.com", password: "password123", confirmed_at: Time.zone.now)
+      DeviceToken.register!(user: other, token: TOKEN)
+
+      delete app_device_tokens_path, params: { token: TOKEN }, headers: NATIVE
+
+      assert_response :no_content
+      assert_equal 1, other.device_tokens.count
+    end
+
     test "requires a signed-in user" do
       sign_out @user
 

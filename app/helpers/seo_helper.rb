@@ -3,7 +3,8 @@ module SeoHelper
     "Practice listening, speaking, and comprehension with songs, TV shows, " \
     "and real-world content powered by AI."
 
-  def render_meta_tags(title:, description:, url:, image_url: nil, type: "website")
+  def render_meta_tags(title:, description:, url:, image_url: nil, type: "website",
+                       image_width: 1280, image_height: 720)
     tags = []
     tags << tag.meta(name: "description", content: description)
     tags << tag.link(rel: "canonical", href: url)
@@ -17,8 +18,8 @@ module SeoHelper
 
     if image_url.present?
       tags << tag.meta(property: "og:image", content: image_url)
-      tags << tag.meta(property: "og:image:width", content: "1280")
-      tags << tag.meta(property: "og:image:height", content: "720")
+      tags << tag.meta(property: "og:image:width", content: image_width)
+      tags << tag.meta(property: "og:image:height", content: image_height)
     end
 
     card_type = image_url.present? ? "summary_large_image" : "summary"

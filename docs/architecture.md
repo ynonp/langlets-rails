@@ -95,6 +95,11 @@ intact (still used for structured data and available for future sections) even
 though the landing page itself only consumes `@all_courses` and
 `@continue_learning_courses`.
 
+The homepage's Open Graph and Twitter large-card metadata uses the dedicated
+`public/cover.png` social sharing image. Its exact dimensions are supplied to
+the shared SEO helper; other pages retain the helper's video-thumbnail
+dimension defaults.
+
 The "Jump right in" grid is a preview rather than the full catalog. It renders
 at most eight courses, in four columns on larger screens and two compact columns
 on phones. On the unfiltered homepage, the preview reserves a place for the
@@ -695,6 +700,15 @@ Users are **not** enrolled at import time: the course is `pending` and has no le
 Once `Imports::Finalizer` publishes a course, it marks every attached `ImportRequest` ready, enrolls that request's user, and enqueues one `SendImportReadyPushJob` per request (all three via `Imports::Settlement`). Push delivery is deliberately outside the course-building transaction: an APNs outage must not turn a successfully built course into a failed import. `ImportRequest#notified_at` makes delivery idempotent, and a user with no registered device is stamped as handled because email remains the fallback.
 
 The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `App::DeviceTokensController`; tokens are owned by a user and an installation token can move to the currently signed-in account. APNs sandbox and production tokens are stored separately by environment. Apple responses that identify dead tokens invalidate the row without deleting its diagnostic history, while transient failures leave it active.
+
+The native Profile page exposes the installation's real iOS notification state
+through the `notification-preference` bridge. Before permission is granted it
+shows an **Enable Notifications** action; after permission is granted it shows a
+switch. Turning the switch off removes that installation's token from the
+signed-in account and stores a local opt-out so ordinary page loads do not
+silently register it again. Turning it back on re-registers the token. If iOS
+permission was denied, enabling opens the app's system Settings because iOS
+will not present its authorization prompt a second time.
 
 `Push::CourseReadyNotification` includes the published course slug in the APNs custom payload. Notification taps are handled on both iOS paths: `UNUserNotificationCenterDelegate` for a running app and `UIScene.ConnectionOptions.notificationResponse` for a cold launch. Both reset the Home navigator to `/app?just_imported=<slug>`. `App::HomeController` only resolves that slug through the signed-in user's published enrollments, then renders the newly created course as the **JUST IMPORTED** hero whose **Start Course** button enters the standard course experience. An invalid or unauthorized slug safely falls back to ordinary Home.
 

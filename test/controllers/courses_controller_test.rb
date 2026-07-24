@@ -61,6 +61,17 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href='#{gallery_path}']", text: "Browse All Langlets"
   end
 
+  test "homepage exposes its social sharing cover" do
+    get root_url
+
+    assert_response :success
+    assert_select "meta[property='og:image'][content='https://langlets.app/cover.png']"
+    assert_select "meta[property='og:image:width'][content='1731']"
+    assert_select "meta[property='og:image:height'][content='909']"
+    assert_select "meta[name='twitter:card'][content='summary_large_image']"
+    assert_select "meta[name='twitter:image'][content='https://langlets.app/cover.png']"
+  end
+
   test "homepage keeps French among its preview languages" do
     french_course = Course.create!(
       name: "French homepage course",

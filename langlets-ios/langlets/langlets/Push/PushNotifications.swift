@@ -11,6 +11,7 @@ import UserNotifications
 @MainActor
 final class PushNotifications: NSObject {
     static let shared = PushNotifications()
+    private static let enabledKey = "pushNotificationsEnabled"
 
     /// Posted when a notification is tapped. `userInfo` carries "course_slug".
     static let didTapNotification = Notification.Name("PushNotifications.didTapNotification")
@@ -24,6 +25,16 @@ final class PushNotifications: NSObject {
 
     /// A notification tapped before the web view was ready. Replayed on connect.
     private var pendingCourseSlug: String?
+
+    var isEnabled: Bool {
+        get {
+            UserDefaults.standard.object(forKey: Self.enabledKey) == nil ||
+                UserDefaults.standard.bool(forKey: Self.enabledKey)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Self.enabledKey)
+        }
+    }
 
     var environment: String {
         // A debug build talks to APNs sandbox; TestFlight and App Store builds
@@ -50,6 +61,8 @@ final class PushNotifications: NSObject {
     /// previously, so an existing user's token refreshes on every launch without
     /// ever seeing a prompt.
     func register(ask: Bool, completion: @escaping (String) -> Void) {
+        guard isEnabled else { return }
+
         if let token = deviceToken {
             completion(token)
             return
@@ -64,7 +77,11 @@ final class PushNotifications: NSObject {
                 case .authorized, .provisional, .ephemeral:
                     UIApplication.shared.registerForRemoteNotifications()
                 case .notDetermined where ask:
-                    self.requestAuthorization()
+                    self.requestAuthorization { granted in
+                        if granted {
+                            UIApplication.shared.registerForRemoteNotifications()
+                        }
+                    }
                 default:
                     // Denied, or not yet worth asking. Nothing to send.
                     break
@@ -73,15 +90,19 @@ final class PushNotifications: NSObject {
         }
     }
 
-    private func requestAuthorization() {
+    func authorizationStatus(completion: @escaping (UNAuthorizationStatus) -> Void) {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            Task { @MainActor in completion(settings.authorizationStatus) }
+        }
+    }
+
+    func requestAuthorization(completion: @escaping (Bool) -> Void) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
             if let error {
                 print("Push authorization failed: \(error)")
             }
-            guard granted else { return }
-
             Task { @MainActor in
-                UIApplication.shared.registerForRemoteNotifications()
+                completion(granted)
             }
         }
     }

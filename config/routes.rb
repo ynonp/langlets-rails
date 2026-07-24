@@ -75,6 +75,7 @@ Rails.application.routes.draw do
     resource :native_token, only: [ :create ]
     # The iOS app posts its APNs token here via bridge--push.
     resources :device_tokens, only: [ :create ]
+    delete "device_tokens", to: "device_tokens#destroy"
   end
 
   get "home/privacy"

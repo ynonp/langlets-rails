@@ -26,6 +26,7 @@ export default class extends BridgeComponent {
 
   async registerToken(data) {
     if (!data?.token) return
+    if (data.enabled === false) return
 
     try {
       await fetch(this.endpointValue, {

@@ -21,11 +21,20 @@ final class PushComponent: BridgeComponent {
         PushNotifications.shared.register(ask: data.ask) { [weak self] token in
             guard let self else { return }
 
-            self.reply(to: "register", with: [
-                "token": token,
-                "environment": PushNotifications.shared.environment,
-                "appVersion": PushNotifications.shared.appVersion
-            ])
+            let response = RegisterResponse(
+                token: token,
+                environment: PushNotifications.shared.environment,
+                appVersion: PushNotifications.shared.appVersion,
+                enabled: PushNotifications.shared.isEnabled
+            )
+            self.reply(to: "register", with: response)
         }
+    }
+
+    private struct RegisterResponse: Encodable {
+        let token: String
+        let environment: String
+        let appVersion: String
+        let enabled: Bool
     }
 }
