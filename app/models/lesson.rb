@@ -40,7 +40,9 @@ class Lesson < ApplicationRecord
           ELSE 0
          END as completion_status"
       )
-      .left_joins(:lesson_users)
+      .joins(
+        "LEFT JOIN lesson_users ON lesson_users.lesson_id = lessons.id AND lesson_users.user_id = #{user.id}"
+      )
       .joins(
         "LEFT JOIN (
           SELECT 
@@ -53,7 +55,6 @@ class Lesson < ApplicationRecord
           GROUP BY activities.lesson_id
         ) user_progress ON lessons.id = user_progress.lesson_id"
       )
-      .where("lesson_users.user_id = ? OR lesson_users.user_id IS NULL", user.id)
       .group("lessons.id, lesson_users.id, user_progress.completed_count")
     else
       select(
