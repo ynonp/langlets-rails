@@ -1,7 +1,17 @@
-<p id="queue-status-text" class="text-app-text-2 text-sm mt-1">
+<%# Idle renders nothing — an empty queue is self-evident from the empty card
+    right below, and "Nothing importing right now." was a line of text saying so
+    a second time.
+
+    The wrapper stays in the DOM regardless, exactly as _footer_note does, because
+    index.turbo_stream.erb targets #queue-status-text with turbo_stream.replace:
+    drop the element and the poll has nothing to patch, so an import that starts
+    while this screen is already open (the share extension, with the app
+    backgrounded) would never get its "N imports in progress" line. `contents`
+    keeps the empty wrapper from occupying a line box. %>
+<div id="queue-status-text" class="contents">
   <% if active_count.positive? %>
-    <%= pluralize(active_count, "import") %> in progress — we'll ping you when they're ready.
-  <% else %>
-    Nothing importing right now.
+    <p class="text-app-text-2 text-sm mt-1">
+      <%= pluralize(active_count, "import") %> in progress — we'll ping you when they're ready.
+    </p>
   <% end %>
-</p>
+</div>

@@ -1,19 +1,18 @@
-<%# Wordmark, credits pill, avatar. The brand is "langlets." — lowercase, with a
-    green full stop. (The written spec calls the app "Turn"; the mockup never
-    does, and "turn" is the verb from the tagline.) %>
+<%# Wordmark and avatar. The brand is "langlets." — lowercase, with a green full
+    stop. (The written spec calls the app "Turn"; the mockup never does, and
+    "turn" is the verb from the tagline.)
+
+    No credits pill here. The balance only means something where it gets spent,
+    and that is the Create tab, which now carries its own pill beside its title
+    (app/views/app/import_requests/_credits_pill.html.erb). Home is for what the
+    user already has; a balance in this corner was a second, quieter ask on a
+    screen with nothing to buy. %>
 <div class="flex items-center justify-between">
   <span class="text-2xl font-extrabold tracking-[-0.5px]">
     langlets<span class="text-app-accent">.</span>
   </span>
 
   <div class="flex items-center gap-2.5">
-    <%= link_to app_credits_path,
-                class: "flex items-center gap-1.5 bg-app-pill rounded-full py-1.5 px-3",
-                aria: { label: app_credits_label(current_user.credit_balance) } do %>
-      <%= app_icon "bolt", class: "w-[13px] h-[13px] text-app-accent" %>
-      <span class="text-app-credits text-[13px] font-bold"><%= current_user.credit_balance %></span>
-    <% end %>
-
     <details class="relative"
              data-testid="app-profile-menu"
              data-controller="profile-menu"

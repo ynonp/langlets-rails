@@ -4,6 +4,13 @@
   <%= render "status_text", active_count: active_count %>
 <% end %>
 
+<%# A credit is spent the moment an import is created, which can happen in the
+    Add Video screen pushed on top of this one — so the pill would otherwise sit
+    one credit high until the tab reloads. %>
+<%= turbo_stream.replace "credits-pill" do %>
+  <%= render "credits_pill", balance: current_user.credit_balance %>
+<% end %>
+
 <%# Parse the set of cards the client already has: "id1:status1,id2:status2" %>
 <% known = (params[:known].presence || "").split(",").map { |s| id, status = s.split(":"); [id, status] }.to_h %>
 

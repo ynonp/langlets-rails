@@ -71,13 +71,18 @@ module App
     end
 
     # Courses from the Library the user hasn't added yet, in their language.
-    # Deliberately dumb for now — random picks; real selection comes later.
+    #
+    # Newest first, not random. On first run this grid is the whole screen and
+    # its subhead promises "any recently created Langlet" — random picks would
+    # have made that copy a lie, and a grid that reshuffles on every visit gives
+    # a returning user nothing to recognize. Recency is also the only signal
+    # available here; real selection comes later.
     def library_picks(count:)
       scope = Course.published.includes(:language, { course_translations: :language })
       scope = scope.where(language: @learning_language) if @learning_language
       scope = scope.where.not(id: current_user.enrollments.select(:course_id))
       scope = scope.where.not(id: @hero_course.id) if @hero_course
-      scope.order(Arel.sql("RANDOM()")).limit(count).to_a
+      scope.order(created_at: :desc).limit(count).to_a
     end
 
     # "Keep it going" means in progress. A finished course showing "Lesson 16 of

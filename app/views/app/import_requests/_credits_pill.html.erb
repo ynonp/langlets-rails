@@ -1,0 +1,25 @@
+<%# Credits as ambient status, not a line of reading: a bolt and a number in the
+    top-right corner, the Duolingo-gems / Midjourney-fast-hours pattern. It was a
+    full-width row under the intro, which put a price tag in the middle of the
+    screen's first paragraph.
+
+    This is now the only credits pill in the app: Home's header used to carry one
+    too, and it was removed — a balance belongs on the screen that spends it. The
+    styling is inherited from that pill, one step larger, since here it stands
+    alone against a 30px title and the number is also the tap target.
+
+    The digit alone is the whole label, so the reading of it lives in aria-label.
+    `justify-between` in the header row puts this top-right in LTR and top-left
+    under dir="rtl", which is where a corner badge belongs in each.
+
+    Links to /app/credits, the medium modal holding the Apple in-app purchase
+    ($10 · 20 credits). After a purchase that modal reloads itself and not the
+    tab under it, so this pill stays stale until the queue poll replaces it by id
+    or the user pulls to refresh. %>
+<%= link_to app_credits_path,
+            id: "credits-pill",
+            class: "shrink-0 flex items-center gap-1.5 bg-app-pill rounded-full py-2 px-3.5",
+            aria: { label: "#{t('app.import_requests.index.credits_remaining', credits: balance)}. #{t('app.import_requests.index.credits_add')}" } do %>
+  <%= app_icon "bolt", class: "w-4 h-4 text-app-accent" %>
+  <span class="text-app-credits text-[15px] font-bold leading-none"><%= balance %></span>
+<% end %>

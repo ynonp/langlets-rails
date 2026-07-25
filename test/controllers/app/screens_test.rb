@@ -120,12 +120,58 @@ module App
       assert_select ".app-fab-offset", count: 0
     end
 
+    # The intro is the only place either entry point is named, and the corner
+    # pill is the only place the balance shows on this tab — the tab roots get no
+    # app header, so the header's credits pill isn't here to carry it. The pill
+    # shows the digit alone, so the wording has to survive in its aria-label.
+    test "Create explains both entry points and pills the balance to Credits" do
+      @user.update!(credit_balance: 7)
+
+      get app_import_requests_path, headers: NATIVE
+
+      assert_response :success
+      assert_match "sharing a YouTube or TikTok video to the app", response.body
+      assert_match "costs 1 credit", response.body
+      assert_select "a#credits-pill[href=?][aria-label=?]",
+                    app_credits_path,
+                    "Credits remaining: 7. Tap to add more"
+      assert_select "a#credits-pill", text: /7/
+    end
+
+    # Spending happens in the pushed Add Video screen, so the poll refreshes the
+    # balance along with the queue rather than leaving it a credit high.
+    test "the queue poll patches the credits pill" do
+      @user.update!(credit_balance: 3)
+      @user.import_requests.create!(
+        youtube_url: "https://www.youtube.com/watch?v=pollcreditx", youtube_video_id: "pollcreditx",
+        clip_language: "Spanish", translation_language: "English", title: "In flight",
+        status: :queued, charged: true
+      )
+
+      get app_import_requests_path, headers: NATIVE, as: :turbo_stream
+
+      assert_response :success
+      assert_match "turbo-stream", response.media_type
+      assert_select "turbo-stream[action='replace'][target='credits-pill']"
+      assert_match "Credits remaining: 3. Tap to add more", response.body
+    end
+
     test "Create with nothing created says so and still offers Add New" do
       get app_import_requests_path, headers: NATIVE
 
       assert_response :success
       assert_select "#queue-empty", text: /You haven't created any langlets yet/
       assert_select "a[href=?]", new_app_import_request_path, text: /Add New/
+    end
+
+    # The balance lives on the tab that spends it. Home is for what the user
+    # already has, so its header is the wordmark and the avatar, nothing else.
+    test "Home does not show a credits pill" do
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "[data-testid='app-profile-menu']"
+      assert_select "a[href=?]", app_credits_path, count: 0
     end
 
     test "Library no longer floats an add button" do
@@ -309,8 +355,81 @@ module App
       assert_select "form[action^='/app/import_requests/new']", count: 0
       assert_select "input[name='url']", count: 0
       assert_match "Despacito", response.body
-      assert_match "Library", response.body
       assert_no_match(/<h2[^>]*>Continue<\/h2>/, response.body)
+    end
+
+    # First run: the grid is the whole screen, so it gets an instruction rather
+    # than the "Library" section label, and the only other way in gets named.
+    test "Home with an empty account instructs and links to Create" do
+      Enrollment.delete_all
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "h2", text: "Jump right in"
+      assert_select "h2", text: "Library", count: 0
+      assert_select "a[data-testid='first-run-create'][href=?]", app_import_requests_path
+    end
+
+    # Newest-first, not random: a shelf that reshuffles every visit gives a
+    # returning user nothing to recognize.
+    test "the library grid shows the newest courses first" do
+      Enrollment.delete_all
+      %w[oldest middle newest].each_with_index do |name, index|
+        create_translated_course!(name: name, slug: "pick-#{name}",
+                       main_media_url: "https://www.youtube.com/watch?v=pick#{index}aaaaaa",
+                       youtube_video_id: "pick#{index}aaaaaa", language: @spanish,
+                       translation_language: @english, user: @user, status: :published)
+          .update_column(:created_at, index.days.from_now)
+      end
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      # @course predates all three and takes the last of the four slots.
+      assert_match(/newest.*middle.*oldest.*Despacito/m, response.body)
+    end
+
+    # Both ways off the library section are accent-coloured, in both states.
+    # Enrolled here, so it needs a course to keep the section on screen at all.
+    test "the library See all link uses the accent colour" do
+      create_translated_course!(name: "Bailando", slug: "bailando-z", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
+                     youtube_video_id: "bailandoaaa", language: @spanish,
+                     translation_language: @english, user: @user, status: :published)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "a.text-app-accent[href=?]", app_library_path
+    end
+
+    # Even with no library courses to show — a language nobody has imported yet —
+    # the way into Create is still on screen. That is the blank-Home case.
+    test "Home with an empty account links to Create even with an empty library" do
+      Enrollment.delete_all
+      Course.update_all(status: Course.statuses[:pending])
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select ".grid a[href^='/courses/']", count: 0
+      assert_select "a[data-testid='first-run-create'][href=?]", app_import_requests_path
+    end
+
+    # The whole point of gating it: a returning user never sees the onboarding.
+    # Needs a second course so the library grid actually renders — otherwise the
+    # heading assertion would pass on an absent section.
+    test "Home drops the first-run heading and Create link once enrolled" do
+      create_translated_course!(name: "Bailando", slug: "bailando-y", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
+                     youtube_video_id: "bailandoaaa", language: @spanish,
+                     translation_language: @english, user: @user, status: :published)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "h2", text: "Library"
+      assert_select "h2", text: "Jump right in", count: 0
+      assert_select "a[data-testid='first-run-create']", count: 0
     end
 
     test "the library grid only offers courses in the user's language" do

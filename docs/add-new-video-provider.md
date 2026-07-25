@@ -249,6 +249,12 @@ is the starting point.
 `url_label`, `get_started`, plus hardcoded strings in
 `app/views/app/import_requests/web/new.html.erb`.
 
+Two of these sit outside the import flow and were missed when TikTok shipped, so
+grep for the provider name rather than trusting this list:
+`onboarding.welcome.title` (the first screen a new native user sees) and
+`courses.index.hero.lead` (the marketing root's lead paragraph). Both name the
+providers explicitly and both have Hebrew counterparts.
+
 ---
 
 ## Credentials and infrastructure

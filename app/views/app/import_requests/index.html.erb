@@ -3,13 +3,26 @@
 
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4">
   <div>
-    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".native_title") %></h1>
-    <%= render "status_text", active_count: active_count %>
+    <div class="flex items-center justify-between gap-3">
+      <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".native_title") %></h1>
+      <%= render "credits_pill", balance: current_user.credit_balance %>
+    </div>
+
+    <%# This tab is the only screen that explains where langlets come from, so
+        the intro states both entry points and the price up front — a user who
+        never opens Add New still learns the share sheet works. Native-only copy:
+        the web app renders app/import_requests/web/index instead. %>
+    <p class="text-app-text-2 text-sm mt-1.5 leading-[1.45]"><%= t(".intro") %></p>
   </div>
 
-  <h2 class="text-app-text-2 text-[14px] font-semibold uppercase tracking-[0.08em]">
-    <%= t(".created_heading") %>
-  </h2>
+  <div>
+    <h2 class="text-app-text-2 text-[14px] font-semibold uppercase tracking-[0.08em]">
+      <%= t(".created_heading") %>
+    </h2>
+    <%# Moved out from under the h1: with the intro there, this live line belongs
+        with the list it describes. Still patched by id from the poll. %>
+    <%= render "status_text", active_count: active_count %>
+  </div>
 
   <%# Polls rather than streams. There is no Action Cable in this app at all (no
       app/channels, not even ApplicationCable::Connection), a WKWebView socket

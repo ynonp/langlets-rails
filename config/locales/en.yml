@@ -111,6 +111,19 @@ en:
         your_playlists: "Your playlists"
         continue: "Continue"
         library: "Library"
+        # First run only — nothing enrolled, nothing in progress. The grid is the
+        # whole screen then, so it gets an invitation instead of a section label,
+        # and the create link names the other way in. Both revert once the user
+        # has a course.
+        #
+        # The heading matches courses.index.library.heading word for word: the
+        # marketing root and the app's first run are the same moment for the same
+        # person. Duplicated rather than shared, because a change to one is not
+        # automatically right for the other. Its subhead is deliberately NOT
+        # carried over — the cards say what they are, and the screen reads better
+        # without a line of prose between the heading and the grid.
+        first_run_library: "Jump right in"
+        first_run_create: "Or import any YouTube / TikTok video ›"
     library:
       show:
         title: "Library"
@@ -122,6 +135,11 @@ en:
         title: "Queue"
         empty: "Nothing here yet."
         native_title: "Create"
+        # Says both ways in, in the order people find them: the share sheet is
+        # the habit we want, "Add New" is the button right there on screen.
+        intro: "Create langlets by sharing a YouTube or TikTok video to the app, or tap “Add New” below. Each langlet takes about 3 minutes to create and costs 1 credit."
+        credits_remaining: "Credits remaining: %{credits}"
+        credits_add: "Tap to add more"
         created_heading: "My Created Langlets"
         native_empty: "You haven't created any langlets yet"
         add_new: "Add New"
@@ -151,7 +169,7 @@ en:
   onboarding:
     welcome:
       eyebrow: "Welcome to Langlets"
-      title: "Turn any YouTube video into a language lesson"
+      title: "Turn any YouTube or TikTok video into a language lesson"
       body_1: "Learn from content you already love."
       body_2: "Our AI transcribes and translates any video, then builds vocabulary practice from it."
       body_3: "Paste a link, or start with a course from our library."
