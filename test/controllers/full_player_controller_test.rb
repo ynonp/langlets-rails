@@ -85,4 +85,44 @@ class FullPlayerControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-main-video-player-target='progressBarContainer']", count: 0
     assert_select "a[aria-label='Back to course']"
   end
+
+  test "loads the complete phrase graph only once" do
+    2.times do |index|
+      phrase = create_translated_phrase!(
+        medium: @medium,
+        l1: @english,
+        l2: @english,
+        text_l1: "Word #{index}",
+        text_l2: "Word #{index}",
+        timestamp: "00:0#{index}"
+      )
+      phrase.phrase_tokens.create!(
+        l1_start_index: 0,
+        l1_end_index: 0,
+        start_timestamp: "00:0#{index}",
+        end_timestamp: "00:0#{index}.50"
+      )
+    end
+
+    queries = capture_selects { get course_full_player_path(@course) }
+
+    assert_response :success
+    phrase_queries = queries.grep(/FROM "phrases" WHERE "phrases"."medium_id"/)
+    assert_equal 1, phrase_queries.size
+    assert_no_match(/LIMIT 1/, phrase_queries.first)
+    assert_equal 1, queries.grep(/FROM "lessons"/).size
+  end
+
+  private
+
+  def capture_selects
+    queries = []
+    callback = lambda do |_name, _start, _finish, _id, payload|
+      next if payload[:name] == "SCHEMA" || payload[:cached]
+
+      queries << payload[:sql].squish if payload[:sql].to_s.lstrip.start_with?("SELECT")
+    end
+    ActiveSupport::Notifications.subscribed(callback, "sql.active_record") { yield }
+    queries
+  end
 end

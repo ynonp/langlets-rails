@@ -112,10 +112,9 @@
   </div>
 
   <!-- Bottom action bar -->
-  <% if @course.lessons.any? %>
-    <% first_lesson = @course.lessons.order(:order).first %>
+  <% if @first_lesson %>
     <div class="px-5 flex-shrink-0 pt-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: calc(26px + env(safe-area-inset-bottom));">
-      <%= button_to course_lesson_path(@course, first_lesson), method: :get, class: "w-full inline-flex items-center justify-center gap-2 h-16 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors", form: { style: "width:100%" } do %>
+      <%= button_to course_lesson_path(@course, @first_lesson), method: :get, class: "w-full inline-flex items-center justify-center gap-2 h-16 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors", form: { style: "width:100%" } do %>
         <svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="#fff"/></svg>
         Start practice
       <% end %>

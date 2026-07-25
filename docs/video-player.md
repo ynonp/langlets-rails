@@ -116,6 +116,13 @@ It plays the whole video as one big segment (`segment-start` → `segment-end`
 spanning the full course). The shared controller still observes native player
 state changes and emits the `video:*` events used by the transcript.
 
+The course page opts the "Watch full video" link out of Turbo hover prefetch.
+Opening the route loads the complete phrase/token/translation/audio graph, so a
+pointer resting over that link must not trigger the work during an unrelated
+course-page refresh. The controller materializes that eager-loaded relation
+once before reading its first/last phrase or token boundaries, and reuses the
+first lesson selected for the medium when rendering the practice action.
+
 The full-course segment ends at the latest persisted phrase-token end timestamp,
 so the final spoken word is not cut off. Courses without word timing fall back
 to the final phrase's start timestamp, preserving legacy behavior. At that

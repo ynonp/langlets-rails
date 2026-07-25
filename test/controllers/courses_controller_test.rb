@@ -39,6 +39,13 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_match(/IN \(/, translation_queries.first)
   end
 
+  test "show does not prefetch the full player link" do
+    get course_url(@course)
+
+    assert_response :success
+    assert_select "a[href=?][data-turbo-prefetch=false]", course_full_player_path(@course)
+  end
+
   test "homepage shows at most eight videos and links to the gallery" do
     @course.update!(status: :published)
     9.times do |index|

@@ -29,6 +29,17 @@ iframe. When the full-course
 segment ends, the controller pauses and rewinds to its start, making the next
 play action replay the complete video.
 
+The phrase relation is materialized immediately after its translations, tokens,
+and token audio are preloaded. Boundary calculations and rendering then reuse
+that same in-memory graph; calling `first` on an unloaded eager-loaded relation
+would otherwise load the first phrase and its associations separately before
+loading the complete transcript. The course page's full-player link disables
+Turbo hover prefetch because this route intentionally hydrates the entire
+transcript and should run only when the learner chooses it. The controller also
+retains the first ordered lesson used to resolve the medium and passes it to the
+practice button, avoiding separate lesson-existence and first-lesson lookups in
+the view.
+
 ### Watch-video activity playback
 
 Watch-video activities preload an interactive YouTube iframe with YouTube's

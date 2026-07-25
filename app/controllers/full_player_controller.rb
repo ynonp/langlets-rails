@@ -9,11 +9,13 @@ class FullPlayerController < ApplicationController
       return
     end
 
+    @first_lesson = @course.lessons.order(:order).first
+
     # Load all phrases from course's medium ordered by timestamp
-    @phrases = @course.medium.phrases.includes(
+    @phrases = @first_lesson.medium.phrases.includes(
       :localized_translation,
       phrase_tokens: [ :localized_translation, { l1_audio_attachment: :blob } ]
-    ).order(:timestamp)
+    ).order(:timestamp).load
     
     @video_id = @course.video_id
     @video_provider = @course.provider
