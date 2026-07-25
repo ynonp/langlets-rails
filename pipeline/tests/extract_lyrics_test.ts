@@ -1,10 +1,15 @@
 import { assert, assertEquals, assertFalse, assertRejects } from "@std/assert";
 import { extractLyrics, languageCodeForTranscription } from "../src/steps/extractLyrics.ts";
+import { SpeechToTextRequestError } from "../src/speechToText.ts";
 import {
   makeCtx,
   queuedModel,
+  sourceUrlRejected,
   speechFixture,
+  STUB_AUDIO_PATH,
+  stubAudioWith,
   stubSpeechToText,
+  stubSpeechToTextFile,
   stubTranscribe,
   TIKTOK_URL,
   transcriptFixture,
@@ -106,6 +111,71 @@ Deno.test("TikTok stashes timed words so force_alignment has nothing left to ali
   // Deliberately left true: force_alignment still has to run to turn these
   // words into the provisional phrase, it just won't download any audio.
   assert(store.data.force_alignment_in_progress);
+});
+
+Deno.test("a rejected TikTok source URL falls back to uploaded audio", async () => {
+  const speech = stubSpeechToText([sourceUrlRejected()]);
+  const upload = stubSpeechToTextFile([speechFixture(1, 2)]);
+  const { ctx, store } = makeCtx({
+    youtubeurl: TIKTOK_URL,
+    transcribeSpeech: speech.transcribe,
+    transcribeSpeechFile: upload.transcribe,
+    prepareAudio: stubAudioWith(13),
+    clipLanguage: "Spanish",
+  });
+
+  await extractLyrics(ctx);
+
+  // One URL attempt, not three: a 400 is not a flake, so the schedule stops.
+  assertEquals(speech.calls(), 1);
+  assertEquals(upload.calls(), 1);
+  assertEquals(upload.requests[0], { audioPath: STUB_AUDIO_PATH, languageCode: "es" });
+  assertEquals(store.data.lyric_lines, ["Line 1 Line 2"]);
+  assertEquals(store.data.stt_words?.length, 4);
+  assertFalse(store.data.extract_lyrics_in_progress);
+  assertEquals(store.data.errors, undefined);
+});
+
+Deno.test("only a rejected request triggers the audio fallback", async () => {
+  // A 500 is worth retrying as it is; downloading audio would not help.
+  const speech = stubSpeechToText([
+    new SpeechToTextRequestError(500, "internal"),
+    new SpeechToTextRequestError(500, "internal"),
+    new SpeechToTextRequestError(500, "internal"),
+  ]);
+  const upload = stubSpeechToTextFile([speechFixture(1, 2)]);
+  const { ctx } = makeCtx({
+    youtubeurl: TIKTOK_URL,
+    transcribeSpeech: speech.transcribe,
+    transcribeSpeechFile: upload.transcribe,
+    prepareAudio: stubAudioWith(13),
+  });
+
+  await assertRejects(() => extractLyrics(ctx), Error, "(500)");
+
+  assertEquals(speech.calls(), 3);
+  assertEquals(upload.calls(), 0);
+});
+
+Deno.test("a failed audio fallback fails the step with the upload error", async () => {
+  const speech = stubSpeechToText([sourceUrlRejected()]);
+  const upload = stubSpeechToTextFile([
+    new Error("no timed words"),
+    new Error("no timed words"),
+    new Error("no timed words"),
+  ]);
+  const { ctx, store } = makeCtx({
+    youtubeurl: TIKTOK_URL,
+    transcribeSpeech: speech.transcribe,
+    transcribeSpeechFile: upload.transcribe,
+    prepareAudio: stubAudioWith(13),
+  });
+
+  await assertRejects(() => extractLyrics(ctx), Error, "no timed words");
+
+  assertEquals(upload.calls(), 3);
+  assertEquals(store.data.errors![0].step, "extract_lyrics");
+  assertEquals(store.data.errors![0].attempts, 3);
 });
 
 Deno.test("TikTok never falls back to Gemini — a failed transcription fails the step", async () => {

@@ -193,7 +193,7 @@ Both current providers converge in `phrasesFromAlignedWords`
 
 | | YouTube | TikTok |
 |---|---|---|
-| `extract_lyrics` | Supadata native captions, Gemini fallback | ElevenLabs Scribe (`source_url`) |
+| `extract_lyrics` | Supadata native captions, Gemini fallback | ElevenLabs Scribe (`source_url`), falling back to Scribe on downloaded audio when the URL fetch is refused with a 400 |
 | `force_alignment` | audio download + ElevenLabs alignment, Gemini line fallback | reuses Scribe's timings — no download, no alignment |
 
 If your provider's transcription returns timings (like Scribe), stash them under
@@ -203,6 +203,12 @@ twice. Arbitrary keys pass through the callback untouched — there's no allowli
 
 Provider detection in the pipeline is by hostname (`isTiktokUrl`,
 `isYoutubeUrl`), independent of the Ruby side.
+
+If your provider's transcription API can fetch the post URL itself, expect that
+to be refused sometimes and plan the audio-upload fallback — and expect the
+download itself to need verifying. `downloadYoutubeAudioToTemp` walks five yt-dlp
+format specs and rejects any file whose audio is missing or silent, because
+TikTok's HEVC renditions download "successfully" with no audible audio.
 
 Two transcript rules that are easy to get wrong:
 

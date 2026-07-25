@@ -10,7 +10,7 @@ import { ProgressStore } from "../src/progress.ts";
 import type { ModelRegistry } from "../src/models.ts";
 import type { PipelineContext } from "../src/context.ts";
 import type { TranscriptResult } from "../src/supadata.ts";
-import type { SpeechToTextResult } from "../src/speechToText.ts";
+import { SpeechToTextRequestError, type SpeechToTextResult } from "../src/speechToText.ts";
 import type { Alignment } from "../src/alignment.ts";
 import type { DownloadedAudio } from "../src/audio.ts";
 
@@ -110,6 +110,38 @@ export function stubSpeechToText(
   };
 }
 
+// Network-free stand-in for the uploaded-audio form of the Scribe call.
+export interface StubFileTranscriber {
+  transcribe: NonNullable<PipelineContext["transcribeSpeechFile"]>;
+  calls: () => number;
+  requests: Array<{ audioPath: string; languageCode: string | null }>;
+}
+
+export function stubSpeechToTextFile(
+  responses: Array<SpeechToTextResult | Error>,
+): StubFileTranscriber {
+  let count = 0;
+  const requests: StubFileTranscriber["requests"] = [];
+
+  return {
+    transcribe: (audioPath, languageCode) => {
+      requests.push({ audioPath, languageCode });
+      if (count >= responses.length) throw new Error("stub file transcriber exhausted");
+      const next = responses[count++];
+      if (next instanceof Error) return Promise.reject(next);
+      return Promise.resolve(next);
+    },
+    calls: () => count,
+    requests,
+  };
+}
+
+// The 400 ElevenLabs returns when it cannot fetch the TikTok post itself — the
+// only failure that triggers the audio-upload fallback.
+export function sourceUrlRejected(): SpeechToTextRequestError {
+  return new SpeechToTextRequestError(400, "could not download the file from source_url");
+}
+
 // Scribe result for "Line 1 Line 2 ...", one timed word per token.
 export function speechFixture(from: number, to: number): SpeechToTextResult {
   const words = [];
@@ -141,6 +173,7 @@ export function makeCtx(options: {
   clipLanguage?: string;
   transcribeVideo?: PipelineContext["transcribeVideo"];
   transcribeSpeech?: PipelineContext["transcribeSpeech"];
+  transcribeSpeechFile?: PipelineContext["transcribeSpeechFile"];
   youtubeurl?: string;
   prepareAudio?: PipelineContext["prepareAudio"];
   alignLyrics?: PipelineContext["alignLyrics"];
@@ -169,6 +202,7 @@ export function makeCtx(options: {
     baseDelayMs: 0,
     transcribeVideo: options.transcribeVideo,
     transcribeSpeech: options.transcribeSpeech,
+    transcribeSpeechFile: options.transcribeSpeechFile,
     prepareAudio: options.prepareAudio,
     alignLyrics: options.alignLyrics,
   };

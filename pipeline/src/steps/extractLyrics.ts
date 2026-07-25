@@ -4,10 +4,17 @@ import { clearErrors, recordError } from "../context.ts";
 import { extractLyricsPrompt } from "../prompts/extractLyrics.ts";
 import { message, withRetries } from "../retry.ts";
 import { transcribeWithSupadata, transcriptToText } from "../supadata.ts";
-import { transcribeWithElevenLabs } from "../speechToText.ts";
+import {
+  isSpeechToTextRequestRejected,
+  type SpeechToTextResult,
+  transcribeFileWithElevenLabs,
+  transcribeWithElevenLabs,
+} from "../speechToText.ts";
+import { downloadYoutubeAudioToTemp } from "../audio.ts";
 
 const MAX_GEMINI_RETRIES = 2;
 const MAX_STT_RETRIES = 2;
+const MAX_AUDIO_RETRIES = 2;
 
 export async function extractLyrics(ctx: PipelineContext): Promise<void> {
   const { store } = ctx;
@@ -29,15 +36,9 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
     // The timed words are stashed for force_alignment to pick up, so a run that
     // dies between the two steps resumes without paying for Scribe twice.
     if (isTiktokUrl(ctx.youtubeurl)) {
-      const stt = await withRetries(
-        () => (ctx.transcribeSpeech ?? transcribeWithElevenLabs)(ctx.youtubeurl, languageCode),
-        {
-          maxRetries: MAX_STT_RETRIES,
-          label: "ExtractLyrics ElevenLabs speech-to-text",
-          baseDelayMs: ctx.baseDelayMs,
-          onFailedAttempt: (_error, attempt) => (attempts = Math.max(attempts, attempt)),
-        },
-      );
+      const stt = await transcribeTiktok(ctx, languageCode, (attempt) => {
+        attempts = Math.max(attempts, attempt);
+      });
       await store.patch([
         { op: "set", path: "lyric_lines", value: [stt.text] },
         { op: "set", path: "stt_words", value: stt.words },
@@ -93,6 +94,56 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
     });
     console.error(`Transcript extraction failed: ${message(error)}`);
     throw error;
+  }
+}
+
+// Scribe normally reads the TikTok post URL itself. When TikTok blocks that
+// server-side fetch ElevenLabs answers 400, which no amount of retrying the same
+// URL will change — so download the audio (yt-dlp with the silent-HEVC
+// workaround) and upload the bytes instead. Everything else about the TikTok
+// route is unchanged: still one call, still transcript plus word timestamps.
+async function transcribeTiktok(
+  ctx: PipelineContext,
+  languageCode: string | null,
+  onAttempt: (attempt: number) => void,
+): Promise<SpeechToTextResult> {
+  try {
+    return await withRetries(
+      () => (ctx.transcribeSpeech ?? transcribeWithElevenLabs)(ctx.youtubeurl, languageCode),
+      {
+        maxRetries: MAX_STT_RETRIES,
+        label: "ExtractLyrics ElevenLabs speech-to-text",
+        baseDelayMs: ctx.baseDelayMs,
+        onFailedAttempt: (_error, attempt) => onAttempt(attempt),
+        isFatal: isSpeechToTextRequestRejected,
+      },
+    );
+  } catch (sourceUrlError) {
+    if (!isSpeechToTextRequestRejected(sourceUrlError)) throw sourceUrlError;
+    console.warn(
+      `ExtractLyrics falling back to downloaded audio: ${message(sourceUrlError)}`,
+    );
+    const audio = await withRetries(
+      () => (ctx.prepareAudio ?? downloadYoutubeAudioToTemp)(ctx.youtubeurl),
+      {
+        maxRetries: MAX_AUDIO_RETRIES,
+        label: "ExtractLyrics audio",
+        baseDelayMs: ctx.baseDelayMs,
+      },
+    );
+    try {
+      return await withRetries(
+        () => (ctx.transcribeSpeechFile ?? transcribeFileWithElevenLabs)(audio.path, languageCode),
+        {
+          maxRetries: MAX_STT_RETRIES,
+          label: "ExtractLyrics ElevenLabs speech-to-text (uploaded audio)",
+          baseDelayMs: ctx.baseDelayMs,
+          onFailedAttempt: (_error, attempt) => onAttempt(attempt),
+        },
+      );
+    } finally {
+      await Deno.remove(audio.path).catch(() => {});
+    }
   }
 }
 

@@ -5,10 +5,11 @@
 // timings. TikTok posts have no captions worth trusting, so Scribe does both
 // jobs at once, returning the transcript *and* per-word timestamps.
 //
-// The important consequence is that TikTok needs no forced alignment and no
-// audio download. `source_url` accepts a TikTok URL directly, so yt-dlp never
-// runs — which also means the TikTok path has no dependency on
-// YTDLP_NETWORK_NAMESPACE or on a working yt-dlp extractor.
+// The important consequence is that TikTok needs no forced alignment.
+// `source_url` accepts a TikTok URL directly, so normally yt-dlp never runs.
+// When TikTok refuses that server-side fetch ElevenLabs answers 400, and only
+// then does the audio get downloaded and uploaded as `file` instead — see
+// steps/extractLyrics.ts.
 
 import type { AlignedWord } from "./alignment.ts";
 
@@ -32,10 +33,63 @@ interface RawWord {
   logprob?: number;
 }
 
-export async function transcribeWithElevenLabs(
+export interface SpeechToTextOptions {
+  apiKey?: string;
+  fetch?: typeof globalThis.fetch;
+}
+
+// Carries the HTTP status so callers can tell a rejected request (400 — TikTok
+// blocked the fetch, and the same request will keep being rejected) from a rate
+// limit or an outage, which are worth retrying as they are.
+export class SpeechToTextRequestError extends Error {
+  readonly status: number;
+
+  constructor(status: number, body: string) {
+    super(`ElevenLabs speech-to-text failed (${status}): ${body}`);
+    this.name = "SpeechToTextRequestError";
+    this.status = status;
+  }
+}
+
+// True when ElevenLabs refused the request itself rather than failing to serve
+// it — for a `source_url` submission that means Scribe could not fetch the post,
+// so the only way forward is to send the audio bytes.
+export function isSpeechToTextRequestRejected(error: unknown): boolean {
+  return error instanceof SpeechToTextRequestError && error.status === 400;
+}
+
+export function transcribeWithElevenLabs(
   sourceUrl: string,
   languageCode: string | null,
-  options: { apiKey?: string; fetch?: typeof globalThis.fetch } = {},
+  options: SpeechToTextOptions = {},
+): Promise<SpeechToTextResult> {
+  return postSpeechToText((form) => form.append("source_url", sourceUrl), languageCode, options);
+}
+
+// The fallback form: Scribe reads the uploaded bytes instead of fetching the
+// post itself.
+export async function transcribeFileWithElevenLabs(
+  audioPath: string,
+  languageCode: string | null,
+  options: SpeechToTextOptions = {},
+): Promise<SpeechToTextResult> {
+  const bytes = await Deno.readFile(audioPath);
+  return await postSpeechToText(
+    (form) =>
+      form.append(
+        "file",
+        new Blob([bytes], { type: "audio/mp4" }),
+        audioPath.split("/").at(-1) ?? "audio.m4a",
+      ),
+    languageCode,
+    options,
+  );
+}
+
+async function postSpeechToText(
+  appendSource: (form: FormData) => void,
+  languageCode: string | null,
+  options: SpeechToTextOptions,
 ): Promise<SpeechToTextResult> {
   const apiKey = options.apiKey ?? Deno.env.get("ELEVEN_LABS_KEY") ??
     Deno.env.get("ELEVENLABS_API_KEY");
@@ -43,7 +97,7 @@ export async function transcribeWithElevenLabs(
 
   const form = new FormData();
   form.append("model_id", MODEL_ID);
-  form.append("source_url", sourceUrl);
+  appendSource(form);
   form.append("timestamps_granularity", "word");
   // Diarization would split the transcript by speaker, which the phrase model
   // has no use for and which costs extra.
@@ -57,7 +111,7 @@ export async function transcribeWithElevenLabs(
   });
   if (!response.ok) {
     const body = await response.text().catch(() => "");
-    throw new Error(`ElevenLabs speech-to-text failed (${response.status}): ${body}`);
+    throw new SpeechToTextRequestError(response.status, body);
   }
 
   return parseSpeechToText(await response.json());

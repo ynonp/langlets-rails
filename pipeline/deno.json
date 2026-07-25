@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "serve": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip main.ts",
-    "cli": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip cli.ts",
+    "serve": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip,ffprobe,ffmpeg main.ts",
+    "cli": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip,ffprobe,ffmpeg cli.ts",
     "test": "deno test --allow-net --allow-env --allow-read --allow-write tests/",
     "check": "deno check main.ts cli.ts"
   },

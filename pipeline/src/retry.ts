@@ -7,6 +7,10 @@ export interface RetryOptions {
   label: string;
   baseDelayMs?: number;
   onFailedAttempt?: (error: unknown, attempt: number) => void;
+  // Failures that a retry cannot fix (a rejected request, not a flaky one).
+  // Reported through onFailedAttempt like any other failure, then rethrown
+  // immediately instead of burning the rest of the schedule.
+  isFatal?: (error: unknown) => boolean;
 }
 
 export async function withRetries<T>(fn: () => Promise<T>, options: RetryOptions): Promise<T> {
@@ -19,7 +23,7 @@ export async function withRetries<T>(fn: () => Promise<T>, options: RetryOptions
     } catch (error) {
       attempt += 1;
       options.onFailedAttempt?.(error, attempt);
-      if (attempt > options.maxRetries) throw error;
+      if (options.isFatal?.(error) || attempt > options.maxRetries) throw error;
 
       const waitSeconds = 2 ** attempt + (1 + Math.random() * 2);
       console.warn(

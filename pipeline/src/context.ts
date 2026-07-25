@@ -32,6 +32,12 @@ export interface PipelineContext {
     sourceUrl: string,
     languageCode: string | null,
   ) => Promise<SpeechToTextResult>;
+  // Injection point for the uploaded-audio form of the same call, used when
+  // ElevenLabs rejects the TikTok source URL.
+  transcribeSpeechFile?: (
+    audioPath: string,
+    languageCode: string | null,
+  ) => Promise<SpeechToTextResult>;
   prepareAudio?: (youtubeUrl: string) => Promise<DownloadedAudio>;
   alignLyrics?: (audioPath: string, text: string) => Promise<Alignment>;
 }

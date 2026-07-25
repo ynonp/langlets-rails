@@ -381,11 +381,12 @@ TikTok exists.
 post URL as `source_url` and returns the transcript *and* per-word timestamps in
 one call. Consequences worth knowing:
 
-- **No forced alignment, and no `yt-dlp`.** The words arrive already timed, so
-  the TikTok path never downloads audio and has no dependency on the yt-dlp
-  extractor or `YTDLP_NETWORK_NAMESPACE`.
-- **No Supadata and no Gemini fallback.** A failed Scribe call fails
-  `extract_lyrics` where it stands.
+- **No forced alignment.** The words arrive already timed, so nothing downstream
+  has to align them.
+- **Normally no `yt-dlp` either** — but see "When Scribe cannot fetch the post"
+  below, which is the one case where the TikTok path downloads audio.
+- **No Supadata and no Gemini fallback.** Apart from the audio-upload retry
+  below, a failed Scribe call fails `extract_lyrics` where it stands.
 - `extract_lyrics` stashes the timed words under `data["stt_words"]` and
   `force_alignment` builds the provisional phrase from them. Two steps rather
   than one so a run that dies in between resumes without paying for
@@ -396,6 +397,25 @@ one call. Consequences worth knowing:
   brackets are reserved by the app's token markup, and more importantly
   `add_lessons` partitions the transcript by word count against those very
   words, so the two must describe the same thing.
+
+#### When Scribe cannot fetch the post
+
+TikTok sometimes blocks ElevenLabs' server-side fetch, and Scribe answers **400**
+(`ElevenLabs speech-to-text failed (400)`). That is a rejected request, not a
+flaky one: retrying the same `source_url` gets the same 400. So `extract_lyrics`
+stops the retry schedule immediately (`RetryOptions.isFatal`), downloads the
+audio with `yt-dlp`, and re-submits it as the multipart `file` field of the same
+Scribe endpoint. The result is identical in shape — transcript plus timed words —
+so the rest of the TikTok route is untouched. The temp file is deleted either
+way.
+
+Only a 400 triggers this. A 429 or a 5xx keeps being retried as before, because
+uploading audio would not help. `SpeechToTextRequestError` carries the HTTP
+status precisely so the two cases can be told apart without matching on message
+text.
+
+This is why the TikTok path now *can* depend on `yt-dlp` and on
+`YTDLP_NETWORK_NAMESPACE`, where before it never did.
 
 **YouTube** keeps its existing route, unchanged:
 
@@ -490,7 +510,32 @@ Supadata receives the video URL directly when fetching native captions; Gemini r
 URL directly only when that native request fails. Forced alignment still requires the audio bytes,
 so the pipeline downloads them with `yt-dlp`; `YTDLP_NETWORK_NAMESPACE` may route only that
 subprocess through a configured Linux network namespace. The Deno service needs write access for
-the temporary file and run permission for `yt-dlp` and `ip`.
+the temporary file and run permission for `yt-dlp`, `ip`, `ffprobe` and `ffmpeg`.
+
+**A download that "succeeds" is not necessarily audio** (`pipeline/src/audio.ts`).
+TikTok serves silent HEVC renditions (`bytevc1` / `media-video-hvc1`) that yt-dlp
+does not flag as audio-less ([yt-dlp#15642](https://github.com/yt-dlp/yt-dlp/issues/15642)):
+yt-dlp exits 0 and writes a file with either no audio stream or a stream of
+digital silence, and ElevenLabs then dutifully transcribes nothing. So every
+download is verified before it counts:
+
+- `ffprobe` must report a codec for the first audio stream, and `ffmpeg
+  volumedetect` must report a mean volume above **-70 dB**. A file with no
+  reading at all is treated as silent — ffmpeg could not decode it either way.
+- A file that fails either check is deleted and the next of five format specs is
+  tried: `bestaudio[ext=m4a]` (the audio-only pick that has always served
+  YouTube, and the only one needing no post-processing), then
+  `ba[acodec!=none]`, then `worst[format_id!*=bytevc1][acodec!=none]` — which
+  excludes the silent rendition by name — then the H.264 rendition, then
+  yt-dlp's own default. Specs 2-5 are extracted to mono 16 kHz m4a, so callers
+  always get m4a regardless of which one won. In practice YouTube is satisfied by
+  the first spec and TikTok by the third.
+- Only when all five are exhausted does the download fail, with every spec's
+  reason in the message.
+- **If `ffprobe`/`ffmpeg` cannot be run at all** (not installed, or not in
+  `--allow-run`), verification is skipped rather than failing the download —
+  deployments without ffmpeg keep the pre-verification behavior instead of
+  losing every import.
 
 ### Domain Models
 

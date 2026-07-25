@@ -32,9 +32,12 @@ finalize_translation                        (payload metadata + lessons snapshot
 
 **TikTok takes a different route through both steps.** ElevenLabs Scribe (`scribe_v2`) accepts the
 post URL as `source_url` and returns the transcript *and* per-word timestamps in one call, so there
-is nothing for Supadata or Gemini to do and nothing left to align: the TikTok path never downloads
-audio and never invokes `yt-dlp`. A failed Scribe call fails `extract_lyrics` where it stands — there
-is no fallback. The timed words are stashed under `data.stt_words` so a run that dies between
+is nothing for Supadata or Gemini to do and nothing left to align: normally the TikTok path never
+downloads audio and never invokes `yt-dlp`. The exception is a **400** from Scribe, which means
+TikTok blocked its fetch of the post — retrying the same URL cannot fix that, so `extract_lyrics`
+downloads the audio and re-submits it as the `file` field of the same endpoint. Any other Scribe
+failure fails `extract_lyrics` where it stands. The timed words are stashed under `data.stt_words` so
+a run that dies between
 `extract_lyrics` and `force_alignment` resumes without paying for transcription twice. Scribe's
 `spacing` and `audio_event` entries (`[cantando]`, `[Applause]`) are dropped, and the transcript is
 rebuilt from the surviving words rather than taken from the response's `text`, because `add_lessons`
@@ -214,6 +217,13 @@ Deploy set them in the dashboard instead.
 
 Set `YTDLP_NETWORK_NAMESPACE=vpn` on Linux to route only the `yt-dlp` audio download through that
 network namespace. Leave it unset for direct execution.
+
+`ffprobe` and `ffmpeg` must be on `PATH`. Audio downloads are verified with them, because TikTok
+serves silent HEVC renditions that yt-dlp reports as a successful download
+([yt-dlp#15642](https://github.com/yt-dlp/yt-dlp/issues/15642)); a file with no audio stream or a
+mean volume at or below -70 dB is discarded and the next of five format specs is tried
+(`src/audio.ts`). Without ffmpeg the verification is skipped rather than failing the download, and
+the silent-audio downloads come back.
 
 ## Layout
 

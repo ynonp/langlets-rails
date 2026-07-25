@@ -1,5 +1,10 @@
-import { assertEquals, assertThrows } from "@std/assert";
-import { parseSpeechToText } from "../src/speechToText.ts";
+import { assertEquals, assertFalse, assertRejects, assertThrows } from "@std/assert";
+import {
+  isSpeechToTextRequestRejected,
+  parseSpeechToText,
+  SpeechToTextRequestError,
+  transcribeWithElevenLabs,
+} from "../src/speechToText.ts";
 
 // The payload shape ElevenLabs Scribe actually returns, trimmed to the fields
 // the pipeline reads. Note the leading [cantando] audio_event and the spacing
@@ -47,6 +52,28 @@ Deno.test("drops words with missing or non-finite timestamps", () => {
   });
 
   assertEquals(result.words.map((word) => word.text), ["kept"]);
+});
+
+Deno.test("a failed request carries its status, not just a message", async () => {
+  const error = await assertRejects(
+    () =>
+      transcribeWithElevenLabs("https://www.tiktok.com/@a/video/1", "es", {
+        apiKey: "test-key",
+        fetch: () => Promise.resolve(new Response("could not download the file", { status: 400 })),
+      }),
+    SpeechToTextRequestError,
+    "ElevenLabs speech-to-text failed (400)",
+  );
+
+  assertEquals(error.status, 400);
+  // This is the signal extract_lyrics branches on to upload the audio instead.
+  assertEquals(isSpeechToTextRequestRejected(error), true);
+});
+
+Deno.test("only a 400 counts as a rejected request", () => {
+  assertFalse(isSpeechToTextRequestRejected(new SpeechToTextRequestError(500, "internal")));
+  assertFalse(isSpeechToTextRequestRejected(new SpeechToTextRequestError(429, "slow down")));
+  assertFalse(isSpeechToTextRequestRejected(new Error("ELEVEN_LABS_KEY is not set")));
 });
 
 Deno.test("a transcript with no speech is an error, not an empty course", () => {
