@@ -182,6 +182,14 @@ final class AppTabBarController: UITabBarController {
         clearPendingOnboardingURL()
     }
 
+    /// Force-route the Home tab to its root URL, regardless of whether it
+    /// has already been routed. Used by returnHome to recover from a stuck
+    /// page (e.g. /profile) that clearAll alone won't replace.
+    func routeHomeTab() {
+        needsRoute[Self.homeTabIndex] = true
+        routeTabIfNeeded(at: Self.homeTabIndex)
+    }
+
     // MARK: - Private
 
     private func routeTabIfNeeded(at index: Int) {

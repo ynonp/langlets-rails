@@ -214,6 +214,11 @@ extension SceneDelegate: NavigatorDelegate {
         sourceNavigator.clearAll(animated: false)
         tabBarController.selectedIndex = homeIndex
         tabBarController.activeNavigator.clearAll(animated: false)
+
+        // clearAll only wipes the history stack — the webview still shows
+        // whatever page it was on (e.g. /profile). Route to /app so the
+        // user actually lands on the home screen.
+        tabBarController.routeHomeTab()
     }
     
     private static func isSignedOutRedirect(_ url: URL) -> Bool {
