@@ -350,9 +350,12 @@ Three asymmetries between the two providers drive most of the design:
   `Course#thumbnail_url` reads the column, then falls back to derivation — that
   order is why the column is nullable and was never backfilled. It is
   deliberately left NULL for YouTube.
-- **TikTok is vertical.** The lesson player, full player and course preview pick
-  their aspect ratio from the provider; forcing 9:16 content into `aspect-video`
-  letterboxes it into a stripe.
+- **TikTok is vertical.** The full player and course preview pick their aspect
+  ratio from the provider. The watch-video lesson player instead gives every
+  provider the same sticky `clamp(160px, 30vh, 280px)` height so its transcript
+  keeps a predictable amount of the iOS viewport. Native video is cropped by
+  default and switched to `contain` when loaded metadata identifies landscape
+  dimensions; provider iframes fill that same fixed box.
 
 `courses.youtube_video_id` and `import_requests.youtube_url` keep their names but
 hold whichever provider's value. `youtube_video_id` backs
@@ -535,7 +538,12 @@ download is verified before it counts:
 - **If `ffprobe`/`ffmpeg` cannot be run at all** (not installed, or not in
   `--allow-run`), verification is skipped rather than failing the download —
   deployments without ffmpeg keep the pre-verification behavior instead of
-  losing every import.
+  losing every import. `runProbe` swallows *every* spawn failure to guarantee
+  that, and deliberately does not enumerate error classes: the first version
+  caught `Deno.errors.PermissionDenied`, which Deno 2 never throws (it throws
+  `NotCapable`), and a systemd unit whose `--allow-run` list predated ffprobe
+  failed every TikTok import instead of quietly skipping the check. The unit
+  needs `--allow-run=yt-dlp,ip,ffprobe,ffmpeg`.
 
 ### Domain Models
 
@@ -902,7 +910,7 @@ A user's request to turn a video into a course. There are three distinct things 
 
 Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry, push idempotency) can't live on either of the shared records.
 
-- `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility, while a failed import can still be retried.
+- `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility. Failed imports remain visible and removable, but the Queue does not offer a user retry: an accessible info tooltip explains that the human team is reviewing the automatic import and that the user will be notified when it finishes.
 - `progress_percent` is **written forward** by `CreateSongProgress#sync_import_requests_progress`, never computed on read — `data` is a multi-megabyte jsonb blob and the Queue polls.
 
 #### **Imports::Create** (`app/services/imports/create.rb`)
@@ -934,6 +942,12 @@ permission was denied, enabling opens the app's system Settings because iOS
 will not present its authorization prompt a second time.
 
 `Push::CourseReadyNotification` includes the published course slug in the APNs custom payload. Notification taps are handled on both iOS paths: `UNUserNotificationCenterDelegate` for a running app and `UIScene.ConnectionOptions.notificationResponse` for a cold launch. Both reset the Home navigator to `/app?just_imported=<slug>`. `App::HomeController` only resolves that slug through the signed-in user's published enrollments, then renders the newly created course as the **JUST IMPORTED** hero whose **Start Course** button enters the standard course experience. An invalid or unauthorized slug safely falls back to ordinary Home.
+
+The APNs badge is a return-to-app prompt rather than durable unread state.
+`SceneDelegate.sceneDidBecomeActive` clears the app icon badge whenever the
+native app becomes active, covering cold launches, notification taps, and
+returns from the background. This is independent of the Create tab badge,
+which continues to reflect active imports reported by the web layout.
 
 #### iOS Share Extension
 

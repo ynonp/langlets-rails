@@ -48,11 +48,19 @@
   </div>
 
   <% if import_request.failed? %>
-    <%= button_to retry_app_import_request_path(import_request),
-                  class: "shrink-0 w-8 h-8 rounded-full bg-app-pill text-app-text-2 flex items-center justify-center",
-                  aria: { label: "Try this import again" } do %>
-      <%= app_icon "retry", class: "w-4 h-4" %>
-    <% end %>
+    <% tooltip_id = dom_id(import_request, :failed_help) %>
+    <span class="group relative shrink-0">
+      <button type="button"
+              class="w-8 h-8 rounded-full bg-app-pill text-app-text-2 flex items-center justify-center"
+              aria-label="<%= t("app.import_requests.index.failed_help_label") %>"
+              aria-describedby="<%= tooltip_id %>">
+        <%= app_icon "info", class: "w-4 h-4" %>
+      </button>
+      <span id="<%= tooltip_id %>" role="tooltip"
+            class="pointer-events-none invisible absolute bottom-full end-0 z-20 mb-2 w-64 rounded-lg bg-slate-950 px-3 py-2 text-start text-xs font-medium leading-relaxed text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+        <%= t("app.import_requests.index.failed_help") %>
+      </span>
+    </span>
   <% elsif import_request.queued? %>
     <%= button_to app_import_request_path(import_request), method: :delete,
                   data: { action: "click->swipe-to-delete#remove" },

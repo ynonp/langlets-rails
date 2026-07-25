@@ -55,6 +55,16 @@ final class PushNotifications: NSObject {
         UNUserNotificationCenter.current().delegate = self
     }
 
+    /// The icon badge is only a prompt to return to the app. Once the app is
+    /// active, the user has seen that prompt and the badge is no longer useful.
+    func clearAppIconBadge() {
+        UNUserNotificationCenter.current().setBadgeCount(0) { error in
+            if let error {
+                print("Failed to clear app icon badge: \(error)")
+            }
+        }
+    }
+
     /// Registers for remote notifications, asking permission only if `ask` is true.
     ///
     /// When `ask` is false this still registers if permission was granted

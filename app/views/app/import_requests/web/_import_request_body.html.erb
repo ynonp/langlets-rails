@@ -29,7 +29,19 @@
         <%= link_to "Open lesson", course_path(import_request.course), class: "inline-flex min-h-10 flex-1 items-center justify-center rounded-xl bg-emerald-500 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-600 sm:flex-none" %>
         <%= button_to "Remove", app_import_request_path(import_request), method: :delete, class: "min-h-10 rounded-xl border border-gray-300 px-4 py-2 text-sm font-bold hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800" %>
       <% elsif import_request.failed? %>
-        <%= button_to "Try again", retry_app_import_request_path(import_request), class: "min-h-10 rounded-xl bg-emerald-500 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-600" %>
+        <% tooltip_id = dom_id(import_request, :failed_help) %>
+        <span class="group relative">
+          <button type="button"
+                  class="flex min-h-10 min-w-10 items-center justify-center rounded-xl border border-gray-300 text-gray-600 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
+                  aria-label="<%= t("app.import_requests.index.failed_help_label") %>"
+                  aria-describedby="<%= tooltip_id %>">
+            <%= app_icon "info", class: "h-4 w-4" %>
+          </button>
+          <span id="<%= tooltip_id %>" role="tooltip"
+                class="pointer-events-none invisible absolute bottom-full end-0 z-20 mb-2 w-72 rounded-xl bg-gray-950 px-3 py-2 text-start text-xs font-medium leading-relaxed text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <%= t("app.import_requests.index.failed_help") %>
+          </span>
+        </span>
         <%= button_to "Remove", app_import_request_path(import_request), method: :delete, class: "min-h-10 rounded-xl border border-gray-300 px-4 py-2 text-sm font-bold hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800" %>
       <% elsif import_request.queued? %>
         <%= button_to "Cancel import", app_import_request_path(import_request), method: :delete, class: "min-h-10 rounded-xl border border-gray-300 px-4 py-2 text-sm font-bold hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800" %>

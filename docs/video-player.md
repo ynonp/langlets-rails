@@ -249,11 +249,15 @@ They differ in:
 
 ### Aspect ratio
 
-TikTok is shot vertically. The visible players (lesson `#main-player`, full
-player, course preview iframe) pick their box from the provider — `9/16` capped
-by viewport height for TikTok, `aspect-video` otherwise. Hardcoding
-`aspect-video` letterboxes a TikTok clip into a stripe with black bars either
-side, so use `video_aspect_ratio` / `Course#tiktok?` rather than assuming 16:9.
+The watch-video activity always reserves `clamp(160px, 30vh, 280px)` for its
+sticky media area, regardless of provider. This makes the transcript height
+predictable on iOS in both orientations. Native video defaults to `object-cover`
+with its focal point biased upward; `loadedmetadata` marks landscape sources so
+they switch to `object-contain`. YouTube and TikTok iframes fill the same fixed
+box.
+
+The full player and course preview remain provider-shaped: TikTok uses a
+viewport-capped `9/16` box and YouTube uses `aspect-video`.
 
 ### When building new features
 

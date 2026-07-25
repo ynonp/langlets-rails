@@ -8,6 +8,14 @@
 // happily transcribes nothing. So a download only counts once ffprobe/ffmpeg
 // confirm it carries audible audio; a file that fails that check is discarded
 // and the next format spec is tried.
+//
+// Verification is **required**, not best-effort. A host that cannot run
+// ffprobe/ffmpeg fails the download — and fails it before any yt-dlp call, so
+// the error is one legible line instead of the tail of a five-format ladder.
+// Accepting an unverified download would reintroduce exactly the silent audio
+// this module exists to catch, and we would pay ElevenLabs to transcribe it.
+
+import { message } from "./retry.ts";
 
 export interface DownloadedAudio {
   path: string;
@@ -62,6 +70,25 @@ export const AUDIO_FORMATS: AudioDownloadOptions[] = [
 const SILENCE_THRESHOLD_DB = -70;
 
 export type AudioDefect = "no-audio-stream" | "silent";
+
+// Raised when a verifier cannot be spawned at all — missing binary, or an
+// --allow-run list that predates it. Distinct from every other download failure
+// because it is a host misconfiguration: retrying it, or falling back around it,
+// only buries the one thing that needs fixing.
+export class AudioVerificationUnavailableError extends Error {
+  constructor(command: string, cause: unknown) {
+    super(
+      `${command} could not be run (${message(cause)}). Audio verification is required: ` +
+        "install ffmpeg on the pipeline host and grant " +
+        "--allow-run=yt-dlp,ip,ffprobe,ffmpeg.",
+    );
+    this.name = "AudioVerificationUnavailableError";
+  }
+}
+
+export function isAudioVerificationUnavailable(error: unknown): boolean {
+  return error instanceof AudioVerificationUnavailableError;
+}
 
 export function audioDownloadCommand(
   youtubeUrl: string,
@@ -146,6 +173,19 @@ export function parsePrintedValue(stdout: string, tag: string): string | null {
   return value && value !== "NA" ? value : null;
 }
 
+let verifiersConfirmed = false;
+
+// Runs once per process — a binary's presence and its --allow-run grant are both
+// process-lifetime facts. Only success is remembered, so a host that gets ffmpeg
+// installed under it recovers on the next import rather than staying poisoned.
+export async function ensureAudioVerifiers(): Promise<void> {
+  if (verifiersConfirmed) return;
+  for (const command of ["ffprobe", "ffmpeg"]) {
+    await runProbe({ command, args: ["-version"] });
+  }
+  verifiersConfirmed = true;
+}
+
 // A track with no codec has no audio at all (the silent-HEVC case). A track
 // whose mean volume cannot be read is one ffmpeg could not decode, which is as
 // unusable as the silence it is grouped with.
@@ -158,21 +198,22 @@ export function classifyAudio(
   return null;
 }
 
-// Null means "usable as far as we can tell" — which includes the case where
-// ffprobe/ffmpeg are not installed or not runnable. A missing verifier must not
-// fail a download that would previously have been accepted.
+// Null means verified usable. Throws AudioVerificationUnavailableError if a
+// verdict cannot be reached at all — never silently optimistic.
 export async function detectAudioDefect(audioPath: string): Promise<AudioDefect | null> {
   const stream = await runProbe(audioStreamProbeCommand(audioPath));
-  if (!stream) return null;
   const codec = stream.code === 0 ? stream.stdout.trim() : "";
   if (!codec) return "no-audio-stream";
 
   const volume = await runProbe(meanVolumeProbeCommand(audioPath));
-  if (!volume) return null;
   return classifyAudio(codec, parseMeanVolumeDb(volume.stderr));
 }
 
 export async function downloadYoutubeAudioToTemp(youtubeUrl: string): Promise<DownloadedAudio> {
+  // Before yt-dlp runs, not after: a host that cannot verify cannot produce a
+  // usable download, and finding that out first keeps the error readable.
+  await ensureAudioVerifiers();
+
   const path = await Deno.makeTempFile({ prefix: "langlets_audio_", suffix: ".m4a" });
   const networkNamespace = Deno.env.get("YTDLP_NETWORK_NAMESPACE") || undefined;
   const failures: string[] = [];
@@ -238,9 +279,12 @@ interface ProbeResult {
   stderr: string;
 }
 
-// Null when the tool cannot be run at all, as opposed to running and reporting
-// something. Deployments that lack ffmpeg keep the pre-verification behavior.
-async function runProbe(spec: AudioDownloadCommand): Promise<ProbeResult | null> {
+// A non-zero exit is a verdict about the file and comes back normally. Failing
+// to spawn at all is a broken host, and every such failure is converted, not
+// just the ones worth naming: Deno 2 throws `NotCapable` for a denied
+// --allow-run where Deno 1 threw `PermissionDenied`, and enumerating classes
+// here is how the wrong one gets caught.
+async function runProbe(spec: AudioDownloadCommand): Promise<ProbeResult> {
   try {
     const result = await new Deno.Command(spec.command, {
       args: spec.args,
@@ -254,10 +298,6 @@ async function runProbe(spec: AudioDownloadCommand): Promise<ProbeResult | null>
       stderr: decoder.decode(result.stderr),
     };
   } catch (error) {
-    if (error instanceof Deno.errors.NotFound || error instanceof Deno.errors.PermissionDenied) {
-      console.warn(`${spec.command} unavailable — skipping silent-audio verification`);
-      return null;
-    }
-    throw error;
+    throw new AudioVerificationUnavailableError(spec.command, error);
   }
 }

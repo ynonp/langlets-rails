@@ -14,7 +14,7 @@ const ADAPTERS = {
 };
 
 export default class extends Controller {
-  static targets = ['playerContainer', 'player', 'progressBar', 'videoListener', 'videoSegment'];
+  static targets = ['playerContainer', 'media', 'player', 'progressBar', 'videoListener', 'videoSegment'];
 
   static values = {
     videoId: String,
@@ -81,7 +81,7 @@ export default class extends Controller {
 
     if (this.videoSegmentTarget.dataset.showPlayer) {
       this.playerContainerTarget.classList.remove('hidden');
-      this.playerContainerTarget.classList.add('order-2', 'px-4');
+      this.playerContainerTarget.classList.add('order-2');
       if (this.player) {
         if (this.segmentStart != null) {
           this.player.seekTo(this.segmentStart);
@@ -96,6 +96,15 @@ export default class extends Controller {
     this.player = null;
     this.playerInitialized = false;    
     this.stopPlayback = this.stopPlayback.bind(this);
+  }
+
+  setMediaRatio(event) {
+    const { videoWidth, videoHeight } = event.target;
+    if (!videoWidth || !videoHeight) return;
+
+    if (this.hasMediaTarget) {
+      this.mediaTarget.dataset.ratio = videoWidth / videoHeight >= 1 ? "landscape" : "portrait";
+    }
   }
 
   initializePlayer() {

@@ -12,11 +12,11 @@
 %>
 
 <div id="<%= dom_id(import_request, :wrapper) %>" data-controller="swipe-to-delete"
-     class="relative overflow-hidden rounded-app-card"
+     class="relative rounded-app-card"
      data-action="click->swipe-to-delete#close">
   <%# Delete button revealed behind the card on swipe-left %>
   <% if can_swipe %>
-    <div class="absolute inset-y-0 right-0 flex items-center pr-4">
+    <div class="absolute inset-y-0 right-0 flex items-center overflow-hidden rounded-app-card pr-4">
       <%= button_to app_import_request_path(import_request), method: :delete,
                     data: { swipe_target: "form", action: "click->swipe-to-delete#remove" },
                     class: "w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center",

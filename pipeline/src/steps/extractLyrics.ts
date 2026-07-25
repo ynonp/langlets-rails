@@ -10,7 +10,7 @@ import {
   transcribeFileWithElevenLabs,
   transcribeWithElevenLabs,
 } from "../speechToText.ts";
-import { downloadYoutubeAudioToTemp } from "../audio.ts";
+import { downloadYoutubeAudioToTemp, isAudioVerificationUnavailable } from "../audio.ts";
 
 const MAX_GEMINI_RETRIES = 2;
 const MAX_STT_RETRIES = 2;
@@ -129,6 +129,8 @@ async function transcribeTiktok(
         maxRetries: MAX_AUDIO_RETRIES,
         label: "ExtractLyrics audio",
         baseDelayMs: ctx.baseDelayMs,
+        // A host that cannot verify audio will not start being able to.
+        isFatal: isAudioVerificationUnavailable,
       },
     );
     try {

@@ -163,6 +163,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        PushNotifications.shared.clearAppIconBadge()
+    }
+
     private static func isCourseLessonURL(_ url: URL) -> Bool {
         let components = url.path.split(separator: "/")
         return components.count >= 4 &&

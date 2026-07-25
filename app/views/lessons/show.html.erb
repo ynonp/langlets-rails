@@ -37,12 +37,14 @@
   <div
     id="main-player"
     data-main-video-player-target="playerContainer"
-    class="<%= activity_params[:video_player] ? 'order-2 flex-shrink-0' : 'hidden' %>"
+    data-action="loadedmetadata->main-video-player#setMediaRatio:capture"
+    class="flex-shrink-0 sticky top-0 h-[clamp(160px,30vh,280px)] bg-black overflow-hidden <%= activity_params[:video_player] ? 'order-2' : 'hidden' %>"
   >
-      <%# TikTok is shot vertically, so the player box follows the provider
-          rather than assuming 16:9. Capped by viewport height so the phrase
-          list below it stays on screen on a phone. %>
-      <div class="w-full bg-cover bg-center bg-no-repeat flex items-center justify-center relative mx-auto <%= @video_provider == :tiktok ? 'aspect-[9/16] max-h-[55vh] max-w-[calc(55vh*9/16)]' : 'aspect-video' %>"
+      <%# Every provider gets the same vertical budget. Native portrait video is
+          cropped around its upper-middle content; landscape video is contained
+          after loadedmetadata reports its dimensions. %>
+      <div data-main-video-player-target="media"
+       class="relative flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat [&_iframe]:h-full [&_iframe]:w-full [&_video]:h-full [&_video]:w-full [&_video]:object-cover [&_video]:[object-position:50%_30%] data-[ratio=landscape]:[&_video]:object-contain"
        style="<%= "background-image: url('#{j course_thumbnail_url(@lesson.course)}')".html_safe if course_thumbnail_url(@lesson.course).present? %>"
        role="img"
        aria-label="Video thumbnail">
@@ -52,7 +54,7 @@
             native controls. See docs/video-player.md. %>
         <div
             data-main-video-player-target="player"
-            class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
+            class="absolute inset-0 h-full w-full [&>iframe]:absolute [&>iframe]:inset-0 [&>iframe]:h-full [&>iframe]:w-full">
         </div>
       </div>
   </div>

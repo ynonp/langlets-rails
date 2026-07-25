@@ -1,4 +1,5 @@
 import { assert, assertEquals, assertFalse, assertRejects } from "@std/assert";
+import { AudioVerificationUnavailableError } from "../src/audio.ts";
 import { forceAlignment } from "../src/steps/forceAlignment.ts";
 import {
   alignedBatch,
@@ -67,6 +68,28 @@ Deno.test("yt-dlp failure falls back to Gemini structured line timestamps", asyn
   ]);
   assertEquals(store.data.video_length_seconds, 7);
   assertFalse(store.data.force_alignment_in_progress);
+});
+
+Deno.test("an unverifiable host fails the step instead of falling back to Gemini", async () => {
+  // Gemini can timestamp lines without touching audio, so this failure would
+  // otherwise vanish into a degraded-but-green import — every course silently
+  // losing word-level timings until someone noticed.
+  const fallbackModel = queuedModel([{
+    lines: [{ line: "Bonjour monde", start_seconds: 1, end_seconds: 3 }],
+  }]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["Bonjour monde"] },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () =>
+      Promise.reject(new AudioVerificationUnavailableError("ffprobe", new Error("no run access"))),
+  });
+
+  await assertRejects(() => forceAlignment(ctx), Error, "Audio verification is required");
+
+  // Not retried either: the host will not fix itself between attempts.
+  assertEquals(fallbackModel.calls(), 0);
+  assertEquals(store.data.errors![0].step, "force_alignment");
+  assertEquals(store.data.phrases, undefined);
 });
 
 Deno.test("invalid ElevenLabs output falls back to Gemini and keeps original lines", async () => {

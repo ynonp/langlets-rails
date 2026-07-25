@@ -1,9 +1,19 @@
-import { assertEquals, assertThrows } from "@std/assert";
+import {
+  assertEquals,
+  assertFalse,
+  assertRejects,
+  assertStringIncludes,
+  assertThrows,
+} from "@std/assert";
 import {
   AUDIO_FORMATS,
   audioDownloadCommand,
   audioStreamProbeCommand,
+  AudioVerificationUnavailableError,
   classifyAudio,
+  detectAudioDefect,
+  downloadYoutubeAudioToTemp,
+  isAudioVerificationUnavailable,
   meanVolumeProbeCommand,
   parseMeanVolumeDb,
   parsePrintedValue,
@@ -106,6 +116,44 @@ Deno.test("a present but silent track is rejected, an audible one is kept", () =
 
 Deno.test("an undecodable track counts as silent rather than usable", () => {
   assertEquals(classifyAudio("aac", null), "silent");
+});
+
+Deno.test({
+  name: "a verifier that cannot be run fails loudly instead of passing the file",
+  // The exact production failure this guards: an --allow-run list without
+  // ffprobe (Deno 2 raises NotCapable, Deno 1 raised PermissionDenied — runProbe
+  // must convert both). Verification is required, so an unreachable verifier is
+  // an error, never an implicit pass. Pinned to run: false so the test holds
+  // whatever the test task happens to be granted.
+  permissions: { run: false },
+  fn: async () => {
+    const error = await assertRejects(
+      () => detectAudioDefect("/tmp/langlets-no-such-audio.m4a"),
+      AudioVerificationUnavailableError,
+      "Audio verification is required",
+    );
+
+    assertEquals(isAudioVerificationUnavailable(error), true);
+    // The message has to name the fix, because this only ever shows up in a
+    // journalctl line on a misconfigured host.
+    assertStringIncludes(error.message, "--allow-run=yt-dlp,ip,ffprobe,ffmpeg");
+  },
+});
+
+Deno.test({
+  name: "the verifier preflight runs before any download is attempted",
+  permissions: { run: false },
+  fn: async () => {
+    await assertRejects(
+      () => downloadYoutubeAudioToTemp(youtubeUrl),
+      AudioVerificationUnavailableError,
+      "ffprobe could not be run",
+    );
+  },
+});
+
+Deno.test("only an unreachable verifier is fatal, not a defective file", () => {
+  assertFalse(isAudioVerificationUnavailable(new Error("yt-dlp exited with code 1")));
 });
 
 Deno.test("probes ask ffprobe for the first audio stream's codec", () => {

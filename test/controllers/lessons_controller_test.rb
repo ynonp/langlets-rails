@@ -58,4 +58,30 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
   end
+
+  test "watch video uses a deterministic media height" do
+    phrase = Phrase.create!(
+      medium: @medium,
+      l1: languages(:english),
+      text_l1: "A test phrase",
+      timestamp: "00:01.00"
+    )
+    activity = Activities::WatchVideoActivity.create!(
+      lesson: @lesson,
+      order: 2,
+      user: @user
+    )
+    activity.phrases << phrase
+
+    get course_lesson_url(@course, @lesson, a: activity.order)
+
+    assert_response :success
+    assert_select "#main-player" do |players|
+      assert_includes players.first["class"], "h-[clamp(160px,30vh,280px)]"
+      assert_includes players.first["data-action"], "loadedmetadata->main-video-player#setMediaRatio:capture"
+    end
+    assert_select "[data-main-video-player-target~='media']" do |media|
+      assert_includes media.first["class"], "data-[ratio=landscape]:[&_video]:object-contain"
+    end
+  end
 end

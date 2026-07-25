@@ -535,9 +535,8 @@ module App
       assert_equal 1, controller.view_assigns["queue_badge_count"]
     end
 
-    # Every card state has its own markup and its own route helpers. Rendering
-    # only the happy ones is how `app_retry_import_request_path` (which doesn't
-    # exist — it's retry_app_import_request_path) shipped past a green suite.
+    # Every card state has its own markup. Render all of them so state-specific
+    # actions and guidance stay covered.
     test "the queue renders every state" do
       %w[queued importing ready failed canceled].each_with_index do |status, i|
         @user.import_requests.create!(
@@ -560,7 +559,7 @@ module App
       assert_match "Cancelled", response.body
     end
 
-    test "a failed import offers a retry and a queued one offers a cancel" do
+    test "a failed import explains the review process without retry and a queued one offers a cancel" do
       failed = @user.import_requests.create!(
         youtube_url: "https://www.youtube.com/watch?v=failedaaaaa", youtube_video_id: "failedaaaaa",
         clip_language: "Spanish", translation_language: "English", title: "Broken",
@@ -575,8 +574,25 @@ module App
       get "/app/import_requests", headers: NATIVE
 
       assert_response :success
-      assert_select "form[action=?]", retry_app_import_request_path(failed)
+      assert_select "form[action=?]", retry_app_import_request_path(failed), count: 0
+      assert_select "button[aria-describedby=?]", dom_id(failed, :failed_help)
+      assert_select "##{dom_id(failed, :failed_help)}[role='tooltip']", text: /human team is checking/
       assert_select "form[action=?]", app_import_request_path(queued)
+    end
+
+    test "the web queue replaces failed import retry with the review tooltip" do
+      failed = @user.import_requests.create!(
+        youtube_url: "https://www.youtube.com/watch?v=failedwebbb", youtube_video_id: "failedwebbb",
+        clip_language: "Spanish", translation_language: "English", title: "Broken",
+        status: :failed, charged: true, refunded: true
+      )
+
+      get app_import_requests_path, headers: WEB
+
+      assert_response :success
+      assert_select "form[action=?]", retry_app_import_request_path(failed), count: 0
+      assert_select "button[aria-describedby=?]", dom_id(failed, :failed_help)
+      assert_select "##{dom_id(failed, :failed_help)}[role='tooltip']", text: /human team is checking/
     end
 
     test "cancelling a queued import refunds the credit" do

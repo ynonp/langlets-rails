@@ -143,6 +143,8 @@ en:
         created_heading: "My Created Langlets"
         native_empty: "You haven't created any langlets yet"
         add_new: "Add New"
+        failed_help_label: "Why this import failed"
+        failed_help: "Our automatic langlets maker ran into some issues trying to import this video. Our human team is checking what went wrong, and we'll notify you when the import is finished."
       new:
         # Doubles as the native navigation-bar title now that this screen is
         # pushed rather than presented, so no " · langlets." suffix — the nav bar

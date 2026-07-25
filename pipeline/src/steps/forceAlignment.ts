@@ -4,7 +4,7 @@ import type { Phrase } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
 import { message, withRetries } from "../retry.ts";
-import { downloadYoutubeAudioToTemp } from "../audio.ts";
+import { downloadYoutubeAudioToTemp, isAudioVerificationUnavailable } from "../audio.ts";
 import { type AlignedWord, alignLyrics as alignWithElevenLabs } from "../alignment.ts";
 import { phrasesFromAlignedWords } from "../alignedWords.ts";
 import { secondsToTimestamp } from "../timestamps.ts";
@@ -56,6 +56,8 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
           maxRetries: MAX_AUDIO_RETRIES,
           label: "ForceAlignment audio",
           baseDelayMs: ctx.baseDelayMs,
+          // A host that cannot verify audio will not start being able to.
+          isFatal: isAudioVerificationUnavailable,
         },
       );
       audioPath = audio.path;
@@ -70,6 +72,10 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
       phrases = phrasesFromElevenLabs(lines, alignment.words);
       videoLengthSeconds = audio.durationSeconds;
     } catch (elevenLabsError) {
+      // Gemini would happily timestamp the lines from the video URL and hide the
+      // fact that this host cannot verify a download — at the cost of every
+      // future import silently losing word-level timings. Fix the host instead.
+      if (isAudioVerificationUnavailable(elevenLabsError)) throw elevenLabsError;
       console.warn(
         `ForceAlignment falling back to Gemini line timestamps: ${message(elevenLabsError)}`,
       );
