@@ -74,19 +74,35 @@ class ProfileTest < ActionDispatch::IntegrationTest
       "switch", "display: none", count: 1
   end
 
+  # On web the URL is the only home for the selection: nothing is stored
+  # server-side, so the param is both what selects a language and what clears
+  # it. default_url_options is what carries it from page to page.
   test "selecting a language keeps lang on generated urls, and all content clears it" do
     language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
     sign_in_as @user
 
     get profile_path(lang: language.iso_name)
-    assert_equal language.iso_name, session[:lang]
-
-    # Subsequent requests without the param stay in that language.
-    get profile_path
     assert_select "option[selected]", text: /#{language.english_name}/
+    assert_select "a[href*=?]", "lang=#{language.iso_name}"
 
     get profile_path(lang: "all")
-    assert_nil session[:lang]
+    assert_select "option[selected]", text: /Show All Content/
+  end
+
+  test "dropping lang from the url clears the language, with nothing left in the session" do
+    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
+    sign_in_as @user
+
+    get profile_path(lang: language.iso_name)
+    assert_select "option[selected]", text: /#{language.english_name}/
+
+    # A literal path, not profile_path: the integration session reverse-merges
+    # the previous controller's url_options, so the helper would re-add lang
+    # exactly the way an on-page link does. This models clearing the param by
+    # hand — the regression being guarded is that the selection used to be
+    # cached in the session, so a bare URL kept serving the old language with
+    # no way to clear it short of ?lang=all or dropping cookies.
+    get "/profile"
     assert_select "option[selected]", text: /Show All Content/
   end
 

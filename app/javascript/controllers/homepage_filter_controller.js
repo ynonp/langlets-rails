@@ -3,6 +3,10 @@ import { Controller } from "@hotwired/stimulus"
 // Client-side language filter for the homepage "Jump right in" grid. Each card
 // carries a data-lang; each chip a lang param ("all" shows everything). No
 // server round-trip, so the grid filters instantly.
+//
+// Picking a chip rewrites ?lang= in the address bar. The server reads the same
+// param (ApplicationController#current_language_code), so the URL keeps telling
+// the truth: it survives a reload, and it is shareable.
 export default class extends Controller {
   static targets = ["chip", "card"]
   static classes = ["active"]
@@ -18,7 +22,21 @@ export default class extends Controller {
   }
 
   filter(event) {
-    this.apply(String(event.params.lang))
+    const lang = String(event.params.lang)
+    this.apply(lang)
+    this.syncUrl(lang)
+  }
+
+  // Only user-driven picks touch the URL — connect() just reflects what the
+  // address bar already says.
+  syncUrl(lang) {
+    const url = new URL(window.location)
+    if (lang === "all") {
+      url.searchParams.delete("lang")
+    } else {
+      url.searchParams.set("lang", lang)
+    }
+    history.replaceState(history.state, "", url)
   }
 
   apply(lang) {

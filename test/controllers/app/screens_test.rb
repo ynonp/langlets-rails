@@ -32,7 +32,7 @@ module App
 
       # ApplicationController#require_language_for_native_app sends native users
       # to /onboarding/language until they've chosen one, so every app screen is
-      # unreachable without it. One request seeds session[:lang].
+      # unreachable without it. One request stores the language on the user.
       get "/app?lang=es", headers: NATIVE
     end
 

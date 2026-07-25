@@ -1,4 +1,5 @@
 import { PlayerState } from "./player_states";
+import InterpolatedPlaybackClock from "../utils/interpolated_playback_clock.mjs";
 
 // TikTok Embed Player, wrapped in the same contract as YoutubeAdapter so
 // main-video-player never branches on provider.
@@ -7,11 +8,10 @@ import { PlayerState } from "./player_states";
 // Two differences from YouTube shape the whole file:
 //
 // 1. **There is no getCurrentTime().** The YouTube API answers a query; TikTok
-//    only *pushes* `onCurrentTime` while playing. So this adapter keeps the last
-//    reported position and answers from it. The controller polls every 100ms and
-//    TikTok reports less often than that, which means the progress bar advances
-//    in slightly coarser steps — but every segment boundary is still enforced,
-//    because it's compared against the same clock.
+//    only *pushes* `onCurrentTime` while playing. Those events can be about a
+//    second apart, so the adapter interpolates between authoritative updates
+//    with a monotonic clock. The controller can therefore keep polling every
+//    100ms without freezing transcript highlights between TikTok events.
 //
 // 2. **Commands are fire-and-forget postMessages** with no acknowledgement, and
 //    anything sent before `onPlayerReady` is dropped on the floor. Commands are
@@ -26,7 +26,7 @@ export default class TiktokAdapter {
     this.ready = false;
     this.pending = [];
     this.stateCallbacks = [];
-    this.currentTime = 0;
+    this.playbackClock = new InterpolatedPlaybackClock();
     this.duration = null;
     // Mirrors YouTube's initial state so getPlayerState() is answerable before
     // the iframe has said anything.
@@ -84,12 +84,13 @@ export default class TiktokAdapter {
         this.flush();
         break;
       case "onStateChange":
+        this.playbackClock.setPlaying(data.value === PlayerState.PLAYING);
         this.state = data.value;
         this.stateCallbacks.forEach((callback) => callback(data.value));
         break;
       case "onCurrentTime":
         if (data.value && Number.isFinite(data.value.currentTime)) {
-          this.currentTime = data.value.currentTime;
+          this.playbackClock.setPosition(data.value.currentTime);
           if (Number.isFinite(data.value.duration)) this.duration = data.value.duration;
         }
         break;
@@ -133,12 +134,12 @@ export default class TiktokAdapter {
     // for the next onCurrentTime. The controller seeks and then immediately
     // compares the position against the segment bounds; reporting the stale
     // pre-seek time there would end the segment the instant it started.
-    this.currentTime = target;
+    this.playbackClock.setPosition(target);
     this.send("seekTo", target);
   }
 
   async getCurrentTime() {
-    return this.currentTime;
+    return this.playbackClock.currentPosition();
   }
 
   async getPlayerState() {

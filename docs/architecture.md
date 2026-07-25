@@ -42,15 +42,48 @@ At the segment end, the shared controller emits `video:end`, pauses, and seeks
 back to the segment start so the native play control replays the lesson.
 Hidden and compact activity players remain on the custom controls path.
 
+TikTok publishes its current playback position less frequently than the shared
+player's 100ms progress polling. Its adapter keeps an interpolated monotonic
+clock between authoritative `onCurrentTime` messages and resynchronizes whenever
+TikTok sends a new position. This keeps transcript, karaoke, progress, and
+segment boundaries moving continuously without changing stored timestamps.
+
 ### Homepage language selection
 
 The public homepage honours the optional `lang` query parameter by initially
 selecting the matching "Jump right in" client-side filter while still rendering
 all available language pills. Unknown language codes are ignored and the grid
-shows all languages. The
+shows all languages. Picking a pill rewrites `?lang=` via `history.replaceState`,
+so the address bar keeps matching what is on screen and the view stays
+shareable and reload-safe. The
 redesigned landing page no longer renders a per-language header subhead, so the
 `homepage_subhead` helper and the `subhead.<iso>` locale copy it reads are
 currently unused by the UI (kept in place for possible reuse).
+
+### Where the learning language lives
+
+`ApplicationController#current_language_code` resolves the language of learning,
+and the two clients store it differently:
+
+- **Web** keeps it in the URL alone. `default_url_options` merges `lang` into
+  every generated URL, so the selection follows the user across links, while
+  removing the param — or passing `?lang=all` — clears it. Nothing is written
+  server-side, so there is no hidden state that outlives the address bar.
+- **Native** picks a language during onboarding and must keep it across app
+  launches, so `persist_native_language` writes it to `user.ios_lang`
+  (a key in the `users.preferences` JSON) and `current_language_code` reads it
+  back for signed-in native requests.
+
+This deliberately gives signed-in web users no persistence: their selection is
+per-URL, not per-account. `users.preferred_language_id` exists in the schema
+with an FK and index but is currently unused; it is the natural home if durable
+per-account language ever becomes a requirement.
+
+Earlier revisions cached the selection in `session[:lang]`. Combined with
+`default_url_options` re-adding the param to every link, that made the language
+impossible to clear from the UI — a reload kept serving the stored language and
+guests had no control that reached the session. The session copy has been
+removed; do not reintroduce it without also providing a clear path.
 
 ### Public homepage (`courses#index`)
 

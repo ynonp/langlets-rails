@@ -17,8 +17,8 @@ class ProfileController < ApplicationController
   private
 
   # Same shape as OnboardingController#language_redirect_url: switching language
-  # is a redirect carrying ?lang=<iso>, which store_language_in_session picks up.
-  # Pass ApplicationController::ALL_LANGUAGES to clear the selection instead.
+  # is a redirect carrying ?lang=<iso>, which default_url_options then carries
+  # onto every link. Pass ApplicationController::ALL_LANGUAGES to clear it.
   def language_redirect_url(iso)
     uri = URI.parse(profile_path)
     query = Rack::Utils.parse_nested_query(uri.query)

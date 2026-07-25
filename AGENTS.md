@@ -47,6 +47,7 @@ the related behavior.
 |---|---|
 | [Architecture](docs/architecture.md) | The state of the platform — domain model, data flow, and system architecture. Read this before any new feature, and update it after every feature. |
 | [Video Players](docs/video-player.md) | The four kinds of video players in the app (full course player, watch-video activity, hidden audio player, and the compact "mini" layout) — what each is for, what they share, and what to check when changing playback. |
+| [Adding a New Video Provider](docs/add-new-video-provider.md) | Checklist for adding a third video provider alongside YouTube and TikTok — the provider contract, the asymmetries that break assumptions (missing ids, non-derivable covers, aspect ratio), the player adapter, the pipeline, and every place a provider is assumed. |
 | [Adding a New Language](docs/guides/adding-a-new-language.md) | Complete checklist for adding a new language to the platform — migrations, AI prompts, Azure TTS, and more. |
 | [Creating a Course from a YouTube URL](docs/guides/creating-a-course.md) | How to create a course via UI or console, understand the AI pipeline, debug failures, and switch AI providers. |
 

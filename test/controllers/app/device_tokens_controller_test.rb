@@ -12,7 +12,7 @@ module App
       @user = User.create!(email: "device-api@example.com", password: "password123", confirmed_at: Time.zone.now)
       new_user_session_path # Load Devise's lazy route mapping before sign_in.
       sign_in @user
-      get "/app?lang=es", headers: NATIVE # seeds session[:lang]
+      get "/app?lang=es", headers: NATIVE # stores the language on the user
     end
 
     test "registers a device against the signed-in user" do

@@ -45,12 +45,12 @@ four layouts to be rewritten or duplicated per provider.
 Two TikTok differences are worth knowing before you debug playback:
 
 - **There is no `getCurrentTime()` query.** TikTok only *pushes* `onCurrentTime`
-  while playing, so the adapter answers from the last reported position. The
-  controller polls every 100ms and TikTok reports less often, so the progress bar
-  advances in coarser steps — segment boundaries are still exact, because
-  they're compared against the same clock. `seekTo` optimistically updates that
-  cached position, because the controller seeks and then immediately compares
-  against the segment bounds.
+  while playing, sometimes about a second apart. The adapter interpolates the
+  position with a monotonic clock between those authoritative updates, then
+  resynchronizes when the next one arrives. This lets the controller's 100ms
+  polling drive transcript, karaoke, progress, and segment boundaries smoothly.
+  `seekTo` updates the clock immediately because the controller seeks and then
+  immediately compares the position against the segment bounds.
 - **Commands sent before `onPlayerReady` are dropped**, so the adapter queues and
   flushes them.
 

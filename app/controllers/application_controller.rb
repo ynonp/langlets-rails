@@ -2,13 +2,13 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   # allow_browser versions: :modern
 
-  # ?lang=all means "show content in every language": it clears the stored
-  # language rather than selecting one. Web only — the native app always has a
-  # language, picked during onboarding.
+  # ?lang=all means "show content in every language": it selects nothing rather
+  # than one language, so default_url_options stops propagating the param. Web
+  # only — the native app always has a language, picked during onboarding.
   ALL_LANGUAGES = "all".freeze
 
   before_action :set_translation_language
-  before_action :store_language_in_session
+  before_action :persist_native_language
   before_action :require_authentication_for_native_app
   before_action :require_language_for_native_app
 
@@ -48,22 +48,21 @@ class ApplicationController < ActionController::Base
     request.user_agent&.match?(/Mobi|Android|iPhone|iPad|iPod|Windows Phone|webOS|BlackBerry|Opera Mini/i)
   end
 
-  def store_language_in_session
-    return if params[:lang].blank?
+  # Native picks its language during onboarding and must keep it across app
+  # launches, so the selection lands in the user's stored preferences. Web keeps
+  # it in the URL instead, where it stays visible and can be removed.
+  def persist_native_language
+    return if params[:lang].blank? || params[:lang] == ALL_LANGUAGES
 
-    if params[:lang] == ALL_LANGUAGES
-      session.delete(:lang)
-    else
-      session[:lang] = params[:lang]
-      persist_ios_language(params[:lang])
-    end
+    persist_ios_language(params[:lang])
   end
 
   # The language the user is learning, or nil when they asked to see content in
-  # every language.
+  # every language. Web reads the URL alone — default_url_options carries the
+  # param across links, so dropping it from the address bar clears the filter.
   helper_method :current_language_code
   def current_language_code
-    code = params[:lang].presence || session[:lang] || restored_ios_language
+    code = params[:lang].presence || native_language_code
     code unless code == ALL_LANGUAGES
   end
 
@@ -127,15 +126,9 @@ class ApplicationController < ActionController::Base
     # Native: every app screen requires a session, so any returnto would
     # bounce to sign-in anyway — and that redirect would drop the signed_out
     # marker before a page renders. Go to sign-in directly. lang is dropped
-    # explicitly: it belonged to the account that just signed out, and
-    # carrying it forward lets the next account skip onboarding.
-    if native_app?
-      # `lang` is cached independently from Devise's authentication keys.
-      # Do not let an account switch inherit it even if the browser session
-      # itself survives the sign-out/account-deletion redirect.
-      session.delete(:lang)
-      return new_user_session_path(signed_out: 1, lang: nil)
-    end
+    # explicitly so the next account can't inherit it and skip onboarding; it
+    # now lives on the user record, so signing out drops it on its own.
+    return new_user_session_path(signed_out: 1, lang: nil) if native_app?
 
     path = params[:returnto].presence || root_path
     separator = path.include?("?") ? "&" : "?"
@@ -160,20 +153,17 @@ class ApplicationController < ActionController::Base
     current_user.update!(ios_lang: code)
   end
 
-  def restored_ios_language
+  def native_language_code
     return unless native_app? && user_signed_in?
 
     code = current_user.ios_lang
-    return unless code.present? && Language.exists?(iso_name: code)
-
-    session[:lang] = code
+    code if code.present? && Language.exists?(iso_name: code)
   end
 
   def native_sign_in_path(path, user)
     code = user.ios_lang
     return path unless code.present? && Language.exists?(iso_name: code)
 
-    session[:lang] = code
     uri = URI.parse(path)
     query = Rack::Utils.parse_nested_query(uri.query)
     query["lang"] = code
