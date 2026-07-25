@@ -173,7 +173,7 @@ module App
       assert_no_match(/Approve/, response.body)
     end
 
-    test "a video already importing offers the queue instead of a second charge" do
+    test "a video already importing offers the Create screen instead of a second charge" do
       stub_video do
         Imports::Create.call(user: @user, url: CANONICAL,
                              clip_language: "Spanish", translation_language: "English")
@@ -183,7 +183,7 @@ module App
 
       assert_response :success
       assert_match "Already importing.", response.body
-      assert_match "View in queue", response.body
+      assert_match "View in Create", response.body
       assert_no_match(/Approve/, response.body)
     end
 

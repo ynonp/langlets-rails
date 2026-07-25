@@ -12,7 +12,7 @@ module App
       "Home" => "/app",
       "Started videos" => "/app/started_courses",
       "Library" => "/app/library",
-      "Queue" => "/app/import_requests",
+      "Create" => "/app/import_requests",
       "Add a video" => "/app/import_requests/new",
       "Credits" => "/app/credits"
     }.freeze
@@ -99,6 +99,40 @@ module App
       assert_select "body[data-native-tabs]"
       assert_select "[data-controller='swipe-to-delete']"
       assert_select "[data-testid='web-queue']", count: 0
+    end
+
+    # The native screen is "Create": the user's own langlets, then one Add New
+    # button in the flow. The web queue keeps its own wording.
+    test "Create lists the user's langlets above an Add New button" do
+      @user.import_requests.create!(
+        youtube_url: "https://www.youtube.com/watch?v=createdaaaa", youtube_video_id: "createdaaaa",
+        clip_language: "Spanish", translation_language: "English", title: "Created langlet",
+        status: :ready
+      )
+
+      get app_import_requests_path, headers: NATIVE
+
+      assert_response :success
+      assert_select "h1", text: "Create"
+      assert_select "h2", text: "My Created Langlets"
+      assert_match "Created langlet", response.body
+      assert_select "a[href=?]", new_app_import_request_path, text: /Add New/
+      assert_select ".app-fab-offset", count: 0
+    end
+
+    test "Create with nothing created says so and still offers Add New" do
+      get app_import_requests_path, headers: NATIVE
+
+      assert_response :success
+      assert_select "#queue-empty", text: /You haven't created any langlets yet/
+      assert_select "a[href=?]", new_app_import_request_path, text: /Add New/
+    end
+
+    test "Library no longer floats an add button" do
+      get "/app/library", headers: NATIVE
+
+      assert_response :success
+      assert_select ".app-fab-offset", count: 0
     end
 
     test "other app screens remain native-only" do
@@ -262,20 +296,18 @@ module App
       assert_select "a[href=?]", course_path(older_course), text: /Older Course/
     end
 
-    # With nothing to continue, Home leads with the paste CTA and the library
-    # grid (courses in the user's language they aren't enrolled in) — there is no
-    # separate first-run picker anymore.
-    test "Home with an empty account shows the paste CTA and library courses" do
+    # With nothing to continue, Home leads with the library grid (courses in the
+    # user's language they aren't enrolled in) — there is no separate first-run
+    # picker, and no paste box either: importing lives in the Create tab.
+    test "Home with an empty account shows library courses and no paste box" do
       Enrollment.delete_all
 
       get "/app", headers: NATIVE
 
       assert_response :success
       assert_no_match "Turn any YouTube video into a Spanish lesson.", response.body
-      assert_select "form[action^='/app/import_requests/new'][method='get']" do
-        assert_select "input[name='url']"
-        assert_select "button[type='submit']", text: "Add"
-      end
+      assert_select "form[action^='/app/import_requests/new']", count: 0
+      assert_select "input[name='url']", count: 0
       assert_match "Despacito", response.body
       assert_match "Library", response.body
       assert_no_match(/<h2[^>]*>Continue<\/h2>/, response.body)

@@ -50,7 +50,8 @@
     <div class="app-inset-hairline bg-app-inset rounded-app-field py-3 px-3.5">
       <p class="text-app-text-2 text-[13px] leading-relaxed"><%= t("app.import_requests.new.already_importing") %></p>
     </div>
-    <%= link_to t("app.import_requests.new.view_in_queue"), app_import_requests_path,
+    <%# Native calls this screen "Create"; the web preview keeps "View in queue". %>
+    <%= link_to t("app.import_requests.new.view_in_create"), app_import_requests_path,
                 data: { turbo_frame: "_top" },
                 class: "block text-center bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
 

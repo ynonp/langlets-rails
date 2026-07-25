@@ -24,11 +24,11 @@ final class AppTabBarController: UITabBarController {
     static let tabs: [Tab] = [
         Tab(title: "Home", path: "/app", image: "house", selectedImage: "house.fill"),
         Tab(title: "Library", path: "/app/library", image: "square.grid.2x2", selectedImage: "square.grid.2x2.fill"),
-        Tab(title: "Queue", path: "/app/import_requests", image: "clock", selectedImage: "clock.fill")
+        Tab(title: "Create", path: "/app/import_requests", image: "plus.circle", selectedImage: "plus.circle.fill")
     ]
 
     static let homeTabIndex = 0
-    static let queueTabIndex = 2
+    static let createTabIndex = 2
 
     private var navigators: [Navigator] = []
     private var needsRoute: [Bool]
@@ -129,8 +129,9 @@ final class AppTabBarController: UITabBarController {
         navigators[index].route(proposal)
     }
 
-    func setQueueBadge(_ count: Int) {
-        viewControllers?[Self.queueTabIndex].tabBarItem.badgeValue = count > 0 ? String(count) : nil
+    /// Badges the Create tab with the number of imports still in flight.
+    func setCreateBadge(_ count: Int) {
+        viewControllers?[Self.createTabIndex].tabBarItem.badgeValue = count > 0 ? String(count) : nil
     }
 
     func setTabsVisible(_ visible: Bool) {

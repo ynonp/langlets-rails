@@ -1,12 +1,12 @@
 <% content_for :title, t(".page_title") %>
 
-<%# A plain pushed screen inside the Queue tab: native back arrow at the top,
+<%# A plain pushed screen inside the Create tab: native back arrow at the top,
     native tab bar at the bottom, page content in between. It used to be a
     medium-detent sheet, which lost on both ends — the iOS 26 floating tab bar
     drew over its controls, and the sheet overflowed its own detent as soon as a
     preview card appeared. Nothing here wants to be a sheet; it's a form.
 
-    Laid out like Queue and Library (app-scroll-pad, px-5, pt-6) so it sits in
+    Laid out like Create and Library (app-scroll-pad, px-5, pt-6) so it sits in
     the same grid as the screen it's pushed from. app-scroll-pad is what keeps
     the last control clear of the tab bar. %>
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4"

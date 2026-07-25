@@ -1,11 +1,15 @@
-<% content_for :title, "Queue · langlets." %>
+<% content_for :title, "Create · langlets." %>
 <% active_count = @import_requests.count(&:active?) %>
 
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4">
   <div>
-    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".title") %></h1>
+    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".native_title") %></h1>
     <%= render "status_text", active_count: active_count %>
   </div>
+
+  <h2 class="text-app-text-2 text-[14px] font-semibold uppercase tracking-[0.08em]">
+    <%= t(".created_heading") %>
+  </h2>
 
   <%# Polls rather than streams. There is no Action Cable in this app at all (no
       app/channels, not even ApplicationCable::Connection), a WKWebView socket
@@ -13,12 +17,20 @@
       step boundaries tens of seconds apart — so a socket buys nothing a 3s poll
       doesn't. The signal that matters when an import finishes is the push.
       Each poll fetches this same URL as a Turbo Stream and patches just the
-      status text, the queue and the footer note in place — no full-page
+      status text, the list and the footer note in place — no full-page
       reload, no lost scroll position. The controller stops polling once
       nothing is active. %>
   <%= render "queue", import_requests: @import_requests, active_count: active_count %>
 
+  <%# The Add New button replaces the floating "+": it sits below the list, in
+      the flow, so it reads as the next step after the empty state's "you
+      haven't created any langlets yet" as well as after a full list. Outside
+      the polled #queue container so a refresh never redraws it. %>
+  <%= link_to new_app_import_request_path,
+              class: "w-full h-[54px] rounded-app-field bg-app-accent text-app-on-accent text-[16px] font-bold flex items-center justify-center gap-2" do %>
+    <%= app_icon "plus", class: "w-[18px] h-[18px]" %>
+    <%= t(".add_new") %>
+  <% end %>
+
   <%= render "footer_note", active_count: active_count %>
 </div>
-
-<%= render "app/shared/fab" %>

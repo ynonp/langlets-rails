@@ -111,12 +111,6 @@ he:
         your_playlists: "הפלייליסטים שלכם"
         continue: "המשך"
         library: "ספרייה"
-      paste_cta:
-        cta_headline: "הפכו כל סרטון יוטיוב לשיעור %{language}."
-        cta_subhead: "הדביקו קישור — קבלו תמלול מתורגם ותרגלו כל מילה."
-        cta_fallback_language: "שפה"
-        paste_placeholder: "הדביקו קישור יוטיוב או טיקטוק"
-        go: "הוספה"
     library:
       show:
         title: "ספרייה"
@@ -125,6 +119,10 @@ he:
       index:
         title: "תור"
         empty: "עדיין אין כאן כלום."
+        native_title: "יצירה"
+        created_heading: "הלנגלטס שיצרתי"
+        native_empty: "עדיין לא יצרתם אף לנגלט"
+        add_new: "הוספה"
       new:
         page_title: "הוספת סרטון"
         title: "הוספת סרטון"
@@ -144,6 +142,7 @@ he:
         open_lesson: "פתיחת השיעור"
         already_importing: "כבר בייבוא."
         view_in_queue: "הצגה בתור"
+        view_in_create: "הצגה במסך היצירה"
   onboarding:
     welcome:
       eyebrow: "ברוכים הבאים ל-Langlets"

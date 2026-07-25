@@ -3,8 +3,9 @@
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-6">
   <%= render "app/shared/header" %>
 
-  <%# 1. A compact paste box. Product explanation belongs in onboarding. %>
-  <%= render "app/home/paste_cta" %>
+  <%# No paste box here. Pasting a YouTube or TikTok link belongs to the Create
+      tab, which owns the whole import flow end to end; Home is for what the
+      user already has. %>
 
   <%# "Just imported" hero. Where the course-ready push deep link lands
       (/app?just_imported=<slug>), so it stays near the top when present. %>

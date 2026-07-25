@@ -111,20 +111,20 @@ en:
         your_playlists: "Your playlists"
         continue: "Continue"
         library: "Library"
-      paste_cta:
-        cta_headline: "Turn any YouTube video into a %{language} lesson."
-        cta_subhead: "Paste a link — get a translated transcript and practice every word."
-        cta_fallback_language: "language"
-        paste_placeholder: "Paste a YouTube or TikTok link"
-        go: "Add"
     library:
       show:
         title: "Library"
         description: "Every video the community has turned into lessons."
     import_requests:
       index:
+        # `title` and `empty` are the browser wording; the `native_*` keys are
+        # the Hotwire Native "Create" tab, which the web queue does not share.
         title: "Queue"
         empty: "Nothing here yet."
+        native_title: "Create"
+        created_heading: "My Created Langlets"
+        native_empty: "You haven't created any langlets yet"
+        add_new: "Add New"
       new:
         # Doubles as the native navigation-bar title now that this screen is
         # pushed rather than presented, so no " · langlets." suffix — the nav bar
@@ -147,6 +147,7 @@ en:
         open_lesson: "Open lesson"
         already_importing: "Already importing."
         view_in_queue: "View in queue"
+        view_in_create: "View in Create"
   onboarding:
     welcome:
       eyebrow: "Welcome to Langlets"

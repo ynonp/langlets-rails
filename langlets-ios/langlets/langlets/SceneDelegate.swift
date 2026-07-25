@@ -250,7 +250,7 @@ extension SceneDelegate: NavigatorDelegate {
         // This bridge exists only in the authenticated app layout, so receipt
         // is the native shell's confirmation that tabs are safe to reveal.
         tabBarController.setTabsVisible(true)
-        tabBarController.setQueueBadge(count)
+        tabBarController.setCreateBadge(count)
     }
 
     @objc private func userDidSignOut() {
