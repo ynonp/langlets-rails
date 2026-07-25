@@ -97,7 +97,7 @@ class ApplicationController < ActionController::Base
 
   # Redirect to returnto param after successful sign in
   def after_sign_in_path_for(resource)
-    path = pending_video_path || if params[:returnto].present?
+    path = pending_import_path || if params[:returnto].present?
       params[:returnto]
     elsif request.env['omniauth.origin']
       request.env['omniauth.origin']
@@ -110,7 +110,7 @@ class ApplicationController < ActionController::Base
 
   # Redirect to returnto param after successful sign up
   def after_sign_up_path_for(resource)
-    pending_video_path || if params[:returnto].present?
+    pending_import_path || if params[:returnto].present?
       params[:returnto]
     else
       root_path
@@ -137,12 +137,20 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def pending_video_path
+  # A guest who started from "Create Your Own" lands on Add Video after their
+  # first successful authentication — once. Both markers are consumed here, so
+  # every later sign-in follows the normal rules.
+  def pending_import_path
     video_url = cookies.encrypted[GuestImportRequestsController::PENDING_VIDEO_COOKIE]
-    return if video_url.blank?
+    if video_url.present?
+      cookies.delete(GuestImportRequestsController::PENDING_VIDEO_COOKIE)
+      return new_app_import_request_path(url: video_url)
+    end
 
-    cookies.delete(GuestImportRequestsController::PENDING_VIDEO_COOKIE)
-    new_app_import_request_path(url: video_url)
+    return if cookies.encrypted[GuestImportRequestsController::PENDING_IMPORT_COOKIE].blank?
+
+    cookies.delete(GuestImportRequestsController::PENDING_IMPORT_COOKIE)
+    new_app_import_request_path
   end
 
   def persist_ios_language(code)

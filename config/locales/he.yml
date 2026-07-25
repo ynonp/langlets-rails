@@ -222,7 +222,7 @@ he:
         url_placeholder: "הדביקו קישור לסרטון יוטיוב או טיקטוק"
         url_label: "קישור לסרטון"
         submit: "יצירה"
-        signup_note_html: "<strong>עוד רגע —</strong> הירשמו כדי לקבל %{credits} קרדיטים חינם ונתחיל לבנות את השיעור."
+        start_free: "להתחיל בחינם"
         ready_in: "⏱ מוכן בכ־3 דקות"
         free_lessons: "%{credits} השיעורים הראשונים חינם. ללא כרטיס אשראי"
         steps:

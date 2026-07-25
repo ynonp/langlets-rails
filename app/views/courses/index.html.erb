@@ -117,9 +117,6 @@
   .lp-create { background:var(--accent); color:var(--card); border:none; border-radius:10px; padding:11px 28px;
     font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:16px; cursor:pointer; }
   .lp-create:hover { background:var(--accent-d); }
-  .lp-note { margin-top:12px; background:#F2EADB; border-radius:12px; padding:11px 16px; font-size:14.5px;
-    color:var(--muted); max-width:524px; box-sizing:border-box; }
-  .lp-note strong { color:var(--ink); }
   .lp-meta { display:flex; gap:20px; margin-top:16px; font-size:13.5px; color:var(--faint); flex-wrap:wrap; }
 
   /* Product preview */
@@ -160,7 +157,9 @@
   .lp-own-intro { display:flex; flex-direction:column; gap:16px; position:sticky; top:40px; }
   .lp-own-intro .lp-price-h, .lp-own-intro .lp-price-lead { margin:0; }
   .lp-own .lp-paste { max-width:none; padding-inline-start:12px; margin-top:4px; }
-  .lp-own .lp-note { max-width:none; margin:0; }
+  /* Guests get a single call to action instead of the paste box, so it carries
+     the weight the whole box used to. */
+  .lp-start-free { margin-top:4px; padding:15px 34px; border-radius:12px; font-size:17px; }
   .lp-own .lp-meta { margin:0; }
   .lp-step { display:grid; grid-template-columns:44px 1fr; column-gap:22px; padding-bottom:32px; position:relative; }
   .lp-step:last-child { padding-bottom:0; }
@@ -326,20 +325,23 @@
         <h2 class="lp-price-h"><%= t(".create_your_own.heading") %></h2>
         <p class="lp-price-lead"><%= t(".create_your_own.lead") %></p>
 
-        <%= form_with url: user_signed_in? ? new_app_import_request_path : guest_import_requests_path,
-                      method: user_signed_in? ? :get : :post, data: { turbo: false } do %>
-          <input type="hidden" name="lang" value="<%= current_language_code %>">
-          <div class="lp-paste">
-            <input type="text" name="url" inputmode="url" autocomplete="off" autocapitalize="off"
-                   autocorrect="off" spellcheck="false" enterkeyhint="go"
-                   placeholder="<%= t(".create_your_own.url_placeholder") %>"
-                   aria-label="<%= t(".create_your_own.url_label") %>">
-            <button type="submit" class="lp-create"><%= t(".create_your_own.submit") %></button>
-          </div>
-        <% end %>
-
-        <% unless user_signed_in? %>
-          <div class="lp-note"><%= t(".create_your_own.signup_note_html", credits: free_credits) %></div>
+        <% if user_signed_in? %>
+          <%= form_with url: new_app_import_request_path, method: :get, data: { turbo: false } do %>
+            <input type="hidden" name="lang" value="<%= current_language_code %>">
+            <div class="lp-paste">
+              <input type="text" name="url" inputmode="url" autocomplete="off" autocapitalize="off"
+                     autocorrect="off" spellcheck="false" enterkeyhint="go"
+                     placeholder="<%= t(".create_your_own.url_placeholder") %>"
+                     aria-label="<%= t(".create_your_own.url_label") %>">
+              <button type="submit" class="lp-create"><%= t(".create_your_own.submit") %></button>
+            </div>
+          <% end %>
+        <% else %>
+          <%# Guests are not asked for a link yet: the button only starts signup,
+              and the first authentication lands them on Add Video. %>
+          <%= form_with url: guest_import_requests_path, method: :post, data: { turbo: false } do %>
+            <button type="submit" class="lp-create lp-start-free"><%= t(".create_your_own.start_free") %></button>
+          <% end %>
         <% end %>
 
         <div class="lp-meta">

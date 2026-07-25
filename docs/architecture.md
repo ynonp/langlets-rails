@@ -139,20 +139,34 @@ Sections, all wired to real data:
   carries `data-lang`; no server round-trip). Chips only appear when more than
   one language is present.
 - **"Create Your Own"** — follows the library. Two columns: the heading, lead,
-  paste box, guest sign-up note and reassurance line on the left (sticky while
-  the section scrolls), and a four-step numbered explainer on the right
+  the call to action and the reassurance line on the left (sticky while the
+  section scrolls), and a four-step numbered explainer on the right
   ("One click, fully automatic" → "Build your personal vocabulary"), whose
   markers are joined by a connector. Both columns stack below 860px. The four
   steps are rendered by iterating their key names under
-  `courses.index.create_your_own.steps`. For signed-in users, its
-  paste-a-YouTube-link box GETs directly to `new_app_import_request_path`
+  `courses.index.create_your_own.steps`.
+
+  The call to action differs by session. Signed-in users get the
+  paste-a-YouTube-link box, which GETs directly to `new_app_import_request_path`
   (`turbo: false`) with the current learning language in a hidden `lang` field.
-  For guests it POSTs to `GuestImportRequestsController`, which validates and
-  canonicalizes the link, stores it for 30 minutes in the encrypted, HTTP-only
-  `pending_video_url` cookie, and redirects to registration. The first
-  successful signup or sign-in consumes the cookie and redirects to Add Video
-  with the URL prefilled; the existing Add Video resolver then asks for the
-  clip language before its normal one-credit import POST redirects to Queue.
+  Guests are not asked for a link at all — they get a single **Start For Free**
+  button, because a pasted link is worthless until there is an account to spend
+  a credit from. It POSTs (no `url`) to `GuestImportRequestsController`, which
+  stores a marker for one day in the encrypted, HTTP-only
+  `pending_import_request` cookie and redirects to registration. The day-long
+  TTL covers the confirmation email round-trip, since `User` is `:confirmable`
+  and the first real sign-in happens after the user clicks that link.
+
+  `ApplicationController#pending_import_path` resolves both guest markers and is
+  consulted first by `after_sign_in_path_for` / `after_sign_up_path_for` (the
+  latter is also overridden in `Users::RegistrationsController`). It consumes
+  the cookie and sends that one authentication to Add Video; every later sign-in
+  falls back to `returnto` / `omniauth.origin` / the homepage as usual. The
+  older `pending_video_url` cookie still works the same way and additionally
+  prefills the URL — `GuestImportRequestsController#create` keeps honouring a
+  posted, canonicalized link even though the homepage no longer sends one. From
+  Add Video the existing resolver asks for the clip language before its normal
+  one-credit import POST redirects to Queue.
 - **Pricing** — the credit model and `User::SIGNUP_CREDITS` free-credit count.
   The card's price, credit count and per-credit cents are read from
   `Paypal::CreditPacks.fetch("standard")` (the view falls back to fetching it

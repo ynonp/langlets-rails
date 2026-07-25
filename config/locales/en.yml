@@ -238,7 +238,7 @@ en:
         url_placeholder: "Paste a YouTube or TikTok link"
         url_label: "Video link"
         submit: "Create"
-        signup_note_html: "<strong>Almost there —</strong> sign up to claim your %{credits} free credits and we'll start building this lesson."
+        start_free: "Start For Free"
         ready_in: "⏱ Ready in ~3 minutes"
         free_lessons: "First %{credits} lessons free. No card required"
         steps:

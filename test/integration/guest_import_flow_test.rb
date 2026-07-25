@@ -7,10 +7,39 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
   SHARED_URL = "https://youtu.be/#{VIDEO_ID}?si=homepage".freeze
   CANONICAL_URL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 
-  test "the guest homepage form starts the signup handoff" do
+  test "the guest homepage offers Start For Free instead of a link box" do
     get root_path
 
     assert_select "form[action=?][method=post]", guest_import_requests_path
+    assert_select "#create button.lp-start-free", text: "Start For Free"
+    assert_select "#create input[name=url]", count: 0
+  end
+
+  test "Start For Free sends a guest to signup and lands them on Add Video once" do
+    post guest_import_requests_path
+
+    assert_redirected_to new_user_registration_path
+    assert_includes response.headers["Set-Cookie"], GuestImportRequestsController::PENDING_IMPORT_COOKIE.to_s
+
+    user = User.create!(
+      email: "start-for-free@example.com",
+      password: "password123",
+      confirmed_at: Time.zone.now
+    )
+
+    post user_session_path, params: {
+      user: { email: user.email, password: "password123" }
+    }
+    assert_redirected_to new_app_import_request_path
+    follow_redirect!
+    assert_response :success
+    assert_select "[data-controller=add-video]"
+
+    delete destroy_user_session_path
+    post user_session_path, params: {
+      user: { email: user.email, password: "password123" }
+    }
+    assert_redirected_to root_path
   end
 
   test "a guest video survives authentication and opens Add Video prefilled" do
