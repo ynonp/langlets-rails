@@ -118,6 +118,9 @@ application.register("profile-menu", ProfileMenuController)
 import ProgressTrackerController from "./progress_tracker_controller"
 application.register("progress-tracker", ProgressTrackerController)
 
+import ReadTranslatedActivityController from "./read_translated_activity_controller"
+application.register("read-translated-activity", ReadTranslatedActivityController)
+
 import ScrollIntoViewController from "./scroll_into_view_controller"
 application.register("scroll-into-view", ScrollIntoViewController)
 

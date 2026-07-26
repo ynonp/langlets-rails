@@ -82,7 +82,23 @@ export default class extends Controller {
     if (this.videoSegmentTarget.dataset.showPlayer) {
       this.playerContainerTarget.classList.remove('hidden');
       this.playerContainerTarget.classList.add('order-2');
-      if (this.player) {
+
+      // preloadPlayerValue/interactiveValue are baked into this element once,
+      // from whichever activity the page happened to load on. A Turbo-Frame
+      // navigation into a later activity that wants the player (e.g. from a
+      // non-video activity that preceded it) never re-runs connect(), so
+      // without this the iframe would stay uncreated until a full reload.
+      const justCreated = !this.playerInitialized;
+      if (justCreated) {
+        this.interactiveValue = true;
+        this.initializePlayer();
+      }
+
+      // Only reposition a player that was already running. Seeking a player
+      // that has never played knocks YouTube back to UNSTARTED and clears its
+      // poster and play button, leaving a dead black rectangle — a freshly
+      // created player is already cued at the segment start anyway.
+      if (this.player && !justCreated) {
         if (this.segmentStart != null) {
           this.player.seekTo(this.segmentStart);
         }

@@ -38,11 +38,9 @@ module Activities
       first_timestamp = phrases.reorder(timestamp: :asc).pick(:timestamp)
       last_timestamp = phrases.reorder(timestamp: :desc).pick(:timestamp)
       media_url = lesson.attributes["media_url"] || lesson.medium.url
-      media_language = lesson.attributes["media_language"] || lesson.medium.language.iso_name
 
       {
         video_id: Medium.new(url: media_url).extract_youtube_video_id,
-        video_hl: media_language || "en",
         start_timestamp: first_timestamp,
         end_timestamp: lesson.end_timestamp || to_string_timestamp(Phrase.timestamp_to_seconds(last_timestamp) + 5)
       }

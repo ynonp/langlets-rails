@@ -4,6 +4,7 @@ module Activities
 
     def activity_params
       lesson = self.lesson
+      l1 = ordered_phrases.first.l1
       l2 = ordered_phrases.first.l2
 
       {
@@ -13,9 +14,10 @@ module Activities
         interactive_video_player: true,
         preload_player: true,
         word_timing: word_timing_enabled?(ordered_phrases),
+        l1: l1,
+        l2: l2,
         l1_rtl: lesson.rtl_language,
-        l2_rtl: l2.rtl,
-        l1_name: lesson.media_language,
+        l2_rtl: l2.rtl
       }
     end
 

@@ -18,6 +18,11 @@ class LessonsController < ApplicationController
     @current_url = course_lesson_path(@course, @lesson, a: @activity.order)
     @videoid = VideoSource.video_id(video_url)
     @video_provider = VideoSource.provider(video_url) || VideoSource::DEFAULT_PROVIDER
+    # The player iframe is built once per page load and outlives every in-lesson
+    # frame navigation, so its interface language belongs to the lesson, not to
+    # whichever activity happened to render first. Sourcing it from the activity
+    # left it blank whenever the lesson opened on one without video params.
+    @video_hl = @lesson.media_language || "en"
 
     current_order = params[:a].to_i
 

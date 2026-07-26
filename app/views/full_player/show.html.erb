@@ -69,11 +69,15 @@
           Karaoke
         </label>
       <% end %>
-      <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
-        <input type="checkbox" <%= "checked" if wv_prefs["translation"] %>
-               data-watch-video-activity-target="showTranslation"
-               data-action="change->watch-video-activity#toggleTranslation">
-        Show translation
+      <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer select-none">
+        <span class="<%= 'text-emerald-600 dark:text-emerald-400' unless wv_prefs["translation"] %>"><%= localized_language_name(l1) %></span>
+        <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full bg-gray-300 dark:bg-gray-600 transition-colors has-[:checked]:bg-emerald-500">
+          <input type="checkbox" class="peer sr-only" <%= "checked" if wv_prefs["translation"] %>
+                 data-watch-video-activity-target="showTranslation"
+                 data-action="change->watch-video-activity#toggleTranslation">
+          <span class="inline-block h-4 w-4 translate-x-0.5 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
+        </span>
+        <span class="<%= 'text-emerald-600 dark:text-emerald-400' if wv_prefs["translation"] %>"><%= localized_language_name(l2) %></span>
       </label>
     </div>
   </div>
@@ -95,11 +99,13 @@
           data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
           class="phrase block cursor-pointer rounded-2xl px-3.5 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 data-active:bg-emerald-100! dark:data-active:bg-emerald-900/40!"
         >
-          <div class="text-xl font-extrabold leading-relaxed" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
+          <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' if wv_prefs["translation"] %>"
+               data-watch-video-activity-target="l1Text"
+               dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
             <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 data-active:bg-emerald-500! data-active:text-white data-active:rounded-md" }) %>
           </div>
-          <div class="mt-1 text-base italic text-gray-500 dark:text-gray-400 <%= 'hidden' unless wv_prefs["translation"] %>"
-               data-watch-video-activity-target="translation"
+          <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' unless wv_prefs["translation"] %>"
+               data-watch-video-activity-target="l2Text"
                dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
             <%= phrase.text_l2 %>
           </div>

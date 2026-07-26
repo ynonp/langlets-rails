@@ -159,6 +159,28 @@ under the `#main-player` container), but:
 The player container is shown for this activity because the lesson layout
 renders `#main-player` visibly when `activity_params[:video_player]` is set.
 
+### Arriving here by Turbo-Frame navigation
+
+The lesson layout bakes `preload_player` / `interactive_video_player` into
+`#main-player` once, from whichever activity the page first loaded on. Anything
+that describes the *medium* rather than the activity therefore belongs on the
+controller, not in `activity_params` — `@videoid`, `@video_provider`, and
+`@video_hl` are all set in `LessonsController#show`. (`video_hl` used to come
+from `activity_params`, which left the player's interface language blank on any
+lesson that opened on an activity without video params.) When the
+watch-video activity is not the lesson's first activity — it now follows
+`ReadTranslatedActivity` — the page loads with no player at all, and
+`connect()` never runs again for the frame navigation into it. `handleFrameRender`
+therefore unhides the container and creates the iframe on the spot.
+
+**Do not seek or pause a player you just created there.** Calling `seekTo` on a
+YouTube player that has never played drops it back to `UNSTARTED`, clearing its
+poster image and play button and leaving a dead black rectangle the learner
+cannot start. `handleFrameRender` only repositions a player that already
+existed; a freshly created one is left cued, and the `video:play` →
+`seekToSegmentStartIfBefore` listener moves it to the segment start when the
+learner presses play.
+
 ---
 
 ## 3. Hidden video player — audio for activities

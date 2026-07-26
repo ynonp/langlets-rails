@@ -5,7 +5,7 @@ class Activities::WatchVideoActivityTest < ActiveSupport::TestCase
     activity = Activities::WatchVideoActivity.new
     lesson = Struct.new(:rtl_language, :media_language).new(false, "English")
     language = Struct.new(:rtl).new(false)
-    phrase = Struct.new(:l2, :phrase_tokens).new(language, [])
+    phrase = Struct.new(:l1, :l2, :phrase_tokens).new(language, language, [])
     activity.define_singleton_method(:lesson) { lesson }
     activity.define_singleton_method(:ordered_phrases) { [phrase] }
     activity.define_singleton_method(:video_params) { {} }

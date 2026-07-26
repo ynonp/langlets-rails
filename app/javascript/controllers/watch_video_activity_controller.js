@@ -7,7 +7,7 @@ import { Controller } from "@hotwired/stimulus"
 const KARAOKE_HOLD_LIMIT = 1.5;
 
 export default class extends Controller {
-  static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'showKaraoke', 'startPracticeButton'];
+  static targets = ['subtitles', 'container', 'phrasesList', 'l1Text', 'l2Text', 'showTranslation', 'showKaraoke', 'startPracticeButton'];
   static values = { wordTiming: Boolean, prefsUrl: String };
 
   // PATCH the current toggle states to the server so they persist across visits.
@@ -116,15 +116,13 @@ export default class extends Controller {
     }
   }
 
+  // The toggle is a 2-state L1/L2 switch: unchecked shows L1 (clickable
+  // words), checked shows L2 (plain text, not clickable). Only one language's
+  // lyrics are ever visible at a time.
   toggleTranslation() {
-    const showTranslations = this.showTranslationTarget.checked;
-    this.translationTargets.forEach(translation => {
-      if (showTranslations) {
-        translation.classList.remove('hidden');
-      } else {
-        translation.classList.add('hidden');
-      }
-    });
+    const showL2 = this.showTranslationTarget.checked;
+    this.l1TextTargets.forEach(el => el.classList.toggle('hidden', showL2));
+    this.l2TextTargets.forEach(el => el.classList.toggle('hidden', !showL2));
     this.persistPrefs();
   }
 

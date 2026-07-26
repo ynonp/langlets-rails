@@ -61,6 +61,11 @@ en:
       karaoke: "Karaoke"
       translation: "Translation"
       start_practice: "Start practice"
+    read_translated_activity:
+      before_you_watch: "Before you watch"
+      instruction: "Read the translation first. Knowing roughly what's coming makes the video far easier to follow."
+      next: "Next"
+      next_hint: "Next: watch the video, tap any word you don't know."
     language_alignment_activity:
       instruction: "Click on the words in the original text that match the highlighted words"
       good_work: "Good Work!"

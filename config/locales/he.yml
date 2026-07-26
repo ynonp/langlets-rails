@@ -61,6 +61,11 @@ he:
       karaoke: "קריוקי"
       translation: "תרגום"
       start_practice: "מתחילים לתרגל"
+    read_translated_activity:
+      before_you_watch: "לפני הצפייה"
+      instruction: "קראו את התרגום קודם. הבנה כללית של התוכן תקל עליכם לעקוב אחרי הסרטון."
+      next: "הבא"
+      next_hint: "בהמשך: צפייה בסרטון, הקישו על כל מילה שלא מוכרת לכם."
     language_alignment_activity:
       instruction: "הקישו על המילים בטקסט המקורי שמתאימות למילים המודגשות"
       good_work: "עבודה מצוינת!"

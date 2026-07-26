@@ -119,8 +119,10 @@ class User < ApplicationRecord
   end
 
   # Watch-video activity toggles, stored under preferences["watch_video"].
+  # "translation" is a 2-state L1/L2 language toggle for the lyrics: false (the
+  # default) shows L1, true shows L2.
   WATCH_VIDEO_PREF_KEYS = %w[translation karaoke].freeze
-  WATCH_VIDEO_DEFAULTS = { "translation" => true, "karaoke" => true }.freeze
+  WATCH_VIDEO_DEFAULTS = { "translation" => false, "karaoke" => true }.freeze
 
   # The user's watch-video toggle choices, merged over the defaults so missing
   # keys fall back to "on".

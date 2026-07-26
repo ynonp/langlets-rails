@@ -60,7 +60,7 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
     lesson2 = @course.lessons.find_by(order: 2)
     assert lesson2, "Lesson 2 should exist"
 
-    activity5 = lesson2.activities.find_by(order: 5)
+    activity5 = lesson2.activities.find_by(order: 6)
     assert activity5, "Activity 5 should exist in lesson 2"
     assert_instance_of Activities::ListenActivity, activity5
 
