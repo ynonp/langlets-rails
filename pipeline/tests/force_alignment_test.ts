@@ -41,15 +41,17 @@ Deno.test("an incomplete ElevenLabs alignment fails and remains resumable", asyn
   assertEquals(store.data.errors?.[0].step, "force_alignment");
 });
 
-Deno.test("yt-dlp failure falls back to Gemini structured line timestamps", async () => {
+Deno.test("yt-dlp failure falls back to Gemini structured word timestamps", async () => {
   const fallbackModel = queuedModel([{
-    lines: [
-      { line: "Bonjour monde", start_seconds: 2.5, end_seconds: 4.25 },
-      { line: "Salut encore", start_seconds: 5, end_seconds: 7 },
+    words: [
+      { word: "Bonjour", start_seconds: 2.5, end_seconds: 3.25 },
+      { word: "monde", start_seconds: 3.4, end_seconds: 4.25 },
+      { word: "salut", start_seconds: 5, end_seconds: 6 },
+      { word: "encore", start_seconds: 6.2, end_seconds: 7 },
     ],
   }]);
   const { ctx, store } = makeCtx({
-    data: { lyric_lines: ["Bonjour monde", "Salut encore"] },
+    data: { lyric_lines: ["Bonjour monde, Salut encore"] },
     models: { forceAlignmentFallback: fallbackModel.model },
     prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
   });
@@ -57,17 +59,83 @@ Deno.test("yt-dlp failure falls back to Gemini structured line timestamps", asyn
   await forceAlignment(ctx);
 
   assertEquals(fallbackModel.calls(), 1);
-  assertEquals(store.data.phrases?.map((phrase) => phrase.timestamp), ["00:02.50", "00:05.00"]);
-  assertEquals(store.data.phrases?.map((phrase) => phrase.timestamp_end), [
-    "00:04.25",
-    "00:07.00",
-  ]);
-  assertEquals(store.data.phrases?.[0].words, [
-    { text: "Bonjour", l1_start_index: 0, l1_end_index: 6 },
-    { text: "monde", l1_start_index: 8, l1_end_index: 12 },
-  ]);
+  // One provisional phrase, exactly like the ElevenLabs path: add_lessons owns
+  // the partition into semantic lines.
+  assertEquals(store.data.phrases?.length, 1);
+  const phrase = store.data.phrases![0];
+  assertEquals(phrase.text_l1, "Bonjour monde, Salut encore");
+  assertEquals(phrase.timestamp, "00:02.50");
+  assertEquals(phrase.timestamp_end, "00:07.00");
+  // Word-level timings are the whole point of the fallback — karaoke
+  // highlighting and the word-order activities are built on them.
+  assertEquals(phrase.words.map((word) => word.text), ["Bonjour", "monde,", "Salut", "encore"]);
+  assertEquals(phrase.words[1].timestamp, "00:03.40");
+  assertEquals(phrase.words[1].timestamp_end, "00:04.25");
+  assertEquals(phrase.words[3].timestamp_end, "00:07.00");
+  // Character spans, which token translation indexes against.
+  assertEquals(phrase.words[0].l1_start_index, 0);
+  assertEquals(phrase.words[3].l1_end_index, 26);
+  assertEquals(store.data.lyric_lines, ["Bonjour monde, Salut encore"]);
   assertEquals(store.data.video_length_seconds, 7);
   assertFalse(store.data.force_alignment_in_progress);
+});
+
+Deno.test("a Gemini fallback that resplits the transcript fails instead of silently reshaping it", async () => {
+  // The failure this replaces: Gemini answered a one-line transcript with 33
+  // lines of its own choosing.
+  const fallbackModel = queuedModel([
+    { words: [{ word: "Bonjour monde", start_seconds: 1, end_seconds: 3 }] },
+    { words: [{ word: "Bonjour monde", start_seconds: 1, end_seconds: 3 }] },
+  ]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["Bonjour monde"] },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
+  });
+
+  await assertRejects(
+    () => forceAlignment(ctx),
+    Error,
+    "Gemini timestamped 1 of 2 transcript words",
+  );
+  assertEquals(store.data.phrases, undefined);
+});
+
+Deno.test("a Gemini fallback that rewrites a word fails rather than corrupting the transcript", async () => {
+  const returned = {
+    words: [
+      { word: "Bonjour", start_seconds: 1, end_seconds: 2 },
+      { word: "tout", start_seconds: 2, end_seconds: 3 },
+    ],
+  };
+  const fallbackModel = queuedModel([returned, returned]);
+  const { ctx } = makeCtx({
+    data: { lyric_lines: ["Bonjour monde"] },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
+  });
+
+  await assertRejects(() => forceAlignment(ctx), Error, `Gemini returned "tout"`);
+});
+
+Deno.test("Gemini punctuation and case differences do not fail the run", async () => {
+  const fallbackModel = queuedModel([{
+    words: [
+      { word: "bonjour,", start_seconds: 1, end_seconds: 2 },
+      { word: "l'monde", start_seconds: 2, end_seconds: 3 },
+    ],
+  }]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["Bonjour l’monde!"] },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
+  });
+
+  await forceAlignment(ctx);
+
+  // The transcript's own text survives; only the timings come from Gemini.
+  assertEquals(store.data.phrases?.[0].text_l1, "Bonjour l’monde!");
+  assertEquals(store.data.phrases?.[0].words.map((word) => word.text), ["Bonjour", "l’monde!"]);
 });
 
 Deno.test("an unverifiable host fails the step instead of falling back to Gemini", async () => {
@@ -75,7 +143,10 @@ Deno.test("an unverifiable host fails the step instead of falling back to Gemini
   // otherwise vanish into a degraded-but-green import — every course silently
   // losing word-level timings until someone noticed.
   const fallbackModel = queuedModel([{
-    lines: [{ line: "Bonjour monde", start_seconds: 1, end_seconds: 3 }],
+    words: [
+      { word: "Bonjour", start_seconds: 1, end_seconds: 2 },
+      { word: "monde", start_seconds: 2, end_seconds: 3 },
+    ],
   }]);
   const { ctx, store } = makeCtx({
     data: { lyric_lines: ["Bonjour monde"] },
@@ -92,9 +163,12 @@ Deno.test("an unverifiable host fails the step instead of falling back to Gemini
   assertEquals(store.data.phrases, undefined);
 });
 
-Deno.test("invalid ElevenLabs output falls back to Gemini and keeps original lines", async () => {
+Deno.test("invalid ElevenLabs output falls back to Gemini and keeps original words", async () => {
   const fallbackModel = queuedModel([{
-    lines: [{ line: "Gemini changed this", start_seconds: 1, end_seconds: 3 }],
+    words: [
+      { word: "שלום", start_seconds: 1, end_seconds: 2 },
+      { word: "עולם", start_seconds: 2, end_seconds: 3 },
+    ],
   }]);
   const { ctx, store } = makeCtx({
     data: { lyric_lines: ["שלום עולם"] },
@@ -107,6 +181,7 @@ Deno.test("invalid ElevenLabs output falls back to Gemini and keeps original lin
 
   assertEquals(store.data.phrases?.[0].text_l1, "שלום עולם");
   assertEquals(store.data.phrases?.[0].words.map((word) => word.text), ["שלום", "עולם"]);
+  assertEquals(store.data.phrases?.[0].words[1].timestamp, "00:02.00");
 });
 
 Deno.test("stashed speech-to-text words are used instead of downloading audio", async () => {

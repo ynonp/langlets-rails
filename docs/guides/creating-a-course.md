@@ -195,7 +195,24 @@ tail -100 log/development.log | grep -E "Error|failed|Course creation"
 | Import ready but course still `processing` | Data landed but the finalizer never ran | `Imports::Finalizer.call(progress)` — it is idempotent and safe to run by hand |
 | Course stuck in `processing` | Job crashed without updating status | Check logs, fix issue, reset: `course.update!(status: :pending)` |
 
+### Retrying a Failed Import
+
+When the failure has an `ImportRequest` behind it (anything that came from the app, the share extension or the API), use the model — it resets the request, the course, the finalizer's view of the previous run's errors, and the deadline, which is all four of the things a hand-rolled retry usually forgets:
+
+```ruby
+ir = ImportRequest.find(ID)          # or: user.import_requests.recent_first.first
+puts ir.failure_reason
+puts ir.create_song_progress.pipeline_errors.last   # what the pipeline actually said
+
+# fix the cause, then:
+ir.retry!
+```
+
+It raises `ImportRequest::NotRetryable` if the request isn't `failed`, has no course or progress record, or the user already has that video importing. Credits are untouched — the failure refunded already. See the ImportRequest section in [architecture.md](../architecture.md) for what each move is for.
+
 ### Retrying a Failed Course
+
+For a course with no `ImportRequest` (console-created, rake, legacy):
 
 1. Diagnose and fix the root cause (model name, rate limit, etc.)
 2. Reset the course:

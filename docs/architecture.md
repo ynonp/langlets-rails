@@ -448,11 +448,22 @@ such as `[Music]` and `[Applause]` are removed before lines are saved. The pipel
 YouTube audio and sends the resulting text to ElevenLabs forced alignment, which normally supplies
 the word-level timestamps used to materialize `phrases`. If any part of that path fails—including
 `yt-dlp`, the ElevenLabs API, or validation of its response—the pipeline sends the video URL and the
-original line array to Gemini 2.5 Flash using structured output. Gemini returns the same ordered
-array with start/end timestamps per line. The pipeline keeps the original line text, tokenizes each
-line with the same Unicode-letter/apostrophe rules as Rails `String#tokenize`, and leaves those word
-tokens untimed; downstream token translation needs the words and character indexes, not word-level
-timestamps.
+whitespace-tokenized transcript **words** to Gemini 2.5 Flash using structured output, and Gemini
+returns the same ordered array with start/end seconds per word. This mirrors the ElevenLabs
+response deliberately: the fallback produces the same flat timed-word stream, so `add_lessons`
+re-partitions it and karaoke highlighting and the word-order activities work exactly as on the
+primary path. (Before July 2026 the fallback timestamped whole *lines*, which stopped working when
+`extract_lyrics` began storing the transcript as one continuous line — Gemini re-split it and the
+count check failed every time, and even a passing run would have yielded one untimed phrase.)
+
+The response is validated, not trusted: one entry per transcript word, in order, with each returned
+word matching the transcript's after normalization (case, quote style and surrounding punctuation
+are ignored), timestamps finite, non-negative, chronological, and each end at or after its start. A
+mismatch fails the attempt and is retried once. Phrase and word text always come from the
+transcript, never from the response, so a re-punctuated or "corrected" word that survives
+normalization still cannot reach the course. The prompt states that the output is checked and that
+the model must timestamp what it hears rather than extrapolate an even speaking rate, because
+song rhythm (held notes, repeats, pauses, instrumental gaps) defeats that guess.
 
 Provider cue boundaries and performance pauses are not semantic lyric lines: either can split a
 translation unit in the middle (for example `que / más quisiera`). `force_alignment` therefore sends
@@ -929,6 +940,19 @@ Two users importing the same video deliberately share one pipeline and one cours
 
 - `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility. Failed imports remain visible and removable, but the Queue does not offer a user retry: an accessible info tooltip explains that the human team is reviewing the automatic import and that the user will be notified when it finishes.
 - `progress_percent` is **written forward** by `CreateSongProgress#sync_import_requests_progress`, never computed on read — `data` is a multi-megabyte jsonb blob and the Queue polls.
+
+**`ImportRequest#retry!`** is the operator's way back from a failed import — console only, never called automatically, and not exposed in the Queue. It raises `ImportRequest::NotRetryable` unless the request is `failed`, still has its course and `CreateSongProgress`, and isn't shadowed by another active request for the same tuple (which `idx_import_requests_active_dedupe` would reject anyway). It then, in one transaction:
+
+| Move | Why it can't be skipped |
+|---|---|
+| status → `queued` | `CreateCourseJob#start_imports!` and `Imports::Finalizer#pending_requests` only see **active** rows: the pipeline would run for nobody. |
+| `created_at` → now | `Imports::Finalizer` fails a request whose record holds an error newer than it. A resumed run clears an error only for a step it actually re-runs, so the **previous** run's entry outlives the retry and re-fails it in seconds. `since:` already exists to discount an older run's failures; the alternative — deleting entries from `data["errors"]` — edits a record shared with every other import of that video. |
+| course → `pending` | `Course#process` only claims a pending course, so `CreateCourseJob` would log "already processing" and return. |
+| new `ImportRequestTimeoutJob` | `schedule_timeout` is an `after_create_commit`, so a retry would otherwise have **no deadline at all**. |
+
+Which run it starts mirrors `Imports::Create`: a **published** course keeps its status and gets an `AddCourseTranslationJob` for the failed language only (unpublishing a live course over one translation would break it for everyone); an unpublished one gets `CreateCourseJob`. If another **active** request already covers this course, no job is enqueued at all — the retry rides along on that run, exactly as `Imports::Create#join!` does, rather than putting two sets of callbacks on one blob.
+
+Credits are deliberately untouched: the failure already refunded, a retry is us fixing our own import rather than a second sale, and leaving `refunded` set is what stops a second failure from minting a free credit in `Imports::Settlement#fail!`.
 
 #### **Imports::Create** (`app/services/imports/create.rb`)
 The single entry point for the Add sheet, the share extension and the API. Order is deliberate: **the video is checked before a credit moves**, so a private or deleted video costs nothing (`Youtube::Oembed` doubles as the availability check). Four outcomes:
