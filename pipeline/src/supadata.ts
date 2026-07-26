@@ -53,8 +53,33 @@ export function transcriptToLines(chunks: TranscriptChunk[]): string[] {
   });
 }
 
+// Music videos are the common case here, and YouTube's caption tracks for them
+// wrap every line in ♪ … ♪. Those are whitespace-separated tokens like any
+// other, so left in they become "words": counted by force_alignment, handed to
+// add_lessons as index slots, and sent to add_token_translations, which under
+// its punctuation rule answers "♪" — a clickable vocabulary item with a musical
+// note in it.
+const NON_SPEECH_SYMBOLS = /[♪♫♬♩𝅗𝅥𝅘𝅥𝅮]/gu;
+
 function cleanTranscriptText(text: string): string {
-  return text.replace(/\[[^\]\r\n]*\]/gu, " ").replace(/\s+/gu, " ").trim();
+  return text
+    .replace(/\[[^\]\r\n]*\]/gu, " ")
+    .replace(NON_SPEECH_SYMBOLS, " ")
+    .replace(/\s+/gu, " ")
+    .trim();
+}
+
+// Supadata's `lang` parameter is a preference, not a filter: when the requested
+// track does not exist it returns whichever one does. A Japanese subtitle track
+// on an English song is a perfectly well-formed response, and taking it builds
+// a course whose lyrics are a translation of the song. Compare on the primary
+// subtag so "en" and "en-US" agree.
+export function isSameLanguage(a: string, b: string): boolean {
+  return primarySubtag(a) === primarySubtag(b);
+}
+
+function primarySubtag(code: string): string {
+  return code.trim().toLowerCase().split(/[-_]/u)[0];
 }
 
 function splitLongLine(text: string): string[] {

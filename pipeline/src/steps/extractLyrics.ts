@@ -3,7 +3,12 @@ import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
 import { extractLyricsPrompt } from "../prompts/extractLyrics.ts";
 import { message, withRetries } from "../retry.ts";
-import { transcribeWithSupadata, transcriptToText } from "../supadata.ts";
+import {
+  isSameLanguage,
+  transcribeWithSupadata,
+  type TranscriptResult,
+  transcriptToText,
+} from "../supadata.ts";
 import {
   isSpeechToTextRequestRejected,
   type SpeechToTextResult,
@@ -52,6 +57,7 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
     let lyricLines: string[];
     try {
       const transcript = await transcribe(ctx.youtubeurl, languageCode);
+      assertTranscriptLanguage(transcript, languageCode, ctx.clipLanguage);
       const transcriptText = transcriptToText(transcript.content);
       lyricLines = transcriptText ? [transcriptText] : [];
       if (lyricLines.length === 0) throw new Error("Supadata returned no usable native transcript");
@@ -201,4 +207,36 @@ export function languageCodeForTranscription(
   clipLanguageIso?: string | null,
 ): string | null {
   return clipLanguageIso ?? LANGUAGE_TO_ISO[clipLanguage.toLowerCase()] ?? null;
+}
+
+// The caption track Supadata hands back is not necessarily the one we asked
+// for, and accepting the wrong one is not a transcription failure that shows up
+// as a failure — it is a course whose lyrics are a translation of the song,
+// which then breaks force_alignment (foreign text over the real audio) two
+// steps later with a message about word counts. Reject it here, where the
+// existing catch falls back to Gemini, which reads the audio itself and is told
+// the clip language.
+export function assertTranscriptLanguage(
+  transcript: TranscriptResult,
+  requested: string | null,
+  clipLanguage: string,
+): void {
+  if (!requested) {
+    // No ISO code means no `lang` on the request either, so Supadata was free to
+    // pick any track. Nothing to compare against — say so rather than pretend
+    // the transcript was verified.
+    console.warn(
+      `ExtractLyrics has no transcription language code for ${clipLanguage}; ` +
+        `Supadata chose the caption track (got ${transcript.lang || "unknown"})`,
+    );
+    return;
+  }
+  if (transcript.lang && !isSameLanguage(transcript.lang, requested)) {
+    throw new Error(
+      `Supadata returned a ${transcript.lang} transcript for a ${requested} clip` +
+        (transcript.availableLangs.length > 0
+          ? ` (available: ${transcript.availableLangs.join(", ")})`
+          : ""),
+    );
+  }
 }

@@ -46,6 +46,11 @@ Watch-video activities preload an interactive YouTube iframe with YouTube's
 native controls. Their activity parameters opt into this mode, so the shared
 lesson player omits its click-capturing overlay and custom play/progress chrome
 while retaining the activity's segment boundary and `video:*` event contract.
+Opening a word-translation popup pauses the shared player. The token click is
+stopped before it reaches the document action, so playback stays paused while
+the popup is open; the next outside click closes the popup and resumes the
+segment. The watch-video controller tracks whether it initiated that pause, so
+unrelated document clicks do not start playback.
 When native playback begins before the activity's first phrase, the activity's
 play listener seeks forward to the segment start; playback already at or after
 that boundary is not moved.
@@ -444,7 +449,27 @@ When native captions are unavailable for a YouTube URL, `extract_lyrics` falls b
 Flash using the video URL and the lyric-specific transcription prompt. Non-YouTube providers do not
 yet have a generated-transcript fallback. Supadata chunks are normalized into provisional text,
 while Gemini supplies the fallback transcript. Bracketed native-caption annotations
-such as `[Music]` and `[Applause]` are removed before lines are saved. The pipeline downloads the
+such as `[Music]` and `[Applause]` are removed before lines are saved, as are the `♪` symbols
+YouTube wraps sung caption lines in — left in, those are whitespace tokens like any other and become
+"words": index slots for `add_lessons` and clickable vocabulary items whose translation is `♪`.
+
+Supadata's `lang` parameter is a **preference, not a filter**: for a video with no caption track in
+the requested language it answers with whichever track exists. So the returned `lang` is compared
+against the requested code (on the primary subtag, so `en` and `en-US` agree) and a mismatch is
+treated as a native-caption failure, falling through to Gemini — which reads the audio itself and is
+told the clip language. Accepting the wrong track is not a visible failure: it builds a course whose
+lyrics are a *translation* of the song, and the damage only surfaces two steps later at
+`force_alignment`, as foreign text over the real audio. The requested code comes from
+`LANGUAGE_TO_ISO` in `extractLyrics.ts`, keyed on the clip language's English name; a
+`clip_language_iso` in the trigger payload overrides it, which is how the CLI asks for a regional
+track. Rails deliberately does **not** send one — `Language#iso_name` is a TTS code (Arabic is
+`ar-JO`, chosen for its Azure voice), and asking Supadata for a caption track in a regional variant
+it does not stock is worse than asking for `ar`. `LANGUAGE_TO_ISO` therefore has to cover every
+supported clip language: a language missing from it sends no `lang` at all, leaving the choice of
+track to Supadata, which the step logs rather than passing off as verified. See
+[Adding a New Language](guides/adding-a-new-language.md).
+
+The pipeline downloads the
 YouTube audio and sends the resulting text to ElevenLabs forced alignment, which normally supplies
 the word-level timestamps used to materialize `phrases`. If any part of that path fails—including
 `yt-dlp`, the ElevenLabs API, or validation of its response—the pipeline sends the video URL and the
@@ -456,7 +481,23 @@ primary path. (Before July 2026 the fallback timestamped whole *lines*, which st
 `extract_lyrics` began storing the transcript as one continuous line — Gemini re-split it and the
 count check failed every time, and even a passing run would have yielded one untimed phrase.)
 
-The response is validated, not trusted: one entry per transcript word, in order, with each returned
+**ElevenLabs' tokenization is not the pipeline's.** It splits and merges the text it is given as it
+likes — `don't` can come back as `don` + `'t`, a parenthetical can vanish, a script without word
+spaces is split per character. But the transcript's own whitespace tokens are what `add_lessons`
+indexes into and what `add_token_translations` turns into one clickable word each, so a provider
+split would ship `'t` as a vocabulary item. `force_alignment` therefore takes from ElevenLabs only
+what it alone can give — timings — exactly as the Gemini fallback already does, and keeps the
+transcript's tokens. Reconciliation runs over a stream of timed *characters* (each aligned word's
+span spread evenly across its own letters), so one transcript word drawing from several aligned words
+or from a fraction of one needs no special case. Punctuation-only transcript tokens have nothing to
+be timed against and are dropped from the word stream, and so from the reconstructed line text.
+Text that genuinely cannot be reconciled — ElevenLabs having aligned different words, not merely
+tokenized them differently — fails and falls through to Gemini. (Before July 2026 this was an
+equality check on token *counts*, which rejected the whole audio-derived timing set over an
+apostrophe or a `♪`, and reported it as `ElevenLabs aligned N of M transcript words` — a message
+about a step downstream of whatever had actually gone wrong.)
+
+The Gemini response is validated, not trusted: one entry per transcript word, in order, with each returned
 word matching the transcript's after normalization (case, quote style and surrounding punctuation
 are ignored), timestamps finite, non-negative, chronological, and each end at or after its start. A
 mismatch fails the attempt and is retried once. Phrase and word text always come from the

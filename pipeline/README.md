@@ -44,10 +44,16 @@ rebuilt from the surviving words rather than taken from the response's `text`, b
 partitions it by word count against those very words.
 
 For YouTube, Supadata is requested once with `mode=native` and `text=false`. If native captions are
-unavailable, Gemini 2.5 Flash transcribes the video using the lyric-specific prompt. Other providers
-currently stop at the native-caption failure. Provider cue boundaries are removed and ElevenLabs
-normally maps one continuous transcript to a flat timed word stream. If audio download, ElevenLabs,
-or alignment validation fails, Gemini 2.5 Flash receives the video plus the original line array and
+unavailable — or come back in a language other than the requested one, which Supadata does freely
+because `lang` is a preference rather than a filter — Gemini 2.5 Flash transcribes the video using
+the lyric-specific prompt. Other providers
+currently stop at the native-caption failure. Provider cue boundaries are removed, along with
+`[Music]`-style annotations and the `♪` symbols wrapping sung caption lines, and ElevenLabs
+normally maps one continuous transcript to a flat timed word stream. ElevenLabs' tokenization is
+reconciled back onto the transcript's own whitespace tokens — those, not the provider's, are what
+`add_lessons` indexes and `add_token_translations` turns into clickable words — so only the timings
+come from ElevenLabs. If audio download, ElevenLabs,
+or reconciliation fails, Gemini 2.5 Flash receives the video plus the original line array and
 returns structured start/end timestamps for the same lines. The pipeline preserves the original text
 and creates Rails-compatible untimed word tokens for downstream translation.
 

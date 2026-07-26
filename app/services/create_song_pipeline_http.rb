@@ -105,6 +105,11 @@ class CreateSongPipelineHttp
     }
   end
 
+  # No clip_language_iso: the pipeline derives the transcription code from the
+  # clip language name itself. Language#iso_name is a TTS code — Arabic is
+  # ar-JO, chosen for its Azure voice — and asking Supadata for a caption track
+  # in a regional variant it does not stock is worse than asking for `ar`.
+  #
   # translation_language: null is legal — it runs transcription + lessons only.
   def language_ref
     language = @language || Language.find_by(english_name: @progress.translation_language)

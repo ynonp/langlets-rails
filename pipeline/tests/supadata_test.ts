@@ -1,5 +1,10 @@
 import { assertEquals, assertRejects } from "@std/assert";
-import { MAX_LINE_LENGTH, transcribeWithSupadata, transcriptToLines } from "../src/supadata.ts";
+import {
+  isSameLanguage,
+  MAX_LINE_LENGTH,
+  transcribeWithSupadata,
+  transcriptToLines,
+} from "../src/supadata.ts";
 
 Deno.test("Supadata client sends a native timestamped transcript request", async () => {
   let requested: URL | null = null;
@@ -107,6 +112,21 @@ Deno.test("native transcript splitting removes bracketed non-speech annotations"
   ]);
 
   assertEquals(lines, ["Buenas noches,", "Hola a todos."]);
+});
+
+Deno.test("native transcript splitting removes the note symbols wrapping sung lines", () => {
+  const lines = transcriptToLines([
+    { text: "♪ You and me ♪", offset: 0, duration: 1, lang: "en" },
+    { text: "♫ We used to be together ♬", offset: 1, duration: 1, lang: "en" },
+  ]);
+
+  assertEquals(lines, ["You and me", "We used to be together"]);
+});
+
+Deno.test("language comparison ignores the region subtag but not the language", () => {
+  assertEquals(isSameLanguage("en", "en-US"), true);
+  assertEquals(isSameLanguage("pt_BR", "PT"), true);
+  assertEquals(isSameLanguage("ja", "en"), false);
 });
 
 Deno.test("native annotation removal preserves Hebrew and Arabic text and punctuation", () => {

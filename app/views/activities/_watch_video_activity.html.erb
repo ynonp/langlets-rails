@@ -23,6 +23,8 @@
       video:end->watch-video-activity#handleVideoEnd
       video:stop->watch-video-activity#handleVideoPause
       video:progress->watch-video-activity#progress
+      watch-video-activity:pause->main-video-player#stopPlayback
+      watch-video-activity:resume->main-video-player#resume
     "
     data-show-player="true"
     data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
@@ -72,7 +74,7 @@
         data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_phrase_tokens.pluck(:id).to_json : '[]' %>"
         id="phrases-container"
         data-watch-video-activity-target="container"
-        data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
+        data-action="click->popover-translation#showPopup click->watch-video-activity#handleTranslationClick scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup click@document->watch-video-activity#resumeAfterTranslation scroll@document->popover-translation#hidePopup"
         class="order-4 flex-1 overflow-y-auto flex flex-col gap-4 px-5"
         style="padding-bottom: calc(16px + env(safe-area-inset-bottom));"
         >

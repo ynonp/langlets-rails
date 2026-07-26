@@ -28,6 +28,90 @@ Deno.test("ElevenLabs forced alignment creates timed phrases and words", async (
   assertFalse(store.data.force_alignment_in_progress);
 });
 
+Deno.test("ElevenLabs splitting a word does not cost the alignment", async () => {
+  // "don" + "'t" is one transcript word. Kept apart it would become two
+  // clickable vocabulary items, one of them "'t".
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["Don't speak"] },
+    prepareAudio: stubAudioWith(13),
+    alignLyrics: stubAlign([alignment([
+      { text: "don", start: 0, end: 1 },
+      { text: "'t", start: 1, end: 1.5 },
+      { text: "speak", start: 2, end: 3 },
+    ])]).align,
+  });
+
+  await forceAlignment(ctx);
+
+  const phrase = store.data.phrases![0];
+  assertEquals(phrase.text_l1, "Don't speak");
+  assertEquals(phrase.words.map((word) => word.text), ["Don't", "speak"]);
+  // The rejoined word spans both pieces ElevenLabs returned.
+  assertEquals(phrase.words[0].timestamp, "00:00.00");
+  assertEquals(phrase.words[0].timestamp_end, "00:01.50");
+  assertEquals(phrase.words[1].timestamp, "00:02.00");
+});
+
+Deno.test("ElevenLabs merging two words splits their span back apart", async () => {
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["New York"] },
+    prepareAudio: stubAudioWith(13),
+    alignLyrics: stubAlign([alignment([{ text: "New York", start: 0, end: 7 }])]).align,
+  });
+
+  await forceAlignment(ctx);
+
+  const phrase = store.data.phrases![0];
+  assertEquals(phrase.words.map((word) => word.text), ["New", "York"]);
+  // Seven letters over seven seconds, so the boundary falls after "New".
+  assertEquals(phrase.words[0].timestamp_end, "00:03.00");
+  assertEquals(phrase.words[1].timestamp, "00:03.00");
+});
+
+Deno.test("caption note symbols never reach the word stream", async () => {
+  // YouTube wraps music-video caption lines in ♪ … ♪. Nothing in the audio
+  // corresponds to them, and add_token_translations would make each one a
+  // clickable word.
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["♪ Don't speak ♪"] },
+    prepareAudio: stubAudioWith(13),
+    alignLyrics: stubAlign([alignment([
+      { text: "Don't", start: 0, end: 1 },
+      { text: "speak", start: 1, end: 2 },
+    ])]).align,
+  });
+
+  await forceAlignment(ctx);
+
+  assertEquals(store.data.phrases![0].words.map((word) => word.text), ["Don't", "speak"]);
+  assertEquals(store.data.phrases![0].text_l1, "Don't speak");
+  assertEquals(store.data.lyric_lines, ["Don't speak"]);
+});
+
+Deno.test("an ElevenLabs alignment of different text falls back to Gemini", async () => {
+  // Tokenization is the provider's business; the words themselves are not.
+  const fallbackModel = queuedModel([{
+    words: [
+      { word: "Bonjour", start_seconds: 1, end_seconds: 2 },
+      { word: "monde", start_seconds: 2, end_seconds: 3 },
+    ],
+  }]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["Bonjour monde"] },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: stubAudioWith(13),
+    alignLyrics: stubAlign([alignment([
+      { text: "Bonjour", start: 0, end: 1 },
+      { text: "tout", start: 1, end: 2 },
+    ])]).align,
+  });
+
+  await forceAlignment(ctx);
+
+  assertEquals(fallbackModel.calls(), 1);
+  assertEquals(store.data.phrases?.[0].words.map((word) => word.text), ["Bonjour", "monde"]);
+});
+
 Deno.test("an incomplete ElevenLabs alignment fails and remains resumable", async () => {
   const fallbackModel = queuedModel(["", ""]);
   const { ctx, store } = makeCtx({

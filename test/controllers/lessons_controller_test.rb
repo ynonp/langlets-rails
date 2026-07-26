@@ -83,5 +83,17 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-main-video-player-target~='media']" do |media|
       assert_includes media.first["class"], "data-[ratio=landscape]:[&_video]:object-contain"
     end
+
+    assert_select "[data-controller='watch-video-activity']" do |watch_activity|
+      actions = watch_activity.first["data-action"]
+      assert_includes actions, "watch-video-activity:pause->main-video-player#stopPlayback"
+      assert_includes actions, "watch-video-activity:resume->main-video-player#resume"
+    end
+
+    assert_select "#phrases-container" do |phrases_container|
+      actions = phrases_container.first["data-action"]
+      assert_includes actions, "click->watch-video-activity#handleTranslationClick"
+      assert_includes actions, "click@document->watch-video-activity#resumeAfterTranslation"
+    end
   end
 end

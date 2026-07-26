@@ -35,6 +35,11 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
     assert_equal @progress.data, sent.fetch("data")
     assert_equal "https://tunnel.test/pipeline_callbacks/#{@progress.id}", sent.fetch("callback_url")
 
+    # Deliberately absent: the pipeline derives the transcription code from the
+    # clip language name. Language#iso_name is a TTS code (Arabic is ar-JO), and
+    # sending it would ask Supadata for caption tracks in regional variants.
+    assert_nil sent["clip_language_iso"]
+
     language = sent.fetch("translation_language")
     assert_equal "he", language.fetch("iso_name")
     assert_equal "Hebrew", language.fetch("english_name")

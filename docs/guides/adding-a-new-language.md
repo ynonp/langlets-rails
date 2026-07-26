@@ -154,7 +154,32 @@ Once the language record exists in the database, it automatically appears in:
 
 No view or controller changes are required.
 
-### 6. Test Fixtures (Optional)
+### 6. Transcription Language Code (`pipeline/src/steps/extractLyrics.ts`)
+
+Add the language to `LANGUAGE_TO_ISO`, keyed on the lowercased English name:
+
+```ts
+const LANGUAGE_TO_ISO: Record<string, string> = {
+  // ...
+  italian: "it",
+};
+```
+
+This is the code `extract_lyrics` asks Supadata for, and the one it validates the returned caption
+track against. **It is not read from the database**, deliberately: `Language#iso_name` is a TTS code
+(Arabic is `ar-JO`), and Supadata stocks caption tracks by plain language, not regional variant.
+
+Skipping this step does not fail loudly. The step sends no `lang` at all, Supadata answers with
+whichever caption track the video happens to carry, and there is no requested code to compare it
+against — so a Japanese subtitle track on an Italian song becomes the course's lyrics, and the first
+visible symptom is a forced-alignment failure two steps later. The step logs
+`ExtractLyrics has no transcription language code for <language>` when this happens; grep for it
+after adding a language.
+
+Also add the language to `pipeline/src/prompts/addTokenTranslations.ts`'s `examples` map if you want
+a language-matched worked example — unknown languages fall back to the English one.
+
+### 7. Test Fixtures (Optional)
 
 Test fixtures in `test/fixtures/create_song_progress/` reference languages by their `english_name` field. If you add test courses for the new language, ensure the JSON fixture has matching values:
 
@@ -210,13 +235,17 @@ CoursesController#index:
 
 ## Quick Reference: Existing Languages
 
-| ISO | English Name | Native Name | RTL | TTS Variant |
-|---|---|---|---|---|
-| `en` | English | English | No | en-US |
-| `es` | Spanish | Español | No | es-ES |
-| `fr` | French | Français | No | fr-FR |
-| `he` | Hebrew | עברית | Yes | he-IL |
-| `ar-JO` | Arabic | العربية الفلسطينية | Yes | ar-JO |
+`ISO` is `Language#iso_name`; `Transcription` is the separate `LANGUAGE_TO_ISO` entry the pipeline
+asks Supadata for. They differ wherever the TTS voice needs a regional variant.
+
+| ISO | English Name | Native Name | RTL | TTS Variant | Transcription |
+|---|---|---|---|---|---|
+| `en` | English | English | No | en-US | `en` |
+| `es` | Spanish | Español | No | es-ES | `es` |
+| `fr` | French | Français | No | fr-FR | `fr` |
+| `de` | German | Deutsch | No | de-DE | `de` |
+| `he` | Hebrew | עברית | Yes | he-IL | `he` |
+| `ar-JO` | Arabic | العربية الفلسطينية | Yes | ar-JO | `ar` |
 
 ---
 

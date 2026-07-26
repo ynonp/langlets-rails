@@ -150,6 +150,9 @@ under the `#main-player` container), but:
   phrase, its `video:play` listener immediately seeks to the segment start.
   Playback already within the segment is left unchanged so pause/resume and
   transcript seeks continue from the selected time.
+- Clicking a transcript word pauses playback while its translation popup is
+  open. The popup's existing element/document click actions keep the opening
+  click local; an outside click closes the popup and resumes the segment.
 - When the segment finishes, the player pauses and rewinds to its start so the
   next press of YouTube's play control replays the lesson.
 - It shows the synchronized transcript, a translation toggle, and a

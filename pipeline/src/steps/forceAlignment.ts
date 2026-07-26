@@ -150,13 +150,91 @@ async function persist(
 }
 
 function phrasesFromElevenLabs(lines: string[], words: AlignedWord[]): Phrase[] {
-  const expectedWords = wordsOf(lines).length;
-  if (words.length !== expectedWords) {
-    throw new Error(`ElevenLabs aligned ${words.length} of ${expectedWords} transcript words`);
-  }
-  const phrases = phrasesFromAlignedWords(words);
+  const phrases = phrasesFromAlignedWords(reconcileToTranscript(wordsOf(lines), words));
   if (phrases.length !== 1) throw new Error("ElevenLabs returned no usable transcript words");
   return phrases;
+}
+
+interface TimedChar {
+  char: string;
+  start: number;
+  end: number;
+}
+
+// ElevenLabs tokenizes the text it is given however it likes: "don't" can come
+// back as "don" + "'t", "(x2)" can vanish, and a script without word spaces is
+// split per character. Its tokenization cannot be the pipeline's, because the
+// transcript's own whitespace tokens are what add_lessons indexes into and what
+// add_token_translations turns into one clickable word each — so a provider
+// that splits "don't" would ship "'t" as a vocabulary item.
+//
+// So take from ElevenLabs only what it is uniquely able to give — timings —
+// exactly as the Gemini fallback already does (see phrasesFromFallback), and
+// keep the transcript's own tokens. Timings are carried on a stream of timed
+// characters, which lets one transcript word draw from several aligned words
+// (a split) or a fraction of one (a merge) without either case being special.
+export function reconcileToTranscript(
+  transcriptWords: string[],
+  aligned: AlignedWord[],
+): AlignedWord[] {
+  const chars = timedChars(aligned);
+  const words: AlignedWord[] = [];
+  let cursor = 0;
+
+  for (const text of transcriptWords) {
+    // Punctuation-only tokens (a stray dash, the ♪ that YouTube wraps every
+    // caption line in) have no audio to be timed against and no meaning to be
+    // translated. Dropping them here keeps them out of the word stream, and so
+    // out of the reconstructed line text.
+    const key = [...alignmentKey(text)];
+    if (key.length === 0) continue;
+
+    const slice = chars.slice(cursor, cursor + key.length);
+    const got = slice.map((timed) => timed.char).join("");
+    if (got !== key.join("")) {
+      throw new Error(
+        `ElevenLabs aligned "${got}" where the transcript has "${key.join("")}" ` +
+          `(transcript word ${words.length + 1}, "${text}")`,
+      );
+    }
+    words.push({ text, start: slice[0].start, end: slice.at(-1)!.end });
+    cursor += key.length;
+  }
+
+  if (cursor < chars.length) {
+    throw new Error(
+      `ElevenLabs aligned ${chars.length - cursor} characters past the end of the transcript`,
+    );
+  }
+  return words;
+}
+
+// Spread each aligned word's span evenly across its own characters. Sub-word
+// precision is invented, but it is only ever consumed at word boundaries the
+// provider itself did not draw — and the alternative, refusing the alignment,
+// costs the whole audio-derived timing set.
+function timedChars(words: AlignedWord[]): TimedChar[] {
+  return words.flatMap((word) => {
+    const key = [...alignmentKey(word.text)];
+    const span = Math.max(0, word.end - word.start);
+    return key.map((char, index) => ({
+      char,
+      start: word.start + span * index / key.length,
+      end: word.start + span * (index + 1) / key.length,
+    }));
+  });
+}
+
+// The identity of a word for matching purposes: the letters and digits, with
+// case, spacing and punctuation left to whichever side wants them. Compared
+// character by character, so unlike normalizeWord this strips punctuation
+// throughout rather than only at the edges.
+function alignmentKey(text: string): string {
+  return text
+    .normalize("NFC")
+    .replace(/[‘’ʼ]/gu, "'")
+    .replace(/[\s\p{P}\p{S}]+/gu, "")
+    .toLocaleLowerCase();
 }
 
 type FallbackWord = z.infer<typeof fallbackOutputSchema>["words"][number];

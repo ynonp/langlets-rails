@@ -10,6 +10,26 @@ export default class extends Controller {
   static targets = ['subtitles', 'container', 'phrasesList', 'l1Text', 'l2Text', 'showTranslation', 'showKaraoke', 'startPracticeButton'];
   static values = { wordTiming: Boolean, prefsUrl: String };
 
+  initialize() {
+    this.pausedForTranslation = false;
+  }
+
+  handleTranslationClick(event) {
+    if (!event.target.closest('[data-translation]')) return;
+
+    if (!this.pausedForTranslation) {
+      this.pausedForTranslation = true;
+      this.dispatch('pause');
+    }
+  }
+
+  resumeAfterTranslation() {
+    if (!this.pausedForTranslation) return;
+
+    this.pausedForTranslation = false;
+    this.dispatch('resume');
+  }
+
   // PATCH the current toggle states to the server so they persist across visits.
   persistPrefs() {
     if (!this.hasPrefsUrlValue) return;

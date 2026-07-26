@@ -72,6 +72,46 @@ Deno.test("a successful rerun clears only transcription errors", async () => {
   assertEquals(store.data.errors?.map((error) => error.step), ["force_alignment"]);
 });
 
+Deno.test("a caption track in the wrong language is refused, not turned into lyrics", async () => {
+  // Supadata's `lang` is a preference: a video with no French captions answers
+  // with whatever track it has. Accepting it builds a course whose lyrics are a
+  // translation of the song, and the damage only surfaces at force_alignment,
+  // as foreign text over the real audio.
+  const transcriber = stubTranscribe([{
+    content: [{ text: "ピアノ･マン", offset: 0, duration: 1000, lang: "ja" }],
+    lang: "ja",
+    availableLangs: ["ja"],
+  }]);
+  const gemini = queuedModel(["Sing us a song"]);
+  const { ctx, store } = makeCtx({
+    transcribeVideo: transcriber.transcribe,
+    models: { extractLyrics: gemini.model },
+  });
+
+  await extractLyrics(ctx);
+
+  // Gemini reads the audio itself and is told the clip language.
+  assertEquals(gemini.calls(), 1);
+  assertEquals(store.data.lyric_lines, ["Sing us a song"]);
+});
+
+Deno.test("a regional caption track still counts as the requested language", async () => {
+  const transcriber = stubTranscribe([{
+    content: [{ text: "Sing us a song", offset: 0, duration: 1000, lang: "en-US" }],
+    lang: "en-US",
+    availableLangs: ["en-US"],
+  }]);
+  const { ctx, store } = makeCtx({
+    clipLanguage: "English",
+    transcribeVideo: transcriber.transcribe,
+  });
+
+  await extractLyrics(ctx);
+
+  assertEquals(transcriber.requests[0].languageCode, "en");
+  assertEquals(store.data.lyric_lines, ["Sing us a song"]);
+});
+
 Deno.test("maps explicit and named clip languages to Supadata codes", () => {
   assertEquals(languageCodeForTranscription("French"), "fr");
   assertEquals(languageCodeForTranscription("French", "fr-CA"), "fr-CA");
