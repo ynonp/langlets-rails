@@ -1,7 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.action_dispatch.tld_length = 2
+  # `.app` is the single-label TLD, so `he.langlets.app` has one subdomain.
+  config.action_dispatch.tld_length = 1
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

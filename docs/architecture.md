@@ -231,7 +231,9 @@ is resolved from the request subdomain. English and Hebrew catalogs live in
 `config/locales/en.yml` and `config/locales/he.yml`; Spanish, Arabic, German,
 and French currently fall back to English. The layouts expose the translation
 language through the document's `lang` and `dir` attributes, independently of
-the language of learning content.
+the language of learning content. Production uses an Action Dispatch
+`tld_length` of 1 because `.app` is a single-label TLD; this makes
+`he.langlets.app` resolve `he` as its subdomain.
 
 User-facing server-rendered copy uses Rails I18n lazy lookup. A single JSON
 payload in the shared head exposes the `js` locale subtree to Stimulus through
