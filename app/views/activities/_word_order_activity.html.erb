@@ -58,7 +58,8 @@
         <!-- Answer slots -->
         <div
           data-word-order-activity-target="resultLine"
-          class="result-line flex flex-wrap items-center gap-2.5 content-start min-h-[60px] pb-3 mb-1.5 border-b-2 border-gray-200 dark:border-gray-700 <%= l1_rtl ? 'flex-row-reverse' : '' %>"
+          dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
+          class="result-line flex flex-wrap items-center gap-2.5 content-start min-h-[60px] pb-3 mb-1.5 border-b-2 border-gray-200 dark:border-gray-700"
           data-phrase-index="<%= index %>">
 
           <% phrase_data[:word_segments].each_with_index do |segment, seg_index| %>
@@ -181,7 +182,6 @@
 [data-theme="dark"] [data-controller="word-order-activity"] .incorrect-feedback { background: color-mix(in oklab, var(--color-red-900) 40%, transparent) !important; color: var(--color-red-300) !important; }
 
 /* RTL spacing */
-[data-controller="word-order-activity"] .result-line.flex-row-reverse .word-item,
 [data-controller="word-order-activity"] .word-bank.flex-row-reverse .word-item { margin-left: 0; margin-right: 0; }
 
 /* Audio button inside a placed tile */

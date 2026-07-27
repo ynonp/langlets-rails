@@ -36,6 +36,23 @@ class WordTokenBuilderTest < ActiveSupport::TestCase
     assert_equal [0, 8], starts # second "apateu" starts at index 8, not 0
   end
 
+  test "extracts the part of speech suffix without exposing it as translation text" do
+    @words[0]["translation"] = "Apartment [noun]"
+    @words[1]["translation"] = "stay [verb]"
+
+    @phrase.build_word_tokens(@words)
+    tokens = @phrase.translated_phrase_tokens.sort_by(&:l1_start_index)
+
+    assert_equal [ "noun", "verb" ], tokens.map(&:part_of_speech)
+    assert_equal [ "Apartment", "stay" ], tokens.map(&:translation)
+  end
+
+  test "accepts legacy translations without a part of speech suffix" do
+    @phrase.build_word_tokens(@words)
+
+    assert_nil @phrase.translated_phrase_tokens.first.part_of_speech
+  end
+
   test "skips words with blank translation" do
     words = [
       { "text" => "Apateu,", "translation" => "", "timestamp" => "00:06.50", "timestamp_end" => "00:07.10" },

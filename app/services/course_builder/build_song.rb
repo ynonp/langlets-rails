@@ -1,3 +1,5 @@
+require "set"
+
 module CourseBuilder
   class BuildSong < Base
     # similar_sounds_for_token is the exact check render_phrase_with_blanks uses
@@ -11,6 +13,9 @@ module CourseBuilder
     # filter; deciding what to keep is this builder's call. Previously
     # CreateSong::RateLessons::LOW_VALUE_SCORE.
     LOW_VALUE_SCORE = 2
+    TOKEN_CHAIN_PARTS_OF_SPEECH = %w[noun verb adjective adverb].freeze
+    MIN_TOKEN_CHAIN_TOKENS = 4
+    MAX_TOKEN_CHAIN_TOKENS = 15
 
     # Activities 3 & 4 of every non-review lesson from lesson 4 onward are two
     # random picks from this pool.
@@ -179,9 +184,12 @@ module CourseBuilder
           # order the payload's words were generated in (see
           # CreateSongProgressRebuilder#ordered_tokens).
           phrase.phrase_tokens.order(:l1_start_index, :id).each_with_index do |token, word_index|
-            translated_word = payload.dig("phrases", phrase_index, "words", word_index)
+            translated_word, part_of_speech = WordTokenBuilder.parse_translation(
+              payload.dig("phrases", phrase_index, "words", word_index)
+            )
             next if translated_word.blank?
 
+            token.update!(part_of_speech:) if part_of_speech.present?
             token.token_translations.find_or_initialize_by(language: language).tap do |translation|
               translation.translation = translated_word
               translation.save!
@@ -300,6 +308,33 @@ module CourseBuilder
       return token_translations.first(limit) if token_translations.size <= limit
 
       token_translations.uniq(&:translation).first(limit)
+    end
+
+    # Token chains are vocabulary drills, so each chain contains one content-word
+    # category and excludes proper names and function words. Both sides must be
+    # unique or the grid can contain ambiguous answers.
+    def token_chain_tokens(tokens, limit: MAX_TOKEN_CHAIN_TOKENS)
+      eligible_groups = tokens
+        .select { |token| TOKEN_CHAIN_PARTS_OF_SPEECH.include?(token.part_of_speech) }
+        .group_by(&:part_of_speech)
+        .transform_values do |group|
+          seen_l1 = Set.new
+          seen_l2 = Set.new
+          group.shuffle.select do |token|
+            l1 = token.original_text.to_s.downcase
+            l2 = token.translation.to_s.downcase
+            next false if seen_l1.include?(l1) || seen_l2.include?(l2)
+
+            seen_l1 << l1
+            seen_l2 << l2
+            true
+          end
+        end
+        .select { |_part_of_speech, group| group.size >= MIN_TOKEN_CHAIN_TOKENS }
+
+      return [] if eligible_groups.empty?
+
+      eligible_groups.values.sample.first(limit)
     end
 
     def distinct_phrases_by_text_l1(phrases)
@@ -458,13 +493,10 @@ module CourseBuilder
         flashcard_token_ids = flashcard_tokens&.map(&:id) || []
         remaining_tokens = token_translations.reject { |tt| flashcard_token_ids.include?(tt.id) }
 
-        chain_tokens = if remaining_tokens.size >= 15
-          distinct_token_translations_by_translation(remaining_tokens, 15)
-        else
-          distinct_token_translations_by_translation(token_translations, 15)
-        end
+        chain_tokens = token_chain_tokens(remaining_tokens)
+        chain_tokens = token_chain_tokens(token_translations) if chain_tokens.empty?
 
-        unless chain_tokens.empty?
+        if chain_tokens.size >= MIN_TOKEN_CHAIN_TOKENS
           a4 = Activities::TokensChainActivity.create!(lesson:, order: 5, user:)
           a4.phrase_tokens = chain_tokens
         end
@@ -518,8 +550,11 @@ module CourseBuilder
           a4 = Activities::MatchTokensActivity.create!(lesson:, order: 5, user:)
           a4.phrase_tokens = mixed_tokens.sample(5)
         else
-          a4 = Activities::TokensChainActivity.create!(lesson:, order: 5, user:)
-          a4.phrase_tokens = mixed_tokens.sample(15)
+          chain_tokens = token_chain_tokens(current_token_translations.to_a + review_token_translations.to_a)
+          if chain_tokens.size >= MIN_TOKEN_CHAIN_TOKENS
+            a4 = Activities::TokensChainActivity.create!(lesson:, order: 5, user:)
+            a4.phrase_tokens = chain_tokens
+          end
         end
       end
 
@@ -598,8 +633,10 @@ module CourseBuilder
         activity.phrases = distinct_phrases.first(5)
       when :tokens_chain
         return if current_tokens.empty? && review_tokens.empty?
+        tokens = token_chain_tokens(current_tokens.to_a + review_tokens.to_a)
+        return if tokens.size < MIN_TOKEN_CHAIN_TOKENS
         activity = Activities::TokensChainActivity.create!(lesson:, order:, user:)
-        activity.phrase_tokens = mix_content(current_tokens, review_tokens, 60).first(5)
+        activity.phrase_tokens = tokens
       when :language_alignment
         aligned_tokens = PhraseToken
           .joins(:localized_translation)
@@ -632,9 +669,10 @@ module CourseBuilder
       a2.phrases = distinct_review_phrases_audio
 
       # 3. TokenChainActivity (100% review)
-      unless review_token_translations.empty?
+      chain_tokens = token_chain_tokens(review_token_translations)
+      if chain_tokens.size >= MIN_TOKEN_CHAIN_TOKENS
         a3 = Activities::TokensChainActivity.create!(lesson:, order: 3, user:)
-        a3.phrase_tokens = review_token_translations.sample(5)
+        a3.phrase_tokens = chain_tokens
       end
 
       # 4. ListenActivity (all phrases from all previous lessons in order, only if

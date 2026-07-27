@@ -3,9 +3,9 @@
   params[:l1] - Language object for L1 tokens
   params[:l2] - Language object for L2 translations
   
-  This activity shows a 4x4 grid where:
-  1. Top-left square shows first L1 token (Spanish)
-  2. Other 15 squares show all 16 L2 translations (English, shuffled)
+  This activity shows a grid of 4-15 words sharing one part of speech:
+  1. Top-left square shows the first L1 token
+  2. Other squares show the L2 translations, shuffled
   3. User clicks matching L2 translation square
   4. Matched square flips to show next L1 token
   5. Chain continues through matched squares
@@ -21,8 +21,7 @@
   # Get first token for the top-left square (L1 word)
   first_token = tokens.first
   
-  # Shuffle all L2 translations and take only 15 for display in the other squares
-  shuffled_tokens = tokens.shuffle.first(15)
+  shuffled_tokens = tokens.shuffle
 %>
 
 <div
@@ -56,9 +55,9 @@
         <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
-      <!-- 4x4 Grid container -->
+      <!-- Vocabulary grid -->
       <div class="grid grid-cols-4 gap-3" data-tokens-chain-activity-target="grid">
-        <% # Top-left square: First L1 word (Spanish) %>
+        <% # Top-left square: first L1 word %>
         <div
           data-tokens-chain-activity-target="startButton"
           data-action="click->tokens-chain-activity#playL1Audio"
@@ -67,7 +66,7 @@
           <span class="token-text text-center break-words"><%= first_token[:l1_text] %></span>
         </div>
 
-        <% # Other 15 squares: 15 L2 translations (English, shuffled) %>
+        <% # Remaining squares: shuffled L2 translations %>
         <% shuffled_tokens.each do |token| %>
           <div
             class="grid-square px-4 py-6 border-2 border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 flex items-center justify-center min-h-[100px] cursor-pointer <%= l2.rtl ? 'text-right' : 'text-left' %>"

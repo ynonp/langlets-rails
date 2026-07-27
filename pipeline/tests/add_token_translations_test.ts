@@ -46,12 +46,12 @@ Deno.test("buildChunks packs whole phrases up to the word cap", () => {
 
 Deno.test("parseChunkTranslations takes the text after the first pipe, in order", () => {
   const content = [
-    "Don't (*Don't* you) | לא",
+    "Don't (*Don't* you) | לא [auxiliary]",
     "noise line without a pipe",
-    "you (Don't *you*) | אתה",
+    "you (Don't *you*) | אתה [pronoun]",
   ].join("\n");
 
-  assertEquals(parseChunkTranslations(content, 2), ["לא", "אתה"]);
+  assertEquals(parseChunkTranslations(content, 2), ["לא [auxiliary]", "אתה [pronoun]"]);
 });
 
 Deno.test("parseChunkTranslations validates the line count", () => {
@@ -62,9 +62,19 @@ Deno.test("parseChunkTranslations validates the line count", () => {
   );
 });
 
+Deno.test("parseChunkTranslations requires a supported part of speech", () => {
+  assertThrows(
+    () => parseChunkTranslations("a | one", 1),
+    Error,
+    "Missing or invalid part of speech",
+  );
+});
+
 Deno.test("translates every word into the language payload", async () => {
   // 4 words total (2 phrases × 2 words) → one chunk → one call.
-  const model = queuedModel(["a | שלום\nb | עולם\nc | היי\nd | עוד"]);
+  const model = queuedModel([
+    "a | שלום [noun]\nb | עולם [noun]\nc | היי [interjection]\nd | עוד [adverb]",
+  ]);
   const { ctx, store } = makeCtx({
     data: { phrases: phrasesFixture() },
     models: { tokenTranslations: model.model },
@@ -74,8 +84,8 @@ Deno.test("translates every word into the language payload", async () => {
   await addTokenTranslations(ctx);
 
   const payload = store.data.translations!.he;
-  assertEquals(payload.phrases[0].words, ["שלום", "עולם"]);
-  assertEquals(payload.phrases[1].words, ["היי", "עוד"]);
+  assertEquals(payload.phrases[0].words, ["שלום [noun]", "עולם [noun]"]);
+  assertEquals(payload.phrases[1].words, ["היי [interjection]", "עוד [adverb]"]);
   assertEquals(model.calls(), 1);
   // The neutral words gained no inline "translation" key.
   // deno-lint-ignore no-explicit-any
@@ -84,21 +94,24 @@ Deno.test("translates every word into the language payload", async () => {
 
 Deno.test("resume skips phrases whose payload words are already complete", async () => {
   // Only phrase_2's two words should be requested.
-  const model = queuedModel(["c | היי\nd | עוד"]);
+  const model = queuedModel(["c | היי [interjection]\nd | עוד [adverb]"]);
   const { ctx, store } = makeCtx({
     data: { phrases: phrasesFixture() },
     models: { tokenTranslations: model.model },
   });
 
   await initTranslationPayload(ctx);
-  store.data.translations!.he.phrases[0].words = ["שלום", "עולם"];
+  store.data.translations!.he.phrases[0].words = ["שלום [noun]", "עולם [noun]"];
 
   await addTokenTranslations(ctx);
 
   assertEquals(model.calls(), 1);
-  assertEquals(store.data.translations!.he.phrases[1].words, ["היי", "עוד"]);
+  assertEquals(store.data.translations!.he.phrases[1].words, [
+    "היי [interjection]",
+    "עוד [adverb]",
+  ]);
   // Pre-existing translations were left alone.
-  assertEquals(store.data.translations!.he.phrases[0].words, ["שלום", "עולם"]);
+  assertEquals(store.data.translations!.he.phrases[0].words, ["שלום [noun]", "עולם [noun]"]);
 });
 
 Deno.test("deduplicates identical phrases globally before building chunks", async () => {
@@ -120,7 +133,7 @@ Deno.test("deduplicates identical phrases globally before building chunks", asyn
     { ...structuredClone(repeated), id: "phrase_3" },
   ];
   const response = (count: number, translation: string) =>
-    Array.from({ length: count }, (_, index) => `line${index} | ${translation}`).join("\n");
+    Array.from({ length: count }, (_, index) => `line${index} | ${translation} [noun]`).join("\n");
   const model = queuedModel([response(150, "A"), response(60, "B")]);
   const { ctx, store } = makeCtx({
     data: { phrases },
@@ -133,9 +146,9 @@ Deno.test("deduplicates identical phrases globally before building chunks", asyn
   // Without global pre-batch deduplication these sizes produce three chunks:
   // [150], [60], [150]. The repeated final phrase must reuse the first result.
   assertEquals(model.calls(), 2);
-  assertEquals(store.data.translations!.he.phrases[0].words, new Array(150).fill("A"));
-  assertEquals(store.data.translations!.he.phrases[1].words, new Array(60).fill("B"));
-  assertEquals(store.data.translations!.he.phrases[2].words, new Array(150).fill("A"));
+  assertEquals(store.data.translations!.he.phrases[0].words, new Array(150).fill("A [noun]"));
+  assertEquals(store.data.translations!.he.phrases[1].words, new Array(60).fill("B [noun]"));
+  assertEquals(store.data.translations!.he.phrases[2].words, new Array(150).fill("A [noun]"));
 });
 
 Deno.test("resume reuses a completed identical phrase without an LLM call", async () => {
@@ -148,11 +161,11 @@ Deno.test("resume reuses a completed identical phrase without an LLM call", asyn
   });
 
   await initTranslationPayload(ctx);
-  store.data.translations!.he.phrases[1].words = ["שלום", "עולם"];
+  store.data.translations!.he.phrases[1].words = ["שלום [noun]", "עולם [noun]"];
   await addTokenTranslations(ctx);
 
   assertEquals(model.calls(), 0);
-  assertEquals(store.data.translations!.he.phrases[0].words, ["שלום", "עולם"]);
+  assertEquals(store.data.translations!.he.phrases[0].words, ["שלום [noun]", "עולם [noun]"]);
 });
 
 Deno.test("is a no-op when every phrase is already translated", async () => {
@@ -163,8 +176,8 @@ Deno.test("is a no-op when every phrase is already translated", async () => {
   });
 
   await initTranslationPayload(ctx);
-  store.data.translations!.he.phrases[0].words = ["שלום", "עולם"];
-  store.data.translations!.he.phrases[1].words = ["היי", "עוד"];
+  store.data.translations!.he.phrases[0].words = ["שלום [noun]", "עולם [noun]"];
+  store.data.translations!.he.phrases[1].words = ["היי [interjection]", "עוד [adverb]"];
 
   await addTokenTranslations(ctx);
   assertEquals(model.calls(), 0);

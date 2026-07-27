@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_24_120000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_27_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -450,7 +450,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_24_120000) do
     t.integer "index_type", default: 0, null: false
     t.string "start_timestamp"
     t.string "end_timestamp"
+    t.string "part_of_speech"
     t.index ["index_type"], name: "index_phrase_tokens_on_index_type"
+    t.index ["part_of_speech"], name: "index_phrase_tokens_on_part_of_speech"
     t.index ["phrase_id", "l1_start_index", "l1_end_index", "index_type"], name: "idx_phrase_tokens_unique", unique: true
     t.index ["phrase_id"], name: "index_phrase_tokens_on_phrase_id"
   end

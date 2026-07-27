@@ -9,36 +9,36 @@ you (Don't you want me like I want *you* baby) |
 baby (Don't you want me like I want you *baby*) |`;
 
 export const examples: Record<string, string> = {
-  English: `Don't (*Don't* you want me like I want you baby) | Don't
-you (Don't *you* want me like I want you baby) | you
-want (Don't you *want* me like I want you baby) | want
-you (Don't you want me like I want *you* baby) | you
-baby (Don't you want me like I want you *baby*) | baby`,
-  Hebrew: `Don't (*Don't* you want me like I want you baby) | לא
-you (Don't *you* want me like I want you baby) | אתה
-want (Don't you *want* me like I want you baby) | רוצה
-you (Don't you want me like I want *you* baby) | אותך
-baby (Don't you want me like I want you *baby*) | מותק`,
-  French: `Don't (*Don't* you want me like I want you baby) | Ne
-you (Don't *you* want me like I want you baby) | tu
-want (Don't you *want* me like I want you baby) | veux
-you (Don't you want me like I want *you* baby) | toi
-baby (Don't you want me like I want you *baby*) | bébé`,
-  Spanish: `Don't (*Don't* you want me like I want you baby) | No
-you (Don't *you* want me like I want you baby) | tú
-want (Don't you *want* me like I want you baby) | quieres
-you (Don't you want me like I want *you* baby) | ti
-baby (Don't you want me like I want you *baby*) | amor`,
-  German: `Don't (*Don't* you want me like I want you baby) | Willst
-you (Don't *you* want me like I want you baby) | du
-want (Don't you *want* me like I want you baby) | willst
-you (Don't you want me like I want *you* baby) | dich
-baby (Don't you want me like I want you *baby*) | Baby`,
-  Arabic: `Don't (*Don't* you want me like I want you baby) | لا
-you (Don't *you* want me like I want you baby) | أنت
-want (Don't you *want* me like I want you baby) | تريد
-you (Don't you want me like I want *you* baby) | إياك
-baby (Don't you want me like I want you *baby*) | حبيبي`,
+  English: `Don't (*Don't* you want me like I want you baby) | Don't [auxiliary]
+you (Don't *you* want me like I want you baby) | you [pronoun]
+want (Don't you *want* me like I want you baby) | want [verb]
+you (Don't you want me like I want *you* baby) | you [pronoun]
+baby (Don't you want me like I want you *baby*) | baby [noun]`,
+  Hebrew: `Don't (*Don't* you want me like I want you baby) | לא [auxiliary]
+you (Don't *you* want me like I want you baby) | אתה [pronoun]
+want (Don't you *want* me like I want you baby) | רוצה [verb]
+you (Don't you want me like I want *you* baby) | אותך [pronoun]
+baby (Don't you want me like I want you *baby*) | מותק [noun]`,
+  French: `Don't (*Don't* you want me like I want you baby) | Ne [auxiliary]
+you (Don't *you* want me like I want you baby) | tu [pronoun]
+want (Don't you *want* me like I want you baby) | veux [verb]
+you (Don't you want me like I want *you* baby) | toi [pronoun]
+baby (Don't you want me like I want you *baby*) | bébé [noun]`,
+  Spanish: `Don't (*Don't* you want me like I want you baby) | No [auxiliary]
+you (Don't *you* want me like I want you baby) | tú [pronoun]
+want (Don't you *want* me like I want you baby) | quieres [verb]
+you (Don't you want me like I want *you* baby) | ti [pronoun]
+baby (Don't you want me like I want you *baby*) | amor [noun]`,
+  German: `Don't (*Don't* you want me like I want you baby) | Willst [auxiliary]
+you (Don't *you* want me like I want you baby) | du [pronoun]
+want (Don't you *want* me like I want you baby) | willst [verb]
+you (Don't you want me like I want *you* baby) | dich [pronoun]
+baby (Don't you want me like I want you *baby*) | Baby [noun]`,
+  Arabic: `Don't (*Don't* you want me like I want you baby) | لا [auxiliary]
+you (Don't *you* want me like I want you baby) | أنت [pronoun]
+want (Don't you *want* me like I want you baby) | تريد [verb]
+you (Don't you want me like I want *you* baby) | إياك [pronoun]
+baby (Don't you want me like I want you *baby*) | حبيبي [noun]`,
 };
 
 export function addTokenTranslationsPrompt(
@@ -60,10 +60,15 @@ Add to each line after the | the translation of <word to translate> in the same 
 1. Output exactly one line per input line, in the same order as given.
 2. Keep the left side of the | EXACTLY as the input (the word and its context), unchanged.
 3. After the | write the most natural ${translationLanguage} translation of the
-   marked word as it is used in that context.
-4. Never skip a line. If the marked word is punctuation-only or has no standalone
+   marked word as it is used in that context, followed by its ${clipLanguage}
+   part of speech in square brackets. Use exactly one of: noun, proper_noun,
+   verb, adjective, adverb, pronoun, determiner, preposition, conjunction,
+   auxiliary, particle, interjection, numeral, punctuation, other.
+4. Classify the marked source-language word in this specific context, not the
+   translated word. Proper names and place names must be [proper_noun].
+5. Never skip a line. If the marked word is punctuation-only or has no standalone
    meaning, repeat it after the |.
-5. Output ONLY the translated lines — no preamble, no numbering, no markdown, no code fences.
+6. Output ONLY the translated lines — no preamble, no numbering, no markdown, no code fences.
 
 ${
     examples[translationLanguage]

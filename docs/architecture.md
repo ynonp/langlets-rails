@@ -742,10 +742,16 @@ download is verified before it counts:
 
 #### 9. **PhraseToken / TokenTranslation**
 - `phrase_tokens` is the language-neutral L1 span, unique by phrase, L1 range,
-  and index type. It owns timestamps, audio, questions, and L1 similar sounds.
+  and index type. It owns timestamps, audio, questions, L1 similar sounds, and
+  the source word's `part_of_speech`.
 - `token_translations` belongs to a PhraseToken and Language and owns the L2
   translation plus L2 indexes. It is unique per `(phrase_token_id, language_id)`.
 - Activities and saved vocabulary reference PhraseToken, never a localized row.
+- The TypeScript token-translation step emits each translated word with a
+  controlled part-of-speech suffix (for example `quieres [verb]`). Rails strips
+  the suffix from the learner-visible `TokenTranslation#translation` and stores
+  it on the language-neutral PhraseToken. Payloads without a suffix remain
+  importable for backward compatibility.
 - The migration that splits legacy `token_translations` into `phrase_tokens`
   tolerates missing legacy indexes and recreates the required indexes after the
   table rename. This supports production databases whose historical index set
@@ -802,6 +808,10 @@ download is verified before it counts:
 - **WatchVideoActivity**: Video viewing with synchronized subtitles. The "Translation" control is a 2-state L1/L2 toggle switch, labeled with the lesson's actual language names (via `localized_language_name`) on either side of the pill. It defaults to L1 (clickable, tokenized words with the tap-to-translate popover); flipping it swaps every line to the plain, non-clickable L2 text — both use identical text size/weight/color classes since only one language is ever visible at a time. The preference persists per-user under `preferences["watch_video"]["translation"]` (`false` = L1, `true` = L2; see `User#watch_video_preferences`) and is shared with the near-identical layout in `full_player/show.html.erb`, both driven by `watch_video_activity_controller.js`'s `l1Text`/`l2Text` targets.
 - **FlashcardActivity**: Missing-word multiple-choice practice. It uses the standard compact question/progress header above a frameless exercise area, with a centered L1 sentence, an L2 gloss anchored below the blank, and a 2×2 grid of contrasting answer tiles.
 - **MatchPhrasesActivity**: Phrase-to-translation matching exercises. Each question uses a compact progress header, an audio-enabled L1 phrase card, an L1-to-L2 language direction label, and a vertical set of L2 answer options.
+- **WordOrderActivity**: Sentence-building practice whose answer row declares the
+  L1 direction explicitly. The completed sentence therefore remains LTR for an
+  English L1 (and RTL for an RTL L1), independently of the interface direction
+  selected by the translation-language subdomain.
 - **SortPhrasesActivity**: Chronological phrase ordering in a compact, frameless exercise layout. The activity presents its instruction and media hint before a draggable list with visible grip handles, followed by the check action and inline result or completion feedback. Its visual states are implemented with Tailwind utilities.
 - **LanguageAlignmentActivity**: Word-level alignment exercises. Review activities
   may retain every prior phrase to define their video playback range, but rendering
@@ -1781,7 +1791,7 @@ Users can save individual word/token translations they encounter during lessons 
   - MatchTokensActivity (if ≥3 saved tokens, up to 15)
   - TokensChainActivity (if ≥4 saved tokens, up to 15)
   - WriteMissingWordActivity (always, up to 10)
-- TokensChainActivity uses a frameless exercise layout with an inline matched-word count and progress bar. Each correct translation becomes the next highlighted L1 prompt, while previously found translations are visually muted.
+- TokensChainActivity uses a frameless exercise layout with an inline matched-word count and progress bar. Each correct translation becomes the next highlighted L1 prompt, while previously found translations are visually muted. Course-built chains contain 4–15 unique word pairs from one content-word category (`noun`, `verb`, `adjective`, or `adverb`); proper nouns and function words are excluded. If no category supplies at least four pairs, the builder omits the activity.
 
 ### New Controllers
 

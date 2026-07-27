@@ -5,6 +5,16 @@ require "active_support/concern"
 module WordTokenBuilder
   extend ActiveSupport::Concern
 
+  PART_OF_SPEECH_SUFFIX = /\s+\[([a-z_]+)\]\s*\z/i
+
+  def self.parse_translation(value)
+    value = value.to_s.strip
+    match = value.match(PART_OF_SPEECH_SUFFIX)
+    return [ value, nil ] unless match
+
+    [ value.delete_suffix(match[0]).strip, match[1].downcase ]
+  end
+
   # words: array of { "text" =>, "translation" =>, "timestamp" =>, "timestamp_end" =>,
   #                    "l1_start_index" =>, "l1_end_index" => }
   def build_word_tokens(words, language: Current.translation_language)
@@ -17,7 +27,7 @@ module WordTokenBuilder
 
     Array(words).each do |word|
       text = word["text"].to_s
-      translation = word["translation"].to_s
+      translation, part_of_speech = WordTokenBuilder.parse_translation(word["translation"])
       next if text.blank? || translation.blank?
 
       # Prefer the character indices computed during extract_lyrics (see
@@ -37,7 +47,8 @@ module WordTokenBuilder
       )
       token.assign_attributes(
         start_timestamp: word["timestamp"],
-        end_timestamp: word["timestamp_end"]
+        end_timestamp: word["timestamp_end"],
+        part_of_speech:
       )
       if token.valid?
         token.save! if persisted?

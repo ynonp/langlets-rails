@@ -18,6 +18,23 @@ export const WORDS_PER_CHUNK = 200;
 
 const MAX_CONCURRENCY = 4;
 const MAX_RETRIES = 2;
+const PARTS_OF_SPEECH = new Set([
+  "noun",
+  "proper_noun",
+  "verb",
+  "adjective",
+  "adverb",
+  "pronoun",
+  "determiner",
+  "preposition",
+  "conjunction",
+  "auxiliary",
+  "particle",
+  "interjection",
+  "numeral",
+  "punctuation",
+  "other",
+]);
 
 interface WordEntry {
   phraseIndex: number;
@@ -199,6 +216,12 @@ export function parseChunkTranslations(content: string, expectedCount: number): 
       `Word translation count mismatch: got ${translations.length}, expected ${expectedCount}`,
     );
   }
+  translations.forEach((translation, index) => {
+    const partOfSpeech = translation.match(/\[([a-z_]+)\]\s*$/i)?.[1].toLowerCase();
+    if (!partOfSpeech || !PARTS_OF_SPEECH.has(partOfSpeech)) {
+      throw new Error(`Missing or invalid part of speech on word translation ${index + 1}`);
+    }
+  });
   return translations;
 }
 
