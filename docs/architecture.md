@@ -1008,6 +1008,17 @@ Which run it starts mirrors `Imports::Create`: a **published** course keeps its 
 
 Credits are deliberately untouched: the failure already refunded, a retry is us fixing our own import rather than a second sale, and leaving `refunded` set is what stops a second failure from minting a free credit in `Imports::Settlement#fail!`.
 
+**`Course#regenerate!`** is the destructive operator tool for rebuilding an old
+course with the current pipeline. It empties the matching
+`CreateSongProgress.data`, deletes the old medium (and therefore its phrases,
+tokens, lessons, and activities), deletes the old course, and creates a fresh
+course shell with the same identity fields. Existing import-history rows are
+moved to the replacement shell. The owner's most recent request is forced to
+`failed` and passed through `ImportRequest#retry!`; if the course predates
+`ImportRequest`, a request with the course owner's `user_id` is created first.
+The normal retry path then resets it to queued, installs a new timeout, and
+enqueues `CreateCourseJob`. The method returns that request.
+
 #### **Imports::Create** (`app/services/imports/create.rb`)
 The single entry point for the Add sheet, the share extension and the API. Order is deliberate: **the video is checked before a credit moves**, so a private or deleted video costs nothing (`Youtube::Oembed` doubles as the availability check). Four outcomes:
 - `:created` — charged 1 credit, queued the pipeline.

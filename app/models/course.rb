@@ -156,6 +156,54 @@ class Course < ApplicationRecord
     lessons.first&.medium
   end
 
+  # Rebuild an existing course from the beginning with the current import
+  # pipeline. This is intentionally destructive and is meant for operator use
+  # when upgrading old courses to a newer pipeline version.
+  #
+  # The old Course cannot be handed to ImportRequest#retry!: deleting it would
+  # leave the request with no course, while retry! requires a pending course for
+  # CreateCourseJob to claim. Preserve the course's identity fields in a fresh
+  # shell, move its import requests to that shell, then let the normal retry
+  # path start the import.
+  def regenerate!
+    progress = create_song_progress ||
+               CreateSongProgress.find_by!(
+                 youtubeurl: main_media_url,
+                 clip_language: language&.english_name
+               )
+    import_request = regeneration_import_request(progress)
+
+    transaction do
+      progress.update!(data: {})
+
+      course_attributes = attributes.slice(
+        "name", "slug", "main_media_url", "language_id", "user_id",
+        "show_full_course_player", "create_song_progress_id",
+        "youtube_video_id", "thumbnail_url"
+      )
+      media = lessons.where.not(medium_id: nil).distinct.map(&:medium).compact
+      requests = ImportRequest.where(course_id: id)
+
+      # The FK from import_requests prevents deletion until the requests are
+      # detached. Reattach every historical request afterwards so queue/history
+      # rows do not become orphaned merely because one owner regenerated it.
+      requests.update_all(course_id: nil, updated_at: Time.zone.now)
+      media.each(&:destroy!)
+      destroy!
+
+      replacement = Course.create!(course_attributes.merge("status" => :error))
+      requests.update_all(course_id: replacement.id, updated_at: Time.zone.now)
+      import_request.update!(
+        course: replacement,
+        create_song_progress: progress,
+        status: :failed
+      )
+      import_request.retry!
+    end
+
+    import_request
+  end
+
   def unique_lesson_slug(base_slug)
     slug = base_slug
     counter = 1
@@ -193,6 +241,20 @@ class Course < ApplicationRecord
   end
 
   private
+
+  def regeneration_import_request(progress)
+    ImportRequest.where(course_id: id, user_id: user_id).recent_first.first ||
+      user.import_requests.create!(
+        youtube_url: main_media_url,
+        youtube_video_id: video_id,
+        clip_language: progress.clip_language,
+        translation_language: progress.translation_language,
+        title: name,
+        course: self,
+        create_song_progress: progress,
+        status: :failed
+      )
+  end
 
   def slug_uniqueness_with_user_check
     return if slug.blank?

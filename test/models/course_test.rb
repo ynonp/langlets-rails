@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CourseTest < ActiveSupport::TestCase
+class CourseTest < ActiveJob::TestCase
   def setup
     @user = User.create!(
       email: "test@example.com",
@@ -219,6 +219,85 @@ class CourseTest < ActiveSupport::TestCase
     )
 
     assert_equal "https://example.com/custom.jpg", course.thumbnail_url
+  end
+
+  test "regenerate deletes the old graph and retries its import with an empty pipeline cache" do
+    english = languages(:english)
+    spanish = languages(:spanish)
+    url = "https://www.youtube.com/watch?v=regenerate1"
+    progress = CreateSongProgress.create!(
+      youtubeurl: url,
+      clip_language: "Spanish",
+      translation_language: "English",
+      data: { "phrases" => [ { "text_l1" => "old" } ] }
+    )
+    course = Course.create!(
+      name: "Old Course",
+      slug: "old-course-regenerate1",
+      main_media_url: url,
+      youtube_video_id: "regenerate1",
+      language: spanish,
+      user: @user,
+      status: :published,
+      create_song_progress: progress
+    )
+    medium = Medium.create!(url: url, language: spanish)
+    Lesson.create!(course: course, medium: medium, user: @user, name: "Old Lesson", slug: "old-lesson")
+    request = @user.import_requests.create!(
+      youtube_url: url,
+      youtube_video_id: "regenerate1",
+      clip_language: "Spanish",
+      translation_language: "English",
+      course: course,
+      create_song_progress: progress,
+      status: :ready
+    )
+
+    assert_enqueued_with(job: CreateCourseJob) do
+      assert_equal request, course.regenerate!
+    end
+
+    replacement = request.reload.course
+    refute Course.exists?(course.id)
+    refute Medium.exists?(medium.id)
+    assert_equal({}, progress.reload.data)
+    assert request.queued?
+    assert replacement.pending?
+    assert_equal course.slug, replacement.slug
+    assert_equal progress, replacement.create_song_progress
+    assert_equal english.english_name, request.translation_language
+  end
+
+  test "regenerate creates a failed import request for the course owner before retrying" do
+    spanish = languages(:spanish)
+    url = "https://www.youtube.com/watch?v=regenerate2"
+    progress = CreateSongProgress.create!(
+      youtubeurl: url,
+      clip_language: "Spanish",
+      translation_language: "English",
+      data: { "format_version" => 2 }
+    )
+    course = Course.create!(
+      name: "Legacy Course",
+      slug: "legacy-course-regenerate2",
+      main_media_url: url,
+      youtube_video_id: "regenerate2",
+      language: spanish,
+      user: @user,
+      status: :published,
+      create_song_progress: progress
+    )
+
+    assert_difference -> { ImportRequest.count }, 1 do
+      course.regenerate!
+    end
+
+    request = ImportRequest.find_by!(user: @user, youtube_video_id: "regenerate2")
+    assert request.queued?
+    assert_equal @user, request.user
+    assert_equal progress, request.create_song_progress
+    assert request.course.pending?
+    refute_equal course.id, request.course_id
   end
 
   private
