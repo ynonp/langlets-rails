@@ -23,6 +23,12 @@ export default class extends Controller {
       return;
     }
 
+    if (!this.translationPopupTarget.classList.contains('hidden')) {
+      this.hidePopup();
+      ev.stopPropagation();
+      return;
+    }
+
     const translation = tokenEl.dataset.translation;
     const tokenId = tokenEl.dataset.tokenId ? parseInt(tokenEl.dataset.tokenId) : null;
 

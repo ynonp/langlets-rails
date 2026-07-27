@@ -50,7 +50,10 @@ Opening a word-translation popup pauses the shared player. The token click is
 stopped before it reaches the document action, so playback stays paused while
 the popup is open; the next outside click closes the popup and resumes the
 segment. The watch-video controller tracks whether it initiated that pause, so
-unrelated document clicks do not start playback.
+unrelated document clicks do not start playback. Translation-token clicks are
+also excluded from the shared phrase-seek action; only clicks elsewhere on the
+sentence move playback to that phrase. Clicking a word while the popup is open
+closes it and resumes playback.
 When native playback begins before the activity's first phrase, the activity's
 play listener seeks forward to the segment start; playback already at or after
 that boundary is not moved.

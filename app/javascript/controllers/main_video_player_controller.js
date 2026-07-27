@@ -265,6 +265,11 @@ export default class extends Controller {
 
   seekToTimestamp(ev) {
     if (!this.player) return;
+    // Translation-token clicks belong to the popup interaction. Seeking here
+    // would move the video just before watch-video pauses it, which makes
+    // checking a word's meaning unexpectedly change the learner's position.
+    if (ev.target.closest('[data-translation]')) return;
+
     // Delegated: the action lives on the phrases container, so resolve the
     // clicked phrase (or any ancestor carrying a timestamp).
     const el = ev.target.closest('[data-timestamp]');

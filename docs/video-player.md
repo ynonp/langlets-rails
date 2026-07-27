@@ -152,7 +152,9 @@ under the `#main-player` container), but:
   transcript seeks continue from the selected time.
 - Clicking a transcript word pauses playback while its translation popup is
   open. The popup's existing element/document click actions keep the opening
-  click local; an outside click closes the popup and resumes the segment.
+  click local; an outside click closes the popup and resumes the segment. Word
+  clicks do not seek, while clicks elsewhere on the sentence seek to its
+  timestamp. Clicking a word while the popup is open closes it and resumes.
 - When the segment finishes, the player pauses and rewinds to its start so the
   next press of YouTube's play control replays the lesson.
 - It shows the synchronized transcript, a translation toggle, and a

@@ -15,12 +15,17 @@ export default class extends Controller {
   }
 
   handleTranslationClick(event) {
-    if (!event.target.closest('[data-translation]')) return;
+    const token = event.target.closest('[data-translation]');
+    if (!token) return;
 
-    if (!this.pausedForTranslation) {
-      this.pausedForTranslation = true;
-      this.dispatch('pause');
+    if (this.pausedForTranslation) {
+      this.pausedForTranslation = false;
+      this.dispatch('resume');
+      return;
     }
+
+    this.pausedForTranslation = true;
+    this.dispatch('pause');
   }
 
   resumeAfterTranslation() {
@@ -117,6 +122,7 @@ export default class extends Controller {
   }
 
   handleVideoStart() {
+    this.pausedForTranslation = false;
   }
 
   handleVideoPause() {
