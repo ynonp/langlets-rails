@@ -164,7 +164,7 @@ Deno.test("yt-dlp failure falls back to Gemini structured word timestamps", asyn
   assertFalse(store.data.force_alignment_in_progress);
 });
 
-Deno.test("a Gemini fallback that resplits the transcript fails instead of silently reshaping it", async () => {
+Deno.test("a Gemini fallback that merges transcript words fails instead of silently reshaping it", async () => {
   // The failure this replaces: Gemini answered a one-line transcript with 33
   // lines of its own choosing.
   const fallbackModel = queuedModel([
@@ -180,7 +180,77 @@ Deno.test("a Gemini fallback that resplits the transcript fails instead of silen
   await assertRejects(
     () => forceAlignment(ctx),
     Error,
-    "Gemini timestamped 1 of 2 transcript words",
+    `Gemini returned "Bonjour monde" outside the transcript word order`,
+  );
+  assertEquals(store.data.phrases, undefined);
+});
+
+Deno.test("Gemini may omit middle word timestamps when every line has timed bounds", async () => {
+  const fallbackModel = queuedModel([{
+    words: [
+      { word: "First", start_seconds: 1, end_seconds: 1.5 },
+      { word: "skipped" },
+      { word: "sentence", start_seconds: 3, end_seconds: 4 },
+      { word: "Second", start_seconds: 5, end_seconds: 5.5 },
+      { word: "missing" },
+      { word: "middle" },
+      { word: "too", start_seconds: 8, end_seconds: 9 },
+    ],
+  }]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["First skipped sentence", "Second missing middle too"] },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
+  });
+
+  await forceAlignment(ctx);
+
+  assertEquals(store.data.phrases?.map((phrase) => phrase.text_l1), [
+    "First skipped sentence",
+    "Second missing middle too",
+  ]);
+  assertEquals(store.data.phrases?.map((phrase) => [phrase.timestamp, phrase.timestamp_end]), [
+    ["00:01.00", "00:04.00"],
+    ["00:05.00", "00:09.00"],
+  ]);
+  assertEquals(
+    store.data.phrases?.flatMap((phrase) =>
+      phrase.words.map((word) => [word.text, word.timestamp, word.timestamp_end])
+    ),
+    [
+      ["First", "00:01.00", "00:01.50"],
+      ["skipped", undefined, undefined],
+      ["sentence", "00:03.00", "00:04.00"],
+      ["Second", "00:05.00", "00:05.50"],
+      ["missing", undefined, undefined],
+      ["middle", undefined, undefined],
+      ["too", "00:08.00", "00:09.00"],
+    ],
+  );
+  assertEquals(store.data.video_length_seconds, 9);
+  assertFalse(store.data.force_alignment_in_progress);
+});
+
+Deno.test("Gemini partial timestamps fail when a line boundary is missing", async () => {
+  const response = {
+    words: [
+      { word: "First", start_seconds: 1, end_seconds: 2 },
+      { word: "line" },
+      { word: "Second", start_seconds: 3, end_seconds: 4 },
+      { word: "line", start_seconds: 4, end_seconds: 5 },
+    ],
+  };
+  const fallbackModel = queuedModel([response, response]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["First line", "Second line"] },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
+  });
+
+  await assertRejects(
+    () => forceAlignment(ctx),
+    Error,
+    "Gemini did not timestamp the first and last words of transcript line 1",
   );
   assertEquals(store.data.phrases, undefined);
 });

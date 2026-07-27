@@ -4,14 +4,20 @@ Watch and LISTEN to the attached video, then locate every supplied
 ${clipLanguage} transcript word in the audio.
 
 Return exactly one output entry for every input word, in the same order.
-For each word return:
+For each entry always return:
 - word: the supplied word, copied exactly
-- start_seconds: when that word starts being sung or spoken
-- end_seconds: when that word stops being sung or spoken
+
+When you can timestamp the word confidently, also return:
+- start_seconds: when it starts being sung or spoken
+- end_seconds: when it stops being sung or spoken
+
+The first and last words of every supplied transcript line must include both
+timestamps. Middle-word timestamps are strongly preferred, but when you cannot
+locate a middle word confidently, still return its word entry and omit both
+timestamp fields.
 
 Do not split, merge, add, remove, reorder, correct, translate, or re-punctuate
-words. Return an entry for every word, including repeats — never summarize,
-group, or truncate the list.
+words. Include repeats separately.
 
 Your output is checked against the transcript and rejected when the words or
 the ordering do not match, so timestamp what you actually hear. Do not

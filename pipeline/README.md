@@ -54,14 +54,15 @@ normally maps one continuous transcript to a flat timed word stream. ElevenLabs'
 reconciled back onto the transcript's own whitespace tokens — those, not the provider's, are what
 `add_lessons` indexes and `add_token_translations` turns into clickable words — so only the timings
 come from ElevenLabs. If audio download, ElevenLabs,
-or reconciliation fails, Gemini 2.5 Flash receives the video plus the original line array and
-returns structured start/end timestamps for the same lines. The pipeline preserves the original text
-and creates Rails-compatible untimed word tokens for downstream translation.
+or reconciliation fails, Gemini 2.5 Flash receives the video plus the original transcript words and
+returns every word in order with optional structured start/end timestamps. The first and last word
+of every source line require timestamps so phrase timing survives; untimed middle words remain untimed. The
+pipeline preserves the original text and keeps every word token for downstream translation.
 
 Lesson generation receives the continuous aligned transcript and returns lesson titles and semantic
 line breaks. The pipeline uses the returned word counts only as boundaries, derives internal word
-ranges, and reconstructs the exact text and timestamps from aligned words or Gemini-timestamped
-source lines. This makes each line a semantic comprehension/translation unit without allowing the
+ranges, and reconstructs exact text and phrase timestamps from aligned words or Gemini-timestamped
+source-line bounds. This makes each line a semantic comprehension/translation unit without allowing the
 model to modify the transcript. It atomically persists `lyric_lines`, `phrases`, `lesson_outline`,
 and timestamped `lessons`. The prompt uses a ten-line, two-lesson worked example in the clip
 language for the seven configured languages, falling back to English for unknown languages.

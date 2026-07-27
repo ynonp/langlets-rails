@@ -228,6 +228,43 @@ Deno.test("addLessons preserves line timing while fallback words remain untimed"
   );
 });
 
+Deno.test("addLessons preserves only the word timings Gemini supplied", async () => {
+  const model = queuedModel([{
+    lessons: [{ title: "One", lines: ["First skipped last"] }],
+  }]);
+  const { ctx, store } = makeCtx({
+    data: {
+      phrases: [{
+        id: "phrase_1",
+        text_l1: "First skipped last",
+        timestamp: "00:01.00",
+        timestamp_end: "00:04.00",
+        words: [
+          { text: "First", timestamp: "00:01.00", timestamp_end: "00:01.50" },
+          { text: "skipped" },
+          { text: "last", timestamp: "00:03.00", timestamp_end: "00:04.00" },
+        ],
+      }],
+    },
+    models: { addLessons: model.model },
+  });
+
+  await addLessons(ctx);
+
+  assertEquals(
+    store.data.phrases?.[0].words.map((word) => [
+      word.text,
+      word.timestamp,
+      word.timestamp_end,
+    ]),
+    [
+      ["First", "00:01.00", "00:01.50"],
+      ["skipped", undefined, undefined],
+      ["last", "00:03.00", "00:04.00"],
+    ],
+  );
+});
+
 Deno.test("materializeLessons attaches aligned timestamps to the outline", async () => {
   const { ctx, store } = makeCtx({
     data: {

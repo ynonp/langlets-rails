@@ -22,6 +22,7 @@ interface LineRange {
 
 interface SegmentationWord extends Word {
   sourceFragment?: string;
+  hasSourceTiming?: boolean;
 }
 
 interface LessonPlan {
@@ -58,6 +59,7 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
         : undefined;
       return {
         ...word,
+        hasSourceTiming: Boolean(word.timestamp && word.timestamp_end),
         timestamp: word.timestamp || phrase.timestamp,
         timestamp_end: word.timestamp_end || phrase.timestamp_end,
         sourceFragment,
@@ -253,13 +255,17 @@ function withLineIndices(
     // final punctuated token extend beyond the phrase boundary.
     const needle = word.text.replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
     if (!needle) {
-      const { sourceFragment: _sourceFragment, ...persistedWord } = word;
+      const {
+        sourceFragment: _sourceFragment,
+        hasSourceTiming: _hasSourceTiming,
+        ...persistedWord
+      } = word;
       const normalized = {
         ...persistedWord,
         l1_start_index: undefined,
         l1_end_index: undefined,
       };
-      if (retainWordTimings) return normalized;
+      if (retainWordTimings && word.hasSourceTiming) return normalized;
       const { timestamp: _timestamp, timestamp_end: _timestampEnd, ...untimed } = normalized;
       return untimed;
     }
@@ -269,9 +275,13 @@ function withLineIndices(
     }
     const end = start + needle.length - 1;
     cursor = end + 1;
-    const { sourceFragment: _sourceFragment, ...persistedWord } = word;
+    const {
+      sourceFragment: _sourceFragment,
+      hasSourceTiming: _hasSourceTiming,
+      ...persistedWord
+    } = word;
     const normalized = { ...persistedWord, l1_start_index: start, l1_end_index: end };
-    if (retainWordTimings) return normalized;
+    if (retainWordTimings && word.hasSourceTiming) return normalized;
     const { timestamp: _timestamp, timestamp_end: _timestampEnd, ...untimed } = normalized;
     return untimed;
   });

@@ -478,12 +478,17 @@ YouTube audio and sends the resulting text to ElevenLabs forced alignment, which
 the word-level timestamps used to materialize `phrases`. If any part of that path fails—including
 `yt-dlp`, the ElevenLabs API, or validation of its response—the pipeline sends the video URL and the
 whitespace-tokenized transcript **words** to Gemini 2.5 Flash using structured output, and Gemini
-returns the same ordered array with start/end seconds per word. This mirrors the ElevenLabs
-response deliberately: the fallback produces the same flat timed-word stream, so `add_lessons`
-re-partitions it and karaoke highlighting and the word-order activities work exactly as on the
-primary path. (Before July 2026 the fallback timestamped whole *lines*, which stopped working when
-`extract_lyrics` began storing the transcript as one continuous line — Gemini re-split it and the
-count check failed every time, and even a passing run would have yielded one untimed phrase.)
+returns every word in order, with start/end seconds optional for middle words. The fallback
+reconciles those entries against the transcript instead of requiring Gemini to timestamp every
+token. Every source line must still have its first and last lexical words timestamped, which
+guarantees required phrase bounds; timed middle words keep their word timings and untimed middle
+words remain untimed. This lets
+the batch continue with phrase highlighting when Gemini misses individual words, while preserving
+karaoke timing wherever it is available. `add_lessons` carries those phrase bounds through semantic
+repartitioning without inventing persisted timestamps for the omitted words. (Before July 2026 the
+fallback timestamped whole *lines*, which stopped working when `extract_lyrics` began storing the
+transcript as one continuous line — Gemini re-split it and the count check failed every time, and
+even a passing run would have yielded one untimed phrase.)
 
 **ElevenLabs' tokenization is not the pipeline's.** It splits and merges the text it is given as it
 likes — `don't` can come back as `don` + `'t`, a parenthetical can vanish, a script without word
@@ -501,14 +506,16 @@ equality check on token *counts*, which rejected the whole audio-derived timing 
 apostrophe or a `♪`, and reported it as `ElevenLabs aligned N of M transcript words` — a message
 about a step downstream of whatever had actually gone wrong.)
 
-The Gemini response is validated, not trusted: one entry per transcript word, in order, with each returned
-word matching the transcript's after normalization (case, quote style and surrounding punctuation
-are ignored), timestamps finite, non-negative, chronological, and each end at or after its start. A
-mismatch fails the attempt and is retried once. Phrase and word text always come from the
-transcript, never from the response, so a re-punctuated or "corrected" word that survives
-normalization still cannot reach the course. The prompt states that the output is checked and that
-the model must timestamp what it hears rather than extrapolate an even speaking rate, because
-song rhythm (held notes, repeats, pauses, instrumental gaps) defeats that guess.
+The Gemini response is validated, not trusted: returned entries must reconcile in order with the
+transcript, with every source line's first and last lexical words timed. Missing middle entries are
+also tolerated defensively, although the prompt and structured schema ask Gemini to return every word.
+Case, quote style and surrounding punctuation are ignored while matching. Timestamps must be
+finite, non-negative and chronological, and each end must be at or after its start. An added,
+rewritten or reordered word, or a missing line boundary, fails the attempt and is retried once.
+Phrase and word text always come from the transcript, never from the response, so a re-punctuated
+word that survives normalization still cannot reach the course. The prompt states that the output
+is checked and that the model must timestamp what it hears rather than extrapolate an even speaking
+rate, because song rhythm (held notes, repeats, pauses, instrumental gaps) defeats that guess.
 
 Provider cue boundaries and performance pauses are not semantic lyric lines: either can split a
 translation unit in the middle (for example `que / más quisiera`). `force_alignment` therefore sends

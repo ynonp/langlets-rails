@@ -8,7 +8,8 @@ export const DATA_FORMAT_VERSION = 2;
 
 export interface Word {
   text: string;
-  // Gemini's line-alignment fallback deliberately leaves words untimed.
+  // Gemini's alignment fallback may leave words untimed while retaining
+  // required phrase-level bounds.
   timestamp?: string;
   timestamp_end?: string;
   l1_start_index?: number;

@@ -8,21 +8,20 @@ import { downloadYoutubeAudioToTemp, isAudioVerificationUnavailable } from "../a
 import { type AlignedWord, alignLyrics as alignWithElevenLabs } from "../alignment.ts";
 import { phrasesFromAlignedWords } from "../alignedWords.ts";
 import { fallbackWordTimestampsPrompt } from "../prompts/fallbackWordTimestamps.ts";
+import { secondsToTimestamp } from "../timestamps.ts";
 
 const MAX_AUDIO_RETRIES = 2;
 const MAX_ALIGN_RETRIES = 2;
 const MAX_GEMINI_RETRIES = 1;
 
-// Word-level, not line-level, on purpose: the fallback has to hand back the
-// same shape ElevenLabs does — one timed word per transcript word — because
-// everything downstream (add_lessons re-partitioning, karaoke highlighting,
-// the word-order activities) is built on that stream. Timing lines instead
-// would leave every fallback course silently without word timings.
+// Word entries remain optional because phrase bounds are the hard requirement:
+// Gemini may omit middle words, but reconciliation requires the first and last
+// lexical word of every source line and preserves any other timings it returns.
 const fallbackOutputSchema = z.object({
   words: z.array(z.object({
     word: z.string(),
-    start_seconds: z.number(),
-    end_seconds: z.number(),
+    start_seconds: z.number().optional(),
+    end_seconds: z.number().optional(),
   })),
 });
 
@@ -95,8 +94,9 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
               content: [
                 {
                   type: "text",
-                  text: `Timestamp these ${transcriptWords.length} words, in order:\n` +
-                    JSON.stringify(transcriptWords),
+                  text:
+                    `Timestamp these ${transcriptWords.length} words, grouped by source line:\n` +
+                    JSON.stringify(lines.map((line) => wordsOf([line]))),
                 },
                 { type: "file", data: new URL(ctx.youtubeurl), mediaType: "video/mp4" },
               ],
@@ -104,7 +104,7 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
             temperature: 0.1,
           });
           lastResponse = JSON.stringify(result.object);
-          return validateFallbackWords(transcriptWords, result.object.words);
+          return reconcileFallbackWords(lines, result.object.words);
         },
         {
           maxRetries: MAX_GEMINI_RETRIES,
@@ -113,8 +113,9 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
           onFailedAttempt: (_error, attempt) => attempts = attempt,
         },
       );
-      phrases = phrasesFromFallback(transcriptWords, fallback);
-      videoLengthSeconds = fallback.at(-1)?.end_seconds ?? null;
+      phrases = phrasesFromFallback(lines, fallback);
+      videoLengthSeconds = fallback.flatMap((line) => line.words)
+        .at(-1)?.timestamp?.end_seconds ?? null;
     }
 
     await persist(ctx, phrases, videoLengthSeconds);
@@ -238,51 +239,111 @@ function alignmentKey(text: string): string {
 }
 
 type FallbackWord = z.infer<typeof fallbackOutputSchema>["words"][number];
+type TimedFallbackWord = FallbackWord & {
+  start_seconds: number;
+  end_seconds: number;
+};
 
-function validateFallbackWords(
-  transcriptWords: string[],
+interface ReconciledFallbackWord {
+  text: string;
+  timestamp?: TimedFallbackWord;
+}
+
+interface ReconciledFallbackLine {
+  text: string;
+  words: ReconciledFallbackWord[];
+}
+
+function reconcileFallbackWords(
+  lines: string[],
   returned: FallbackWord[],
-): FallbackWord[] {
-  if (returned.length !== transcriptWords.length) {
-    throw new Error(
-      `Gemini timestamped ${returned.length} of ${transcriptWords.length} transcript words`,
-    );
-  }
+): ReconciledFallbackLine[] {
   let previousStart = 0;
   returned.forEach((word, index) => {
-    // The words are matched, not just counted: a model that quietly drops a
-    // repeat and adds a word elsewhere would otherwise pass the count check
-    // and shift every timestamp after it.
-    if (normalizeWord(word.word) !== normalizeWord(transcriptWords[index])) {
-      throw new Error(
-        `Gemini returned "${word.word}" for transcript word ${index + 1} ` +
-          `("${transcriptWords[index]}")`,
-      );
-    }
+    const hasStart = word.start_seconds !== undefined;
+    const hasEnd = word.end_seconds !== undefined;
+    if (!hasStart && !hasEnd) return;
     if (
+      !hasStart || !hasEnd ||
       !Number.isFinite(word.start_seconds) || !Number.isFinite(word.end_seconds) ||
-      word.start_seconds < 0 || word.end_seconds < word.start_seconds ||
-      word.start_seconds < previousStart
+      word.start_seconds! < 0 || word.end_seconds! < word.start_seconds! ||
+      word.start_seconds! < previousStart
     ) {
       throw new Error(`Gemini returned invalid timestamps for transcript word ${index + 1}`);
     }
-    previousStart = word.start_seconds;
+    previousStart = word.start_seconds!;
   });
-  return returned;
+
+  let returnedIndex = 0;
+  const reconciled = lines.map((text) => ({
+    text,
+    words: wordsOf([text]).map((word) => {
+      const candidate = returned[returnedIndex];
+      if (candidate && normalizeWord(candidate.word) === normalizeWord(word)) {
+        returnedIndex++;
+        return candidate.start_seconds !== undefined && candidate.end_seconds !== undefined
+          ? { text: word, timestamp: candidate as TimedFallbackWord }
+          : { text: word };
+      }
+      return { text: word };
+    }),
+  }));
+
+  if (returnedIndex !== returned.length) {
+    throw new Error(
+      `Gemini returned "${returned[returnedIndex].word}" outside the transcript word order`,
+    );
+  }
+
+  reconciled.forEach((line, index) => {
+    const matchable = line.words.filter((word) => normalizeWord(word.text) !== "");
+    if (
+      matchable.length === 0 ||
+      !matchable[0].timestamp ||
+      !matchable.at(-1)!.timestamp
+    ) {
+      throw new Error(
+        `Gemini did not timestamp the first and last words of transcript line ${index + 1}`,
+      );
+    }
+  });
+
+  return reconciled;
 }
 
-function phrasesFromFallback(transcriptWords: string[], timestamps: FallbackWord[]): Phrase[] {
+function phrasesFromFallback(
+  lines: string[],
+  reconciled: ReconciledFallbackLine[],
+): Phrase[] {
   // Gemini contributes timings only. The text stays the transcript's own, so
   // re-punctuation or a "corrected" spelling that survived normalization still
   // cannot reach the course.
-  const words: AlignedWord[] = transcriptWords.map((text, index) => ({
-    text,
-    start: timestamps[index].start_seconds,
-    end: timestamps[index].end_seconds,
-  }));
-  const phrases = phrasesFromAlignedWords(words);
-  if (phrases.length !== 1) throw new Error("Gemini returned no usable transcript words");
-  return phrases;
+  return reconciled.map((line, lineIndex) => {
+    const timedWords = line.words.filter((word) => word.timestamp);
+    let cursor = 0;
+    const words = line.words.map((word) => {
+      const start = line.text.indexOf(word.text, cursor);
+      cursor = start < 0 ? cursor : start + word.text.length;
+      return {
+        text: word.text,
+        ...(word.timestamp
+          ? {
+            timestamp: secondsToTimestamp(word.timestamp.start_seconds),
+            timestamp_end: secondsToTimestamp(word.timestamp.end_seconds),
+          }
+          : {}),
+        ...(start < 0 ? {} : { l1_start_index: start, l1_end_index: start + word.text.length - 1 }),
+      };
+    });
+
+    return {
+      id: `phrase_${lineIndex + 1}`,
+      text_l1: lines[lineIndex],
+      timestamp: secondsToTimestamp(timedWords[0].timestamp!.start_seconds),
+      timestamp_end: secondsToTimestamp(timedWords.at(-1)!.timestamp!.end_seconds),
+      words,
+    };
+  });
 }
 
 // The transcript arrives as a single continuous line (see extract_lyrics), so
