@@ -73,7 +73,7 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
               role: "user",
               content: [{ type: "file", data: new URL(ctx.youtubeurl), mediaType: "video/mp4" }],
             }],
-            temperature: 0.2,
+            temperature: 0,
           });
           lastResponseText = text;
           const parsed = parseLyricsLines(text);
