@@ -43,6 +43,21 @@ Deno.test("falls back to Gemini immediately when YouTube native captions fail", 
   assertEquals(store.data.lyric_lines, ["First line Second line"]);
 });
 
+Deno.test("cleans non-speech annotations from Gemini fallback text", async () => {
+  const transcriber = stubTranscribe([new Error("transcript-unavailable")]);
+  const gemini = queuedModel([
+    "(footsteps clicking)\n♪ First line ♪\nSecond (door squeaks) line\n[Music]",
+  ]);
+  const { ctx, store } = makeCtx({
+    transcribeVideo: transcriber.transcribe,
+    models: { extractLyrics: gemini.model },
+  });
+
+  await extractLyrics(ctx);
+
+  assertEquals(store.data.lyric_lines, ["First line Second line"]);
+});
+
 Deno.test("does not use Gemini fallback for a non-YouTube provider", async () => {
   const transcriber = stubTranscribe([new Error("Supadata unavailable")]);
   const { ctx, store } = makeCtx({ transcribeVideo: transcriber.transcribe });

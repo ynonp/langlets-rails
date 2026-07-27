@@ -1,5 +1,6 @@
 import type { Phrase, Word } from "./types.ts";
 import { secondsToTimestamp } from "./timestamps.ts";
+import { cleanupTranscript } from "./cleanupTranscript.ts";
 
 const BASE_URL = "https://api.supadata.ai/v1";
 const DEFAULT_POLL_INTERVAL_MS = 3_000;
@@ -37,36 +38,20 @@ export interface SupadataOptions {
 export const MAX_LINE_LENGTH = 42;
 
 export function transcriptToText(chunks: TranscriptChunk[]): string {
-  return chunks.map((chunk) => cleanTranscriptText(chunk.text)).filter(Boolean).join(" ").trim();
+  return chunks.map((chunk) => cleanupTranscript(chunk.text)).filter(Boolean).join(" ").trim();
 }
 
 export function transcriptToLines(chunks: TranscriptChunk[]): string[] {
   return chunks.flatMap((chunk) => {
     // Native captions commonly include non-speech cues such as [Music],
-    // [Música], and [Applause]. Square brackets are also reserved by the app's
-    // token markup, so these annotations are not learning content.
-    const text = cleanTranscriptText(chunk.text);
+    // (footsteps), and [Applause]. Square brackets are also reserved by the
+    // app's token markup, so these annotations are not learning content.
+    const text = cleanupTranscript(chunk.text);
     if (!text) return [];
     const sentences = text.match(/.*?(?:[.!?。！？]+(?=\s|$)|$)/gu)
       ?.map((part) => part.trim()).filter(Boolean) ?? [];
     return sentences.flatMap((sentence) => splitLongLine(sentence));
   });
-}
-
-// Music videos are the common case here, and YouTube's caption tracks for them
-// wrap every line in ♪ … ♪. Those are whitespace-separated tokens like any
-// other, so left in they become "words": counted by force_alignment, handed to
-// add_lessons as index slots, and sent to add_token_translations, which under
-// its punctuation rule answers "♪" — a clickable vocabulary item with a musical
-// note in it.
-const NON_SPEECH_SYMBOLS = /[♪♫♬♩𝅗𝅥𝅘𝅥𝅮]/gu;
-
-function cleanTranscriptText(text: string): string {
-  return text
-    .replace(/\[[^\]\r\n]*\]/gu, " ")
-    .replace(NON_SPEECH_SYMBOLS, " ")
-    .replace(/\s+/gu, " ")
-    .trim();
 }
 
 // Supadata's `lang` parameter is a preference, not a filter: when the requested

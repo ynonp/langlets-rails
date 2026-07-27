@@ -47,8 +47,9 @@ For YouTube, Supadata is requested once with `mode=native` and `text=false`. If 
 unavailable — or come back in a language other than the requested one, which Supadata does freely
 because `lang` is a preference rather than a filter — Gemini 2.5 Flash transcribes the video using
 the lyric-specific prompt. Other providers
-currently stop at the native-caption failure. Provider cue boundaries are removed, along with
-`[Music]`-style annotations and the `♪` symbols wrapping sung caption lines, and ElevenLabs
+currently stop at the native-caption failure. Supadata and Gemini transcripts share one cleanup
+that removes provider cue boundaries, `[Music]`- and `(footsteps)`-style annotations, and the `♪`
+symbols wrapping sung caption lines. ElevenLabs
 normally maps one continuous transcript to a flat timed word stream. ElevenLabs' tokenization is
 reconciled back onto the transcript's own whitespace tokens — those, not the provider's, are what
 `add_lessons` indexes and `add_token_translations` turns into clickable words — so only the timings

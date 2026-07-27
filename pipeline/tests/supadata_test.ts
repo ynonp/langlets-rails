@@ -4,6 +4,7 @@ import {
   MAX_LINE_LENGTH,
   transcribeWithSupadata,
   transcriptToLines,
+  transcriptToText,
 } from "../src/supadata.ts";
 
 Deno.test("Supadata client sends a native timestamped transcript request", async () => {
@@ -103,15 +104,25 @@ Deno.test("transcript splitting falls back to whitespace and hard-splits long to
   );
 });
 
-Deno.test("native transcript splitting removes bracketed non-speech annotations", () => {
+Deno.test("native transcript splitting removes bracketed and parenthetical non-speech annotations", () => {
   const lines = transcriptToLines([
     { text: "Buenas noches,", offset: 0, duration: 1, lang: "es" },
     { text: "[Música]", offset: 1, duration: 1, lang: "es" },
-    { text: "[Aplausos]", offset: 2, duration: 1, lang: "es" },
-    { text: "Hola [ruido] a todos.", offset: 3, duration: 1, lang: "es" },
+    { text: "(pasos)", offset: 2, duration: 1, lang: "es" },
+    { text: "[Aplausos]", offset: 3, duration: 1, lang: "es" },
+    { text: "Hola [ruido] a (música intensa) todos.", offset: 4, duration: 1, lang: "es" },
   ]);
 
   assertEquals(lines, ["Buenas noches,", "Hola a todos."]);
+});
+
+Deno.test("continuous transcript text removes parenthetical non-speech annotations", () => {
+  const text = transcriptToText([
+    { text: "(footsteps clicking)", offset: 0, duration: 1, lang: "en" },
+    { text: "Hello (door squeaks) everyone.", offset: 1, duration: 1, lang: "en" },
+  ]);
+
+  assertEquals(text, "Hello everyone.");
 });
 
 Deno.test("native transcript splitting removes the note symbols wrapping sung lines", () => {

@@ -16,6 +16,7 @@ import {
   transcribeWithElevenLabs,
 } from "../speechToText.ts";
 import { downloadYoutubeAudioToTemp, isAudioVerificationUnavailable } from "../audio.ts";
+import { cleanupTranscript } from "../cleanupTranscript.ts";
 
 const MAX_GEMINI_RETRIES = 2;
 const MAX_STT_RETRIES = 2;
@@ -77,8 +78,9 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
           });
           lastResponseText = text;
           const parsed = parseLyricsLines(text);
-          if (parsed.length === 0) throw new Error("Gemini lyrics response contained no text");
-          return [parsed.join(" ")];
+          const transcriptText = cleanupTranscript(parsed.join(" "));
+          if (!transcriptText) throw new Error("Gemini lyrics response contained no usable text");
+          return [transcriptText];
         },
         {
           maxRetries: MAX_GEMINI_RETRIES,

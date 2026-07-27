@@ -451,9 +451,10 @@ request with no application-level retry, and supports both immediate and asynchr
 When native captions are unavailable for a YouTube URL, `extract_lyrics` falls back to Gemini 2.5
 Flash using the video URL and the lyric-specific transcription prompt. Non-YouTube providers do not
 yet have a generated-transcript fallback. Supadata chunks are normalized into provisional text,
-while Gemini supplies the fallback transcript. Bracketed native-caption annotations
-such as `[Music]` and `[Applause]` are removed before lines are saved, as are the `♪` symbols
-YouTube wraps sung caption lines in — left in, those are whitespace tokens like any other and become
+while Gemini supplies the fallback transcript. Both sources pass through the shared transcript
+cleanup before lines are saved: bracketed and parenthetical annotations such as `[Music]`,
+`[Applause]`, and `(footsteps)` are removed, as are the `♪` symbols YouTube wraps sung caption lines
+in — left in, those are whitespace tokens like any other and become
 "words": index slots for `add_lessons` and clickable vocabulary items whose translation is `♪`.
 
 Supadata's `lang` parameter is a **preference, not a filter**: for a video with no caption track in
