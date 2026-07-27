@@ -96,4 +96,33 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
       assert_includes actions, "click@document->watch-video-activity#resumeAfterTranslation"
     end
   end
+
+  test "native read translated activity renders its text in the main scroll region" do
+    @user.update!(ios_lang: "en")
+    phrase = Phrase.create!(
+      medium: @medium,
+      l1: languages(:english),
+      text_l1: "Une phrase de test",
+      timestamp: "00:01.00"
+    )
+    PhraseTranslation.create!(
+      phrase:,
+      language: languages(:english),
+      text: "A visible translated phrase"
+    )
+    activity = Activities::ReadTranslatedActivity.create!(
+      lesson: @lesson,
+      order: 2,
+      user: @user
+    )
+    activity.phrases << phrase
+
+    get course_lesson_url(@course, @lesson, a: activity.order, lang: "en"),
+        headers: { "User-Agent" => "LangletsNative" }
+
+    assert_response :success
+    assert_select "[data-testid='read-translated-scroll']" do
+      assert_select "p", text: "A visible translated phrase"
+    end
+  end
 end

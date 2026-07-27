@@ -7,26 +7,30 @@
     data-controller="read-translated-activity"
     class="flex-1 min-h-0 flex flex-col">
 
-  <div class="order-4 px-5 pt-3 pb-2">
-    <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
-      <%= t(".before_you_watch") %>
-    </div>
-    <% if @activity.text_header.present? %>
-      <h2 class="mt-1 text-lg font-extrabold tracking-tight"><%= @activity.text_header %></h2>
-      <% if @activity.text_subheader.present? %>
-        <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-0.5"><%= @activity.text_subheader %></p>
+  <div
+    data-testid="read-translated-scroll"
+    class="order-4 flex-1 min-h-0 overflow-y-auto px-5 pt-3 pb-4"
+    style="padding-bottom: calc(16px + env(safe-area-inset-bottom));">
+    <div class="pb-2">
+      <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+        <%= t(".before_you_watch") %>
+      </div>
+      <% if @activity.text_header.present? %>
+        <h2 class="mt-1 text-lg font-extrabold tracking-tight"><%= @activity.text_header %></h2>
+        <% if @activity.text_subheader.present? %>
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-0.5"><%= @activity.text_subheader %></p>
+        <% end %>
+      <% else %>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400"><%= t(".instruction") %></p>
       <% end %>
-    <% else %>
-      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400"><%= t(".instruction") %></p>
-    <% end %>
-  </div>
-
-  <div class="order-4 flex-1 overflow-y-auto px-5 flex flex-col gap-4" style="padding-bottom: calc(16px + env(safe-area-inset-bottom));">
-    <% phrases.each do |phrase| %>
-      <p class="text-base leading-relaxed text-gray-900 dark:text-gray-50" dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
-        <%= phrase.text_l2 %>
-      </p>
-    <% end %>
+    </div>
+    <div class="flex flex-col gap-4">
+      <% phrases.each do |phrase| %>
+        <p class="text-base leading-relaxed text-gray-900 dark:text-gray-50" dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
+          <%= phrase.text_l2 %>
+        </p>
+      <% end %>
+    </div>
   </div>
 
   <div class="order-4 px-5 flex-shrink-0 pt-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: calc(20px + env(safe-area-inset-bottom));">
