@@ -82,6 +82,39 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "meta[name='twitter:title']"
   end
 
+  test "homepage canonical and sharing URLs preserve the Hebrew subdomain" do
+    host! "he.langlets.app"
+
+    get root_path
+
+    assert_response :success
+    assert_select "link[rel='canonical'][href='https://he.langlets.app/']", minimum: 1
+    assert_select "meta[property='og:url'][content='https://he.langlets.app/']"
+    assert_select "meta[name='twitter:url'][content='https://he.langlets.app/']"
+    assert_select "meta[property='og:image'][content='https://he.langlets.app/cover.png']"
+  end
+
+  test "homepage canonical and sharing URLs use the main domain on the main host" do
+    host! "langlets.app"
+
+    get root_path
+
+    assert_response :success
+    assert_select "meta[property='og:url'][content='https://langlets.app/']"
+    assert_select "meta[name='twitter:url'][content='https://langlets.app/']"
+  end
+
+  test "homepage canonical URLs reject hosts outside the whitelist" do
+    host! "unrecognized.langlets.app"
+
+    get root_path
+
+    assert_response :success
+    assert_select "meta[property='og:url'][content='https://langlets.app/']"
+    assert_select "meta[name='twitter:url'][content='https://langlets.app/']"
+    assert_select "meta[property='og:image'][content='https://langlets.app/cover.png']"
+  end
+
   test "homepage presents the product image before the library and creation form" do
     get root_url
 

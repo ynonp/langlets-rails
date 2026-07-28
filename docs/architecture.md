@@ -49,8 +49,10 @@ while retaining the activity's segment boundary and `video:*` event contract.
 Opening a word-translation popup pauses the shared player. The token click is
 stopped before it reaches the document action, so playback stays paused while
 the popup is open; the next outside click closes the popup and resumes the
-segment. The watch-video controller tracks whether it initiated that pause, so
-unrelated document clicks do not start playback. Translation-token clicks are
+segment. The watch-video controller tracks the shared player's play/stop events
+and only marks a translation pause when playback was active, so opening a popup
+while the video is already paused cannot make a later outside click start it.
+Translation-token clicks are
 also excluded from the shared phrase-seek action; only clicks elsewhere on the
 sentence move playback to that phrase. Clicking a word while the popup is open
 closes it and resumes playback.
@@ -195,6 +197,14 @@ The homepage's Open Graph and Twitter large-card metadata uses the dedicated
 the shared SEO helper, alongside homepage-specific copy focused on turning
 videos into comprehensible input and spaced-repetition practice. Other pages
 retain the helper's video-thumbnail dimension defaults.
+
+Canonical, Open Graph, Twitter, hreflang, and structured-data URLs preserve the
+localized request host through `SeoHelper#canonical_url`. The allowed canonical
+host whitelist is deliberately limited to `langlets.app` and
+`he.langlets.app`; any other request host falls back to `langlets.app` so an
+unexpected Host header cannot leak into public metadata. When adding another
+localized subdomain, add it to `SeoHelper::CANONICAL_HOSTS` and extend the
+canonical metadata tests at the same time.
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
 the eight most recently created courses for the selected language, or the eight

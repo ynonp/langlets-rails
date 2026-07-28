@@ -154,7 +154,10 @@ under the `#main-player` container), but:
   open. The popup's existing element/document click actions keep the opening
   click local; an outside click closes the popup and resumes the segment. Word
   clicks do not seek, while clicks elsewhere on the sentence seek to its
-  timestamp. Clicking a word while the popup is open closes it and resumes.
+  timestamp. The activity tracks `video:play`/`video:stop` and only records a
+  translation-owned pause when playback was active, so a popup opened over an
+  already paused video does not resume it later. Clicking a word while the
+  popup is open closes it and resumes only when the popup initiated the pause.
 - When the segment finishes, the player pauses and rewinds to its start so the
   next press of YouTube's play control replays the lesson.
 - It shows the synchronized transcript, a translation toggle, and a

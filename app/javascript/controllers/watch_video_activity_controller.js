@@ -12,6 +12,7 @@ export default class extends Controller {
 
   initialize() {
     this.pausedForTranslation = false;
+    this.videoPlaying = false;
   }
 
   handleTranslationClick(event) {
@@ -24,8 +25,10 @@ export default class extends Controller {
       return;
     }
 
-    this.pausedForTranslation = true;
-    this.dispatch('pause');
+    if (this.videoPlaying) {
+      this.pausedForTranslation = true;
+      this.dispatch('pause');
+    }
   }
 
   resumeAfterTranslation() {
@@ -122,10 +125,12 @@ export default class extends Controller {
   }
 
   handleVideoStart() {
+    this.videoPlaying = true;
     this.pausedForTranslation = false;
   }
 
   handleVideoPause() {
+    this.videoPlaying = false;
   }
 
   handleVideoEnd() {

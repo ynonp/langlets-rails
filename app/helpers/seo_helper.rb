@@ -1,4 +1,6 @@
 module SeoHelper
+  CANONICAL_HOSTS = %w[langlets.app he.langlets.app].freeze
+
   DEFAULT_DESCRIPTION = "Learn languages through interactive video clips. " \
     "Practice listening, speaking, and comprehension with songs, TV shows, " \
     "and real-world content powered by AI."
@@ -84,6 +86,8 @@ module SeoHelper
   end
 
   def canonical_url(path)
-    "https://langlets.app#{path}"
+    host = request.host.in?(CANONICAL_HOSTS) ? request.host : CANONICAL_HOSTS.first
+
+    "https://#{host}#{path}"
   end
 end
