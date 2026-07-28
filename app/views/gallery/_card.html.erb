@@ -4,7 +4,7 @@
          alt="<%= entry.localized_name %>" class="gallery-card-image">
     <div class="gallery-card-body">
       <span class="gallery-card-kind">Course</span>
-      <h2><%= entry.localized_name %></h2>
+      <h2 class="app-clamp-2"><%= entry.localized_name %></h2>
       <p><%= localized_language_name(entry.language) %> · <%= pluralize(entry.lessons_count, "lesson") %></p>
     </div>
   <% end %>

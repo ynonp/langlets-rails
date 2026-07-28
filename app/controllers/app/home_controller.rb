@@ -62,6 +62,7 @@ module App
     # Everything on their Home except whatever's already in the hero.
     def candidate_enrollments
       scope = current_user.enrollments
+                          .in_progress
                           .includes(course: [ :language, { course_translations: :language } ])
                           .joins(:course)
                           .merge(Course.published)

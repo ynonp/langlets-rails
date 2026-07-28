@@ -3,7 +3,7 @@ import { animate } from "motion/mini"
 
 // Connects to data-controller="language-alignment-activity.js"
 export default class extends Controller {
-  static targets = ['question', 'progressBar', 'completionMessage'];
+  static targets = ['activityContent', 'question', 'progressBar', 'completionMessage'];
   static values = {
     questions: Array,
     currentQuestion: Number,
@@ -43,6 +43,7 @@ export default class extends Controller {
     this.progressBarTarget.style.width = `${percentage}%`;
 
     if (this.currentQuestionValue === this.questionsValue.length) {
+      this.activityContentTarget.classList.add('hidden');
       this.completionMessageTarget.classList.remove('hidden');
       animate(this.completionMessageTarget, 
         { opacity: [0, 1], scale: [0.8, 1] }, 
@@ -64,5 +65,4 @@ export default class extends Controller {
     }
   }
 }
-
 

@@ -1,7 +1,7 @@
 require "test_helper"
 
 class CourseBuilder::BuildSongTokenChainTest < ActiveSupport::TestCase
-  Token = Struct.new(:part_of_speech, :original_text, :translation)
+  Token = Struct.new(:part_of_speech, :original_text, :translation, :phrase_id)
 
   test "selects one content-word part of speech with unambiguous answers" do
     tokens = [
@@ -31,6 +31,39 @@ class CourseBuilder::BuildSongTokenChainTest < ActiveSupport::TestCase
     ]
 
     assert_empty builder.send(:token_chain_tokens, tokens)
+  end
+
+  test "flashcards use content words from different phrases" do
+    tokens = [
+      Token.new("pronoun", "I", "yo", 1),
+      Token.new("noun", "song", "canción", 1),
+      Token.new("verb", "sing", "cantar", 1),
+      Token.new("noun", "voice", "voz", 1),
+      Token.new("verb", "dance", "bailar", 2),
+      Token.new("noun", "heart", "corazón", 3),
+      Token.new("adjective", "bright", "brillante", 4)
+    ]
+
+    selected = builder.send(:flashcard_tokens, tokens)
+
+    assert_equal 5, selected.size
+    assert selected.all? { |token| %w[noun verb adjective adverb].include?(token.part_of_speech) }
+    assert selected.group_by(&:phrase_id).values.all? { |phrase_tokens| phrase_tokens.size <= 2 }
+    assert_equal 4, selected.count { |token| %w[noun verb].include?(token.part_of_speech) }
+  end
+
+  test "flashcards exclude duplicate words and translations" do
+    tokens = [
+      Token.new("noun", "song", "canción", 1),
+      Token.new("noun", "song", "melodía", 2),
+      Token.new("noun", "tune", "canción", 3),
+      Token.new("verb", "sing", "cantar", 4)
+    ]
+
+    selected = builder.send(:flashcard_tokens, tokens)
+
+    assert_equal selected.map { |token| token.original_text.downcase }.uniq.size, selected.size
+    assert_equal selected.map { |token| token.translation.downcase }.uniq.size, selected.size
   end
 
   private

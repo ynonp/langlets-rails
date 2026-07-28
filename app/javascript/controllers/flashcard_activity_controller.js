@@ -3,7 +3,7 @@ import { stopPracticingHtml } from "../utils/stop_practicing_html"
 import { t } from "../utils/i18n"
 
 export default class extends Controller {
-  static targets = ["card", "completion", "progress", "progressBar", "progressTrack"]
+  static targets = ["activityContent", "card", "completion", "progress", "progressBar", "progressTrack"]
   static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean }
 
   connect() {
@@ -126,6 +126,7 @@ export default class extends Controller {
   }
 
   showCompletion() {
+    this.activityContentTarget.classList.add('hidden')
     this.completionTarget.classList.remove('hidden')
     this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }))
     this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))

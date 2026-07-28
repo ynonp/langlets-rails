@@ -46,6 +46,15 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?][data-turbo-prefetch=false]", course_full_player_path(@course)
   end
 
+  test "show truncates long course titles in the hero" do
+    @course.update!(name: "A very long provider title that must remain on one line")
+
+    get course_url(@course)
+
+    assert_response :success
+    assert_select "h1.truncate[title=?]", @course.name, text: @course.name
+  end
+
   test "homepage shows at most eight videos and links to the gallery" do
     @course.update!(status: :published)
     9.times do |index|

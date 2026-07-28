@@ -22,6 +22,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     assert_select ".gallery-card", count: 2
     assert_select ".gallery-card-kind", text: "Course"
     assert_select ".gallery-card-kind-playlist", text: "Playlist"
+    assert_select ".gallery-card h2.app-clamp-2", text: "Gallery Course"
     assert_select "h1", text: "Start A Language Practice"
     assert_select "a", text: "Back home", count: 0
     assert_select ".gallery-pill-label", count: 0

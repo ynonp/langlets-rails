@@ -4,7 +4,7 @@
     data-find-answers-questions-value="<%= params[:questions].to_json %>"
     data-find-answers-current-question-value="0"
 >
-  <div class="w-full max-w-[800px] bg-white dark:bg-gray-900 dark:border dark:border-gray-800 p-6 rounded-2xl shadow-md text-gray-900 dark:text-gray-50">
+  <div data-find-answers-target="activityContent" class="w-full max-w-[800px] bg-white dark:bg-gray-900 dark:border dark:border-gray-800 p-6 rounded-2xl shadow-md text-gray-900 dark:text-gray-50">
     <div class="mb-6">
       <%= render partial: 'activities/activity_progress_bar' %>
     </div>
@@ -35,12 +35,14 @@
       </div>
     </div>
 
-    <div
-      data-find-answers-target="completionMessage"
-      data-progress-tracker-target="completion"
-      id="success-message" class="hidden mt-6 text-center">
-      <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4"><%= t(".good_work") %></h3>
-      <%= link_to "Next", @next_activity_path, { class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" } %>
-    </div>
+  </div>
+
+  <div
+    data-find-answers-target="completionMessage"
+    data-progress-tracker-target="completion"
+    id="success-message"
+    class="my-auto hidden w-full max-w-[800px] rounded-2xl bg-white p-6 text-center shadow-md dark:border dark:border-gray-800 dark:bg-gray-900">
+    <h3 class="mb-4 text-xl font-bold text-emerald-600 dark:text-emerald-400"><%= t(".good_work") %></h3>
+    <%= link_to "Next", @next_activity_path, { class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" } %>
   </div>
 </div>

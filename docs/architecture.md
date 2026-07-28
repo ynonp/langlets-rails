@@ -240,7 +240,15 @@ course and playlist rows before `LIMIT`/`OFFSET`. Only the records for the
 current page are hydrated. Course languages, localized translations, lesson
 counts, playlist courses used for covers, and visible clip counts are loaded in
 fixed batched queries; gallery card rendering performs no per-card association
-queries.
+queries. Course names in the gallery and reusable web course cards are clamped
+to two lines with an overflow ellipsis and a reserved two-line title area,
+matching the homepage and native library cards so unusually long provider
+titles cannot misalign a grid.
+
+The course detail hero keeps its course name to one line with an overflow
+ellipsis. The complete localized name remains in the heading's `title`
+attribute, preventing long provider-supplied titles from changing the hero's
+vertical layout without discarding the full label.
 
 ### Interface localization
 
@@ -992,7 +1000,7 @@ before starting a sandbox checkout.
 - **Purpose**: "this course is on my Home". Unique on `(user_id, course_id)`.
 - **Why it exists**: enrollment could not be inferred. A created course is `courses.user_id`, a started course is implied by `lesson_users` — but the Library's "+ Learn this" adds a course to Home *before* any lesson is completed, so it needs a record of its own.
 - `source`: `imported` (spent a credit), `library` (added from the catalog), `playlist`.
-- `last_practiced_at` drives Home's "Keep it going" ordering; `recently_practiced` sorts NULLS LAST so never-opened courses fall below in-progress ones.
+- `last_practiced_at` is Home's canonical "started" signal: "Keep it going" only includes enrollments where it is non-null, ordered newest first. Clearing it keeps the enrollment/library membership while returning the course to an un-started state.
 
 ### Workflow Management
 
@@ -1732,7 +1740,7 @@ The platform implements comprehensive progress tracking through dedicated join t
 - **Analytics Ready**: Data structure supports learning analytics and reporting
 
 #### Progress Data Applications
-- **Course reset**: The Done button on a completed course resets it to not started by deleting the current user's `lesson_users` and `activity_users` rows for every lesson/activity in that course. Enrollment and XP/activity logs are retained because they represent library membership and historical rewards rather than resumable course progress.
+- **Course completion/reset**: Mark Done creates the current user's missing `lesson_users` rows for every lesson, making the course complete and removing it from Continue. Clicking Done resets the course to not started by deleting that user's `lesson_users`, `activity_users`, and lesson-scoped `activity_logs`, then clearing the enrollment's `last_practiced_at`. The enrollment itself remains because it represents library membership, but the cleared started signal keeps the reset course out of Continue.
 - **Personalized Learning**: Adaptive content delivery based on completion history
 - **Performance Analytics**: User engagement and learning effectiveness metrics
 - **Achievement Systems**: Badges, streaks, and milestone recognition
@@ -1821,6 +1829,11 @@ Users can save individual word/token translations they encounter during lessons 
   - TokensChainActivity (if ≥4 saved tokens, up to 15)
   - WriteMissingWordActivity (always, up to 10)
 - TokensChainActivity uses a frameless exercise layout with an inline matched-word count and progress bar. Each correct translation becomes the next highlighted L1 prompt, while previously found translations are visually muted. Course-built chains contain 4–15 unique word pairs from one content-word category (`noun`, `verb`, `adjective`, or `adverb`); proper nouns and function words are excluded. If no category supplies at least four pairs, the builder omits the activity.
+- SortPhrasesActivity, FindAnswerActivity, and FlashcardActivity replace their
+  scrollable exercise content with the completion card. The card is a sibling of
+  the exercise content and uses the activity's flex space to remain vertically
+  centered instead of appearing below the completed exercise.
+- Course-built FlashcardActivity sets contain up to five unique content-word pairs drawn from the relevant current/review phrases. Nouns and verbs are selected before adjectives and adverbs, no phrase contributes more than two cards, function words are excluded, and the final card order is shuffled.
 
 ### New Controllers
 

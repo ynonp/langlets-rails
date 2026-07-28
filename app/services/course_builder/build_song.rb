@@ -14,6 +14,9 @@ module CourseBuilder
     # CreateSong::RateLessons::LOW_VALUE_SCORE.
     LOW_VALUE_SCORE = 2
     TOKEN_CHAIN_PARTS_OF_SPEECH = %w[noun verb adjective adverb].freeze
+    FLASHCARD_PREFERRED_PARTS_OF_SPEECH = %w[noun verb].freeze
+    MAX_FLASHCARDS_PER_PHRASE = 2
+    MAX_FLASHCARD_TOKENS = 5
     MIN_TOKEN_CHAIN_TOKENS = 4
     MAX_TOKEN_CHAIN_TOKENS = 15
 
@@ -303,11 +306,37 @@ module CourseBuilder
       end
     end
 
-    def distinct_token_translations_by_translation(token_translations, limit)
-      return [] if token_translations.empty?
-      return token_translations.first(limit) if token_translations.size <= limit
+    # Flashcards teach content words and should cover the lesson rather than
+    # repeatedly drawing from one lyric line. Prefer nouns and verbs, use the
+    # other token-chain content-word categories as fallback, and keep both sides
+    # unique so identical cards are not shown twice.
+    def flashcard_tokens(tokens, limit: MAX_FLASHCARD_TOKENS)
+      eligible = tokens.select do |token|
+        TOKEN_CHAIN_PARTS_OF_SPEECH.include?(token.part_of_speech) &&
+          token.original_text.present? &&
+          token.translation.present?
+      end
 
-      token_translations.uniq(&:translation).first(limit)
+      phrase_counts = Hash.new(0)
+      seen_l1 = Set.new
+      seen_l2 = Set.new
+      preferred, fallback = eligible.shuffle.partition do |token|
+        FLASHCARD_PREFERRED_PARTS_OF_SPEECH.include?(token.part_of_speech)
+      end
+
+      selected = (preferred + fallback).select do |token|
+        l1 = token.original_text.downcase
+        l2 = token.translation.downcase
+        next false if phrase_counts[token.phrase_id] >= MAX_FLASHCARDS_PER_PHRASE
+        next false if seen_l1.include?(l1) || seen_l2.include?(l2)
+
+        phrase_counts[token.phrase_id] += 1
+        seen_l1 << l1
+        seen_l2 << l2
+        true
+      end
+
+      selected.first(limit).shuffle
     end
 
     # Token chains are vocabulary drills, so each chain contains one content-word
@@ -397,32 +426,6 @@ module CourseBuilder
       (current_selected + review_selected).shuffle
     end
 
-    def select_tokens_from_different_phrases(token_translations, limit)
-      return [] if token_translations.empty?
-
-      # Group by phrase_id
-      grouped = token_translations.group_by(&:phrase_id)
-
-      # Select one token from each phrase until we reach the limit
-      selected = []
-      phrase_ids = grouped.keys.shuffle
-
-      phrase_ids.each do |phrase_id|
-        break if selected.size >= limit
-        tokens_for_phrase = grouped[phrase_id]
-        selected << tokens_for_phrase.sample
-      end
-
-      # If we still need more, fill from remaining tokens
-      remaining = token_translations - selected
-      while selected.size < limit && !remaining.empty?
-        selected << remaining.sample
-        remaining.delete(selected.last)
-      end
-
-      selected.first(limit)
-    end
-
     def is_review_lesson?(lesson_number)
       # Review lessons at positions 4, 8, 12, etc. (every 4th lesson)
       lesson_number > 0 && lesson_number % 4 == 0
@@ -474,23 +477,23 @@ module CourseBuilder
       a2 = Activities::MatchPhrasesActivity.create!(lesson:, order: 3, user:)
       a2.phrases = distinct_phrases
 
-      # 4. FlashcardActivity or WordOrderActivity (~50/50) - at most 5, distinct by translation
+      # 4. FlashcardActivity or WordOrderActivity (~50/50)
       unless token_translations.empty?
-        flashcard_tokens = distinct_token_translations_by_translation(token_translations, 5)
-        unless flashcard_tokens.empty?
+        selected_flashcard_tokens = flashcard_tokens(token_translations)
+        unless selected_flashcard_tokens.empty?
           if use_word_order_instead_of_flashcard?
             a3 = Activities::WordOrderActivity.create!(lesson:, order: 4, user:)
             a3.phrases = random_phrases(phrases, 4)
           else
             a3 = Activities::FlashcardActivity.create!(lesson:, order: 4, user:)
-            a3.phrase_tokens = flashcard_tokens
+            a3.phrase_tokens = selected_flashcard_tokens
           end
         end
       end
 
       # 5. TokenChainActivity - at most 15, distinct by translation, if possible not same as activity 4
       unless token_translations.empty?
-        flashcard_token_ids = flashcard_tokens&.map(&:id) || []
+        flashcard_token_ids = selected_flashcard_tokens&.map(&:id) || []
         remaining_tokens = token_translations.reject { |tt| flashcard_token_ids.include?(tt.id) }
 
         chain_tokens = token_chain_tokens(remaining_tokens)
@@ -531,14 +534,14 @@ module CourseBuilder
       # 4. FlashcardActivity or WordOrderActivity (~50/50). Flashcard uses 70% current + 30% review tokens
       unless current_token_translations.empty? && review_token_translations.empty?
         mixed_tokens = mix_content(current_token_translations, review_token_translations, 70)
-        flashcard_tokens = select_tokens_from_different_phrases(mixed_tokens, 5)
-        unless flashcard_tokens.empty?
+        selected_flashcard_tokens = flashcard_tokens(mixed_tokens)
+        unless selected_flashcard_tokens.empty?
           if use_word_order_instead_of_flashcard?
             a3 = Activities::WordOrderActivity.create!(lesson:, order: 4, user:)
             a3.phrases = random_phrases(phrases, 4)
           else
             a3 = Activities::FlashcardActivity.create!(lesson:, order: 4, user:)
-            a3.phrase_tokens = flashcard_tokens
+            a3.phrase_tokens = selected_flashcard_tokens
           end
         end
       end
@@ -620,7 +623,7 @@ module CourseBuilder
       case type
       when :flashcard
         return if current_tokens.empty? && review_tokens.empty?
-        tokens = select_tokens_from_different_phrases(mix_content(current_tokens, review_tokens, 70), 5)
+        tokens = flashcard_tokens(mix_content(current_tokens, review_tokens, 70))
         return if tokens.empty?
         activity = Activities::FlashcardActivity.create!(lesson:, order:, user:)
         activity.phrase_tokens = tokens

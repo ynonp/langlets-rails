@@ -5,7 +5,7 @@ import { animate } from "motion/mini"
 
 // Connects to data-controller="sort-phrases-activity"
 export default class extends Controller {
-  static targets = ['phraseItem', 'phrasesContainer', 'checkButton', 'completionMessage', 'resultMessage'];
+  static targets = ['activityContent', 'phraseItem', 'phrasesContainer', 'checkButton', 'completionMessage', 'resultMessage'];
   static values = { correctOrder: Array }
 
   initialize() {
@@ -39,6 +39,7 @@ export default class extends Controller {
     // Award XP for completing sort activity (2 XP per phrase)
     this.awardXp(this.correctOrderValue.length * 2);
     
+    this.activityContentTarget.classList.add('hidden');
     this.completionMessageTarget.classList.remove('hidden');
     animate(this.completionMessageTarget, 
       { opacity: [0, 1], scale: [0.8, 1] }, 

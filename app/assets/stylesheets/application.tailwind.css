@@ -287,7 +287,7 @@
   border: 0.5px solid var(--color-app-accent);
 }
 
-/* Two lines, then ellipsis — library card titles. */
+/* Two lines, then ellipsis — course card titles. */
 @utility app-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;

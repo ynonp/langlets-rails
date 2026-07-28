@@ -161,7 +161,10 @@ class CoursesController < ApplicationController
         activity: Activity.where(lesson_id: lesson_ids),
         user: current_user
       ).destroy_all
+      ActivityLog.where(lesson_id: lesson_ids, user: current_user).destroy_all
       LessonUser.where(lesson_id: lesson_ids, user: current_user).destroy_all
+      Enrollment.where(course: @course, user: current_user)
+                .update_all(last_practiced_at: nil, updated_at: Time.zone.now)
     end
 
     redirect_to course_path(@course.slug), notice: "Progress reset. You can start fresh!"
