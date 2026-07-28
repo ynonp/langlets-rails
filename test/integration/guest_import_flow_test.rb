@@ -7,18 +7,18 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
   SHARED_URL = "https://youtu.be/#{VIDEO_ID}?si=homepage".freeze
   CANONICAL_URL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 
-  test "the guest homepage offers Start For Free instead of a link box" do
+  test "the guest homepage offers Sign in instead of a link box" do
     get root_path
 
     assert_select "form[action=?][method=post]", guest_import_requests_path
-    assert_select "#create button.lp-start-free", text: "Start For Free"
+    assert_select "#create button.lp-own-cta", text: "Sign in"
     assert_select "#create input[name=url]", count: 0
   end
 
-  test "Start For Free sends a guest to signup and lands them on Add Video once" do
+  test "Sign in sends a guest to the login page and lands them on Add Video once" do
     post guest_import_requests_path
 
-    assert_redirected_to new_user_registration_path
+    assert_redirected_to new_user_session_path
     assert_includes response.headers["Set-Cookie"], GuestImportRequestsController::PENDING_IMPORT_COOKIE.to_s
 
     user = User.create!(

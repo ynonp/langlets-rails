@@ -121,22 +121,20 @@ specificity war.
 
 Every string on the page — including the `<title>` and the Open Graph
 title/description — is localized under `courses.index.*` (`meta`, `nav`, `hero`,
-`library`, `create_your_own`, `pricing`, `footer`), so `he.langlets.app` renders
-a fully Hebrew landing page. Two consequences worth knowing:
+`library`, `create_your_own`, `footer`), so `he.langlets.app` renders a fully
+Hebrew landing page. The page is laid out with logical properties where
+direction matters (`inset-inline-start`, `padding-inline-start`), and the offset
+drop shadow on the product frame is mirrored under `[dir="rtl"]`. Everything
+else flips for free because the layout is grid/flex.
 
-- The page is laid out with logical properties where direction matters
-  (`inset-inline-start`, `padding-inline-start`), and the two offset drop
-  shadows are mirrored under `[dir="rtl"]`. Everything else flips for free
-  because the layout is grid/flex.
-- Copy rendered **inside** the `render layout: "paypal/form"` block (the
-  signed-in *Buy N credits* button) must use the absolute key
-  `courses.index.pricing.buy`. Lazy `t(".…")` there resolves against
-  `paypal/_form`, which silently degrades to a humanized key.
+The homepage **does not sell anything**. It carries no pricing section, no
+PayPal form and no free-credit copy; nothing on it mentions credits, prices or
+"free". Purchases live only on the in-app credit surfaces (see *Credits and
+PayPal*). Do not reintroduce a pricing block here without being asked.
 
 Sections, all wired to real data:
-- **Nav** — brand, in-page anchors (`#library`, `#pricing`), and auth-aware
-  controls: signed-out visitors get *Sign in* / *Start Free*; signed-in get
-  *Add a video* / *Sign out*.
+- **Nav** — brand, the `#library` in-page anchor, and auth-aware controls:
+  signed-out visitors get *Sign in*; signed-in get *Add a video* / *Sign out*.
 - **Hero** — the marketing introduction sits beside the static
   `public/product.png` product preview. At the mobile breakpoint, its supporting
   subhead is hidden to bring the library closer to the first viewport; the
@@ -148,9 +146,10 @@ Sections, all wired to real data:
   filter the grid client-side via the `homepage-filter` controller (each card
   carries `data-lang`; no server round-trip). Chips only appear when more than
   one language is present.
-- **"Create Your Own"** — follows the library. Two columns: the heading, lead,
-  the call to action and the reassurance line on the left (sticky while the
-  section scrolls), and a four-step numbered explainer on the right
+- **"Create Your Own"** — the last content section, following the library. Two
+  columns: the heading, lead, the call to action and the "ready in ~3 minutes"
+  line on the left (sticky while the section scrolls), and a four-step
+  numbered explainer on the right
   ("One click, fully automatic" → "Build your personal vocabulary"), whose
   markers are joined by a connector. Both columns stack below 860px. The four
   steps are rendered by iterating their key names under
@@ -159,13 +158,14 @@ Sections, all wired to real data:
   The call to action differs by session. Signed-in users get the
   paste-a-YouTube-link box, which GETs directly to `new_app_import_request_path`
   (`turbo: false`) with the current learning language in a hidden `lang` field.
-  Guests are not asked for a link at all — they get a single **Start For Free**
+  Guests are not asked for a link at all — they get a single **Sign in**
   button, because a pasted link is worthless until there is an account to spend
   a credit from. It POSTs (no `url`) to `GuestImportRequestsController`, which
   stores a marker for one day in the encrypted, HTTP-only
-  `pending_import_request` cookie and redirects to registration. The day-long
-  TTL covers the confirmation email round-trip, since `User` is `:confirmable`
-  and the first real sign-in happens after the user clicks that link.
+  `pending_import_request` cookie and redirects to `new_user_session_path`. The
+  day-long TTL covers the confirmation email round-trip, since `User` is
+  `:confirmable` and the first real sign-in happens after the user clicks that
+  link.
 
   `ApplicationController#pending_import_path` resolves both guest markers and is
   consulted first by `after_sign_in_path_for` / `after_sign_up_path_for` (the
@@ -177,14 +177,6 @@ Sections, all wired to real data:
   posted, canonicalized link even though the homepage no longer sends one. From
   Add Video the existing resolver asks for the clip language before its normal
   one-credit import POST redirects to Queue.
-- **Pricing** — the credit model and `User::SIGNUP_CREDITS` free-credit count.
-  The card's price, credit count and per-credit cents are read from
-  `Paypal::CreditPacks.fetch("standard")` (the view falls back to fetching it
-  itself for guests, who get no `@homepage_credit_pack`), so the copy cannot
-  drift from what PayPal is actually asked to charge. Guests see **Start
-  Creating Langlets**, which links to registration. Signed-in users see a **Buy
-  20 credits** Payments Standard form that submits that same pack directly to
-  PayPal.
 - **Footer** — copyright plus `/home/privacy` and `/home/terms`.
 
 The controller's existing `@playlists` / `@recommended_courses` assigns are left
@@ -205,6 +197,32 @@ host whitelist is deliberately limited to `langlets.app` and
 unexpected Host header cannot leak into public metadata. When adding another
 localized subdomain, add it to `SeoHelper::CANONICAL_HOSTS` and extend the
 canonical metadata tests at the same time.
+
+### Search engine exclusion
+
+The site is deliberately kept **out of search engines**, everywhere, on every
+page. Two independent mechanisms enforce it and both must stay in place:
+
+- `public/robots.txt` is a blanket `User-agent: * / Disallow: /`. It no longer
+  advertises the sitemap.
+- `app/views/layouts/_head.html.erb` emits `<meta name="robots"
+  content="noindex, nofollow">`, so every page rendered through the
+  `application`, `app`, and `onboarding` layouts is marked unindexable. This is
+  the belt to robots.txt's braces: robots.txt stops the crawl, the meta tag
+  stops indexing of URLs a crawler already knows about. Two views
+  (`review_lessons/show`, `lessons/finish`) additionally set their own
+  `noindex, follow` tag; the more restrictive directive wins, so they are
+  harmless.
+
+Caveat inherent to the combination: a URL blocked in robots.txt is not fetched,
+so a crawler may never see the `noindex` tag. Already-indexed URLs can linger as
+link-only results until removed via the search console. To force removal faster,
+temporarily allow crawling so the `noindex` is actually read.
+
+The SEO machinery around this (canonical URLs, hreflang, Open Graph/Twitter
+cards, JSON-LD structured data, `/sitemap.xml`) is left intact. Those tags still
+drive link previews when a page is shared in a chat app, which is unrelated to
+indexing. `/sitemap.xml` still renders but is no longer referenced anywhere.
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
 the eight most recently created courses for the selected language, or the eight
@@ -940,7 +958,9 @@ Three rules, each load-bearing:
 #### Credit purchases
 
 Web purchase surfaces render a PayPal Payments Standard Buy Now form for each
-fixed pack. The form posts
+fixed pack. Since the pricing section was removed from the public homepage, the
+only such surface on the web is the out-of-credits state on Add Video
+(`app/import_requests/web/new`). The form posts
 directly to PayPal and includes `return`, `cancel_return`, and `notify_url`;
 returning in the browser never grants credits. Development and test use
 `https://www.sandbox.paypal.com/cgi-bin/webscr`, while production uses

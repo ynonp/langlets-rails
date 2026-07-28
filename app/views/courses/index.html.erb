@@ -60,14 +60,6 @@
                 .values.flat_map { |courses| courses.first(8) }
   ).uniq(&:id).sort_by(&:created_at).reverse
 
-  free_credits = User::SIGNUP_CREDITS
-
-  # The pricing card's numbers come from the same server-defined pack the
-  # signed-in PayPal form submits, so the copy can't drift from what is charged.
-  # Guests have no @homepage_credit_pack, but the card is shown to them too.
-  pack = @homepage_credit_pack || Paypal::CreditPacks.fetch("standard")
-  pack_price = pack.price_cents % 100 == 0 ? "$#{pack.price_cents / 100}" : "$#{pack.price}"
-  pack_cents_each = pack.price_cents / pack.credits
 %>
 
 <style>
@@ -97,8 +89,6 @@
   .lp-nav-links { display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500; flex-wrap:wrap; }
   .lp-navlink { color:var(--ink); }
   .lp-navlink:hover { color:var(--accent); }
-  .lp-pill { background:var(--ink); color:var(--bg); padding:10px 20px; border-radius:999px; font-weight:600; }
-  .lp-pill:hover { color:var(--bg); background:#000; }
   .lp-signout { background:none; border:none; padding:0; font:inherit; color:var(--ink); font-weight:500; cursor:pointer; }
   .lp-signout:hover { color:var(--accent); }
 
@@ -155,11 +145,11 @@
   .lp-own { max-width:1180px; margin:0 auto; padding:88px 40px; box-sizing:border-box; width:100%; }
   .lp-own-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
   .lp-own-intro { display:flex; flex-direction:column; gap:16px; position:sticky; top:40px; }
-  .lp-own-intro .lp-price-h, .lp-own-intro .lp-price-lead { margin:0; }
+  .lp-own-intro .lp-sec-h, .lp-own-intro .lp-sec-lead { margin:0; }
   .lp-own .lp-paste { max-width:none; padding-inline-start:12px; margin-top:4px; }
   /* Guests get a single call to action instead of the paste box, so it carries
      the weight the whole box used to. */
-  .lp-start-free { margin-top:4px; padding:15px 34px; border-radius:12px; font-size:17px; }
+  .lp-own-cta { margin-top:4px; padding:15px 34px; border-radius:12px; font-size:17px; }
   .lp-own .lp-meta { margin:0; }
   .lp-step { display:grid; grid-template-columns:44px 1fr; column-gap:22px; padding-bottom:32px; position:relative; }
   .lp-step:last-child { padding-bottom:0; }
@@ -175,30 +165,13 @@
   .lp-step-title { font-weight:700; font-size:17.5px; }
   .lp-step-text { font-size:15.5px; line-height:1.55; color:var(--muted); text-wrap:pretty; }
 
-  /* Pricing — same 1100 content column + 40px padding as the hero, so its
-     content edges line up with the rest of the page. */
-  .lp-pricing { max-width:1180px; margin:0 auto; padding:88px 40px; box-sizing:border-box; width:100%; }
-  .lp-price-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; }
-  .lp-price-h { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:40px; letter-spacing:-0.02em; margin:0 0 16px; }
-  .lp-price-lead { font-size:17px; line-height:1.6; color:var(--muted); margin:0 0 20px; text-wrap:pretty; }
-  .lp-price-list { display:flex; flex-direction:column; gap:10px; font-size:15.5px; color:var(--ink); }
-  .lp-price-item { display:flex; gap:10px; align-items:baseline; }
-  .lp-check { color:var(--accent); font-weight:700; }
-  .lp-price-card { background:var(--dark); color:var(--dark-fg); border-radius:22px; padding:36px; box-shadow:8px 8px 0 var(--shadow); }
-  .lp-price-eyebrow { font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:15px; letter-spacing:0.08em; color:var(--dark-muted); margin-bottom:14px; }
-  .lp-price-row { display:flex; align-items:baseline; gap:10px; margin-bottom:6px; }
-  .lp-price-amount { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:56px; letter-spacing:-0.03em; }
-  .lp-price-unit { font-size:18px; color:var(--dark-muted); }
-  .lp-price-sub { font-size:15px; color:var(--dark-muted); margin-bottom:26px; }
-  .lp-price-cta { display:block; text-align:center; background:var(--accent); color:var(--card); border-radius:12px;
-    padding:15px; font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:17px; }
-  .lp-price-cta:hover { background:var(--accent-d); color:var(--card); }
-  .lp-price-fine { text-align:center; font-size:13px; color:var(--faint); margin-top:12px; }
+  /* Section heading + lead, shared by every block below the hero. */
+  .lp-sec-h { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:40px; letter-spacing:-0.02em; margin:0 0 16px; }
+  .lp-sec-lead { font-size:17px; line-height:1.6; color:var(--muted); margin:0 0 20px; text-wrap:pretty; }
 
-  /* The offset shadows are drawn to the right, which reads as "behind" only in
-     LTR. Mirror them on the Hebrew subdomain. */
+  /* The offset shadow is drawn to the right, which reads as "behind" only in
+     LTR. Mirror it on the Hebrew subdomain. */
   [dir="rtl"] .lp-product-frame { box-shadow:-6px 6px 0 var(--shadow); }
-  [dir="rtl"] .lp-price-card { box-shadow:-8px 8px 0 var(--shadow); }
 
   /* Footer */
   .lp-footer { border-top:1px solid #E4DCCC; padding:28px 40px; margin-top:auto; }
@@ -214,10 +187,9 @@
     .lp-hero .lp-lead { display:none; }
     .lp-h1 { font-size:38px; }
     .lp-library { padding:56px 20px 64px; }
-    .lp-own, .lp-pricing { padding:56px 20px; }
+    .lp-own { padding:56px 20px; }
     .lp-own-grid { grid-template-columns:1fr; gap:40px; }
     .lp-own-intro { position:static; }
-    .lp-price-grid { grid-template-columns:1fr; gap:36px; }
     .lp-footer { padding:24px 20px; }
   }
   @media (max-width:560px) {
@@ -237,13 +209,11 @@
     <% end %>
     <div class="lp-nav-links">
       <%= link_to t(".nav.browse"), gallery_path, class: "lp-navlink" %>
-      <a href="#pricing" class="lp-navlink"><%= t(".nav.pricing") %></a>
       <% if user_signed_in? %>
         <%= link_to t(".nav.add_video"), new_app_import_request_path(lang: current_language_code), class: "lp-navlink" %>
         <%= button_to t(".nav.sign_out"), destroy_user_session_path, method: :delete, form_class: "lp-signout-form", class: "lp-signout" %>
       <% else %>
         <%= link_to t(".nav.sign_in"), new_user_session_path, class: "lp-navlink" %>
-        <%= link_to t(".nav.start_free"), new_user_registration_path(returnto: request.fullpath), class: "lp-pill" %>
       <% end %>
     </div>
   </nav>
@@ -322,8 +292,8 @@
   <section id="create" class="lp-own">
     <div class="lp-own-grid">
       <div class="lp-own-intro">
-        <h2 class="lp-price-h"><%= t(".create_your_own.heading") %></h2>
-        <p class="lp-price-lead"><%= t(".create_your_own.lead") %></p>
+        <h2 class="lp-sec-h"><%= t(".create_your_own.heading") %></h2>
+        <p class="lp-sec-lead"><%= t(".create_your_own.lead") %></p>
 
         <% if user_signed_in? %>
           <%= form_with url: new_app_import_request_path, method: :get, data: { turbo: false } do %>
@@ -337,16 +307,15 @@
             </div>
           <% end %>
         <% else %>
-          <%# Guests are not asked for a link yet: the button only starts signup,
+          <%# Guests are not asked for a link yet: the button only starts sign-in,
               and the first authentication lands them on Add Video. %>
           <%= form_with url: guest_import_requests_path, method: :post, data: { turbo: false } do %>
-            <button type="submit" class="lp-create lp-start-free"><%= t(".create_your_own.start_free") %></button>
+            <button type="submit" class="lp-create lp-own-cta"><%= t(".create_your_own.sign_in") %></button>
           <% end %>
         <% end %>
 
         <div class="lp-meta">
           <span><%= t(".create_your_own.ready_in") %></span>
-          <span><%= t(".create_your_own.free_lessons", credits: free_credits) %></span>
         </div>
       </div>
 
@@ -360,49 +329,6 @@
             </div>
           </div>
         <% end %>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing" class="lp-pricing">
-    <div class="lp-price-grid">
-      <div>
-        <h2 class="lp-price-h"><%= t(".pricing.heading") %></h2>
-        <p class="lp-price-lead"><%= t(".pricing.lead") %></p>
-        <div class="lp-price-list">
-          <div class="lp-price-item"><span class="lp-check">✓</span><span><%= t(".pricing.perk_import") %></span></div>
-          <div class="lp-price-item"><span class="lp-check">✓</span><span><%= t(".pricing.perk_signup", credits: free_credits) %></span></div>
-          <div class="lp-price-item"><span class="lp-check">✓</span><span><%= t(".pricing.perk_expiry") %></span></div>
-        </div>
-      </div>
-      <div class="lp-price-card">
-        <div class="lp-price-eyebrow"><%= t(".pricing.eyebrow") %></div>
-        <div class="lp-price-row">
-          <span class="lp-price-amount"><%= pack_price %></span>
-          <span class="lp-price-unit"><%= t(".pricing.pack_credits", credits: pack.credits) %></span>
-        </div>
-        <div class="lp-price-sub"><%= t(".pricing.pack_sub", credits: pack.credits, cents: pack_cents_each) %></div>
-        <% if user_signed_in? %>
-          <% if @paypal_client.configured? %>
-            <%= render layout: "paypal/form",
-                       locals: {
-                         paypal_client: @paypal_client,
-                         pack: @homepage_credit_pack,
-                         cancel_path: root_path
-                       } do %>
-              <%# Absolute key: this block is rendered in the paypal/_form
-                  partial's context, where ".pricing.buy" would look up
-                  paypal.form.pricing.buy. %>
-              <button type="submit" class="lp-price-cta w-full"><%= t("courses.index.pricing.buy", credits: pack.credits) %></button>
-            <% end %>
-          <% else %>
-            <button type="button" class="lp-price-cta w-full opacity-60" disabled><%= t(".pricing.buy", credits: pack.credits) %></button>
-          <% end %>
-        <% else %>
-          <%= link_to t(".pricing.start_creating"), new_user_registration_path(returnto: request.fullpath), class: "lp-price-cta" %>
-        <% end %>
-        <div class="lp-price-fine"><%= t(".pricing.fine_print") %></div>
       </div>
     </div>
   </section>

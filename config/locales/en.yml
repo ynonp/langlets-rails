@@ -208,11 +208,9 @@ en:
       nav:
         home: "Langlets home"
         browse: "Browse Langlets"
-        pricing: "Pricing"
         add_video: "Add a video"
         sign_out: "Sign out"
         sign_in: "Sign in"
-        start_free: "Start Free"
       hero:
         heading: "Practice your target language with videos you love"
         lead: "Turn native YouTube videos you enjoy into structured listening and vocabulary practice—designed for intermediate learners."
@@ -223,18 +221,6 @@ en:
         all: "All"
         empty: "No Langlets yet — paste a video below to create the first one."
         browse_all: "Browse All Langlets"
-      pricing:
-        heading: "Simple, honest pricing"
-        lead: "Credits pay for the AI pipeline that builds your lessons — and help keep the site running."
-        perk_import: "1 credit = 1 video turned into a full lesson"
-        perk_signup: "%{credits} free credits when you sign up — no card needed"
-        perk_expiry: "Credits never expire, browse the library free forever"
-        eyebrow: "CREDIT PACK"
-        pack_credits: "= %{credits} credits"
-        pack_sub: "That's %{credits} videos of your choice, %{cents}¢ each."
-        buy: "Buy %{credits} credits"
-        start_creating: "Start Creating Langlets"
-        fine_print: "One-time purchase · no subscription"
       footer:
         tagline: "© %{year} Langlets · practice languages with native content"
       create_your_own:
@@ -243,9 +229,8 @@ en:
         url_placeholder: "Paste a YouTube or TikTok link"
         url_label: "Video link"
         submit: "Create"
-        start_free: "Start For Free"
+        sign_in: "Sign in"
         ready_in: "⏱ Ready in ~3 minutes"
-        free_lessons: "First %{credits} lessons free. No card required"
         steps:
           automatic:
             title: "One click, fully automatic"

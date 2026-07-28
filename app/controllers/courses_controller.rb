@@ -9,11 +9,6 @@ class CoursesController < ApplicationController
     # Store release.
     return redirect_to app_home_path if native_app? && user_signed_in?
 
-    if user_signed_in?
-      @paypal_client = Paypal::Client.new
-      @homepage_credit_pack = Paypal::CreditPacks.fetch("standard")
-    end
-
     # Everyone sees the published system playlists; signed-in users also see
     # their own playlists. Only courses with a ready translation in the
     # subdomain's language are shown, and a playlist with none of those is
