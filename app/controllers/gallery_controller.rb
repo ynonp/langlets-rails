@@ -32,12 +32,12 @@ class GalleryController < ApplicationController
 
   def gallery_languages
     Language.where(
-      id: Course.published.ready_in(Current.translation_language).select(:language_id)
+      id: gallery_visible_courses.select(:language_id)
     ).order(:english_name)
   end
 
   def gallery_courses
-    scope = Course.published.ready_in(Current.translation_language)
+    scope = gallery_visible_courses
     @selected_languages.any? ? scope.where(language: @selected_languages) : scope
   end
 
@@ -102,7 +102,7 @@ class GalleryController < ApplicationController
     end
 
     playlists = Playlist.where(id: playlist_ids).includes(:courses).index_by { |playlist| playlist.id.to_s }
-    visible_courses = Course.published.ready_in(Current.translation_language)
+    visible_courses = gallery_visible_courses
     visible_courses = visible_courses.where(language: @selected_languages) if @selected_languages.any?
     clip_counts = CoursesPlaylist.where(playlist_id: playlist_ids, course_id: visible_courses.select(:id))
                                  .group(:playlist_id).count
@@ -114,5 +114,9 @@ class GalleryController < ApplicationController
     @entries = rows.filter_map do |row|
       row["item_type"] == "Course" ? courses[row["id"].to_s] : playlists[row["id"].to_s]
     end
+  end
+
+  def gallery_visible_courses
+    ChannelContentQuery.courses_visible_to(current_user).published.ready_in(Current.translation_language)
   end
 end

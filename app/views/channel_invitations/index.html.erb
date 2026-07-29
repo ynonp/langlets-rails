@@ -1,0 +1,19 @@
+<main class="profile-safe-area max-w-3xl mx-auto px-5 py-8">
+  <h1 class="text-3xl font-bold mb-6"><%= t("channels.invitations.title") %></h1>
+  <% if @invitations.any? %>
+    <div class="space-y-3">
+      <% @invitations.each do |invitation| %>
+        <article class="rounded-2xl border p-4">
+          <h2 class="font-bold"><%= invitation.channel.name %></h2>
+          <p class="text-sm text-gray-500"><%= t("channels.show.by", owner: invitation.channel.user.email) %></p>
+          <div class="flex gap-3 mt-3">
+            <%= button_to t("channels.actions.accept"), accept_channel_invitation_path(invitation), class: "text-emerald-600" %>
+            <%= button_to t("channels.actions.decline"), decline_channel_invitation_path(invitation), class: "text-red-600" %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  <% else %>
+    <p><%= t("channels.invitations.empty") %></p>
+  <% end %>
+</main>

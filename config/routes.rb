@@ -84,6 +84,30 @@ Rails.application.routes.draw do
   get "onboarding/welcome", to: "onboarding#welcome", as: :onboarding_welcome
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   get "profile", to: "profile#show", as: :profile
+  patch "profile/channel", to: "profile#update_channel", as: :profile_channel
+  resources :channels, only: :show, param: :slug do
+    member { delete :unsubscribe }
+    resources :invitations, only: :create, controller: "channel_invitations"
+  end
+  get "invitations", to: "channel_invitations#index", as: :invitations
+  get "channel_invitations/:token", to: "channel_invitations#show",
+    as: :channel_invitation_token
+  resources :channel_invitations, only: [] do
+    member do
+      post :accept
+      post :decline
+      post :revoke
+      post :resend
+    end
+  end
+  post "channel_invitations/accept/:token", to: "channel_invitations#accept",
+    as: :accept_channel_invitation_token
+  post "channel_invitations/decline/:token", to: "channel_invitations#decline",
+    as: :decline_channel_invitation_token
+  resources :channel_subscriptions, only: :destroy
+  namespace :admin do
+    resources :channels, only: [ :index, :create, :update ]
+  end
   resources :guest_import_requests, only: :create
   root "courses#index"
   get "gallery", to: "gallery#index", as: :gallery

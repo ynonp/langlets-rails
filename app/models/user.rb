@@ -17,6 +17,14 @@ class User < ApplicationRecord
   # Videos the user has asked to turn into courses (the Queue screen).
   has_many :import_requests, dependent: :destroy
 
+  has_many :channels, dependent: :destroy
+  has_one :default_channel, -> { where(default: true) }, class_name: "Channel"
+  has_many :channel_subscriptions, dependent: :destroy
+  has_many :subscribed_channels, through: :channel_subscriptions, source: :channel
+  has_many :channel_invitations, foreign_key: :invitee_id, dependent: :nullify
+  has_many :sent_channel_invitations, class_name: "ChannelInvitation",
+    foreign_key: :inviter_id, dependent: :destroy
+
   # Devices to push "your course is ready" to.
   has_many :device_tokens, dependent: :destroy
 
@@ -69,6 +77,23 @@ class User < ApplicationRecord
   # the ledger entry all commit atomically — no window where an account exists
   # with no credits and no entry explaining why.
   after_create :grant_signup_credits
+  after_create :provision_default_channel!
+
+  def provision_default_channel!
+    existing = default_channel
+    return existing if existing
+
+    channel = channels.create_or_find_by!(default: true) do |channel|
+      channel.name = "My Channel"
+      channel.slug = "channel-#{id}"
+      channel.visibility = :private
+    end
+    association(:default_channel).reset
+    channel
+  rescue ActiveRecord::RecordNotUnique
+    association(:default_channel).reset
+    default_channel
+  end
 
   def self.from_omniauth(auth)
     user = where(email: auth.info.email).first_or_initialize do |new_user|

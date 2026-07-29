@@ -26,6 +26,7 @@ module App
       @course = create_translated_course!(name: "Despacito", slug: "despacito-x", main_media_url: @medium.url,
                                youtube_video_id: "kJQP7kiw5Fk", language: @spanish,
                                translation_language: @english, user: @user, status: :published)
+      @user.provision_default_channel!.publish!(@course)
       Lesson.create!(course: @course, medium: @medium, user: @user, slug: "l1", name: "L1", order: 0)
       Enrollment.create!(user: @user, course: @course, source: :imported, last_practiced_at: 1.hour.ago)
       sign_in @user
@@ -34,6 +35,15 @@ module App
       # to /onboarding/language until they've chosen one, so every app screen is
       # unreachable without it. One request stores the language on the user.
       get "/app?lang=es", headers: NATIVE
+    end
+
+    # Screen fixtures represent content already contributed to the signed-in
+    # user's Channel; Course creator ownership alone is no longer Library
+    # authority.
+    def create_translated_course!(**attributes)
+      course = super
+      attributes.fetch(:user).provision_default_channel!.publish!(course)
+      course
     end
 
     test "every screen renders for the native app" do

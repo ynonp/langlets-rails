@@ -56,6 +56,9 @@
     <%= link_to t("shared.menu.profile"), profile_path,
                 class: menu_item_class,
                 data: { action: "click->profile-menu#dismiss" } %>
+    <%= link_to t("channels.invitations.title"), invitations_path,
+                class: "block px-4 py-3 text-sm font-semibold",
+                data: { action: "click->profile-menu#dismiss" } %>
     <%= link_to t("shared.menu.connected_apps"), settings_connections_path, class: menu_item_class %>
     <%= link_to t("shared.menu.logout"),
       destroy_user_session_path(returnto: request.fullpath),

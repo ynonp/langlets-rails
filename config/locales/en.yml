@@ -1,4 +1,63 @@
 en:
+  channels:
+    visibility:
+      private: "Private"
+      shared: "Shared"
+      public: "Public"
+    fields:
+      name: "Channel name"
+      visibility: "Visibility"
+    card:
+      by: "By %{channel}"
+    actions:
+      save: "Save"
+      view: "View channel"
+      accept: "Accept"
+      decline: "Decline"
+      unsubscribe: "Unsubscribe"
+      resend: "Resend"
+      revoke: "Revoke"
+    profile:
+      page_title: "Profile - Langlets"
+      heading: "My channel"
+      description: "Courses you import are published to this channel."
+      updated: "Channel updated."
+      update_failed: "The channel could not be updated."
+    show:
+      title: "%{channel} - Langlets"
+      by: "By %{owner}"
+      invited: "You have been invited to this shared channel. Accept to see its courses."
+      empty: "This channel has no courses yet."
+    flash:
+      unsubscribed: "You left the channel."
+    invitations:
+      title: "Invitations"
+      invite: "Invite people"
+      placeholder: "Email addresses, separated by commas"
+      send: "Send invites"
+      sent: "Invitations sent."
+      invalid: "Check the email addresses and try again."
+      accepted: "Invitation accepted."
+      declined: "Invitation declined."
+      revoked: "Invitation revoked."
+      resent: "Invitation resent."
+      empty: "You have no pending invitations."
+    members:
+      remove: "Remove"
+      removed: "Member removed."
+    admin:
+      title: "Channels"
+      create: "Create public channel"
+      created: "Public channel created."
+      create_failed: "The channel could not be created."
+      updated: "Channel updated."
+    mailer:
+      invite:
+        subject: "You're invited to %{channel}"
+        greeting: "Hello,"
+        body: "%{inviter} invited you to join the shared channel %{channel} on Langlets."
+        accept: "Accept invitation"
+        expires: "This invitation expires in %{days} days."
   subhead:
     default: "Learn languages from youtube"
     ar: "Learn Arabic from YouTube"

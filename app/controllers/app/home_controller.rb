@@ -25,7 +25,8 @@ module App
 
       # The paste CTA is now the primary way in, so there's no separate first-run
       # picker — the library grid carries the empty account too, hence four picks.
-      @library_picks = library_picks(count: 4)
+      @library_items = library_picks(count: 4)
+      @library_picks = @library_items.map(&:course)
       @lesson_counts.merge!(lesson_counts_for(@library_picks))
     end
 
@@ -79,11 +80,10 @@ module App
     # a returning user nothing to recognize. Recency is also the only signal
     # available here; real selection comes later.
     def library_picks(count:)
-      scope = Course.published.includes(:language, { course_translations: :language })
-      scope = scope.where(language: @learning_language) if @learning_language
-      scope = scope.where.not(id: current_user.enrollments.select(:course_id))
-      scope = scope.where.not(id: @hero_course.id) if @hero_course
-      scope.order(created_at: :desc).limit(count).to_a
+      scope = ChannelContentQuery.new(user: current_user, language: @learning_language).items
+      scope = scope.where.not(course_id: current_user.enrollments.select(:course_id))
+      scope = scope.where.not(course_id: @hero_course.id) if @hero_course
+      scope.limit(count).to_a
     end
 
     # "Keep it going" means in progress. A finished course showing "Lesson 16 of

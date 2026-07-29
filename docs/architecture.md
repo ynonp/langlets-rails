@@ -15,6 +15,53 @@
 
 ## Core Architecture
 
+### Channels
+
+Every User owns one private default Channel, provisioned atomically with the
+account and recoverable through `User#provision_default_channel!`. Channels are
+language-neutral publishing identities, not course ownership: `courses.user_id`
+remains historical creator data, while `ChannelItem` determines which identity
+contributed a Course. A unique partial index guarantees one default per owner,
+and `[channel_id, course_id]` makes publishing safe to retry.
+
+Visibility is `private`, `shared`, or `public`. Private content is readable only
+by its owner and administrators. Shared Channels are invite-only and become
+readable only after an email-bound, expiring invitation is accepted and creates
+a `ChannelSubscription`. Public Channels are ordinary administrator-owned
+Channels and are readable by every signed-in user without a subscription; there
+are no system Channels. Moving a Channel to private transactionally revokes
+pending invitations and removes non-owner subscriptions. Only administrators
+may transition a Channel to or from public.
+
+`ChannelContentQuery` is the common authorization and feed boundary used by
+native Home and Library. It selects ChannelItems from the union of public,
+subscribed, and owned Channels, applies Course publication, translation
+readiness, and optional learning-language filters, and orders contributions by
+`channel_items.published_at`. It intentionally keeps two rows when two Channels
+publish the same Course while avoiding duplicates from overlapping access
+paths. Cards include the contributing Channel identity. Reading Channel content
+never creates an Enrollment; enrollment remains personal learning state.
+
+`Imports::Settlement.complete!` transactionally ensures both the existing
+Enrollment and an idempotent ChannelItem in the importing user's default
+Channel before marking an ImportRequest ready. The channel migration backfills
+defaults and successful ready imports with set-based, restart-safe SQL, using
+the earliest successful request timestamp per Channel/Course as the publication
+time. A follow-up SQL-only migration handles published Courses that predate
+ImportRequest: if such a Course has no ChannelItem anywhere, it is assigned to
+its historical creator's default private Channel with `courses.created_at` as
+the best available publication timestamp. This fallback never changes Channel
+visibility and never adds a second contribution to an already assigned Course.
+
+The Profile page manages the current default Channel's name and private/shared
+visibility. Shared owners can invite multiple normalized email addresses,
+resend or revoke pending invitations, and remove members. Invitations are
+delivered by email and also appear in the authenticated invitations list when
+the address matches an account. `/channels/:slug` returns 404 for unauthorized
+private/shared access; a valid pending invitee sees only Channel identity and
+accept/decline controls until acceptance. Administrators manage public Channels
+under `/admin/channels`.
+
 ### Full-course video playback
 
 The full player preloads an interactive YouTube iframe with native controls. It
@@ -140,8 +187,11 @@ Sections, all wired to real data:
   subhead is hidden to bring the library closer to the first viewport; the
   headline and product preview remain visible.
 - **"Jump right in" library** — the dark grid renders the newest
-  `@all_courses`, mixing courses that belong to playlists with courses that do
-  not. Playlist membership does not affect inclusion or ordering.
+  `@all_courses` contributed through Channels visible to the viewer, mixing
+  courses that belong to playlists with courses that do not. Signed-out viewers
+  receive public Channel content only; signed-in viewers additionally receive
+  owned and subscribed Channel content. Playlist membership does not affect
+  inclusion or ordering.
   Language filter chips are derived from the complete available course set and
   filter the grid client-side via the `homepage-filter` controller (each card
   carries `data-lang`; no server round-trip). Chips only appear when more than
@@ -235,7 +285,11 @@ action lead to `/gallery`.
 
 ### Public gallery (`gallery#index`)
 
-`/gallery` is the complete public browsing surface. Courses and playlists share
+`/gallery` is the complete browsing surface. Its Course authority is ChannelItems
+rather than `Course.published` alone: signed-out viewers see public Channels,
+while signed-in viewers see public, subscribed, and owned Channels. Content
+outside that viewer-specific set does not leak into filters, counts, playlists,
+or cards. Courses and playlists share
 one reverse-chronological, 16-item page rather than appearing in separate tabs.
 Its YouTube-style filter bar remains a GET form and keeps filter state in the
 URL. Text input is debounced for 300 ms; content and language pills submit

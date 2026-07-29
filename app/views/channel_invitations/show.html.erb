@@ -1,0 +1,13 @@
+<main class="profile-safe-area max-w-xl mx-auto px-5 py-8">
+  <h1 class="text-3xl font-bold"><%= @invitation.channel.name %></h1>
+  <p class="mt-2 text-gray-500"><%= t("channels.show.by", owner: @invitation.channel.user.email) %></p>
+  <p class="mt-6"><%= t("channels.show.invited") %></p>
+  <div class="flex gap-3 mt-5">
+    <%= button_to t("channels.actions.accept"),
+                  accept_channel_invitation_token_path(params[:token]),
+                  class: "px-4 py-2 rounded-xl bg-emerald-600 text-white" %>
+    <%= button_to t("channels.actions.decline"),
+                  decline_channel_invitation_token_path(params[:token]),
+                  class: "px-4 py-2 rounded-xl border" %>
+  </div>
+</main>

@@ -21,6 +21,10 @@ class Ability
     # Every signed-in user owns their playlists: add/remove courses, delete.
     # System playlists (user_id nil) stay admin-only via `editor`.
     can [ :update, :destroy ], Playlist, user_id: user.id
+    can :read, Channel, Channel.visible_to(user)
+    can :manage, Channel, user_id: user.id
+    cannot :create, Channel
+    can :create, ChannelInvitation, channel: { user_id: user.id, visibility: Channel.visibilities[:shared] }
 
     return unless user.admin?
 
@@ -31,5 +35,8 @@ class Ability
     can :create, Course
     can :manage, Course, user: user
     can :manage, Playlist
+    can :manage, Channel
+    can :manage, ChannelInvitation
+    can :manage, ChannelSubscription
   end
 end

@@ -1,0 +1,38 @@
+<% content_for :head do %>
+  <title><%= t("channels.show.title", channel: @channel.name) %></title>
+<% end %>
+
+<main class="profile-safe-area max-w-5xl mx-auto px-5 py-8">
+  <header class="mb-8">
+    <p class="text-sm text-gray-500"><%= t("channels.visibility.#{@channel.visibility}") %></p>
+    <h1 class="text-3xl font-bold"><%= @channel.name %></h1>
+    <p class="text-sm text-gray-500"><%= t("channels.show.by", owner: @channel.user.email) %></p>
+  </header>
+
+  <% if @invitation %>
+    <section class="rounded-2xl border p-5">
+      <p><%= t("channels.show.invited") %></p>
+      <div class="flex gap-3 mt-4">
+        <%= button_to t("channels.actions.accept"), accept_channel_invitation_path(@invitation), class: "px-4 py-2 rounded-xl bg-emerald-600 text-white" %>
+        <%= button_to t("channels.actions.decline"), decline_channel_invitation_path(@invitation), class: "px-4 py-2 rounded-xl border" %>
+      </div>
+    </section>
+  <% else %>
+    <% if @channel.visibility_shared? && @channel.user_id != current_user.id && !current_user.admin? %>
+      <%= button_to t("channels.actions.unsubscribe"), unsubscribe_channel_path(@channel.slug),
+                    method: :delete, class: "mb-6 text-red-600" %>
+    <% end %>
+    <% if @items.any? %>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <% @items.each do |item| %>
+          <%= render "app/library/card", course: item.course,
+                     lessons_count: @lesson_counts[item.course_id].to_i,
+                     enrolled: @enrolled_course_ids.include?(item.course_id),
+                     channel: item.channel %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-gray-500"><%= t("channels.show.empty") %></p>
+    <% end %>
+  <% end %>
+</main>

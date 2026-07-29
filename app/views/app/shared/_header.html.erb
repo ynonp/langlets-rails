@@ -36,6 +36,9 @@
         <%= link_to "Profile", profile_path,
                     class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
                     data: { action: "click->profile-menu#dismiss" } %>
+        <%= link_to t("channels.invitations.title"), invitations_path,
+                    class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
+                    data: { action: "click->profile-menu#dismiss" } %>
         <div class="border-t border-white/10"></div>
         <%= link_to "Logout",
                     destroy_user_session_path(returnto: app_home_path),

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_27_120000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_29_143000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -93,6 +93,66 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_27_120000) do
     t.index ["activity_id", "user_id"], name: "index_activity_users_on_activity_id_and_user_id", unique: true
     t.index ["activity_id"], name: "index_activity_users_on_activity_id"
     t.index ["user_id"], name: "index_activity_users_on_user_id"
+  end
+
+  create_table "channel_invitations", force: :cascade do |t|
+    t.bigint "channel_id", null: false
+    t.bigint "inviter_id", null: false
+    t.bigint "invitee_id"
+    t.string "email", null: false
+    t.string "token_digest", null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "expires_at", null: false
+    t.datetime "accepted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id", "email"], name: "index_channel_invitations_pending_email", unique: true, where: "(status = 0)"
+    t.index ["channel_id"], name: "index_channel_invitations_on_channel_id"
+    t.index ["email", "status"], name: "index_channel_invitations_on_email_and_status"
+    t.index ["invitee_id", "status"], name: "index_channel_invitations_on_invitee_id_and_status"
+    t.index ["invitee_id"], name: "index_channel_invitations_on_invitee_id"
+    t.index ["inviter_id"], name: "index_channel_invitations_on_inviter_id"
+    t.index ["token_digest"], name: "index_channel_invitations_on_token_digest", unique: true
+    t.check_constraint "status = ANY (ARRAY[0, 1, 2, 3, 4])", name: "channel_invitations_status_valid"
+  end
+
+  create_table "channel_items", force: :cascade do |t|
+    t.bigint "channel_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "published_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id", "course_id"], name: "index_channel_items_on_channel_id_and_course_id", unique: true
+    t.index ["channel_id", "published_at"], name: "index_channel_items_on_channel_id_and_published_at"
+    t.index ["channel_id"], name: "index_channel_items_on_channel_id"
+    t.index ["course_id"], name: "index_channel_items_on_course_id"
+  end
+
+  create_table "channel_subscriptions", force: :cascade do |t|
+    t.bigint "channel_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id", "user_id"], name: "index_channel_subscriptions_on_channel_id_and_user_id", unique: true
+    t.index ["channel_id"], name: "index_channel_subscriptions_on_channel_id"
+    t.index ["user_id", "created_at"], name: "index_channel_subscriptions_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_channel_subscriptions_on_user_id"
+  end
+
+  create_table "channels", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.integer "visibility", default: 0, null: false
+    t.boolean "default", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_channels_on_slug", unique: true
+    t.index ["user_id"], name: "idx_channels_one_default_per_user", unique: true, where: "\"default\""
+    t.index ["user_id"], name: "index_channels_on_user_id"
+    t.index ["user_id"], name: "index_channels_on_user_id_where_default", unique: true, where: "(\"default\" = true)"
+    t.index ["visibility", "created_at"], name: "index_channels_on_visibility_and_created_at"
+    t.check_constraint "visibility = ANY (ARRAY[0, 1, 2])", name: "channels_visibility_valid"
   end
 
   create_table "course_tags", force: :cascade do |t|
@@ -381,6 +441,18 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_27_120000) do
     t.index ["url", "language_id"], name: "index_media_on_url_and_language_id", unique: true
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "kind", null: false
+    t.jsonb "data", default: {}, null: false
+    t.datetime "sent_at"
+    t.datetime "cleared_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "cleared_at"], name: "index_notifications_on_user_id_and_cleared_at"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "oauth_access_grants", force: :cascade do |t|
     t.bigint "resource_owner_id", null: false
     t.bigint "application_id", null: false
@@ -573,6 +645,14 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_27_120000) do
   add_foreign_key "activity_phrases", "phrases"
   add_foreign_key "activity_users", "activities"
   add_foreign_key "activity_users", "users"
+  add_foreign_key "channel_invitations", "channels"
+  add_foreign_key "channel_invitations", "users", column: "invitee_id"
+  add_foreign_key "channel_invitations", "users", column: "inviter_id"
+  add_foreign_key "channel_items", "channels", on_delete: :cascade
+  add_foreign_key "channel_items", "courses", on_delete: :cascade
+  add_foreign_key "channel_subscriptions", "channels", on_delete: :cascade
+  add_foreign_key "channel_subscriptions", "users", on_delete: :cascade
+  add_foreign_key "channels", "users", on_delete: :cascade
   add_foreign_key "course_tags", "courses"
   add_foreign_key "course_tags", "tags"
   add_foreign_key "course_translations", "courses"
@@ -595,6 +675,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_27_120000) do
   add_foreign_key "lessons", "courses", on_delete: :cascade
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
+  add_foreign_key "notifications", "users"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "phrase_token_users", "languages"

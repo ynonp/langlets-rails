@@ -1,0 +1,7 @@
+<%= t("channels.mailer.invite.greeting") %>
+
+<%= t("channels.mailer.invite.body", inviter: @invitation.inviter.email, channel: @invitation.channel.name) %>
+
+<%= t("channels.mailer.invite.accept") %>: <%= channel_invitation_token_url(@token) %>
+
+<%= t("channels.mailer.invite.expires", days: ChannelInvitation::EXPIRY.in_days.to_i) %>

@@ -10,7 +10,9 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
       password: "password123",
       confirmed_at: Time.zone.now
     )
-    @course = Course.create!(
+    @public_channel = @user.default_channel
+    @public_channel.update!(visibility: :public)
+    @course = create_public_course!(
       name: "Query course",
       slug: "query-course",
       main_media_url: "https://www.youtube.com/watch?v=querycourse",
@@ -28,6 +30,27 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
       )
       lesson.lesson_translations.create!(language: @language, name: "Translated lesson #{index}")
     end
+  end
+
+  test "homepage course grid is empty when all channels are private" do
+    @course.update!(status: :published)
+    @public_channel.update!(visibility: :private)
+
+    get root_url
+
+    assert_response :success
+    assert_select ".lp-card:not([hidden])", count: 0
+  end
+
+  test "signed-in owners see courses from their private channels on the homepage" do
+    @course.update!(status: :published)
+    @public_channel.update!(visibility: :private)
+    sign_in @user
+
+    get root_url
+
+    assert_response :success
+    assert_select ".lp-card:not([hidden])[href=?]", course_path(@course.slug)
   end
 
   test "show preloads localized lesson names" do
@@ -58,7 +81,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   test "homepage shows at most eight videos and links to the gallery" do
     @course.update!(status: :published)
     9.times do |index|
-      Course.create!(
+      create_public_course!(
         name: "Homepage course #{index}",
         slug: "homepage-course-#{index}",
         main_media_url: "https://www.youtube.com/watch?v=homepage#{index}",
@@ -140,7 +163,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "homepage keeps all language pills when French is selected" do
-    french_course = Course.create!(
+    french_course = create_public_course!(
       name: "French homepage course",
       slug: "french-homepage-course",
       main_media_url: "https://www.youtube.com/watch?v=frenchhome",
@@ -150,7 +173,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     )
 
     8.times do |index|
-      Course.create!(
+      create_public_course!(
         name: "Newer English course #{index}",
         slug: "newer-english-course-#{index}",
         main_media_url: "https://www.youtube.com/watch?v=newer#{index}",
@@ -183,7 +206,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
   test "homepage mixes playlist and standalone courses newest first" do
     @course.update!(status: :published, created_at: 2.days.ago)
-    playlist_course = Course.create!(
+    playlist_course = create_public_course!(
       name: "Newest playlist course",
       slug: "newest-playlist-course",
       main_media_url: "https://www.youtube.com/watch?v=playlistnewest",
@@ -226,6 +249,12 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   private
+
+  def create_public_course!(**attributes)
+    course = Course.create!(**attributes)
+    @public_channel.publish!(course)
+    course
+  end
 
   def capture_selects
     queries = []

@@ -13,8 +13,10 @@ class CoursesController < ApplicationController
     # their own playlists. Only courses with a ready translation in the
     # subdomain's language are shown, and a playlist with none of those is
     # hidden entirely.
-    visible_courses = Course.published.ready_in(Current.translation_language)
-    @all_courses = Course.published.ready_in(Current.translation_language)
+    visible_courses = ChannelContentQuery.courses_visible_to(current_user)
+      .published.ready_in(Current.translation_language)
+    @all_courses = ChannelContentQuery.courses_visible_to(current_user)
+                         .published.ready_in(Current.translation_language)
                          .includes(:language, :localized_translation)
                          .order(created_at: :desc)
 
@@ -67,7 +69,8 @@ class CoursesController < ApplicationController
       # Build continue learning from ALL courses with progress (including learning path courses)
       continue_learning_ids = continue_learning_order.keys
       if continue_learning_ids.any?
-        continue_courses = Course.published.ready_in(Current.translation_language)
+        continue_courses = ChannelContentQuery.courses_visible_to(current_user)
+                                 .published.ready_in(Current.translation_language)
                                  .includes(:language, :localized_translation)
                                  .where(id: continue_learning_ids)
         continue_courses = continue_courses.left_joins(:lessons)

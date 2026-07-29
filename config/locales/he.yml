@@ -1,4 +1,63 @@
 he:
+  channels:
+    visibility:
+      private: "פרטי"
+      shared: "משותף"
+      public: "ציבורי"
+    fields:
+      name: "שם הערוץ"
+      visibility: "חשיפה"
+    card:
+      by: "מאת %{channel}"
+    actions:
+      save: "שמירה"
+      view: "צפייה בערוץ"
+      accept: "אישור"
+      decline: "דחייה"
+      unsubscribe: "עזיבת הערוץ"
+      resend: "שליחה מחדש"
+      revoke: "ביטול"
+    profile:
+      page_title: "פרופיל - Langlets"
+      heading: "הערוץ שלי"
+      description: "קורסים שמייבאים מתפרסמים בערוץ הזה."
+      updated: "הערוץ עודכן."
+      update_failed: "לא ניתן היה לעדכן את הערוץ."
+    show:
+      title: "%{channel} - Langlets"
+      by: "מאת %{owner}"
+      invited: "הוזמנתם לערוץ משותף. אשרו את ההזמנה כדי לראות את הקורסים."
+      empty: "אין עדיין קורסים בערוץ הזה."
+    flash:
+      unsubscribed: "עזבתם את הערוץ."
+    invitations:
+      title: "הזמנות"
+      invite: "הזמנת אנשים"
+      placeholder: "כתובות אימייל, מופרדות בפסיקים"
+      send: "שליחת הזמנות"
+      sent: "ההזמנות נשלחו."
+      invalid: "בדקו את כתובות האימייל ונסו שוב."
+      accepted: "ההזמנה אושרה."
+      declined: "ההזמנה נדחתה."
+      revoked: "ההזמנה בוטלה."
+      resent: "ההזמנה נשלחה מחדש."
+      empty: "אין הזמנות ממתינות."
+    members:
+      remove: "הסרה"
+      removed: "החבר הוסר."
+    admin:
+      title: "ערוצים"
+      create: "יצירת ערוץ ציבורי"
+      created: "הערוץ הציבורי נוצר."
+      create_failed: "לא ניתן היה ליצור את הערוץ."
+      updated: "הערוץ עודכן."
+    mailer:
+      invite:
+        subject: "הוזמנתם אל %{channel}"
+        greeting: "שלום,"
+        body: "‏%{inviter} הזמין אתכם להצטרף לערוץ המשותף %{channel} ב-Langlets."
+        accept: "אישור ההזמנה"
+        expires: "ההזמנה תפוג בעוד %{days} ימים."
   subhead:
     default: "לומדים שפות מיוטיוב"
     ar: "לומדים שפות מיוטיוב"

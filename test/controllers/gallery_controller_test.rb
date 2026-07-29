@@ -1,6 +1,8 @@
 require "test_helper"
 
 class GalleryControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @language = languages(:english)
     @other_language = languages(:french)
@@ -9,6 +11,29 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
       password: "password123",
       confirmed_at: Time.zone.now
     )
+    @public_channel = @user.default_channel
+    @public_channel.update!(visibility: :public)
+  end
+
+  test "is empty when all channels are private" do
+    create_course("Private Course", @language)
+    @public_channel.update!(visibility: :private)
+
+    get gallery_url
+
+    assert_response :success
+    assert_select ".gallery-card", count: 0
+  end
+
+  test "signed-in owners see courses from their private channels" do
+    course = create_course("Owned Private Course", @language)
+    @public_channel.update!(visibility: :private)
+    sign_in @user
+
+    get gallery_url
+
+    assert_response :success
+    assert_select ".gallery-card h2", text: course.name
   end
 
   test "shows courses and playlists in one paginated grid" do
@@ -120,7 +145,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
   private
 
   def create_course(name, language)
-    Course.create!(
+    course = Course.create!(
       name: name,
       slug: name.parameterize,
       main_media_url: "https://www.youtube.com/watch?v=#{SecureRandom.hex(6)}",
@@ -128,6 +153,8 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
       user: @user,
       status: :published
     )
+    @public_channel.publish!(course)
+    course
   end
 
   def capture_selects

@@ -21,6 +21,8 @@ class Course < ApplicationRecord
 
   has_many :enrollments, dependent: :destroy
   has_many :enrolled_users, through: :enrollments, source: :user
+  has_many :channel_items, dependent: :destroy
+  has_many :channels, through: :channel_items
 
   # Status enum
   enum :status, {

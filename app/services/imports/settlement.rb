@@ -9,8 +9,11 @@ module Imports
 
     # The course exists now, so this is the point where it may appear on Home.
     def complete!(import_request)
-      enroll!(import_request)
-      import_request.update!(status: :ready, progress_percent: 100, failure_reason: nil)
+      ImportRequest.transaction do
+        enroll!(import_request)
+        import_request.user.provision_default_channel!.publish!(import_request.course)
+        import_request.update!(status: :ready, progress_percent: 100, failure_reason: nil)
+      end
 
       # Separate job so a push failure can't fail an import that has already
       # succeeded. The completion email goes out from the finalizer regardless —

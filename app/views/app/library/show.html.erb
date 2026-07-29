@@ -36,10 +36,11 @@
     </div>
   <% else %>
     <div class="grid grid-cols-2 gap-3">
-      <% @courses.each do |course| %>
-        <%= render "app/library/card", course: course,
-                   lessons_count: @lesson_counts[course.id].to_i,
-                   enrolled: @enrolled_course_ids.include?(course.id) %>
+      <% @items.each do |item| %>
+        <%= render "app/library/card", course: item.course,
+                   lessons_count: @lesson_counts[item.course_id].to_i,
+                   enrolled: @enrolled_course_ids.include?(item.course_id),
+                   channel: item.channel %>
       <% end %>
     </div>
   <% end %>
