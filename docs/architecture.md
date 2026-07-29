@@ -570,7 +570,10 @@ the word-level timestamps used to materialize `phrases`. If any part of that pat
 whitespace-tokenized transcript **words** to Gemini 2.5 Flash using structured output, and Gemini
 returns every word in order, with start/end seconds optional for middle words. The fallback
 reconciles those entries against the transcript instead of requiring Gemini to timestamp every
-token. Every source line must still have its first and last lexical words timestamped, which
+token. When Gemini supplies a word start but omits its end, the fallback uses the next later
+timestamped word's start as that end; if there is no later start, it uses two seconds after the
+word's start. Explicit end times are preserved. Every source line must still have its first and
+last lexical words timestamped, which
 guarantees required phrase bounds; timed middle words keep their word timings and untimed middle
 words remain untimed. This lets
 the batch continue with phrase highlighting when Gemini misses individual words, while preserving
@@ -600,7 +603,8 @@ The Gemini response is validated, not trusted: returned entries must reconcile i
 transcript, with every source line's first and last lexical words timed. Missing middle entries are
 also tolerated defensively, although the prompt and structured schema ask Gemini to return every word.
 Case, quote style and surrounding punctuation are ignored while matching. Timestamps must be
-finite, non-negative and chronological, and each end must be at or after its start. An added,
+finite, non-negative and chronological, and each explicit or inferred end must be at or after its
+start. An end without a start remains invalid. An added,
 rewritten or reordered word, or a missing line boundary, fails the attempt and is retried once.
 Phrase and word text always come from the transcript, never from the response, so a re-punctuated
 word that survives normalization still cannot reach the course. The prompt states that the output

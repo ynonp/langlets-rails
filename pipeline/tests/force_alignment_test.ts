@@ -164,6 +164,33 @@ Deno.test("yt-dlp failure falls back to Gemini structured word timestamps", asyn
   assertFalse(store.data.force_alignment_in_progress);
 });
 
+Deno.test("Gemini fallback infers missing word ends from the next start", async () => {
+  const fallbackModel = queuedModel([{
+    words: [
+      { word: "Bonjour", start_seconds: 2.5 },
+      { word: "monde", start_seconds: 3.4, end_seconds: 4.25 },
+      { word: "salut", start_seconds: 5 },
+      { word: "encore", start_seconds: 6.2 },
+    ],
+  }]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["Bonjour monde, Salut encore"] },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
+  });
+
+  await forceAlignment(ctx);
+
+  const words = store.data.phrases![0].words;
+  assertEquals(words[0].timestamp_end, "00:03.40");
+  assertEquals(words[1].timestamp_end, "00:04.25");
+  assertEquals(words[2].timestamp_end, "00:06.20");
+  assertEquals(words[3].timestamp_end, "00:08.20");
+  assertEquals(store.data.phrases![0].timestamp_end, "00:08.20");
+  assertEquals(store.data.video_length_seconds, 8.2);
+  assertFalse(store.data.force_alignment_in_progress);
+});
+
 Deno.test("a Gemini fallback that merges transcript words fails instead of silently reshaping it", async () => {
   // The failure this replaces: Gemini answered a one-line transcript with 33
   // lines of its own choosing.

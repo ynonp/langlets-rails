@@ -258,8 +258,19 @@ function reconcileFallbackWords(
   lines: string[],
   returned: FallbackWord[],
 ): ReconciledFallbackLine[] {
+  const timedReturned = returned.map((word, index) => {
+    if (word.start_seconds === undefined || word.end_seconds !== undefined) return word;
+    const nextStart = returned.slice(index + 1)
+      .find((candidate) => candidate.start_seconds !== undefined)
+      ?.start_seconds;
+    return {
+      ...word,
+      end_seconds: nextStart ?? word.start_seconds + 2,
+    };
+  });
+
   let previousStart = 0;
-  returned.forEach((word, index) => {
+  timedReturned.forEach((word, index) => {
     const hasStart = word.start_seconds !== undefined;
     const hasEnd = word.end_seconds !== undefined;
     if (!hasStart && !hasEnd) return;
@@ -278,7 +289,7 @@ function reconcileFallbackWords(
   const reconciled = lines.map((text) => ({
     text,
     words: wordsOf([text]).map((word) => {
-      const candidate = returned[returnedIndex];
+      const candidate = timedReturned[returnedIndex];
       if (candidate && normalizeWord(candidate.word) === normalizeWord(word)) {
         returnedIndex++;
         return candidate.start_seconds !== undefined && candidate.end_seconds !== undefined
@@ -289,9 +300,9 @@ function reconcileFallbackWords(
     }),
   }));
 
-  if (returnedIndex !== returned.length) {
+  if (returnedIndex !== timedReturned.length) {
     throw new Error(
-      `Gemini returned "${returned[returnedIndex].word}" outside the transcript word order`,
+      `Gemini returned "${timedReturned[returnedIndex].word}" outside the transcript word order`,
     );
   }
 
