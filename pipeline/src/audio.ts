@@ -96,6 +96,8 @@ export function audioDownloadCommand(
   options: AudioDownloadOptions = {},
 ): AudioDownloadCommand {
   const args = [
+    "--remote-components",
+    "ejs:github",
     "--no-playlist",
     "--no-progress",
     "-f",

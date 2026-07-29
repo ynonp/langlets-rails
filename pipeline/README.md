@@ -224,7 +224,9 @@ and `cli` tasks load it via `--env-file`; real environment variables win over th
 Deploy set them in the dashboard instead.
 
 Set `YTDLP_NETWORK_NAMESPACE=vpn` on Linux to route only the `yt-dlp` audio download through that
-network namespace. Leave it unset for direct execution.
+network namespace. Leave it unset for direct execution. The command enables
+`--remote-components ejs:github`, so the host (or configured namespace) must be able to reach GitHub;
+yt-dlp uses the pipeline's Deno runtime to execute the downloaded YouTube challenge solver.
 
 `ffprobe` and `ffmpeg` must be on `PATH`. Audio downloads are verified with them, because TikTok
 serves silent HEVC renditions that yt-dlp reports as a successful download

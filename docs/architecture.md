@@ -684,9 +684,13 @@ only on the pipeline host; Rails no longer needs them at all.
 
 Supadata receives the video URL directly when fetching native captions; Gemini receives the YouTube
 URL directly only when that native request fails. Forced alignment still requires the audio bytes,
-so the pipeline downloads them with `yt-dlp`; `YTDLP_NETWORK_NAMESPACE` may route only that
-subprocess through a configured Linux network namespace. The Deno service needs write access for
-the temporary file and run permission for `yt-dlp`, `ip`, `ffprobe` and `ffmpeg`.
+so the pipeline downloads them with `yt-dlp`. Every invocation enables
+`--remote-components ejs:github`, allowing yt-dlp to fetch its external JavaScript challenge solver
+when the installed distribution does not bundle it. The host therefore needs outbound access to
+GitHub as well as a supported JavaScript runtime; the pipeline's Deno runtime satisfies the latter.
+`YTDLP_NETWORK_NAMESPACE` may route only that subprocess, including its EJS download, through a
+configured Linux network namespace. The Deno service needs write access for the temporary file and
+run permission for `yt-dlp`, `ip`, `ffprobe` and `ffmpeg`.
 
 **A download that "succeeds" is not necessarily audio** (`pipeline/src/audio.ts`).
 TikTok serves silent HEVC renditions (`bytevc1` / `media-video-hvc1`) that yt-dlp
