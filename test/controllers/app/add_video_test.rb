@@ -199,6 +199,52 @@ module App
       assert @user.import_requests.sole.charged?
     end
 
+    test "approving in Add Video creates the request and starts its pipeline job" do
+      pipeline_runs = 0
+      pipeline_arguments = []
+      pipeline = Object.new
+      pipeline.define_singleton_method(:call) do
+        pipeline_runs += 1
+        true
+      end
+      build_pipeline = lambda do |**kwargs|
+        pipeline_arguments << kwargs
+        pipeline
+      end
+
+      get new_app_import_request_path, headers: NATIVE
+      assert_response :success
+
+      stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
+      assert_response :success
+      assert_select "form[action=?][data-turbo-frame=_top]", app_import_requests_path
+
+      CreateSongPipelineHttp.stub(:base_url, "https://pipeline.test") do
+        CreateSongPipelineHttp.stub(:new, build_pipeline) do
+          perform_enqueued_jobs(only: CreateCourseJob) do
+            stub_video do
+              post app_import_requests_path,
+                   params: {
+                     url: CANONICAL,
+                     clip_language: "Spanish",
+                     translation_language: "English"
+                   },
+                   headers: NATIVE
+            end
+          end
+        end
+      end
+
+      assert_redirected_to app_import_requests_path
+
+      import_request = @user.import_requests.sole
+      assert import_request.importing?
+      assert import_request.charged?
+      assert_equal CANONICAL, import_request.youtube_url
+      assert_equal 1, pipeline_runs
+      assert_equal import_request.create_song_progress, pipeline_arguments.sole.fetch(:progress)
+    end
+
     private
 
     def resolve_path(q:)
