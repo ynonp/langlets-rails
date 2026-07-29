@@ -1,4 +1,5 @@
 <div id="queue"
+     class="min-w-0 w-full"
      data-controller="poll"
      data-poll-interval-value="3000"
      data-poll-active-value="<%= active_count.positive? %>">
@@ -10,7 +11,7 @@
                 class: "mt-5 inline-flex min-h-11 items-center justify-center rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-extrabold text-white hover:bg-emerald-600" %>
   </div>
 
-  <div id="queue-list" class="<%= 'hidden' if import_requests.empty? %> grid gap-4">
+  <div id="queue-list" class="<%= 'hidden' if import_requests.empty? %> grid min-w-0 w-full gap-4">
     <%= render partial: "app/import_requests/web/import_request", collection: import_requests %>
   </div>
 </div>

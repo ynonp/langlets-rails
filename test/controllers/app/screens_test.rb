@@ -78,7 +78,8 @@ module App
     test "the web queue uses its own responsive application view" do
       request = @user.import_requests.create!(
         youtube_url: "https://www.youtube.com/watch?v=webqueueaaa", youtube_video_id: "webqueueaaa",
-        clip_language: "Spanish", translation_language: "English", title: "Responsive queue item",
+        clip_language: "Spanish", translation_language: "English",
+        title: "Responsive queue item with a production-length title that must never widen the desktop grid " * 3,
         status: :queued, charged: true
       )
 
@@ -86,20 +87,17 @@ module App
 
       assert_response :success
       assert_select "html[data-theme]"
-      assert_select "meta[name='view-transition']", count: 0
+      assert_select "meta[name='view-transition'][content='same-origin']", count: 1
       assert_select "header a[href=?]", root_path, text: /Langlets/
       assert_select "[data-testid='web-queue'].max-w-5xl"
-      assert_select "article#wrapper_import_request_#{request.id}" do
+      assert_select "#queue.min-w-0.w-full"
+      assert_select "#queue-list.min-w-0.w-full"
+      assert_select "article#wrapper_import_request_#{request.id}.min-w-0.w-full" do
         assert_select ".sm\\:flex-row"
         assert_select "form[action=?]", app_import_request_path(request)
       end
       assert_select "[data-controller='swipe-to-delete']", count: 0
       assert_select "a[href=?]", new_app_import_request_path, text: /Add a video/
-
-      get new_app_import_request_path, headers: WEB
-
-      assert_response :success
-      assert_select "meta[name='view-transition'][content='same-origin']", count: 1
     end
 
     test "the native queue keeps the native-only presentation" do

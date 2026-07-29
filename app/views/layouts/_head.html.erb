@@ -28,12 +28,7 @@
 <link rel="icon" href="/icon.png" type="image/png">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icon.png">
-<%# Individual screens can opt out when a root-level horizontal transition
-    fights their own navigation or layout. Turbo requires this meta tag on both
-    snapshots, so omitting it disables the transition into and out of the page. %>
-<% unless content_for?(:disable_view_transition) %>
-  <meta name="view-transition" content="same-origin" />
-<% end %>
+<meta name="view-transition" content="same-origin" />
 
 <%# Includes all stylesheet files in app/assets/stylesheets %>
 <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
