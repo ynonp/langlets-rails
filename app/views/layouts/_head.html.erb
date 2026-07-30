@@ -30,8 +30,9 @@
 <link rel="apple-touch-icon" href="/icon.png">
 <meta name="view-transition" content="same-origin" />
 
-<%# Includes all stylesheet files in app/assets/stylesheets %>
-<%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+<%# Link only the compiled CSS. The Tailwind source file contains build-time
+    imports that browsers would otherwise request as separate assets. %>
+<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
 
 <% if Rails.env.production? %>
