@@ -40,12 +40,14 @@ increasing the VM size before raising concurrency.
 ### Console transcript correction
 
 Production transcript repairs are exposed as transactional model methods for
-Rails console use. `Phrase#correct_text(old_text, new_text)` requires one exact
-occurrence and a uniform token index type, replaces the L1 text, removes tokens
-whose inclusive index ranges overlap the replaced span, and shifts later token
-indexes. Character-indexed phrases use string offsets; word-indexed
-phrases use `String#tokenize`. It returns a hash keyed by affected `Activity`
-records with the number of removed token joins for each.
+Rails console use. `Phrase#correct_text(old_text, new_text)` requires
+`old_text` to equal the complete persisted phrase and a uniform token index
+type. It computes every difference between the complete old and new texts,
+removes tokens that do not map wholly and contiguously across those changes,
+and remaps preserved token indexes. Character-indexed phrases compare
+characters; word-indexed phrases compare `String#tokenize` results. It returns
+a hash keyed by affected `Activity` records with the number of removed token
+joins for each.
 
 `Phrase#create_token(text, translations)` selects the first occurrence that
 does not overlap an existing token, preserves the phrase's index type, creates
@@ -54,17 +56,19 @@ callback to enqueue fresh TTS audio outside development. A Phrase instance
 retains the verified index type after `correct_text`, allowing replacement
 tokens to be created even when the correction removed every old token.
 
-`Course#correct_text` searches the timestamp-ordered, newline-joined medium
-transcript at or after a character `offset`, delegates the repair to its
-containing phrase, creates the requested tokens in order, and restores each
-affected activity's previous token count by randomly selecting from those new
-tokens. The correction, translation creation, and activity restoration share
-one database transaction. When the Course has a `CreateSongProgress`, the same
-transaction force-rebuilds its cached data from the corrected persisted course,
-so later translation runs and exports cannot reuse stale transcript or token
-data. Token specs accept either nested
-`[text, translation_hash]` pairs or the equivalent flat alternating console
-form.
+`Course#correct_text(old_text, new_text, tokens:, translations:)` finds every
+phrase in the Course medium whose complete L1 text exactly equals `old_text`,
+delegates each repair, creates the requested tokens for each corrected phrase,
+and upserts each phrase-level translation supplied by language ISO code. It
+restores each affected activity's previous token count by randomly selecting
+from the new tokens belonging to that same phrase. All matching phrase
+corrections, token and translation creation, and activity restoration share one
+database transaction. When the Course has a `CreateSongProgress`, the same
+transaction finally force-rebuilds its cached data from the corrected persisted
+course, so later translation runs and exports cannot reuse stale phrase,
+translation, or token data. Both `tokens:` and `translations:` are required;
+token specs accept either nested `[text, translation_hash]` pairs or the
+equivalent flat alternating console form.
 
 ### Channels
 
@@ -1192,6 +1196,10 @@ Users are **not** enrolled at import time: the course is `pending` and has no le
 #### Course-ready push notifications
 
 Once `Imports::Finalizer` publishes a course, it marks every attached `ImportRequest` ready, enrolls that request's user, and enqueues one `SendImportReadyPushJob` per request (all three via `Imports::Settlement`). Push delivery is deliberately outside the course-building transaction: an APNs outage must not turn a successfully built course into a failed import. `ImportRequest#notified_at` makes delivery idempotent, and a user with no registered device is stamped as handled because email remains the fallback.
+
+Course creation success and failure emails use the learner-facing term
+**Langlet** in their subjects and in both HTML and plain-text bodies. Internal
+Ruby and database names remain `Course`.
 
 The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `App::DeviceTokensController`; tokens are owned by a user and an installation token can move to the currently signed-in account. APNs sandbox and production tokens are stored separately by environment. Apple responses that identify dead tokens invalidate the row without deleting its diagnostic history, while transient failures leave it active.
 

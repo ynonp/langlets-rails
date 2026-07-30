@@ -1,3 +1,20 @@
-Course#creation_complete
+Your Langlet is Ready!
+======================
 
-<%= @greeting %>, find me in app/views/course_mailer/creation_complete.text.erb
+Hi <%= @user.email %>!
+
+Great news! Your langlet "<%= @course.localized_name %>" has been successfully created and is now ready for you to explore.
+
+The AI has processed your content and created engaging lessons with:
+- Interactive phrase matching activities
+- Token translation exercises
+- Language alignment activities
+- Listening comprehension tasks
+
+Start learning now:
+<%= Rails.application.routes.url_helpers.course_url(@course.slug) %>
+
+Thank you for using Langlets!
+
+Best regards,
+The Langlets Team

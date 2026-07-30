@@ -5,7 +5,7 @@ class CourseMailer < ApplicationMailer
     
     mail(
       to: @user.email,
-      subject: "Your course '#{@course.name}' is ready!"
+      subject: "Your langlet '#{@course.name}' is ready!"
     )
   end
 
@@ -26,11 +26,11 @@ class CourseMailer < ApplicationMailer
       @error_cause = nil
     end
 
-    @failed_at = Time.current
+    @failed_at = Time.zone.now
 
     mail(
       to: @user.email,
-      subject: "Course creation failed for '#{@course.name}'"
+      subject: "Langlet creation failed for '#{@course.name}'"
     )
   end
 end

@@ -158,34 +158,33 @@ class Course < ApplicationRecord
     lessons.first&.medium
   end
 
-  def correct_text(old_text, new_text, tokens:, offset: 0)
-    raise ArgumentError, "offset must be a non-negative integer" unless offset.is_a?(Integer) && offset >= 0
-
+  def correct_text(old_text, new_text, tokens:, translations:)
     token_specs = normalize_correction_token_specs(tokens)
-    phrases = medium&.phrases&.ordered_by_timestamp&.to_a || []
-    transcript = phrases.map(&:text_l1).join("\n")
-    match_start = transcript.index(old_text, offset)
-    raise ArgumentError, "#{old_text.inspect} was not found after offset #{offset}" unless match_start
-
-    cursor = 0
-    phrase = phrases.find do |candidate|
-      phrase_start = cursor
-      phrase_end = phrase_start + candidate.text_l1.length
-      cursor = phrase_end + 1
-      match_start >= phrase_start && match_start + old_text.length <= phrase_end
-    end
-    raise ArgumentError, "old_text crosses a phrase boundary" unless phrase
+    translation_specs = normalize_correction_translations(translations)
+    phrases = medium&.phrases&.where(text_l1: old_text)&.ordered_by_timestamp&.to_a || []
+    raise ArgumentError, "no phrase has the complete text #{old_text.inspect}" if phrases.empty?
 
     transaction do
-      affected_activities = phrase.correct_text(old_text, new_text)
-      created_tokens = token_specs.map { |text, translations| phrase.create_token(text, translations) }
-      if affected_activities.present? && created_tokens.empty?
-        raise ArgumentError, "tokens are required to restore affected activities"
-      end
+      all_affected_activities = Hash.new(0)
 
-      affected_activities.each do |activity, deleted_count|
-        deleted_count.times do
-          activity.activity_phrase_tokens.create!(phrase_token: created_tokens.sample)
+      phrases.each do |phrase|
+        affected_activities = phrase.correct_text(old_text, new_text)
+        created_tokens = token_specs.map { |text, token_translations| phrase.create_token(text, token_translations) }
+        if affected_activities.present? && created_tokens.empty?
+          raise ArgumentError, "tokens are required to restore affected activities"
+        end
+
+        translation_specs.each do |language, text|
+          phrase.phrase_translations
+            .find_or_initialize_by(language: language)
+            .update!(text: text)
+        end
+
+        affected_activities.each do |activity, deleted_count|
+          all_affected_activities[activity] += deleted_count
+          deleted_count.times do
+            activity.activity_phrase_tokens.create!(phrase_token: created_tokens.sample)
+          end
         end
       end
 
@@ -195,7 +194,7 @@ class Course < ApplicationRecord
           .call(force: true)
       end
 
-      affected_activities
+      all_affected_activities
     end
   end
 
@@ -293,6 +292,17 @@ class Course < ApplicationRecord
       raise ArgumentError, "tokens must contain [text, translation_table] pairs"
     end
     specs
+  end
+
+  def normalize_correction_translations(translations)
+    unless translations.is_a?(Hash) && translations.present? &&
+        translations.none? { |language, text| language.blank? || text.blank? }
+      raise ArgumentError, "translations must be a non-empty language-to-text hash"
+    end
+
+    translations.to_h do |iso_name, text|
+      [ Language.find_by!(iso_name: iso_name.to_s), text ]
+    end
   end
 
   def regeneration_import_request(progress)

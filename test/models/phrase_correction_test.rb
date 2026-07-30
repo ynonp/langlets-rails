@@ -14,7 +14,7 @@ class PhraseCorrectionTest < ActiveJob::TestCase
     after = create_token!(phrase, 8, 13, :character_index)
     activity = create_activity_with(deleted)
 
-    result = phrase.correct_text("bad", "wonderful")
+    result = phrase.correct_text("one bad ending", "one wonderful ending")
 
     assert_equal "one wonderful ending", phrase.reload.text_l1
     assert_equal [ before.id, after.id ], phrase.phrase_tokens.order(:id).pluck(:id)
@@ -27,7 +27,7 @@ class PhraseCorrectionTest < ActiveJob::TestCase
     deleted = create_token!(phrase, 2, 3, :word_index)
     after = create_token!(phrase, 4, 4, :word_index)
 
-    phrase.correct_text("a bad", "the truly excellent")
+    phrase.correct_text("I have a bad idea", "I have the truly excellent idea")
 
     assert_not PhraseToken.exists?(deleted.id)
     assert_equal [ 5, 5 ], after.reload.attributes.values_at("l1_start_index", "l1_end_index")
@@ -41,7 +41,7 @@ class PhraseCorrectionTest < ActiveJob::TestCase
     overlaps_end = create_token!(phrase, 9, 14, :character_index)
     after = create_token!(phrase, 13, 18, :character_index)
 
-    phrase.correct_text("bad", "good")
+    phrase.correct_text("one very bad ending", "one very good ending")
 
     assert_equal [ before.id, after.id ], phrase.phrase_tokens.order(:id).ids
     assert_not PhraseToken.exists?(overlaps_start.id)
@@ -56,7 +56,7 @@ class PhraseCorrectionTest < ActiveJob::TestCase
     contains_change = create_token!(phrase, 0, 3, :word_index)
     overlaps_end = create_token!(phrase, 2, 3, :word_index)
 
-    phrase.correct_text("bad", "good")
+    phrase.correct_text("one very bad ending", "one very good ending")
 
     assert_equal [ before.id ], phrase.phrase_tokens.ids
     assert_not PhraseToken.exists?(overlaps_start.id)
@@ -71,6 +71,22 @@ class PhraseCorrectionTest < ActiveJob::TestCase
     assert_raises(ArgumentError) { phrase.correct_text("bad", "good") }
     assert_equal "bad and bad", phrase.reload.text_l1
     assert PhraseToken.exists?(token.id)
+  end
+
+  test "correct_text removes tokens from multiple changed ranges and remaps tokens between them" do
+    phrase = create_phrase!("red one blue two green")
+    first_changed = create_token!(phrase, 0, 2, :character_index)
+    between = create_token!(phrase, 8, 11, :character_index)
+    second_changed = create_token!(phrase, 13, 15, :character_index)
+    after = create_token!(phrase, 17, 21, :character_index)
+
+    phrase.correct_text("red one blue two green", "scarlet one blue seven green")
+
+    assert_equal [ between.id, after.id ], phrase.phrase_tokens.order(:id).ids
+    assert_not PhraseToken.exists?(first_changed.id)
+    assert_not PhraseToken.exists?(second_changed.id)
+    assert_equal [ 12, 15 ], between.reload.attributes.values_at("l1_start_index", "l1_end_index")
+    assert_equal [ 23, 27 ], after.reload.attributes.values_at("l1_start_index", "l1_end_index")
   end
 
   test "create_token chooses the first uncovered duplicate and creates translations" do

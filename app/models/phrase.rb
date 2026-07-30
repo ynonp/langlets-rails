@@ -24,16 +24,17 @@ class Phrase < ApplicationRecord
 
   # Operator-facing repair helpers. Indexes are inclusive in PhraseToken.
   def correct_text(old_text, new_text)
-    raise ArgumentError, "old_text must appear exactly once" unless text_occurrence_indexes(old_text).one?
+    raise ArgumentError, "old_text must equal the complete phrase text" unless text_l1 == old_text
     raise ArgumentError, "new_text must not be empty" if new_text.blank?
     raise ArgumentError, "new_text must differ from old_text" if new_text == old_text
 
     tokens = phrase_tokens.to_a
     index_type = uniform_token_index_type!(tokens)
-    old_start, old_end, index_delta = correction_indexes(old_text, new_text, index_type)
-    deleted_tokens = tokens.select do |token|
-      token[:l1_start_index] <= old_end && token[:l1_end_index] >= old_start
+    index_mapping = unchanged_index_mapping(old_text, new_text, index_type)
+    preserved_tokens = tokens.select do |token|
+      mapped_range(index_mapping, token[:l1_start_index], token[:l1_end_index])
     end
+    deleted_tokens = tokens - preserved_tokens
     affected_activities = ActivityPhraseToken
       .where(phrase_token_id: deleted_tokens.map(&:id))
       .group(:activity_id)
@@ -44,12 +45,15 @@ class Phrase < ApplicationRecord
       update!(text_l1: text_l1.sub(old_text, new_text))
       deleted_tokens.each(&:destroy!)
 
-      (tokens - deleted_tokens).each do |token|
-        next unless token[:l1_start_index] > old_end
-
+      preserved_tokens.each do |token|
+        new_start, new_end = mapped_range(
+          index_mapping,
+          token[:l1_start_index],
+          token[:l1_end_index]
+        )
         token.update!(
-          l1_start_index: token[:l1_start_index] + index_delta,
-          l1_end_index: token[:l1_end_index] + index_delta
+          l1_start_index: new_start,
+          l1_end_index: new_end
         )
       end
     end
@@ -134,19 +138,49 @@ class Phrase < ApplicationRecord
     index_types.first
   end
 
-  def correction_indexes(old_text, new_text, index_type)
-    character_start = text_l1.index(old_text)
-    return [ character_start, character_start + old_text.length - 1, new_text.length - old_text.length ] if index_type == "character_index"
+  def unchanged_index_mapping(old_text, new_text, index_type)
+    old_units = correction_units(old_text, index_type)
+    new_units = correction_units(new_text, index_type)
+    lengths = Array.new(old_units.length + 1) { Array.new(new_units.length + 1, 0) }
 
-    old_matches = token_matches_inside(character_start, character_start + old_text.length)
-    raise ArgumentError, "old_text must align with complete words" unless exact_word_span?(old_matches, character_start, character_start + old_text.length)
+    (old_units.length - 1).downto(0) do |old_index|
+      (new_units.length - 1).downto(0) do |new_index|
+        lengths[old_index][new_index] =
+          if old_units[old_index] == new_units[new_index]
+            lengths[old_index + 1][new_index + 1] + 1
+          else
+            [ lengths[old_index + 1][new_index], lengths[old_index][new_index + 1] ].max
+          end
+      end
+    end
 
-    old_start = text_l1.tokenize.take_while { |match| match.begin(0) < character_start }.size
-    old_word_count = old_matches.size
-    new_word_count = new_text.tokenize.count
-    raise ArgumentError, "new_text must contain at least one word" if new_word_count.zero?
+    mapping = {}
+    old_index = 0
+    new_index = 0
+    while old_index < old_units.length && new_index < new_units.length
+      if old_units[old_index] == new_units[new_index]
+        mapping[old_index] = new_index
+        old_index += 1
+        new_index += 1
+      elsif lengths[old_index + 1][new_index] >= lengths[old_index][new_index + 1]
+        old_index += 1
+      else
+        new_index += 1
+      end
+    end
+    mapping
+  end
 
-    [ old_start, old_start + old_word_count - 1, new_word_count - old_word_count ]
+  def correction_units(text, index_type)
+    index_type == "character_index" ? text.chars : text.tokenize.map(&:to_s)
+  end
+
+  def mapped_range(index_mapping, start_index, end_index)
+    mapped_indexes = (start_index..end_index).map { |index| index_mapping[index] }
+    return if mapped_indexes.any?(&:nil?)
+    return unless mapped_indexes.each_cons(2).all? { |left, right| right == left + 1 }
+
+    [ mapped_indexes.first, mapped_indexes.last ]
   end
 
   def first_uncovered_token_range(text, tokens, index_type)
@@ -181,14 +215,5 @@ class Phrase < ApplicationRecord
 
   def exact_word_span?(matches, character_start, character_end)
     matches.any? && matches.first.begin(0) == character_start && matches.last.end(0) == character_end
-  end
-
-  def text_occurrence_indexes(text)
-    return [] if text.blank?
-
-    indexes = []
-    cursor = -1
-    indexes << cursor while (cursor = text_l1.to_s.index(text, cursor + 1))
-    indexes
   end
 end
