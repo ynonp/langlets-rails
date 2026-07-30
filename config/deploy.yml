@@ -1,5 +1,6 @@
 # Name of your application. Used to uniquely configure containers.
 service: langlets
+deploy_timeout: 90
 
 # Name of the container image.
 image: ynonp-kamal-2/langlets
@@ -20,7 +21,6 @@ servers:
 proxy:
   ssl: true
   host: new.langlets.app
-  deploy_timeout: 90
 
 # Kamal starts a temporary local registry for each deployment and tunnels it to
 # the server. No third-party image registry or registry credentials are needed.
