@@ -158,6 +158,41 @@ class Course < ApplicationRecord
     lessons.first&.medium
   end
 
+  def correct_text(old_text, new_text, tokens:, offset: 0)
+    raise ArgumentError, "offset must be a non-negative integer" unless offset.is_a?(Integer) && offset >= 0
+
+    token_specs = normalize_correction_token_specs(tokens)
+    phrases = medium&.phrases&.ordered_by_timestamp&.to_a || []
+    transcript = phrases.map(&:text_l1).join("\n")
+    match_start = transcript.index(old_text, offset)
+    raise ArgumentError, "#{old_text.inspect} was not found after offset #{offset}" unless match_start
+
+    cursor = 0
+    phrase = phrases.find do |candidate|
+      phrase_start = cursor
+      phrase_end = phrase_start + candidate.text_l1.length
+      cursor = phrase_end + 1
+      match_start >= phrase_start && match_start + old_text.length <= phrase_end
+    end
+    raise ArgumentError, "old_text crosses a phrase boundary" unless phrase
+
+    transaction do
+      affected_activities = phrase.correct_text(old_text, new_text)
+      created_tokens = token_specs.map { |text, translations| phrase.create_token(text, translations) }
+      if affected_activities.present? && created_tokens.empty?
+        raise ArgumentError, "tokens are required to restore affected activities"
+      end
+
+      affected_activities.each do |activity, deleted_count|
+        deleted_count.times do
+          activity.activity_phrase_tokens.create!(phrase_token: created_tokens.sample)
+        end
+      end
+
+      affected_activities
+    end
+  end
+
   # Rebuild an existing course from the beginning with the current import
   # pipeline. This is intentionally destructive and is meant for operator use
   # when upgrading old courses to a newer pipeline version.
@@ -222,7 +257,7 @@ class Course < ApplicationRecord
     # Precompute sorted unique phrases per lesson to avoid N+1 inside the loop
     lesson_phrases_map = ordered_lessons.to_h do |lesson|
       phrases = lesson.activities.flat_map { |a| a.activity_phrases.map(&:phrase) }.uniq.sort_by(&:timestamp)
-      [lesson, phrases]
+      [ lesson, phrases ]
     end
 
     ordered_lessons.each_with_index do |lesson, index|
@@ -243,6 +278,16 @@ class Course < ApplicationRecord
   end
 
   private
+
+  def normalize_correction_token_specs(tokens)
+    specs = Array(tokens)
+    specs = specs.each_slice(2).to_a if specs.all? { |item| !item.is_a?(Array) }
+
+    unless specs.all? { |spec| spec.is_a?(Array) && spec.size == 2 && spec.first.is_a?(String) && spec.last.is_a?(Hash) }
+      raise ArgumentError, "tokens must contain [text, translation_table] pairs"
+    end
+    specs
+  end
 
   def regeneration_import_request(progress)
     ImportRequest.where(course_id: id, user_id: user_id).recent_first.first ||

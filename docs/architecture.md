@@ -37,6 +37,32 @@ increasing the VM size before raising concurrency.
 
 ## Core Architecture
 
+### Console transcript correction
+
+Production transcript repairs are exposed as transactional model methods for
+Rails console use. `Phrase#correct_text(old_text, new_text)` requires one exact
+occurrence and a uniform token index type, replaces the L1 text, removes tokens
+whose inclusive index ranges overlap the replaced span, and shifts later token
+indexes. Character-indexed phrases use string offsets; word-indexed
+phrases use `String#tokenize`. It returns a hash keyed by affected `Activity`
+records with the number of removed token joins for each.
+
+`Phrase#create_token(text, translations)` selects the first occurrence that
+does not overlap an existing token, preserves the phrase's index type, creates
+translations by language ISO code, and relies on the PhraseToken creation
+callback to enqueue fresh TTS audio outside development. A Phrase instance
+retains the verified index type after `correct_text`, allowing replacement
+tokens to be created even when the correction removed every old token.
+
+`Course#correct_text` searches the timestamp-ordered, newline-joined medium
+transcript at or after a character `offset`, delegates the repair to its
+containing phrase, creates the requested tokens in order, and restores each
+affected activity's previous token count by randomly selecting from those new
+tokens. The correction, translation creation, and activity restoration share
+one database transaction. Token specs accept either nested
+`[text, translation_hash]` pairs or the equivalent flat alternating console
+form.
+
 ### Channels
 
 Every User owns one private default Channel, provisioned atomically with the
