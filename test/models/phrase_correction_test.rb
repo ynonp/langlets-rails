@@ -73,6 +73,17 @@ class PhraseCorrectionTest < ActiveJob::TestCase
     assert PhraseToken.exists?(token.id)
   end
 
+  test "correct_text permits identical text and preserves tokens" do
+    phrase = create_phrase!("already correct")
+    token = create_token!(phrase, 0, 6, :character_index)
+
+    result = phrase.correct_text("already correct", "already correct")
+
+    assert_empty result
+    assert_equal "already correct", phrase.reload.text_l1
+    assert_equal [ token.id ], phrase.phrase_tokens.ids
+  end
+
   test "correct_text removes tokens from multiple changed ranges and remaps tokens between them" do
     phrase = create_phrase!("red one blue two green")
     first_changed = create_token!(phrase, 0, 2, :character_index)

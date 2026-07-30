@@ -102,4 +102,55 @@ class CourseCorrectionTest < ActiveJob::TestCase
 
     assert_equal [ "old phrase", "old phrase" ], phrases.map { |phrase| phrase.reload.text_l1 }
   end
+
+  test "correct_text permits a translation-only correction without tokens" do
+    phrase = Phrase.create!(
+      medium: @medium,
+      l1: @english,
+      text_l1: "already correct",
+      timestamp: "00:01"
+    )
+    token = phrase.phrase_tokens.create!(
+      l1_start_index: 0,
+      l1_end_index: 6,
+      index_type: :character_index
+    )
+    phrase.phrase_translations.create!(language: @hebrew, text: "old translation")
+
+    affected = @course.correct_text(
+      "already correct",
+      "already correct",
+      translations: { he: "new translation" }
+    )
+
+    assert_empty affected
+    assert_equal [ token.id ], phrase.phrase_tokens.reload.ids
+    assert_equal "new translation", phrase.phrase_translations.find_by!(language: @hebrew).text
+  end
+
+  test "correct_text without tokens deletes invalidated activity joins and reports them" do
+    phrase = Phrase.create!(
+      medium: @medium,
+      l1: @english,
+      text_l1: "old ending",
+      timestamp: "00:01"
+    )
+    deleted = phrase.phrase_tokens.create!(
+      l1_start_index: 4,
+      l1_end_index: 9,
+      index_type: :character_index
+    )
+    activity = Activities::FlashcardActivity.create!(lesson: @lesson, user: @user)
+    activity.activity_phrase_tokens.create!(phrase_token: deleted)
+
+    affected = @course.correct_text(
+      "old ending",
+      "new result",
+      translations: { he: "תוצאה חדשה" }
+    )
+
+    assert_equal({ activity => 1 }, affected)
+    assert_not PhraseToken.exists?(deleted.id)
+    assert_empty activity.activity_phrase_tokens.reload
+  end
 end

@@ -158,7 +158,7 @@ class Course < ApplicationRecord
     lessons.first&.medium
   end
 
-  def correct_text(old_text, new_text, tokens:, translations:)
+  def correct_text(old_text, new_text, tokens: [], translations:)
     token_specs = normalize_correction_token_specs(tokens)
     translation_specs = normalize_correction_translations(translations)
     phrases = medium&.phrases&.where(text_l1: old_text)&.ordered_by_timestamp&.to_a || []
@@ -170,9 +170,6 @@ class Course < ApplicationRecord
       phrases.each do |phrase|
         affected_activities = phrase.correct_text(old_text, new_text)
         created_tokens = token_specs.map { |text, token_translations| phrase.create_token(text, token_translations) }
-        if affected_activities.present? && created_tokens.empty?
-          raise ArgumentError, "tokens are required to restore affected activities"
-        end
 
         translation_specs.each do |language, text|
           phrase.phrase_translations
@@ -182,6 +179,8 @@ class Course < ApplicationRecord
 
         affected_activities.each do |activity, deleted_count|
           all_affected_activities[activity] += deleted_count
+          next if created_tokens.empty?
+
           deleted_count.times do
             activity.activity_phrase_tokens.create!(phrase_token: created_tokens.sample)
           end

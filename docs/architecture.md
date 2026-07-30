@@ -47,7 +47,8 @@ removes tokens that do not map wholly and contiguously across those changes,
 and remaps preserved token indexes. Character-indexed phrases compare
 characters; word-indexed phrases compare `String#tokenize` results. It returns
 a hash keyed by affected `Activity` records with the number of removed token
-joins for each.
+joins for each. Identical old and new text is valid for translation-only
+repairs and preserves every token.
 
 `Phrase#create_token(text, translations)` selects the first occurrence that
 does not overlap an existing token, preserves the phrase's index type, creates
@@ -61,14 +62,17 @@ phrase in the Course medium whose complete L1 text exactly equals `old_text`,
 delegates each repair, creates the requested tokens for each corrected phrase,
 and upserts each phrase-level translation supplied by language ISO code. It
 restores each affected activity's previous token count by randomly selecting
-from the new tokens belonging to that same phrase. All matching phrase
+from the new tokens belonging to that same phrase when replacement tokens were
+supplied. When `tokens:` is omitted, invalidated tokens and their activity joins
+remain deleted while the returned hash still reports the affected activities.
+All matching phrase
 corrections, token and translation creation, and activity restoration share one
 database transaction. When the Course has a `CreateSongProgress`, the same
 transaction finally force-rebuilds its cached data from the corrected persisted
 course, so later translation runs and exports cannot reuse stale phrase,
-translation, or token data. Both `tokens:` and `translations:` are required;
-token specs accept either nested `[text, translation_hash]` pairs or the
-equivalent flat alternating console form.
+translation, or token data. `translations:` is required and `tokens:` is
+optional; token specs accept either nested `[text, translation_hash]` pairs or
+the equivalent flat alternating console form.
 
 ### Channels
 

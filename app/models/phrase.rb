@@ -26,7 +26,6 @@ class Phrase < ApplicationRecord
   def correct_text(old_text, new_text)
     raise ArgumentError, "old_text must equal the complete phrase text" unless text_l1 == old_text
     raise ArgumentError, "new_text must not be empty" if new_text.blank?
-    raise ArgumentError, "new_text must differ from old_text" if new_text == old_text
 
     tokens = phrase_tokens.to_a
     index_type = uniform_token_index_type!(tokens)
