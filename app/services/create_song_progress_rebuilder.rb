@@ -17,9 +17,9 @@ class CreateSongProgressRebuilder
     @progress = progress
   end
 
-  def call
+  def call(force: false)
     progress = @progress || find_or_create_progress
-    rebuild!(progress) if progress.data.blank? || progress.data["phrases"].blank?
+    rebuild!(progress) if force || progress.data.blank? || progress.data["phrases"].blank?
     course.update!(create_song_progress: progress) unless course.create_song_progress_id == progress.id
     progress
   end

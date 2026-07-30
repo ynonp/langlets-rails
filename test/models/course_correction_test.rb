@@ -29,6 +29,19 @@ class CourseCorrectionTest < ActiveJob::TestCase
     )
     activity = Activities::FlashcardActivity.create!(lesson: @lesson, user: @user)
     activity.activity_phrase_tokens.create!(phrase_token: deleted)
+    progress = CreateSongProgress.create!(
+      youtubeurl: @course.main_media_url,
+      clip_language: @english.english_name,
+      translation_language: @hebrew.english_name,
+      data: {
+        "format_version" => CreateSongProgress::DataFormat::VERSION,
+        "phrases" => [
+          { "text_l1" => "stale first phrase" },
+          { "text_l1" => "a wrong phrase" }
+        ]
+      }
+    )
+    @course.update!(create_song_progress: progress)
     offset = first_phrase.text_l1.length + 1
 
     affected = @course.correct_text(
@@ -45,5 +58,9 @@ class CourseCorrectionTest < ActiveJob::TestCase
     assert_equal 1, activity.activity_phrase_tokens.reload.count
     assert_includes phrase.phrase_tokens.where.not(id: deleted.id).ids,
       activity.activity_phrase_tokens.first.phrase_token_id
+    assert_equal [ "wrong elsewhere", "a right words phrase" ],
+      progress.reload.data["phrases"].pluck("text_l1")
+    assert_equal [ "right", "words" ],
+      progress.data.dig("phrases", 1, "words").pluck("text")
   end
 end

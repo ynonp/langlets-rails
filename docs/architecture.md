@@ -59,7 +59,10 @@ transcript at or after a character `offset`, delegates the repair to its
 containing phrase, creates the requested tokens in order, and restores each
 affected activity's previous token count by randomly selecting from those new
 tokens. The correction, translation creation, and activity restoration share
-one database transaction. Token specs accept either nested
+one database transaction. When the Course has a `CreateSongProgress`, the same
+transaction force-rebuilds its cached data from the corrected persisted course,
+so later translation runs and exports cannot reuse stale transcript or token
+data. Token specs accept either nested
 `[text, translation_hash]` pairs or the equivalent flat alternating console
 form.
 

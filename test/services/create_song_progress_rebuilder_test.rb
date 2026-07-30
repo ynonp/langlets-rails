@@ -102,6 +102,17 @@ class CreateSongProgressRebuilderTest < ActiveSupport::TestCase
     assert_equal original_data, result.reload.data
   end
 
+  test "force rebuilds an intact record from the persisted course" do
+    phrase = @course.medium.phrases.order(:timestamp).first
+    phrase.update!(text_l1: "Corrected persisted text")
+
+    result = CreateSongProgressRebuilder.new(@course, progress: @progress).call(force: true)
+
+    assert_equal @progress.id, result.id
+    assert_equal "Corrected persisted text", result.reload.data.dig("phrases", 0, "text_l1")
+    assert_equal @course.id, result.data["rebuilt_from_course_id"]
+  end
+
   test "raises when the course has no phrases to rebuild from" do
     empty_course = Course.create!(
       user: @user,

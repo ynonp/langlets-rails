@@ -189,6 +189,12 @@ class Course < ApplicationRecord
         end
       end
 
+      if create_song_progress
+        CreateSongProgressRebuilder
+          .new(self, progress: create_song_progress)
+          .call(force: true)
+      end
+
       affected_activities
     end
   end
