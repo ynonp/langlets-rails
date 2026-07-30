@@ -10,8 +10,8 @@ class CreateCourseJobTest < ActiveJob::TestCase
 
   setup do
     # The AI steps run out of process now, so the job expects this configured.
-    @previous_pipeline_url = ENV["PIPELINE_URL"]
-    ENV["PIPELINE_URL"] = "https://pipeline.test"
+    @previous_pipeline_url = Rails.configuration.x.pipeline.url
+    Rails.configuration.x.pipeline.url = "https://pipeline.test"
 
     @user    = User.create!(email: "job@example.com", password: "password123", confirmed_at: Time.zone.now)
     @spanish = languages(:spanish)
@@ -30,7 +30,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
   end
 
   teardown do
-    ENV["PIPELINE_URL"] = @previous_pipeline_url
+    Rails.configuration.x.pipeline.url = @previous_pipeline_url
   end
 
   # The whole point of the refactor: the job hands the run off and returns, so a

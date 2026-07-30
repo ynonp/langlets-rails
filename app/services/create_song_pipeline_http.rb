@@ -35,7 +35,7 @@ class CreateSongPipelineHttp
     # in-process path to fall back to. Failing here with something readable
     # beats a KeyError from deep inside a worker.
     def base_url
-      url = ENV["PIPELINE_URL"].presence
+      url = Rails.configuration.x.pipeline.url.presence
       raise ConfigurationError, "PIPELINE_URL is not configured; the AI pipeline runs out of process" if url.nil?
 
       url.delete_suffix("/")
@@ -45,7 +45,7 @@ class CreateSongPipelineHttp
     # ngrok tunnel to the local Rails, not localhost — the pipeline runs on
     # another host and localhost there is itself.
     def callback_base_url
-      ENV["PIPELINE_CALLBACK_BASE_URL"].delete_suffix("/")
+      Rails.configuration.x.pipeline.callback_base_url.delete_suffix("/")
     end
   end
 

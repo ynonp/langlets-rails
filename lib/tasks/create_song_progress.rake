@@ -12,7 +12,7 @@ namespace :create_song_progress do
         it and expect one network call up front.
 
         Start Rails separately with the same PIPELINE_HMAC_SECRET. The callback base URL
-        defaults to http://localhost:3000 and can be changed with PIPELINE_CALLBACK_BASE_URL.
+        comes from Rails.configuration.x.pipeline.callback_base_url.
         creator_email defaults to COURSE_CREATOR_EMAIL, then ynon@hey.com.
       USAGE
     end
@@ -21,7 +21,7 @@ namespace :create_song_progress do
       youtube_url: args[:youtube_url],
       clip_language: args[:clip_language],
       translation_language: args[:translation_language],
-      callback_base_url: ENV["PIPELINE_CALLBACK_BASE_URL"]
+      callback_base_url: Rails.configuration.x.pipeline.callback_base_url
     ).call
 
     puts "Deno pipeline finished successfully for CreateSongProgress #{progress.id}."

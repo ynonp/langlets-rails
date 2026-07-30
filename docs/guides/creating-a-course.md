@@ -120,17 +120,23 @@ Nothing can hang: each `ImportRequest` schedules an `ImportRequestTimeoutJob` fo
 
 Retriggering resumes: each branch persists as it completes, and the saved `data` goes back with the next trigger.
 
-There is no in-process fallback. `create_data`, `add_translation` and the `CreateSong::*` step concerns were removed when the pipeline became the only implementation, so `PIPELINE_URL` is required — unset, it raises `CreateSongPipelineHttp::ConfigurationError`.
+There is no in-process fallback. `create_data`, `add_translation` and the `CreateSong::*` step concerns were removed when the pipeline became the only implementation, so `Rails.configuration.x.pipeline.url` is required — unset, it raises `CreateSongPipelineHttp::ConfigurationError`.
 
 ### Configuration
 
-```sh
-PIPELINE_URL=https://pipeline.langlets.app
-PIPELINE_HMAC_SECRET=...              # must be identical on both sides
-PIPELINE_CALLBACK_BASE_URL=...        # where the pipeline can reach this Rails
+```ruby
+# config/environments/production.rb
+config.x.pipeline.url = "https://pipeline.langlets.app"
+config.x.pipeline.callback_base_url = "https://langlets.app"
 ```
 
-`PIPELINE_CALLBACK_BASE_URL` is the one that catches people out in development. The pipeline runs on a different host, so `localhost:3000` there refers to itself, and callbacks silently go nowhere — which aborts the run, since the pipeline treats undeliverable callbacks as fatal. Point it at an ngrok tunnel:
+`PIPELINE_HMAC_SECRET` remains secret configuration and must be identical on
+both sides. Development maps the endpoint settings from `PIPELINE_URL` and
+`PIPELINE_CALLBACK_BASE_URL`. The callback URL is the one that catches people
+out locally: the pipeline runs on a different host, so `localhost:3000` there
+refers to itself, and callbacks silently go nowhere — which aborts the run,
+since the pipeline treats undeliverable callbacks as fatal. Point it at an
+ngrok tunnel:
 
 ```sh
 ngrok http 3000        # → https://XXXX.ngrok-free.app
@@ -262,6 +268,6 @@ Before creating a course, verify these are in place:
 - [ ] The language exists in the database: `Language.find_by(iso_name: "de")`
 - [ ] The language has Azure TTS entries in `app/models/concerns/azure_text_to_speech.rb`
 - [ ] Token translation prompt partials exist for the language pair (e.g., `_add_tokens_examples_german_english.md.erb`)
-- [ ] `PIPELINE_URL`, `PIPELINE_HMAC_SECRET` and `PIPELINE_CALLBACK_BASE_URL` are set
+- [ ] `config.x.pipeline.url`, `config.x.pipeline.callback_base_url`, and `PIPELINE_HMAC_SECRET` are set
 - [ ] The pipeline host answers: `curl https://<host>/health` → `{"ok":true}`
 - [ ] In development: ngrok is running and its host is allowed in `development.rb`

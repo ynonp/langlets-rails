@@ -482,9 +482,10 @@ synchronously. After the Deno process succeeds, the task synchronously runs
 `ImportCourseJob` to build and publish the course. The optional creator email
 falls back to `COURSE_CREATOR_EMAIL`, then the administrative
 `ynon@hey.com` account. Course creation is not attempted when the pipeline
-fails. The callback server must already be running; its base URL is
-`PIPELINE_CALLBACK_BASE_URL` (default `http://localhost:3000`). Rails and the
-task must share `PIPELINE_HMAC_SECRET`, while the task process also supplies
+fails. The callback server must already be running; its base URL comes from
+`Rails.configuration.x.pipeline.callback_base_url` (default
+`http://localhost:3000` in development). Rails and the task must share
+`PIPELINE_HMAC_SECRET`, while the task process also supplies
 the model provider keys inherited by Deno. A retry always re-exports first, so
 completed callback work is not unnecessarily repeated, and a failed Deno exit
 status fails the rake task.
@@ -719,7 +720,7 @@ There is no in-process fallback. `CreateSongProgress#create_data`,
 the pipeline became the only implementation — the model is now the store and
 the guard predicates, not the worker. `CreateSong::ProgressReporting` remains,
 because the percent is derived from `data`, which the pipeline fills in the
-same shape. `PIPELINE_URL` is therefore required; an unset value raises
+same shape. `Rails.configuration.x.pipeline.url` is therefore required; an unset value raises
 `CreateSongPipelineHttp::ConfigurationError` rather than silently degrading.
 
 The synchronous `/run` form survives behind `CreateSongPipelineHttp.new(...,
@@ -734,12 +735,16 @@ Pipeline LLM logging is enabled by default and can be disabled with
 transcription is an API call rather than an LLM SDK call and is not included in
 LLM prompt logging.
 
-Three variables configure it: `PIPELINE_URL` (the server), the shared
-`PIPELINE_HMAC_SECRET`, and `PIPELINE_CALLBACK_BASE_URL` — where the pipeline
-can reach *this* Rails. The last one is the one that bites in development: the
-pipeline runs on another host, so `localhost:3000` there is itself, and it must
-point at a tunnel (ngrok) to the local server. Model-provider keys now live
-only on the pipeline host; Rails no longer needs them at all.
+Rails configuration supplies the endpoints:
+`Rails.configuration.x.pipeline.url` is the pipeline server and
+`Rails.configuration.x.pipeline.callback_base_url` is where the pipeline can
+reach *this* Rails. Production fixes these to `https://pipeline.langlets.app`
+and `https://langlets.app` in `config/environments/production.rb`. Development
+maps them from `PIPELINE_URL` and `PIPELINE_CALLBACK_BASE_URL`, with the callback
+defaulting to `http://localhost:3000`; the callback must point at a tunnel
+(ngrok) because `localhost` on the pipeline host refers to itself. The shared
+`PIPELINE_HMAC_SECRET` remains secret configuration. Model-provider keys now
+live only on the pipeline host; Rails no longer needs them at all.
 
 Supadata receives the video URL directly when fetching native captions; Gemini receives the YouTube
 URL directly only when that native request fails. Forced alignment still requires the audio bytes,

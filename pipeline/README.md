@@ -276,13 +276,15 @@ The receiving side is implemented in the Rails app:
 This is the only implementation — the Ruby steps it was extracted from (`create_data`,
 `add_translation` and the `CreateSong::*` concerns) were deleted once the pipeline took over, so
 `CreateCourseJob` and `AddCourseTranslationJob` both trigger a run and there is no fallback.
-Configure with:
+Rails configures its endpoints with:
 
-```sh
-PIPELINE_URL=https://pipeline.langlets.app
-PIPELINE_HMAC_SECRET=...              # must match the pipeline host's
-PIPELINE_CALLBACK_BASE_URL=...        # where the pipeline can reach this Rails
+```ruby
+config.x.pipeline.url = "https://pipeline.langlets.app"
+config.x.pipeline.callback_base_url = "https://langlets.app"
 ```
 
-`PIPELINE_CALLBACK_BASE_URL` is the one that bites in development: the pipeline runs on another
-host, so `localhost:3000` there is itself. Point it at an ngrok tunnel to the local Rails.
+`PIPELINE_HMAC_SECRET` remains secret configuration and must match the pipeline
+host's value. Development maps the endpoints from `PIPELINE_URL` and
+`PIPELINE_CALLBACK_BASE_URL`; the latter is the one that bites locally because
+the pipeline runs on another host, where `localhost:3000` is itself. Point it
+at an ngrok tunnel to the local Rails.

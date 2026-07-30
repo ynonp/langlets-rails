@@ -5,11 +5,11 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
     CreateSongProgress.delete_all
     @secret = "test-pipeline-secret"
     @old_secret = ENV["PIPELINE_HMAC_SECRET"]
-    @old_url = ENV["PIPELINE_URL"]
-    @old_callback = ENV["PIPELINE_CALLBACK_BASE_URL"]
+    @old_url = Rails.configuration.x.pipeline.url
+    @old_callback = Rails.configuration.x.pipeline.callback_base_url
     ENV["PIPELINE_HMAC_SECRET"] = @secret
-    ENV["PIPELINE_URL"] = "https://pipeline.test/"
-    ENV["PIPELINE_CALLBACK_BASE_URL"] = "https://tunnel.test/"
+    Rails.configuration.x.pipeline.url = "https://pipeline.test/"
+    Rails.configuration.x.pipeline.callback_base_url = "https://tunnel.test/"
 
     @progress = CreateSongProgress.create!(
       youtubeurl: "https://www.youtube.com/watch?v=XXXX",
@@ -21,8 +21,8 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
 
   teardown do
     ENV["PIPELINE_HMAC_SECRET"] = @old_secret
-    ENV["PIPELINE_URL"] = @old_url
-    ENV["PIPELINE_CALLBACK_BASE_URL"] = @old_callback
+    Rails.configuration.x.pipeline.url = @old_url
+    Rails.configuration.x.pipeline.callback_base_url = @old_callback
   end
 
   test "posts the record's saved data and the tunnelled callback url" do
@@ -124,10 +124,10 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
     assert_equal "https://pipeline.test", CreateSongPipelineHttp.base_url
   end
 
-  # There is no in-process path left to fall back to, so an unset PIPELINE_URL
+  # There is no in-process path left to fall back to, so an unset pipeline URL
   # is a misconfiguration and should say so rather than raise a bare KeyError.
-  test "an unconfigured PIPELINE_URL raises a readable error" do
-    ENV["PIPELINE_URL"] = nil
+  test "an unconfigured pipeline URL raises a readable error" do
+    Rails.configuration.x.pipeline.url = nil
 
     error = assert_raises(CreateSongPipelineHttp::ConfigurationError) do
       CreateSongPipelineHttp.base_url

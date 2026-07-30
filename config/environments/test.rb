@@ -6,6 +6,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.x.pipeline.url = "https://pipeline.test"
+  config.x.pipeline.callback_base_url = "https://rails.test"
+
   # While tests run files are not watched, reloading is not necessary.
   config.enable_reloading = false
 
