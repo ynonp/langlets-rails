@@ -25,14 +25,14 @@ test:
 production:
   primary:
     adapter: postgresql
-    url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
+    url: <%= ENV.fetch("DATABASE_URL") { Rails.application.credentials.dig(:db, :production, :url) } %>
     pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + 2 %>
     reaping_frequency: 10
     timeout: 5000
 
   cache:
     adapter: postgresql
-    url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
+    url: <%= ENV.fetch("DATABASE_URL") { Rails.application.credentials.dig(:db, :production, :url) } %>
     schema_search_path: "cache"
     migrations_paths: db/cache_migrate
     pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + 2 %>
@@ -41,7 +41,7 @@ production:
 
   queue:
     adapter: postgresql
-    url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
+    url: <%= ENV.fetch("DATABASE_URL") { Rails.application.credentials.dig(:db, :production, :url) } %>
     schema_search_path: "queue"
     migrations_paths: db/queue_migrate
     pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + 2 %>
@@ -50,7 +50,7 @@ production:
 
   cable:
     adapter: postgresql
-    url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
+    url: <%= ENV.fetch("DATABASE_URL") { Rails.application.credentials.dig(:db, :production, :url) } %>
     schema_search_path: "cable"
     migrations_paths: db/cable_migrate
     pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + 2 %>

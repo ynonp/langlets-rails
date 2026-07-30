@@ -243,9 +243,9 @@ So if a step failed, resetting the course to `pending` and re-enqueuing picks up
 | Environment | Adapter |
 |---|---|
 | `development` | `:async` (in-process thread pool) |
-| `production` | `:good_job` |
+| `production` | `:solid_queue` |
 
-In development, the async adapter runs jobs in background threads. You don't need to start GoodJob. Jobs run as soon as they're enqueued, within the same process.
+In development, the async adapter runs jobs in background threads. You don't need to start Solid Queue. Jobs run as soon as they're enqueued, within the same process. In production, the dedicated Kamal `job` role runs `bin/jobs`.
 
 To run a job synchronously (for debugging):
 ```ruby

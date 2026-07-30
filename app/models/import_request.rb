@@ -126,7 +126,7 @@ class ImportRequest < ApplicationRecord
     transaction do
       update!(status: :queued, progress_percent: 0, pipeline_step: nil, failure_reason: nil, created_at: Time.zone.now)
 
-      # Inside the transaction, like Imports::Create: good_job is Postgres-backed,
+      # Inside the transaction, like Imports::Create: Solid Queue is Postgres-backed,
       # so the job row commits with the change it acts on or not at all.
       schedule_timeout
 

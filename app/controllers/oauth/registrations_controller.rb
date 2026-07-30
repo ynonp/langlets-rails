@@ -4,7 +4,7 @@ module Oauth
   #
   # Abuse controls: per-IP rate limiting (config/initializers/rack_attack.rb)
   # and periodic deletion of registrations that never obtained a token
-  # (CleanupStaleOauthRegistrationsJob, scheduled in initializers/good_job.rb).
+  # (CleanupStaleOauthRegistrationsJob, scheduled in config/recurring.yml).
   class RegistrationsController < ActionController::API
     def create
       redirect_uris = Array(params[:redirect_uris]).map(&:to_s)

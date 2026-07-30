@@ -41,6 +41,7 @@
 /config/credentials/development.key
 
 /config/credentials/production.key
+/.kamal/secrets
 .env
 .DS_Store
 vendor/**

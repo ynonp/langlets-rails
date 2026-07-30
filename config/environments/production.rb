@@ -52,7 +52,7 @@ Rails.application.configure do
   config.cache_store = :solid_cache_store
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
-  config.active_job.queue_adapter = :good_job
+  config.active_job.queue_adapter = :solid_queue
   config.active_job.verbose_enqueue_logs = true
 
   # Ignore bad email addresses and do not raise email delivery errors.

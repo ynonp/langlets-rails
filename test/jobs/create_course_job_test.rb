@@ -86,8 +86,8 @@ class CreateCourseJobTest < ActiveJob::TestCase
     assert_equal @user.reload.credit_balance, @user.credit_ledger_entries.sum(:amount)
   end
 
-  # good_job's retry_on_unhandled_error is false, so the job's rescue is the final
-  # word — but a manual re-run must not mint credits.
+  # Solid Queue leaves the failed execution failed, so the job's rescue is the
+  # final word — but a manual re-run must not mint credits.
   test "failing twice refunds only once" do
     assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
 

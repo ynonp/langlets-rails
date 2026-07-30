@@ -10,8 +10,30 @@
 - **Database**: PostgreSQL with JSONB support
 - **File Storage**: Active Storage (local/cloud)
 - **Frontend**: Rails views with JavaScript
-- **Background Jobs**: Rails queue system
+- **Background Jobs**: Solid Queue
 - **Package Management**: Bun (JavaScript), Bundler (Ruby)
+
+## Production deployment
+
+Production is deployed with Kamal to `new.langlets.app`. Kamal Proxy terminates
+TLS and routes requests to the `web` role. A dedicated `job` role runs
+`bin/jobs`; jobs are not run inside Puma. Application images are delivered
+through Kamal's temporary `localhost:5555` registry, so deployment does not
+depend on a persistent third-party container registry. PostgreSQL 17 is a Kamal
+accessory on the same private Docker network, persists in its `data` accessory
+directory, and does not publish port 5432 on the host.
+
+The application, Solid Cache, Solid Queue, and Solid Cable share the
+`langlets_production` database and use separate `public`, `cache`, `queue`, and
+`cable` schemas. `DATABASE_URL` is injected from the encrypted
+`db.kamal.url` production credential; `db.production.url` is retained as the
+legacy production database source during migration. Active Storage remains on
+S3, so application containers do not need a persistent file volume.
+
+The single-server deployment deliberately uses one Puma worker, one Solid Queue
+worker process, and one three-thread job worker. The host has swap to absorb
+short memory spikes, but sustained workload growth should be handled by
+increasing the VM size before raising concurrency.
 
 ## Core Architecture
 
@@ -1134,7 +1156,7 @@ The single entry point for the Add sheet, the share extension and the API. Order
 - `:joined` — **someone else is importing it right now**; rides along on their course, free. Without this, both users create a pending course and whichever publishes second violates `idx_courses_published_video_pair`, failing an import the user paid for.
 - `:already_queued` — this user already asked; no second charge.
 
-The job is enqueued **inside** the transaction — good_job is Postgres-backed, so the job row commits atomically with the request. Enqueuing after commit would leave a charged request nothing ever picks up.
+The job is enqueued **inside** the transaction — Solid Queue is Postgres-backed, so the job row commits atomically with the request. Enqueuing after commit would leave a charged request nothing ever picks up.
 
 Users are **not** enrolled at import time: the course is `pending` and has no lessons, so Home would show something unopenable. `Imports::Finalizer` enrolls everyone attached once it publishes.
 
@@ -1278,7 +1300,11 @@ what stops a language whose run fails from being retriggered by every subsequent
 callback; it waits out its deadline instead.
 
 ##### Charge lifecycle
-`good_job.retry_on_unhandled_error` defaults to **false** and this app doesn't override it, so **a raise in a job is final**. That's what makes refunding in the rescue correct rather than a balance yo-yo. Do not add `retry_on` naively: the rescue sets the course to `error`, and `Course#process` only claims a `pending` course, so a second attempt would silently do nothing.
+Solid Queue records an unhandled execution as failed and does not retry it unless
+the job declares a retry policy, so **a raise in a job is final**. That's what
+makes refunding in the rescue correct rather than a balance yo-yo. Do not add
+`retry_on` naively: the rescue sets the course to `error`, and `Course#process`
+only claims a `pending` course, so a second attempt would silently do nothing.
 
 Only whoever actually paid is refunded — `:joined` riders were never charged. The `"refund:<id>"` idempotency key means a manual re-run can't mint credits.
 

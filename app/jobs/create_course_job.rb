@@ -14,12 +14,11 @@
 class CreateCourseJob < ApplicationJob
   queue_as :default
 
-  # No retry_on, deliberately. good_job's retry_on_unhandled_error defaults to
-  # false and this app doesn't override it, so a raise here is final — which is
-  # what makes refunding in the rescue below correct rather than a balance
-  # yo-yo. It would also be unsafe to add naively: the rescue sets the course to
-  # `error`, and Course#process only claims a `pending` course, so a second
-  # attempt would silently do nothing.
+  # No retry_on, deliberately. A failed Solid Queue execution stays failed, so
+  # a raise here is final — which makes refunding in the rescue below correct
+  # rather than a balance yo-yo. Adding retries naively would also be unsafe:
+  # the rescue sets the course to `error`, and Course#process only claims a
+  # `pending` course, so a second attempt would silently do nothing.
   def perform(create_song_progress_id, course_id)
     progress = CreateSongProgress.find(create_song_progress_id)
     course = Course.find(course_id)

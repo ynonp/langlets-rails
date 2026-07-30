@@ -61,6 +61,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
+  gem "minitest", "< 6"
   gem "selenium-webdriver"
 end
 
@@ -101,8 +102,6 @@ gem "omniauth-github", "~> 2.0"
 gem "omniauth-apple", github: "bvogel/omniauth-apple", branch: "fix/apple-session-handling"
 
 gem "cancancan", "~> 3.6"
-
-gem "good_job", "~> 4.11"
 
 # APNs push for the iOS app. HTTP/2 with connection pooling and token (.p8) auth,
 # rather than the dead `houston` and its legacy binary protocol.
