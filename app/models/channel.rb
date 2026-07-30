@@ -24,10 +24,15 @@ class Channel < ApplicationRecord
       .or(where(id: ChannelSubscription.where(user_id: user.id).select(:channel_id)))
   }
 
-  def publish!(course, published_at: Time.zone.now)
-    channel_items.create_or_find_by!(course: course) do |item|
+  def publish!(course, published_at: Time.current)
+    channel_items.create_or_find_by!(course:) do |item|
       item.published_at = published_at
     end
+  end
+
+  def <<(course)
+    publish!(course)
+    self
   end
 
   def readable_by?(actor)
