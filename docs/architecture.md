@@ -15,7 +15,7 @@
 
 ## Production deployment
 
-Production is deployed with Kamal to `new.langlets.app`. Kamal Proxy terminates
+Production is deployed with Kamal to `langlets.app` and `he.langlets.app`. Kamal Proxy terminates
 TLS and routes requests to the `web` role. A dedicated `job` role runs
 `bin/jobs`; jobs are not run inside Puma. Application images are delivered
 through Kamal's temporary `localhost:5555` registry, so deployment does not

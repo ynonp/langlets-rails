@@ -20,7 +20,9 @@ servers:
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
   ssl: true
-  host: new.langlets.app
+  hosts:
+    - langlets.app
+    - he.langlets.app
 
 # Kamal starts a temporary local registry for each deployment and tunnels it to
 # the server. No third-party image registry or registry credentials are needed.
