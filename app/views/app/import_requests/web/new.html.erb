@@ -60,11 +60,6 @@
         </p>
       </div>
 
-      <button type="button" data-add-video-target="clipboardChip" data-action="add-video#useClipboard"
-              class="mt-3 hidden items-center gap-2 rounded-full bg-[#F2EADB] px-4 py-2 text-sm font-bold text-[#9E3410]">
-        <%= app_icon "plus", class: "h-4 w-4" %> <%= t("app.import_requests.new.paste_copied_link") %>
-      </button>
-
       <turbo-frame id="add_video_result" class="mt-8 block">
         <%= render "app/import_requests/web/empty_state" %>
       </turbo-frame>

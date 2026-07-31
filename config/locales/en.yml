@@ -232,7 +232,6 @@ en:
         paste_placeholder: "Paste a YouTube or TikTok link"
         url_hint: "Works with youtube.com and youtu.be links, tiktok.com posts and share links, or a YouTube video ID"
         link_recognized: "Link recognized"
-        paste_copied_link: "Paste copied link?"
         get_started: "Paste a YouTube or TikTok link to get started."
         imports_as_lesson: "Imports as a lesson: transcript, translations, vocab cards."
         free_join: "Free — already being imported"

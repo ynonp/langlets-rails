@@ -1609,6 +1609,9 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
   than the centered container, pushing every card off the right edge. Titles
   remain single-line and truncated inside that fixed track.
 - Add Video is platform-specific at the view layer too. Hotwire Native keeps the compact pushed-screen form and result partials directly under `app/import_requests`; browsers use the responsive two-column page and result partials under `app/import_requests/web`. The browser page shares the public homepage's fixed warm-cream, ink, and coral palette plus its Bricolage Grotesque/Instrument Sans typography, and deliberately has no light/dark theme switcher. Both variants resolve previews through the shared `add_video_result` Turbo Frame and the same controller/service code. The web approval form opts out of Turbo so its POST redirect replaces the whole document with Queue; native keeps the existing `_top` Turbo-frame submission handled by its navigator.
+  The shared controller never reads `navigator.clipboard`; users paste into the
+  ordinary URL field themselves, so opening either variant cannot trigger a
+  browser or native pasteboard permission prompt.
 - Screens are gated by `require_language_for_native_app` too: a signed-in native user with no `?lang=` is sent to `/onboarding/welcome` before any app screen is reachable.
 
 Deliberately **not** built from the mockup, because both would be controls that do nothing: the Library's category chips (nothing populates the taxonomy until the classifier lands) and the Add sheet's "Search YouTube" segment (needs the Data API).

@@ -27,6 +27,7 @@ module App
 
       assert_response :success
       assert_select "input[data-add-video-target=input]"
+      assert_select "[data-add-video-target=clipboardChip]", count: 0
     end
 
     test "the form and pipeline submission are available to web browsers" do
@@ -38,6 +39,7 @@ module App
       assert_response :success
       assert_select "[data-testid='web-add-video'].lg\\:grid-cols-\\[minmax\\(0\\,1fr\\)_22rem\\]"
       assert_select "input#web-video-url[data-add-video-target=input]"
+      assert_select "[data-add-video-target=clipboardChip]", count: 0
       assert_select "[data-controller='theme']", count: 0
       assert_select ".bg-\\[\\#FAF6EF\\]"
       assert_select ".bg-\\[\\#C4451C\\]"

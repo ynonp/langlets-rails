@@ -70,17 +70,6 @@
     </p>
   </div>
 
-  <%# Clipboard assist. Best-effort: WKWebView only hands over the pasteboard
-      after a user gesture, so this often stays hidden on device and the user
-      just pastes by hand. Reading it natively would need a bridge component. %>
-  <button type="button"
-          data-add-video-target="clipboardChip"
-          data-action="add-video#useClipboard"
-          class="hidden self-start items-center gap-1.5 bg-app-pill rounded-full py-2 px-3.5 text-app-text-2 text-[13px] font-semibold">
-    <%= app_icon "plus", class: "w-3.5 h-3.5" %>
-    <%= t(".paste_copied_link") %>
-  </button>
-
   <%# Everything below the input — empty state, preview card, errors — is one
       swappable region the server owns entirely. The Stimulus controller only
       points this frame at #resolve; it never renders a state itself. %>

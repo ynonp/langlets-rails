@@ -23,12 +23,10 @@ const VIDEO_PATTERN =
 const SETTLE_MS = 500
 
 export default class extends Controller {
-  static targets = ["input", "field", "clear", "hint", "recognized", "clipboardChip", "language"]
+  static targets = ["input", "field", "clear", "hint", "recognized", "language"]
   static values = { resolveUrl: String }
 
   connect() {
-    this.offerClipboard()
-
     // Arriving with ?url= — from the share extension, or bounced back from the
     // credits screen. Resolve it straight away rather than making them tap.
     if (this.inputTarget.value.trim()) this.inputChanged()
@@ -65,14 +63,6 @@ export default class extends Controller {
     this.inputChanged()
   }
 
-  useClipboard() {
-    if (!this.clipboardText) return
-
-    this.inputTarget.value = this.clipboardText
-    this.clipboardChipTarget.classList.add("hidden")
-    this.inputChanged()
-  }
-
   // Reloading the frame rather than fetching by hand: Turbo handles the request,
   // the swap and — importantly — cancelling whatever earlier request is still in
   // flight, so a slow resolve can't land on top of a newer one.
@@ -103,23 +93,4 @@ export default class extends Controller {
     this.fieldTarget.classList.toggle("app-inset-recognized", isVideo)
   }
 
-  // Best-effort. iOS only hands the pasteboard to a web view after a user
-  // gesture and shows a system prompt when it does, so on device this usually
-  // rejects and the chip simply never appears — which is why it's an
-  // enhancement and not the way anyone is expected to paste. Reading it without
-  // the prompt would need a native bridge component around UIPasteboard.
-  async offerClipboard() {
-    if (!navigator.clipboard?.readText) return
-
-    try {
-      const text = (await navigator.clipboard.readText()).trim()
-      if (!text || !VIDEO_PATTERN.test(text)) return
-
-      this.clipboardText = text
-      this.clipboardChipTarget.classList.remove("hidden")
-      this.clipboardChipTarget.classList.add("flex")
-    } catch {
-      // Denied, or no permission without a gesture. Nothing to offer.
-    }
-  }
 }
