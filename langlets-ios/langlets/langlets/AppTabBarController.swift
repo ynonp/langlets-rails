@@ -28,7 +28,7 @@ final class AppTabBarController: UITabBarController {
     ]
 
     static let homeTabIndex = 0
-    static let createTabIndex = 2
+    static let libraryTabIndex = 1
 
     private var navigators: [Navigator] = []
     private var needsRoute: [Bool]
@@ -129,9 +129,9 @@ final class AppTabBarController: UITabBarController {
         navigators[index].route(proposal)
     }
 
-    /// Badges the Create tab with the number of imports still in flight.
-    func setCreateBadge(_ count: Int) {
-        viewControllers?[Self.createTabIndex].tabBarItem.badgeValue = count > 0 ? String(count) : nil
+    /// Badges the Library tab with the number of imports still in flight.
+    func setLibraryBadge(_ count: Int) {
+        viewControllers?[Self.libraryTabIndex].tabBarItem.badgeValue = count > 0 ? String(count) : nil
     }
 
     func setTabsVisible(_ visible: Bool) {

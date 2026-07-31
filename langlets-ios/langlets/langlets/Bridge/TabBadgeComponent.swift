@@ -1,7 +1,7 @@
 import HotwireNative
 import UIKit
 
-/// Receives the Create tab's badge count from the app screens (the tab-badge
+/// Receives the Library tab's badge count from the app screens (the tab-badge
 /// bridge controller in the web layout sends it on every page load) and hands
 /// it to SceneDelegate, which owns the tab bar. A notification rather than a
 /// view-controller walk because the sending page may be a modal sheet, whose
