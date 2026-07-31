@@ -40,34 +40,35 @@ module Imports
       assert_equal CreateSongProgress.sole, request.create_song_progress
     end
 
-    test "detects language on a nullable progress row and seeds TikTok-style transcript data" do
-      detected_data = { "lyric_lines" => [ "hola" ], "stt_words" => [ { "text" => "hola" } ] }
-      detector = lambda do |url:|
-        provisional = CreateSongProgress.find_by!(youtubeurl: url)
-        assert_nil provisional.clip_language
-        [ @spanish, detected_data ]
-      end
-
-      result = stub_video do
-        Create.call(user: @user, url: CANONICAL, translation_language: "English",
-                    language_detector: detector)
-      end
-
-      assert_equal "Spanish", result.import_request.clip_language
-      assert_equal detected_data, result.import_request.create_song_progress.data
-    end
-
-    test "detected clip language must differ from translation language" do
-      error = assert_raises(UnsupportedLanguage) do
-        stub_video do
-          Create.call(user: @user, url: CANONICAL, translation_language: "English",
-                      language_detector: ->(url:) { [ @english, {} ] })
+    test "creates a provisional request and queues language detection without charging" do
+      result = nil
+      assert_enqueued_with(job: DetectImportLanguageJob) do
+        result = stub_video do
+          Create.call(user: @user, url: CANONICAL, translation_language: "English")
         end
       end
 
-      assert_match(/must differ/, error.message)
+      request = result.import_request
+      assert request.detecting?
+      assert_nil request.clip_language
+      assert_nil request.course
+      assert_nil request.create_song_progress.clip_language
+      assert_not request.charged?
       assert_equal 3, @user.reload.credit_balance
-      assert_empty @user.import_requests
+    end
+
+    test "dedupes provisional requests before their language is known" do
+      first = stub_video do
+        Create.call(user: @user, url: CANONICAL, translation_language: "English")
+      end
+      second = stub_video do
+        Create.call(user: @user, url: CANONICAL, translation_language: "English")
+      end
+
+      assert second.already_queued?
+      assert_equal first.import_request, second.import_request
+      assert_equal 1, @user.import_requests.count
+      assert_equal 3, @user.reload.credit_balance
     end
 
     # A pending course has no lessons — showing it on Home would offer a course

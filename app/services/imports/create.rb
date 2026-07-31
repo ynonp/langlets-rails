@@ -1,8 +1,8 @@
 module Imports
   # UnsupportedLanguage lives in its own file so Zeitwerk can autoload it.
 
-  # Turns "here's a YouTube link" into a queued import — the single entry point
-  # for the Add Video sheet, the share extension and the API.
+  # Turns "here's a video link" into either a provisional language-detection
+  # request or, when the source language is known, a queued import.
   #
   # Order matters: the video is checked *before* a credit moves, so a private or
   # deleted video costs nothing. Everything after that is one transaction, and
@@ -25,13 +25,14 @@ module Imports
     def self.call(...) = new(...).call
 
     def initialize(user:, url:, translation_language:, clip_language: nil, client_token: nil,
-                   language_detector: CreateSongPipelineHttp.method(:detect_language))
+                   detected_data: nil, existing_request: nil)
       @user = user
       @url = url
       @clip_language = clip_language
       @translation_language = translation_language
       @client_token = client_token
-      @language_detector = language_detector
+      @detected_data = detected_data
+      @existing_request = existing_request
     end
 
     # Raises VideoSource::UnavailableVideo for a bad/private/deleted video,
@@ -41,7 +42,7 @@ module Imports
       # A share extension may retry after losing the HTTP response. Replaying
       # its stable UUID must return the original request even if the job moved
       # beyond the active states in the meantime.
-      if client_token.present? && (existing = user.import_requests.find_by(client_token: client_token))
+      if existing_request.nil? && client_token.present? && (existing = user.import_requests.find_by(client_token: client_token))
         return Result.new(status: :already_queued, import_request: existing, course: existing.course)
       end
 
@@ -52,13 +53,15 @@ module Imports
       # this is additionally what resolves vt.tiktok.com/... into a post id —
       # nothing downstream can work without it.
       video = VideoSource.fetch(url)
-      detect_clip_language!(video) if clip_language.blank?
+      return create_detection_request!(video) if clip_language.blank?
+
       validate_languages!
 
       # Resolve the shared L1 skeleton first, then its per-language readiness.
       if (published = published_course_for(video))
         if published.translation_ready?(translation_language_record)
           enroll!(published, source: :library)
+          existing_request&.destroy!
           return Result.new(status: :deduped, course: published, import_request: nil)
         end
 
@@ -83,7 +86,7 @@ module Imports
 
     private
 
-    attr_reader :user, :url, :clip_language, :translation_language, :client_token, :language_detector
+    attr_reader :user, :url, :clip_language, :translation_language, :client_token, :existing_request
 
     def clip_language_record
       @clip_language_record ||= Language.find_by(english_name: clip_language)
@@ -103,35 +106,37 @@ module Imports
       raise UnsupportedLanguage, "unknown translation language: #{translation_language.inspect}" if translation_language_record.nil?
     end
 
-    def detect_clip_language!(video)
-      progress = CreateSongProgress.create!(
-        youtubeurl: video.canonical_url,
-        clip_language: nil,
-        translation_language: translation_language,
-        data: {}
-      )
-      language, @detected_data = language_detector.call(url: video.canonical_url)
-      @clip_language = language.english_name
-      @clip_language_record = language
-      progress.update!(clip_language: @clip_language, data: @detected_data)
-    rescue ActiveRecord::RecordNotUnique
-      # Detection can rediscover a language for an already cached video. The
-      # partial unique index correctly rejects a second canonical row; this
-      # provisional NULL-language row has no dependants and can be discarded.
-      progress&.destroy!
-      @detected_data = nil
-    rescue => e
-      if progress&.persisted?
-        progress.update!(data: {
-          "errors" => [ {
-            "step" => "detect_language",
-            "occurred_at" => Time.zone.now.iso8601,
-            "error_class" => e.class.name,
-            "error_message" => e.message
-          } ]
-        })
+    def create_detection_request!(video)
+      request = nil
+
+      ActiveRecord::Base.transaction do
+        progress = CreateSongProgress.create!(
+          youtubeurl: video.canonical_url,
+          clip_language: nil,
+          translation_language: translation_language,
+          data: {}
+        )
+        request = user.import_requests.create!(
+          youtube_url: video.canonical_url,
+          youtube_video_id: video.video_id,
+          clip_language: nil,
+          translation_language: translation_language,
+          title: video.title,
+          client_token: client_token,
+          create_song_progress: progress,
+          status: :detecting
+        )
+        DetectImportLanguageJob.perform_later(request.id)
       end
-      raise
+
+      Result.new(status: :created, import_request: request, course: nil)
+    rescue ActiveRecord::RecordNotUnique
+      existing = user.import_requests.find_by(client_token: client_token) if client_token.present?
+      existing ||= user.import_requests.active.find_by!(
+          youtube_video_id: video.video_id,
+          translation_language: translation_language
+        )
+      Result.new(status: :already_queued, import_request: existing, course: existing.course)
     end
 
     # The Library's canonical course for this video and pair, if anyone has
@@ -166,7 +171,7 @@ module Imports
     # pipeline runs once regardless, and CreateCourseJob enrolls every attached
     # user when it publishes.
     def join!(course, video)
-      user.import_requests.create!(
+      persist_request!(
         youtube_url: video.canonical_url,
         youtube_video_id: video.video_id,
         clip_language: clip_language,
@@ -216,7 +221,7 @@ module Imports
         course = build_course!(video)
         course.update!(create_song_progress: progress)
 
-        import_request = user.import_requests.create!(
+        import_request = persist_request!(
           youtube_url: video.canonical_url,
           youtube_video_id: video.video_id,
           clip_language: clip_language,
@@ -314,7 +319,7 @@ module Imports
           translation.name = course.name
           translation.status = :pending
         end
-        import_request = user.import_requests.create!(
+        import_request = persist_request!(
           youtube_url: video.canonical_url,
           youtube_video_id: video.video_id,
           clip_language: clip_language,
@@ -330,6 +335,15 @@ module Imports
         AddCourseTranslationJob.perform_later(progress.id, course.id, translation_language_record.id)
       end
       Result.new(status: :created, import_request: import_request, course: course)
+    end
+
+    def persist_request!(**attributes)
+      if existing_request
+        existing_request.update!(attributes)
+        existing_request
+      else
+        user.import_requests.create!(attributes)
+      end
     end
   end
 end

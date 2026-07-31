@@ -428,12 +428,16 @@ Content has one shared L1 skeleton and any number of sparse L2 translations:
 
 The import pipeline begins with automatic source-language detection. Add Video
 on web and native sends only the URL and translation language; source-language
-selection is not rendered. `Imports::Create` creates a provisional
-`CreateSongProgress` whose `clip_language` is NULL, calls the pipeline's signed
+selection is not rendered. After the synchronous oEmbed availability check,
+`Imports::Create` immediately creates a provisional `CreateSongProgress` and a
+provisional `ImportRequest`; both have `clip_language` NULL, while the request
+is `detecting`, has no Course, and has not been charged. The form can therefore
+redirect immediately. `DetectImportLanguageJob` calls the pipeline's signed
 `/detect-language` endpoint, maps its result back to an existing `Language`
-row, rejects source = translation, and then sets `clip_language` before running
-the normal dedupe/credit/course transaction. A detection error is recorded on
-the provisional progress row and aborts before a credit moves.
+row, rejects source = translation, and promotes the same request through the
+normal dedupe/credit/course transaction. A detection error is recorded on the
+provisional progress row, marks the visible request failed, and costs no
+credit.
 
 YouTube detection is a dedicated Gemini 2.5 Flash video request constrained to
 the database language ISO codes. TikTok detection downloads verified audio
@@ -1188,7 +1192,7 @@ A user's request to turn a video into a course. There are three distinct things 
 
 Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry, push idempotency) can't live on either of the shared records.
 
-- `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility. Failed imports remain visible and removable, but the Queue does not offer a user retry: an accessible info tooltip explains that the human team is reviewing the automatic import and that the user will be notified when it finishes.
+- `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility. While the language is unknown, `idx_import_requests_detecting_dedupe` separately enforces one detecting row per user, video, and translation language; an ordinary nullable unique key would allow duplicates because PostgreSQL treats NULLs as distinct. Failed imports remain visible and removable, but the Queue does not offer a user retry: an accessible info tooltip explains that the human team is reviewing the automatic import and that the user will be notified when it finishes.
 - `clip_language` and `translation_language` must differ. `Imports::Create` rejects the pair before charging, and the `ImportRequest` model enforces the invariant for console and other direct writes as well.
 - `progress_percent` is **written forward** by `CreateSongProgress#sync_import_requests_progress`, never computed on read — `data` is a multi-megabyte jsonb blob and the Queue polls.
 
@@ -1227,13 +1231,16 @@ The normal retry path then resets it to queued, installs a new timeout, and
 enqueues `CreateCourseJob`. The method returns that request.
 
 #### **Imports::Create** (`app/services/imports/create.rb`)
-The single entry point for the Add sheet, the share extension and the API. Order is deliberate: **the video is checked before a credit moves**, so a private or deleted video costs nothing (`Youtube::Oembed` doubles as the availability check). Four outcomes:
-- `:created` — charged 1 credit, queued the pipeline.
+The single import service for the Add sheet, the share extension and the API. Order is deliberate: **the video is checked before a credit moves**, so a private or deleted video costs nothing (`Youtube::Oembed` doubles as the availability check). The interactive Add sheet omits `clip_language` and gets the provisional background-detection path. The API detects first and supplies `clip_language`, preserving its synchronous response contract for share-extension callers. Four outcomes:
+- `:created` — when source language is supplied, charged 1 credit and queued the pipeline; when it is omitted, persisted an uncharged detecting request and queued `DetectImportLanguageJob`.
 - `:deduped` — already published; enrolled, free.
 - `:joined` — **someone else is importing it right now**; rides along on their course, free. Without this, both users create a pending course and whichever publishes second violates `idx_courses_published_video_pair`, failing an import the user paid for.
 - `:already_queued` — this user already asked; no second charge.
 
-The job is enqueued **inside** the transaction — Solid Queue is Postgres-backed, so the job row commits atomically with the request. Enqueuing after commit would leave a charged request nothing ever picks up.
+Jobs are enqueued **inside** their transactions — Solid Queue is Postgres-backed, so each job row commits atomically with the state it acts on. Enqueuing after commit would leave a request nothing ever picks up. Detection promotion performs the language-aware published/in-flight checks before charging, so a course that became reusable while detection ran remains free.
+
+Successful Add Video submissions redirect to `/gallery?imports=pending`, where
+the provisional request is immediately visible as “Detecting language…”.
 
 Users are **not** enrolled at import time: the course is `pending` and has no lessons, so Home would show something unopenable. `Imports::Finalizer` enrolls everyone attached once it publishes.
 

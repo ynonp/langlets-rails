@@ -105,7 +105,7 @@ export default class extends Controller {
   // True when at least one card in the queue is still queued or importing.
   #hasActiveItems() {
     return this.element.querySelectorAll(
-      "[data-import-request-status=\"queued\"], [data-import-request-status=\"importing\"]"
+      "[data-import-request-status=\"detecting\"], [data-import-request-status=\"queued\"], [data-import-request-status=\"importing\"]"
     ).length > 0
   }
 }

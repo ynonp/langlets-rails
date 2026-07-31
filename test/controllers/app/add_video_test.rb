@@ -57,9 +57,9 @@ module App
              headers: web
       end
 
-      assert_redirected_to app_import_requests_path
-      assert_equal 2, @user.reload.credit_balance
-      assert @user.import_requests.sole.charged?
+      assert_redirected_to gallery_path(imports: "pending")
+      assert_equal 3, @user.reload.credit_balance
+      assert @user.import_requests.sole.detecting?
     end
 
     test "an empty query resolves back to the empty state, not to an error" do
@@ -191,18 +191,18 @@ module App
       assert_no_match(/Approve/, response.body)
     end
 
-    test "approving from the preview charges once and returns to the Create form" do
+    test "approving from the preview returns to pending imports without charging during detection" do
       stub_video do
         post "/app/import_requests",
              params: { url: CANONICAL, clip_language: "Spanish", translation_language: "English" },
              headers: NATIVE
       end
 
-      assert_match %r{/app/import_requests}, response.location
+      assert_match %r{/gallery\?imports=pending}, response.location
       get response.location, headers: NATIVE
-      assert_select "h1", text: "Add a video"
-      assert_equal 2, @user.reload.credit_balance
-      assert @user.import_requests.sole.charged?
+      assert_select "[data-import-request-status=detecting]"
+      assert_equal 3, @user.reload.credit_balance
+      assert_not @user.import_requests.sole.charged?
     end
 
     test "approving in Add Video creates the request and starts its pipeline job" do
@@ -227,7 +227,7 @@ module App
 
       CreateSongPipelineHttp.stub(:base_url, "https://pipeline.test") do
         CreateSongPipelineHttp.stub(:new, build_pipeline) do
-          perform_enqueued_jobs(only: CreateCourseJob) do
+          perform_enqueued_jobs(only: [ DetectImportLanguageJob, CreateCourseJob ]) do
             stub_video do
               post app_import_requests_path,
                    params: {
@@ -241,7 +241,7 @@ module App
         end
       end
 
-      assert_redirected_to app_import_requests_path
+      assert_redirected_to gallery_path(imports: "pending")
 
       import_request = @user.import_requests.sole
       assert import_request.importing?

@@ -13,7 +13,8 @@ class ImportRequest < ApplicationRecord
     importing: 1,
     ready: 2,
     failed: 3,
-    canceled: 4
+    canceled: 4,
+    detecting: 5
   }
 
   # Raised by #retry! when the request is in no state to be restarted. Loud on
@@ -28,7 +29,8 @@ class ImportRequest < ApplicationRecord
   # deadline the whole flow has, and the reason a request cannot get stuck.
   TIMEOUT = 10.minutes
 
-  validates :youtube_url, :youtube_video_id, :clip_language, :translation_language, presence: true
+  validates :youtube_url, :youtube_video_id, :translation_language, presence: true
+  validates :clip_language, presence: true, if: -> { queued? || importing? || ready? }
   validates :progress_percent, inclusion: { in: 0..100 }
   validate :translation_language_differs_from_clip_language
 
@@ -39,7 +41,7 @@ class ImportRequest < ApplicationRecord
   after_create_commit :schedule_timeout
 
   # What the Queue badge counts, and what the dedupe index covers.
-  scope :active, -> { where(status: [ statuses[:queued], statuses[:importing] ]) }
+  scope :active, -> { where(status: [ statuses[:detecting], statuses[:queued], statuses[:importing] ]) }
   scope :recent_first, -> { order(created_at: :desc) }
 
   # Ready imports the user hasn't been shown on Home yet — drives the
@@ -47,7 +49,7 @@ class ImportRequest < ApplicationRecord
   scope :just_imported, -> { ready.where(updated_at: 24.hours.ago..) }
 
   def active?
-    queued? || importing?
+    detecting? || queued? || importing?
   end
 
   # The course is created in the same transaction as the request and carries the
@@ -74,6 +76,8 @@ class ImportRequest < ApplicationRecord
   # yet, fall back to the percentage the card showed before — less informative,
   # but still true, and better than a card that says only "Importing".
   def stage_label
+    return "Detecting language…" if detecting?
+
     pipeline_step.presence || "Importing · #{display_percent}%"
   end
 

@@ -18,11 +18,25 @@ module Api
         return render_missing(:url) if params[:url].blank?
         return render_missing(:translation_language) if params[:translation_language].blank?
 
+        if params[:client_token].present? &&
+           (existing = current_resource_owner.import_requests.find_by(client_token: params[:client_token]))
+          return render status: :ok,
+                        json: serialize(existing).merge(credits_left: credits_left)
+        end
+
+        # Keep the share-extension API contract synchronous: callers expect the
+        # response to report the post-dedupe status and final credit balance.
+        # The interactive Add Video form uses the provisional detecting state
+        # because it can immediately navigate to a live, polling UI.
+        video = VideoSource.fetch(params[:url])
+        language, detected_data = CreateSongPipelineHttp.detect_language(url: video.canonical_url)
         result = Imports::Create.call(
           user: current_resource_owner,
-          url: params[:url],
+          url: video.canonical_url,
+          clip_language: language.english_name,
           translation_language: params[:translation_language],
-          client_token: params[:client_token]
+          client_token: params[:client_token],
+          detected_data: detected_data
         )
 
         render_result(result)

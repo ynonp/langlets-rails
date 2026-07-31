@@ -181,7 +181,7 @@ module App
         redirect_to course_path(result.course),
                     notice: "Already in the Library — added to your Home, no credit used."
       else
-        redirect_to app_import_requests_path
+        redirect_to gallery_path(imports: "pending")
       end
     end
 

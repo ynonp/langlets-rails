@@ -23,7 +23,7 @@ module UserImportFiltering
     case filter
     when "failed" then import_requests.failed
     when "pending", nil then import_requests.active
-    when "my_imports" then import_requests.where(status: %i[queued importing failed])
+    when "my_imports" then import_requests.where(status: %i[detecting queued importing failed])
     else import_requests.none
     end
   end
