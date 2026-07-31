@@ -181,13 +181,23 @@ watch-video activity is not the lesson's first activity — it now follows
 `connect()` never runs again for the frame navigation into it. `handleFrameRender`
 therefore unhides the container and creates the iframe on the spot.
 
-**Do not seek or pause a player you just created there.** Calling `seekTo` on a
-YouTube player that has never played drops it back to `UNSTARTED`, clearing its
-poster image and play button and leaving a dead black rectangle the learner
-cannot start. `handleFrameRender` only repositions a player that already
-existed; a freshly created one is left cued, and the `video:play` →
-`seekToSegmentStartIfBefore` listener moves it to the segment start when the
-learner presses play.
+**Do not seek or pause a player that has never played.** Calling `seekTo` on a
+YouTube player that has never played drops it from `CUED` back to `UNSTARTED`,
+clearing its poster image and play button and leaving a dead black rectangle the
+learner cannot start. `handleFrameRender` therefore gates its reposition on
+`this.hasPlayed`, which the controller sets the first time the player reports
+`PlayerState.PLAYING`. A player that has never played is left cued, and the
+`video:play` → `seekToSegmentStartIfBefore` listener moves it to the segment
+start when the learner presses play.
+
+> This gate must key off **playback**, not off "was the player created during
+> this frame render". An earlier version checked the latter, which missed the
+> common case: when the lesson opens directly on the watch-video activity,
+> `preload_player` makes `connect()` build the iframe, so a learner who reads
+> the lyrics without pressing play, moves to another activity, and comes back
+> arrives with the player already initialized but never played — and the
+> reposition killed it. Repro: open `?a=1`, wait for the poster, click `2`,
+> `3`, then `1`.
 
 ---
 

@@ -57,6 +57,7 @@ export default class extends Controller {
       const player = this.player;
       this.player = null;
       this.playerInitialized = false;
+      this.hasPlayed = false;
       setTimeout(() => player.destroy(), 0);
     }
   }
@@ -88,17 +89,22 @@ export default class extends Controller {
       // navigation into a later activity that wants the player (e.g. from a
       // non-video activity that preceded it) never re-runs connect(), so
       // without this the iframe would stay uncreated until a full reload.
-      const justCreated = !this.playerInitialized;
-      if (justCreated) {
+      if (!this.playerInitialized) {
         this.interactiveValue = true;
         this.initializePlayer();
       }
 
-      // Only reposition a player that was already running. Seeking a player
+      // Only reposition a player that has actually played. Seeking a player
       // that has never played knocks YouTube back to UNSTARTED and clears its
-      // poster and play button, leaving a dead black rectangle — a freshly
-      // created player is already cued at the segment start anyway.
-      if (this.player && !justCreated) {
+      // poster and play button, leaving a dead black rectangle — a player that
+      // has never played is already cued and needs no repositioning.
+      //
+      // This must key off playback, not off `justCreated`: when the lesson
+      // opens directly on the watch-video activity, `preloadPlayer` makes
+      // connect() build the iframe, so navigating to another activity and back
+      // returns here with the player already initialized but never played.
+      // `video:play -> seekToSegmentStartIfBefore` positions it on first play.
+      if (this.player && this.hasPlayed) {
         if (this.segmentStart != null) {
           this.player.seekTo(this.segmentStart);
         }
@@ -110,7 +116,10 @@ export default class extends Controller {
   initialize() {
     this.monitorPlaybackInterval = null;
     this.player = null;
-    this.playerInitialized = false;    
+    this.playerInitialized = false;
+    // Whether the current player has ever entered PLAYING. Guards the seeks
+    // that would knock a never-played YouTube player back to UNSTARTED.
+    this.hasPlayed = false;
     this.stopPlayback = this.stopPlayback.bind(this);
   }
 
@@ -141,6 +150,7 @@ export default class extends Controller {
         this.stopPlaybackMonitoring();
         this.dispatchVideoEvent('stop');
       } else if (state === PlayerState.PLAYING) {
+        this.hasPlayed = true;
         this.startPlaybackMonitoring();
         this.dispatchVideoEvent('play');
       }
