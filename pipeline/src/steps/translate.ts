@@ -1,3 +1,6 @@
+// The target language picks the model: models.translateOverrides[iso] when the
+// registry has one (Hebrew), otherwise models.translate.
+//
 // The result is persisted at translation_lines.<iso>;
 // materializeTranslationLines copies it into the stable v2
 // translations.<iso>.phrases shape.
@@ -14,6 +17,8 @@ export async function translate(ctx: PipelineContext): Promise<void> {
   const language = ctx.translationLanguage;
   if (!language) return;
 
+  const model = ctx.models.translateOverrides?.[language.iso_name] ?? ctx.models.translate;
+
   const originalLyrics = ctx.store.data.lyric_lines ??
     (ctx.store.data.phrases ?? []).map((phrase) => phrase.text_l1);
   const userContent = originalLyrics.join("\n");
@@ -25,7 +30,7 @@ export async function translate(ctx: PipelineContext): Promise<void> {
     const translationLines = await withRetries(
       async () => {
         const { text } = await generateText({
-          model: ctx.models.translate,
+          model,
           system: translatePrompt(ctx.clipLanguage, language.english_name, originalLyrics.length),
           prompt: userContent,
           temperature: 0.2,

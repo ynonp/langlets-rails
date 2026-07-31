@@ -5,6 +5,7 @@
 //   rate_lessons            deepseek-v4-pro:cloud     (Ollama cloud)
 //   add_token_translations  deepseek-v4-pro:cloud     (Ollama cloud)
 //   translate               qwen3.5:397b-cloud        (Ollama cloud)
+//   translate (Hebrew)      nemotron-3-super:cloud    (Ollama cloud)
 //
 // Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through
 // @ai-sdk/openai-compatible. Steps only ever see the LanguageModel interface,
@@ -22,6 +23,9 @@ export interface ModelRegistry {
   addLessons: LanguageModel;
   rateLessons: LanguageModel;
   translate: LanguageModel;
+  // Per-target-language translate models, keyed by iso name. A target language
+  // without an entry here uses `translate`.
+  translateOverrides?: Record<string, LanguageModel>;
   tokenTranslations: LanguageModel;
 }
 
@@ -58,6 +62,9 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     addLessons: log(google("gemini-3.5-flash-lite"), "add_lessons"),
     rateLessons: log(google("gemini-3.5-flash-lite"), "rate_lessons"),
     translate: log(ollama("qwen3.5:397b-cloud"), "translate"),
+    translateOverrides: {
+      he: log(ollama("nemotron-3-super:cloud"), "translate.he"),
+    },
     tokenTranslations: log(google("gemini-3.5-flash-lite"), "add_token_translations"),
   };
 }

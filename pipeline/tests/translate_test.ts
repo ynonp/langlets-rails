@@ -118,6 +118,37 @@ Deno.test("materialization failures are recorded as translation errors", async (
   assertEquals(store.data.errors?.[0].step, "translate");
 });
 
+Deno.test("translate uses the per-language model when the registry has one", async () => {
+  const hebrew = queuedModel(["שלום עולם\nשוב שלום"]);
+  const fallback = unusedModel();
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["Bonjour le monde", "Salut encore"] },
+    models: { translate: fallback.model, translateOverrides: { he: hebrew.model } },
+  });
+
+  await translate(ctx);
+
+  assertEquals(hebrew.calls(), 1);
+  assertEquals(fallback.calls(), 0);
+  assertEquals(store.data.translation_lines!.he, ["שלום עולם", "שוב שלום"]);
+});
+
+Deno.test("translate falls back to the default model for other languages", async () => {
+  const hebrew = unusedModel();
+  const fallback = queuedModel(["Hello world\nHi again"]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: ["Bonjour le monde", "Salut encore"] },
+    models: { translate: fallback.model, translateOverrides: { he: hebrew.model } },
+    translationLanguage: { id: 1, iso_name: "en", english_name: "English" },
+  });
+
+  await translate(ctx);
+
+  assertEquals(fallback.calls(), 1);
+  assertEquals(hebrew.calls(), 0);
+  assertEquals(store.data.translation_lines!.en, ["Hello world", "Hi again"]);
+});
+
 Deno.test("translate is a no-op without a target language", async () => {
   const model = unusedModel();
   const { ctx } = makeCtx({
