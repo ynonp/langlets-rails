@@ -24,7 +24,7 @@
   <turbo-frame id="library-results" class="flex flex-col gap-4">
     <%= render "app/library/filters",
                filter: @filter, query: @query, language: @language,
-               languages: @languages, has_playlists: @playlists.any?,
+               languages: @languages, has_playlists: @has_playlists,
                available_import_filters: @available_import_filters %>
 
     <% if @filter == "playlists" && @playlists.any? %>

@@ -1,7 +1,7 @@
 module App
   # Screen 02. Everything the community has imported, not just this user's.
   class LibraryController < BaseController
-    FILTERS = %w[failed pending my_imports playlists].freeze
+    FILTERS = (UserImportFiltering::IMPORT_FILTERS + %w[playlists]).freeze
 
     def show
       @query = params[:q].to_s.strip
@@ -9,9 +9,10 @@ module App
       @visible_items_scope = published_scope
       @languages = visible_languages
       @language = @languages.find { |language| language.iso_name == params[:language] }
-      @playlists = visible_playlists
-      @available_import_filters = available_import_filters
+      @has_playlists = current_user.playlists.exists?
+      @available_import_filters = current_user.available_import_filters
       @filter = nil unless filter_available?
+      @playlists = @filter == "playlists" ? visible_playlists : []
       @import_requests = filtered_import_requests
       @items = search(filtered_published_scope).limit(60).to_a
       @courses = @items.map(&:course)
@@ -25,13 +26,7 @@ module App
     def filtered_import_requests
       return [] if @filter == "playlists"
 
-      scope = current_user.import_requests.recent_first.includes(:course)
-      scope = case @filter
-      when "failed" then scope.failed
-      when "pending", nil then scope.active
-      when "my_imports" then scope.where(status: %i[queued importing failed])
-      else scope.none
-      end
+      scope = current_user.import_requests_for_filter(@filter).recent_first.includes(:course)
       scope = scope.where(clip_language: @language.english_name) if @language
 
       search_import_requests(scope).limit(50).to_a
@@ -44,8 +39,7 @@ module App
       when "playlists"
         @visible_items_scope.none
       when "my_imports"
-        ready_course_ids = current_user.import_requests.ready.where.not(course_id: nil).select(:course_id)
-        @visible_items_scope.where(courses: { id: ready_course_ids })
+        @visible_items_scope.where(courses: { id: current_user.ready_imported_course_ids })
       else
         @visible_items_scope
       end
@@ -69,18 +63,9 @@ module App
       scope.where("playlists.name ILIKE ?", pattern).to_a
     end
 
-    def available_import_filters
-      requests = current_user.import_requests
-      filters = []
-      filters << "pending" if requests.active.exists?
-      filters << "failed" if requests.failed.exists?
-      filters << "my_imports" if requests.where.not(status: :canceled).exists?
-      filters
-    end
-
     def filter_available?
       return true if @filter.nil?
-      return @playlists.any? if @filter == "playlists"
+      return @has_playlists if @filter == "playlists"
 
       @available_import_filters.include?(@filter)
     end

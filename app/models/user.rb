@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include UserImportFiltering
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,9 +16,6 @@ class User < ApplicationRecord
   # Courses on the user's Home — imported by them, or added from the Library.
   has_many :enrollments, dependent: :destroy
   has_many :enrolled_courses, through: :enrollments, source: :course
-
-  # Videos the user has asked to turn into courses (the Queue screen).
-  has_many :import_requests, dependent: :destroy
 
   has_many :channels, dependent: :destroy
   has_one :default_channel, -> { where(default: true) }, class_name: "Channel"

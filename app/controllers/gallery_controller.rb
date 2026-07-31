@@ -1,7 +1,7 @@
 class GalleryController < ApplicationController
   PER_PAGE = 16
   CONTENT_TYPES = %w[playlists].freeze
-  IMPORT_FILTERS = %w[failed pending my_imports].freeze
+  IMPORT_FILTERS = UserImportFiltering::IMPORT_FILTERS
 
   def index
     @daily_vocab_language = if user_signed_in?
@@ -10,7 +10,7 @@ class GalleryController < ApplicationController
     @daily_vocab_streak = ActivityLog.current_streak_for_user(current_user) if @daily_vocab_language
     @search = params[:search].to_s.strip
     @import_filter = IMPORT_FILTERS.include?(params[:imports]) && user_signed_in? ? params[:imports] : nil
-    @available_import_filters = available_import_filters
+    @available_import_filters = user_signed_in? ? current_user.available_import_filters : []
     @import_filter = nil unless @available_import_filters.include?(@import_filter)
     @selected_types = Array(params[:types]).intersection(CONTENT_TYPES)
     @selected_languages = Language.where(iso_name: Array(params[:languages]).compact_blank).to_a
@@ -43,26 +43,10 @@ class GalleryController < ApplicationController
 
   private
 
-  def available_import_filters
-    return [] unless user_signed_in?
-
-    requests = current_user.import_requests
-    filters = []
-    filters << "pending" if requests.active.exists?
-    filters << "failed" if requests.failed.exists?
-    filters << "my_imports" if requests.where.not(status: :canceled).exists?
-    filters
-  end
-
   def gallery_import_requests
     return [] unless user_signed_in?
 
-    scope = current_user.import_requests.recent_first.includes(:course)
-    scope = case @import_filter
-    when "failed" then scope.failed
-    when "pending", nil then scope.active
-    when "my_imports" then scope.where(status: %i[queued importing failed])
-    end
+    scope = current_user.import_requests_for_filter(@import_filter).recent_first.includes(:course)
 
     if @selected_languages.any?
       scope = scope.where(clip_language: @selected_languages.map(&:english_name))
@@ -81,8 +65,7 @@ class GalleryController < ApplicationController
     when "failed", "pending"
       [course_scope.none, playlist_scope.none]
     when "my_imports"
-      ready_course_ids = current_user.import_requests.ready.where.not(course_id: nil).select(:course_id)
-      [course_scope.where(id: ready_course_ids), playlist_scope.none]
+      [course_scope.where(id: current_user.ready_imported_course_ids), playlist_scope.none]
     else
       [course_scope, playlist_scope]
     end
