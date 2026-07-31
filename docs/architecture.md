@@ -327,31 +327,24 @@ unexpected Host header cannot leak into public metadata. When adding another
 localized subdomain, add it to `SeoHelper::CANONICAL_HOSTS` and extend the
 canonical metadata tests at the same time.
 
-### Search engine exclusion
+### Search engine indexing
 
-The site is deliberately kept **out of search engines**, everywhere, on every
-page. Two independent mechanisms enforce it and both must stay in place:
+The site is now open to search engines:
 
-- `public/robots.txt` is a blanket `User-agent: * / Disallow: /`. It no longer
-  advertises the sitemap.
-- `app/views/layouts/_head.html.erb` emits `<meta name="robots"
-  content="noindex, nofollow">`, so every page rendered through the
-  `application`, `app`, and `onboarding` layouts is marked unindexable. This is
-  the belt to robots.txt's braces: robots.txt stops the crawl, the meta tag
-  stops indexing of URLs a crawler already knows about. Two views
-  (`review_lessons/show`, `lessons/finish`) additionally set their own
-  `noindex, follow` tag; the more restrictive directive wins, so they are
-  harmless.
+- `public/robots.txt` is `User-agent: * / Allow: /`.
+- `app/views/layouts/_head.html.erb` no longer emits a blanket `noindex`
+  meta tag, so pages rendered through the `application`, `app`, and
+  `onboarding` layouts are indexable by default.
+- Two views (`review_lessons/show`, `lessons/finish`) still set their own
+  `noindex, follow` tag. These are transient, session-specific screens (a
+  lesson's completion state) rather than content worth surfacing in search
+  results, so they intentionally stay excluded even though the rest of the
+  site is now open.
 
-Caveat inherent to the combination: a URL blocked in robots.txt is not fetched,
-so a crawler may never see the `noindex` tag. Already-indexed URLs can linger as
-link-only results until removed via the search console. To force removal faster,
-temporarily allow crawling so the `noindex` is actually read.
-
-The SEO machinery around this (canonical URLs, hreflang, Open Graph/Twitter
-cards, JSON-LD structured data, `/sitemap.xml`) is left intact. Those tags still
-drive link previews when a page is shared in a chat app, which is unrelated to
-indexing. `/sitemap.xml` still renders but is no longer referenced anywhere.
+The SEO machinery (canonical URLs, hreflang, Open Graph/Twitter cards,
+JSON-LD structured data, `/sitemap.xml`) was left intact throughout, so no
+changes were needed there — it now also serves its primary purpose of
+driving actual indexing rather than only link previews.
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
 the eight most recently created courses for the selected language, or the eight

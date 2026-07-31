@@ -1,4 +1,2 @@
-# The site is deliberately kept out of search engines. Every page also carries
-# a `noindex, nofollow` robots meta tag (see app/views/layouts/_head.html.erb).
 User-agent: *
-Disallow: /
+Allow: /

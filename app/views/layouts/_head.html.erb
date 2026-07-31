@@ -1,10 +1,6 @@
 <title><%= content_for(:title) || t(".title") %></title>
 <meta name="description" content="<%= content_for(:meta_description) || SeoHelper::DEFAULT_DESCRIPTION %>">
 <link rel="canonical" href="<%= content_for(:canonical_url) || 'https://langlets.app' %>">
-<%# The whole site is deliberately kept out of search results. Pair of belt and
-    braces with public/robots.txt: robots.txt stops the crawl, this stops any
-    already-known URL from being indexed. %>
-<meta name="robots" content="noindex, nofollow">
 <%# maximum-scale/user-scalable are appended only for the native app: WKWebView
     honours both, so focusing a field can never zoom the shell out of alignment
     with the native tab bar. Mobile Safari has ignored them since iOS 10, so
