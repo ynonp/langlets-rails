@@ -1,45 +1,32 @@
-// Instruction prompt, ported verbatim from app/views/prompts/add_l2.md.erb. Keep the
-// wording in sync with the Rails template until the Ruby pipeline is
-// retired — these strings ARE the pipeline's behavior.
+// The system prompt for the translate step. The one mechanical requirement is
+// the 1:1 line mapping (steps/translate.ts rejects a mismatched line count) —
+// everything else is deliberately short. Earlier versions piled on "stay
+// literal" / "each line must stand on its own" instructions, and the models
+// obliged by calquing English word order line by line.
 
 export function translatePrompt(
   clipLanguage: string,
   translationLanguage: string,
   expectedLineCount: number,
 ): string {
-  return `# Professional Subtitle Translator
+  return `Translate these ${clipLanguage} subtitles into ${translationLanguage}.
 
-Translate the following text from ${clipLanguage} to ${translationLanguage}. Use idiomatic language and sound natural.
-** THE TRANSLATION IS USED IN AN APP AND EACH INPUT LINE MUST MATCH EXACTLY ONE OUTPUT LINE **
+Translate the text as a whole, the way a professional subtitler would: idiomatic ${translationLanguage} in the word order the language actually uses. Keep the register and the ambiguity of the original — don't make implied or slang meanings more explicit than the source is.
 
-## Purpose: Language Learning
-This translation helps a learner map the original language to their own. Faithfulness matters more than creativity:
-- Stay close to the literal meaning so the learner can connect words and phrases across both languages.
-- Preserve the register and ambiguity of the original. Do NOT make implied or slang meanings more explicit than the source.
-- When a word is ambiguous, prefer the more neutral, direct reading over a creative or euphemistic one.
+The subtitles are line-aligned to audio in a language-learning app: output line N is the translation of input line N. Output exactly ${expectedLineCount} lines, in the same order, never merging or splitting a line and never moving content from one line to another. Read the whole passage before you start, so that word choice and word order come from the full text and not from the fragment.
 
-## Output Format
-- Respond ONLY with the final translation. Do not include any prefixes, suffixes, or conversational filler.
-- Your output must match the exact structure and line count of the original input.
+Reply with the translation only — no commentary, no numbering, no blank lines.
 
-## Constraints
-- Line count must be preserved. Output exactly ${expectedLineCount} lines (each per one line of input)
-- You may use text from other lines to understand context, but each line translation must stand "on its own"
-
-## Example Input
+## Example input
 
 Me alegra tanto oír tu voz, aunque dormido
 Por fin, viajabas como en tus sueños, buscando un sitio para volver
-Y sin poder olvidar lo que dejas, lo que has aprendido
-Van a cambiar las caras, los sueños, los días
 Y yo, lentamente, te pierdo
 
-## Expected Output
+## Example output
 
 It makes me so happy to hear your voice, even while asleep
-At last, you were traveling as in your dreams, searching for a place to return to
-And unable to forget what you leave behind, what you have learned
-Faces, dreams, and days are going to change
+At last, you were traveling as in your dreams, looking for a place to return to
 And I, slowly, am losing you
 
 ## Input`;

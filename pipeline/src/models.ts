@@ -4,8 +4,7 @@
 //   add_lessons             deepseek-v4-pro:cloud     (Ollama cloud)
 //   rate_lessons            deepseek-v4-pro:cloud     (Ollama cloud)
 //   add_token_translations  deepseek-v4-pro:cloud     (Ollama cloud)
-//   translate               qwen3.5:397b-cloud        (Ollama cloud)
-//   translate (Hebrew)      nemotron-3-super:cloud    (Ollama cloud)
+//   translate               deepseek-v4-pro:cloud     (Ollama cloud)
 //
 // Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through
 // @ai-sdk/openai-compatible. Steps only ever see the LanguageModel interface,
@@ -61,10 +60,12 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
       : google("gemini-2.5-flash"),
     addLessons: log(google("gemini-3.5-flash-lite"), "add_lessons"),
     rateLessons: log(google("gemini-3.5-flash-lite"), "rate_lessons"),
-    translate: log(ollama("qwen3.5:397b-cloud"), "translate"),
-    translateOverrides: {
-      he: log(ollama("nemotron-3-super:cloud"), "translate.he"),
-    },
+    // No translateOverrides today. Hebrew used to override to nemotron-3-super,
+    // which could not translate "four score and seven" (four runs, four wrong
+    // numbers). deepseek-v4-pro handles Hebrew, matches qwen3.5:397b on Spanish,
+    // and is ~10x faster, so one model now covers every target language. The
+    // mechanism stays for the next language that needs its own.
+    translate: log(ollama("deepseek-v4-pro:cloud"), "translate"),
     tokenTranslations: log(google("gemini-3.5-flash-lite"), "add_token_translations"),
   };
 }

@@ -107,8 +107,7 @@ one branch failing never discards another branch's completed — and already per
 | extract_lyrics                                      | Native captions / LLM fallback / speech-to-text | Supadata (`mode=native`) / Gemini 2.5 Flash / ElevenLabs Scribe (TikTok) |
 | force_alignment                                     | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash (skipped for TikTok) |
 | add_lessons / rate_lessons / add_token_translations | `gemini-3.5-flash-lite`                         | Google Generative AI                         |
-| translate                                           | `qwen3.5:397b-cloud`                            | Ollama cloud via `@ai-sdk/openai-compatible` |
-| translate (target language Hebrew)                  | `nemotron-3-super:cloud`                        | Ollama cloud via `@ai-sdk/openai-compatible` |
+| translate (all target languages)                    | `deepseek-v4-pro:cloud`                         | Ollama cloud via `@ai-sdk/openai-compatible` |
 
 Per-target-language translate models live in `ModelRegistry.translateOverrides`, keyed by iso name;
 a language with no entry there uses the default `translate` model.
