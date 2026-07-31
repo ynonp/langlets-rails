@@ -377,6 +377,13 @@ en:
       playlist_name: "Playlist name"
       loading: "Loading…"
       empty: "No playlists found."
+    course_menu:
+      aria_label: "Course options"
+      add_to_playlist: "Add To Playlist"
+      delete: "Delete"
+      delete_title: "Delete course?"
+      delete_message: "This will remove “%{name}” from your library and your progress on it. You can re-add the video later, but your progress won't come back."
+      cancel: "Cancel"
   playlists:
     show:
       sign_up: "Sign up"

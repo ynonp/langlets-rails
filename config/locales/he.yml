@@ -361,6 +361,13 @@ he:
       playlist_name: "שם הפלייליסט"
       loading: "טוען…"
       empty: "לא נמצאו פלייליסטים."
+    course_menu:
+      aria_label: "אפשרויות קורס"
+      add_to_playlist: "הוספה לפלייליסט"
+      delete: "מחיקה"
+      delete_title: "למחוק את הקורס?"
+      delete_message: "פעולה זו תסיר את “%{name}” מהספרייה שלכם ותמחק את ההתקדמות שלכם בו. תוכלו להוסיף את הסרטון שוב בעתיד, אך ההתקדמות לא תחזור."
+      cancel: "ביטול"
   playlists:
     show:
       sign_up: "הירשמו"

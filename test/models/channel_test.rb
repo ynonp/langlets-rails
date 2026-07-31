@@ -15,6 +15,24 @@ class ChannelTest < ActiveSupport::TestCase
     assert_equal @channel, @owner.provision_default_channel!
   end
 
+  test "unpublish! removes the channel item and is safe to call again" do
+    course = Course.create!(
+      user: @owner,
+      name: "Unpublishable course",
+      slug: "unpublishable-course-#{SecureRandom.hex(4)}",
+      main_media_url: "https://www.youtube.com/watch?v=unpub123",
+      youtube_video_id: "unpub123",
+      status: :published
+    )
+    @channel.publish!(course)
+    assert @channel.channel_items.exists?(course: course)
+
+    @channel.unpublish!(course)
+
+    assert_not @channel.channel_items.exists?(course: course)
+    assert_nothing_raised { @channel.unpublish!(course) }
+  end
+
   test "regular owners can switch private and shared but not public" do
     @channel.change_visibility!(:shared, actor: @owner)
     assert @channel.visibility_shared?

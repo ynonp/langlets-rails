@@ -157,20 +157,31 @@ class CoursesController < ApplicationController
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
     authenticate_user!
 
-    lesson_ids = @course.lessons.select(:id)
-
     ApplicationRecord.transaction do
-      ActivityUser.where(
-        activity: Activity.where(lesson_id: lesson_ids),
-        user: current_user
-      ).destroy_all
-      ActivityLog.where(lesson_id: lesson_ids, user: current_user).destroy_all
-      LessonUser.where(lesson_id: lesson_ids, user: current_user).destroy_all
+      clear_lesson_progress!(@course)
       Enrollment.where(course: @course, user: current_user)
                 .update_all(last_practiced_at: nil, updated_at: Time.zone.now)
     end
 
     redirect_to course_path(@course.slug), notice: "Progress reset. You can start fresh!"
+  end
+
+  # Removes the course from the current user's own library: unpublishes it from
+  # their default Channel and clears their personal progress/enrollment. The
+  # shared Course row (and any other Channel that publishes it) is untouched, so
+  # re-importing the same video later matches and republishes it, just without
+  # the progress that was cleared here.
+  def destroy
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    authenticate_user!
+
+    ApplicationRecord.transaction do
+      current_user.provision_default_channel!.unpublish!(@course)
+      clear_lesson_progress!(@course)
+      Enrollment.where(course: @course, user: current_user).destroy_all
+    end
+
+    redirect_to root_path, notice: "Course deleted."
   end
 
   def create
@@ -232,6 +243,17 @@ class CoursesController < ApplicationController
   end
 
   private
+
+  def clear_lesson_progress!(course)
+    lesson_ids = course.lessons.select(:id)
+
+    ActivityUser.where(
+      activity: Activity.where(lesson_id: lesson_ids),
+      user: current_user
+    ).destroy_all
+    ActivityLog.where(lesson_id: lesson_ids, user: current_user).destroy_all
+    LessonUser.where(lesson_id: lesson_ids, user: current_user).destroy_all
+  end
 
   def course_params
     params

@@ -113,7 +113,7 @@ Rails.application.routes.draw do
   get "gallery", to: "gallery#index", as: :gallery
   get "/sitemap.xml", to: "sitemaps#show", defaults: { format: :xml }
   get "landing_page/index"
-  resources :courses, only: [ :show, :index, :new, :create ] do
+  resources :courses, only: [ :show, :index, :new, :create, :destroy ] do
     member do
       post :mark_done
       post :reset_progress

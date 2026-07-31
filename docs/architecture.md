@@ -112,6 +112,26 @@ its historical creator's default private Channel with `courses.created_at` as
 the best available publication timestamp. This fallback never changes Channel
 visibility and never adds a second contribution to an already assigned Course.
 
+`Channel#unpublish!(course)` is the inverse of `publish!`: it destroys that
+Channel's `ChannelItem` for the course, `<<`'s symmetric counterpart. Course
+deletion (`courses#destroy`, `DELETE /courses/:id`) is built on it and is
+scoped entirely to the current user: it unpublishes the course from their own
+default Channel, destroys their `Enrollment`, and clears their personal
+`LessonUser`/`ActivityUser`/`ActivityLog` rows for that course's lessons (the
+same clearing `courses#reset_progress` performs, now factored into
+`clear_lesson_progress!`). The shared `Course` row, its lessons, and any other
+Channel that also publishes it are untouched — deleting only removes the
+course from the acting user's own library. Because the Course itself survives,
+re-importing the same video later matches it in `Imports::Create` and simply
+republishes it to the user's default Channel via a fresh `Enrollment`, without
+the progress that was cleared on deletion. The course page's "..." menu
+(`course-menu` Stimulus controller, alongside the existing `course-paths`
+"Add to playlist" controller on the same element) only renders the Delete
+option when the course is currently published to the viewer's own default
+Channel; deletion asks for confirmation in an in-page sheet rather than
+`window.confirm`, which the Hotwire Native app does not support — the same
+pattern the playlist delete flow uses.
+
 The Profile page manages the current default Channel's name and private/shared
 visibility. Shared owners can invite multiple normalized email addresses,
 resend or revoke pending invitations, and remove members. Invitations are

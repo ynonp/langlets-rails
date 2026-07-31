@@ -35,6 +35,10 @@ class Channel < ApplicationRecord
     self
   end
 
+  def unpublish!(course)
+    channel_items.where(course: course).destroy_all
+  end
+
   def readable_by?(actor)
     return false unless actor
     return true if actor.admin? || actor.id == user_id || visibility_public?
