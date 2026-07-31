@@ -14,7 +14,6 @@
 
   <% when :preview %>
     <%= render "app/import_requests/preview", preview: @preview,
-               clip_language: @clip_language, translation_language: @translation_language,
-               languages: @languages, query: @query %>
+               translation_language: @translation_language, query: @query %>
   <% end %>
 </turbo-frame>

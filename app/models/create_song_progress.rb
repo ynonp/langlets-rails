@@ -4,7 +4,6 @@ class CreateSongProgress < ApplicationRecord
   class LegacyFormatError < StandardError; end
 
   validates :youtubeurl, presence: true
-  validates :clip_language, presence: true
 
   include CreateSong::ProgressReporting
 

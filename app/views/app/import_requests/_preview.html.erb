@@ -17,24 +17,9 @@
 
     <div class="px-3.5 py-3 flex flex-col gap-1">
       <p class="text-app-text text-sm font-semibold leading-snug line-clamp-2"><%= video.title %></p>
-      <p class="text-app-text-3 text-xs">
-        <%= [ video.author_name, clip_language.english_name ].compact.join(" · ") %>
-      </p>
+      <p class="text-app-text-3 text-xs"><%= video.author_name %></p>
     </div>
   </div>
-
-  <%# The video's language is assumed to be the one they're learning — it's why
-      they're importing it — and translations always go to English. Assumed, not
-      detected: detection needs the Data API. So it stays changeable, because an
-      assumption the user can't correct is just a bug with better manners.
-      Changing it re-resolves, since dedupe and price both depend on it. %>
-  <label class="app-inset-hairline bg-app-inset rounded-app-field flex items-center justify-between py-3 px-4">
-    <span class="text-app-text-dim text-sm"><%= t("app.import_requests.new.video_language") %></span>
-    <%= select_tag :clip_language,
-                   options_from_collection_for_select(languages, :english_name, :english_name, clip_language.english_name),
-                   data: { add_video_target: "language", action: "change->add-video#languageChanged" },
-                   class: "bg-transparent text-sm font-semibold text-app-text text-right outline-none" %>
-  </label>
 
   <% if preview.in_library? %>
     <%# §7: already readable. No approve, no charge — the useful action is to
@@ -89,7 +74,6 @@
       <% submission_data = native_app? ? { turbo_frame: "_top" } : { turbo: false } %>
       <%= form_with url: app_import_requests_path, method: :post, data: submission_data do |f| %>
         <%= hidden_field_tag :url, video.canonical_url %>
-        <%= hidden_field_tag :clip_language, clip_language.english_name %>
         <%= hidden_field_tag :translation_language, translation_language.english_name %>
         <%# The cost is on the button as well as in the card above, so a credit
             can never leave without the user having seen the price twice. %>

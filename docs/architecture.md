@@ -284,8 +284,8 @@ Sections, all wired to real data:
   older `pending_video_url` cookie still works the same way and additionally
   prefills the URL — `GuestImportRequestsController#create` keeps honouring a
   posted, canonicalized link even though the homepage no longer sends one. From
-  Add Video the existing resolver asks for the clip language before its normal
-  one-credit import POST redirects to Queue.
+  Add Video the resolver previews the video and the one-credit import POST
+  automatically detects its language before redirecting to Queue.
 - **Footer** — copyright plus `/home/privacy` and `/home/terms`.
 
 The controller's existing `@playlists` / `@recommended_courses` assigns are left
@@ -426,8 +426,26 @@ Content has one shared L1 skeleton and any number of sparse L2 translations:
   when the current subdomain is different. Saving the span again updates the
   language rather than creating a second entry.
 
-The import pipeline is also split. `CreateSongProgress` is unique on
-`(youtubeurl, clip_language)`. Neutral transcription/timing/segmentation work
+The import pipeline begins with automatic source-language detection. Add Video
+on web and native sends only the URL and translation language; source-language
+selection is not rendered. `Imports::Create` creates a provisional
+`CreateSongProgress` whose `clip_language` is NULL, calls the pipeline's signed
+`/detect-language` endpoint, maps its result back to an existing `Language`
+row, rejects source = translation, and then sets `clip_language` before running
+the normal dedupe/credit/course transaction. A detection error is recorded on
+the provisional progress row and aborts before a credit moves.
+
+YouTube detection is a dedicated Gemini 2.5 Flash video request constrained to
+the database language ISO codes. TikTok detection downloads verified audio
+with yt-dlp and sends it to ElevenLabs Scribe without a language hint; Scribe's
+returned ISO-639 code selects the language. Its transcript and timed words seed
+the progress blob, so the regular TikTok extraction/alignment stages resume
+without a second transcription. Three-letter Scribe codes and regional seeded
+codes (notably `ar-JO`) are normalized to their base ISO language.
+
+After detection the import pipeline is split. `CreateSongProgress` is unique on
+`(youtubeurl, clip_language)` when `clip_language IS NOT NULL`; NULL provisional
+rows are deliberately outside that partial unique index. Neutral transcription/timing/segmentation work
 runs once, while `add_translation(language)` stores language-keyed output under
 `data["translations"]`. A translation-only import costs one credit and attaches
 phrase, token, lesson, and course translations without deleting lessons,
@@ -1240,10 +1258,12 @@ which continues to reflect active imports reported by the web layout.
 #### iOS Share Extension
 
 The `LangletsShare` extension accepts shared web URLs and plain text, extracts a
-YouTube or TikTok link, and submits it directly to `POST /api/v1/import_requests`.
-There is no metadata preflight or AI language detection: the source defaults to
-the learning language selected in the app, the translation defaults to English,
-and the extension exposes both as editable menus before spending a credit.
+YouTube or TikTok link, and immediately submits it to
+`POST /api/v1/import_requests`. It has no language menus, confirmation button,
+or success screen: after the API accepts the idempotent request it calls
+`completeRequest`. Errors remain visible so authentication, credit, or network
+problems are actionable. The translation language is English on this main-host
+API; the source language is always detected by the pipeline.
 
 Its link check is **host-only, deliberately** (`isSupportedVideo`). The extension
 decides "is this worth POSTing", not "which video is this" — Rails re-validates

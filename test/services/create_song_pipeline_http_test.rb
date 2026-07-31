@@ -64,6 +64,23 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
     assert headers.present?
   end
 
+  test "language detection sends the database catalog and returns seeded pipeline data" do
+    sent = nil
+    response = {
+      language: { iso_name: "es", english_name: "Spanish" },
+      data: { lyric_lines: [ "hola" ], stt_words: [ { text: "hola" } ] }
+    }
+    language, data = CreateSongPipelineHttp.detect_language(
+      url: "https://www.youtube.com/watch?v=XXXX",
+      transport: ->(body) { sent = JSON.parse(body); [ 200, response.to_json ] }
+    )
+
+    assert_equal languages(:spanish), language
+    assert_equal response[:data].deep_stringify_keys, data
+    assert_includes sent.fetch("supported_languages"),
+                    { "iso_name" => "ar-JO", "english_name" => "Arabic" }
+  end
+
   test "runs an explicitly requested language instead of the record's own" do
     sent = nil
     trigger(language: languages(:english), transport: ->(body) { sent = JSON.parse(body); ok })

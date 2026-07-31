@@ -182,6 +182,7 @@ export function makeCtx(options: {
   const store = new ProgressStore(options.data ?? {}, sink);
 
   const models: ModelRegistry = {
+    detectLanguage: unusedModel().model,
     extractLyrics: unusedModel().model,
     forceAlignmentFallback: unusedModel().model,
     addLessons: unusedModel().model,

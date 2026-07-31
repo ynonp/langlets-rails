@@ -36,9 +36,7 @@ module App
     # one is a mistake worth naming, not a query worth running.
     def resolve
       @query = params[:q].to_s.strip
-      @clip_language = Language.find_by(english_name: params[:clip_language]) || default_clip_language
       @translation_language = default_translation_language
-      @languages = Language.order(:english_name)
 
       # Blank goes back to the empty state, not to an error the user hasn't
       # earned yet — they've typed nothing wrong, they've typed nothing at all.
@@ -57,7 +55,7 @@ module App
         @preview = Imports::Preview.call(
           user: current_user,
           url: VideoSource.loose_canonical(@query),
-          clip_language: @clip_language.english_name,
+          clip_language: nil,
           translation_language: @translation_language.english_name
         )
       end
@@ -80,7 +78,6 @@ module App
       result = Imports::Create.call(
         user: current_user,
         url: params[:url],
-        clip_language: params[:clip_language],
         translation_language: Current.translation_language&.english_name || params[:translation_language],
         client_token: params[:client_token].presence
       )
@@ -95,6 +92,9 @@ module App
     rescue Imports::UnsupportedLanguage
       redirect_to new_app_import_request_path(url: params[:url]),
                   alert: "We don't teach that language yet."
+    rescue CreateSongPipelineHttp::TriggerError
+      redirect_to new_app_import_request_path(url: params[:url]),
+                  alert: "We couldn't detect the video's language."
     end
 
     # Cancelling a queued import refunds the credit. Deleting a failed or ready
@@ -187,15 +187,7 @@ module App
 
     def prepare_new_import
       @import_request = ImportRequest.new
-      @clip_language = default_clip_language
       @translation_language = default_translation_language
-      @languages = Language.order(:english_name)
-    end
-
-    # The language they're learning is the one they're importing *from* — it's
-    # why they're importing it.
-    def default_clip_language
-      Language.find_by(iso_name: current_language_code) || Language.find_by(english_name: "Spanish")
     end
 
     # Best guess at what they read. Not stored per-user yet.

@@ -88,18 +88,24 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 3, @user.reload.credit_balance
   end
 
-  test "returns 422 for a language we don't teach" do
-    stub_video do
-      post api_v1_import_requests_url,
-           params: import_params(clip_language: "Klingon"), headers: auth_headers(@token)
+  test "returns 422 when automatic language detection fails" do
+    video = Youtube::Oembed::Video.new(
+      video_id: VIDEO_ID, title: "Despacito", author_name: "Luis Fonsi",
+      thumbnail_url: "https://i.ytimg.com/vi/#{VIDEO_ID}/hqdefault.jpg", canonical_url: CANONICAL
+    )
+    Youtube::Oembed.stub(:fetch, ->(_url) { video }) do
+      CreateSongPipelineHttp.stub(:detect_language, ->(**) { raise CreateSongPipelineHttp::TriggerError, "unsupported" }) do
+        post api_v1_import_requests_url, params: import_params.except(:clip_language), headers: auth_headers(@token)
+      end
     end
 
     assert_response :unprocessable_entity
-    assert_equal "unsupported_language", response.parsed_body["error"]
+    assert_equal "language_detection_failed", response.parsed_body["error"]
+    assert_equal 3, @user.reload.credit_balance
   end
 
-  test "requires url and both languages" do
-    [ :url, :clip_language, :translation_language ].each do |missing|
+  test "requires url and translation language" do
+    [ :url, :translation_language ].each do |missing|
       post api_v1_import_requests_url, params: import_params.except(missing), headers: auth_headers(@token)
 
       assert_response :unprocessable_entity
@@ -173,7 +179,9 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
       thumbnail_url: "https://i.ytimg.com/vi/#{VIDEO_ID}/hqdefault.jpg",
       canonical_url: CANONICAL
     )
-    Youtube::Oembed.stub(:fetch, ->(_url) { video }, &block)
+    CreateSongPipelineHttp.stub(:detect_language, [ @spanish, {} ]) do
+      Youtube::Oembed.stub(:fetch, ->(_url) { video }, &block)
+    end
   end
 
   TIKTOK_SHORT = "https://vt.tiktok.com/ZSXvNVQwY/".freeze
@@ -187,6 +195,10 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
       author_name: "scout2015", thumbnail_url: TIKTOK_THUMB,
       canonical_url: TIKTOK_CANONICAL
     )
-    Tiktok::Oembed.stub(:fetch, ->(_url) { video }, &block)
+    CreateSongPipelineHttp.stub(:detect_language, [ @spanish, {
+      "lyric_lines" => [ "hola" ], "stt_words" => []
+    } ]) do
+      Tiktok::Oembed.stub(:fetch, ->(_url) { video }, &block)
+    end
   end
 end

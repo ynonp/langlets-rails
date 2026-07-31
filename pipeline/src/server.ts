@@ -17,7 +17,7 @@ import { HttpCallbackClient } from "./callback.ts";
 import { parseTriggerPayload, runPipeline, type RunResult } from "./pipeline.ts";
 import type { ModelRegistry } from "./models.ts";
 import { message } from "./retry.ts";
-import { request } from "asset:///node/undici/api.d.ts";
+import { type DetectionPayload, detectLanguage } from "./languageDetection.ts";
 
 export interface ServerOptions {
   secret: string;
@@ -42,12 +42,25 @@ export function createHandler(options: ServerOptions): (request: Request) => Pro
       return json(200, { ok: true });
     }
 
-    if (request.method !== "POST" || url.pathname !== "/run") {
+    if (request.method !== "POST" || !["/run", "/detect-language"].includes(url.pathname)) {
       return json(404, { error: "not found" });
     }
 
     const body = await verifyRequest(options.secret, request);
     if (body === null) return json(401, { error: "invalid signature" });
+
+    if (url.pathname === "/detect-language") {
+      try {
+        const payload = JSON.parse(body) as DetectionPayload;
+        if (!payload.youtubeurl) throw new Error("youtubeurl is required");
+        if (!Array.isArray(payload.supported_languages)) {
+          throw new Error("supported_languages is required");
+        }
+        return json(200, await detectLanguage(payload, { model: options.models.detectLanguage }));
+      } catch (error) {
+        return json(422, { error: message(error) });
+      }
+    }
 
     let payload: TriggerPayload;
     try {

@@ -199,7 +199,9 @@ Understanding this flow helps when debugging issues after adding a language:
 ### Course Creation Pipeline
 
 ```
-User submits form (clip_language: "Italian", translation_language: "English")
+User submits a video URL; the pipeline detects `it` and maps it to the seeded
+Language (`english_name: "Italian"`, `iso_name: "it"`). The request supplies
+only the translation language (`"English"`).
         │
         ▼
 CreateSongProgress record stored with english_name strings

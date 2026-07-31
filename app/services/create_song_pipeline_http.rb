@@ -47,6 +47,42 @@ class CreateSongPipelineHttp
     def callback_base_url
       Rails.configuration.x.pipeline.callback_base_url.delete_suffix("/")
     end
+
+    # The pipeline's first focused request. YouTube uses Gemini 2.5 Flash;
+    # TikTok returns ElevenLabs' detected code together with the transcript so
+    # the subsequent full run can resume without transcribing twice.
+    def detect_language(url:, transport: nil)
+      languages = Language.order(:id).pluck(:iso_name, :english_name).map do |iso_name, english_name|
+        { iso_name: iso_name, english_name: english_name }
+      end
+      body = { youtubeurl: url, supported_languages: languages }.to_json
+      status, response_body = (transport || method(:post_detection)).call(body)
+      parsed = JSON.parse(response_body.to_s)
+      unless status.between?(200, 299)
+        raise TriggerError, "language detection failed: #{parsed['error'] || response_body.to_s.truncate(500)}"
+      end
+
+      language = Language.find_by!(iso_name: parsed.dig("language", "iso_name"))
+      [ language, parsed["data"].presence || {} ]
+    rescue JSON::ParserError, ActiveRecord::RecordNotFound => e
+      raise TriggerError, "language detection returned an unreadable language: #{e.message}"
+    end
+
+    private
+
+    def post_detection(body)
+      uri = URI.parse("#{base_url}/detect-language")
+      request = Net::HTTP::Post.new(uri)
+      PipelineHmac.signed_headers(body).each { |name, value| request[name] = value }
+      request.body = body
+      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https",
+                                 open_timeout: OPEN_TIMEOUT, read_timeout: READ_TIMEOUT) do |http|
+        http.request(request)
+      end
+      [ response.code.to_i, response.body ]
+    rescue Net::OpenTimeout, Net::ReadTimeout, SystemCallError, SocketError, OpenSSL::SSL::SSLError => e
+      raise TriggerError, "could not detect the video language: #{e.message}"
+    end
   end
 
   # language: nil runs the record's own translation_language. Pass one to run a

@@ -24,12 +24,14 @@ module Imports
 
     def self.call(...) = new(...).call
 
-    def initialize(user:, url:, clip_language:, translation_language:, client_token: nil)
+    def initialize(user:, url:, translation_language:, clip_language: nil, client_token: nil,
+                   language_detector: CreateSongPipelineHttp.method(:detect_language))
       @user = user
       @url = url
       @clip_language = clip_language
       @translation_language = translation_language
       @client_token = client_token
+      @language_detector = language_detector
     end
 
     # Raises VideoSource::UnavailableVideo for a bad/private/deleted video,
@@ -43,13 +45,15 @@ module Imports
         return Result.new(status: :already_queued, import_request: existing, course: existing.course)
       end
 
-      validate_languages!
+      validate_translation_language!
 
       # Also the availability check: oEmbed 401/403/404 means we can't import it,
       # and we find that out before taking the credit. For a TikTok share link
       # this is additionally what resolves vt.tiktok.com/... into a post id —
       # nothing downstream can work without it.
       video = VideoSource.fetch(url)
+      detect_clip_language!(video) if clip_language.blank?
+      validate_languages!
 
       # Resolve the shared L1 skeleton first, then its per-language readiness.
       if (published = published_course_for(video))
@@ -79,7 +83,7 @@ module Imports
 
     private
 
-    attr_reader :user, :url, :clip_language, :translation_language, :client_token
+    attr_reader :user, :url, :clip_language, :translation_language, :client_token, :language_detector
 
     def clip_language_record
       @clip_language_record ||= Language.find_by(english_name: clip_language)
@@ -92,6 +96,42 @@ module Imports
     def validate_languages!
       raise UnsupportedLanguage, "unknown clip language: #{clip_language.inspect}" if clip_language_record.nil?
       raise UnsupportedLanguage, "unknown translation language: #{translation_language.inspect}" if translation_language_record.nil?
+      raise UnsupportedLanguage, "the video language must differ from the translation language" if clip_language_record == translation_language_record
+    end
+
+    def validate_translation_language!
+      raise UnsupportedLanguage, "unknown translation language: #{translation_language.inspect}" if translation_language_record.nil?
+    end
+
+    def detect_clip_language!(video)
+      progress = CreateSongProgress.create!(
+        youtubeurl: video.canonical_url,
+        clip_language: nil,
+        translation_language: translation_language,
+        data: {}
+      )
+      language, @detected_data = language_detector.call(url: video.canonical_url)
+      @clip_language = language.english_name
+      @clip_language_record = language
+      progress.update!(clip_language: @clip_language, data: @detected_data)
+    rescue ActiveRecord::RecordNotUnique
+      # Detection can rediscover a language for an already cached video. The
+      # partial unique index correctly rejects a second canonical row; this
+      # provisional NULL-language row has no dependants and can be discarded.
+      progress&.destroy!
+      @detected_data = nil
+    rescue => e
+      if progress&.persisted?
+        progress.update!(data: {
+          "errors" => [ {
+            "step" => "detect_language",
+            "occurred_at" => Time.zone.now.iso8601,
+            "error_class" => e.class.name,
+            "error_message" => e.message
+          } ]
+        })
+      end
+      raise
     end
 
     # The Library's canonical course for this video and pair, if anyone has
@@ -167,7 +207,7 @@ module Imports
           clip_language: clip_language,
         ) do |p|
           p.translation_language = translation_language
-          p.data = {}
+          p.data = @detected_data || {}
         end
         # A found row may predate the multi-language format; fail here, before
         # any credit moves, rather than inside the pipeline.

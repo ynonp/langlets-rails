@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_31_130000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_31_170000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -210,14 +210,14 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_130000) do
 
   create_table "create_song_progresses", force: :cascade do |t|
     t.string "youtubeurl", null: false
-    t.string "clip_language", null: false
+    t.string "clip_language"
     t.string "translation_language", null: false
     t.integer "step"
     t.jsonb "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "lyrics"
-    t.index ["youtubeurl", "clip_language"], name: "idx_create_song_progresses_video_language", unique: true
+    t.index ["youtubeurl", "clip_language"], name: "idx_create_song_progresses_video_language", unique: true, where: "(clip_language IS NOT NULL)"
   end
 
   create_table "credit_ledger_entries", force: :cascade do |t|

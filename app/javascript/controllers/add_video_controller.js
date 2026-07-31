@@ -23,7 +23,7 @@ const VIDEO_PATTERN =
 const SETTLE_MS = 500
 
 export default class extends Controller {
-  static targets = ["input", "field", "clear", "hint", "recognized", "language"]
+  static targets = ["input", "field", "clear", "hint", "recognized"]
   static values = { resolveUrl: String }
 
   connect() {
@@ -52,11 +52,6 @@ export default class extends Controller {
     this.timer = setTimeout(() => this.reloadFrame(), SETTLE_MS)
   }
 
-  languageChanged() {
-    // Dedupe and price both depend on the language, so a change re-resolves.
-    this.reloadFrame()
-  }
-
   clearInput() {
     this.inputTarget.value = ""
     this.inputTarget.focus()
@@ -72,10 +67,6 @@ export default class extends Controller {
 
     const url = new URL(this.resolveUrlValue, window.location.origin)
     url.searchParams.set("q", this.inputTarget.value.trim())
-    if (this.hasLanguageTarget) {
-      url.searchParams.set("clip_language", this.languageTarget.value)
-    }
-
     frame.src = url.toString()
   }
 

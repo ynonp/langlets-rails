@@ -10,6 +10,7 @@ const SECRET = "server-secret";
 
 function models(): ModelRegistry {
   return {
+    detectLanguage: unusedModel().model,
     extractLyrics: unusedModel().model,
     forceAlignmentFallback: unusedModel().model,
     addLessons: unusedModel().model,

@@ -263,7 +263,9 @@ module App
         thumbnail_url: "https://i.ytimg.com/vi/#{VIDEO_ID}/hqdefault.jpg",
         canonical_url: CANONICAL
       )
-      Youtube::Oembed.stub(:fetch, ->(_url) { video }, &block)
+      CreateSongPipelineHttp.stub(:detect_language, [ @spanish, {} ]) do
+        Youtube::Oembed.stub(:fetch, ->(_url) { video }, &block)
+      end
     end
 
     def publish_course!

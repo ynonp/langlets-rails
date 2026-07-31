@@ -36,9 +36,33 @@ module Imports
     # the sheet renders both as an inline error in place of the preview card
     # rather than as a failed search (§2).
     def call
-      validate_languages!
+      validate_languages! if clip_language.present?
 
       video = VideoSource.fetch(url)
+
+      # Detection is the first paid pipeline action, never preview work. Before
+      # it runs we can still recognize a request for this same video already in
+      # flight, but cannot truthfully claim which language-specific course it
+      # will match.
+      if clip_language.blank?
+        published = Course.published
+                          .joins(:course_translations)
+                          .where(youtube_video_id: video.video_id,
+                                 course_translations: {
+                                   language_id: translation_language_record.id,
+                                   status: CourseTranslation.statuses[:ready]
+                                 })
+                          .first
+        return result(:in_library, video, course: published, cost: 0) if published
+
+        mine = user.import_requests.active.find_by(
+          youtube_video_id: video.video_id,
+          translation_language: translation_language
+        )
+        return result(:in_queue, video, course: mine.course, import_request: mine, cost: 0) if mine
+
+        return result(:importable, video, cost: 1)
+      end
 
       # §4: duplicates short-circuit before the balance is ever consulted, so a
       # video the user already owns can't trigger the insufficient-credits state.

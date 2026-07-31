@@ -11,13 +11,6 @@
     <div class="min-w-0 p-5 sm:p-6">
       <p class="text-lg font-extrabold leading-snug [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= video.title %></p>
       <p class="mt-1 text-sm text-[#8A8170]"><%= video.author_name %></p>
-      <label class="mt-5 block">
-        <span class="text-sm font-bold"><%= t("app.import_requests.new.video_language") %></span>
-        <%= select_tag :clip_language,
-                       options_from_collection_for_select(languages, :english_name, :english_name, clip_language.english_name),
-                       data: { add_video_target: "language", action: "change->add-video#languageChanged" },
-                       class: "mt-2 min-h-11 w-full rounded-xl border-2 border-[#1E1B16] bg-[#FFFDF8] px-3 text-sm font-semibold text-[#1E1B16] outline-none focus:border-[#C4451C] focus:ring-2 focus:ring-[#C4451C]/20" %>
-      </label>
     </div>
   </div>
 
@@ -43,7 +36,6 @@
         <% else %>
           <%= form_with url: app_import_requests_path, method: :post, data: { turbo: false }, class: "shrink-0" do |f| %>
             <%= hidden_field_tag :url, video.canonical_url %>
-            <%= hidden_field_tag :clip_language, clip_language.english_name %>
             <%= hidden_field_tag :translation_language, translation_language.english_name %>
             <%= f.submit(preview.free? ? t("app.import_requests.new.approve_free") : t("app.import_requests.new.approve", cost: pluralize(cost, "credit")), class: "min-h-11 w-full cursor-pointer rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410]") %>
           <% end %>

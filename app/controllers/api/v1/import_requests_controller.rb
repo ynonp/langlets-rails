@@ -16,13 +16,11 @@ module Api
 
       def create
         return render_missing(:url) if params[:url].blank?
-        return render_missing(:clip_language) if params[:clip_language].blank?
         return render_missing(:translation_language) if params[:translation_language].blank?
 
         result = Imports::Create.call(
           user: current_resource_owner,
           url: params[:url],
-          clip_language: params[:clip_language],
           translation_language: params[:translation_language],
           client_token: params[:client_token]
         )
@@ -40,6 +38,9 @@ module Api
       rescue Imports::UnsupportedLanguage => e
         render status: :unprocessable_entity,
                json: { error: "unsupported_language", error_description: e.message }
+      rescue CreateSongPipelineHttp::TriggerError => e
+        render status: :unprocessable_entity,
+               json: { error: "language_detection_failed", error_description: e.message }
       end
 
       private

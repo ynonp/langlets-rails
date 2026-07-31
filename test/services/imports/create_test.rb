@@ -40,6 +40,36 @@ module Imports
       assert_equal CreateSongProgress.sole, request.create_song_progress
     end
 
+    test "detects language on a nullable progress row and seeds TikTok-style transcript data" do
+      detected_data = { "lyric_lines" => [ "hola" ], "stt_words" => [ { "text" => "hola" } ] }
+      detector = lambda do |url:|
+        provisional = CreateSongProgress.find_by!(youtubeurl: url)
+        assert_nil provisional.clip_language
+        [ @spanish, detected_data ]
+      end
+
+      result = stub_video do
+        Create.call(user: @user, url: CANONICAL, translation_language: "English",
+                    language_detector: detector)
+      end
+
+      assert_equal "Spanish", result.import_request.clip_language
+      assert_equal detected_data, result.import_request.create_song_progress.data
+    end
+
+    test "detected clip language must differ from translation language" do
+      error = assert_raises(UnsupportedLanguage) do
+        stub_video do
+          Create.call(user: @user, url: CANONICAL, translation_language: "English",
+                      language_detector: ->(url:) { [ @english, {} ] })
+        end
+      end
+
+      assert_match(/must differ/, error.message)
+      assert_equal 3, @user.reload.credit_balance
+      assert_empty @user.import_requests
+    end
+
     # A pending course has no lessons — showing it on Home would offer a course
     # that can't be opened. CreateCourseJob enrolls on publish instead.
     test "does not put the course on Home until it is published" do
