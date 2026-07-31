@@ -34,6 +34,12 @@ export async function translate(ctx: PipelineContext): Promise<void> {
           system: translatePrompt(ctx.clipLanguage, language.english_name, originalLyrics.length),
           prompt: userContent,
           temperature: 0.2,
+          // deepseek-v4-pro is a thinking model and reasons by default, spending
+          // ~10x the output tokens and ~8x the wall time to reach the same
+          // translation. The key must be the provider name from models.ts and
+          // camelCase; `reasoning_effort` is silently dropped by the SDK. Other
+          // providers ignore an unknown key, so this is safe if the model changes.
+          providerOptions: { ollama: { reasoningEffort: "none" } },
         });
         lastResponse = text;
 
