@@ -602,8 +602,20 @@ module App
 
       get app_library_path(filter: "playlists"), headers: NATIVE
       assert_response :success
-      assert_select "a[href=?]", playlist_path(playlist), text: /Mobile Favorites/
+      assert_select "a[href=?][data-turbo-frame=_top]", playlist_path(playlist), text: /Mobile Favorites/
       assert_select ".grid.grid-cols-2", count: 0
+    end
+
+    # Course (and channel) cards live inside <turbo-frame id="library-results">.
+    # Without data-turbo-frame="_top" a tap is captured by that frame, Turbo
+    # fetches CoursesController#show looking for a matching #library-results
+    # frame in the response, finds none, and the native app renders "Content
+    # missing" instead of navigating to the course.
+    test "the Library course cards break out of the results frame" do
+      get app_library_path, headers: NATIVE
+
+      assert_response :success
+      assert_select "turbo-frame#library-results a[href=?][data-turbo-frame=_top]", course_path(@course)
     end
 
     test "the Library search accepts a pasted link" do

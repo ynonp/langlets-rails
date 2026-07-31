@@ -1,7 +1,7 @@
 <% compact = local_assigns.fetch(:compact, false) %>
 
 <div class="app-hairline bg-app-card <%= compact ? 'rounded-[14px]' : 'rounded-app-card' %> overflow-hidden flex flex-col">
-  <%= link_to course_path(course) do %>
+  <%= link_to course_path(course), data: { turbo_frame: "_top" } do %>
     <%= image_tag course_thumbnail_url(course),
                   alt: "", loading: "lazy",
                   class: "w-full aspect-video object-cover bg-app-inset" %>
@@ -11,6 +11,7 @@
     <%# The mockup pins these to a fixed 34px height; line-clamp is the same two
         lines without breaking when the font metrics differ. %>
     <%= link_to course.localized_name, course_path(course),
+                data: { turbo_frame: "_top" },
                 class: "app-clamp-2 font-semibold leading-[1.25] #{compact ? 'text-[12px] min-h-[30px]' : 'text-[13px] min-h-[34px]'}" %>
 
     <p class="text-app-text-2 <%= compact ? 'text-[10px]' : 'text-[11px]' %>">
@@ -18,6 +19,7 @@
     </p>
     <% if local_assigns[:channel] %>
       <%= link_to t("channels.card.by", channel: channel.name), channel_path(channel.slug),
+                  data: { turbo_frame: "_top" },
                   class: "text-app-text-3 text-[10px] truncate" %>
     <% end %>
 

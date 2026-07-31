@@ -2,6 +2,7 @@
 <% cover_course = published_courses.first %>
 
 <%= link_to playlist_path(playlist),
+            data: { turbo_frame: "_top" },
             class: "app-hairline bg-app-card rounded-app-card p-2.5 flex items-center gap-3" do %>
   <% if cover_course %>
     <%= image_tag course_thumbnail_url(cover_course),
