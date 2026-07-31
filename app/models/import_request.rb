@@ -20,6 +20,7 @@ class ImportRequest < ApplicationRecord
   # purpose: this is a console tool, and a `false` nobody notices reads exactly
   # like a retry that worked.
   class NotRetryable < StandardError; end
+  class ArtifactsNotDestroyable < StandardError; end
 
   # Wall-clock, from the moment the user asked. Nothing in the import path
   # blocks any more — the worker triggers the pipeline and leaves, and the run
@@ -29,6 +30,7 @@ class ImportRequest < ApplicationRecord
 
   validates :youtube_url, :youtube_video_id, :clip_language, :translation_language, presence: true
   validates :progress_percent, inclusion: { in: 0..100 }
+  validate :translation_language_differs_from_clip_language
 
   # On the model rather than in Imports::Create because there are four ways to
   # end up with a request (charge, join, translation, admin) and the guarantee
@@ -148,7 +150,67 @@ class ImportRequest < ApplicationRecord
     self
   end
 
+  # Permanently remove this request and the import graph that belongs only to
+  # it. This is an operator tool, not the Queue's ordinary delete action:
+  # courses and pipeline caches are normally shared by several requests, and
+  # deleting either while another import uses it would remove another user's
+  # content.
+  #
+  # The checks and deletes are one transaction so a rejected cleanup leaves the
+  # complete graph intact. Active imports are rejected because pipeline jobs and
+  # callbacks may still be writing to their progress and course records.
+  def destroy_with_artifacts!
+    transaction do
+      lock!
+      raise ArtifactsNotDestroyable, "ImportRequest #{id} is still active" if active?
+
+      artifact_course = course
+      artifact_progress = create_song_progress
+      artifact_media = if artifact_course
+        artifact_course.lessons.where.not(medium_id: nil).distinct.map(&:medium).compact
+      else
+        []
+      end
+
+      ensure_artifacts_are_exclusive!(artifact_course, artifact_progress, artifact_media)
+
+      destroy!
+      artifact_course&.destroy!
+      artifact_media.each(&:destroy!)
+      artifact_progress&.destroy!
+    end
+  end
+
   private
+
+  def translation_language_differs_from_clip_language
+    return if clip_language.blank? || translation_language.blank?
+    return unless clip_language == translation_language
+
+    errors.add(:translation_language, "must differ from clip language")
+  end
+
+  def ensure_artifacts_are_exclusive!(artifact_course, artifact_progress, artifact_media)
+    if artifact_course && ImportRequest.where(course_id: artifact_course.id).where.not(id: id).exists?
+      raise ArtifactsNotDestroyable, "Course #{artifact_course.id} is shared by another ImportRequest"
+    end
+
+    if artifact_progress
+      if ImportRequest.where(create_song_progress_id: artifact_progress.id).where.not(id: id).exists?
+        raise ArtifactsNotDestroyable, "CreateSongProgress #{artifact_progress.id} is shared by another ImportRequest"
+      end
+
+      if Course.where(create_song_progress_id: artifact_progress.id).where.not(id: artifact_course&.id).exists?
+        raise ArtifactsNotDestroyable, "CreateSongProgress #{artifact_progress.id} is shared by another Course"
+      end
+    end
+
+    artifact_media.each do |medium|
+      if medium.lessons.where.not(course_id: artifact_course.id).exists?
+        raise ArtifactsNotDestroyable, "Medium #{medium.id} is shared by another Course"
+      end
+    end
+  end
 
   def duplicate_active_request
     user.import_requests.active.where.not(id: id).find_by(

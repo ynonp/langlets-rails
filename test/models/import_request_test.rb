@@ -143,4 +143,60 @@ class ImportRequestTest < ActiveJob::TestCase
 
     assert_raises(ImportRequest::NotRetryable) { @request.retry! }
   end
+
+  test "clip and translation languages must differ" do
+    @request.translation_language = @request.clip_language
+
+    refute @request.valid?
+    assert_includes @request.errors[:translation_language], "must differ from clip language"
+  end
+
+  test "destroy_with_artifacts deletes the exclusive import graph" do
+    @course.update!(create_song_progress: @progress)
+    medium = Medium.create!(url: CANONICAL, language: @spanish)
+    lesson = Lesson.create!(course: @course, medium: medium, user: @user, name: "Imported lesson")
+    phrase = Phrase.create!(medium: medium, l1: @spanish, text_l1: "Hola")
+
+    @request.destroy_with_artifacts!
+
+    refute ImportRequest.exists?(@request.id)
+    refute Course.exists?(@course.id)
+    refute CreateSongProgress.exists?(@progress.id)
+    refute Medium.exists?(medium.id)
+    refute Lesson.exists?(lesson.id)
+    refute Phrase.exists?(phrase.id)
+  end
+
+  test "destroy_with_artifacts rejects an active import without deleting anything" do
+    @request.update!(status: :importing)
+
+    error = assert_raises(ImportRequest::ArtifactsNotDestroyable) do
+      @request.destroy_with_artifacts!
+    end
+
+    assert_match(/still active/, error.message)
+    assert ImportRequest.exists?(@request.id)
+    assert Course.exists?(@course.id)
+    assert CreateSongProgress.exists?(@progress.id)
+  end
+
+  test "destroy_with_artifacts rejects shared artifacts without deleting anything" do
+    @course.update!(create_song_progress: @progress)
+    other = User.create!(email: "shared@example.com", password: "password123", confirmed_at: Time.zone.now)
+    sibling = other.import_requests.create!(
+      youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
+      clip_language: "Spanish", translation_language: "English",
+      course: @course, create_song_progress: @progress, status: :ready
+    )
+
+    error = assert_raises(ImportRequest::ArtifactsNotDestroyable) do
+      @request.destroy_with_artifacts!
+    end
+
+    assert_match(/shared by another ImportRequest/, error.message)
+    assert ImportRequest.exists?(@request.id)
+    assert ImportRequest.exists?(sibling.id)
+    assert Course.exists?(@course.id)
+    assert CreateSongProgress.exists?(@progress.id)
+  end
 end

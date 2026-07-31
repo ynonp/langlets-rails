@@ -1189,6 +1189,7 @@ A user's request to turn a video into a course. There are three distinct things 
 Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry, push idempotency) can't live on either of the shared records.
 
 - `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility. Failed imports remain visible and removable, but the Queue does not offer a user retry: an accessible info tooltip explains that the human team is reviewing the automatic import and that the user will be notified when it finishes.
+- `clip_language` and `translation_language` must differ. `Imports::Create` rejects the pair before charging, and the `ImportRequest` model enforces the invariant for console and other direct writes as well.
 - `progress_percent` is **written forward** by `CreateSongProgress#sync_import_requests_progress`, never computed on read — `data` is a multi-megabyte jsonb blob and the Queue polls.
 
 **`ImportRequest#retry!`** is the operator's way back from a failed import — console only, never called automatically, and not exposed in the Queue. It raises `ImportRequest::NotRetryable` unless the request is `failed`, still has its course and `CreateSongProgress`, and isn't shadowed by another active request for the same tuple (which `idx_import_requests_active_dedupe` would reject anyway). It then, in one transaction:
@@ -1203,6 +1204,16 @@ Two users importing the same video deliberately share one pipeline and one cours
 Which run it starts mirrors `Imports::Create`: a **published** course keeps its status and gets an `AddCourseTranslationJob` for the failed language only (unpublishing a live course over one translation would break it for everyone); an unpublished one gets `CreateCourseJob`. If another **active** request already covers this course, no job is enqueued at all — the retry rides along on that run, exactly as `Imports::Create#join!` does, rather than putting two sets of callbacks on one blob.
 
 Credits are deliberately untouched: the failure already refunded, a retry is us fixing our own import rather than a second sale, and leaving `refunded` set is what stops a second failure from minting a free credit in `Imports::Settlement#fail!`.
+
+**`ImportRequest#destroy_with_artifacts!`** is the destructive operator tool
+for permanently removing a non-active request together with its exclusive
+Course, media, and `CreateSongProgress`. The entire cleanup is transactional
+and raises `ImportRequest::ArtifactsNotDestroyable` without deleting anything
+when the request is queued/importing, another ImportRequest references its
+Course or progress, another Course references its progress, or a lesson outside
+the Course references one of its media. Ordinary Queue deletion does not call
+this method: shared artifacts remain the normal case, and ready/failed Queue
+deletion removes only the per-user request.
 
 **`Course#regenerate!`** is the destructive operator tool for rebuilding an old
 course with the current pipeline. It empties the matching
