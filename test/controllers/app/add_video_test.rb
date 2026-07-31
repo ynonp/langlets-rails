@@ -40,7 +40,7 @@ module App
       assert_select "[data-testid='web-add-video'].lg\\:grid-cols-\\[minmax\\(0\\,1fr\\)_22rem\\]"
       assert_select "input#web-video-url[data-add-video-target=input]"
       assert_select "[data-add-video-target=clipboardChip]", count: 0
-      assert_select "[data-controller='theme']", count: 0
+      assert_select "[data-controller='theme']", count: 1
       assert_select ".bg-\\[\\#FAF6EF\\]"
       assert_select ".bg-\\[\\#C4451C\\]"
       assert_select ".app-scroll-pad", count: 0
@@ -97,6 +97,7 @@ module App
 
       assert_response :success
       assert_select ".app-scroll-pad[data-controller='add-video']"
+      assert_match "share a YouTube or TikTok video directly to Langlets", response.body
       assert_select "[data-testid='web-add-video']", count: 0
     end
 
@@ -175,7 +176,7 @@ module App
       assert_no_match(/Approve/, response.body)
     end
 
-    test "a video already importing offers the Create screen instead of a second charge" do
+    test "a video already importing offers the Library instead of a second charge" do
       stub_video do
         Imports::Create.call(user: @user, url: CANONICAL,
                              clip_language: "Spanish", translation_language: "English")
@@ -185,11 +186,12 @@ module App
 
       assert_response :success
       assert_match "Already importing.", response.body
-      assert_match "View in Create", response.body
+      assert_match "View in Library", response.body
+      assert_select "a[href^='/app/library'][href*='filter=pending']"
       assert_no_match(/Approve/, response.body)
     end
 
-    test "approving from the preview charges once and lands in the queue" do
+    test "approving from the preview charges once and returns to the Create form" do
       stub_video do
         post "/app/import_requests",
              params: { url: CANONICAL, clip_language: "Spanish", translation_language: "English" },
@@ -197,6 +199,8 @@ module App
       end
 
       assert_match %r{/app/import_requests}, response.location
+      get response.location, headers: NATIVE
+      assert_select "h1", text: "Add a video"
       assert_equal 2, @user.reload.credit_balance
       assert @user.import_requests.sole.charged?
     end

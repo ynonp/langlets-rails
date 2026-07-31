@@ -201,9 +201,28 @@ en:
         first_run_library: "Jump right in"
         first_run_create: "Or import any YouTube / TikTok video ›"
     library:
+      filters:
+        label: "Filter library"
+        all: "All"
+        pending: "Pending"
+        failed: "Failed"
+        my_imports: "My imports"
+        playlists: "Playlists"
+      import_card:
+        creating: "Creating"
+        failed: "Failed"
+        queued: "Queued — up next"
+        failed_detail: "Import failed — credit refunded"
       show:
         title: "Library"
+        eyebrow: "Learn from any video"
         description: "Every video the community has turned into lessons."
+        search: "Search titles, channels, or video links"
+        empty: "No library items match this filter."
+    web_menu:
+      label: "Main navigation"
+      library: "Library"
+      create: "Create"
     import_requests:
       index:
         # `title` and `empty` are the browser wording; the `native_*` keys are
@@ -228,6 +247,7 @@ en:
         page_title: "Add a video"
         title: "Add a video"
         credits_subtitle: "%{credits} — each import uses 1."
+        share_hint: "You can also share a YouTube or TikTok video directly to Langlets from its Share menu."
         video_language: "Video language"
         paste_placeholder: "Paste a YouTube or TikTok link"
         url_hint: "Works with youtube.com and youtu.be links, tiktok.com posts and share links, or a YouTube video ID"
@@ -243,6 +263,7 @@ en:
         already_importing: "Already importing."
         view_in_queue: "View in queue"
         view_in_create: "View in Create"
+        view_in_library: "View in Library"
   onboarding:
     welcome:
       eyebrow: "Welcome to Langlets"

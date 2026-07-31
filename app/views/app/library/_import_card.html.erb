@@ -1,0 +1,52 @@
+<% web = local_assigns.fetch(:web, false) %>
+
+<article data-import-request-status="<%= import_request.status %>"
+         class="<%= web ? 'overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900' : 'app-hairline overflow-hidden rounded-app-card bg-app-card' %>">
+  <div class="relative">
+    <% if import_request.thumbnail_url.present? %>
+      <%= image_tag import_request.thumbnail_url, alt: "", loading: "lazy",
+                    class: "aspect-video w-full object-cover #{web ? 'bg-gray-100 dark:bg-gray-800' : 'bg-app-inset'}" %>
+    <% else %>
+      <div class="flex aspect-video w-full items-center justify-center <%= web ? 'bg-gray-100 text-gray-400 dark:bg-gray-800' : 'bg-app-inset text-app-text-3' %>">
+        <%= app_icon "clock", class: "h-7 w-7" %>
+      </div>
+    <% end %>
+    <span class="absolute left-3 top-3 rounded-full bg-black/75 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur">
+      <%= t("app.library.import_card.creating") if import_request.active? %>
+      <%= t("app.library.import_card.failed") if import_request.failed? %>
+    </span>
+  </div>
+
+  <div class="<%= web ? 'p-4' : 'px-3 pb-3 pt-2.5' %>">
+    <h2 class="app-clamp-2 min-h-[40px] font-extrabold leading-tight <%= web ? 'text-base' : 'text-[13px]' %>">
+      <%= import_request.title.presence || import_request.youtube_url %>
+    </h2>
+
+    <% if import_request.active? %>
+      <div class="<%= web ? 'mt-4 h-2 bg-gray-100 dark:bg-gray-800' : 'mt-3 h-[6px] bg-white/10' %> overflow-hidden rounded-full">
+        <div class="h-full rounded-full bg-app-accent transition-[width] duration-500"
+             style="width: <%= import_request.display_percent %>%"></div>
+      </div>
+      <div class="mt-2 flex items-center justify-between gap-2">
+        <span class="truncate text-xs font-bold text-app-accent"><%= import_request.queued? ? t("app.library.import_card.queued") : import_request.stage_label %></span>
+        <span class="<%= web ? 'text-gray-500 dark:text-gray-400' : 'text-app-text-3' %> text-xs"><%= import_request.display_percent %>%</span>
+      </div>
+    <% else %>
+      <div class="mt-3 flex items-center justify-between gap-2">
+        <p class="text-xs font-bold text-red-500"><%= t("app.library.import_card.failed_detail") %></p>
+        <% tooltip_id = dom_id(import_request, :failed_help) %>
+        <span class="group relative shrink-0">
+          <button type="button" class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300"
+                  aria-label="<%= t("app.import_requests.index.failed_help_label") %>"
+                  aria-describedby="<%= tooltip_id %>">
+            <%= app_icon "info", class: "h-4 w-4" %>
+          </button>
+          <span id="<%= tooltip_id %>" role="tooltip"
+                class="pointer-events-none invisible absolute bottom-full end-0 z-20 mb-2 w-64 rounded-xl bg-gray-950 px-3 py-2 text-start text-xs font-medium leading-relaxed text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <%= t("app.import_requests.index.failed_help") %>
+          </span>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</article>

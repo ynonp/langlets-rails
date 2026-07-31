@@ -4,31 +4,14 @@
 <% end %>
 
 <div class="min-h-screen bg-[#FAF6EF] text-[#1E1B16] [font-family:'Instrument_Sans',ui-sans-serif,system-ui,sans-serif]">
-  <header class="border-b border-[#E4DCCC]">
-    <div class="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 px-5 py-4 sm:px-10 sm:py-5">
-      <%= link_to root_path, class: "flex items-baseline gap-2", aria: { label: "Langlets home" } do %>
-        <span class="text-[26px] font-extrabold tracking-[-0.02em] [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">langlets</span>
-        <span class="h-2 w-2 -translate-y-0.5 rounded-full bg-[#C4451C]"></span>
-      <% end %>
-      <%= render "shared/user_menu",
-                 avatar_type: :initial,
-                 menu_item_class: "block px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#F2EADB]",
-                 review_button_class: "w-full px-4 py-3 text-left text-sm font-semibold text-[#1E1B16] hover:bg-[#F2EADB]",
-                 dropdown_class: "absolute right-0 z-50 mt-2 w-56 overflow-hidden rounded-2xl border border-[#E4DCCC] bg-[#FFFDF8] shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150",
-                 divider_class: "border-t border-[#E4DCCC]" %>
-    </div>
-  </header>
+  <%= render "app/shared/web_top_menu", active: :create %>
 
   <div data-testid="web-add-video"
        class="mx-auto grid w-full max-w-[1180px] gap-8 px-5 py-8 sm:px-10 sm:py-14 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14"
        data-controller="add-video"
        data-add-video-resolve-url-value="<%= resolve_app_import_requests_path %>">
     <section class="min-w-0">
-      <%= link_to app_import_requests_path, class: "inline-flex items-center text-sm font-semibold text-[#55503F] hover:text-[#C4451C]" do %>
-        <span aria-hidden="true" class="me-2">←</span> Back to queue
-      <% end %>
-
-      <p class="mt-8 text-sm font-bold uppercase tracking-[0.14em] text-[#C4451C]">Create a lesson</p>
+      <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#C4451C]">Create a lesson</p>
       <h1 class="mt-2 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= t("app.import_requests.new.title") %></h1>
       <p class="mt-4 max-w-2xl text-base leading-relaxed text-[#55503F]">
         Paste any public YouTube or TikTok video. We’ll build a translated transcript and vocabulary practice from it.

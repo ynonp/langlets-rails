@@ -9,6 +9,7 @@ module App
     before_action :authenticate_user!
     before_action :require_native_app
     before_action :set_queue_badge_count
+    before_action :set_daily_vocab_language
 
     private
 
@@ -37,6 +38,11 @@ module App
     # The Queue tab's badge — active imports, on every screen.
     def set_queue_badge_count
       @queue_badge_count = current_user.import_requests.active.count
+    end
+
+    def set_daily_vocab_language
+      @daily_vocab_language = current_language_code if
+        current_user.daily_vocab_review_available?(current_language_code)
     end
 
     # Whether the app should put up the iOS notification prompt on this page load.

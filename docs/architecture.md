@@ -355,12 +355,13 @@ URL. Text input is debounced for 300 ms; content and language pills submit
 immediately. Both kinds of pills share one unlabeled, wrapping row and use the
 same rounded chip treatment as the homepage language filters. The page heading
 is "Start A Language Practice"; navigation is provided by the Langlets brand
-link without a separate back-home action. All interactive requests ask for Turbo Streams and replace only
+link without a separate back-home action. Signed-in navigation also exposes an
+"Add A Video" link to the shared Create flow. All interactive requests ask for Turbo Streams and replace only
 the results/count/pagination region, while an ordinary GET remains the
 no-JavaScript fallback. `search` matches course/localized course names or
-playlist names/descriptions. The `types[]` and `languages[]` pills are
-multi-select: no selection means all, selected languages combine with OR, and
-selecting one content type excludes the other. The result count and
+playlist names/descriptions. Languages are multi-select and combine with OR.
+Playlists is the only content-type pill: unchecked shows courses and playlists
+together, while checked shows playlists only. The result count and
 "Clear Search" action appear only when text search is active; clearing text
 preserves pill selections. Playlists follow `Playlist.visible_to`, so anonymous
 visitors see published system playlists while signed-in visitors additionally
@@ -1562,9 +1563,9 @@ Two more things to know before touching this:
 
 #### The app screens (`/app`)
 
-Home, Library, Queue, Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, Library, and Credits are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. `App::ImportRequestsController` skips that presentation gate so authenticated web users can use Queue and Add Video. The shared user menu always links to Queue, including at a zero credit balance, so existing and failed imports remain reachable.
+Home, mobile Library, Create/Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, `/app/library`, and Credits are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. `App::ImportRequestsController` skips that presentation gate so authenticated browsers can use Create/Add Video. The web Library is `/gallery`, and the shared authenticated web menu links to Gallery and Create.
 
-**`/app/import_requests` is called "Queue" on the web and "Create" in the native app.** One controller, one set of records, two names — the browser screen is a status list of imports, while the native tab is where a user goes *to make* a langlet. The split lives entirely in the locale file: `app.import_requests.index.title`/`empty` are the web strings, and `native_title` ("Create"), `created_heading` ("My Created Langlets"), `native_empty` and `add_new` are the native ones. Native's already-importing preview links with `view_in_create`; the web preview keeps `view_in_queue`. Internal identifiers (`#queue`, `queue_update.turbo_stream.erb`, `@queue_badge_count`, `poll_controller`) still say queue — the polling contract is shared with the web view, so renaming them would fork it.
+**`/app/import_requests` is the Create entry point on both platforms.** In the native app the tab root renders the Add-a-video form directly; there is no intermediate status list or Add New button. A browser GET redirects to `/app/import_requests/new`, which renders the responsive web variant of the same form. Import status lives in Library: `/app/library` on mobile and `/gallery` on web. The old Queue templates and polling controller remain in the tree but are no longer rendered by the Create root.
 
 The web course UI exposes the shared Queue/Add Video flow through the user menu. Signed-in native users at the web root are redirected to `app_home_path`. That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
 On the web Add Video screen, a **Buy More** PayPal form beside the available
@@ -1577,9 +1578,9 @@ The iOS app uses `AppTabBarController`, a native `UITabBarController` with one H
 
 The native tab bar starts hidden and is revealed only after the authenticated app layout reports its active-import badge through the bridge (`setCreateBadge`); entering authentication or completing sign-out hides it again, so login screens never expose app navigation. Authentication and language changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
 
-**A course opened from the Queue lands on Home, not on the Queue's stack.** The Queue is a staging area for imports, so its back arrow is the wrong destination for a course that has already finished importing. `SceneDelegate` intercepts any `/courses/…` proposal originating from the Queue navigator, clears Home to its root, selects the Home tab and re-runs the proposal there, producing exactly the stack the user would have had by tapping through from Home. Courses opened from Home or the Library are untouched — back correctly leads to whichever of those the user came from.
+**A course opened from the Create navigator lands on Home, not on Create's stack.** `SceneDelegate` intercepts any `/courses/…` proposal originating from that navigator, clears Home to its root, selects the Home tab and re-runs the proposal there. Courses opened from Home or the Library are untouched.
 
-The handoff also unwinds the Queue's own stack on the way out, which is what keeps **Add a video** behaving like a form. A form is spent once submitted and must not remain under the back arrow. An ordinary import gets that for free — `redirect_to_result` sends it to the Queue root, and the tab-root rule turns that into a `clearAll` — but a **deduped** import redirects straight to `course_path` and never passes through that rule. The same applies to the "already in your Library" preview, which offers a course link instead of a submit button. Both are unwound by `openFromHome(_:leaving:)`, which no-ops when the course was tapped on the Queue root and there is nothing to unwind.
+The handoff also unwinds Create's own stack on the way out. A deduped import redirects straight to `course_path`; `openFromHome(_:leaving:)` prevents the spent form from remaining under the back arrow. An already-importing preview links to the Pending filter in Library instead of back to Create, because Create now contains only the form.
 
 This rule **cannot** be expressed in path configuration, and that is a structural property worth remembering rather than a limitation to work around: path configuration is a function of the URL alone, and `/courses/:id` is the same URL from all three tabs. `NavigatorDelegate.handle(proposal:from:)` is the only place the *source* of a visit is known, so any rule of the form "this destination behaves differently depending on where it was reached from" belongs there. The cross-tab root interception above uses the same lever.
 
@@ -1587,7 +1588,7 @@ The Home header profile menu is an HTML `details` element managed by `profile_me
 
 The native tab controller, navigator roots and non-opaque webviews all use the app background token (`#0A1521`). A lazily loaded tab can therefore expose its empty native surface while the first request is in flight without producing a white flash before the web page renders.
 
-**There is no floating "+" on Home, Library or Create.** Creating a langlet is the Create tab's entire job, so it owns the single entry point: an inline full-width **Add New** button below the list. Home has no paste box either — it is for what the user already has. `app/views/app/shared/_fab.html.erb` survives only for the Started-videos screen; do not reintroduce it on the three tab roots. The native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Create item. The native web views extend beneath `UITabBar`, so every scrolling app screen uses `app-scroll-pad` to reserve the full tab-bar height plus the bottom safe-area inset; the inset by itself only clears the home indicator. The server gates native-only `/app` screens on the `LangletsNative` user-agent marker; Queue and Add Video are intentionally shared with authenticated browsers. Tab-root paths deliberately have no `replace_root` path-configuration rule because cross-tab routing is native; modal routes retain their existing rules.
+**There is no floating "+" on Home, Library or Create.** Creating a langlet is the Create tab's entire job, so its root is the form itself. Home has no paste box. `app/views/app/shared/_fab.html.erb` survives only for the Started-videos screen; do not reintroduce it on the three tab roots. The native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Create item. The native web views extend beneath `UITabBar`, so every scrolling app screen uses `app-scroll-pad` to reserve the full tab-bar height plus the bottom safe-area inset.
 
 - **Home is compact and action-first** (`App::HomeController#index`), one layout for every account state bar one conditional first-run affordance (see below). Product explanation lives in onboarding rather than on this repeat-use screen. Home no longer carries a YouTube/TikTok paste control — that whole flow belongs to the Create tab, so Home does not compete with it. (The old `_paste_cta` partial and its `app.home.paste_cta.*` strings are gone; `/app/import_requests/new?url=…` still auto-resolves a preview via `add_video_controller#connect`, which is how the share extension and any deep link enter the Add screen.) Home is: an optional "just imported" hero, the two most recently practiced unfinished courses under a muted **"Continue"** heading, and four compact Library suggestions in a **2×2 grid** with neutral navigation/action styling. Personal playlists follow when present. The started-videos screen uses non-null `Enrollment#last_practiced_at` as the canonical started signal and includes completed courses. Suggestions are the **newest** published courses in the learning language that the user has not enrolled in — `library_picks` orders by `created_at DESC`, not `RANDOM()`. Two reasons it is no longer random: the first-run subhead promises "any recently created Langlet", which random picks would make untrue, and a grid that reshuffles on every visit gives a returning user nothing to recognize. Playlists include empty ones but exclude system and other users' playlists.
 
@@ -1595,26 +1596,70 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
 
   The library section's **"See all ›" is accent-coloured in both states**, matching the first-run Create link: they are the two ways off that section and should read as the same kind of affordance. The "See all" in **Continue** stays muted (`text-app-text-2`) — it sits under a muted uppercase heading, where accent would outweigh the in-progress courses it points at.
 
-  It points at the Create tab root (`/app/import_requests`), not `/new`: that screen explains both entry points and the price, which is what a first-run user needs ahead of a paste field. Per the tab-root note above this is a plain push with a back arrow, not a tab switch. Deliberately **not** a permanent intro paragraph at the top of Home — `onboarding/welcome` already says what the product does one tap earlier, and the marketing root (`courses#index`) carries the same pitch as its `h1` plus lead, so a third copy would be a standing tax on every returning user for a one-time need. Do not add one. The Hebrew `first_run_create` string carries a `‹` because the chevron flips under RTL; keep the arrow in the locale file rather than the view.
+  It points at the Create tab root (`/app/import_requests`), which is the Add-a-video form itself. Per the tab-root note above this is a plain push with a back arrow, not a tab switch. Deliberately **not** a permanent intro paragraph at the top of Home — `onboarding/welcome` already says what the product does one tap earlier. The Hebrew `first_run_create` string carries a `‹` because the chevron flips under RTL; keep the arrow in the locale file rather than the view.
 - Native course thumbnails use the same `course_youtube_video_id` fallback as the web cards and request YouTube's `hqdefault` image. This matters for legacy courses whose `youtube_video_id` column is blank but whose `main_media_url` still contains a valid ID; using the column directly produces an empty `/vi//…` image URL.
 - **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.
 - Tabs use `presentation: replace_root`; the sheets use `context: modal, modal_style: medium`, which maps onto a real `UISheetPresentationController` detent with no Swift. The sheets are **full pages, not Turbo Frames** — a frame overlay inside the web view fights the native modal and you get two competing dismissal gestures.
 - Course lesson sheets use `LessonViewController`, a `HotwireWebViewController` subclass selected by `SceneDelegate` for `/courses/:course/lessons/:lesson` and its activity URLs. It adds a native top-right X that dismisses the whole lesson sheet; this is deliberately a close action rather than back navigation between activities.
-- The Queue **polls** (`poll_controller.js`, 3s, stops when nothing is active). See ImportRequest above for why not Action Cable. Each tick fetches `App::ImportRequestsController#index` as a Turbo Stream (`Accept: text/vnd.turbo-stream.html`) and patches only the status text, the credits pill, the queue list and the footer note in place via `Turbo.renderStreamMessage` — no full-page visit, no lost scroll position. `index.turbo_stream.erb` and the HTML view share the `_status_text`, `_credits_pill`, `_queue` and `_footer_note` partials so the two formats can't drift. **`_status_text` and `_footer_note` render an always-present wrapper (`#queue-status-text`, `#queue-footer-note`, both `class="contents"`) with content only while something is active.** The wrapper is not decoration: `turbo_stream.replace` needs its target in the DOM, and an idle screen that omits the element cannot be patched when an import appears under it — which is exactly what the share extension does while the app is backgrounded, since `poll_controller` also refreshes on `visibilitychange`. `contents` keeps the empty wrapper from occupying a line box. If you make either line conditional, keep the wrapper unconditional. The credits pill rides along because a credit is spent in the pushed Add Video screen, which would otherwise leave the balance behind it one credit high.
-- Queue presentation is platform-specific. Hotwire Native renders the dark `app` layout and the compact swipe-action partials directly under `app/import_requests`, headed "Create" with the credits pill in the corner beside that title, a two-sentence intro (`app.import_requests.index.intro`) naming both ways in — sharing a YouTube or TikTok video to the app via the `LangletsShare` extension, or Add New — plus the ~3 minutes and 1 credit each langlet costs, then a "My Created Langlets" section over the list and the Add New button under it (the live status line under that heading appears **only while imports are in flight** — the idle "Nothing importing right now." was removed, since the empty card directly below already says the queue is empty; the web Queue under `app/import_requests/web` still shows its own copy of that idle line) (outside the polled `#queue` container, so a poll never redraws it — and the empty card carries only the "You haven't created any langlets yet" message, since that button is the call to action for both states); normal browsers render the `application` layout and the responsive partial set under `app/import_requests/web`. Both variants use the same controller actions, routes, import records, and polling contract, while each has its own HTML and Turbo Stream templates so web changes cannot break native navigation or gestures. The credits pill (`_credits_pill.html.erb`, `#credits-pill`) is the **only** credits pill in the app. Home's header (`app/shared/_header`) used to carry one and no longer does: the balance belongs on the screen that spends it, and on Home it was a second quiet ask on a screen with nothing to buy. Do not reintroduce it there. This pill inherits that one's styling a size up. Credits are **ambient status, not body copy**: a bolt glyph and the number in the top corner (top-left under `dir="rtl"`, which `justify-between` handles), the Duolingo-gems pattern, deliberately out of the reading flow. It was briefly a full-width row under the intro, which put a price tag inside the screen's first paragraph. The digit is the whole visible label, so the wording ("Credits remaining: N. Tap to add more") lives in `aria-label` and a test pins it there. Tapping opens `/app/credits`, the medium modal holding the Apple in-app purchase ($10 · 20 credits). After a purchase that modal reloads itself, not the tab under it, so the pill behind it stays stale until the next poll tick or a pull-to-refresh.
-- The desktop Queue constrains `#queue`, its one-column grid, and every card
-  with `min-width: 0` and `width: 100%`. This is necessary even though the page
-  itself has a maximum width: CSS Grid items otherwise use an automatic
-  min-width, and a long provider title can establish an intrinsic track wider
-  than the centered container, pushing every card off the right edge. Titles
-  remain single-line and truncated inside that fixed track.
-- Add Video is platform-specific at the view layer too. Hotwire Native keeps the compact pushed-screen form and result partials directly under `app/import_requests`; browsers use the responsive two-column page and result partials under `app/import_requests/web`. The browser page shares the public homepage's fixed warm-cream, ink, and coral palette plus its Bricolage Grotesque/Instrument Sans typography, and deliberately has no light/dark theme switcher. Both variants resolve previews through the shared `add_video_result` Turbo Frame and the same controller/service code. The web approval form opts out of Turbo so its POST redirect replaces the whole document with Queue; native keeps the existing `_top` Turbo-frame submission handled by its navigator.
+- Create presentation is platform-specific only in styling. Hotwire Native renders the compact dark form at `/app/import_requests`; browsers redirect that route to the responsive two-column form at `/app/import_requests/new`. Both resolve and submit through the same controller and services.
+- Add Video is platform-specific at the view layer too. Hotwire Native keeps the compact pushed-screen form and result partials directly under `app/import_requests`; browsers use the responsive two-column page and result partials under `app/import_requests/web`. The browser page shares the public homepage's fixed warm-cream, ink, and coral palette plus its Bricolage Grotesque/Instrument Sans typography. Both variants resolve previews through the shared `add_video_result` Turbo Frame and the same controller/service code. The web approval form opts out of Turbo so its POST redirect replaces the whole document and returns through the Create entry point; native keeps the existing `_top` Turbo-frame submission handled by its navigator.
+  The native form explicitly tells users that, instead of copying a link, they
+  can share a YouTube or TikTok video directly to Langlets from the provider's
+  share menu.
   The shared controller never reads `navigator.clipboard`; users paste into the
   ordinary URL field themselves, so opening either variant cannot trigger a
   browser or native pasteboard permission prompt.
 - Screens are gated by `require_language_for_native_app` too: a signed-in native user with no `?lang=` is sent to `/onboarding/welcome` before any app screen is reachable.
 
 Deliberately **not** built from the mockup, because both would be controls that do nothing: the Library's category chips (nothing populates the taxonomy until the classifier lands) and the Add sheet's "Search YouTube" segment (needs the Data API).
+
+The two Library surfaces are `/app/library` for mobile and `/gallery` for web.
+They have separate controllers and presentation, but the same ImportRequest
+filter semantics. Published cards still come only from
+`ChannelContentQuery`; showing an ImportRequest never grants access to a Course.
+Both surfaces render All, Pending, Failed, and My imports pills:
+
+- All shows visible published courses plus the signed-in user's active imports.
+- Pending shows only that user's queued/importing requests.
+- Failed shows only that user's failed requests.
+- My imports shows visible published courses referenced by that user's ready
+  ImportRequests, plus their queued, importing, and failed requests.
+
+Pending, Failed, and My imports are only rendered when the current user has at
+least one matching ImportRequest; All remains the stable default. A stale URL
+that names a now-empty filter falls back to All.
+
+Queued/importing requests are course-shaped cards with the provider thumbnail
+when available, a status label, and the denormalized progress percentage.
+Failed requests use the same footprint and retain the human-review explanation.
+Ready imports are not rendered twice: once their Course is visible, the normal
+Channel-backed course card represents it. The filter and search query are GET
+parameters, and search applies independently to both authorized course content
+and the current user's displayed requests. Gallery retains its existing Course,
+Playlist, language, and search filters; ImportRequest status is an additional
+single-select dimension. Its Turbo Stream result replacement redraws import and
+published cards together. The web Add Video header links Library to `/gallery`
+and Create to `/app/import_requests`.
+
+Mobile Library additionally derives one language pill per learning language
+present in the complete `ChannelContentQuery` result visible to that user. It
+does not derive the pills from the current 60-card render limit, and inaccessible
+Channel content cannot create a pill. All shows authorized courses across those
+languages; choosing a language filters both published cards and the user's
+displayed active imports. A Playlists pill appears only when the current user
+owns at least one playlist and renders those personal playlists using the same
+rows as Home. Search and the selected language/status are preserved in pill and
+form URLs. The pills, selected state, and result list share the
+`#library-results` Turbo Frame. Pill links and the search form target that frame,
+so filtering replaces only the Library controls/results and does not produce a
+full-page or Hotwire Native navigation event.
+
+Empty mobile pills are omitted. Language pills already come only from visible
+Channel content; Pending requires an active request, Failed requires a failed
+request, My imports requires at least one non-cancelled request, and Playlists
+requires a personal playlist. A URL naming a filter that has since become empty
+falls back to All rather than leaving a selected pill with no corresponding
+option.
 
 #### Onboarding Flow
 1. **Mandatory Authentication**: The server enforces authentication for all native app requests via `ApplicationController#require_authentication_for_native_app`. Unauthenticated native app users are redirected to the sign-in page.
@@ -2083,8 +2128,9 @@ Daily vocabulary invitations use `User#daily_vocab_review_available?`. The user
 must have a saved span whose phrase is in the current learning language, and
 must not have a `LessonUser` completion for a review lesson pinned to that
 language during `Time.zone.now.all_day`. Merely generating or starting a review
-does not dismiss the invitation. Native Home renders the invitation directly
-below its Langlets header. The web homepage and gallery put a highlighted
+does not dismiss the invitation. `App::BaseController` resolves the invitation
+once for every native app request, and the shared card appears at the top of all
+three tab roots: Home, Library, and Create. The web homepage and gallery put a highlighted
 "Daily Vocab Practice" action first in their navigation and now both render the
 shared authenticated user menu. Web prefers the `?lang=` learning language; on
 an unfiltered URL it uses the first saved-vocabulary language that is still due

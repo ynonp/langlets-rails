@@ -62,11 +62,12 @@ module App
       end
     end
 
-    test "a web browser can open Queue and Add Video" do
-      [ "/app/import_requests", "/app/import_requests/new" ].each do |path|
-        get path, headers: WEB
-        assert_response :success, "#{path} should be shared with the web app"
-      end
+    test "a web browser can open Add Video" do
+      get "/app/import_requests", headers: WEB
+      assert_redirected_to new_app_import_request_path
+
+      get "/app/import_requests/new", headers: WEB
+      assert_response :success
     end
 
     test "a web browser cannot open native Credits" do
@@ -75,7 +76,7 @@ module App
       assert_redirected_to root_path
     end
 
-    test "the web queue uses its own responsive application view" do
+    test "the web Create tab opens Add Video instead of a dedicated queue" do
       request = @user.import_requests.create!(
         youtube_url: "https://www.youtube.com/watch?v=webqueueaaa", youtube_video_id: "webqueueaaa",
         clip_language: "Spanish", translation_language: "English",
@@ -85,97 +86,58 @@ module App
 
       get app_import_requests_path, headers: WEB
 
-      assert_response :success
-      assert_select "html[data-theme]"
-      assert_select "meta[name='view-transition'][content='same-origin']", count: 1
-      assert_select "header a[href=?]", root_path, text: /Langlets/
-      assert_select "[data-testid='web-queue'].max-w-5xl"
-      assert_select "#queue.min-w-0.w-full"
-      assert_select "#queue-list.min-w-0.w-full"
-      assert_select "article#wrapper_import_request_#{request.id}.min-w-0.w-full" do
-        assert_select ".sm\\:flex-row"
-        assert_select "form[action=?]", app_import_request_path(request)
-      end
-      assert_select "[data-controller='swipe-to-delete']", count: 0
-      assert_select "a[href=?]", new_app_import_request_path, text: /Add a video/
+      assert_redirected_to new_app_import_request_path
+      follow_redirect!
+      assert_select "[data-testid='web-add-video']"
+      assert_select "[data-import-request-status]", count: 0
+      assert_select "nav a[href=?][aria-current=page]", app_import_requests_path, text: "Create"
     end
 
-    test "the native queue keeps the native-only presentation" do
+    test "native Library uses the same filters and course-shaped progress cards" do
       @user.import_requests.create!(
-        youtube_url: "https://www.youtube.com/watch?v=nativequeuea", youtube_video_id: "nativequeuea",
-        clip_language: "Spanish", translation_language: "English", title: "Native queue item",
-        status: :ready
+        youtube_url: "https://www.youtube.com/watch?v=nativelib01", youtube_video_id: "nativelib01",
+        clip_language: "Spanish", translation_language: "English",
+        title: "Native Library Import", status: :queued
       )
 
-      get app_import_requests_path, headers: NATIVE
+      get app_library_path, headers: NATIVE
 
       assert_response :success
-      assert_select "body[data-native-tabs]"
-      assert_select "[data-controller='swipe-to-delete']"
-      assert_select "[data-testid='web-queue']", count: 0
+      assert_select "a[href=?]", app_library_path(filter: "pending"), text: "Pending"
+      assert_select "a[href=?]", app_library_path(filter: "my_imports"), text: "My imports"
+      assert_select "a", text: "Failed", count: 0
+      assert_select "[data-import-request-status=queued]", text: /Native Library Import/
+      assert_select "[style='width: 0%']"
     end
 
-    # The native screen is "Create": the user's own langlets, then one Add New
-    # button in the flow. The web queue keeps its own wording.
-    test "Create lists the user's langlets above an Add New button" do
-      @user.import_requests.create!(
-        youtube_url: "https://www.youtube.com/watch?v=createdaaaa", youtube_video_id: "createdaaaa",
-        clip_language: "Spanish", translation_language: "English", title: "Created langlet",
-        status: :ready
-      )
-
-      get app_import_requests_path, headers: NATIVE
+    test "the Library hides import status pills with no matching requests" do
+      get app_library_path, headers: NATIVE
 
       assert_response :success
-      assert_select "h1", text: "Create"
-      assert_select "h2", text: "My Created Langlets"
-      assert_match "Created langlet", response.body
-      assert_select "a[href=?]", new_app_import_request_path, text: /Add New/
-      assert_select ".app-fab-offset", count: 0
+      assert_select "a", text: "Pending", count: 0
+      assert_select "a", text: "Failed", count: 0
+      assert_select "a", text: "My imports", count: 0
+
+      get app_library_path(filter: "failed"), headers: NATIVE
+
+      assert_response :success
+      assert_select "a[aria-current=page]", text: "All"
+      assert_select "a", text: "Failed", count: 0
     end
 
-    # The intro is the only place either entry point is named, and the corner
-    # pill is the only place the balance shows on this tab — the tab roots get no
-    # app header, so the header's credits pill isn't here to carry it. The pill
-    # shows the digit alone, so the wording has to survive in its aria-label.
-    test "Create explains both entry points and pills the balance to Credits" do
+    test "the native Create tab directly renders the Add a video form" do
       @user.update!(credit_balance: 7)
 
       get app_import_requests_path, headers: NATIVE
 
       assert_response :success
-      assert_match "sharing a YouTube or TikTok video to the app", response.body
-      assert_match "costs 1 credit", response.body
-      assert_select "a#credits-pill[href=?][aria-label=?]",
-                    app_credits_path,
-                    "Credits remaining: 7. Tap to add more"
-      assert_select "a#credits-pill", text: /7/
-    end
-
-    # Spending happens in the pushed Add Video screen, so the poll refreshes the
-    # balance along with the queue rather than leaving it a credit high.
-    test "the queue poll patches the credits pill" do
-      @user.update!(credit_balance: 3)
-      @user.import_requests.create!(
-        youtube_url: "https://www.youtube.com/watch?v=pollcreditx", youtube_video_id: "pollcreditx",
-        clip_language: "Spanish", translation_language: "English", title: "In flight",
-        status: :queued, charged: true
-      )
-
-      get app_import_requests_path, headers: NATIVE, as: :turbo_stream
-
-      assert_response :success
-      assert_match "turbo-stream", response.media_type
-      assert_select "turbo-stream[action='replace'][target='credits-pill']"
-      assert_match "Credits remaining: 3. Tap to add more", response.body
-    end
-
-    test "Create with nothing created says so and still offers Add New" do
-      get app_import_requests_path, headers: NATIVE
-
-      assert_response :success
-      assert_select "#queue-empty", text: /You haven't created any langlets yet/
-      assert_select "a[href=?]", new_app_import_request_path, text: /Add New/
+      assert_select "h1", text: "Add a video"
+      assert_select ".app-scroll-pad[data-controller='add-video']"
+      assert_select "input[data-add-video-target=input]"
+      assert_match "7 credits left", response.body
+      assert_match "share a YouTube or TikTok video directly to Langlets", response.body
+      assert_select "#queue", count: 0
+      assert_select "a[href=?]", new_app_import_request_path, text: /Add New/, count: 0
     end
 
     # The balance lives on the tab that spends it. Home is for what the user
@@ -534,25 +496,27 @@ module App
       end
     end
 
-    test "Home invites vocabulary review until today's language review is completed" do
+    test "all three tabs invite vocabulary review until today's language review is completed" do
       phrase = create_translated_phrase!(medium: @medium, l1: @spanish, l2: @english,
                               text_l1: "Hola", text_l2: "Hello", timestamp: "00:00:01")
       token = create_translated_token!(phrase: phrase, l1_start_index: 0, l1_end_index: 3,
                                        index_type: :character_index, translation: "Hello")
       @user.saved_phrase_tokens << token
 
-      get "/app", headers: NATIVE
-
-      assert_response :success
-      assert_select "[data-testid='daily-vocab-banner']"
+      [app_home_path, app_library_path, app_import_requests_path].each do |path|
+        get path, headers: NATIVE
+        assert_response :success
+        assert_select "[data-testid='daily-vocab-banner']", count: 1
+      end
 
       review = ReviewLessonBuilder.new(@user, language_code: @spanish.iso_name).build!
       LessonUser.create!(user: @user, lesson: review)
 
-      get "/app", headers: NATIVE
-
-      assert_response :success
-      assert_select "[data-testid='daily-vocab-banner']", count: 0
+      [app_home_path, app_library_path, app_import_requests_path].each do |path|
+        get path, headers: NATIVE
+        assert_response :success
+        assert_select "[data-testid='daily-vocab-banner']", count: 0
+      end
     end
 
     test "the queue badge counts only active imports" do
@@ -568,66 +532,6 @@ module App
 
       assert_response :success
       assert_equal 1, controller.view_assigns["queue_badge_count"]
-    end
-
-    # Every card state has its own markup. Render all of them so state-specific
-    # actions and guidance stay covered.
-    test "the queue renders every state" do
-      %w[queued importing ready failed canceled].each_with_index do |status, i|
-        @user.import_requests.create!(
-          youtube_url: "https://www.youtube.com/watch?v=vid#{i}aaaaaaa",
-          youtube_video_id: "vid#{i}aaaaaaa",
-          clip_language: "Spanish", translation_language: "English",
-          title: "Import #{status}", status: status, progress_percent: (status == "importing" ? 68 : 0),
-          failure_reason: (status == "failed" ? "Transcription only covered 12% of the video" : nil),
-          charged: true, refunded: status == "failed"
-        )
-      end
-
-      get "/app/import_requests", headers: NATIVE
-
-      assert_response :success
-      assert_match "Importing · 68%", response.body
-      assert_match "Queued — up next", response.body
-      assert_match "Ready", response.body
-      assert_match "Import failed — credit refunded", response.body
-      assert_match "Cancelled", response.body
-    end
-
-    test "a failed import explains the review process without retry and a queued one offers a cancel" do
-      failed = @user.import_requests.create!(
-        youtube_url: "https://www.youtube.com/watch?v=failedaaaaa", youtube_video_id: "failedaaaaa",
-        clip_language: "Spanish", translation_language: "English", title: "Broken",
-        status: :failed, charged: true, refunded: true
-      )
-      queued = @user.import_requests.create!(
-        youtube_url: "https://www.youtube.com/watch?v=queuedaaaaa", youtube_video_id: "queuedaaaaa",
-        clip_language: "Spanish", translation_language: "English", title: "Waiting",
-        status: :queued, charged: true
-      )
-
-      get "/app/import_requests", headers: NATIVE
-
-      assert_response :success
-      assert_select "form[action=?]", retry_app_import_request_path(failed), count: 0
-      assert_select "button[aria-describedby=?]", dom_id(failed, :failed_help)
-      assert_select "##{dom_id(failed, :failed_help)}[role='tooltip']", text: /human team is checking/
-      assert_select "form[action=?]", app_import_request_path(queued)
-    end
-
-    test "the web queue replaces failed import retry with the review tooltip" do
-      failed = @user.import_requests.create!(
-        youtube_url: "https://www.youtube.com/watch?v=failedwebbb", youtube_video_id: "failedwebbb",
-        clip_language: "Spanish", translation_language: "English", title: "Broken",
-        status: :failed, charged: true, refunded: true
-      )
-
-      get app_import_requests_path, headers: WEB
-
-      assert_response :success
-      assert_select "form[action=?]", retry_app_import_request_path(failed), count: 0
-      assert_select "button[aria-describedby=?]", dom_id(failed, :failed_help)
-      assert_select "##{dom_id(failed, :failed_help)}[role='tooltip']", text: /human team is checking/
     end
 
     test "cancelling a queued import refunds the credit" do
@@ -660,7 +564,7 @@ module App
       assert_not importing.refunded?
     end
 
-    test "the Library only lists courses in the language being learned" do
+    test "the Library derives language pills from visible courses and filters by them" do
       french = languages(:french)
       other_medium = Medium.create!(url: "https://www.youtube.com/watch?v=bbbbbbbbbbb",
                                     language: french)
@@ -668,11 +572,38 @@ module App
                      youtube_video_id: "bbbbbbbbbbb", language: french,
                      translation_language: @english, user: @user, status: :published)
 
-      get "/app/library?lang=es", headers: NATIVE
+      get app_library_path, headers: NATIVE
 
       assert_response :success
       assert_match "Despacito", response.body
-      assert_no_match "Bonjour", response.body
+      assert_match "Bonjour", response.body
+      assert_select "turbo-frame#library-results"
+      assert_select "a[href*='language=es'][data-turbo-frame='library-results']", text: /Spanish/
+      assert_select "a[href*='language=fr'][data-turbo-frame='library-results']", text: /French/
+      assert_select "form[data-turbo-frame='library-results']"
+
+      get app_library_path(language: french.iso_name), headers: NATIVE
+
+      assert_response :success
+      assert_match "Bonjour", response.body
+      assert_no_match "Despacito", response.body
+      assert_select "a[aria-current=page]", text: /French/
+    end
+
+    test "the Library offers Playlists only when the user has one" do
+      get app_library_path, headers: NATIVE
+      assert_select "a", text: "Playlists", count: 0
+
+      playlist = Playlist.create!(name: "Mobile Favorites", slug: "mobile-favorites", user: @user)
+      playlist.courses << @course
+
+      get app_library_path, headers: NATIVE
+      assert_select "a[href*='filter=playlists']", text: "Playlists"
+
+      get app_library_path(filter: "playlists"), headers: NATIVE
+      assert_response :success
+      assert_select "a[href=?]", playlist_path(playlist), text: /Mobile Favorites/
+      assert_select ".grid.grid-cols-2", count: 0
     end
 
     test "the Library search accepts a pasted link" do

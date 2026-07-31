@@ -1,0 +1,27 @@
+<article class="gallery-card gallery-import-card" data-import-request-status="<%= import_request.status %>">
+  <div class="gallery-import-image-wrap">
+    <% if import_request.thumbnail_url.present? %>
+      <%= image_tag import_request.thumbnail_url, alt: "", loading: "lazy", class: "gallery-card-image" %>
+    <% else %>
+      <div class="gallery-card-image gallery-card-placeholder"></div>
+    <% end %>
+    <span class="gallery-import-status"><%= import_request.failed? ? "Failed" : "Creating" %></span>
+  </div>
+
+  <div class="gallery-card-body">
+    <span class="gallery-card-kind">Import</span>
+    <h2 class="app-clamp-2"><%= import_request.title.presence || import_request.youtube_url %></h2>
+
+    <% if import_request.active? %>
+      <div class="gallery-progress" aria-label="<%= import_request.display_percent %>% complete">
+        <div class="gallery-progress-fill" style="width: <%= import_request.display_percent %>%"></div>
+      </div>
+      <div class="gallery-import-meta">
+        <span><%= import_request.queued? ? "Queued — up next" : import_request.stage_label %></span>
+        <span><%= import_request.display_percent %>%</span>
+      </div>
+    <% else %>
+      <p class="gallery-import-failed">Import failed — credit refunded</p>
+    <% end %>
+  </div>
+</article>

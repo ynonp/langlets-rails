@@ -42,8 +42,124 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     get gallery_url(lang: @language.iso_name)
 
     assert_response :success
+    assert_select "nav a[href='#{app_import_requests_path}']", text: "Add A Video"
     assert_select "[data-controller='profile-menu']", count: 1
     assert_select "a", text: "Profile"
+  end
+
+  test "signed-in gallery only shows import filter pills that contain langlets" do
+    sign_in @user
+    @user.import_requests.create!(
+      youtube_url: "https://www.youtube.com/watch?v=galleryrun1",
+      youtube_video_id: "galleryrun1",
+      clip_language: @language.english_name,
+      translation_language: "Spanish",
+      title: "Building in Gallery",
+      status: :importing,
+      progress_percent: 42
+    )
+
+    get gallery_url
+
+    assert_response :success
+    assert_select "label.gallery-pill", text: "Pending"
+    assert_select "label.gallery-pill", text: "My imports"
+    assert_select "label.gallery-pill", text: "Failed", count: 0
+    assert_select "[data-import-request-status=importing]", text: /Building in Gallery/
+    assert_select ".gallery-progress-fill[style='width: 42%']"
+  end
+
+  test "signed-in gallery hides all personal import pills when the user has no imports" do
+    sign_in @user
+
+    get gallery_url(imports: "failed")
+
+    assert_response :success
+    assert_select "label.gallery-pill", text: "All"
+    assert_select "label.gallery-pill", text: "Pending", count: 0
+    assert_select "label.gallery-pill", text: "Failed", count: 0
+    assert_select "label.gallery-pill", text: "My imports", count: 0
+    assert_select "input[name=imports][value='']", count: 1
+  end
+
+  test "pending and failed filters show only the selected current-user requests" do
+    sign_in @user
+    @user.import_requests.create!(
+      youtube_url: "https://www.youtube.com/watch?v=gallerywait",
+      youtube_video_id: "gallerywait",
+      clip_language: @language.english_name,
+      translation_language: "Spanish",
+      title: "Mine Pending",
+      status: :queued
+    )
+    @user.import_requests.create!(
+      youtube_url: "https://www.youtube.com/watch?v=galleryfail",
+      youtube_video_id: "galleryfail",
+      clip_language: @language.english_name,
+      translation_language: "Spanish",
+      title: "Mine Failed",
+      status: :failed
+    )
+    other = User.create!(email: "gallery-other@example.com", password: "password123", confirmed_at: Time.zone.now)
+    other.import_requests.create!(
+      youtube_url: "https://www.youtube.com/watch?v=otherfailed",
+      youtube_video_id: "otherfailed",
+      clip_language: @language.english_name,
+      translation_language: "Spanish",
+      title: "Someone Else Failed",
+      status: :failed
+    )
+    create_course("Ordinary Gallery Course", @language)
+
+    get gallery_url(imports: "failed")
+
+    assert_select "[data-import-request-status=failed]", count: 1, text: /Mine Failed/
+    assert_no_match "Mine Pending", response.body
+    assert_no_match "Someone Else Failed", response.body
+    assert_no_match "Ordinary Gallery Course", response.body
+
+    get gallery_url(imports: "pending")
+
+    assert_select "[data-import-request-status=queued]", count: 1, text: /Mine Pending/
+    assert_no_match "Mine Failed", response.body
+  end
+
+  test "my imports shows ready imported courses and unfinished request cards" do
+    sign_in @user
+    imported = create_course("My Ready Import", @language)
+    other_course = create_course("Not My Import", @language)
+    @user.import_requests.create!(
+      youtube_url: imported.main_media_url,
+      youtube_video_id: "myreadyvid1",
+      clip_language: @language.english_name,
+      translation_language: "Spanish",
+      title: imported.name,
+      status: :ready,
+      course: imported
+    )
+    @user.import_requests.create!(
+      youtube_url: "https://www.youtube.com/watch?v=myactivevid",
+      youtube_video_id: "myactivevid",
+      clip_language: @language.english_name,
+      translation_language: "Spanish",
+      title: "My Active Import",
+      status: :queued
+    )
+
+    get gallery_url(imports: "my_imports")
+
+    assert_select ".gallery-card h2", text: imported.name
+    assert_select "[data-import-request-status=queued]", text: /My Active Import/
+    assert_select ".gallery-card h2", text: other_course.name, count: 0
+  end
+
+  test "signed-out gallery does not expose personal import filters" do
+    get gallery_url(imports: "failed")
+
+    assert_response :success
+    assert_select "nav a", text: "Add A Video", count: 0
+    assert_select "input[name=imports]", count: 0
+    assert_select "[data-import-request-status]", count: 0
   end
 
   test "shows courses and playlists in one paginated grid" do
@@ -62,6 +178,8 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "Back home", count: 0
     assert_select ".gallery-pill-label", count: 0
     assert_select ".gallery-pills", count: 1
+    assert_select "label.gallery-pill", text: "Courses", count: 0
+    assert_select "label.gallery-pill", text: "Playlists", count: 1
   end
 
   test "filters by one selected content type and language" do
@@ -81,7 +199,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     assert_select ".gallery-card-kind", text: "Course", count: 0
   end
 
-  test "combines multiple content types and languages" do
+  test "ignores the removed courses content type parameter" do
     english_course = create_course("English Course", @language)
     french_course = create_course("French Course", @other_language)
     english_playlist = Playlist.create!(name: "English Playlist", slug: "multi-english", published: true)
@@ -90,7 +208,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     french_playlist.courses << french_course
 
     get gallery_url(
-      types: [ "courses", "playlists" ],
+      types: [ "courses" ],
       languages: [ @language.iso_name, @other_language.iso_name ]
     )
 

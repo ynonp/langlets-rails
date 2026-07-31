@@ -27,7 +27,7 @@
       <%= link_to t("app.import_requests.new.open_lesson"), course_path(preview.course), data: { turbo_frame: "_top" }, class: "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410] sm:w-auto" %>
     <% elsif preview.in_queue? %>
       <p class="text-sm text-[#55503F]"><%= t("app.import_requests.new.already_importing") %></p>
-      <%= link_to t("app.import_requests.new.view_in_queue"), app_import_requests_path, data: { turbo_frame: "_top" }, class: "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410] sm:w-auto" %>
+      <%= link_to t("app.import_requests.new.view_in_library"), gallery_path(imports: "pending"), data: { turbo_frame: "_top" }, class: "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410] sm:w-auto" %>
     <% else %>
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p class="text-sm leading-relaxed text-[#55503F]">

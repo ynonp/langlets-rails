@@ -13,10 +13,16 @@
      data-controller="add-video"
      data-add-video-resolve-url-value="<%= resolve_app_import_requests_path %>">
 
+  <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".title") %></h1>
+
+  <%= render "app/shared/daily_vocab_card" %>
+
   <div>
-    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".title") %></h1>
     <p class="text-app-text-2 text-sm mt-1">
       <%= t(".credits_subtitle", credits: app_credits_label(current_user.credit_balance)) %>
+    </p>
+    <p class="text-app-text-2 text-sm mt-2 leading-[1.45]">
+      <%= t(".share_hint") %>
     </p>
   </div>
 

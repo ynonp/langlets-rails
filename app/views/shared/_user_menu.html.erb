@@ -50,7 +50,10 @@
     <% if current_user.languages_with_saved_words.exists? %>
       <div class="<%= divider_class %>"></div>
     <% end %>
-    <%= link_to t("shared.menu.queue"), app_import_requests_path,
+    <%= link_to t("app.web_menu.library"), gallery_path,
+                class: menu_item_class,
+                data: { action: "click->profile-menu#dismiss" } %>
+    <%= link_to t("app.web_menu.create"), app_import_requests_path,
                 class: menu_item_class,
                 data: { action: "click->profile-menu#dismiss" } %>
     <%= link_to t("shared.menu.profile"), profile_path,

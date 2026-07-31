@@ -1,0 +1,57 @@
+<%
+  filters = [
+    ["pending", t("app.library.filters.pending")],
+    ["failed", t("app.library.filters.failed")],
+    ["my_imports", t("app.library.filters.my_imports")]
+  ].select { |value, _label| available_import_filters.include?(value) }
+  web = local_assigns.fetch(:web, false)
+%>
+
+<nav aria-label="<%= t("app.library.filters.label") %>"
+     class="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+  <% all_active = filter.nil? && language.nil? %>
+  <%= link_to t("app.library.filters.all"),
+              app_library_path(q: query.presence),
+              data: { turbo_frame: "library-results" },
+              aria: { current: ("page" if all_active) },
+              class: if web
+                "shrink-0 rounded-full px-4 py-2 text-sm font-bold transition #{all_active ? 'bg-gray-950 text-white dark:bg-white dark:text-gray-950' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'}"
+              else
+                "shrink-0 rounded-[9px] px-4 py-2 text-[14px] font-semibold transition #{all_active ? 'bg-app-text text-app-bg' : 'bg-app-pill text-app-text'}"
+              end %>
+
+  <% languages.each do |available_language| %>
+    <% active = language == available_language %>
+    <%= link_to localized_language_name(available_language),
+                app_library_path(language: available_language.iso_name, q: query.presence),
+                data: { turbo_frame: "library-results" },
+                aria: { current: ("page" if active) },
+                class: if web
+                  "shrink-0 rounded-full px-4 py-2 text-sm font-bold transition #{active ? 'bg-gray-950 text-white dark:bg-white dark:text-gray-950' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'}"
+                else
+                  "shrink-0 rounded-[9px] px-4 py-2 text-[14px] font-semibold transition #{active ? 'bg-app-text text-app-bg' : 'bg-app-pill text-app-text'}"
+                end %>
+  <% end %>
+
+  <% filters.each do |value, label| %>
+    <% active = filter == value %>
+    <%= link_to label,
+                app_library_path(filter: value, q: query.presence),
+                data: { turbo_frame: "library-results" },
+                aria: { current: ("page" if active) },
+                class: if web
+                  "shrink-0 rounded-full px-4 py-2 text-sm font-bold transition #{active ? 'bg-gray-950 text-white dark:bg-white dark:text-gray-950' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'}"
+                else
+                  "shrink-0 rounded-[9px] px-4 py-2 text-[14px] font-semibold transition #{active ? 'bg-app-text text-app-bg' : 'bg-app-pill text-app-text'}"
+                end %>
+  <% end %>
+
+  <% if has_playlists %>
+    <% active = filter == "playlists" %>
+    <%= link_to t("app.library.filters.playlists"),
+                app_library_path(filter: "playlists", q: query.presence),
+                data: { turbo_frame: "library-results" },
+                aria: { current: ("page" if active) },
+                class: "shrink-0 rounded-[9px] px-4 py-2 text-[14px] font-semibold transition #{active ? 'bg-app-text text-app-bg' : 'bg-app-pill text-app-text'}" %>
+  <% end %>
+</nav>

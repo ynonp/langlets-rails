@@ -9,6 +9,8 @@
   .gallery-wrap { width:min(1180px,calc(100% - 40px)); margin:0 auto; padding:28px 0 72px; }
   .gallery-nav { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:56px; }
   .gallery-nav-actions { display:flex; align-items:center; gap:18px; }
+  .gallery-add-video { color:var(--ink); font-size:14px; font-weight:800; text-decoration:none; }
+  .gallery-add-video:hover { color:var(--red); }
   .gallery-daily-vocab { display:inline-flex; align-items:center; gap:8px; border:0; border-radius:999px; background:#DFF1E8; padding:7px 14px;
     color:#0F6E56; font:500 14px 'Instrument Sans',sans-serif; cursor:pointer; }
   .gallery-daily-vocab:hover { background:#CFE9DC; }
@@ -48,6 +50,16 @@
   .gallery-card-kind-playlist { background:#E5DCF4; color:#563B7D; }
   .gallery-card h2 { min-height:2.6em; margin:0 0 12px; font-size:17px; line-height:1.3; }
   .gallery-card p { margin:auto 0 0; color:var(--muted); font-size:14px; }
+  .gallery-import-card { cursor:default; }
+  .gallery-import-card:hover { transform:none; }
+  .gallery-import-image-wrap { position:relative; }
+  .gallery-import-status { position:absolute; top:12px; left:12px; border-radius:999px; background:rgba(30,27,22,.82);
+    padding:5px 10px; color:white; font-size:11px; font-weight:800; }
+  .gallery-progress { height:7px; margin-top:15px; overflow:hidden; border-radius:999px; background:#E9DFCD; }
+  .gallery-progress-fill { height:100%; border-radius:inherit; background:var(--red); transition:width .5s; }
+  .gallery-import-meta { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:8px;
+    color:var(--muted); font-size:12px; font-weight:600; }
+  .gallery-import-failed { margin-top:15px!important; color:#A33318!important; font-weight:700; }
   .gallery-empty { padding:72px 20px; border:1px dashed #CFC2AB; border-radius:16px; color:var(--muted); text-align:center; }
   .gallery-pagination { display:flex; justify-content:center; align-items:center; gap:8px; margin-top:38px; }
   .gallery-page-link { display:inline-flex; min-width:42px; height:42px; align-items:center; justify-content:center; border:1px solid #D8CEBD;
@@ -90,6 +102,9 @@
           <% end %>
         <% end %>
         <% if user_signed_in? %>
+          <%= link_to "Add A Video", app_import_requests_path, class: "gallery-add-video" %>
+        <% end %>
+        <% if user_signed_in? %>
           <%= render "shared/user_menu",
                      avatar_type: :initial,
                      menu_item_class: "block px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#FAF6EF]",
@@ -120,12 +135,23 @@
       </div>
 
       <div class="gallery-pills" role="group" aria-label="Filter gallery">
-        <% [["Courses", "courses"], ["Playlists", "playlists"]].each do |label, value| %>
-          <% id = "gallery-type-#{value}" %>
-          <%= check_box_tag "types[]", value, @selected_types.include?(value), id: id,
-                class: "gallery-pill-input", data: { action: "change->gallery-filters#submit" } %>
-          <%= label_tag id, label, class: "gallery-pill" %>
+        <% if user_signed_in? %>
+          <% import_filters = [["All", ""]] %>
+          <% import_filters << ["Pending", "pending"] if @available_import_filters.include?("pending") %>
+          <% import_filters << ["Failed", "failed"] if @available_import_filters.include?("failed") %>
+          <% import_filters << ["My imports", "my_imports"] if @available_import_filters.include?("my_imports") %>
+          <% import_filters.each do |label, value| %>
+            <% id = "gallery-import-#{value.presence || 'all'}" %>
+            <%= radio_button_tag :imports, value, @import_filter.to_s == value, id: id,
+                  class: "gallery-pill-input", data: { action: "change->gallery-filters#submit" } %>
+            <%= label_tag id, label, class: "gallery-pill" %>
+          <% end %>
         <% end %>
+
+        <% id = "gallery-type-playlists" %>
+        <%= check_box_tag "types[]", "playlists", @selected_types.include?("playlists"), id: id,
+              class: "gallery-pill-input", data: { action: "change->gallery-filters#submit" } %>
+        <%= label_tag id, "Playlists", class: "gallery-pill" %>
 
         <% selected_language_ids = @selected_languages.map(&:id) %>
         <% @languages.each do |language| %>

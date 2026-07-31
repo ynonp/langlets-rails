@@ -6,8 +6,12 @@
     <p class="text-app-text-2 text-sm mt-1"><%= t(".description") %></p>
   </div>
 
+  <%= render "app/shared/daily_vocab_card" %>
+
   <%# The mockup draws this as static text; it needs to be a real field. %>
-  <%= form_with url: app_library_path, method: :get, data: { turbo_frame: "_top" } do |f| %>
+  <%= form_with url: app_library_path, method: :get, data: { turbo_frame: "library-results" } do |f| %>
+    <%= f.hidden_field :filter, value: @filter if @filter.present? %>
+    <%= f.hidden_field :language, value: @language.iso_name if @language %>
     <label class="app-hairline bg-app-card rounded-app-field flex items-center gap-2.5 py-3 px-3.5">
       <%= app_icon "search", class: "w-[18px] h-[18px] text-app-text-3 shrink-0" %>
       <%= f.search_field :q, value: @query,
@@ -17,34 +21,45 @@
     </label>
   <% end %>
 
-  <%# The mockup has All / Music / Shows / Kids / News chips here. They're
-      deliberately absent: the category taxonomy comes from pipeline metadata that
-      nothing populates yet, so every chip but "All" would return an empty grid.
-      They arrive with the classifier. %>
+  <turbo-frame id="library-results" class="flex flex-col gap-4">
+    <%= render "app/library/filters",
+               filter: @filter, query: @query, language: @language,
+               languages: @languages, has_playlists: @playlists.any?,
+               available_import_filters: @available_import_filters %>
 
-  <% if @courses.empty? %>
-    <div class="app-hairline bg-app-card rounded-app-card px-5 py-10 text-center">
-      <p class="text-app-text-2 text-sm">
-        <% if @query.present? %>
-          Nothing matches “<%= @query %>” yet.
-        <% else %>
-          The Library is empty for this language.
+    <% if @filter == "playlists" && @playlists.any? %>
+      <div class="flex flex-col gap-2.5">
+        <% @playlists.each do |playlist| %>
+          <%= render "app/home/playlist_row", playlist: playlist %>
         <% end %>
-      </p>
-      <%= link_to "Import a video", new_app_import_request_path,
-                  class: "inline-block mt-3 text-app-accent text-[13px] font-bold" %>
-    </div>
-  <% else %>
-    <div class="grid grid-cols-2 gap-3">
-      <% @items.each do |item| %>
-        <%= render "app/library/card", course: item.course,
-                   lessons_count: @lesson_counts[item.course_id].to_i,
-                   enrolled: @enrolled_course_ids.include?(item.course_id),
-                   channel: item.channel %>
-      <% end %>
-    </div>
-  <% end %>
+      </div>
+    <% elsif @courses.empty? && @import_requests.empty? %>
+      <div class="app-hairline bg-app-card rounded-app-card px-5 py-10 text-center">
+        <p class="text-app-text-2 text-sm">
+          <% if @query.present? %>
+            Nothing matches “<%= @query %>” yet.
+          <% else %>
+            The Library is empty for this language.
+          <% end %>
+        </p>
+        <%= link_to "Import a video", app_import_requests_path,
+                    data: { turbo_frame: "_top" },
+                    class: "inline-block mt-3 text-app-accent text-[13px] font-bold" %>
+      </div>
+    <% else %>
+      <div class="grid grid-cols-2 gap-3">
+        <% @import_requests.each do |import_request| %>
+          <%= render "app/library/import_card", import_request: import_request %>
+        <% end %>
+        <% @items.each do |item| %>
+          <%= render "app/library/card", course: item.course,
+                     lessons_count: @lesson_counts[item.course_id].to_i,
+                     enrolled: @enrolled_course_ids.include?(item.course_id),
+                     channel: item.channel %>
+        <% end %>
+      </div>
+    <% end %>
+  </turbo-frame>
 </div>
 
-<%# No floating "+" here. Creating a langlet is the Create tab's whole job, and
-    the Add New button on that screen is the single entry point. %>
+<%# No floating "+" here. Creating a langlet is the Create tab's whole job. %>

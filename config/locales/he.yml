@@ -192,9 +192,28 @@ he:
         first_run_library: "מתחילים מיד"
         first_run_create: "‹ או ייבאו כל סרטון YouTube / TikTok"
     library:
+      filters:
+        label: "סינון הספרייה"
+        all: "הכול"
+        pending: "בהכנה"
+        failed: "נכשלו"
+        my_imports: "הייבואים שלי"
+        playlists: "פלייליסטים"
+      import_card:
+        creating: "בהכנה"
+        failed: "נכשל"
+        queued: "בתור — הבא בתור"
+        failed_detail: "הייבוא נכשל — נקודת הזכות הוחזרה"
       show:
         title: "ספרייה"
+        eyebrow: "לומדים מכל סרטון"
         description: "כל הסרטונים שהקהילה הפכה לשיעורים."
+        search: "חיפוש לפי כותרת, ערוץ או קישור"
+        empty: "אין פריטים שמתאימים לסינון."
+    web_menu:
+      label: "ניווט ראשי"
+      library: "ספרייה"
+      create: "יצירה"
     import_requests:
       index:
         title: "תור"
@@ -212,6 +231,7 @@ he:
         page_title: "הוספת סרטון"
         title: "הוספת סרטון"
         credits_subtitle: "%{credits} — כל ייבוא עולה נקודת זכות אחת."
+        share_hint: "אפשר גם לשתף סרטון YouTube או TikTok ישירות אל Langlets מתפריט השיתוף שלו."
         video_language: "שפת הסרטון"
         paste_placeholder: "הדביקו קישור יוטיוב או טיקטוק"
         url_hint: "עובד עם קישורי youtube.com,‏ youtu.be,‏ tiktok.com או מזהה סרטון של YouTube"
@@ -227,6 +247,7 @@ he:
         already_importing: "כבר בייבוא."
         view_in_queue: "הצגה בתור"
         view_in_create: "הצגה במסך היצירה"
+        view_in_library: "הצגה בספרייה"
   onboarding:
     welcome:
       eyebrow: "ברוכים הבאים ל-Langlets"

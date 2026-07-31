@@ -1,6 +1,7 @@
 class GalleryController < ApplicationController
   PER_PAGE = 16
-  CONTENT_TYPES = %w[courses playlists].freeze
+  CONTENT_TYPES = %w[playlists].freeze
+  IMPORT_FILTERS = %w[failed pending my_imports].freeze
 
   def index
     @daily_vocab_language = if user_signed_in?
@@ -8,6 +9,9 @@ class GalleryController < ApplicationController
     end
     @daily_vocab_streak = ActivityLog.current_streak_for_user(current_user) if @daily_vocab_language
     @search = params[:search].to_s.strip
+    @import_filter = IMPORT_FILTERS.include?(params[:imports]) && user_signed_in? ? params[:imports] : nil
+    @available_import_filters = available_import_filters
+    @import_filter = nil unless @available_import_filters.include?(@import_filter)
     @selected_types = Array(params[:types]).intersection(CONTENT_TYPES)
     @selected_languages = Language.where(iso_name: Array(params[:languages]).compact_blank).to_a
     @languages = gallery_languages
@@ -16,15 +20,20 @@ class GalleryController < ApplicationController
     visible_courses = gallery_courses
     course_scope = filtered_courses(visible_courses)
     playlist_scope = filtered_playlists(visible_courses)
+    @import_requests = gallery_import_requests
+    course_scope, playlist_scope = apply_import_filter(course_scope, playlist_scope)
     course_scope = course_scope.none if only_selected?("playlists")
     playlist_scope = playlist_scope.none if only_selected?("courses")
+    @import_requests = [] if only_selected?("playlists")
 
-    @total_count = course_scope.count + playlist_scope.count
-    @total_pages = (@total_count.to_f / PER_PAGE).ceil
+    content_count = course_scope.count + playlist_scope.count
+    @total_count = content_count + @import_requests.size
+    @total_pages = (content_count.to_f / PER_PAGE).ceil
     @page = @total_pages if @total_pages.positive? && @page > @total_pages
 
     rows = mixed_page(course_scope, playlist_scope)
     hydrate_entries(rows)
+    @import_requests = [] if @page > 1
 
     respond_to do |format|
       format.html
@@ -33,6 +42,51 @@ class GalleryController < ApplicationController
   end
 
   private
+
+  def available_import_filters
+    return [] unless user_signed_in?
+
+    requests = current_user.import_requests
+    filters = []
+    filters << "pending" if requests.active.exists?
+    filters << "failed" if requests.failed.exists?
+    filters << "my_imports" if requests.where.not(status: :canceled).exists?
+    filters
+  end
+
+  def gallery_import_requests
+    return [] unless user_signed_in?
+
+    scope = current_user.import_requests.recent_first.includes(:course)
+    scope = case @import_filter
+    when "failed" then scope.failed
+    when "pending", nil then scope.active
+    when "my_imports" then scope.where(status: %i[queued importing failed])
+    end
+
+    if @selected_languages.any?
+      scope = scope.where(clip_language: @selected_languages.map(&:english_name))
+    end
+
+    if @search.present?
+      pattern = "%#{ActiveRecord::Base.sanitize_sql_like(@search.downcase)}%"
+      scope = scope.where("LOWER(title) LIKE :pattern OR LOWER(youtube_url) LIKE :pattern", pattern: pattern)
+    end
+
+    scope.limit(50).to_a
+  end
+
+  def apply_import_filter(course_scope, playlist_scope)
+    case @import_filter
+    when "failed", "pending"
+      [course_scope.none, playlist_scope.none]
+    when "my_imports"
+      ready_course_ids = current_user.import_requests.ready.where.not(course_id: nil).select(:course_id)
+      [course_scope.where(id: ready_course_ids), playlist_scope.none]
+    else
+      [course_scope, playlist_scope]
+    end
+  end
 
   def gallery_languages
     Language.where(

@@ -6,8 +6,9 @@
     </div>
   <% end %>
 
-  <% if @entries.any? %>
+  <% if @entries.any? || @import_requests.any? %>
     <section class="gallery-grid" aria-label="Gallery results">
+      <%= render partial: "import_request_card", collection: @import_requests, as: :import_request %>
       <%= render partial: "card", collection: @entries, as: :entry %>
     </section>
   <% else %>
@@ -17,7 +18,7 @@
   <% if @total_pages > 1 %>
     <nav class="gallery-pagination" aria-label="Pagination">
       <% ([1, @page - 1, @page, @page + 1, @total_pages].select { |page| page.between?(1, @total_pages) }.uniq.sort).each do |page| %>
-        <%= link_to page, gallery_path(search: @search.presence, types: @selected_types, languages: @selected_languages.map(&:iso_name), page: page),
+        <%= link_to page, gallery_path(search: @search.presence, imports: @import_filter, types: @selected_types, languages: @selected_languages.map(&:iso_name), page: page),
               class: "gallery-page-link", aria: (page == @page ? { current: "page" } : {}),
               data: { turbo_stream: true } %>
       <% end %>

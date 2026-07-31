@@ -7,16 +7,16 @@ module App
     layout :import_requests_layout
 
     def index
-      @import_requests = current_user.import_requests.recent_first.includes(:course).limit(50)
+      if web_request?
+        return redirect_to new_app_import_request_path
+      end
 
-      render "app/import_requests/web/index" if web_view?
+      prepare_new_import
+      render :new
     end
 
     def new
-      @import_request = ImportRequest.new
-      @clip_language = default_clip_language
-      @translation_language = default_translation_language
-      @languages = Language.order(:english_name)
+      prepare_new_import
       if web_view?
         @paypal_client = Paypal::Client.new
         @credit_pack = Paypal::CreditPacks.fetch("standard")
@@ -183,6 +183,13 @@ module App
       else
         redirect_to app_import_requests_path
       end
+    end
+
+    def prepare_new_import
+      @import_request = ImportRequest.new
+      @clip_language = default_clip_language
+      @translation_language = default_translation_language
+      @languages = Language.order(:english_name)
     end
 
     # The language they're learning is the one they're importing *from* — it's
