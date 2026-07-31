@@ -38,7 +38,7 @@ module App
     def hero_course
       if params[:just_imported].present?
         course = current_user.enrolled_courses.published.find_by(slug: params[:just_imported])
-        return course if course && !started?(course)
+        return course if course && course.readable_by?(current_user) && !started?(course)
       end
 
       recent = current_user.import_requests
@@ -48,6 +48,7 @@ module App
                            .first
       course = recent&.course
       return nil unless course&.published?
+      return nil unless course.readable_by?(current_user)
       return nil if started?(course)
 
       course
@@ -60,13 +61,16 @@ module App
       ).exists?
     end
 
-    # Everything on their Home except whatever's already in the hero.
+    # Everything on their Home except whatever's already in the hero. An
+    # Enrollment survives its Channel going private, so readability is
+    # re-checked here rather than trusted from when it was created.
     def candidate_enrollments
       scope = current_user.enrollments
                           .in_progress
                           .includes(course: [ :language, { course_translations: :language } ])
                           .joins(:course)
                           .merge(Course.published)
+                          .merge(ChannelContentQuery.courses_visible_to(current_user))
                           .recently_practiced
       scope = scope.where.not(course_id: @hero_course.id) if @hero_course
       scope.limit(20).to_a

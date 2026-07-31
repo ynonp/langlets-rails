@@ -278,6 +278,7 @@ en:
       welcome: "Welcome to Langlets"
       prompt: "Which language do you want to learn?"
   courses:
+    sign_in_to_view: "Sign in to view this Langlet."
     index:
       continue_learning: "Continue Learning"
       browse: "Browse"

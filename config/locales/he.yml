@@ -262,6 +262,7 @@ he:
       welcome: "ברוכים הבאים ל-Langlets"
       prompt: "איזו שפה תרצו ללמוד?"
   courses:
+    sign_in_to_view: "התחברו כדי לצפות בלנגלט הזה."
     index:
       continue_learning: "המשך למידה"
       browse: "עיון בקורסים"

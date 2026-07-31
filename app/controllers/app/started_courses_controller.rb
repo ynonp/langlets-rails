@@ -4,11 +4,14 @@ module App
   # signal and keeps this distinct from courses merely added from the Library.
   class StartedCoursesController < BaseController
     def index
+      # An Enrollment survives its Channel going private, so readability is
+      # re-checked on every render rather than trusted from when it was created.
       @enrollments = current_user.enrollments
                                  .in_progress
                                  .includes(course: [ :language, { course_translations: :language } ])
                                  .joins(:course)
                                  .merge(Course.published)
+                                 .merge(ChannelContentQuery.courses_visible_to(current_user))
                                  .recently_practiced
                                  .to_a
 

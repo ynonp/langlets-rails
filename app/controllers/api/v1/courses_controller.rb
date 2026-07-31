@@ -11,6 +11,7 @@ module Api
 
         render json: CoursesQuery.new(
           language: params[:language],
+          user: current_resource_owner,
           page: params[:page],
           per_page: params[:per_page],
           base_url: request.base_url

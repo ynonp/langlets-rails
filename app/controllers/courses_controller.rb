@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  include CourseReadable
+
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
@@ -113,6 +115,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    return unless authorize_course_read!(@course)
 
     response.headers["Turbo-Visit"] = "reload"
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
@@ -145,6 +148,7 @@ class CoursesController < ApplicationController
   def mark_done
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
     authenticate_user!
+    return unless authorize_course_read!(@course)
 
     @course.lessons.each do |lesson|
       LessonUser.find_or_create_by(lesson: lesson, user: current_user)
@@ -156,6 +160,7 @@ class CoursesController < ApplicationController
   def reset_progress
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
     authenticate_user!
+    return unless authorize_course_read!(@course)
 
     ApplicationRecord.transaction do
       clear_lesson_progress!(@course)

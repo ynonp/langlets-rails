@@ -19,6 +19,10 @@ class CoursePlaylistsTest < ActionDispatch::IntegrationTest
       main_media_url: "https://www.youtube.com/watch?v=abc123",
       status: :published
     )
+    # These tests are about playlist membership, not access control, and some
+    # of them act as @other or signed out — so the course has to be readable
+    # by everyone.
+    publish_publicly(@course)
     @system_playlist = Playlist.create!(name: "Existing Playlist", published: true, slug: "existing-#{SecureRandom.hex(4)}")
   end
 

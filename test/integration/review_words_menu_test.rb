@@ -170,12 +170,12 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   end
 
   test "courses show page shows language-specific review buttons" do
-    course = Course.create!(
+    course = publish_privately(Course.create!(
       name: "Test Course",
       slug: "test-course-#{Time.zone.now.to_i}",
       main_media_url: "https://www.youtube.com/watch?v=test123",
       user: @user
-    )
+    ))
 
     @user.saved_phrase_tokens << @token_en
     @user.saved_phrase_tokens << @token_ar1

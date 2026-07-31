@@ -54,6 +54,12 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
       main_media_url: "https://www.youtube.com/watch?v=jkl012",
       status: :published
     )
+    # Both surfaces under test are viewed signed-out, and readability is
+    # Channel-based, so every course here needs a public Channel. The gate
+    # being tested is the translation one, not access.
+    [ @hebrew_only_course, @untranslated_course,
+      @playlist_hebrew_course, @playlist_untranslated_course ].each { |course| publish_publicly(course) }
+
     @mixed_playlist = Playlist.create!(name: "Mixed Playlist", published: true, slug: "mixed-#{SecureRandom.hex(4)}")
     @mixed_playlist.courses << @playlist_hebrew_course
     @mixed_playlist.courses << @playlist_untranslated_course

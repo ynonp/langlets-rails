@@ -22,10 +22,12 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     )
     @user.saved_phrase_tokens << token_translation
 
-    Course.create!(
+    # get_courses is Channel-scoped to the token's resource owner, so the
+    # course has to be published somewhere @user can see.
+    publish_privately(Course.create!(
       name: "MCP Spanish Songs", slug: "mcp-spanish-songs", main_media_url: "https://example.com/1",
       user: @user, language: @spanish, status: :published
-    )
+    ))
 
     @token = create_access_token(@user)
   end

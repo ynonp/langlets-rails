@@ -13,10 +13,13 @@ class Api::V1::CoursesControllerTest < ActionDispatch::IntegrationTest
       name: "API Spanish Songs", slug: "api-spanish-songs", main_media_url: "https://example.com/1",
       user: @user, language: @spanish, status: :published
     )
-    Course.create!(
+    @pending = Course.create!(
       name: "API Spanish Drafts", slug: "api-spanish-drafts", main_media_url: "https://example.com/2",
       user: @user, language: @spanish, status: :pending
     )
+
+    # The endpoint is Channel-scoped to the token's resource owner.
+    [ @published, @pending ].each { |course| publish_privately(course) }
 
     @token = create_access_token(@user)
   end

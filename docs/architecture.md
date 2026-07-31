@@ -101,6 +101,46 @@ publish the same Course while avoiding duplicates from overlapping access
 paths. Cards include the contributing Channel identity. Reading Channel content
 never creates an Enrollment; enrollment remains personal learning state.
 
+### Course readability
+
+Channel visibility governs **reading** a Course, not just listing it. Only
+Courses published to a public Channel are readable by the world; everything
+else requires ownership, an accepted subscription, or admin.
+
+`Course#readable_by?(user)` is the single definition, and it is deliberately
+expressed through `ChannelContentQuery.courses_visible_to` rather than a
+parallel condition — listing and direct access drifting apart is exactly the
+class of bug it exists to prevent. `Ability` exposes it as `can :read, Course`
+via a block, declared *before* the `return if user.blank?` guard so guests
+carry the public-Channel rule. The block form means `accessible_by` cannot be
+used for Course; listings go through `ChannelContentQuery` instead.
+
+`Course#status` is orthogonal. `published` is a pipeline state meaning the AI
+build finished — it never implied visibility, which is why
+`status: :published` alone used to be enough to reach a Course by URL.
+
+The `CourseReadable` controller concern applies the rule wherever course
+content renders: `courses#show`, `#mark_done`, `#reset_progress`,
+`lessons#show`, `#finish`, `full_player#show`, and `course_playlists`. A
+signed-out visitor is redirected to sign in carrying `?returnto=` (the param
+this app's `after_sign_in_path_for` honours — not Devise's stored location),
+because authenticating may genuinely grant access. A signed-in user who still
+lacks access gets a 404 rather than a 403, so the response never confirms which
+imports exist.
+
+Listing surfaces apply the same scope: the home page grid and gallery already
+did; `playlists#show` now intersects playlist membership with the readable
+scope, since membership is not access and a Channel can go private after a
+Course was added; native Home and `started_courses` re-check readability on
+every render because an Enrollment outlives its Channel's visibility; and
+`CoursesQuery` — which backs both the bearer API and the MCP `get_courses`
+tool — takes a required `user:` so neither can enumerate private imports.
+
+Tests that render course content must publish it first. `publish_publicly` and
+`publish_privately` in `test/support/channel_publishing_helpers.rb` exist for
+this; `test/integration/course_access_test.rb` covers the matrix of guest,
+owner, subscriber, non-subscriber, stranger, and admin.
+
 `Imports::Settlement.complete!` transactionally ensures both the existing
 Enrollment and an idempotent ChannelItem in the importing user's default
 Channel before marking an ImportRequest ready. The channel migration backfills
@@ -345,6 +385,28 @@ The SEO machinery (canonical URLs, hreflang, Open Graph/Twitter cards,
 JSON-LD structured data, `/sitemap.xml`) was left intact throughout, so no
 changes were needed there — it now also serves its primary purpose of
 driving actual indexing rather than only link previews.
+
+### Sitemap scope
+
+`/sitemap.xml` (`SitemapsController#show`, rendered by
+`app/views/sitemaps/show.xml.erb` with `layout: false`) is generated on every
+request and lists three collections: three hardcoded static pages, published
+system Playlists, and courses.
+
+The course scope is deliberately `ChannelContentQuery.public_courses`, not
+`Course.published_courses`. `status: :published` is a *pipeline* state meaning
+the AI build finished; it says nothing about visibility, so on its own it also
+matched every user's personal import sitting in its default **private**
+Channel. The sitemap must advertise only what a logged-out visitor can browse
+from the home page and gallery, which is the public-Channel set. `ready_in` is
+applied for the same reason: a course whose translation is still `pending`
+should not be indexed mid-build. Playlists were already correct —
+`system_playlists.published` is exactly `Playlist.visible_to(nil)`.
+
+Note that this is a *discoverability* boundary, not an authorization one.
+`CoursesController#show` has no channel check, so any published course still
+renders for a guest who has its slug. Adding authorization there is a separate
+decision, since it would also break existing shared links.
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
 the eight most recently created courses for the selected language, or the eight

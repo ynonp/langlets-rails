@@ -17,6 +17,7 @@ class CourseProgressResetTest < ActionDispatch::IntegrationTest
       youtube_video_id: "reset123abc",
       status: :published
     )
+    publish_privately(@course)
     @lesson = Lesson.create!(
       course: @course,
       user: @user,

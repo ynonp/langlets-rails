@@ -1,8 +1,11 @@
 class LessonsController < ApplicationController
   include Xp
+  include CourseReadable
 
   def show
     @course = Course.find_by(slug: params[:course_id]) || Course.find(params[:course_id])
+    return unless authorize_course_read!(@course)
+
     @lesson = @course.lessons
       .joins(medium: :language)
       .select("
@@ -62,6 +65,8 @@ class LessonsController < ApplicationController
 
   def finish
     @course = Course.find_by(slug: params[:course_id]) || Course.find(params[:course_id])
+    return unless authorize_course_read!(@course)
+
     @lesson = @course.lessons.find_by(slug: params[:id]) || @course.lessons.find(params[:id])
 
     # Calculate XP earned in this lesson

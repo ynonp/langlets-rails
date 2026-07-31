@@ -1,6 +1,16 @@
 class SitemapsController < ApplicationController
   def show
-    @courses = Course.published_courses.includes(:language).order(updated_at: :desc)
+    # Only what a logged-out visitor can browse. `published_courses` alone is a
+    # pipeline status ("the build finished"), not a visibility rule, so it also
+    # matches every user's personal import sitting in their private default
+    # Channel. Scoping to public Channels keeps those out of Google, and
+    # `ready_in` matches the homepage so a course whose English translation is
+    # still processing is not indexed mid-build.
+    @courses = ChannelContentQuery.public_courses
+      .published_courses
+      .ready_in(Current.translation_language)
+      .includes(:language)
+      .order(updated_at: :desc)
     @playlists = Playlist.system_playlists.published.order(updated_at: :desc)
     @static_pages = [
       { path: root_path, priority: 1.0, changefreq: "daily" },

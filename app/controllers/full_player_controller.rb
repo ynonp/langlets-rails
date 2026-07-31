@@ -1,9 +1,12 @@
 class FullPlayerController < ApplicationController
+  include CourseReadable
+
   def show
     @course = Course.find_by!(slug: params[:course_slug])
-    
-    # Check if user has access to the course
-    # For now, all authenticated users can view full player if course has the flag enabled
+    return unless authorize_course_read!(@course)
+
+    # show_full_course_player is a per-course feature flag, not an access
+    # check — readability is enforced above.
     unless @course.show_full_course_player
       redirect_to course_path(@course.slug), alert: "Full player is not available for this course."
       return

@@ -1,6 +1,9 @@
 class CoursePlaylistsController < ApplicationController
+  include CourseReadable
+
   before_action :authenticate_user!
   before_action :set_course
+  before_action -> { authorize_course_read!(@course) }
 
   # GET /courses/:course_id/playlists
   # Returns the playlists this user can add courses to, plus whether this

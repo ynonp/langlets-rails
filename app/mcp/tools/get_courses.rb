@@ -23,7 +23,8 @@ module Tools
       end
 
       result = CoursesQuery.new(
-        language: language, page: page, per_page: per_page, base_url: server_context[:base_url]
+        language: language, user: server_context[:user],
+        page: page, per_page: per_page, base_url: server_context[:base_url]
       ).call
       MCP::Tool::Response.new([ { type: "text", text: JSON.pretty_generate(result) } ])
     rescue PaginatedQuery::UnknownLanguageError => e

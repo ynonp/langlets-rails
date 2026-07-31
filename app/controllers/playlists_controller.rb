@@ -91,7 +91,13 @@ class PlaylistsController < ApplicationController
   end
 
   def get_filtered_courses
-    courses = @playlist.courses.published
+    # A Playlist can hold Courses the viewer cannot read — system playlists are
+    # curated across users, and a Channel can go private after a Course was
+    # added. Membership is not access, so the readable scope is applied here
+    # too rather than trusting the join.
+    courses = @playlist.courses
+                       .merge(ChannelContentQuery.courses_visible_to(current_user))
+                       .published
                        .ready_in(Current.translation_language)
                        .includes(:language, :lessons, :tags)
 

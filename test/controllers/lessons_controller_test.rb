@@ -18,6 +18,7 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
       language: languages(:english),
       user: @user
     )
+    publish_publicly(@course)
     @lesson = Lesson.create!(
       course: @course,
       medium: @medium,

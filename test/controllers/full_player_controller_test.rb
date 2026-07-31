@@ -19,6 +19,7 @@ class FullPlayerControllerTest < ActionDispatch::IntegrationTest
       language: @english,
       user: @user
     )
+    publish_publicly(@course)
     Lesson.create!(
       course: @course,
       medium: @medium,
