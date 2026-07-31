@@ -1,7 +1,8 @@
 <% content_for :title, t(".title") %>
 <% content_for :head do %>
-  <meta http-equiv="refresh" content="2">
+  <meta http-equiv="refresh" content="10">
 <% end %>
+<%= turbo_stream_from @review_lesson_build %>
 
 <main class="min-h-dvh bg-slate-950 text-white flex items-center justify-center px-6 py-12">
   <section class="max-w-md text-center" aria-live="polite">

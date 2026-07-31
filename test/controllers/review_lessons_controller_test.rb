@@ -95,9 +95,11 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response :redirect
-    assert_match review_lesson_path(Lesson.last), response.location
+    build = ReviewLessonBuild.last
+    assert_match review_lesson_build_path(build.request_id), response.location
+    assert build.ready?
 
-    lesson = Lesson.last
+    lesson = build.lesson
     assert_equal "Review Words (#{@arabic.iso_name})", lesson.name
 
     lesson_tokens = lesson.activities.flat_map(&:phrase_tokens)
@@ -114,7 +116,9 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
 
-    lesson = Lesson.last
+    build = ReviewLessonBuild.last
+    assert_match review_lesson_build_path(build.request_id), response.location
+    lesson = build.lesson
     assert_equal "Review Words", lesson.name
 
     lesson_tokens = lesson.activities.flat_map(&:phrase_tokens)
@@ -136,19 +140,72 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   test "create redirects immediately to an animated waiting page" do
     @user.saved_phrase_tokens << @token_en1
 
-    assert_enqueued_with(job: BuildReviewLessonJob) do
-      post review_lessons_url(language_code: @english.iso_name)
+    assert_no_difference("Lesson.count") do
+      assert_enqueued_with(job: BuildReviewLessonJob) do
+        post review_lessons_url(language_code: @english.iso_name)
+      end
     end
 
-    lesson = Lesson.last
-    assert lesson.review_build_pending?
-    assert_equal @english, lesson.review_language
+    build = ReviewLessonBuild.last
+    assert build.pending?
+    assert_equal @english, build.language
+    assert_match review_lesson_build_path(build.request_id), response.location
 
-    get review_lesson_url(lesson)
+    get review_lesson_build_url(build.request_id)
 
     assert_response :success
-    assert_select "meta[http-equiv='refresh'][content='2']"
+    assert_select "turbo-cable-stream-source", count: 1
+    assert_select "meta[http-equiv='refresh'][content='10']"
     assert_select "h1", text: "Your vocabulary review is being created"
+  end
+
+  test "build page redirects when the job finished before cable connected" do
+    @user.saved_phrase_tokens << @token_en1
+    lesson = ReviewLessonBuilder.new(@user, language_code: @english.iso_name).build!
+    build = @user.review_lesson_builds.create!(
+      language: @english,
+      lesson: lesson,
+      status: :ready
+    )
+
+    get review_lesson_build_url(build.request_id)
+
+    assert_redirected_to review_lesson_path(lesson)
+  end
+
+  test "build page renders a retry after failure" do
+    build = @user.review_lesson_builds.create!(
+      language: @english,
+      status: :failed,
+      error: "Something broke"
+    )
+
+    get review_lesson_build_url(build.request_id)
+
+    assert_response :success
+    assert_select "h1", text: "That review needs another try"
+    assert_select "form[action='#{review_lessons_path(language_code: @english.iso_name)}']"
+  end
+
+  test "build page only allows access to the owning user" do
+    build = @user.review_lesson_builds.create!(language: @english)
+    other_user = User.create!(
+      email: "review-build-owner@example.com",
+      password: "password123",
+      confirmed_at: Time.zone.now
+    )
+
+    delete destroy_user_session_url
+    post user_session_url, params: {
+      user: {
+        email: other_user.email,
+        password: "password123"
+      }
+    }
+
+    get review_lesson_build_url(build.request_id)
+
+    assert_response :not_found
   end
 
   test "show displays review lesson with only language-specific tokens" do

@@ -1975,6 +1975,16 @@ Users can save individual word/token translations they encounter during lessons 
 - Review lessons have random slug prefixed with `review-`
 - The unique index on `(course_id, slug)` is partial (`WHERE course_id IS NOT NULL`)
 
+#### ReviewLessonBuild
+- A lightweight, durable request record with a random `request_id`, user,
+  optional learning language, `pending`/`ready`/`failed` status, and the
+  resulting Lesson.
+- Build state lives here rather than on Lesson: a Lesson is created only after
+  the background job has assembled the complete practice transactionally.
+- The request ID correlates one browser tab with one job and prevents
+  simultaneous reviews or languages from receiving each other's completion
+  signal.
+
 ### New Activity Type
 
 #### WriteMissingWordActivity (STI: `Activities::WriteMissingWordActivity`)
@@ -1989,13 +1999,18 @@ Users can save individual word/token translations they encounter during lessons 
 #### ReviewLessonBuilder (`app/services/review_lesson_builder.rb`)
 - Creates a review lesson (no course, no medium) for a user from their saved token translations
 - Review creation is asynchronous. `POST /review_lessons` synchronously creates
-  only a language-pinned Lesson with `review_build_status: pending`, enqueues
-  `BuildReviewLessonJob`, and redirects immediately. The show action renders an
-  animated waiting screen that refreshes every two seconds until the job
-  transaction has created all activities and marked the lesson `ready`.
-  Build failures mark the lesson `failed` and offer a retry without losing any
-  saved vocabulary. Explicit state prevents a partially constructed lesson from
-  becoming playable.
+  only a `ReviewLessonBuild`, enqueues `BuildReviewLessonJob`, and redirects to
+  its animated waiting page. No vocabulary graph is loaded and no Lesson is
+  inserted in the request.
+- The waiting page subscribes to the build's signed Turbo Stream over Action
+  Cable. The job creates the Lesson and all activities in one transaction,
+  marks the build ready, then broadcasts a request-scoped Turbo visit to the
+  lesson. The build show action also redirects when it observes ready state, so
+  a job that finishes before the browser subscribes cannot strand the user.
+  A low-frequency ten-second page refresh is the fallback for a socket outage;
+  Action Cable remains the normal instant path. Failures persist on the build,
+  broadcast a visit back to the build page, and offer a retry without losing
+  saved vocabulary.
 - Activity composition:
   - FlashcardActivity (if ≥3 saved tokens, up to 15)
   - MatchTokensActivity (if ≥3 saved tokens, up to 15)
@@ -2016,10 +2031,14 @@ Users can save individual word/token translations they encounter during lessons 
 - JSON responses: `{saved: true/false, token_translation_id: N}`
 
 #### ReviewLessonsController
-- `POST /review_lessons` — create and enqueue a review lesson, then redirect to show
-- `GET /review_lessons/:id` — show waiting/failed state or play a ready lesson
-  (uses `review_lessons/show.html.erb`)
+- `POST /review_lessons` — create and enqueue a review build, then redirect to
+  its request-specific waiting page
+- `GET /review_lessons/:id` — play a completed review lesson
 - `GET /review_lessons/:id/finish` — completion page
+
+#### ReviewLessonBuildsController
+- `GET /review_lesson_builds/:request_id` — authorize the request by its owner,
+  render waiting/failed state, or redirect to the completed Lesson
 
 ### Frontend Changes
 

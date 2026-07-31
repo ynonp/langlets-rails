@@ -3,17 +3,14 @@ class ReviewLessonsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    language_code = params[:language_code]
-    builder = ReviewLessonBuilder.new(current_user, language_code: language_code)
-    lesson = builder.create_pending!
-    BuildReviewLessonJob.perform_later(lesson.id)
-    redirect_to review_lesson_path(lesson)
+    language = Language.find_by!(iso_name: params[:language_code]) if params[:language_code].present?
+    build = current_user.review_lesson_builds.create!(language: language)
+    BuildReviewLessonJob.perform_later(build.id)
+    redirect_to review_lesson_build_path(build.request_id)
   end
 
   def show
     @lesson = current_user.lessons.find(params[:id])
-    return render :waiting if @lesson.review_build_pending?
-    return render :failed if @lesson.review_build_failed?
 
     @activities = @lesson.activities.order(order: :asc).load
     @activity = @activities.find { |a| a.order == params[:a].to_i } || @activities.first

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_31_120000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_31_130000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -574,6 +574,22 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_120000) do
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
+  create_table "review_lesson_builds", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "language_id"
+    t.bigint "lesson_id"
+    t.string "request_id", null: false
+    t.integer "status", default: 0, null: false
+    t.string "error"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_review_lesson_builds_on_language_id"
+    t.index ["lesson_id"], name: "index_review_lesson_builds_on_lesson_id"
+    t.index ["request_id"], name: "index_review_lesson_builds_on_request_id", unique: true
+    t.index ["user_id", "created_at"], name: "index_review_lesson_builds_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_review_lesson_builds_on_user_id"
+  end
+
   create_table "similar_sounds", force: :cascade do |t|
     t.integer "start_word_index", null: false
     t.integer "end_word_index", null: false
@@ -693,6 +709,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_120000) do
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "media"
   add_foreign_key "playlists", "users"
+  add_foreign_key "review_lesson_builds", "languages"
+  add_foreign_key "review_lesson_builds", "lessons"
+  add_foreign_key "review_lesson_builds", "users"
   add_foreign_key "similar_sounds", "phrases"
   add_foreign_key "token_translations", "languages"
   add_foreign_key "token_translations", "phrase_tokens"

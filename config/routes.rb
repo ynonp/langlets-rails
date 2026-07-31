@@ -160,6 +160,7 @@ Rails.application.routes.draw do
       get :finish
     end
   end
+  resources :review_lesson_builds, only: :show, param: :id
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
