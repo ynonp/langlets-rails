@@ -1,10 +1,8 @@
 require "test_helper"
 
-# The public homepage no longer renders the shared user menu or the
-# courses/clips tabs (it's a self-contained landing page). The Review Words
-# menu, the credit-gated Queue link and the profile menu still live in the
-# shared user menu, which the course and playlist pages render — so these tests
-# exercise that menu there instead of on the root page.
+# Review Words actions live in the shared user menu rendered across authenticated
+# web navigation, course, and playlist surfaces. These tests use a playlist as a
+# compact host for exercising the shared partial's language behavior.
 class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   def setup
     @user = User.create!(

@@ -2,6 +2,7 @@ class Lesson < ApplicationRecord
   belongs_to :user
   belongs_to :medium, optional: true
   belongs_to :course, optional: true
+  belongs_to :review_language, class_name: "Language", optional: true
   has_many :activities, dependent: :destroy
   has_many :activity_logs, dependent: :nullify
   has_many :lesson_translations, dependent: :destroy, inverse_of: :lesson
@@ -13,6 +14,15 @@ class Lesson < ApplicationRecord
 
   validates :slug, uniqueness: { scope: :course_id }, allow_blank: true
 
+  attribute :review_build_status, :integer
+  enum :review_build_status, {
+    pending: 0,
+    ready: 1,
+    failed: 2
+  }, prefix: :review_build
+
+  scope :review_lessons, -> { where.not(review_language_id: nil) }
+
   def localized_name = localized_translation&.name || name
 
   has_many :lesson_users, dependent: :destroy
@@ -20,7 +30,7 @@ class Lesson < ApplicationRecord
 
   # Add virtual attribute for completion status populated by SQL
   attribute :completion_status, :integer, default: 0
-  
+
   # Add enum for completion status
   enum :completion_status, {
     not_started: 0,
@@ -34,7 +44,7 @@ class Lesson < ApplicationRecord
     if user
       select(
         "lessons.*",
-        "CASE 
+        "CASE
           WHEN lesson_users.id IS NOT NULL THEN 2
           WHEN COALESCE(user_progress.completed_count, 0) > 0 THEN 1
           ELSE 0
@@ -45,11 +55,11 @@ class Lesson < ApplicationRecord
       )
       .joins(
         "LEFT JOIN (
-          SELECT 
+          SELECT
             activities.lesson_id,
             COUNT(activity_users.id) as completed_count
           FROM activities
-          LEFT JOIN activity_users ON activities.id = activity_users.activity_id 
+          LEFT JOIN activity_users ON activities.id = activity_users.activity_id
             AND activity_users.user_id = #{user.id}
           WHERE activity_users.id IS NOT NULL
           GROUP BY activities.lesson_id
@@ -71,17 +81,17 @@ class Lesson < ApplicationRecord
 
   # Helper methods for status checking
   def not_started?
-    completion_status == 'not_started' || completion_status == 0
+    completion_status == "not_started" || completion_status == 0
   end
 
   def in_progress?
-    completion_status == 'in_progress' || completion_status == 1
+    completion_status == "in_progress" || completion_status == 1
   end
 
   def completed?
-    completion_status == 'completed' || completion_status == 2
+    completion_status == "completed" || completion_status == 2
   end
-  
+
   def last_activity
     activities.order(:order).last
   end
@@ -91,7 +101,7 @@ class Lesson < ApplicationRecord
     intro.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.start_timestamp_seconds, self.end_timestamp_seconds)
 
     learn1 = Activities::MatchPhrasesActivity.create!(lesson: self, order: 2)
-    learn1.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.start_timestamp_seconds, self.end_timestamp_seconds).limit(5)    
+    learn1.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.start_timestamp_seconds, self.end_timestamp_seconds).limit(5)
 
     learn2 = Activities::SortPhrasesActivity.create!(lesson: self, order: 3)
     learn2.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.start_timestamp_seconds, self.end_timestamp_seconds).limit(5)

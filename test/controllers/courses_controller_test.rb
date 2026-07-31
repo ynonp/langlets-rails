@@ -53,6 +53,18 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select ".lp-card:not([hidden])[href=?]", course_path(@course.slug)
   end
 
+  test "signed-in homepage shows the user menu and highlighted daily vocabulary practice" do
+    save_word_for(@language)
+    sign_in @user
+
+    get root_url
+
+    assert_response :success
+    assert_select "[data-testid='daily-vocab-nav']", text: "Daily Vocab Practice"
+    assert_select "[data-controller='profile-menu']", count: 1
+    assert_select "a", text: "Profile"
+  end
+
   test "show preloads localized lesson names" do
     queries = capture_selects { get course_url(@course) }
 
@@ -249,6 +261,20 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   private
+
+  def save_word_for(language)
+    translation_language = languages(:spanish)
+    medium = Medium.create!(url: "https://example.com/vocab-#{SecureRandom.hex(4)}", language: language)
+    phrase = create_translated_phrase!(
+      medium: medium, l1: language, l2: translation_language,
+      text_l1: "Hello", text_l2: "Hola", timestamp: "00:00:01"
+    )
+    token = create_translated_token!(
+      phrase: phrase, l1_start_index: 0, l1_end_index: 4,
+      index_type: :character_index, translation: "Hola"
+    )
+    @user.phrase_token_users.create!(phrase_token: token, language: translation_language)
+  end
 
   def create_public_course!(**attributes)
     course = Course.create!(**attributes)

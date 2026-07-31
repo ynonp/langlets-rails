@@ -36,6 +36,16 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     assert_select ".gallery-card h2", text: course.name
   end
 
+  test "signed-in gallery includes the user menu" do
+    sign_in @user
+
+    get gallery_url(lang: @language.iso_name)
+
+    assert_response :success
+    assert_select "[data-controller='profile-menu']", count: 1
+    assert_select "a", text: "Profile"
+  end
+
   test "shows courses and playlists in one paginated grid" do
     course = create_course("Gallery Course", @language)
     playlist = Playlist.create!(name: "Gallery Playlist", slug: "gallery-playlist", published: true)

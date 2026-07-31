@@ -2,3 +2,6 @@ production:
   cleanup_stale_oauth_registrations:
     class: CleanupStaleOauthRegistrationsJob
     schedule: every day at 4am
+  refresh_tiktok_thumbnail_urls:
+    class: RefreshTiktokThumbnailUrlsJob
+    schedule: every day at 4:30am

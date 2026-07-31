@@ -10,6 +10,8 @@ module App
     def index
       @hero_course = hero_course
       @learning_language = Language.find_by(iso_name: current_language_code) if current_language_code.present?
+      @daily_vocab_language = current_language_code if
+        current_user.daily_vocab_review_available?(current_language_code)
       @playlists = current_user.playlists
                                .includes(courses: [ :language, { course_translations: :language } ])
                                .order(updated_at: :desc)

@@ -169,9 +169,21 @@ en:
       hint: "Listening is the hint — the lines appear in order in the song."
       great_job: "Great job!"
       completed: "You've sorted all the phrases correctly."
+  review_lessons:
+    waiting:
+      title: "Preparing your vocabulary review"
+      heading: "Your vocabulary review is being created"
+      message: "It will begin shortly."
+    failed:
+      heading: "That review needs another try"
+      message: "We couldn't prepare it this time. Your saved words are safe."
+      retry: "Try again"
   app:
     home:
       index:
+        daily_vocab:
+          title: "Your daily vocabulary review"
+          body: "A few minutes today will help these words stick."
         your_playlists: "Your playlists"
         continue: "Continue"
         library: "Library"
@@ -266,6 +278,10 @@ en:
         description: "Turn any video into comprehensible input, or practice with our existing Langlets collection. Understand every word, save new vocabulary for spaced-repetition practice, and enjoy TV shows, music, authentic native content, and more."
       nav:
         home: "Langlets home"
+        daily_vocab: "Daily Vocab Practice"
+        day_streak:
+          one: "%{count} day streak"
+          other: "%{count} day streak"
         browse: "Browse Langlets"
         add_video: "Add a video"
         sign_out: "Sign out"

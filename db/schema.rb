@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_29_143000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_31_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -426,9 +426,14 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_29_143000) do
     t.integer "order", default: 0
     t.string "name"
     t.bigint "user_id", null: false
+    t.bigint "review_language_id"
+    t.integer "review_build_status"
+    t.string "review_build_error"
     t.index ["course_id", "slug"], name: "index_lessons_on_course_id_and_slug", unique: true, where: "(course_id IS NOT NULL)"
     t.index ["course_id"], name: "index_lessons_on_course_id"
     t.index ["medium_id"], name: "index_lessons_on_medium_id"
+    t.index ["review_language_id"], name: "index_lessons_on_review_language_id"
+    t.index ["user_id", "review_language_id", "created_at"], name: "index_lessons_on_user_review_language_created_at", where: "(review_language_id IS NOT NULL)"
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
@@ -673,6 +678,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_29_143000) do
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
   add_foreign_key "lessons", "courses", on_delete: :cascade
+  add_foreign_key "lessons", "languages", column: "review_language_id"
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
   add_foreign_key "notifications", "users"

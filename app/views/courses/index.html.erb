@@ -89,6 +89,9 @@
   .lp-nav-links { display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500; flex-wrap:wrap; }
   .lp-navlink { color:var(--ink); }
   .lp-navlink:hover { color:var(--accent); }
+  .lp-daily-vocab { display:inline-flex; align-items:center; gap:8px; border:0; border-radius:999px; background:#DFF1E8; padding:7px 14px;
+    color:#0F6E56; font:inherit; font-weight:500; cursor:pointer; }
+  .lp-daily-vocab:hover { background:#CFE9DC; }
   .lp-signout { background:none; border:none; padding:0; font:inherit; color:var(--ink); font-weight:500; cursor:pointer; }
   .lp-signout:hover { color:var(--accent); }
 
@@ -208,10 +211,31 @@
       <span class="lp-brand-dot"></span>
     <% end %>
     <div class="lp-nav-links">
+      <% if @daily_vocab_language %>
+        <%= button_to review_lessons_path(language_code: @daily_vocab_language),
+                      method: :post, form_class: "contents", class: "lp-daily-vocab",
+                      data: { turbo: false, testid: "daily-vocab-nav" } do %>
+          <span><%= t(".nav.daily_vocab") %></span>
+          <% if @daily_vocab_streak.to_i.positive? %>
+            <span class="inline-flex items-center gap-1" aria-label="<%= t(".nav.day_streak", count: @daily_vocab_streak) %>">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C8 8.8 7 10.3 7 12.5a5 5 0 0 0 10 0c0-4.2-3-6.5-5-10.5z" fill="oklch(0.68 0.2 40)"/>
+                <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
+              </svg>
+              <%= @daily_vocab_streak %>
+            </span>
+          <% end %>
+        <% end %>
+      <% end %>
       <%= link_to t(".nav.browse"), gallery_path, class: "lp-navlink" %>
       <% if user_signed_in? %>
         <%= link_to t(".nav.add_video"), new_app_import_request_path(lang: current_language_code), class: "lp-navlink" %>
-        <%= button_to t(".nav.sign_out"), destroy_user_session_path, method: :delete, form_class: "lp-signout-form", class: "lp-signout" %>
+        <%= render "shared/user_menu",
+                   avatar_type: :initial,
+                   menu_item_class: "block px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#FAF6EF]",
+                   review_button_class: "w-full text-left px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#FAF6EF]",
+                   dropdown_class: "absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden bg-[#FFFDF8] border border-[#DED4C2]",
+                   divider_class: "border-t border-[#DED4C2]" %>
       <% else %>
         <%= link_to t(".nav.sign_in"), new_user_session_path, class: "lp-navlink" %>
       <% end %>

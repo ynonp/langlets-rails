@@ -3,6 +3,10 @@ class GalleryController < ApplicationController
   CONTENT_TYPES = %w[courses playlists].freeze
 
   def index
+    @daily_vocab_language = if user_signed_in?
+      current_user.daily_vocab_review_language(current_language_code)&.iso_name
+    end
+    @daily_vocab_streak = ActivityLog.current_streak_for_user(current_user) if @daily_vocab_language
     @search = params[:search].to_s.strip
     @selected_types = Array(params[:types]).intersection(CONTENT_TYPES)
     @selected_languages = Language.where(iso_name: Array(params[:languages]).compact_blank).to_a

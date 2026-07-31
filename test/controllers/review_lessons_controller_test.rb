@@ -90,7 +90,9 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     @user.saved_phrase_tokens << @token_ar1
     @user.saved_phrase_tokens << @token_he
 
-    post review_lessons_url(language_code: @arabic.iso_name)
+    perform_enqueued_jobs do
+      post review_lessons_url(language_code: @arabic.iso_name)
+    end
 
     assert_response :redirect
     assert_match review_lesson_path(Lesson.last), response.location
@@ -108,7 +110,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     @user.saved_phrase_tokens << @token_en1
     @user.saved_phrase_tokens << @token_ar1
 
-    post review_lessons_url
+    perform_enqueued_jobs { post review_lessons_url }
 
     assert_response :redirect
 
@@ -129,6 +131,24 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
     assert_match new_user_session_path, response.location
+  end
+
+  test "create redirects immediately to an animated waiting page" do
+    @user.saved_phrase_tokens << @token_en1
+
+    assert_enqueued_with(job: BuildReviewLessonJob) do
+      post review_lessons_url(language_code: @english.iso_name)
+    end
+
+    lesson = Lesson.last
+    assert lesson.review_build_pending?
+    assert_equal @english, lesson.review_language
+
+    get review_lesson_url(lesson)
+
+    assert_response :success
+    assert_select "meta[http-equiv='refresh'][content='2']"
+    assert_select "h1", text: "Your vocabulary review is being created"
   end
 
   test "show displays review lesson with only language-specific tokens" do
@@ -193,15 +213,15 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     @user.saved_phrase_tokens << @token_ar1
     @user.saved_phrase_tokens << @token_he
 
-    post review_lessons_url(language_code: @english.iso_name)
+    perform_enqueued_jobs { post review_lessons_url(language_code: @english.iso_name) }
     assert_response :redirect
     lesson_en = Lesson.find_by(name: "Review Words (#{@english.iso_name})")
 
-    post review_lessons_url(language_code: @arabic.iso_name)
+    perform_enqueued_jobs { post review_lessons_url(language_code: @arabic.iso_name) }
     assert_response :redirect
     lesson_ar = Lesson.find_by(name: "Review Words (#{@arabic.iso_name})")
 
-    post review_lessons_url(language_code: @hebrew.iso_name)
+    perform_enqueued_jobs { post review_lessons_url(language_code: @hebrew.iso_name) }
     assert_response :redirect
     lesson_he = Lesson.find_by(name: "Review Words (#{@hebrew.iso_name})")
 

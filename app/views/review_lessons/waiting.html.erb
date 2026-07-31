@@ -1,0 +1,19 @@
+<% content_for :title, t(".title") %>
+<% content_for :head do %>
+  <meta http-equiv="refresh" content="2">
+<% end %>
+
+<main class="min-h-dvh bg-slate-950 text-white flex items-center justify-center px-6 py-12">
+  <section class="max-w-md text-center" aria-live="polite">
+    <div class="relative mx-auto mb-8 h-36 w-36" aria-hidden="true">
+      <div class="absolute inset-0 rounded-full bg-emerald-400/15 animate-ping"></div>
+      <div class="absolute inset-3 rounded-full bg-slate-900 border border-emerald-300/30 flex items-center justify-center text-6xl animate-bounce">
+        📚
+      </div>
+      <span class="absolute -right-1 top-2 text-3xl animate-pulse">✨</span>
+      <span class="absolute -left-2 bottom-4 text-2xl animate-pulse">✨</span>
+    </div>
+    <h1 class="text-3xl font-extrabold tracking-tight"><%= t(".heading") %></h1>
+    <p class="mt-4 text-lg leading-relaxed text-slate-300"><%= t(".message") %></p>
+  </section>
+</main>

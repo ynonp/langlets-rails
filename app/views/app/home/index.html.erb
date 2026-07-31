@@ -13,6 +13,21 @@
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-6">
   <%= render "app/shared/header" %>
 
+  <% if @daily_vocab_language %>
+    <%= button_to review_lessons_path(language_code: @daily_vocab_language), method: :post,
+                  class: "w-full rounded-xl border border-white/10 bg-app-card p-3 text-left",
+                  data: { testid: "daily-vocab-banner", turbo: false } do %>
+      <span class="flex items-center gap-2.5">
+        <span class="text-xl" aria-hidden="true">📚</span>
+        <span class="flex-1">
+          <span class="block text-[15px] font-bold text-app-text"><%= t(".daily_vocab.title") %></span>
+          <span class="block text-[12px] text-app-text-2"><%= t(".daily_vocab.body") %></span>
+        </span>
+        <span class="text-lg text-app-accent" aria-hidden="true">›</span>
+      </span>
+    <% end %>
+  <% end %>
+
   <%# No paste box here. Pasting a YouTube or TikTok link belongs to the Create
       tab, which owns the whole import flow end to end; Home is for what the
       user already has. %>

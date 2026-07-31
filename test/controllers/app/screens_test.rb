@@ -534,6 +534,27 @@ module App
       end
     end
 
+    test "Home invites vocabulary review until today's language review is completed" do
+      phrase = create_translated_phrase!(medium: @medium, l1: @spanish, l2: @english,
+                              text_l1: "Hola", text_l2: "Hello", timestamp: "00:00:01")
+      token = create_translated_token!(phrase: phrase, l1_start_index: 0, l1_end_index: 3,
+                                       index_type: :character_index, translation: "Hello")
+      @user.saved_phrase_tokens << token
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "[data-testid='daily-vocab-banner']"
+
+      review = ReviewLessonBuilder.new(@user, language_code: @spanish.iso_name).build!
+      LessonUser.create!(user: @user, lesson: review)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "[data-testid='daily-vocab-banner']", count: 0
+    end
+
     test "the queue badge counts only active imports" do
       @user.import_requests.create!(youtube_url: @medium.url, youtube_video_id: "kJQP7kiw5Fk",
                                     clip_language: "Spanish", translation_language: "English",

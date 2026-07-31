@@ -523,7 +523,12 @@ Three asymmetries between the two providers drive most of the design:
   `Imports::Create` (which already calls oEmbed before charging a credit).
   `Course#thumbnail_url` reads the column, then falls back to derivation — that
   order is why the column is nullable and was never backfilled. It is
-  deliberately left NULL for YouTube.
+  deliberately left NULL for YouTube. `RefreshTiktokThumbnailUrlsJob` runs
+  daily through Solid Queue and replaces every TikTok course's signed URL with
+  a fresh oEmbed value before its roughly two-day lifetime ends. Each course is
+  isolated: an unavailable post or transient TikTok failure keeps the previous
+  URL and cannot prevent later courses from refreshing. Rendering never performs
+  this network request.
 - **TikTok is vertical.** The full player and course preview pick their aspect
   ratio from the provider. The watch-video lesson player instead gives every
   provider the same sticky `clamp(160px, 30vh, 280px)` height so its transcript
@@ -1983,6 +1988,14 @@ Users can save individual word/token translations they encounter during lessons 
 
 #### ReviewLessonBuilder (`app/services/review_lesson_builder.rb`)
 - Creates a review lesson (no course, no medium) for a user from their saved token translations
+- Review creation is asynchronous. `POST /review_lessons` synchronously creates
+  only a language-pinned Lesson with `review_build_status: pending`, enqueues
+  `BuildReviewLessonJob`, and redirects immediately. The show action renders an
+  animated waiting screen that refreshes every two seconds until the job
+  transaction has created all activities and marked the lesson `ready`.
+  Build failures mark the lesson `failed` and offer a retry without losing any
+  saved vocabulary. Explicit state prevents a partially constructed lesson from
+  becoming playable.
 - Activity composition:
   - FlashcardActivity (if ≥3 saved tokens, up to 15)
   - MatchTokensActivity (if ≥3 saved tokens, up to 15)
@@ -2003,8 +2016,9 @@ Users can save individual word/token translations they encounter during lessons 
 - JSON responses: `{saved: true/false, token_translation_id: N}`
 
 #### ReviewLessonsController
-- `POST /review_lessons` — build review lesson and redirect to show
-- `GET /review_lessons/:id` — play lesson (uses `review_lessons/show.html.erb`)
+- `POST /review_lessons` — create and enqueue a review lesson, then redirect to show
+- `GET /review_lessons/:id` — show waiting/failed state or play a ready lesson
+  (uses `review_lessons/show.html.erb`)
 - `GET /review_lessons/:id/finish` — completion page
 
 ### Frontend Changes
@@ -2042,6 +2056,18 @@ retained tab webviews on iOS from restoring the menu in its open state.
 
 The native app Home header is the wordmark and that avatar only — no credits pill (see the Create tab below for where the balance lives). It uses its top-right initials as a profile dropdown. It links to Profile and Logout, and shows one language-specific "Practice Words" action for each language in which the user has saved vocabulary:
 - `app/views/app/shared/_header.html.erb`
+
+Daily vocabulary invitations use `User#daily_vocab_review_available?`. The user
+must have a saved span whose phrase is in the current learning language, and
+must not have a `LessonUser` completion for a review lesson pinned to that
+language during `Time.zone.now.all_day`. Merely generating or starting a review
+does not dismiss the invitation. Native Home renders the invitation directly
+below its Langlets header. The web homepage and gallery put a highlighted
+"Daily Vocab Practice" action first in their navigation and now both render the
+shared authenticated user menu. Web prefers the `?lang=` learning language; on
+an unfiltered URL it uses the first saved-vocabulary language that is still due
+today, so the action does not disappear merely because the catalog is showing
+all languages.
 
 On mobile, the courses index and playlist headers keep the profile avatar visible by moving the theme toggle and XP chip into the profile dropdown while keeping desktop header controls unchanged:
 - `courses/index.html.erb`

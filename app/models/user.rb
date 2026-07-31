@@ -193,6 +193,28 @@ class User < ApplicationRecord
       .where(languages: { id: language.id })
   end
 
+  def daily_vocab_review_available?(language_code)
+    language = Language.find_by(iso_name: language_code)
+    return false unless language
+    return false unless phrase_token_users.joins(phrase_token: :phrase)
+      .where(phrases: { l1_id: language.id }).exists?
+
+    !lesson_users.joins(:lesson).where(
+      lessons: { review_language_id: language.id },
+      created_at: Time.zone.now.all_day
+    ).exists?
+  end
+
+  def daily_vocab_review_language(preferred_code = nil)
+    candidates = languages_with_saved_words.order(:iso_name)
+    if preferred_code.present?
+      preferred = candidates.find_by(iso_name: preferred_code)
+      return preferred if preferred && daily_vocab_review_available?(preferred.iso_name)
+    end
+
+    candidates.detect { |language| daily_vocab_review_available?(language.iso_name) }
+  end
+
   def sync_local_xp(local_xp_data)
     return unless local_xp_data.is_a?(Hash) && local_xp_data["dailyXp"].present?
 

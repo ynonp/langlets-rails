@@ -9,6 +9,11 @@ class CoursesController < ApplicationController
     # Store release.
     return redirect_to app_home_path if native_app? && user_signed_in?
 
+    @daily_vocab_language = if user_signed_in?
+      current_user.daily_vocab_review_language(current_language_code)&.iso_name
+    end
+    @daily_vocab_streak = ActivityLog.current_streak_for_user(current_user) if @daily_vocab_language
+
     # Everyone sees the published system playlists; signed-in users also see
     # their own playlists. Only courses with a ready translation in the
     # subdomain's language are shown, and a playlist with none of those is
