@@ -13,7 +13,7 @@ import WebKit
 // the phone's own localhost is the phone. Plain http to a loopback address is
 // blocked by App Transport Security without NSAllowsLocalNetworking in
 // Info.plist, which is set for exactly this reason.
-let rootURL = URL(string: "http://localhost:3000")!
+let rootURL = URL(string: "https://langlets.app")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -55,10 +55,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // invisible — you get a screen that works, just presented wrongly.
         Hotwire.config.pathConfiguration.matchQueryStrings = false
 
-        // Course lessons are modal flows. Give them an explicit close control
-        // while keeping ordinary pages on Hotwire's default controller.
+        // Course lessons and review lessons are modal flows. Give them an
+        // explicit close control while keeping ordinary pages on Hotwire's
+        // default controller.
         Hotwire.config.defaultViewController = { url in
-            if Self.isCourseLessonURL(url) {
+            if Self.isLessonURL(url) {
                 return LessonViewController(url: url)
             }
             return HotwireWebViewController(url: url)
@@ -167,11 +168,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         PushNotifications.shared.clearAppIconBadge()
     }
 
-    private static func isCourseLessonURL(_ url: URL) -> Bool {
+    /// Course lesson URLs (`/courses/:course/lessons/:lesson`, plus their
+    /// activity and finish variants) and review lesson URLs
+    /// (`/review_lessons/:id`, `/review_lesson_builds/:request_id`, plus
+    /// finish) — everything that path configuration presents as a modal
+    /// sheet and that should therefore get the native close X.
+    private static func isLessonURL(_ url: URL) -> Bool {
         let components = url.path.split(separator: "/")
-        return components.count >= 4 &&
-            components[0] == "courses" &&
-            components[2] == "lessons"
+        guard let first = components.first else { return false }
+
+        if first == "courses" {
+            return components.count >= 4 && components[2] == "lessons"
+        }
+
+        return first == "review_lessons" || first == "review_lesson_builds"
     }
 
     // Handle deep links (OAuth callbacks via custom URL scheme)

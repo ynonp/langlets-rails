@@ -1,8 +1,9 @@
 import HotwireNative
 import UIKit
 
-/// Adds an explicit modal dismissal affordance to course lesson pages.
-/// Lesson activity navigation stays inside the same sheet, so this button is
+/// Adds an explicit modal dismissal affordance to course lesson and review
+/// lesson pages (including the review lesson build's waiting/failed screens).
+/// Activity navigation stays inside the same sheet, so this button is
 /// intentionally a close action instead of a back action.
 final class LessonViewController: HotwireWebViewController {
     override func viewDidLoad() {

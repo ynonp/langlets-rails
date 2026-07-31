@@ -36,7 +36,16 @@
     "the Queue tab with the back arrow and tab bar intact. It was a medium",
     "sheet; as a sheet it fought the iOS 26 floating tab bar and the screen",
     "grew past the detent once a preview card rendered. Note it needs its own",
-    "rule purely to escape the '/new$' modal pattern above it."
+    "rule purely to escape the '/new$' modal pattern above it.",
+    "",
+    "review_lessons and review_lesson_builds are both modal, and both without",
+    "a modal_style, matching the course lesson rule above: taking a review",
+    "lesson is one continuous session from the tap on 'Review words' through",
+    "the waiting screen to the activities and the finish page, and it should",
+    "present and dismiss as a single sheet with the tab bar hidden throughout",
+    "rather than flash the tab bar during the wait and then jump into a modal.",
+    "review_lesson_builds needs its own pattern because the '_builds' suffix",
+    "means it doesn't match '/review_lessons/.*'."
   ],
   "rules": [
     {
@@ -81,10 +90,11 @@
     },
     {
       "patterns": [
-        "/review_lessons/.*"
+        "/review_lessons/.*",
+        "/review_lesson_builds/.*"
       ],
       "properties": {
-        "context": "default",
+        "context": "modal",
         "pull_to_refresh_enabled": false
       }
     },
