@@ -17,6 +17,13 @@ class ImportRequest < ApplicationRecord
     detecting: 5
   }
 
+  # The one failure the user can do something about: the course was built, but
+  # their balance no longer covered publishing it into their channel. Stored in
+  # `failure_reason`, which is read by people — the Queue renders it and the
+  # share extension gets it straight out of the API — so it must never carry
+  # Credits::Ledger's own message, which names an internal user id.
+  INSUFFICIENT_CREDITS = "Insufficient credits".freeze
+
   # Raised by #retry! when the request is in no state to be restarted. Loud on
   # purpose: this is a console tool, and a `false` nobody notices reads exactly
   # like a retry that worked.
@@ -52,6 +59,14 @@ class ImportRequest < ApplicationRecord
     detecting? || queued? || importing?
   end
 
+  # Whether this failed for want of credits rather than for a technical reason.
+  # The Queue's ordinary failure copy promises that a human is reviewing the
+  # import, which is true of a pipeline error and false of this one — nobody is
+  # coming, and buying credits is the fix.
+  def insufficient_credits?
+    failed? && failure_reason == INSUFFICIENT_CREDITS
+  end
+
   # The course is created in the same transaction as the request and carries the
   # cover oEmbed gave us, so ask it first — that's the only place a TikTok
   # thumbnail exists. The derivation is the fallback for YouTube, where it costs
@@ -82,9 +97,8 @@ class ImportRequest < ApplicationRecord
   end
 
   # Restart a failed import. Console/operator tool: the Queue deliberately
-  # offers no user-facing retry, and nothing calls this automatically — a failed
-  # import has already been settled and refunded, so restarting it is a decision
-  # somebody makes after fixing the cause.
+  # offers no user-facing retry, and nothing calls this automatically —
+  # restarting is a decision somebody makes after fixing the cause.
   #
   # Four things have to move together, and skipping any one of them leaves a
   # retry that looks like it worked and does nothing:
@@ -106,10 +120,11 @@ class ImportRequest < ApplicationRecord
   #     so without this the retry has no timeout at all and a second silent
   #     failure spins forever.
   #
-  # Credits are deliberately untouched. The failure refunded already, and a
-  # retry is us fixing our own import rather than a second sale; `refunded`
-  # stays true so a second failure can't mint a free credit in
-  # Imports::Settlement#fail!.
+  # Credits do not enter into it at all. Nothing is charged until the course is
+  # published into the user's channel (Channel#publish!), so a failed import took
+  # nothing, a retry is not a second sale, and the retried run pays exactly once
+  # if it succeeds — the ledger key is the (channel, course) pair, so however
+  # many times an operator restarts this, the user buys the course once.
   #
   # Returns self, raises NotRetryable if the request can't be restarted.
   def retry!

@@ -42,7 +42,7 @@ module App
     # authority.
     def create_translated_course!(**attributes)
       course = super
-      attributes.fetch(:user).provision_default_channel!.publish!(course)
+      publish_covering_the_credit(attributes.fetch(:user).provision_default_channel!, course)
       course
     end
 
@@ -81,7 +81,7 @@ module App
         youtube_url: "https://www.youtube.com/watch?v=webqueueaaa", youtube_video_id: "webqueueaaa",
         clip_language: "Spanish", translation_language: "English",
         title: "Responsive queue item with a production-length title that must never widen the desktop grid " * 3,
-        status: :queued, charged: true
+        status: :queued
       )
 
       get app_import_requests_path, headers: WEB
@@ -559,34 +559,35 @@ module App
       assert_equal 1, controller.view_assigns["queue_badge_count"]
     end
 
-    test "cancelling a queued import refunds the credit" do
+    # Cancelling costs nothing and gives nothing back, because a queued import
+    # has not been paid for yet — the credit moves when the course is published
+    # into the user's channel, which a cancelled import never reaches.
+    test "cancelling a queued import leaves the balance alone" do
       queued = @user.import_requests.create!(
         youtube_url: "https://www.youtube.com/watch?v=cancelaaaaa", youtube_video_id: "cancelaaaaa",
         clip_language: "Spanish", translation_language: "English", title: "Waiting",
-        status: :queued, charged: true
+        status: :queued
       )
-      Credits::Ledger.spend!(user: @user, subject: queued, idempotency_key: "import:#{queued.id}")
-      assert_equal 2, @user.reload.credit_balance
+      before = @user.reload.credit_balance
 
       delete app_import_request_path(queued), headers: NATIVE
 
       assert_redirected_to app_import_requests_path
       assert queued.reload.canceled?
-      assert queued.refunded?
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal before, @user.reload.credit_balance
+      assert_equal 0, @user.credit_ledger_entries.import_refund.count
     end
 
     test "an import that has already started cannot be cancelled" do
       importing = @user.import_requests.create!(
         youtube_url: "https://www.youtube.com/watch?v=runningaaaa", youtube_video_id: "runningaaaa",
         clip_language: "Spanish", translation_language: "English", title: "Running",
-        status: :importing, charged: true
+        status: :importing
       )
 
       delete app_import_request_path(importing), headers: NATIVE
 
       assert importing.reload.importing?
-      assert_not importing.refunded?
     end
 
     test "the Library derives language pills from visible courses and filters by them" do

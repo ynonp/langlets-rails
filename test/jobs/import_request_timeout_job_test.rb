@@ -25,9 +25,8 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
       youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
       clip_language: "Spanish", translation_language: "English",
       course: @course, create_song_progress: @progress,
-      status: :importing, charged: true
+      status: :importing
     )
-    Credits::Ledger.spend!(user: @user, subject: @request, idempotency_key: "import:#{@request.id}")
   end
 
   test "the deadline is scheduled for every request the moment it is created" do
@@ -42,16 +41,13 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
     end
   end
 
-  test "an import still running when the deadline passes is failed and refunded" do
-    assert_equal 2, @user.reload.credit_balance
-
+  test "an import still running when the deadline passes is failed, and costs nothing" do
     run_job
 
     @request.reload
     assert @request.failed?
-    assert @request.refunded?
     assert_match(/timed out/, @request.failure_reason)
-    assert_equal 3, @user.reload.credit_balance, "the credit must come back"
+    assert_equal 3, @user.reload.credit_balance, "an import that never published was never paid for"
     assert @course.reload.error?
   end
 
@@ -73,7 +69,7 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
     run_job
 
     assert @request.reload.ready?
-    assert_equal 2, @user.reload.credit_balance, "no refund for an import that worked"
+    assert_equal 3, @user.reload.credit_balance, "already settled; this job touches nothing"
   end
 
   # The last patch and the finalizer that acts on it are not atomic, so an
@@ -85,7 +81,7 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
 
     assert @request.reload.ready?
     assert @course.reload.published?
-    assert_equal 2, @user.reload.credit_balance, "nothing to refund"
+    assert_equal 2, @user.reload.credit_balance, "delivered at the last moment, and paid for then"
   end
 
   test "a deleted import request is not an error" do

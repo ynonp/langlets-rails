@@ -19,7 +19,14 @@
 
   <div>
     <p class="text-app-text-2 text-sm mt-1">
-      <%= t(".credits_subtitle", credits: app_credits_label(current_user.credit_balance)) %>
+      <%# A subscriber has no balance worth reporting, and telling them how many
+          credits they have left invites them to worry about a meter that no
+          longer runs. %>
+      <% if current_user.pro? %>
+        <%= t(".pro_subtitle") %>
+      <% else %>
+        <%= t(".credits_subtitle", credits: app_credits_label(current_user.credit_balance)) %>
+      <% end %>
     </p>
     <p class="text-app-text-2 text-sm mt-2 leading-[1.45]">
       <%= t(".share_hint") %>

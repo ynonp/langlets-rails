@@ -2,7 +2,11 @@
   balance = current_user.credit_balance
   cost = preview.cost
   video = preview.video
-  short = cost.positive? && balance < cost
+  # Pro is bought in the iOS app but entitles the account, so the browser has to
+  # honour it too — otherwise a subscriber pasting a link here is asked to buy
+  # credits they don't need.
+  pro = current_user.pro?
+  short = !pro && cost.positive? && balance < cost
 %>
 
 <div class="overflow-hidden rounded-[22px] border border-[#E4DCCC] bg-[#FFFDF8] shadow-[6px_6px_0_#EADFC9]">
@@ -15,7 +19,12 @@
   </div>
 
   <div class="border-t border-[#E4DCCC] p-5 sm:p-6">
-    <% if preview.in_library? %>
+    <% if preview.paused? %>
+      <%# Pro is bought in the iOS app, so the browser can explain the state but
+          cannot sell the way out of it. %>
+      <p class="text-sm text-[#55503F]"><%= t("app.import_requests.new.paused") %></p>
+      <p class="mt-2 text-sm text-[#8A8170]"><%= t("app.import_requests.new.paused_web_hint") %></p>
+    <% elsif preview.in_library? %>
       <p class="text-sm text-[#55503F]"><%= t("app.import_requests.new.already_in_library") %></p>
       <%= link_to t("app.import_requests.new.open_lesson"), course_path(preview.course), data: { turbo_frame: "_top" }, class: "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410] sm:w-auto" %>
     <% elsif preview.in_queue? %>
@@ -25,8 +34,8 @@
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p class="text-sm leading-relaxed text-[#55503F]">
           <%= t("app.import_requests.new.imports_as_lesson") %>
-          <% if preview.free? %>
-            <strong class="text-[#C4451C]"><%= t("app.import_requests.new.free_join") %></strong>
+          <% if pro %>
+            <strong class="text-[#C4451C]"><%= t("app.import_requests.new.included_with_pro") %></strong>
           <% else %>
             <strong class="<%= short ? 'text-[#9E3410]' : 'text-[#C4451C]' %>"><%= pluralize(cost, "credit") %> · <%= balance %> left</strong>
           <% end %>
@@ -37,7 +46,7 @@
           <%= form_with url: app_import_requests_path, method: :post, data: { turbo: false }, class: "shrink-0" do |f| %>
             <%= hidden_field_tag :url, video.canonical_url %>
             <%= hidden_field_tag :translation_language, translation_language.english_name %>
-            <%= f.submit(preview.free? ? t("app.import_requests.new.approve_free") : t("app.import_requests.new.approve", cost: pluralize(cost, "credit")), class: "min-h-11 w-full cursor-pointer rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410]") %>
+            <%= f.submit(app_approve_label(preview: preview, pro: pro), class: "min-h-11 w-full cursor-pointer rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410]") %>
           <% end %>
         <% end %>
       </div>

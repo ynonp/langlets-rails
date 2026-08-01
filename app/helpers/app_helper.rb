@@ -30,4 +30,17 @@ module AppHelper
   def app_credits_label(balance)
     "#{balance} #{'credit'.pluralize(balance)} left"
   end
+
+  # What the Approve button says. Three prices, and the button must never name
+  # one the user isn't about to pay: Pro covers it, somebody else's in-flight
+  # import covers it, or it costs credits. Shared by the native and web previews
+  # so the two surfaces cannot describe the same charge differently.
+  # Pro is the only thing that makes Approve free now — a course already in the
+  # user's channel never reaches this button, because the sheet offers Open
+  # instead. So there is no "free" label left to draw.
+  def app_approve_label(preview:, pro:)
+    return t("app.import_requests.new.approve_pro") if pro
+
+    t("app.import_requests.new.approve", cost: pluralize(preview.cost, "credit"))
+  end
 end

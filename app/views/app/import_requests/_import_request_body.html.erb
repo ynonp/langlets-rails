@@ -17,17 +17,11 @@
           <%= app_icon "spinner", class: "w-3.5 h-3.5 text-app-accent animate-spin shrink-0" %>
           <p class="text-app-accent text-xs font-semibold truncate"><%= import_request.stage_label %></p>
         </div>
-        <% if import_request.charged? %>
-          <span class="shrink-0 text-app-text-3 text-[11px]">1 credit used</span>
-        <% end %>
       </div>
 
     <% when "queued" %>
       <div class="flex items-center justify-between gap-2">
         <p class="text-app-text-3 text-xs">Queued — up next</p>
-        <% if import_request.charged? %>
-          <span class="shrink-0 text-app-text-3 text-[11px]">1 credit used</span>
-        <% end %>
       </div>
 
     <% when "ready" %>
@@ -39,7 +33,11 @@
     <% when "failed" %>
       <div class="flex items-center gap-1.5">
         <%= app_icon "warning", class: "w-3.5 h-3.5 text-red-400" %>
-        <span class="text-red-400 text-xs font-semibold">Import failed — credit refunded</span>
+        <%# Two different failures needing two different next moves: one is ours
+            to fix, the other is theirs. %>
+        <span class="text-red-400 text-xs font-semibold">
+          <%= import_request.insufficient_credits? ? "Import failed — insufficient credits" : "Import failed — no credit used" %>
+        </span>
       </div>
 
     <% when "canceled" %>
@@ -47,7 +45,11 @@
     <% end %>
   </div>
 
-  <% if import_request.failed? %>
+  <% if import_request.insufficient_credits? %>
+    <%= link_to t("app.import_requests.new.get_credits"), app_credits_path,
+                data: { turbo_frame: "_top" },
+                class: "shrink-0 rounded-full bg-app-pill text-app-text-2 px-3 h-8 flex items-center text-xs font-semibold" %>
+  <% elsif import_request.failed? %>
     <% tooltip_id = dom_id(import_request, :failed_help) %>
     <span class="group relative shrink-0">
       <button type="button"

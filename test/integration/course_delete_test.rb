@@ -23,7 +23,7 @@ class CourseDeleteTest < ActionDispatch::IntegrationTest
       order: 0
     )
     @activity = Activity.create!(lesson: @lesson, user: @user, order: 0)
-    @user.default_channel.publish!(@course)
+    publish_covering_the_credit(@user.default_channel, @course)
     @enrollment = Enrollment.create!(user: @user, course: @course, source: :library)
 
     post user_session_url,
@@ -53,7 +53,7 @@ class CourseDeleteTest < ActionDispatch::IntegrationTest
       password: "password123",
       confirmed_at: Time.zone.now
     )
-    other_user.default_channel.publish!(@course)
+    publish_covering_the_credit(other_user.default_channel, @course)
     other_enrollment = Enrollment.create!(user: other_user, course: @course, source: :library)
     other_lesson_progress = LessonUser.create!(lesson: @lesson, user: other_user)
 
@@ -69,7 +69,7 @@ class CourseDeleteTest < ActionDispatch::IntegrationTest
     delete course_url(@course.slug)
     assert_not @user.default_channel.channel_items.exists?(course: @course)
 
-    @user.default_channel.publish!(@course)
+    publish_covering_the_credit(@user.default_channel, @course)
 
     assert @user.default_channel.channel_items.exists?(course: @course)
     assert_not Enrollment.exists?(user: @user, course: @course)

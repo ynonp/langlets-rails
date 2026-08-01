@@ -18,7 +18,7 @@ class ImportRequestTimeoutJob < ApplicationJob
 
     # The last patch and the finalizer that acts on it are not atomic, so ask
     # once more before giving up: an import whose data is sitting right there
-    # must not be failed and refunded on a technicality.
+    # must not be failed on a technicality.
     Imports::Finalizer.call(import_request.create_song_progress) if import_request.create_song_progress
     return unless import_request.reload.active?
 

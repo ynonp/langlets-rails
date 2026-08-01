@@ -200,6 +200,66 @@ en:
         # without a line of prose between the heading and the grid.
         first_run_library: "Jump right in"
         first_run_create: "Or import any YouTube / TikTok video ›"
+        # The Pro row, directly under the header. Two states, never hidden: the
+        # upsell while the free allowance is running out, and a plain statement
+        # of what an active subscription is doing once there is one. A
+        # subscription the app stops mentioning is one people forget they pay
+        # for, and then dispute.
+        upsell:
+          title: "Go Pro — unlimited imports"
+          free_used: "You've used %{used} of %{count} free imports."
+          credits_left:
+            one: "%{count} credit left. Go unlimited."
+            other: "%{count} credits left. Go unlimited."
+        pro:
+          title: "Langlets Pro"
+          badge: "ACTIVE"
+          body: "Unlimited imports · library synced"
+    pro:
+      show:
+        page_title: "Langlets Pro"
+        close: "Close"
+        title: "Learn without limits"
+        # Two leads, because the paywall is reached both by running out and by
+        # tapping the Home banner with credits still in hand. Telling the second
+        # person they've used everything is a small lie at the exact moment it
+        # costs the most.
+        lead: "You've used %{used} of your %{count} free imports. Go unlimited before you run out."
+        lead_all_used: "You've used your %{count} free imports. Keep turning the videos you love into lessons."
+        benefits:
+          imports:
+            title: "Unlimited video imports"
+            body: "Any YouTube or TikTok video, whenever you want."
+          library:
+            title: "Your whole library, in the cloud"
+            body: "Every lesson you generate stays synced and ready."
+        plans_legend: "Choose a plan"
+        plan:
+          yearly: "Yearly"
+          monthly: "Monthly"
+        price:
+          yearly: "$100 / year"
+          monthly: "$10 / month"
+        price_detail:
+          yearly: "$100 / year · works out to %{equivalent} / mo"
+          monthly: "$10 / month · cancel anytime"
+        save: "SAVE %{percent}%"
+        cta: "Continue — %{price}"
+        restore: "Restore purchases"
+        # Required disclosure for an auto-renewable subscription. The last
+        # sentence is not marketing hedging — it is literally what the Pro
+        # library does: imports made while subscribed are published to a channel
+        # lent for the life of the subscription, so cancelling withdraws them and
+        # resubscribing hands them all back. Saying so here is the only warning
+        # the user gets before paying.
+        legal: "Billed through the App Store. Renews automatically — cancel anytime in Settings. Pro includes cloud access to the lessons you generate; if your subscription ends, your generated library is paused until you reactivate. Anything you imported with credits, and every word you've saved, stays yours."
+      success:
+        page_title: "You're Pro!"
+        title: "You're Pro!"
+        body: "Unlimited imports are live, and every lesson you generate stays synced in your cloud library."
+        receipt: "%{plan} plan · %{price} · renews %{renews_on}"
+        cta: "Start importing"
+        manage: "Manage or cancel anytime in Settings."
     library:
       filters:
         label: "Filter library"
@@ -247,6 +307,26 @@ en:
         page_title: "Add a video"
         title: "Add a video"
         credits_subtitle: "%{credits} — each import uses 1."
+        # Pro replaces every price on this screen. Quoting a balance to somebody
+        # whose meter no longer runs invites them to worry about it.
+        pro_subtitle: "Langlets Pro — import as much as you like."
+        pro_balance_label: "Your plan"
+        pro_balance: "Langlets Pro — unlimited"
+        included_with_pro: "Included with Pro"
+        approve_pro: "Approve · included with Pro"
+        # Their own import, in a Pro library their subscription no longer lends
+        # them. Nothing is charged and nothing is enrolled — the only way back in
+        # is to resubscribe, so that is the only thing offered.
+        paused: "You imported this with Langlets Pro. It's still in your library, paused until your subscription is active again."
+        paused_cta: "Reactivate Pro"
+        paused_web_hint: "Reactivate Pro in the Langlets app on your iPhone to open it again."
+        paused_notice: "That one's in your paused Pro library."
+        # After Approve on a video that already had a course. Nothing was built,
+        # but the course was published into their library, which is the thing a
+        # credit buys.
+        added_notice_charged: "Added to your library — %{cost} credit used."
+        added_notice_pro: "Added to your library — included with Pro."
+        already_yours_notice: "That one's already in your library."
         share_hint: "You can also share a YouTube or TikTok video directly to Langlets from its Share menu."
         video_language: "Video language"
         paste_placeholder: "Paste a YouTube or TikTok link"
@@ -254,9 +334,7 @@ en:
         link_recognized: "Link recognized"
         get_started: "Paste a YouTube or TikTok link to get started."
         imports_as_lesson: "Imports as a lesson: transcript, translations, vocab cards."
-        free_join: "Free — already being imported"
         approve: "Approve · use %{cost}"
-        approve_free: "Approve · free"
         get_credits: "Get credits"
         already_in_library: "Already in your library."
         open_lesson: "Open lesson"

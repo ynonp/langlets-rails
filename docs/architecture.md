@@ -83,6 +83,14 @@ remains historical creator data, while `ChannelItem` determines which identity
 contributed a Course. A unique partial index guarantees one default per owner,
 and `[channel_id, course_id]` makes publishing safe to retry.
 
+`Channel` is an **STI base class**. Its one subclass is `ProChannel`, a private
+Channel holding everything a Langlets Pro subscriber imports, whose defining
+property is that owning it is not enough to read it — see *Langlets Pro* below.
+Because it is a base class, **an unscoped `Channel.where(…)` sees ProChannel
+rows**: any query that means "ordinary channels" has to say `type: nil`, and the
+three that do (`Channel.owned_grant`, `Ability`'s `can :manage`, and
+`Admin::ChannelsController#manageable_channels`) each say why.
+
 Visibility is `private`, `shared`, or `public`. Private content is readable only
 by its owner and administrators. Shared Channels are invite-only and become
 readable only after an email-bound, expiring invitation is accepted and creates
@@ -1168,9 +1176,77 @@ download is verified before it counts:
 
 ### Credits
 
-Video imports cost credits. New accounts get `User::SIGNUP_CREDITS` (3).
+New accounts get `User::SIGNUP_CREDITS` (3).
 The iOS Credits screen uses Apple consumable in-app purchases and never exposes
 PayPal checkout. Web purchase surfaces use fixed PayPal packs.
+
+#### What a credit buys — one rule, one place
+
+**A credit buys a course in your channel.** Not a pipeline run, not an import
+request: a `ChannelItem`. So the charge lives in `Channel#publish!`, which is the
+only place a course becomes somebody's, and `ProChannel#charge_for!` overrides it
+to nothing — that override is the whole of "Pro imports are not metered".
+
+```
+publishing a course into a default Channel   → 1 credit
+publishing a course into a Pro library       → free
+```
+
+Everything else follows, and deliberately nothing else decides a price:
+
+| Situation | What happens | Cost |
+|---|---|---|
+| Nobody has this video | pipeline runs, publishes on completion | 1 |
+| Somebody else is importing it right now | rides along on their run (`:joined`) | 1 |
+| Somebody else already built it | published into your channel on the spot (`:adopted`), no pipeline at all | 1 |
+| It is already in **your** channel | nothing to publish (`:deduped`) | 0 |
+| It is in your channel but not in your language | pipeline runs for the language; `publish!` finds the item already there | 0 |
+| Any of the above, on Pro | published into the Pro library | 0 |
+
+The old design priced each of those separately in `Imports::Create` and got three
+different answers for the same end state — "already published" and "someone else
+is importing it" were free, building it was a credit. Who executed the pipeline,
+and whether it ran a minute ago or a year ago, cannot change the price now,
+because the price is not attached to the pipeline.
+
+**Charged on delivery, not on request.** Nothing moves when the user taps
+Approve; the credit moves when `Imports::Settlement#complete!` publishes. Three
+consequences worth knowing:
+
+- **There are no refunds in the import path.** A failed, timed-out or cancelled
+  import never published, so it never charged. `Imports::Settlement#fail!` only
+  records the reason, and the Queue says "Import failed — no credit used".
+  `Credits::Ledger.refund!` remains for console and support use.
+- **The ledger key is the publication** — `"publish:<channel_id>:<course_id>"`,
+  with the Course as `subject`. A retried job, a second settlement, an operator
+  re-running `ImportRequest#retry!`, and delete-then-re-import all buy the course
+  exactly once.
+- **`Imports::Pricing.ensure_affordable!` is a guard, not a reservation.** It
+  refuses an import the user could not take delivery of, counting requests
+  already in flight (each wants a credit of its own when it lands) so one credit
+  cannot queue five imports. The residual race — the balance running out between
+  request and delivery — surfaces as `Credits::InsufficientCredits` inside
+  `complete!`, which rolls the publication back and fails that import. Failing is
+  correct; the alternative is handing over a course nobody paid for.
+  `Imports::Finalizer` catches that one exception separately and records
+  `ImportRequest::INSUFFICIENT_CREDITS` as the reason: `failure_reason` is read by
+  people (the Queue renders it, the share extension reads it from the API) and
+  the ledger's own message names an internal user id. `ImportRequest#insufficient_credits?`
+  is what the Queue branches on — the ordinary failure copy promises a human is
+  reviewing the import, which is true of a pipeline error and false of this one.
+  The shared Course is untouched: it is already `published` by the time
+  `complete!` runs, so `mark_course_failed` no-ops and everyone else riding that
+  run keeps it.
+
+`Imports::Pricing` is the read-only half: `cost_for` quotes, `already_published?`
+asks the destination channel (`Pricing.destination_channel` — `publishing_channel`
+without the provisioning, so a Preview never creates a Pro library just by being
+looked at) whether the item is already there. `Imports::Preview` quotes with it
+and `Channel#publish!` charges, so the number on the button is the number taken.
+
+`import_requests` therefore has **no** `charged`, `refunded` or `pro_covered`
+columns; they were mirrors of a fact that now belongs to the publication.
+`credit_ledger_entries` remains the record of every credit that ever moved.
 
 #### **Credits::Ledger** (`app/services/credits/ledger.rb`)
 The only supported way to move credits. Two stores, written together in one transaction:
@@ -1179,7 +1255,7 @@ The only supported way to move credits. Two stores, written together in one tran
 
 Three rules, each load-bearing:
 1. **Never read-modify-write the balance.** `Ledger` spends with `UPDATE ... WHERE credit_balance >= ?`, so Postgres evaluates the guard under the row lock and exactly one of two concurrent spends wins. `user.credit_balance -= 1; user.save!` is a lost update. There's a real two-thread test for this (`test/services/credits/ledger_test.rb`).
-2. **Every call passes an `idempotency_key`** (`"import:42"`, `"refund:42"`, `"signup:7"`), uniquely indexed. GoodJob retries jobs; without the key a retry double-charges. A replay returns the original entry and moves nothing.
+2. **Every call passes an `idempotency_key`** (`"publish:7:42"`, `"signup:7"`, `"apple:<transactionId>"`), uniquely indexed. GoodJob retries jobs; without the key a retry double-charges. A replay returns the original entry and moves nothing.
 3. **The ledger does not refresh the caller's in-memory user** — it moves the balance with an UPDATE. Call `user.reload` if you need the new value. (`User#grant_signup_credits` does exactly this, which is why `User.create!(...).credit_balance` correctly reads 3.)
 
 `User.has_many :credit_ledger_entries, dependent: :delete_all` — **not** `:destroy`, which would trip the immutability guard and make account deletion impossible.
@@ -1245,10 +1321,244 @@ ngrok hostname in `config.hosts`; the form derives its PayPal `notify_url` from
 the incoming tunneled request, so open the Credits page through the ngrok URL
 before starting a sandbox checkout.
 
+### Langlets Pro
+
+Credits are the free tier's meter. **Pro** is the subscription that removes it,
+and it is deliberately *not* "a big pile of credits":
+
+- Every new account, web or native, still gets `User::SIGNUP_CREDITS` (3). Pro
+  changes nothing about signup.
+- Everything a subscriber imports is published to a **Pro library** they hold on
+  loan. Cancelling withdraws it; resubscribing hands it straight back.
+- A Pro subscriber imports without limit, and that is a *consequence* of the
+  library rather than a rule of its own: the charge lives in `Channel#publish!`
+  and `ProChannel` overrides it to nothing, so a subscriber's imports are free
+  because of where they land. There is no meter to drain and none of the credit
+  machinery runs. One override, no second code path that has to remember to skip
+  the meter, and no way for the import service to bill a subscriber by forgetting
+  to ask whether they are one.
+
+`User#pro?` is the single entitlement predicate, defined as
+`subscriptions.entitling.exists?` — active status *and* an expiry still in the
+future. It is memoised per instance and cleared by `reload`, exactly like
+`credit_balance`, so a purchase needs a reload before the new answer shows.
+
+#### The Pro library (`ProChannel`)
+
+The subscription's second half, and the reason it is a Channel rather than a
+flag on `courses`.
+
+`ProChannel < Channel` is a private Channel **the subscriber owns**. What makes
+it different from any other private Channel is that ownership does not grant
+access:
+
+```ruby
+class ProChannel < Channel
+  def self.owned_grant(user)
+    return nil unless user.pro?
+    where(user_id: user.id)
+  end
+end
+```
+
+`Channel.visible_to` is a **union of independent grants** — public, owned,
+subscribed, plus whatever `ProChannel` contributes — so each kind of Channel
+states its own rule instead of adding a clause to somebody else's `WHERE`. A
+lapsed subscriber's rows simply stop being contributed. Every grant is wrapped as
+`Channel.where(id: …)` before being OR-ed, because `or` needs structurally
+compatible relations and `ProChannel.where(…)` is not compatible with
+`Channel.where(…)` on its own.
+
+The entitlement therefore lives in **exactly one place** — `User#pro?`, derived
+from the subscription's `expires_at`. There is deliberately no `ChannelSubscription`
+mirroring it. An earlier cut had the platform administrator own the Pro library
+so access could be withdrawn by deleting such a row; it worked, but it stored the
+entitlement twice, and the window in which the two disagreed was either a paying
+subscriber locked out or a cancelled one still reading. That design also needed
+an hourly sweeper to re-derive the copy, depended on an administrator account
+existing, and could not give the administrator Pro at all. Deriving access
+removes all four problems.
+
+The rest of the rules:
+
+- `User#publishing_channel` decides where a finished import lands —
+  `provision_pro_channel!` for a subscriber, `provision_default_channel!`
+  otherwise. `Imports::Settlement.complete!` is the only caller, because the
+  choice is a fact about *that import*, not about the account today. Courses
+  imported before subscribing stay in the default Channel and are kept forever:
+  Pro adds a second home, it never moves the first.
+- The Pro library is provisioned **lazily, on the first import made while
+  subscribed**, so an account that subscribes and never imports carries no empty
+  channel.
+- Cancelling deletes nothing. The `ChannelItem`s stay exactly where they are,
+  which is what makes reactivation restore the entire library at once instead of
+  rebuilding it.
+- **Saved vocabulary is outside all of this, by design.** `phrase_token_users`
+  belongs to the learner, not to the channel the words were met in, so a lapsed
+  subscriber keeps every word they saved and can still take review lessons —
+  they just cannot open the courses until they come back.
+- `ProChannel#change_visibility!` raises for every actor, administrator
+  included: public would publish one person's private imports to the world, and
+  shared would let the subscriber hand out access that outlives their
+  subscription.
+- `ProChannel#readable_by?` requires `actor.pro?` on top of ownership, which is
+  what `/channels/:slug` and `discoverable_by?` go through.
+- `Ability`'s `can :manage, Channel` is scoped `type: nil`. A subscriber owns
+  their Pro library, but renaming it, resharing it or inviting people into it is
+  not something the subscription buys.
+- `Admin::ChannelsController#manageable_channels` is scoped `type: nil` too.
+  That screen manages public Channels, and an unscoped base-class query would
+  list — and offer to edit — every subscriber's private library. `#unique_slug`
+  deliberately stays unscoped: slugs are globally unique.
+- `courses#destroy` unpublishes from **both** the user's default Channel and
+  their Pro library, and `User#owns_publication_of?` (which gates the Delete item
+  in the course "..." menu) checks both. An import made while subscribed has to
+  stay deletable after the subscription ends.
+
+**`Imports::Paused` is the consequence of the library being revocable**, and the
+easiest thing to get wrong. `Imports::Preview` and `Imports::Create` both dedupe
+against published courses, and both used to ask only *is it published?* — which,
+for your own imports, was the same question as *can you read it?* while a library
+was permanent. Once it isn't, pasting a link to your own paused course produced
+"Already in your library" and an Open button that 404s, plus a dead Enrollment on
+Home. Both now consult `Imports::Paused.for?`, which is deliberately narrow: it
+matches only a course in *this user's own* ProChannel. A published course
+unreadable for some other reason (somebody else's private Channel) is a separate,
+pre-existing case and is left exactly as it was.
+
+That produces a `:paused` state in both services. The Add Video sheet renders it
+as an explanation plus a **Reactivate Pro** button rather than a price — meeting
+your own paused library is the best moment there is to offer the subscription
+back — and `App::ImportRequestsController#redirect_to_result` sends an approved
+one to `/app/pro`. Nothing is charged, no request is created, and no second
+Enrollment is made. The web preview explains the same state but cannot sell out
+of it, since Pro is bought in the iOS app. The bearer API answers `402` with
+`status: "paused"`, because the share extension has no paywall to present. The
+Enrollment from the *original* import is deliberately left alone throughout: it
+is what puts the course back on Home the moment they resubscribe, and Home and
+`started_courses` re-check readability on every render, which is what keeps it off
+the screen meanwhile.
+
+#### Apple subscriptions
+
+The offers live in `Apple::SubscriptionPlans` — `$10 / month` and `$100 / year`
+(`com.ynonp.langlets.pro.monthly` / `.yearly`), which must exist in App Store
+Connect as **auto-renewable** products in one subscription group. The "SAVE 17%"
+badge and the "$8.33 / mo" equivalent are computed from those prices rather than
+written down, so the three numbers cannot drift apart. The price strings are US
+display copy shown before the StoreKit sheet opens; the sheet itself always shows
+the localized price.
+
+Verification reuses the credit-pack machinery. `Apple::SignedPayload` now owns
+the JWS work — Apple's envelope carries its own certificate chain, so
+authentication is entirely offline with no key to fetch and no shared secret —
+and `Apple::VerifyTransaction` keeps the checks that are about *us*: right
+bundle, right `appAccountToken`, not revoked, and a product in the caller's
+`catalog:`. That catalog argument is load-bearing: `App::ApplePurchasesController`
+passes `CreditPacks` and `App::AppleSubscriptionsController` passes
+`SubscriptionPlans`, so a $10 consumable can never be redeemed as a year of Pro.
+The two endpoints stay separate for the same reason.
+
+`Apple::ActivateSubscription` writes the verified transaction into
+`subscriptions`, keyed on `original_transaction_id` — the identifier Apple keeps
+stable for a subscription's whole life, so a renewal updates the row it renews
+instead of appending a second entitlement. Ordering is by the transaction's own
+`purchaseDate`, not by arrival and not by the expiry it claims: each renewal in a
+chain has a later purchase date, while a notification *about* the transaction on
+file (EXPIRED, DID_FAIL_TO_RENEW) carries the same one and is applied, which is
+what lets an entitlement legitimately end early. Only a genuinely older
+transaction is ignored — and even then a revocation still lands, because a refund
+is authoritative whenever it arrives. Writing that row is the *only* thing it
+does — library access is derived from it, so there is nothing else to keep in
+step.
+
+That comparison is a read-check-write, so it runs **under a row lock**
+(`apply_locked!`). Apple neither orders nor deduplicates notifications, it retries
+them, and the app's restore POST can land at the same moment: without the lock two
+payloads both read the same `purchased_at`, both conclude they are current, and
+whichever writes *last* wins — an old EXPIRED overwriting a fresh DID_RENEW, and
+the subscriber silently losing Pro until the next notification happens to arrive.
+`with_lock` reloads inside the transaction so the comparison reads committed
+state. `ActivateSubscriptionConcurrencyTest` is a real two-thread test for it; it
+fails most runs with the lock removed. A first purchase has no row to lock, and
+the unique index on `original_transaction_id` arbitrates that race instead, with
+the `RecordNotUnique` rescue re-applying against whichever write won.
+
+A transaction with no `expiresDate` at all lands as `expired`, not `active`. It
+could never have granted Pro either way — `entitling` compares
+`expires_at >= now` and NULL never matches — but since keeping `status` honest is
+now that column's only job, a row reading "active" while entitling nothing would
+be a lie told to whoever reads the table next.
+
+**`POST /apple/notifications` is what keeps Pro true after the first billing
+period.** StoreKit tells us about the original purchase and nothing else; every
+renewal, cancellation, billing failure, refund and expiry afterwards arrives as
+an App Store Server Notification V2. Public and unauthenticated like the PayPal
+IPN endpoint next to it — the JWS carries its own proof — and it always answers
+2xx for a notification it understood, because Apple retries any other status for
+days and no retry can turn a notification for an unknown subscription into one we
+can attribute (the `appAccountToken` is a one-way HMAC, so a notification
+identifies a subscription, not an account). Configure the Production and Sandbox
+URLs in App Store Connect under App Information → App Store Server Notifications.
+
+`ExpireSubscriptionsJob` runs daily and is deliberately **not** load-bearing.
+`Subscription.entitling` reads `expires_at`, so an unrenewed subscription stops
+entitling Pro the moment it lapses whether or not the job has run and whether or
+not Apple's notification arrived — imports go back to costing credits and
+`ProChannel` stops contributing its grant on the very next request. The job only
+keeps `status` honest for support and reporting. That a dropped notification
+costs accuracy in a column rather than an entitlement somebody keeps for free is
+precisely what the derived design bought.
+
+#### The Pro screens
+
+`/app/pro` (the paywall) and `/app/pro/success` are one full-screen native modal
+sharing a stack, so the purchase navigates between them inside the sheet the user
+opened. `modal_style: full` rather than `medium` because the plan cards, the CTA
+and the subscription disclosure must all be visible at once — a detent that
+scrolls the price out of view is an App Review rejection. The paywall redirects an
+already-entitled user to the confirmation, and the confirmation redirects a
+visitor with no entitlement back to the offer, so neither screen can assert
+something the database disagrees with.
+
+Plan selection is styled with `:has(:checked)` rather than JavaScript, so the
+cards are correct before Stimulus connects and stay correct for VoiceOver;
+`pro_plan_controller` does only the one thing CSS cannot, which is carrying the
+chosen product id and price onto the CTA that `bridge--apple-purchase` reads.
+That bridge controller now serves both purchase surfaces and gained a `restore`
+action — required by App Review for auto-renewable subscriptions, and genuinely
+needed, since a reinstall or a second device has the entitlement in StoreKit and
+nothing in our database until it is posted back. `ApplePurchaseComponent.restore`
+runs `AppStore.sync()` and replies with the first verified auto-renewable
+`currentEntitlement`, which is already the *renewed* transaction rather than the
+original.
+
+Home renders `app/home/_pro_card` directly under the header, in both states and
+never hidden: the upsell with a free-import progress bar while the allowance
+lasts, and a plain "Langlets Pro · ACTIVE" statement once there is a
+subscription. A subscription the app stops mentioning is one people forget they
+are paying for, and then dispute. Accounts that have bought a credit pack get
+their real balance instead of the bar, which would otherwise sit stuck at full.
+
+Add Video reflects the entitlement on both platforms — Pro is bought in the iOS
+app but entitles the *account*, so the browser honours it too. `pro` suppresses
+the insufficient-balance state, the price line reads "Included with Pro", the
+approve label comes from `AppHelper#app_approve_label` (shared by both previews so
+the two surfaces cannot describe one charge differently), and the web sidebar
+replaces its balance-and-"Buy More" block entirely rather than inviting a
+subscriber to buy credits they already have.
+
+`import_requests` carries no billing columns at all. `charged`, `refunded` and
+`pro_covered` were all removed: the first two mirrored a ledger that now keys on
+the publication rather than on the request, and the third existed only so
+`Imports::Settlement#enroll!` could tell a subscriber's own import from a
+`:joined` rider who had paid nothing. Riders pay now, so every `ImportRequest`
+settles as `imported` and the question no longer arises.
+
 #### **Enrollment** (`enrollments`)
 - **Purpose**: "this course is on my Home". Unique on `(user_id, course_id)`.
 - **Why it exists**: enrollment could not be inferred. A created course is `courses.user_id`, a started course is implied by `lesson_users` — but the Library's "+ Learn this" adds a course to Home *before* any lesson is completed, so it needs a record of its own.
-- `source`: `imported` (spent a credit), `library` (added from the catalog), `playlist`.
+- `source`: `imported` (this user asked for this course, and it was published into their own channel), `library` (added from the catalog with "+ Learn this", which enrolls without publishing and is free), `playlist`. Every `ImportRequest` now settles as `imported`: there is no free rider to tell apart, because riding along on somebody else's run still ends in a publication of your own.
 - `last_practiced_at` is Home's canonical "started" signal: "Keep it going" only includes enrollments where it is non-null, ordered newest first. Clearing it keeps the enrollment/library membership while returning the course to an un-started state.
 
 ### Workflow Management
@@ -1267,6 +1577,7 @@ A user's request to turn a video into a course. There are three distinct things 
 
 Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry, push idempotency) can't live on either of the shared records.
 
+- An `:adopted` request is created directly as `ready` rather than passing through `queued`: there is nothing to wait for, and an active row would sit under `idx_import_requests_active_dedupe` for a course that is already finished.
 - `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility. While the language is unknown, `idx_import_requests_detecting_dedupe` separately enforces one detecting row per user, video, and translation language; an ordinary nullable unique key would allow duplicates because PostgreSQL treats NULLs as distinct. Failed imports remain visible and removable, but the Queue does not offer a user retry: an accessible info tooltip explains that the human team is reviewing the automatic import and that the user will be notified when it finishes.
 - `clip_language` and `translation_language` must differ. `Imports::Create` rejects the pair before charging, and the `ImportRequest` model enforces the invariant for console and other direct writes as well.
 - `progress_percent` is **written forward** by `CreateSongProgress#sync_import_requests_progress`, never computed on read — `data` is a multi-megabyte jsonb blob and the Queue polls.
@@ -1282,7 +1593,7 @@ Two users importing the same video deliberately share one pipeline and one cours
 
 Which run it starts mirrors `Imports::Create`: a **published** course keeps its status and gets an `AddCourseTranslationJob` for the failed language only (unpublishing a live course over one translation would break it for everyone); an unpublished one gets `CreateCourseJob`. If another **active** request already covers this course, no job is enqueued at all — the retry rides along on that run, exactly as `Imports::Create#join!` does, rather than putting two sets of callbacks on one blob.
 
-Credits are deliberately untouched: the failure already refunded, a retry is us fixing our own import rather than a second sale, and leaving `refunded` set is what stops a second failure from minting a free credit in `Imports::Settlement#fail!`.
+Credits do not enter into it: the failure took nothing, a retry is us fixing our own import rather than a second sale, and however many times an operator restarts it the user buys the course once — the ledger key is the `(channel, course)` pair.
 
 **`ImportRequest#destroy_with_artifacts!`** is the destructive operator tool
 for permanently removing a non-active request together with its exclusive
@@ -1306,13 +1617,15 @@ The normal retry path then resets it to queued, installs a new timeout, and
 enqueues `CreateCourseJob`. The method returns that request.
 
 #### **Imports::Create** (`app/services/imports/create.rb`)
-The single import service for the Add sheet, the share extension and the API. Order is deliberate: **the video is checked before a credit moves**, so a private or deleted video costs nothing (`Youtube::Oembed` doubles as the availability check). The interactive Add sheet omits `clip_language` and gets the provisional background-detection path. The API detects first and supplies `clip_language`, preserving its synchronous response contract for share-extension callers. Four outcomes:
-- `:created` — when source language is supplied, charged 1 credit and queued the pipeline; when it is omitted, persisted an uncharged detecting request and queued `DetectImportLanguageJob`.
-- `:deduped` — already published; enrolled, free.
-- `:joined` — **someone else is importing it right now**; rides along on their course, free. Without this, both users create a pending course and whichever publishes second violates `idx_courses_published_video_pair`, failing an import the user paid for.
-- `:already_queued` — this user already asked; no second charge.
+The single import service for the Add sheet, the share extension and the API. It decides **what has to happen** and deliberately does not decide what it costs — `Channel#publish!` charges for the publication every path ends in (see *What a credit buys*). Order is deliberate: **the video is checked before anything is committed**, so a private or deleted video costs nothing and leaves nothing behind (`Youtube::Oembed` doubles as the availability check). The interactive Add sheet omits `clip_language` and gets the provisional background-detection path. The API detects first and supplies `clip_language`, preserving its synchronous response contract for share-extension callers. Six outcomes:
+- `:created` — queued the pipeline (or, with no source language, a detecting request and `DetectImportLanguageJob`). Charged when it publishes.
+- `:adopted` — **somebody else already built it**. There is no pipeline to run, so the course is published into this user's channel on the spot and charged there; the request is written straight to `ready`. This is the case the old `:deduped` handled for free, and getting it free was the inconsistency this design removes.
+- `:deduped` — already in **this user's own** channel and ready. Nothing to publish, so nothing to charge; enrolls if the enrollment had been removed.
+- `:joined` — **someone else is importing it right now**; rides along on their course rather than starting a rival one. Without this, both users create a pending course and whichever publishes second violates `idx_courses_published_video_pair`. Sharing the run is not a discount — the rider's own publication is charged when the run lands.
+- `:already_queued` — this user already asked; one publication, one charge. Checked inside the published-course branch as well, so a course that publishes while their request is in flight cannot be sold to them twice.
+- `:paused` — theirs, in a Pro library the subscription no longer lends back. Nothing charged, nothing enrolled.
 
-Jobs are enqueued **inside** their transactions — Solid Queue is Postgres-backed, so each job row commits atomically with the state it acts on. Enqueuing after commit would leave a request nothing ever picks up. Detection promotion performs the language-aware published/in-flight checks before charging, so a course that became reusable while detection ran remains free.
+Jobs are enqueued **inside** their transactions — Solid Queue is Postgres-backed, so each job row commits atomically with the state it acts on. Enqueuing after commit would leave a request nothing ever picks up.
 
 Successful Add Video submissions redirect to `/gallery?imports=pending`, where
 the provisional request is immediately visible as “Detecting language…”.
@@ -1411,7 +1724,7 @@ is built around that fact. Four pieces, each with one job:
 | `CreateCourseJob` / `AddCourseTranslationJob` | **Trigger.** Claim the course, mark the requests `importing`, start the run, return. |
 | `Imports::Finalizer` | **Decide it's done.** Re-derive completion from `data` after every callback; build, publish, enroll, mark ready. |
 | `ImportRequestTimeoutJob` | **Give up.** Fixed `ImportRequest::TIMEOUT` (10 minutes) from creation. |
-| `Imports::Settlement` | **Bookkeeping.** Enroll + notify, or refund + record why. |
+| `Imports::Settlement` | **Delivery.** Publish into the user's channel (which is where it is charged), enroll, notify — or record why it failed. |
 
 Completion is a **property of the blob, re-derived**, not an event to subscribe
 to. `CreateSongProgress#complete_for?(language)` is the question, and it has two
@@ -1441,8 +1754,9 @@ moment the user asked, scheduled by an `after_create_commit` on `ImportRequest`
 itself rather than by any one caller, because there are four ways to end up with
 a request and the guarantee is worth nothing unless it holds for all of them. It
 asks the finalizer once more before giving up (the last patch and the finalizer
-that acts on it are not atomic), then refunds with the pipeline's own reported
-error as the reason when there is one.
+that acts on it are not atomic), then fails with the pipeline's own reported
+error as the reason when there is one. Nothing was charged, so nothing is
+returned.
 
 This replaced a design where the trigger blocked on the run for up to
 `PIPELINE_READ_TIMEOUT` seconds. That held a worker thread per in-flight import,
@@ -1451,7 +1765,8 @@ died any other way left the request `importing` forever.
 
 Two failures are handled early rather than waited out:
 - **The trigger never got off the ground** (unreachable pipeline, bad config).
-  The trigger job still owns this one; it refunds in its rescue.
+  The trigger job still owns this one; it fails the attached requests in its
+  rescue, at no cost to any of them.
 - **A blocking step failed.** `extract_lyrics` and `force_alignment` end the run
   where they stand, so an error from either means no amount of waiting helps.
   `blocking_error` ignores entries the data contradicts (phrases on record mean
@@ -1465,13 +1780,17 @@ what stops a language whose run fails from being retriggered by every subsequent
 callback; it waits out its deadline instead.
 
 ##### Charge lifecycle
+Nothing is charged until `Imports::Settlement#complete!` publishes the course into
+the user's channel, which makes every failure path free by construction: a raise
+in a trigger job, a blocking pipeline error, a timeout, a cancelled queue item —
+none of them ever reached `Channel#publish!`, so none of them has anything to give
+back. That is why there is no refund in any of them and no `refunded` column to
+keep straight.
+
 Solid Queue records an unhandled execution as failed and does not retry it unless
-the job declares a retry policy, so **a raise in a job is final**. That's what
-makes refunding in the rescue correct rather than a balance yo-yo. Do not add
+the job declares a retry policy, so **a raise in a job is final**. Do not add
 `retry_on` naively: the rescue sets the course to `error`, and `Course#process`
 only claims a `pending` course, so a second attempt would silently do nothing.
-
-Only whoever actually paid is refunded — `:joined` riders were never charged. The `"refund:<id>"` idempotency key means a manual re-run can't mint credits.
 
 #### 20. **CreateSongProgress** (`create_song_progresses`)
 - **Purpose**: Track async content creation pipeline

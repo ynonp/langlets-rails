@@ -60,9 +60,17 @@ module Api
       private
 
       def render_result(result)
-        if result.deduped?
-          # Already in the Library. Nothing was charged and the course is ready
-          # to practise right now.
+        if result.paused?
+          # Nothing happened and there is no request to poll. The share
+          # extension cannot present a paywall, so say plainly why it stopped.
+          render status: :payment_required,
+                 json: { status: "paused",
+                         error: "This is in your paused Langlets Pro library. Resubscribe in the app to open it.",
+                         credits_left: credits_left }
+        elsif result.in_channel?
+          # Nothing to wait for: the course already existed, so it is in their
+          # channel and ready to practise right now. There is no queue item to
+          # poll, which is why this doesn't serialize an import request.
           render status: :ok,
                  json: { status: "ready",
                          course: serialize_course(result.course),

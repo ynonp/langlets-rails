@@ -9,7 +9,7 @@ class ChannelContentQueryTest < ActiveSupport::TestCase
       user: @owner, language: language, name: "Visible course", slug: "visible-channel-course",
       main_media_url: "https://youtu.be/channelquery", youtube_video_id: "channelquery", status: :published
     )
-    @item = @owner.default_channel.publish!(@course)
+    @item = publish_covering_the_credit(@owner.default_channel, @course)
   end
 
   test "private items are owner-only" do

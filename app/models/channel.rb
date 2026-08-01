@@ -3,6 +3,7 @@ class Channel < ApplicationRecord
   class NotShared < StandardError; end
 
   belongs_to :user
+
   has_many :channel_items, dependent: :destroy
   has_many :courses, through: :channel_items
   has_many :channel_subscriptions, dependent: :destroy
@@ -15,18 +16,78 @@ class Channel < ApplicationRecord
   validates :slug, uniqueness: true
   validates :default, uniqueness: { scope: :user_id }, if: :default?
 
+  # Which Channels this user may read.
+  #
+  # Access is a **union of independent grants**, one per way of getting it, each
+  # returning the rows of its own kind. A new kind of Channel therefore adds a
+  # grant of its own rather than a clause inside somebody else's WHERE — which is
+  # how ProChannel expresses "readable only while the subscription is live"
+  # without this scope knowing that subscriptions exist.
+  #
+  # Every grant is wrapped as `Channel.where(id: …)` before being OR-ed, because
+  # `or` requires structurally compatible relations and `ProChannel.where(…)` is
+  # not compatible with `Channel.where(…)` on its own.
   scope :visible_to, ->(user) {
     return none unless user
     return all if user.admin?
 
-    where(visibility: visibilities[:public])
-      .or(where(user_id: user.id))
-      .or(where(id: ChannelSubscription.where(user_id: user.id).select(:channel_id)))
+    grants(user)
+      .map { |grant| where(id: grant.select(:id)) }
+      .reduce { |readable, grant| readable.or(grant) }
   }
 
+  def self.grants(user)
+    [ public_grant, owned_grant(user), subscribed_grant(user), ProChannel.owned_grant(user) ].compact
+  end
+
+  def self.public_grant
+    where(visibility: visibilities[:public])
+  end
+
+  # An ordinary Channel is readable by its owner forever. `type: nil` matters:
+  # a base-class query sees subclass rows, so without it this would hand every
+  # subscriber their Pro library back the moment they stopped paying for it.
+  def self.owned_grant(user)
+    where(type: nil, user_id: user.id)
+  end
+
+  def self.subscribed_grant(user)
+    where(id: ChannelSubscription.where(user_id: user.id).select(:channel_id))
+  end
+
+  # Put a course in this channel — and take payment for it.
+  #
+  # Publishing is where a course becomes somebody's, so it is where the credit
+  # moves. `ProChannel` overrides `charge_for!` to nothing; that override *is*
+  # Langlets Pro. Everything else about pricing follows from those two facts:
+  #
+  #   publishing into a default Channel costs one credit
+  #   publishing into a Pro library costs nothing
+  #
+  # Deliberately here rather than in Imports::Create. There used to be four
+  # import outcomes each deciding its own price, so "somebody already built
+  # this", "somebody is building it right now" and "nobody has built it" were
+  # free, free and one credit for the same end state: a course in the user's
+  # channel. Charging at the publication means who executed the pipeline, and
+  # whether it ran a minute ago or a year ago, cannot change the price — there is
+  # one thing being sold and one place it is sold.
+  #
+  # Idempotent in both stores. A course already here re-publishes for free, and
+  # the ledger key is the (channel, course) pair rather than the import, so a
+  # retried job, a second settlement, and deleting a course and importing it
+  # again all buy it exactly once.
+  #
+  # Raises Credits::InsufficientCredits, which rolls the publication back with
+  # it: a course the owner could not pay for does not appear in their channel.
   def publish!(course, published_at: Time.current)
-    channel_items.create_or_find_by!(course:) do |item|
-      item.published_at = published_at
+    transaction do
+      item = channel_items.create_or_find_by!(course:) do |channel_item|
+        channel_item.published_at = published_at
+      end
+
+      charge_for!(course) if item.previously_new_record?
+
+      item
     end
   end
 
@@ -95,5 +156,18 @@ class Channel < ApplicationRecord
 
   def self.normalize_email(email)
     email.to_s.strip.downcase
+  end
+
+  private
+
+  # The price of one publication, charged to whoever owns the channel it lands
+  # in. Overridden — to nothing — by ProChannel.
+  def charge_for!(course)
+    Credits::Ledger.spend!(
+      user: user,
+      amount: Imports::Pricing::CREDIT_COST,
+      subject: course,
+      idempotency_key: "publish:#{id}:#{course.id}"
+    )
   end
 end

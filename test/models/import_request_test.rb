@@ -30,7 +30,6 @@ class ImportRequestTest < ActiveJob::TestCase
       course: @course, create_song_progress: @progress,
       status: :failed, failure_reason: "translate: quota exceeded",
       progress_percent: 40, pipeline_step: "Translating · step 3 of 6",
-      charged: true, refunded: true
     )
   end
 
@@ -83,7 +82,10 @@ class ImportRequestTest < ActiveJob::TestCase
     assert_match(/quota exceeded/, @request.failure_reason)
   end
 
-  test "credits are left alone: no second charge and no second refund" do
+  # Restarting a failed import is not a sale. It is not a refund either — the
+  # failure took nothing, because the credit only moves when the course reaches
+  # the user's channel.
+  test "credits are left alone by a retry" do
     balance = @user.reload.credit_balance
     entries = CreditLedgerEntry.where(user: @user).count
 
@@ -91,7 +93,6 @@ class ImportRequestTest < ActiveJob::TestCase
 
     assert_equal balance, @user.reload.credit_balance
     assert_equal entries, CreditLedgerEntry.where(user: @user).count
-    assert @request.reload.refunded?, "clearing this would let a second failure mint a credit"
   end
 
   test "a published course keeps its status and only re-runs the failed language" do

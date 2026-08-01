@@ -18,7 +18,7 @@ class SendImportReadyPushJobTest < ActiveJob::TestCase
     @request = @user.import_requests.create!(
       youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
       clip_language: "Spanish", translation_language: "English",
-      title: "Despacito", status: :ready, course: @course, charged: true
+      title: "Despacito", status: :ready, course: @course
     )
     @device = DeviceToken.register!(user: @user, token: "a" * 64)
   end
@@ -148,7 +148,7 @@ class SendImportReadyPushJobTest < ActiveJob::TestCase
     other = @user.import_requests.create!(
       youtube_url: "https://www.youtube.com/watch?v=bbbbbbbbbbb", youtube_video_id: "bbbbbbbbbbb",
       clip_language: "Spanish", translation_language: "English", title: "Another",
-      status: :importing, course: @course, charged: true
+      status: :importing, course: @course
     )
 
     assert_enqueued_with(job: SendImportReadyPushJob) do

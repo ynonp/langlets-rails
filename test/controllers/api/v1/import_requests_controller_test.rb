@@ -7,6 +7,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @user    = User.create!(email: "api-import@example.com", password: "password123", confirmed_at: Time.zone.now)
+    @other   = User.create!(email: "api-other@example.com", password: "password123", confirmed_at: Time.zone.now)
     @spanish = languages(:spanish)
     @english = languages(:english)
     @token   = create_access_token(@user, scopes: "imports:write imports:read")
@@ -37,7 +38,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "queued", body["status"]
     assert_equal "Despacito", body["title"]
     assert_equal VIDEO_ID, body["youtube_video_id"]
-    assert_equal 2, body["credits_left"]
+    assert_equal 3, body["credits_left"], "queued, not delivered — the credit moves when it publishes"
     assert body["thumbnail_url"].present?
   end
 
@@ -50,14 +51,17 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_equal original_id, response.parsed_body.fetch("id")
-    assert_equal 2, response.parsed_body.fetch("credits_left")
+    assert_equal 3, response.parsed_body.fetch("credits_left")
     assert_equal 1, @user.import_requests.count
   end
 
-  test "an already published video comes back ready, free" do
+  # No pipeline to run, so the share extension gets its answer immediately — and
+  # the course is published into the sharer's channel there and then, which is
+  # what the credit pays for.
+  test "an already published video comes back ready, and is paid for on the spot" do
     course = create_translated_course!(name: "Despacito", slug: "despacito-published", main_media_url: CANONICAL,
                             youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
-                            user: @user, status: :published)
+                            user: @other, status: :published)
 
     stub_video { post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token) }
 
@@ -65,7 +69,21 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     body = response.parsed_body
     assert_equal "ready", body["status"]
     assert_equal course.slug, body.dig("course", "slug")
-    assert_equal 3, body["credits_left"], "the Library costs nothing"
+    assert_equal 2, body["credits_left"]
+    assert @user.default_channel.channel_items.exists?(course: course)
+  end
+
+  test "a video already in the sharer's own channel comes back ready and free" do
+    course = create_translated_course!(name: "Despacito", slug: "despacito-mine", main_media_url: CANONICAL,
+                            youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
+                            user: @other, status: :published)
+    publish_covering_the_credit(@user.provision_default_channel!, course)
+
+    stub_video { post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token) }
+
+    assert_response :ok
+    assert_equal "ready", response.parsed_body["status"]
+    assert_equal 3, response.parsed_body["credits_left"], "nothing left to publish"
   end
 
   test "returns 402 when out of credits" do
@@ -149,7 +167,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     body = response.parsed_body
     assert_equal "queued", body["status"]
     assert_equal TIKTOK_ID, body["youtube_video_id"]
-    assert_equal 2, body["credits_left"]
+    assert_equal 3, body["credits_left"]
   end
 
   # TikTok covers can't be derived from the URL, so if the value oEmbed returned

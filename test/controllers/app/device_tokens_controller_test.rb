@@ -110,7 +110,7 @@ module App
     test "asks once the user has an import worth being told about" do
       @user.import_requests.create!(
         youtube_url: "https://www.youtube.com/watch?v=kJQP7kiw5Fk", youtube_video_id: "kJQP7kiw5Fk",
-        clip_language: "Spanish", translation_language: "English", status: :importing, charged: true
+        clip_language: "Spanish", translation_language: "English", status: :importing
       )
 
       get "/app", headers: NATIVE
@@ -122,7 +122,7 @@ module App
     test "does not ask on the strength of a cancelled import alone" do
       @user.import_requests.create!(
         youtube_url: "https://www.youtube.com/watch?v=kJQP7kiw5Fk", youtube_video_id: "kJQP7kiw5Fk",
-        clip_language: "Spanish", translation_language: "English", status: :canceled, charged: true
+        clip_language: "Spanish", translation_language: "English", status: :canceled
       )
 
       get "/app", headers: NATIVE

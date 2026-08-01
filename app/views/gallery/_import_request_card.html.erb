@@ -21,7 +21,9 @@
         <span><%= import_request.display_percent %>%</span>
       </div>
     <% else %>
-      <p class="gallery-import-failed">Import failed — credit refunded</p>
+      <p class="gallery-import-failed">
+        <%= import_request.insufficient_credits? ? "Import failed — insufficient credits" : "Import failed — no credit used" %>
+      </p>
     <% end %>
   </div>
 </article>

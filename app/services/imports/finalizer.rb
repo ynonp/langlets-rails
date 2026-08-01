@@ -54,6 +54,16 @@ module Imports
 
       publish!(import_request.course, language)
       Settlement.complete!(import_request)
+    rescue Credits::InsufficientCredits => e
+      # The balance ran out between asking for this import and it being ready to
+      # hand over. Imports::Pricing guards the front door, but nothing holds a
+      # credit in between, so this is the one failure the user can still fix.
+      #
+      # Caught separately because `failure_reason` is user-facing — the share
+      # extension reads it straight out of the API — and Credits::Ledger's own
+      # message names an internal user id. Say the one thing they can act on.
+      Rails.logger.warn "ImportRequest #{import_request.id} could not be delivered: #{e.message}"
+      fail!(import_request, ImportRequest::INSUFFICIENT_CREDITS)
     rescue => e
       Rails.logger.error "Finalizing ImportRequest #{import_request.id} failed: #{e.message}"
       Rails.logger.error e.backtrace.join("\n")

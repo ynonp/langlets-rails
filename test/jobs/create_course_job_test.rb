@@ -25,8 +25,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
       youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
       user: @user, status: :pending
     )
-    @request = create_request(user: @user, charged: true, status: :queued)
-    Credits::Ledger.spend!(user: @user, subject: @request, idempotency_key: "import:#{@request.id}")
+    @request = create_request(user: @user, status: :queued)
   end
 
   teardown do
@@ -60,35 +59,35 @@ class CreateCourseJobTest < ActiveJob::TestCase
     other = User.create!(email: "deadline@example.com", password: "password123", confirmed_at: Time.zone.now)
 
     assert_enqueued_with(job: ImportRequestTimeoutJob) do
-      create_request(user: other, charged: false, status: :queued)
+      create_request(user: other, status: :queued)
     end
   end
 
   # A trigger that never got off the ground is the one failure this job still
   # owns — the run's own failures arrive through the callback instead.
-  test "a trigger that fails refunds the credit and records why" do
-    assert_equal 2, @user.reload.credit_balance
-
+  test "a trigger that fails records why and costs the user nothing" do
     assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "pipeline unreachable") }
 
     @request.reload
     assert @request.failed?
-    assert @request.refunded?
     assert_equal "pipeline unreachable", @request.failure_reason
-    assert_equal 3, @user.reload.credit_balance, "the credit must come back"
+    assert_equal 3, @user.reload.credit_balance, "a course that was never published was never paid for"
     assert @course.reload.error?
   end
 
-  test "the refund is recorded in the ledger and the balance still agrees" do
+  # There is nothing to refund because there was nothing to refund *from*: the
+  # credit only moves in Channel#publish!, which a failed import never reaches.
+  test "a failure moves no credits in either direction" do
     assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
 
-    assert_equal 1, @user.credit_ledger_entries.import_refund.count
+    assert_equal 0, @user.credit_ledger_entries.import_spend.count
+    assert_equal 0, @user.credit_ledger_entries.import_refund.count
     assert_equal @user.reload.credit_balance, @user.credit_ledger_entries.sum(:amount)
   end
 
   # Solid Queue leaves the failed execution failed, so the job's rescue is the
-  # final word — but a manual re-run must not mint credits.
-  test "failing twice refunds only once" do
+  # final word — and a manual re-run has no bookkeeping to get wrong.
+  test "failing twice still costs nothing" do
     assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
 
     # reload first: the job called error! on its own instance, so this one still
@@ -98,21 +97,20 @@ class CreateCourseJobTest < ActiveJob::TestCase
 
     assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom again") }
 
-    assert_equal 1, @user.credit_ledger_entries.import_refund.count
     assert_equal 3, @user.reload.credit_balance
   end
 
-  # Users who joined someone else's in-flight import never paid.
-  test "a rider on a shared import is failed but not refunded" do
+  # Everyone attached to a run fails together, and it costs all of them the same
+  # nothing.
+  test "a rider on a shared import is failed too" do
     rider = User.create!(email: "rider@example.com", password: "password123", confirmed_at: Time.zone.now)
-    rider_request = create_request(user: rider, charged: false, status: :importing)
+    rider_request = create_request(user: rider, status: :importing)
 
     assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
 
     rider_request.reload
     assert rider_request.failed?
-    assert_not rider_request.refunded?
-    assert_equal 3, rider.reload.credit_balance, "never charged, so nothing to give back"
+    assert_equal 3, rider.reload.credit_balance
     assert_equal 0, rider.credit_ledger_entries.import_refund.count
   end
 
@@ -144,12 +142,12 @@ class CreateCourseJobTest < ActiveJob::TestCase
 
   private
 
-  def create_request(user:, charged:, status:)
+  def create_request(user:, status:)
     user.import_requests.create!(
       youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
       clip_language: "Spanish", translation_language: "English",
       course: @course, create_song_progress: @progress,
-      status: status, charged: charged
+      status: status
     )
   end
 

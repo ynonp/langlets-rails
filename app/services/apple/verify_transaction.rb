@@ -1,66 +1,42 @@
-require "base64"
 require "json"
 require "openssl"
 
 module Apple
+  # Authenticates a StoreKit transaction the iOS app handed to the web view, and
+  # resolves the product it bought.
+  #
+  # The signature work lives in Apple::SignedPayload; what is left here is the
+  # part that is about *us* — right app, right account, not revoked, and a
+  # product we actually sell. None of those are cryptographic, and all of them
+  # matter: a validly signed transaction for somebody else's account, or for a
+  # product id we never offered, is exactly the shape a replay takes.
+  #
+  # `catalog` is the set of products the caller is willing to accept, and it is
+  # what stops a $10 consumable from being redeemed as a year of Pro: each
+  # endpoint passes only its own kind, so a real transaction cannot be pointed at
+  # the wrong grant.
   class VerifyTransaction
     BUNDLE_ID = "com.ynonp.langlets"
 
-    def initialize(signed_transaction:, user:)
+    def initialize(signed_transaction:, user:, catalog: CreditPacks)
       @signed_transaction = signed_transaction
       @user = user
+      @catalog = catalog
     end
 
+    # Returns [payload, product]. Raises ArgumentError for anything else.
     def call
-      header_segment, payload_segment, signature_segment = @signed_transaction.to_s.split(".", 3)
-      raise ArgumentError, "Invalid signed transaction" unless signature_segment
+      payload = SignedPayload.verify!(@signed_transaction)
+      product = @catalog.fetch(payload.fetch("productId"))
 
-      header = decode_json(header_segment)
-      certificates = Array(header["x5c"]).map { |value| OpenSSL::X509::Certificate.new(Base64.strict_decode64(value)) }
-      verify_certificate_chain!(certificates)
-      verify_signature!(certificates.first.public_key, "#{header_segment}.#{payload_segment}", decode(signature_segment))
-
-      payload = decode_json(payload_segment)
-      pack = CreditPacks.fetch(payload.fetch("productId"))
       raise ArgumentError, "Wrong app" unless payload["bundleId"] == BUNDLE_ID
       raise ArgumentError, "Wrong account" unless payload["appAccountToken"]&.downcase == AppAccountToken.for(@user)
       raise ArgumentError, "Revoked transaction" if payload["revocationDate"].present?
-      raise ArgumentError, "Unsupported purchase type" unless payload["type"] == "Consumable"
+      raise ArgumentError, "Unsupported purchase type" unless payload["type"] == @catalog.transaction_type
 
-      [ payload, pack ]
+      [ payload, product ]
     rescue KeyError, JSON::ParserError, OpenSSL::OpenSSLError, ArgumentError
       raise ArgumentError, "Invalid Apple transaction"
-    end
-
-    private
-
-    def decode(value)
-      Base64.urlsafe_decode64(value.ljust((value.length + 3) & ~3, "="))
-    end
-
-    def decode_json(value)
-      JSON.parse(decode(value))
-    end
-
-    def verify_certificate_chain!(certificates)
-      raise ArgumentError, "Missing certificate chain" if certificates.empty?
-      root_common_name = certificates.last.subject.to_a.find { |name,| name == "CN" }&.at(1)
-      raise ArgumentError, "Not an Apple certificate chain" unless root_common_name&.start_with?("Apple Root CA")
-
-      store = OpenSSL::X509::Store.new
-      store.set_default_paths
-      raise ArgumentError, "Untrusted certificate" unless store.verify(certificates.first, certificates.drop(1))
-    end
-
-    def verify_signature!(public_key, data, raw_signature)
-      raise ArgumentError, "Invalid signature" unless raw_signature.bytesize == 64
-
-      r, s = raw_signature.unpack("a32a32").map { |part| OpenSSL::BN.new(part, 2) }
-      signature = OpenSSL::ASN1::Sequence([
-        OpenSSL::ASN1::Integer(r),
-        OpenSSL::ASN1::Integer(s)
-      ]).to_der
-      raise ArgumentError, "Invalid signature" unless public_key.verify(OpenSSL::Digest::SHA256.new, signature, data)
     end
   end
 end

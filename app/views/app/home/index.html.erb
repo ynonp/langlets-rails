@@ -13,6 +13,10 @@
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-6">
   <%= render "app/shared/header" %>
 
+  <%# Above the vocab card and everything else: running out of imports is the one
+      thing on this screen that blocks the user from doing anything new. %>
+  <%= render "app/home/pro_card" %>
+
   <%= render "app/shared/daily_vocab_card" %>
 
   <%# No paste box here. Pasting a YouTube or TikTok link belongs to the Create

@@ -78,8 +78,10 @@
         <!-- Hero: title + video -->
         <%# Any signed-in user can add a course to their own playlists; admins manage the system playlists here too. %>
         <% can_add_to_playlists = user_signed_in? %>
-        <%# Delete only makes sense for a course actually published to the viewer's own default Channel. %>
-        <% course_in_my_channel = user_signed_in? && current_user.default_channel.channel_items.exists?(course_id: @course.id) %>
+        <%# Delete only makes sense for a course the viewer actually published —
+            to their own default Channel, or to their Pro library if they
+            imported it while subscribed. %>
+        <% course_in_my_channel = user_signed_in? && current_user.owns_publication_of?(@course) %>
         <div class="relative bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-5 shadow-md"<%= raw(can_add_to_playlists ? " data-controller=\"course-paths course-menu\" data-course-paths-course-id-value=\"#{@course.slug}\"" : "") %>>
           <% if can_add_to_playlists %>
             <button type="button"

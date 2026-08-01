@@ -18,7 +18,14 @@ class User < ApplicationRecord
   has_many :enrolled_courses, through: :enrollments, source: :course
 
   has_many :channels, dependent: :destroy
-  has_one :default_channel, -> { where(default: true) }, class_name: "Channel"
+  # `type: nil` because a base-class query sees subclass rows: without it a
+  # ProChannel could satisfy "the default channel" if one were ever mis-flagged.
+  has_one :default_channel, -> { where(default: true, type: nil) }, class_name: "Channel"
+
+  # The Pro library. Owned by this user like any other Channel — what makes it
+  # different is that ProChannel only grants access while the subscription is
+  # live. STI scopes the association to type = 'ProChannel' for free.
+  has_one :pro_channel, class_name: "ProChannel", dependent: :destroy
   has_many :channel_subscriptions, dependent: :destroy
   has_many :subscribed_channels, through: :channel_subscriptions, source: :channel
   has_many :channel_invitations, foreign_key: :invitee_id, dependent: :nullify
@@ -69,6 +76,11 @@ class User < ApplicationRecord
   # account impossible. Erasing the account erases its ledger with it.
   has_many :credit_ledger_entries, dependent: :delete_all
 
+  # Langlets Pro. A user can accumulate several rows over time — a lapsed
+  # subscription plus the one that replaced it — so entitlement is a query, not
+  # a flag, and `Subscription.entitling` is its single definition.
+  has_many :subscriptions, dependent: :destroy
+
   # What every new account starts with. Additional credits can be purchased
   # through the PayPal Payments Standard flow.
   SIGNUP_CREDITS = 3
@@ -83,7 +95,7 @@ class User < ApplicationRecord
     existing = default_channel
     return existing if existing
 
-    channel = channels.create_or_find_by!(default: true) do |channel|
+    channel = channels.create_or_find_by!(default: true, type: nil) do |channel|
       channel.name = "My Channel"
       channel.slug = "channel-#{id}"
       channel.visibility = :private
@@ -165,13 +177,92 @@ class User < ApplicationRecord
     self.preferences = (preferences || {}).merge("watch_video" => merged)
   end
 
+  # The platform account. It moderates everything.
+  ADMIN_EMAIL = "ynon@hey.com".freeze
+
   def admin?
-    self.email == "ynon@hey.com"
+    self.email == ADMIN_EMAIL
   end
 
   # True when the user can afford to import a video.
   def credits?
     credit_balance.positive?
+  end
+
+  # Langlets Pro entitlement — unlimited imports, no credit spend.
+  #
+  # Memoised per instance because Home renders it and then the import path asks
+  # again; call `reload` (or re-find the user) after a purchase, exactly as the
+  # credit balance requires.
+  def pro?
+    return @pro if defined?(@pro)
+
+    @pro = subscriptions.entitling.exists?
+  end
+
+  # The subscription behind `pro?`, for screens that name the plan.
+  def pro_subscription
+    subscriptions.entitling.order(expires_at: :desc).first
+  end
+
+  # How much of the signup allowance is gone — what the Pro upsell counts down.
+  # Clamped, because buying a credit pack pushes the spend count past the grant
+  # and "you've used 7 of 3" is nonsense.
+  def free_imports_used
+    [ credit_ledger_entries.import_spend.count, SIGNUP_CREDITS ].min
+  end
+
+  # Whether the account has ever bought credits (Apple or PayPal — both land on
+  # the iap_purchase reason). Once they have, the free allowance has stopped
+  # being what limits them and a "2 of 3 free imports" bar would be misleading.
+  def purchased_credits?
+    credit_ledger_entries.iap_purchase.exists?
+  end
+
+  # Where a newly imported Course is published.
+  #
+  # Free accounts publish to their own default Channel and keep that content
+  # forever. Pro imports go to the Pro library instead, which is lent for as long
+  # as the subscription runs — that difference *is* the subscription. Courses
+  # imported before subscribing stay where they were: Pro adds a new home, it
+  # does not move the old one.
+  def publishing_channel
+    pro? ? provision_pro_channel! : provision_default_channel!
+  end
+
+  # The Pro library, created on demand — on the first import made while
+  # subscribed, so an account that subscribes and never imports carries no empty
+  # channel. Mirrors provision_default_channel! down to the retry.
+  def provision_pro_channel!
+    existing = pro_channel
+    return existing if existing
+
+    channel = ProChannel.create_or_find_by!(user_id: id) do |new_channel|
+      new_channel.name = ProChannel::NAME
+      new_channel.slug = "pro-#{id}"
+      new_channel.visibility = :private
+    end
+    association(:pro_channel).reset
+    channel
+  rescue ActiveRecord::RecordNotUnique
+    association(:pro_channel).reset
+    pro_channel
+  end
+
+  # Whether this course sits in a Channel this user publishes to, which is what
+  # makes Delete meaningful: it removes their own contribution, never anyone
+  # else's. Both homes count — a course imported while subscribed lives in the
+  # Pro library, and Delete has to reach it after the subscription ends too.
+  def owns_publication_of?(course)
+    channel_ids = [ default_channel&.id, pro_channel&.id ].compact
+    return false if channel_ids.empty?
+
+    ChannelItem.where(channel_id: channel_ids, course_id: course.id).exists?
+  end
+
+  def reload(...)
+    remove_instance_variable(:@pro) if defined?(@pro)
+    super
   end
 
   def recommended_for_me

@@ -172,16 +172,21 @@ class CoursesController < ApplicationController
   end
 
   # Removes the course from the current user's own library: unpublishes it from
-  # their default Channel and clears their personal progress/enrollment. The
-  # shared Course row (and any other Channel that publishes it) is untouched, so
-  # re-importing the same video later matches and republishes it, just without
-  # the progress that was cleared here.
+  # the Channels that are theirs to publish to — their default Channel and, for
+  # a subscriber, their Pro library — and clears their personal
+  # progress/enrollment. The shared Course row (and any other Channel that
+  # publishes it) is untouched, so re-importing the same video later matches and
+  # republishes it, just without the progress that was cleared here.
   def destroy
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
     authenticate_user!
 
     ApplicationRecord.transaction do
+      # Both, not just the current one: an import made while subscribed lives in
+      # the Pro library, and Delete has to reach it whether or not the
+      # subscription is still running today.
       current_user.provision_default_channel!.unpublish!(@course)
+      current_user.pro_channel&.unpublish!(@course)
       clear_lesson_progress!(@course)
       Enrollment.where(course: @course, user: current_user).destroy_all
     end

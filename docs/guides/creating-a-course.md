@@ -197,7 +197,7 @@ tail -100 log/development.log | grep -E "Error|failed|Course creation"
 | `pipeline run failed: {"translate": ...}` | Only the `wait: true` form raises this; one branch failed and its error is in `data["errors"]` | Fix the cause and re-trigger — finished branches are not redone |
 | Run starts, then nothing persists | Pipeline can't reach the callback URL | Check `PIPELINE_CALLBACK_BASE_URL` — in dev it must be the ngrok URL, not localhost |
 | `You exceeded your current quota` | Provider rate limit | Change the model in `pipeline/src/models.ts` and restart the service |
-| `Import timed out after 10 minutes` | No callback ever completed the blob | Check `data["errors"]` and the pipeline host's logs; the credit was already refunded |
+| `Import timed out after 10 minutes` | No callback ever completed the blob | Check `data["errors"]` and the pipeline host's logs; nothing was charged |
 | Import ready but course still `processing` | Data landed but the finalizer never ran | `Imports::Finalizer.call(progress)` — it is idempotent and safe to run by hand |
 | Course stuck in `processing` | Job crashed without updating status | Check logs, fix issue, reset: `course.update!(status: :pending)` |
 
@@ -214,7 +214,7 @@ puts ir.create_song_progress.pipeline_errors.last   # what the pipeline actually
 ir.retry!
 ```
 
-It raises `ImportRequest::NotRetryable` if the request isn't `failed`, has no course or progress record, or the user already has that video importing. Credits are untouched — the failure refunded already. See the ImportRequest section in [architecture.md](../architecture.md) for what each move is for.
+It raises `ImportRequest::NotRetryable` if the request isn't `failed`, has no course or progress record, or the user already has that video importing. Credits are untouched — the failure took none, because a credit only moves when the course is published into the user's channel. See the ImportRequest section in [architecture.md](../architecture.md) for what each move is for.
 
 ### Retrying a Failed Course
 

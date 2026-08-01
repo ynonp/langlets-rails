@@ -55,6 +55,15 @@
         <li class="flex gap-3"><span class="font-bold text-[#C4451C]">✓</span><span>Word-level vocabulary practice</span></li>
         <li class="flex gap-3"><span class="font-bold text-[#C4451C]">✓</span><span>A reusable lesson in your library</span></li>
       </ul>
+      <%# Pro replaces the whole balance-and-buy block. Offering "Buy More"
+          credits to somebody on an unlimited plan is not just noise, it is an
+          invitation to spend money on something they already have. %>
+      <% if current_user.pro? %>
+        <div class="mt-7 border-t border-[#5A5245] pt-5">
+          <p class="text-sm text-[#B5AC98]"><%= t("app.import_requests.new.pro_balance_label") %></p>
+          <p class="mt-2 text-xl font-extrabold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= t("app.import_requests.new.pro_balance") %></p>
+        </div>
+      <% else %>
       <div class="mt-7 border-t border-[#5A5245] pt-5">
         <p class="text-sm text-[#B5AC98]">Available balance</p>
         <div class="mt-2 flex flex-wrap items-center justify-between gap-3">
@@ -77,6 +86,7 @@
         </div>
         <p class="mt-1 text-xs text-[#B5AC98]">Each new import uses 1 credit.</p>
       </div>
+      <% end %>
     </aside>
   </div>
 </div>

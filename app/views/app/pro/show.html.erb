@@ -1,0 +1,116 @@
+<% content_for :title, t(".page_title") %>
+
+<%# The Langlets Pro paywall. Presented as a full native modal (see
+    config/hotwire/ios_path_configuration.json), so it owns the whole viewport
+    and closes with its own ✕ rather than a back arrow.
+
+    Everything below the fold is pinned: the plan cards, the CTA and the legal
+    text must all be visible without scrolling on the smallest supported iPhone,
+    because a subscription screen where the price scrolls out of view is exactly
+    the thing App Review rejects. Hence h-dvh-safe with a single flexible spacer
+    rather than an ordinary scrolling column. %>
+<div class="h-dvh-safe app-sheet-pad px-6 pt-3 flex flex-col overflow-hidden"
+     data-controller="pro-plan bridge--apple-purchase"
+     data-bridge--apple-purchase-endpoint-value="<%= app_apple_subscriptions_path %>"
+     data-bridge--apple-purchase-account-token-value="<%= @apple_app_account_token %>">
+
+  <div class="flex justify-end">
+    <%= link_to app_home_path,
+                class: "w-8 h-8 rounded-full bg-white/[0.08] flex items-center justify-center text-app-text-2",
+                aria: { label: t(".close") } do %>
+      <%= app_icon "close", class: "w-[15px] h-[15px]" %>
+    <% end %>
+  </div>
+
+  <p class="mt-1.5 text-[26px] font-extrabold tracking-[-0.02em] leading-none">
+    langlets<span class="text-app-accent">.</span> <span class="text-app-accent">pro</span>
+  </p>
+
+  <h1 class="mt-3.5 text-[32px] font-extrabold tracking-[-0.02em] leading-[1.15]"><%= t(".title") %></h1>
+
+  <%# Two leads, because the paywall is reached both by running out and by
+      tapping the Home banner early. Telling somebody with credits left that
+      they've used them all is a small lie that costs trust at the exact moment
+      it is worth most. %>
+  <p class="mt-2 text-[15px] text-app-text-2 leading-[1.45]">
+    <% if @free_imports_used >= User::SIGNUP_CREDITS %>
+      <%= t(".lead_all_used", count: User::SIGNUP_CREDITS) %>
+    <% else %>
+      <%= t(".lead", used: @free_imports_used, count: User::SIGNUP_CREDITS) %>
+    <% end %>
+  </p>
+
+  <ul class="mt-5.5 flex flex-col gap-3">
+    <% %w[imports library].each do |benefit| %>
+      <li class="flex gap-3 items-start">
+        <%= app_icon "check", class: "w-[15px] h-[15px] mt-1 shrink-0 text-app-accent" %>
+        <div>
+          <p class="text-[15px] font-bold"><%= t(".benefits.#{benefit}.title") %></p>
+          <p class="mt-0.5 text-[13px] text-app-text-3"><%= t(".benefits.#{benefit}.body") %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <%# Real radio inputs: the selected state is styled by :has(:checked) rather
+      than by JavaScript, so the cards are correct before Stimulus connects and
+      stay correct for VoiceOver. The controller's only job is the CTA. %>
+  <fieldset class="mt-6 flex flex-col gap-2.5">
+    <legend class="sr-only"><%= t(".plans_legend") %></legend>
+
+    <% @plans.each do |plan| %>
+      <label class="group block cursor-pointer">
+        <input type="radio" name="pro_plan" class="sr-only"
+               value="<%= plan.product_id %>"
+               data-pro-plan-target="option"
+               data-action="pro-plan#choose"
+               data-product-id="<%= plan.product_id %>"
+               data-cta-label="<%= t(".cta", price: t(".price.#{plan.id}")) %>"
+               <%= "checked" if plan.product_id == @default_plan.product_id %>>
+
+        <div class="flex items-center gap-3 rounded-app-card px-4 py-[15px] border-2 bg-app-card border-white/10
+                    group-has-[:checked]:border-app-accent group-has-[:checked]:bg-app-accent/[0.09]">
+          <div class="flex-1">
+            <div class="flex items-center gap-2">
+              <span class="text-base font-extrabold"><%= t(".plan.#{plan.id}") %></span>
+              <% if plan.id == "yearly" %>
+                <span class="text-[10px] font-extrabold tracking-[0.06em] text-app-on-accent-sm bg-app-accent rounded-md px-1.5 py-0.5">
+                  <%= t(".save", percent: @yearly_savings_percent) %>
+                </span>
+              <% end %>
+            </div>
+            <p class="mt-0.5 text-[13px] text-app-text-2"><%= t(".price_detail.#{plan.id}", equivalent: plan.monthly_equivalent) %></p>
+          </div>
+
+          <span class="w-[22px] h-[22px] shrink-0 rounded-full border-2 border-white/25
+                       group-has-[:checked]:border-app-accent group-has-[:checked]:bg-app-accent
+                       group-has-[:checked]:shadow-[inset_0_0_0_4px_var(--color-app-bg)]"></span>
+        </div>
+      </label>
+    <% end %>
+  </fieldset>
+
+  <div class="flex-1 min-h-4"></div>
+
+  <%# The product id travels on the button, which is where
+      bridge--apple-purchase reads it from; pro-plan#choose keeps it and the
+      label in step with the selected card. %>
+  <button type="button"
+          data-pro-plan-target="cta"
+          data-action="bridge--apple-purchase#purchase"
+          data-product-id="<%= @default_plan.product_id %>"
+          class="w-full rounded-app-card bg-app-accent text-app-on-accent py-4 text-[17px] font-extrabold disabled:opacity-60">
+    <%= t(".cta", price: t(".price.#{@default_plan.id}")) %>
+  </button>
+
+  <%# Required by App Review for any auto-renewable subscription, and genuinely
+      needed: a reinstall or a second device has the entitlement in StoreKit and
+      nothing in our database until this posts it back. %>
+  <button type="button"
+          data-action="bridge--apple-purchase#restore"
+          class="mt-3 self-center text-[13px] font-semibold text-app-text-2 disabled:opacity-60">
+    <%= t(".restore") %>
+  </button>
+
+  <p class="mt-3 text-center text-[11px] leading-[1.5] text-app-text-3"><%= t(".legal") %></p>
+</div>

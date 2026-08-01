@@ -45,7 +45,15 @@
     "present and dismiss as a single sheet with the tab bar hidden throughout",
     "rather than flash the tab bar during the wait and then jump into a modal.",
     "review_lesson_builds needs its own pattern because the '_builds' suffix",
-    "means it doesn't match '/review_lessons/.*'."
+    "means it doesn't match '/review_lessons/.*'.",
+    "",
+    "The Pro paywall and its confirmation are one full-screen modal, sharing a",
+    "stack: the purchase POST navigates from /app/pro to /app/pro/success, and",
+    "both being modal keeps that inside the sheet the user opened rather than",
+    "dropping them back onto Home mid-purchase. modal_style 'full' rather than",
+    "'medium' because the plan cards, the CTA and the subscription disclosure",
+    "all have to be visible at once — a detent that scrolls the price out of",
+    "view is an App Review rejection."
   ],
   "rules": [
     {
@@ -124,6 +132,17 @@
       ],
       "properties": {
         "context": "default",
+        "pull_to_refresh_enabled": false
+      }
+    },
+    {
+      "patterns": [
+        "^/app/pro$",
+        "^/app/pro/success$"
+      ],
+      "properties": {
+        "context": "modal",
+        "modal_style": "full",
         "pull_to_refresh_enabled": false
       }
     }

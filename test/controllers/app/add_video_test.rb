@@ -161,10 +161,10 @@ module App
       assert_select "a[href*=?][href*=?]", "/app/import_requests/new", "url=#{CGI.escape(CANONICAL)}"
     end
 
-    # §4: duplicates short-circuit before the balance is consulted, so this must
-    # be the library state and not the paywall.
-    test "a video already in the library offers Open lesson, even at zero credits" do
-      publish_course!
+    # §4: duplicates short-circuit before the balance is consulted, so a course
+    # already in their own channel must be the library state and not the paywall.
+    test "a video already in your channel offers Open lesson, even at zero credits" do
+      publish_privately(publish_course!, owner: @user)
       User.where(id: @user.id).update_all(credit_balance: 0)
 
       stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
@@ -202,7 +202,6 @@ module App
       get response.location, headers: NATIVE
       assert_select "[data-import-request-status=detecting]"
       assert_equal 3, @user.reload.credit_balance
-      assert_not @user.import_requests.sole.charged?
     end
 
     test "approving in Add Video creates the request and starts its pipeline job" do
@@ -245,7 +244,7 @@ module App
 
       import_request = @user.import_requests.sole
       assert import_request.importing?
-      assert import_request.charged?
+      assert_equal 3, @user.reload.credit_balance, "still in flight, so still unpaid"
       assert_equal CANONICAL, import_request.youtube_url
       assert_equal 1, pipeline_runs
       assert_equal import_request.create_song_progress, pipeline_arguments.sole.fetch(:progress)

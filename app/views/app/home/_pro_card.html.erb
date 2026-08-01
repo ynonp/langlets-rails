@@ -1,0 +1,58 @@
+<%# Home's Pro row: the upsell while the user is on the free tier, and a plain
+    statement of what they have once they subscribe.
+
+    It sits directly under the header, above the daily vocab card, because
+    running out of imports is the one thing on this screen that stops the user
+    doing anything else. The Pro state stays rendered rather than disappearing:
+    a subscription the app never mentions again is a subscription people forget
+    they are paying for, and then dispute. %>
+<% if current_user.pro? %>
+  <div class="flex items-center gap-3.5 rounded-app-hero px-4.5 py-4 bg-app-accent/[0.08] border border-app-accent/30">
+    <div class="w-[38px] h-[38px] shrink-0 rounded-[11px] bg-app-accent text-app-on-accent flex items-center justify-center text-[17px] font-extrabold">
+      l.
+    </div>
+    <div class="flex-1 min-w-0">
+      <p class="text-base font-bold">
+        <%= t(".pro.title") %>
+        <span class="ms-1.5 align-[2px] text-[11px] font-extrabold text-app-on-accent-sm bg-app-accent rounded-md px-[7px] py-0.5">
+          <%= t(".pro.badge") %>
+        </span>
+      </p>
+      <p class="mt-0.5 text-[13px] text-app-text-2"><%= t(".pro.body") %></p>
+    </div>
+  </div>
+<% else %>
+  <%= link_to app_pro_path, class: "flex items-center gap-3.5 rounded-app-hero px-4.5 py-4 border border-app-accent/35 bg-gradient-to-br from-app-accent/[0.16] to-app-accent/[0.05]" do %>
+    <div class="w-[38px] h-[38px] shrink-0 rounded-[11px] bg-app-accent text-app-on-accent flex items-center justify-center text-[17px] font-extrabold">
+      l.
+    </div>
+
+    <div class="flex-1 min-w-0">
+      <p class="text-base font-bold"><%= t(".upsell.title") %></p>
+
+      <%# Two subtitles for two honest states. Someone who bought a credit pack
+          has not "used 2 of 3 free imports" any more — the free allowance stopped
+          being the thing that limits them — so they get their real balance
+          instead of a progress bar that would be stuck full. %>
+      <% if current_user.purchased_credits? %>
+        <p class="mt-0.5 text-[13px] text-app-text-2">
+          <%= t(".upsell.credits_left", count: current_user.credit_balance) %>
+        </p>
+      <% else %>
+        <% used = current_user.free_imports_used %>
+        <p class="mt-0.5 text-[13px] text-app-text-2">
+          <%= t(".upsell.free_used", used: used, count: User::SIGNUP_CREDITS) %>
+        </p>
+        <div class="mt-2.5 h-1 rounded-sm bg-white/10 overflow-hidden">
+          <div class="h-full rounded-sm bg-app-accent"
+               style="width: <%= (100.0 * used / User::SIGNUP_CREDITS).round %>%"></div>
+        </div>
+      <% end %>
+    </div>
+
+    <%# rtl:rotate-180 rather than a chevron character in the locale file: this
+        one is decoration next to a link that already reads as one, not part of
+        the sentence the way Home's first-run create link is. %>
+    <%= app_icon "chevron", class: "w-2 h-3 shrink-0 text-app-accent rtl:rotate-180" %>
+  <% end %>
+<% end %>

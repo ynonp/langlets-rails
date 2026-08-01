@@ -97,9 +97,10 @@ module App
                   alert: "We couldn't detect the video's language."
     end
 
-    # Cancelling a queued import refunds the credit. Deleting a failed or ready
-    # item just removes it from the queue — failed items were already refunded,
-    # and ready items have a published course the user can still access.
+    # Cancelling a queued import moves no credits, and neither does deleting a
+    # failed or ready one. Nothing is charged until the course is published into
+    # the user's channel (Channel#publish!): a cancelled or failed import never
+    # got there, and a ready one has a course the user keeps.
     #
     # Responds with a Turbo Stream so the client can optimistically remove the
     # card and the server response corrects the page if anything went wrong.
@@ -107,18 +108,7 @@ module App
       import_request = current_user.import_requests.find(params[:id])
 
       if import_request.queued?
-        ActiveRecord::Base.transaction do
-          if import_request.charged? && !import_request.refunded?
-            Credits::Ledger.refund!(
-              user: current_user,
-              subject: import_request,
-              idempotency_key: "refund:#{import_request.id}"
-            )
-            import_request.refunded = true
-          end
-          import_request.status = :canceled
-          import_request.save!
-        end
+        import_request.update!(status: :canceled)
       elsif import_request.failed? || import_request.ready?
         import_request.destroy!
       else
@@ -137,9 +127,9 @@ module App
       end
     end
 
-    # Re-import something that failed. It was refunded when it failed, so this
-    # charges again like any other import. The old failed request is removed —
-    # the retried item replaces it.
+    # Re-import something that failed. The failure cost nothing, so this is an
+    # ordinary import: it will be charged if and when the course reaches their
+    # channel. The old failed request is removed — the retried item replaces it.
     def retry
       failed = current_user.import_requests.find(params[:id])
       return redirect_to app_import_requests_path unless failed.failed?
@@ -177,12 +167,26 @@ module App
     end
 
     def redirect_to_result(result)
-      if result.deduped?
-        redirect_to course_path(result.course),
-                    notice: "Already in the Library — added to your Home, no credit used."
+      if result.paused?
+        # Hitting your own paused library is the single best moment to offer the
+        # subscription back, so go straight there rather than to a course page
+        # that would 404.
+        redirect_to app_pro_path, notice: t("app.import_requests.new.paused_notice")
+      elsif result.in_channel?
+        # Nothing was queued: the course is in their channel already and can be
+        # opened right now, so send them to it rather than to a queue with
+        # nothing in it.
+        redirect_to course_path(result.course), notice: in_channel_notice(result)
       else
         redirect_to gallery_path(imports: "pending")
       end
+    end
+
+    def in_channel_notice(result)
+      return t("app.import_requests.new.already_yours_notice") if result.deduped?
+      return t("app.import_requests.new.added_notice_charged", cost: result.cost) if result.charged?
+
+      t("app.import_requests.new.added_notice_pro")
     end
 
     def prepare_new_import

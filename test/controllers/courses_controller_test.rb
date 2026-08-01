@@ -278,7 +278,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
   def create_public_course!(**attributes)
     course = Course.create!(**attributes)
-    @public_channel.publish!(course)
+    publish_covering_the_credit(@public_channel, course)
     course
   end
 

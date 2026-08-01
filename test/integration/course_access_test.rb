@@ -44,7 +44,7 @@ class CourseAccessTest < ActionDispatch::IntegrationTest
     activity = Activities::SpeakActivity.create!(lesson: @lesson, user: @owner, order: 1)
     activity.phrases << phrase
     @channel = @owner.provision_default_channel!
-    @channel.publish!(@course)
+    publish_covering_the_credit(@channel, @course)
   end
 
   def sign_in(user)

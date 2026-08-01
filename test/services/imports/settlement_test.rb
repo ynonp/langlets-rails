@@ -10,7 +10,7 @@ class Imports::SettlementTest < ActiveJob::TestCase
     request = user.import_requests.create!(
       youtube_url: course.main_media_url, youtube_video_id: course.youtube_video_id,
       clip_language: "Spanish", translation_language: "English", course: course,
-      status: :importing, charged: true
+      status: :importing
     )
 
     2.times { Imports::Settlement.complete!(request.reload) }

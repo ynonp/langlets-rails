@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_31_180000) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_01_091002) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -147,8 +147,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_180000) do
     t.boolean "default", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
     t.index ["slug"], name: "index_channels_on_slug", unique: true
+    t.index ["type"], name: "index_channels_on_type"
     t.index ["user_id"], name: "idx_channels_one_default_per_user", unique: true, where: "\"default\""
+    t.index ["user_id"], name: "idx_channels_one_pro_channel_per_user", unique: true, where: "((type)::text = 'ProChannel'::text)"
     t.index ["user_id"], name: "index_channels_on_user_id"
     t.index ["user_id"], name: "index_channels_on_user_id_where_default", unique: true, where: "(\"default\" = true)"
     t.index ["visibility", "created_at"], name: "index_channels_on_visibility_and_created_at"
@@ -367,8 +370,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_180000) do
     t.bigint "create_song_progress_id"
     t.integer "progress_percent", default: 0, null: false
     t.string "failure_reason"
-    t.boolean "charged", default: false, null: false
-    t.boolean "refunded", default: false, null: false
     t.datetime "notified_at"
     t.string "client_token"
     t.datetime "created_at", null: false
@@ -382,6 +383,31 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_180000) do
     t.index ["user_id", "youtube_video_id", "clip_language", "translation_language"], name: "idx_import_requests_active_dedupe", unique: true, where: "(status = ANY (ARRAY[0, 1]))"
     t.index ["user_id", "youtube_video_id", "translation_language"], name: "idx_import_requests_detecting_dedupe", unique: true, where: "((status = 5) AND (clip_language IS NULL))"
     t.index ["user_id"], name: "index_import_requests_on_user_id"
+  end
+
+  create_table "language_detections", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "language_id"
+    t.string "token", null: false
+    t.string "video_url", null: false
+    t.integer "status", default: 0, null: false
+    t.string "failure_reason"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "auto_import", default: false, null: false
+    t.string "translation_language"
+    t.string "client_token"
+    t.string "video_id"
+    t.string "title"
+    t.datetime "processed_at"
+    t.bigint "import_request_id"
+    t.jsonb "data", default: {}, null: false
+    t.index ["client_token"], name: "index_language_detections_on_client_token", unique: true, where: "(client_token IS NOT NULL)"
+    t.index ["import_request_id"], name: "index_language_detections_on_import_request_id"
+    t.index ["language_id"], name: "index_language_detections_on_language_id"
+    t.index ["token"], name: "index_language_detections_on_token", unique: true
+    t.index ["user_id", "created_at"], name: "index_language_detections_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_language_detections_on_user_id"
   end
 
   create_table "languages", force: :cascade do |t|
@@ -428,8 +454,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_180000) do
     t.string "name"
     t.bigint "user_id", null: false
     t.bigint "review_language_id"
-    t.integer "review_build_status"
     t.string "review_build_error"
+    t.integer "review_build_status"
     t.index ["course_id", "slug"], name: "index_lessons_on_course_id_and_slug", unique: true, where: "(course_id IS NOT NULL)"
     t.index ["course_id"], name: "index_lessons_on_course_id"
     t.index ["medium_id"], name: "index_lessons_on_medium_id"
@@ -601,6 +627,24 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_180000) do
     t.index ["phrase_id"], name: "index_similar_sounds_on_phrase_id"
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "product_id", null: false
+    t.integer "plan", default: 0, null: false
+    t.integer "status", default: 0, null: false
+    t.string "original_transaction_id", null: false
+    t.string "latest_transaction_id"
+    t.datetime "purchased_at"
+    t.datetime "expires_at"
+    t.string "environment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["original_transaction_id"], name: "index_subscriptions_on_original_transaction_id", unique: true
+    t.index ["status", "expires_at"], name: "index_subscriptions_on_status_and_expires_at"
+    t.index ["user_id", "status", "expires_at"], name: "index_subscriptions_on_user_id_and_status_and_expires_at"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -690,6 +734,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_180000) do
   add_foreign_key "import_requests", "courses"
   add_foreign_key "import_requests", "create_song_progresses"
   add_foreign_key "import_requests", "users"
+  add_foreign_key "language_detections", "import_requests"
+  add_foreign_key "language_detections", "languages"
+  add_foreign_key "language_detections", "users"
   add_foreign_key "lesson_translations", "languages"
   add_foreign_key "lesson_translations", "lessons", on_delete: :cascade
   add_foreign_key "lesson_users", "lessons"
@@ -714,6 +761,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_31_180000) do
   add_foreign_key "review_lesson_builds", "lessons"
   add_foreign_key "review_lesson_builds", "users"
   add_foreign_key "similar_sounds", "phrases"
+  add_foreign_key "subscriptions", "users"
   add_foreign_key "token_translations", "languages"
   add_foreign_key "token_translations", "phrase_tokens"
   add_foreign_key "user_game_stats", "users"

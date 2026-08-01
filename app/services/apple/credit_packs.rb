@@ -9,6 +9,11 @@ module Apple
     class << self
       def all = PACKS.values
       def fetch(product_id) = PACKS.fetch(product_id.to_s)
+
+      # What StoreKit calls this kind of product. Apple::VerifyTransaction
+      # compares it against the transaction's own `type`, so a subscription
+      # cannot be redeemed for credits.
+      def transaction_type = "Consumable"
     end
   end
 end

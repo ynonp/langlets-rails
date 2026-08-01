@@ -191,6 +191,51 @@ he:
         # rather than in the view. The heading mirrors courses.index.library.heading.
         first_run_library: "מתחילים מיד"
         first_run_create: "‹ או ייבאו כל סרטון YouTube / TikTok"
+        upsell:
+          title: "שדרגו ל‑Pro — ייבוא בלי הגבלה"
+          free_used: "השתמשתם ב‑%{used} מתוך %{count} ייבואים חינם."
+          credits_left:
+            one: "נותרה נקודת זכות אחת. עברו לבלתי מוגבל."
+            other: "נותרו %{count} נקודות זכות. עברו לבלתי מוגבל."
+        pro:
+          title: "Langlets Pro"
+          badge: "פעיל"
+          body: "ייבוא בלי הגבלה · הספרייה מסונכרנת"
+    pro:
+      show:
+        page_title: "Langlets Pro"
+        close: "סגירה"
+        title: "ללמוד בלי הגבלה"
+        lead: "השתמשתם ב‑%{used} מתוך %{count} הייבואים החינמיים. עברו לבלתי מוגבל לפני שייגמרו."
+        lead_all_used: "ניצלתם את %{count} הייבואים החינמיים. המשיכו להפוך סרטונים שאתם אוהבים לשיעורים."
+        benefits:
+          imports:
+            title: "ייבוא סרטונים בלי הגבלה"
+            body: "כל סרטון YouTube או TikTok, מתי שתרצו."
+          library:
+            title: "כל הספרייה שלכם, בענן"
+            body: "כל שיעור שאתם יוצרים נשאר מסונכרן וזמין."
+        plans_legend: "בחרו מסלול"
+        plan:
+          yearly: "שנתי"
+          monthly: "חודשי"
+        price:
+          yearly: "‎$100 לשנה"
+          monthly: "‎$10 לחודש"
+        price_detail:
+          yearly: "‎$100 לשנה · יוצא %{equivalent} לחודש"
+          monthly: "‎$10 לחודש · אפשר לבטל בכל רגע"
+        save: "חיסכון %{percent}%"
+        cta: "המשך — %{price}"
+        restore: "שחזור רכישות"
+        legal: "החיוב מתבצע דרך App Store. המנוי מתחדש אוטומטית — אפשר לבטל בכל רגע בהגדרות. Pro כולל גישה בענן לשיעורים שאתם יוצרים; אם המנוי מסתיים, הספרייה שיצרתם מושהית עד שתחדשו אותו. מה שייבאתם עם נקודות זכות, וכל מילה ששמרתם, נשאר שלכם."
+      success:
+        page_title: "אתם ב‑Pro!"
+        title: "אתם ב‑Pro!"
+        body: "הייבוא הבלתי מוגבל פעיל, וכל שיעור שתיצרו נשאר מסונכרן בספרייה שלכם בענן."
+        receipt: "מסלול %{plan} · %{price} · מתחדש ב‑%{renews_on}"
+        cta: "מתחילים לייבא"
+        manage: "אפשר לנהל או לבטל בכל רגע בהגדרות."
     library:
       filters:
         label: "סינון הספרייה"
@@ -231,6 +276,18 @@ he:
         page_title: "הוספת סרטון"
         title: "הוספת סרטון"
         credits_subtitle: "%{credits} — כל ייבוא עולה נקודת זכות אחת."
+        pro_subtitle: "Langlets Pro — ייבאו כמה שתרצו."
+        pro_balance_label: "המסלול שלכם"
+        pro_balance: "Langlets Pro — בלי הגבלה"
+        included_with_pro: "כלול ב‑Pro"
+        approve_pro: "אישור · כלול ב‑Pro"
+        paused: "ייבאתם את זה עם Langlets Pro. זה עדיין בספרייה שלכם, מושהה עד שהמנוי יחזור לפעול."
+        paused_cta: "חידוש Pro"
+        paused_web_hint: "חדשו את Pro באפליקציית Langlets באייפון כדי לפתוח את זה שוב."
+        paused_notice: "זה נמצא בספריית ה‑Pro המושהית שלכם."
+        added_notice_charged: "נוסף לספרייה שלכם — נוצלה נקודת זכות אחת."
+        added_notice_pro: "נוסף לספרייה שלכם — כלול ב‑Pro."
+        already_yours_notice: "זה כבר נמצא בספרייה שלכם."
         share_hint: "אפשר גם לשתף סרטון YouTube או TikTok ישירות אל Langlets מתפריט השיתוף שלו."
         video_language: "שפת הסרטון"
         paste_placeholder: "הדביקו קישור יוטיוב או טיקטוק"
@@ -238,9 +295,7 @@ he:
         link_recognized: "הקישור זוהה"
         get_started: "הדביקו קישור ל‑YouTube או ל‑TikTok כדי להתחיל."
         imports_as_lesson: "מיובא כשיעור: תמלול, תרגומים וכרטיסי אוצר מילים."
-        free_join: "בחינם — כבר בייבוא"
         approve: "אישור · שימוש ב‑%{cost}"
-        approve_free: "אישור · בחינם"
         get_credits: "רכישת נקודות זכות"
         already_in_library: "כבר בספרייה שלך."
         open_lesson: "פתיחת השיעור"

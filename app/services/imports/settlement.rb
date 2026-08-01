@@ -1,19 +1,37 @@
 module Imports
-  # How an import ends, either way. Three callers need exactly this and used to
+  # How an import ends, either way. Four callers need exactly this and used to
   # each carry their own copy: Imports::Finalizer (the data arrived),
-  # ImportRequestTimeoutJob (it never did), and the trigger jobs (the run never
-  # started). Keeping it in one place is what stops the refund rules from
-  # drifting apart between them.
+  # ImportRequestTimeoutJob (it never did), the trigger jobs (the run never
+  # started), and Imports::Create when there was nothing to run at all. Keeping
+  # it in one place is what stops them drifting apart.
   module Settlement
     module_function
 
-    # The course exists now, so this is the point where it may appear on Home.
-    def complete!(import_request)
+    # The course exists now, so this is the point where it becomes the user's:
+    # published into their channel, paid for there, and on their Home.
+    #
+    # `notify:` is false for the one import that never waited — Imports::Create
+    # adopting an already-built course — because a "your course is ready" push
+    # for something the user is looking at right now is noise.
+    #
+    # Raises Credits::InsufficientCredits if the balance ran out between the
+    # request and its delivery, which rolls the whole settlement back and leaves
+    # the import to fail with that as its reason. Imports::Pricing guards against
+    # it at request time; this is the residual race, and failing here is right —
+    # the alternative is handing over a course nobody paid for.
+    def complete!(import_request, notify: true)
       ImportRequest.transaction do
+        # Pro imports land in the Pro library rather than the user's own default
+        # Channel — see User#publishing_channel. Which one it is has to be
+        # decided here, at publication, because it is a fact about this import
+        # rather than about the account today. It is also what decides the price:
+        # Channel#publish! charges, and ProChannel#publish! does not.
+        import_request.user.publishing_channel.publish!(import_request.course)
         enroll!(import_request)
-        import_request.user.provision_default_channel!.publish!(import_request.course)
         import_request.update!(status: :ready, progress_percent: 100, failure_reason: nil)
       end
+
+      return unless notify
 
       # Separate job so a push failure can't fail an import that has already
       # succeeded. The completion email goes out from the finalizer regardless —
@@ -21,19 +39,12 @@ module Imports
       SendImportReadyPushJob.perform_later(import_request.id)
     end
 
-    # Give the credit back. Only whoever actually paid gets a refund — users who
-    # joined someone else's in-flight import were never charged. The idempotency
-    # key means a manual re-run can't refund twice.
+    # Record why, and stop. There is deliberately no refund here any more: a
+    # credit only moves when a course is published into the user's channel
+    # (Channel#publish!), and a failed import never got that far. Nothing was
+    # taken, so there is nothing to give back — which also means there is no
+    # refund idempotency to get wrong, and no way for a re-run to mint credits.
     def fail!(import_request, reason)
-      if import_request.charged? && !import_request.refunded?
-        Credits::Ledger.refund!(
-          user: import_request.user,
-          subject: import_request,
-          idempotency_key: "refund:#{import_request.id}"
-        )
-        import_request.refunded = true
-      end
-
       import_request.status = :failed
       import_request.failure_reason = reason.to_s.truncate(250)
       import_request.save!
@@ -47,9 +58,14 @@ module Imports
     end
 
     def enroll!(import_request)
-      source = import_request.charged? ? :imported : :library
+      # Always `imported`. An ImportRequest *is* somebody asking for a course of
+      # their own, and every one of them now ends with that course published into
+      # their channel and paid for — by a credit, or by the subscription that
+      # makes it free. There is no longer a free rider to tell apart, which is
+      # what this used to read `charged`/`pro_covered` to work out.
+      # `library` remains what the catalog's "+ Learn this" writes.
       enrollment = Enrollment.find_or_initialize_by(user_id: import_request.user_id, course_id: import_request.course_id)
-      enrollment.source = source if enrollment.new_record?
+      enrollment.source = :imported if enrollment.new_record?
       enrollment.save!
     rescue ActiveRecord::RecordNotUnique
       nil # already enrolled, nothing to do

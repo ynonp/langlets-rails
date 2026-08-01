@@ -2,9 +2,12 @@
   balance   = current_user.credit_balance
   cost      = preview.cost
   video     = preview.video
+  # Imports::Pricing already quotes Pro at zero; this is only for the copy, which
+  # names the subscription instead of showing a price of nothing.
+  pro       = current_user.pro?
   # §5.1: decided here, as the card renders — not on tap. The user should see
   # where they stand before they invest attention in the video.
-  short     = cost.positive? && balance < cost
+  short     = !pro && cost.positive? && balance < cost
   cost_text = "#{pluralize(cost, 'credit')} · #{balance} left"
 %>
 
@@ -21,7 +24,17 @@
     </div>
   </div>
 
-  <% if preview.in_library? %>
+  <% if preview.paused? %>
+    <%# Theirs, but the subscription has stopped lending it back. No Approve and
+        no price: there is nothing to buy here except the subscription itself. %>
+    <div class="rounded-app-field border-[0.5px] border-app-accent/25 bg-app-accent/[0.08] py-3 px-3.5">
+      <p class="text-app-text-2 text-[13px] leading-relaxed"><%= t("app.import_requests.new.paused") %></p>
+    </div>
+    <%= link_to t("app.import_requests.new.paused_cta"), app_pro_path,
+                data: { turbo_frame: "_top" },
+                class: "block text-center bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
+
+  <% elsif preview.in_library? %>
     <%# §7: already readable. No approve, no charge — the useful action is to
         open the thing they already have. %>
     <div class="app-inset-hairline bg-app-inset rounded-app-field py-3 px-3.5">
@@ -44,11 +57,8 @@
     <div class="rounded-app-field border-[0.5px] border-app-accent/25 bg-app-accent/[0.08] py-3 px-3.5">
       <p class="text-app-text-2 text-[13px] leading-relaxed">
         <%= t("app.import_requests.new.imports_as_lesson") %>
-        <% if preview.free? %>
-          <%# Someone else is already paying for this exact pipeline; joining it
-              costs nothing. Saying "1 credit" and then not taking one would be a
-              pleasant surprise, but it would still be a lie on the button. %>
-          <span class="text-app-accent font-semibold"><%= t("app.import_requests.new.free_join") %></span>
+        <% if pro %>
+          <span class="text-app-accent font-semibold"><%= t("app.import_requests.new.included_with_pro") %></span>
         <% else %>
           <span class="<%= short ? "text-red-400" : "text-app-accent" %> font-semibold"><%= cost_text %></span>
         <% end %>
@@ -77,7 +87,7 @@
         <%= hidden_field_tag :translation_language, translation_language.english_name %>
         <%# The cost is on the button as well as in the card above, so a credit
             can never leave without the user having seen the price twice. %>
-        <%= f.submit(preview.free? ? t("app.import_requests.new.approve_free") : t("app.import_requests.new.approve", cost: pluralize(cost, "credit")),
+        <%= f.submit(app_approve_label(preview: preview, pro: pro),
                      class: "w-full bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold") %>
       <% end %>
     <% end %>

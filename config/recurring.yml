@@ -5,3 +5,8 @@ production:
   refresh_tiktok_thumbnail_urls:
     class: RefreshTiktokThumbnailUrlsJob
     schedule: every day at 4:30am
+  # Tidy-up only: entitlement is derived from expires_at, so this keeps `status`
+  # honest for support and reporting rather than gating anything.
+  expire_subscriptions:
+    class: ExpireSubscriptionsJob
+    schedule: every day at 5am

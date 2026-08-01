@@ -23,8 +23,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
       youtube_video_id: VIDEO_ID, language: @spanish, user: @user, status: :processing
     )
     @course.course_translations.create!(language: @english, name: @course.name, status: :pending)
-    @request = create_request(user: @user, charged: true)
-    Credits::Ledger.spend!(user: @user, subject: @request, idempotency_key: "import:#{@request.id}")
+    @request = create_request(user: @user)
   end
 
   test "an incomplete record leaves the import alone" do
@@ -60,18 +59,23 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
 
     enrollment = @user.enrollments.sole
     assert_equal @course, enrollment.course
-    assert enrollment.imported?, "they paid for it, so it's an import not a library add"
+    assert enrollment.imported?, "they asked for this course, so it's an import not a library add"
+    assert_equal 2, @user.reload.credit_balance, "publishing into their channel is where it is paid for"
   end
 
-  test "every rider on a shared import is enrolled when it publishes" do
+  # Riding along shares the pipeline run, not the purchase: the rider's own copy
+  # is published into their own channel and charged to them there.
+  test "every rider on a shared import is enrolled and charged when it publishes" do
     rider = User.create!(email: "rider@example.com", password: "password123", confirmed_at: Time.zone.now)
-    create_request(user: rider, charged: false)
+    create_request(user: rider)
     @progress.update!(data: complete_data)
 
     finalize
 
     assert_equal @course, rider.enrollments.sole.course
-    assert rider.enrollments.sole.library?, "they didn't pay, so it reads as a library add"
+    assert rider.enrollments.sole.imported?, "they asked for it themselves"
+    assert_equal 2, rider.reload.credit_balance
+    assert rider.default_channel.channel_items.exists?(course: @course)
   end
 
   # Every callback asks again, so this runs many times against a finished
@@ -135,9 +139,8 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
 
     @request.reload
     assert @request.failed?
-    assert @request.refunded?
     assert_equal "video is private", @request.failure_reason
-    assert_equal 3, @user.reload.credit_balance
+    assert_equal 3, @user.reload.credit_balance, "nothing published, so nothing paid"
     assert @course.reload.error?
   end
 
@@ -167,7 +170,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     finalize
 
     assert @request.reload.importing?, "an error that predates the request belongs to an earlier run"
-    assert_equal 2, @user.reload.credit_balance, "nothing was refunded"
+    assert_equal 3, @user.reload.credit_balance, "still unpublished, so still unpaid"
   end
 
   # Phrases on record mean transcription landed, whatever an older entry says.
@@ -182,26 +185,69 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     assert @request.reload.ready?
   end
 
-  test "a build that blows up refunds the import rather than leaving it spinning" do
+  test "a build that blows up fails the import rather than leaving it spinning" do
     @progress.update!(data: complete_data)
 
     finalize(on_build: -> { raise "translation data is missing" })
 
     @request.reload
     assert @request.failed?
-    assert @request.refunded?
     assert_equal "translation data is missing", @request.failure_reason
+    assert_equal 3, @user.reload.credit_balance, "a course that never published was never charged for"
     assert @course.reload.error?
+  end
+
+  # The residual race the up-front guard cannot close: the balance ran out
+  # between asking and delivery. Failing is right — the alternative is handing
+  # over a course nobody paid for.
+  test "an import whose user can no longer pay fails instead of publishing free" do
+    User.where(id: @user.id).update_all(credit_balance: 0)
+    @progress.update!(data: complete_data)
+
+    finalize
+
+    assert @request.reload.failed?
+    assert_not @user.default_channel.channel_items.exists?(course: @course)
+  end
+
+  # failure_reason is read by people — the Queue renders it and the share
+  # extension pulls it out of the API — so it must never be Credits::Ledger's
+  # internal message, which names a user id.
+  test "running out of credits is reported in words the user can act on" do
+    User.where(id: @user.id).update_all(credit_balance: 0)
+    @progress.update!(data: complete_data)
+
+    finalize
+
+    assert_equal ImportRequest::INSUFFICIENT_CREDITS, @request.reload.failure_reason
+    assert @request.insufficient_credits?
+    assert_no_match(/user \d+/, @request.failure_reason)
+  end
+
+  # The course is shared. One person's empty balance must not knock it back to
+  # `error` underneath everyone else who is riding the same run.
+  test "one user's empty balance does not damage the shared course" do
+    rider = User.create!(email: "solvent@example.com", password: "password123", confirmed_at: Time.zone.now)
+    create_request(user: rider)
+    User.where(id: @user.id).update_all(credit_balance: 0)
+    @progress.update!(data: complete_data)
+
+    finalize
+
+    assert @course.reload.published?, "still live for everyone who can pay for it"
+    assert rider.reload.enrollments.exists?(course: @course)
+    assert_equal 2, rider.credit_balance
+    assert @request.reload.failed?
   end
 
   private
 
-  def create_request(user:, charged:)
+  def create_request(user:)
     user.import_requests.create!(
       youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
       clip_language: "Spanish", translation_language: "English",
       course: @course, create_song_progress: @progress,
-      status: :importing, charged: charged
+      status: :importing
     )
   end
 

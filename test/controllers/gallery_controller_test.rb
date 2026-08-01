@@ -281,7 +281,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
       user: @user,
       status: :published
     )
-    @public_channel.publish!(course)
+    publish_covering_the_credit(@public_channel, course)
     course
   end
 

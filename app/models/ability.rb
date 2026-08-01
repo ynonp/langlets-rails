@@ -36,7 +36,11 @@ class Ability
     # System playlists (user_id nil) stay admin-only via `editor`.
     can [ :update, :destroy ], Playlist, user_id: user.id
     can :read, Channel, Channel.visible_to(user)
-    can :manage, Channel, user_id: user.id
+    # `type: nil` restricts this to ordinary Channels. A ProChannel is owned by
+    # its subscriber too, but administering it — renaming it, changing its
+    # visibility, inviting people into it — is not something the subscription
+    # buys, and Channel is an STI base class so `user_id` alone would match it.
+    can :manage, Channel, type: nil, user_id: user.id
     cannot :create, Channel
     can :create, ChannelInvitation, channel: { user_id: user.id, visibility: Channel.visibilities[:shared] }
 

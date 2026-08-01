@@ -118,6 +118,9 @@ application.register("poll", PollController)
 import PopoverTranslationController from "./popover_translation_controller"
 application.register("popover-translation", PopoverTranslationController)
 
+import ProPlanController from "./pro_plan_controller"
+application.register("pro-plan", ProPlanController)
+
 import ProfileMenuController from "./profile_menu_controller"
 application.register("profile-menu", ProfileMenuController)
 

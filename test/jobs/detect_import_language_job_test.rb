@@ -17,7 +17,7 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     )
   end
 
-  test "promotes the provisional request, charges, and queues course creation" do
+  test "promotes the provisional request and queues course creation" do
     request = create_provisional_request
     detected_data = { "lyric_lines" => [ "hola" ], "stt_words" => [ { "text" => "hola" } ] }
 
@@ -31,14 +31,14 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
 
     request.reload
     assert request.queued?
-    assert request.charged?
     assert_equal "Spanish", request.clip_language
     assert_equal detected_data, request.create_song_progress.data
     assert request.course.pending?
-    assert_equal 2, @user.reload.credit_balance
+    assert_equal 3, @user.reload.credit_balance,
+                 "nothing is charged until the course reaches their channel"
   end
 
-  test "fails without charging when the detected and translation languages match" do
+  test "fails when the detected and translation languages match" do
     request = create_provisional_request
 
     assert_raises(Imports::UnsupportedLanguage) do
@@ -50,7 +50,6 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     end
 
     assert request.reload.failed?
-    assert_not request.charged?
     assert_equal 3, @user.reload.credit_balance
   end
 
