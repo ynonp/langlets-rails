@@ -106,8 +106,13 @@ one branch failing never discards another branch's completed — and already per
 | --------------------------------------------------- | ----------------------------------------------- | -------------------------------------------- |
 | extract_lyrics                                      | Native captions / LLM fallback / speech-to-text | Supadata (`mode=native`) / Gemini 2.5 Flash / ElevenLabs Scribe (TikTok) |
 | force_alignment                                     | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash (skipped for TikTok) |
-| add_lessons / rate_lessons / add_token_translations | `gemini-3.5-flash-lite`                         | Google Generative AI                         |
-| translate (all target languages)                    | `deepseek-v4-pro:cloud`                         | Ollama cloud via `@ai-sdk/openai-compatible` |
+| add_lessons / rate_lessons                          | `gemini-3.5-flash-lite`                         | Google Generative AI                         |
+| translate / add_token_translations                  | `deepseek-v4-pro:cloud`                         | Ollama cloud via `@ai-sdk/openai-compatible` |
+
+`add_token_translations` is deliberately not on flash-lite: on a long chunk of a language it reads
+poorly it echoes each source word back with a plausible part of speech instead of translating it,
+which passes every structural check the parser makes. `assertNotEchoed` now fails a chunk whose
+words come back unchanged, but the model is what keeps it from happening.
 
 Per-target-language translate models live in `ModelRegistry.translateOverrides`, keyed by iso name;
 a language with no entry there uses the default `translate` model.

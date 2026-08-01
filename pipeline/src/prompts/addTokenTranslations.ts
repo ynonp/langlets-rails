@@ -8,12 +8,15 @@ want (Don't you *want* me like I want you baby) |
 you (Don't you want me like I want *you* baby) |
 baby (Don't you want me like I want you *baby*) |`;
 
+// Keyed by target language. There is deliberately no English entry: the
+// example phrase is English, so an English target could only be demonstrated
+// by mapping each word to itself — and a model already told to reproduce the
+// left side of the | verbatim reads that as "repeat the marked word", which is
+// exactly what it then does for a whole chunk. English targets run without an
+// example rather than with one that teaches the failure. (The Ruby prompt
+// picked examples by language *pair*, which is the real fix; see
+// app/views/prompts/_add_tokens_examples_arabic_english.md.erb.)
 export const examples: Record<string, string> = {
-  English: `Don't (*Don't* you want me like I want you baby) | Don't [auxiliary]
-you (Don't *you* want me like I want you baby) | you [pronoun]
-want (Don't you *want* me like I want you baby) | want [verb]
-you (Don't you want me like I want *you* baby) | you [pronoun]
-baby (Don't you want me like I want you *baby*) | baby [noun]`,
   Hebrew: `Don't (*Don't* you want me like I want you baby) | לא [auxiliary]
 you (Don't *you* want me like I want you baby) | אתה [pronoun]
 want (Don't you *want* me like I want you baby) | רוצה [verb]

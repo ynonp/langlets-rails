@@ -1,6 +1,7 @@
 import { assert, assertEquals, assertRejects, assertThrows } from "@std/assert";
 import {
   addTokenTranslations,
+  assertNotEchoed,
   buildChunks,
   buildWordLine,
   parseChunkTranslations,
@@ -11,12 +12,23 @@ import { addTokenTranslationsPrompt, examples } from "../src/prompts/addTokenTra
 import { makeCtx, phrasesFixture, queuedModel } from "./helpers.ts";
 
 Deno.test("token translation prompt interpolates the target-language example", () => {
-  const englishPrompt = addTokenTranslationsPrompt("Spanish", "English");
+  const frenchPrompt = addTokenTranslationsPrompt("Spanish", "French");
   const hebrewPrompt = addTokenTranslationsPrompt("Spanish", "Hebrew");
 
-  assert(englishPrompt.includes(`## Expected Output:\n${examples.English}`));
-  assert(!englishPrompt.includes(examples.Hebrew));
+  assert(frenchPrompt.includes(`## Expected Output:\n${examples.French}`));
+  assert(!frenchPrompt.includes(examples.Hebrew));
   assert(hebrewPrompt.includes(`## Expected Output:\n${examples.Hebrew}`));
+});
+
+// The example phrase is English, so an English target can only be shown as an
+// identity mapping — a worked example of the copying failure the echo guard
+// exists to catch.
+Deno.test("token translation prompt ships no example for an English target", () => {
+  const prompt = addTokenTranslationsPrompt("Arabic", "English");
+
+  assertEquals(examples.English, undefined);
+  assert(!prompt.includes("## Example Input:"));
+  assert(prompt.includes("translate each word of a Arabic phrase into English"));
 });
 
 Deno.test("token translation prompt omits examples for an unknown target language", () => {
@@ -35,7 +47,12 @@ Deno.test("buildWordLine marks the target word inside its phrase context", () =>
 
 Deno.test("buildChunks packs whole phrases up to the word cap", () => {
   const group = (size: number, tag: number) =>
-    Array.from({ length: size }, (_, i) => ({ phraseIndex: tag, wordIndex: i, line: "x |" }));
+    Array.from({ length: size }, (_, i) => ({
+      phraseIndex: tag,
+      wordIndex: i,
+      text: "x",
+      line: "x |",
+    }));
 
   const chunks = buildChunks([group(150, 0), group(60, 1), group(30, 2), group(250, 3)]);
 
@@ -68,6 +85,94 @@ Deno.test("parseChunkTranslations requires a supported part of speech", () => {
     Error,
     "Missing or invalid part of speech",
   );
+});
+
+Deno.test("assertNotEchoed rejects a chunk that came back in the source language", () => {
+  // The real failure: gemini-3.5-flash-lite repeating each Arabic word with a
+  // plausible part of speech instead of translating it.
+  const words = ["الدكتور", "حسام", "الفاضل", "يعني", "اريد", "ان", "اذكره", "بشيء", "اول", "شيء"];
+
+  assertThrows(
+    () => assertNotEchoed(words, words.map((w) => `${w} [noun]`)),
+    Error,
+    "echo the source language: 10/10 words came back unchanged",
+  );
+});
+
+Deno.test("assertNotEchoed allows the echo a correct translation contains", () => {
+  // Proper names, numerals and punctuation come back unchanged when the
+  // translation is right, and a cognate ("hotel") genuinely translates to
+  // itself. None of that is the failure this guards against.
+  const words = [
+    "voy",
+    "a",
+    "Madrid",
+    "en",
+    "el",
+    "hotel",
+    "número",
+    "7",
+    ",",
+    "ahora",
+    "mismo",
+    "con",
+    "mi",
+    "hermana",
+  ];
+  const translations = [
+    "I go [verb]",
+    "to [preposition]",
+    "Madrid [proper_noun]",
+    "in [preposition]",
+    "the [determiner]",
+    "hotel [noun]",
+    "number [noun]",
+    "7 [numeral]",
+    ", [punctuation]",
+    "right [adverb]",
+    "now [adverb]",
+    "with [preposition]",
+    "my [determiner]",
+    "sister [noun]",
+  ];
+
+  assertNotEchoed(words, translations);
+});
+
+Deno.test("assertNotEchoed ignores a chunk too small to judge", () => {
+  // Four words of nothing but names is a plausible short clip, not a bad run.
+  const words = ["Hossam", "Al-Fadel", "Gaza", "Israel"];
+
+  assertNotEchoed(words, words.map((w) => `${w} [proper_noun]`));
+});
+
+Deno.test("an echoed chunk is retried and then recorded as a failure", async () => {
+  const phrases = [{
+    id: "phrase_1",
+    text_l1: "",
+    timestamp: "00:00.00",
+    timestamp_end: "00:10.00",
+    words: Array.from({ length: 10 }, (_, index) => ({
+      text: `كلمة${index}`,
+      timestamp: "00:00.00",
+      timestamp_end: "00:01.00",
+    })),
+  }];
+  const echo = Array.from({ length: 10 }, (_, index) => `x | كلمة${index} [noun]`).join("\n");
+  const model = queuedModel([echo, echo, echo]);
+  const { ctx, store } = makeCtx({
+    data: { phrases },
+    models: { tokenTranslations: model.model },
+  });
+
+  await initTranslationPayload(ctx);
+  await assertRejects(() => addTokenTranslations(ctx), Error, "echo the source language");
+  assertEquals(model.calls(), 3);
+
+  // Nothing was written: an echoed chunk leaves the phrase untranslated for a
+  // later run rather than filling it with source-language words.
+  assertEquals(store.data.translations!.he.phrases[0].words, new Array(10).fill(null));
+  assertEquals(store.data.errors![0].step, "add_token_translations");
 });
 
 Deno.test("translates every word into the language payload", async () => {

@@ -43,7 +43,9 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
     }]),
     rate: queuedModel([RATINGS]),
     translate: queuedModel(["שורה 1\nשורה 2"]),
-    tokens: queuedModel(["Line | ת1\n1 | ת2\nLine | ת3\n2 | ת4"]),
+    tokens: queuedModel([
+      "Line | ת1 [noun]\n1 | ת2 [numeral]\nLine | ת3 [noun]\n2 | ת4 [numeral]",
+    ]),
     ...overrides,
   };
   return {
@@ -87,7 +89,7 @@ Deno.test("a fresh Supadata run walks every step and finalizes translation", asy
   assertEquals(result.data.format_version, 2);
   assertEquals(result.data.translations!.he.phrases[0], {
     text: "שורה 1",
-    words: ["ת1", "ת2"],
+    words: ["ת1 [noun]", "ת2 [numeral]"],
   });
   assertEquals(transcriber.calls(), 1);
   for (const mock of Object.values(mocks)) assertEquals(mock.calls(), 1);

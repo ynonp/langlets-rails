@@ -18,6 +18,19 @@ export const WORDS_PER_CHUNK = 200;
 
 const MAX_CONCURRENCY = 4;
 const MAX_RETRIES = 2;
+
+// A response that repeats the source word instead of translating it satisfies
+// every other check here — the line count matches and the part of speech is
+// real — so a whole course can ship with its "translations" in the source
+// language and nothing reports a failure. Measure it directly: above this
+// share of echoed words the chunk is a bad response, not a hard phrase.
+//
+// Some echo is correct (proper names, cognates, loanwords, numerals), which is
+// why the bar is a ratio rather than a single line, and why a chunk too small
+// for the ratio to mean anything is never failed on it — a four-word TikTok
+// clip of nothing but names is not a broken run.
+export const MAX_ECHO_RATIO = 0.3;
+export const MIN_ECHO_SAMPLE = 8;
 const PARTS_OF_SPEECH = new Set([
   "noun",
   "proper_noun",
@@ -39,6 +52,9 @@ const PARTS_OF_SPEECH = new Set([
 interface WordEntry {
   phraseIndex: number;
   wordIndex: number;
+  // The source word on its own, kept alongside the line the model sees so the
+  // echo check can compare against it without re-parsing the line.
+  text: string;
   line: string;
 }
 
@@ -85,9 +101,10 @@ export async function addTokenTranslations(ctx: PipelineContext): Promise<void> 
 
     const representative = phraseIndexes[0];
     duplicateIndexesByRepresentative.set(representative, phraseIndexes);
-    phraseGroups.push(phrases[representative].words.map((_, wordIndex) => ({
+    phraseGroups.push(phrases[representative].words.map((word, wordIndex) => ({
       phraseIndex: representative,
       wordIndex,
+      text: word.text,
       line: buildWordLine(phrases[representative], wordIndex),
     })));
   }
@@ -148,7 +165,9 @@ async function translateChunk(
           prompt: lines.join("\n"),
         });
         lastResponse = text;
-        return parseChunkTranslations(text.trim(), chunk.length);
+        const translations = parseChunkTranslations(text.trim(), chunk.length);
+        assertNotEchoed(chunk.map((e) => e.text), translations);
+        return translations;
       },
       {
         maxRetries: MAX_RETRIES,
@@ -223,6 +242,58 @@ export function parseChunkTranslations(content: string, expectedCount: number): 
     }
   });
   return translations;
+}
+
+// Throw when too much of a chunk came back as the source word.
+//
+// Three parts of speech are left out of the count entirely, because for them
+// coming back unchanged is the right answer rather than a failure: punctuation
+// (rule 5 asks for it), numerals, and proper nouns. Everything else counts,
+// including cognates and loanwords — "hotel" translating to "hotel" is real,
+// but it is rare enough across a 200-word chunk that it cannot reach the bar
+// on its own.
+const ECHO_EXEMPT_PARTS_OF_SPEECH = new Set(["punctuation", "numeral", "proper_noun"]);
+
+export function assertNotEchoed(sourceWords: string[], translations: string[]): void {
+  let counted = 0;
+  let echoed = 0;
+
+  sourceWords.forEach((word, index) => {
+    const translated = translations[index] ?? "";
+    if (ECHO_EXEMPT_PARTS_OF_SPEECH.has(partOfSpeechOf(translated))) return;
+
+    const source = normalizeForEcho(word);
+    const translation = normalizeForEcho(stripPartOfSpeech(translated));
+    if (source === "" || translation === "") return;
+
+    counted += 1;
+    if (source === translation) echoed += 1;
+  });
+
+  if (counted < MIN_ECHO_SAMPLE) return;
+  const ratio = echoed / counted;
+  if (ratio < MAX_ECHO_RATIO) return;
+
+  throw new Error(
+    `Word translations echo the source language: ${echoed}/${counted} words came back unchanged`,
+  );
+}
+
+function stripPartOfSpeech(translation: string): string {
+  return translation.replace(/\s*\[[a-z_]+\]\s*$/i, "");
+}
+
+function partOfSpeechOf(translation: string): string {
+  return translation.match(/\[([a-z_]+)\]\s*$/i)?.[1].toLowerCase() ?? "";
+}
+
+// Compare on what a reader would call the same word: case, surrounding
+// punctuation and quoting differences are not a translation.
+function normalizeForEcho(value: string): string {
+  return value
+    .normalize("NFC")
+    .toLowerCase()
+    .replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, "");
 }
 
 // Run `fn` over every item with at most `limit` in flight; resolves with one

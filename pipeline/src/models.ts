@@ -1,8 +1,9 @@
-// Model wiring. Same models as the Ruby concerns' MODEL_PARAMS:
+// Model wiring. This list is the wiring below, not the Ruby concerns'
+// MODEL_PARAMS it started as — the lesson steps have since moved to Google:
 //   extract_lyrics          Supadata native captions, then Gemini 2.5 Flash for YouTube
 //   force_alignment fallback Gemini 2.5 Flash (line timestamps)
-//   add_lessons             deepseek-v4-pro:cloud     (Ollama cloud)
-//   rate_lessons            deepseek-v4-pro:cloud     (Ollama cloud)
+//   add_lessons             gemini-3.5-flash-lite     (Google Generative AI)
+//   rate_lessons            gemini-3.5-flash-lite     (Google Generative AI)
 //   add_token_translations  deepseek-v4-pro:cloud     (Ollama cloud)
 //   translate               deepseek-v4-pro:cloud     (Ollama cloud)
 //
@@ -66,6 +67,13 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     // and is ~10x faster, so one model now covers every target language. The
     // mechanism stays for the next language that needs its own.
     translate: log(ollama("deepseek-v4-pro:cloud"), "translate"),
-    tokenTranslations: log(google("gemini-3.5-flash-lite"), "add_token_translations"),
+    // Not flash-lite. On a long chunk of a language it reads poorly it stops
+    // translating and echoes the source word back with a plausible part of
+    // speech — output that passes every structural check the parser makes and
+    // ships an Arabic course whose "English" words are the Arabic ones. The
+    // echo guard in addTokenTranslations catches it now; this is what stops it
+    // happening. Same model as translate, whose sentence output was fine on
+    // the same clips this failed on.
+    tokenTranslations: log(ollama("deepseek-v4-pro:cloud"), "add_token_translations"),
   };
 }
