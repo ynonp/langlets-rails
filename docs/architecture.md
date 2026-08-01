@@ -1586,21 +1586,53 @@ Callers must not reach past it into `Notification`, `DeliverNotificationJob` or
 
 The order matters: **record first, deliver second.**
 
-1. `Notifications::Content.build` words the notification. Every string the app
-   sends lives here, one branch per kind, so a new kind is worded once for the
-   list, the email and the push together. An unknown kind raises
-   `Content::UnknownKind` rather than producing an empty notification.
-2. A `Notification` row is created with that copy **denormalized onto it**
-   (`title`, `body`, `url`, plus a `data` JSONB for anything a client needs —
-   `course_slug` for the iOS deep link, `reason` for the failure email's details
-   block). Rebuilding the copy at render time was rejected: a notification about
-   a course has to keep making sense after that course is deleted, and email,
-   push and the list must say the same thing.
+1. `Notifications::Content.build` says what the notification is *about* — where
+   it points (`url`) and the values its sentence is built from (`data`). It does
+   not word it. An unknown kind raises `Content::UnknownKind` rather than
+   producing an empty notification.
+2. A `Notification` row is created from that: `kind`, `url`, and a `data` JSONB
+   holding the interpolation values (`video_title`, `count`) alongside anything a
+   client needs (`course_slug` for the iOS deep link, `reason` for the failure
+   email's details block). **No copy is stored.**
 3. `DeliverNotificationJob` sends it over the channels the user asked for. The
    job means a delivery failure cannot fail the thing that caused it — both
    callers are operations that have already succeeded.
 
-Supported kinds: `course_ready`, `course_failed`, `pro_activated`.
+Supported kinds: `course_ready`, `course_failed`, `pro_activated`. Treat the
+enum values as **append-only**: renaming or repurposing one silently rewords
+every historical row that carries it.
+
+**Copy is a template, not a column.** `Notification#title` / `#body` render
+`notifications.kinds.<kind>.*` from the locale files against `data`, at the
+moment someone reads it. Two things follow, and they are the point: a wording
+edit reaches notifications that have **already been sent**, and the list renders
+in the reader's language. Pluralization is i18n's (`count`), not
+`String#pluralize`, so languages whose plural rules are not "add an s" — Hebrew,
+Arabic — can be right.
+
+What is *not* re-derived is the values. `"Despacito"` and `2` are snapshots
+copied onto the row, which is what lets a notification still read correctly
+after the course it is about has been deleted. The rule that keeps that true:
+**`data` holds values, never ids.** A `course_id` there would put the copy back
+at the mercy of the course existing.
+
+The cost is that a template and the rows that feed it are a contract. Adding an
+interpolation to a template that older rows have no value for makes them
+unrenderable; `Notification#render` catches that (and a kind whose entry was
+renamed away), logs it, and degrades that one row to
+`notifications.unavailable` so a single bad template cannot cost the reader the
+other ninety-nine rows on the page.
+
+**Locale.** Only the `/notifications` page renders in the reader's language
+today, because `I18n.locale` is set per request from the subdomain
+(`ApplicationController#set_translation_language`) and there is no persisted
+per-user locale. The mailer and the APNs payload render inside
+`DeliverNotificationJob`, which has no request, so they get
+`I18n.default_locale` — English. `#title(locale:)` / `#body(locale:)` take the
+locale explicitly, so giving those two the recipient's own language is a matter
+of persisting a user locale and passing it here; nothing else has to move.
+(Note `users.preferred_language_id` exists in the schema but is dead — no
+association, never written.)
 
 `sent_at` means delivery was *attempted*, and makes the job idempotent — a retry
 must not mail or push twice. It is stamped even when a channel failed and even

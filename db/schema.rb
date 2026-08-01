@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_01_130000) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_01_150000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -361,7 +361,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_01_130000) do
   create_table "import_requests", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "youtube_url", null: false
-    t.string "youtube_video_id", null: false
+    t.string "youtube_video_id"
     t.string "clip_language"
     t.string "translation_language", null: false
     t.string "title"
@@ -379,6 +379,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_01_130000) do
     t.index ["create_song_progress_id"], name: "index_import_requests_on_create_song_progress_id"
     t.index ["user_id", "created_at"], name: "index_import_requests_on_user_id_and_created_at"
     t.index ["user_id", "status"], name: "index_import_requests_on_user_id_and_status"
+    t.index ["user_id", "youtube_url", "translation_language"], name: "idx_import_requests_resolving_dedupe", unique: true, where: "(status = 6)"
     t.index ["user_id", "youtube_video_id", "clip_language", "translation_language"], name: "idx_import_requests_active_dedupe", unique: true, where: "(status = ANY (ARRAY[0, 1]))"
     t.index ["user_id", "youtube_video_id", "translation_language"], name: "idx_import_requests_detecting_dedupe", unique: true, where: "((status = 5) AND (clip_language IS NULL))"
     t.index ["user_id"], name: "index_import_requests_on_user_id"
@@ -475,8 +476,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_01_130000) do
   create_table "notifications", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "kind", null: false
-    t.string "title", null: false
-    t.string "body", null: false
     t.string "url"
     t.jsonb "data", default: {}, null: false
     t.datetime "sent_at"

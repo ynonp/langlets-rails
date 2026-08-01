@@ -24,7 +24,7 @@ class NotificationMailerPreview < ActionMailer::Preview
 
     Notification.new(
       id: 0, user: User.first, kind: kind,
-      title: content.title, body: content.body, url: content.url, data: content.data,
+      url: content.url, data: content.data,
       created_at: Time.zone.now
     )
   end

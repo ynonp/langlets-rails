@@ -11,7 +11,7 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
     @user = User.create!(email: "deliver@example.com", password: "password123", confirmed_at: Time.zone.now)
     @device = DeviceToken.register!(user: @user, token: "a" * 64)
     @notification = Notification.create!(
-      user: @user, kind: :course_ready, title: "Your course is ready!", body: "Tap to start practicing."
+      user: @user, kind: :course_ready, data: { "video_title" => "Despacito", "count" => 2 }
     )
   end
 
@@ -118,13 +118,17 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
   # ------------------------------------------------------------------ APNs
 
   test "the payload carries the copy, the deep link and the unread badge" do
-    Notification.create!(user: @user, kind: :pro_activated, title: "Pro", body: "Body")
-    @notification.update!(url: "/courses/despacito", data: { "course_slug" => "despacito" })
+    Notification.create!(user: @user, kind: :pro_activated)
+    @notification.update!(
+      url: "/courses/despacito",
+      data: { "video_title" => "Despacito", "count" => 2, "course_slug" => "despacito" }
+    )
     captured = nil
 
     stub_push(->(_device, payload) { captured = payload; ok }) { perform }
 
     assert_equal "Your course is ready!", captured[:alert][:title]
+    assert_equal "“Despacito” is now 2 lessons. Tap to start practicing.", captured[:alert][:body]
     assert_equal "despacito", captured[:custom_payload][:course_slug]
     assert_equal "/courses/despacito", captured[:custom_payload][:url]
     assert_equal 2, captured[:badge], "every unread notification, not just this one"

@@ -100,6 +100,32 @@ en:
     time_ago: "%{time} ago"
     unread_badge: "%{count} unread notifications"
     settings_link: "Change how you receive notifications"
+    # Every word the app says in a notification. Rendered on demand by
+    # Notification#title/#body against the values Notifications::Content stored
+    # on the row, so editing anything here also fixes notifications that have
+    # already been sent.
+    #
+    # The interpolations are a contract with rows that already exist: adding one
+    # to a template that older rows have no value for makes them unrenderable
+    # (they fall back to `unavailable` below). Add the value in Content first,
+    # or give the new template a form that works without it.
+    kinds:
+      # Used when an import failed before it ever learned what it was importing.
+      default_video_title: "Your video"
+      course_ready:
+        title: "Your course is ready!"
+        body:
+          one: "“%{video_title}” is now %{count} lesson. Tap to start practicing."
+          other: "“%{video_title}” is now %{count} lessons. Tap to start practicing."
+      course_failed:
+        title: "Course creation failed"
+        body: "We couldn't build a course from “%{video_title}”. No credit was charged — try importing it again."
+      pro_activated:
+        title: "You're a Pro subscriber now"
+        body: "Great — Langlets Pro is active. Import as much as you like; every course you add is included."
+    # Shown in place of a notification whose template no longer renders. Always
+    # a bug on our side; see Notification#render.
+    unavailable: "This notification is no longer available."
     empty:
       title: "Nothing yet"
       body: "We'll tell you here when a course is ready."

@@ -14,10 +14,9 @@ class NotificationsControllerTest < ActionDispatch::IntegrationTest
 
     @user = User.create!(email: "notifications-controller@example.com", password: "password123",
                          confirmed_at: Time.zone.now)
-    @unread = Notification.create!(user: @user, kind: :course_ready, title: "Your course is ready!",
-                                   body: "Tap to start practicing.", url: "/app")
-    @read = Notification.create!(user: @user, kind: :pro_activated, title: "You're a Pro subscriber now",
-                                 body: "Great.", read_at: 1.hour.ago)
+    @unread = Notification.create!(user: @user, kind: :course_ready, url: "/app",
+                                   data: { "video_title" => "Despacito", "count" => 2 })
+    @read = Notification.create!(user: @user, kind: :pro_activated, read_at: 1.hour.ago)
   end
 
   test "signed out visitors are sent to sign in" do
@@ -39,7 +38,7 @@ class NotificationsControllerTest < ActionDispatch::IntegrationTest
   test "another user's notifications are not listed" do
     stranger = User.create!(email: "stranger-notifications@example.com", password: "password123",
                             confirmed_at: Time.zone.now)
-    Notification.create!(user: stranger, kind: :course_ready, title: "Not yours", body: "Nope")
+    Notification.create!(user: stranger, kind: :course_ready)
 
     sign_in @user
     get notifications_path
@@ -49,7 +48,7 @@ class NotificationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "the individual X marks one notification read and leaves the rest" do
-    other_unread = Notification.create!(user: @user, kind: :course_failed, title: "Failed", body: "Sorry")
+    other_unread = Notification.create!(user: @user, kind: :course_failed)
     sign_in @user
 
     patch read_notification_path(@unread)
@@ -62,7 +61,7 @@ class NotificationsControllerTest < ActionDispatch::IntegrationTest
   test "marking read is scoped to the signed-in user" do
     stranger = User.create!(email: "stranger-read@example.com", password: "password123",
                             confirmed_at: Time.zone.now)
-    theirs = Notification.create!(user: stranger, kind: :course_ready, title: "Not yours", body: "Nope")
+    theirs = Notification.create!(user: stranger, kind: :course_ready)
     sign_in @user
 
     patch read_notification_path(theirs)

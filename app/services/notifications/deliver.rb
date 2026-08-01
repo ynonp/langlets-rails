@@ -19,11 +19,11 @@ module Notifications
 
       content = Content.build(kind, context)
 
+      # No copy is stored: `kind` plus `data` is everything the wording is
+      # rendered from, at the moment it is read. See Notification.
       notification = Notification.create!(
         user: user,
         kind: kind,
-        title: content.title,
-        body: content.body,
         url: content.url,
         data: content.data
       )
