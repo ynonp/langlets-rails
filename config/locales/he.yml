@@ -185,9 +185,12 @@ he:
         # rather than in the view. The heading mirrors courses.index.library.heading.
         first_run_library: "מתחילים מיד"
         first_run_create: "‹ או ייבאו כל סרטון YouTube / TikTok"
+      # Keyed to the partial (_pro_card) that renders it, matching en.yml.
+      pro_card:
         upsell:
-          title: "שדרגו ל‑Pro — ייבוא בלי הגבלה"
-          free_used: "השתמשתם ב‑%{used} מתוך %{count} ייבואים חינם."
+          title: "שדרגו ל‑Pro כדי לייבא עוד תוכן"
+          body: "השתמשתם בכל %{count} הייבואים החינמיים. ב‑Pro הייבוא בלי הגבלה."
+          cta: "שדרוג ל‑Pro"
         pro:
           title: "Langlets Pro"
           badge: "פעיל"

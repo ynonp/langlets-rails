@@ -194,14 +194,23 @@ en:
         # without a line of prose between the heading and the grid.
         first_run_library: "Jump right in"
         first_run_create: "Or import any YouTube / TikTok video ›"
-        # The Pro row, directly under the header. Two states, never hidden: the
-        # upsell while the free allowance is running out, and a plain statement
-        # of what an active subscription is doing once there is one. A
-        # subscription the app stops mentioning is one people forget they pay
-        # for, and then dispute.
+      # The Pro row, directly under the header. Keyed to the partial that renders
+      # it (_pro_card), not to index — these lived under `index` while the
+      # partial looked them up lazily, so every string resolved to nothing and
+      # the card rendered Rails' humanised key names ("Title", "Free Used").
+      #
+      # Two states: the upsell once the account is out of credits, and a plain
+      # statement of what an active subscription is doing once there is one. A
+      # subscription the app stops mentioning is one people forget they pay for,
+      # and then dispute.
+      pro_card:
         upsell:
-          title: "Go Pro — unlimited imports"
-          free_used: "You've used %{used} of %{count} free imports."
+          # The headline names the blocked action, not the product. The button
+          # underneath repeats the verb on purpose — it is the tap target, and a
+          # CTA that only says "See plans" hides what the tap commits to.
+          title: "Upgrade to Pro to import more content"
+          body: "You've used all %{count} free imports. Pro imports are unlimited."
+          cta: "Upgrade to Pro"
         pro:
           title: "Langlets Pro"
           badge: "ACTIVE"

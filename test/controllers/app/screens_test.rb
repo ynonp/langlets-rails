@@ -481,6 +481,48 @@ module App
       assert_match @user.credit_balance.to_s, response.body
     end
 
+    # The Pro row is a block notice, not a standing advertisement: it only has
+    # something true to say once the account cannot import at all.
+    test "Home hides the Pro upsell while the user still has credits" do
+      @user.update!(credit_balance: 900)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "[data-testid='pro-upsell']", count: 0
+    end
+
+    test "Home shows the Pro upsell with a clear CTA at zero credits" do
+      @user.update!(credit_balance: 0)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "a[data-testid='pro-upsell'][href=?]", app_pro_path do
+        assert_select "p", text: "Upgrade to Pro to import more content"
+        assert_select "span", text: "Upgrade to Pro"
+      end
+      # The keys used to sit under `home.index` while the partial looked them up
+      # lazily, which rendered Rails' humanised key names instead.
+      assert_no_match "translation missing", response.body
+    end
+
+    test "Home shows the subscribed row instead of the upsell for Pro users" do
+      @user.update!(credit_balance: 0)
+      Subscription.create!(user: @user,
+                           product_id: Apple::SubscriptionPlans.yearly.product_id,
+                           plan: :yearly, status: :active,
+                           original_transaction_id: "2000000333333333",
+                           purchased_at: Time.zone.now, expires_at: 1.year.from_now)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "[data-testid='pro-upsell']", count: 0
+      assert_match "Langlets Pro", response.body
+      assert_match "ACTIVE", response.body
+    end
+
     test "Home shows only the current user's playlists" do
       own_playlist = Playlist.create!(name: "Road Trip Songs", slug: "road-trip-songs", user: @user)
       own_playlist.courses << @course

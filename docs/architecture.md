@@ -1298,16 +1298,13 @@ development, so there was no history to preserve:
   they were written with; a number that once meant "bought a pack" must not come
   back meaning something else.
 - `User#purchased_credits?` is gone, and with it the branch it drove in
-  `app/home/_pro_card`. Home's upsell now always renders the
-  "used 2 of 3 free imports" line and its progress bar. The branch existed
-  because a pack made that bar meaningless — an account that had topped up was
-  not limited by the allowance any more and the bar would have sat stuck at
-  full. With no packs, the allowance *is* a free account's whole credit, so the
-  bar cannot lie and the second subtitle (`home.index.upsell.credits_left`, now
-  removed from both locales) has nothing left to say.
+  `app/home/_pro_card`. The card no longer counts free imports at all (see
+  [Langlets Pro](#langlets-pro)); the progress bar that replaced the branch has
+  since been removed too, along with `home.index.upsell.credits_left`.
 - `User#free_imports_used` keeps its clamp, on a narrower justification: nothing
   an account does can push its spend count past the grant, but a console
-  `admin_adjustment` or `promo_grant` still can.
+  `admin_adjustment` or `promo_grant` still can. Its only caller now is the
+  paywall's two-lead copy — Home stopped asking.
 
 `Apple::VerifyTransaction`'s `catalog:` argument does survive, and it lost its
 `CreditPacks` default in the process: with one catalog left there is nothing to
@@ -1530,13 +1527,29 @@ runs `AppStore.sync()` and replies with the first verified auto-renewable
 `currentEntitlement`, which is already the *renewed* transaction rather than the
 original.
 
-Home renders `app/home/_pro_card` directly under the header, in both states and
-never hidden: the upsell with a free-import progress bar while the allowance
-lasts, and a plain "Langlets Pro · ACTIVE" statement once there is a
-subscription. A subscription the app stops mentioning is one people forget they
-are paying for, and then dispute. Accounts that bought a credit pack back when
-packs were sold get their real balance instead of the bar, which would otherwise
-sit stuck at full.
+Home renders `app/home/_pro_card` directly under the header. It has two states
+and a third in which it renders nothing:
+
+- **Out of credits, no subscription** (`!current_user.credits?`) — the upsell.
+  Headline "Upgrade to Pro to import more content", one line saying the free
+  imports are spent, and a filled accent pill reading "Upgrade to Pro". The
+  whole card is the link to `app_pro_path`; the pill is a `<span>`, since a
+  button inside an anchor is invalid and unreadable to VoiceOver.
+- **Subscribed** — a plain "Langlets Pro · ACTIVE" statement, never hidden. A
+  subscription the app stops mentioning is one people forget they are paying
+  for, and then dispute.
+- **Free, with credits left** — nothing. The upsell used to render for every
+  free account behind a "used N of 3 free imports" meter, which put a full
+  progress bar and a nag above everything else on Home for any account holding a
+  balance (a tester with 900 credits saw a maxed-out bar). `credits?` — the same
+  question the import path asks before accepting a paste — is what gates the
+  card now, so it appears exactly when the next import would be refused, and the
+  free-import count it used to display is gone from Home entirely.
+
+Its strings are keyed `app.home.pro_card.*`, matching the partial that looks
+them up lazily. They sat under `app.home.index.*` for a while, which resolved to
+nothing and rendered Rails' humanised key names — the card literally read
+"Title" / "Free Used" on device.
 
 Add Video reflects the entitlement on both platforms — Pro is bought in the iOS
 app but entitles the *account*, so the browser honours it too. `pro` suppresses
