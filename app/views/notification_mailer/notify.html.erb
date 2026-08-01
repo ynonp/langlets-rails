@@ -1,0 +1,29 @@
+<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827; max-width: 600px; margin: 0 auto; padding: 24px;">
+  <p style="font-size: 22px; font-weight: bold; margin: 0 0 8px;">langlets<span style="color: #10b981;">.</span></p>
+
+  <div style="background: #f9fafb; border-radius: 16px; padding: 24px;">
+    <h1 style="font-size: 20px; margin: 0 0 12px;"><%= @notification.title %></h1>
+    <p style="margin: 0 0 20px;"><%= @notification.body %></p>
+
+    <% if @details.present? %>
+      <p style="margin: 0 0 20px; font-family: monospace; font-size: 12px; color: #6b7280; word-break: break-word;">
+        <%# The pipeline's own message, unlabelled: the block's styling is the
+            label here. The text alternative has no styling, so it says
+            "Details:" instead. %>
+        <%= @details %>
+      </p>
+    <% end %>
+
+    <p style="margin: 0;">
+      <a href="<%= @action_url %>"
+         style="display: inline-block; background: #10b981; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 12px; font-weight: bold;">
+        <%= t("notifications.mailer.open") %>
+      </a>
+    </p>
+  </div>
+
+  <p style="font-size: 12px; color: #6b7280; margin-top: 24px;">
+    <%= t("notifications.mailer.footer_html",
+          link: link_to(t("notifications.mailer.footer_link"), profile_url, style: "color: #10b981;")) %>
+  </p>
+</div>

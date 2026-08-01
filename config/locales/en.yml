@@ -81,13 +81,87 @@ en:
       label: "Switch between light and dark theme"
       title: "Switch theme"
     menu:
+      avatar_alt: "Avatar"
+      daily_xp: "%{count} XP"
       learning_language: "Learning Language: %{language}"
       select: "Select"
       review_words: "📚 Review Words (%{language})"
       queue: "Queue"
       profile: "Profile"
+      notifications: "Notifications"
       connected_apps: "Connected Apps"
       logout: "Logout"
+  notifications:
+    title: "Notifications"
+    new: "New"
+    open: "Open"
+    mark_read: "Mark as read"
+    mark_all_read: "Mark all as read"
+    time_ago: "%{time} ago"
+    unread_badge: "%{count} unread notifications"
+    settings_link: "Change how you receive notifications"
+    empty:
+      title: "Nothing yet"
+      body: "We'll tell you here when a course is ready."
+    preferences:
+      heading: "Notifications"
+      description: "How we tell you when a course is ready."
+      label: "Send notifications by"
+      email: "Email"
+      push: "Push"
+      updated: "Notification preferences saved."
+    # The email. `_html` so the profile link interpolates as markup; the
+    # plain-text alternative says the same thing and puts the URL on its own
+    # line underneath.
+    mailer:
+      details: "Details: %{reason}"
+      open: "Open Langlets"
+      footer_html: "You choose how notifications reach you — email, push, both or neither — on your %{link}."
+      footer_link: "profile page"
+      footer_text: "Choose how notifications reach you — email, push, both or neither — on your profile page:"
+  # The account page. `channels.profile.*` covers the channel card at the top;
+  # everything below it lives here.
+  profile:
+    xp:
+      heading: "XP this week"
+      all_time: "%{count} XP all time"
+      streak:
+        one: "%{count} day streak"
+        other: "%{count} days streak"
+      # Same streak, before today's lesson. One sentence rather than a suffix
+      # glued onto the other key: word order is a translator's decision.
+      streak_pending:
+        one: "%{count} day streak — no lesson yet today"
+        other: "%{count} days streak — no lesson yet today"
+      no_streak: "Complete a lesson to start a streak."
+      day_xp: "%{day}: %{xp} XP"
+    language:
+      heading: "Learning language"
+      label: "Learning language"
+      current: "You're currently learning %{language}."
+      unset: "You haven't picked a language yet."
+      all: "You're seeing content in every language."
+      show_all: "Show All Content"
+      option: "%{native} — %{english}"
+    # The iOS permission card. Its copy is replaced live by
+    # bridge/notification_preference_controller.js — see js.notification_preference,
+    # which has to stay in step with this.
+    push:
+      heading: "Push on this device"
+      description: "Get notified when items in your Queue are ready."
+      enable: "Enable Notifications"
+      switch_label: "Queue-ready notifications"
+    theme:
+      heading: "Theme"
+      description: "Currently %{theme}. Tap to switch between light and dark."
+      light: "light"
+      dark: "dark"
+    continue: "Continue Learning"
+    delete:
+      heading: "Delete my account"
+      description: "This permanently deletes your account and everything attached to it — your saved words, progress, XP and streak, and any courses you created. It can't be undone."
+      button: "Delete account"
+      confirm: "Permanently delete your account and all your saved words and progress? This can't be undone."
   activities:
     audio_to_translation:
       matched: "%{current} / %{total} matched"
@@ -283,6 +357,12 @@ en:
       label: "Main navigation"
       library: "Library"
       create: "Create"
+    # The native shell's own header menu. Separate from web_menu above because
+    # it is a different menu with its own wording, on a screen the web never
+    # renders.
+    menu:
+      open: "Open profile menu"
+      review_words: "Practice Words (%{language})"
     import_requests:
       index:
         # `title` and `empty` are the browser wording; the `native_*` keys are
@@ -518,6 +598,16 @@ en:
         terms: "Terms"
         privacy: "Privacy Policy"
   js:
+    # What bridge/notification_preference_controller.js writes over the Profile
+    # push card once iOS has answered. Keep in step with profile.push.*, which
+    # is what the server renders first.
+    notification_preference:
+      enable: "Enable Notifications"
+      open_settings: "Open Settings"
+      enabled: "Notifications are enabled."
+      disabled: "Notifications are turned off for this device."
+      denied: "Notifications are disabled in iOS Settings."
+      prompt: "Enable notifications to know when items in your Queue are ready."
     word_order:
       correct: "Correct! Well done!"
       incorrect: "Not quite right. Try again!"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_01_091002) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_01_130000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -370,7 +370,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_01_091002) do
     t.bigint "create_song_progress_id"
     t.integer "progress_percent", default: 0, null: false
     t.string "failure_reason"
-    t.datetime "notified_at"
     t.string "client_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -475,13 +474,17 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_01_091002) do
 
   create_table "notifications", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "kind", null: false
+    t.integer "kind", null: false
+    t.string "title", null: false
+    t.string "body", null: false
+    t.string "url"
     t.jsonb "data", default: {}, null: false
     t.datetime "sent_at"
-    t.datetime "cleared_at"
+    t.datetime "read_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "cleared_at"], name: "index_notifications_on_user_id_and_cleared_at"
+    t.index ["user_id", "created_at"], name: "index_notifications_on_user_id_and_created_at"
+    t.index ["user_id", "read_at"], name: "index_notifications_on_user_id_and_read_at"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 

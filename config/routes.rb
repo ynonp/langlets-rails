@@ -91,6 +91,15 @@ Rails.application.routes.draw do
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   get "profile", to: "profile#show", as: :profile
   patch "profile/channel", to: "profile#update_channel", as: :profile_channel
+  patch "profile/notifications", to: "profile#update_notifications", as: :profile_notifications
+
+  # The notification list, shared by web and the native shell. `read_all` is
+  # also the "user entered the app" event the iOS shell reports on every launch
+  # and foreground — see app/javascript/controllers/notifications_reader_controller.js.
+  resources :notifications, only: [ :index ] do
+    member { patch :read }
+    collection { post :read_all }
+  end
   resources :channels, only: :show, param: :slug do
     member { delete :unsubscribe }
     resources :invitations, only: :create, controller: "channel_invitations"

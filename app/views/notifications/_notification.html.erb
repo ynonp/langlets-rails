@@ -1,0 +1,43 @@
+<%# One row. `unread` is passed in rather than read off the record: the list
+    snapshots it before the native shell's read_all report lands, so a user who
+    just opened the app still sees what was new. %>
+<div id="<%= dom_id(notification) %>"
+     data-testid="notification"
+     class="flex items-start gap-3 px-4 py-4 border-b border-gray-100 dark:border-gray-800 last:border-b-0 <%= "bg-emerald-50/60 dark:bg-emerald-950/20" if unread %>">
+  <div class="flex-1 min-w-0">
+    <div class="flex items-center gap-2 mb-1">
+      <% if unread %>
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-emerald-600 text-white">
+          <%= t("notifications.new") %>
+        </span>
+      <% end %>
+      <h2 class="font-extrabold text-[15px] truncate"><%= notification.title %></h2>
+    </div>
+
+    <p class="text-sm text-gray-600 dark:text-gray-300"><%= notification.body %></p>
+
+    <div class="flex items-center gap-3 mt-2">
+      <time class="text-xs font-semibold text-gray-400 dark:text-gray-500" datetime="<%= notification.created_at.iso8601 %>">
+        <%= t("notifications.time_ago", time: time_ago_in_words(notification.created_at)) %>
+      </time>
+      <% if notification.url.present? %>
+        <%= link_to t("notifications.open"), notification.url,
+                    class: "text-xs font-bold text-emerald-600 dark:text-emerald-400" %>
+      <% end %>
+    </div>
+  </div>
+
+  <%# Individual dismissal marks read; it never deletes. The list is the record
+      of what the app has told this user. %>
+  <% if unread %>
+    <%= button_to read_notification_path(notification), method: :patch,
+                  class: "shrink-0 w-8 h-8 inline-flex items-center justify-center rounded-full text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer",
+                  aria: { label: t("notifications.mark_read") },
+                  title: t("notifications.mark_read"),
+                  form: { class: "shrink-0", data: { turbo_stream: true } } do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    <% end %>
+  <% end %>
+</div>

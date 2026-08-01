@@ -25,10 +25,18 @@
       <div data-controller="bridge--sign-out" hidden></div>
     <% end %>
 
-    <%# Mirrors the Queue badge onto the native tab bar item, once per page
-        load — the same freshness the web tab bar's badge gets. %>
+    <%# Signals the native shell that an authenticated app screen rendered, so
+        it can reveal the tab bar. No tab is badged any more — see
+        bridge/tab_badge_controller.js. %>
     <% if native_app? %>
       <div data-controller="bridge--native-token" hidden></div>
+
+      <%# Entering the app means the user has seen what was waiting: this
+          reports read_all, which is what makes the app icon badge (the unread
+          count, sent with every push) return to zero. %>
+      <div data-controller="notifications-reader"
+           data-notifications-reader-endpoint-value="<%= read_all_notifications_path %>"
+           hidden></div>
       <div data-controller="bridge--tab-badge"
            data-bridge--tab-badge-count-value="<%= @queue_badge_count.to_i %>"
            hidden></div>

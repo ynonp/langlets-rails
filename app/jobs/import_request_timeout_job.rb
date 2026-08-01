@@ -45,12 +45,14 @@ class ImportRequestTimeoutJob < ApplicationJob
   # Only a course nobody has managed to publish. A course that is already live
   # in another language must not be knocked back to `error` because one
   # translation ran out of time.
+  #
+  # Status only — Imports::Settlement.fail! above has already notified the user
+  # who was waiting on this request.
   def mark_course_failed(import_request)
     course = import_request.course
     return if course.nil? || course.published? || course.error?
 
     course.error!
-    CourseMailer.creation_failed(course, StandardError.new(import_request.failure_reason.to_s)).deliver_now
   rescue => e
     Rails.logger.error "Failed to mark course #{import_request.course_id} as errored: #{e.message}"
   end

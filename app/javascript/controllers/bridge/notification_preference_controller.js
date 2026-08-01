@@ -1,4 +1,5 @@
 import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
+import { t } from "../../utils/i18n"
 
 // Renders the Profile notification action from the real iOS authorization
 // state, then registers or removes this installation's APNs token.
@@ -50,15 +51,15 @@ export default class extends BridgeComponent {
     // Use inline display state rather than competing Tailwind `hidden` and
     // `inline-flex` utilities, whose generated order can expose both controls.
     this.buttonTarget.style.display = granted ? "none" : ""
-    this.buttonTarget.textContent = denied ? "Open Settings" : "Enable Notifications"
+    this.buttonTarget.textContent = t(
+      denied ? "notification_preference.open_settings" : "notification_preference.enable"
+    )
     this.buttonTarget.disabled = false
     this.switchTarget.style.display = granted ? "" : "none"
     this.switchInputTarget.checked = enabled
     this.switchInputTarget.disabled = false
     this.statusTarget.textContent = granted
-      ? (enabled ? "Notifications are enabled." : "Notifications are turned off for this device.")
-      : (denied
-          ? "Notifications are disabled in iOS Settings."
-          : "Enable notifications to know when items in your Queue are ready.")
+      ? t(enabled ? "notification_preference.enabled" : "notification_preference.disabled")
+      : t(denied ? "notification_preference.denied" : "notification_preference.prompt")
   }
 }

@@ -71,6 +71,12 @@ module Apple
     def original_transaction_id = @payload["originalTransactionId"].presence
 
     def apply!(subscription)
+      # Read *before* this payload is applied: "you're a Pro subscriber now" is
+      # only true on the transition into entitlement. A renewal arrives every
+      # month with the same status and must stay silent, while a lapsed
+      # subscriber who comes back is genuinely news again.
+      was_entitling = subscription.persisted? && subscription.entitling?
+
       expires_at = SignedPayload.time_at(@payload["expiresDate"])
       purchased_at = SignedPayload.time_at(@payload["purchaseDate"])
       revoked = @payload["revocationDate"].present?
@@ -107,7 +113,17 @@ module Apple
       # ProChannel.owned_grant, so there is no second record to keep in step and
       # no window in which the two could disagree.
       subscription.save!
+
+      notify_activated!(subscription) if subscription.entitling? && !was_entitling
       subscription
+    end
+
+    # Telling the user must never cost them the subscription: the row is
+    # committed by the time this runs, and Pro is derived from the row.
+    def notify_activated!(subscription)
+      Notifications.deliver(user: subscription.user, kind: :pro_activated)
+    rescue StandardError => e
+      Rails.logger.error "Pro activation notification failed for subscription #{subscription.id}: #{e.message}"
     end
 
     # Products we no longer sell still have to load, so fall back on the period

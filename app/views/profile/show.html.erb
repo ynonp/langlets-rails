@@ -64,23 +64,25 @@
     <%# ---------------------------------------------------------------- XP %>
     <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
       <div class="flex items-baseline justify-between mb-1.5">
-        <h2 class="text-lg font-extrabold tracking-tight">XP this week</h2>
+        <h2 class="text-lg font-extrabold tracking-tight"><%= t("profile.xp.heading") %></h2>
         <p class="text-sm font-semibold text-gray-500 dark:text-gray-400">
-          <%= number_with_delimiter(@total_xp) %> XP all time
+          <%= t("profile.xp.all_time", count: number_with_delimiter(@total_xp)) %>
         </p>
       </div>
       <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-5">
         <% if @streak[:count].positive? %>
-          <%= pluralize(@streak[:count], "day") %> streak<%= " — no lesson yet today" if !@streak[:completed_today] %>
+          <%# Two whole sentences rather than a suffix: where the "not today
+              yet" clause goes is the translator's call. %>
+          <%= t(@streak[:completed_today] ? "profile.xp.streak" : "profile.xp.streak_pending", count: @streak[:count]) %>
         <% else %>
-          Complete a lesson to start a streak.
+          <%= t("profile.xp.no_streak") %>
         <% end %>
       </p>
 
       <% max_xp = [@xp_series.map { |day| day[:xp] }.max.to_i, 1].max %>
       <div class="flex items-end justify-between gap-2 sm:gap-3 h-44"
            role="img"
-           aria-label="<%= @xp_series.map { |day| "#{day[:date].strftime('%A')}: #{day[:xp]} XP" }.join(', ') %>">
+           aria-label="<%= @xp_series.map { |day| t("profile.xp.day_xp", day: l(day[:date], format: "%A"), xp: day[:xp]) }.join(', ') %>">
         <% @xp_series.each do |day| %>
           <% is_today = day[:date] == Time.zone.now.to_date %>
           <div class="flex-1 flex flex-col items-center justify-end h-full gap-2">
@@ -105,14 +107,17 @@
 
     <%# ---------------------------------------------------------- Language %>
     <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
-      <h2 class="text-lg font-extrabold tracking-tight mb-1.5">Learning language</h2>
+      <h2 class="text-lg font-extrabold tracking-tight mb-1.5"><%= t("profile.language.heading") %></h2>
       <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-4">
         <% if @current_language %>
-          You're currently learning <%= @current_language.english_name %>.
+          <%# The language names live in the database in English; `languages.*`
+              translates the ones the app knows and leaves the rest as they are. %>
+          <%= t("profile.language.current",
+                language: t("languages.#{@current_language.iso_name}", default: @current_language.english_name)) %>
         <% elsif native_app? %>
-          You haven't picked a language yet.
+          <%= t("profile.language.unset") %>
         <% else %>
-          You're seeing content in every language.
+          <%= t("profile.language.all") %>
         <% end %>
       </p>
 
@@ -124,15 +129,17 @@
         <select
           data-controller="language-select"
           data-action="change->language-select#navigate"
-          aria-label="Learning language"
+          aria-label="<%= t("profile.language.label") %>"
           class="w-full px-4 py-3 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 font-semibold border border-gray-200 dark:border-gray-700 rounded-2xl cursor-pointer"
         >
           <option value="<%= language_redirect_url(ApplicationController::ALL_LANGUAGES) %>" <%= "selected" if @current_language.nil? %>>
-            Show All Content
+            <%= t("profile.language.show_all") %>
           </option>
           <% @languages.each do |language| %>
             <option value="<%= language_redirect_url(language.iso_name) %>" <%= "selected" if @current_language&.id == language.id %>>
-              <%= language.native_name %> — <%= language.english_name %>
+              <%= t("profile.language.option",
+                    native: language.native_name,
+                    english: t("languages.#{language.iso_name}", default: language.english_name)) %>
             </option>
           <% end %>
         </select>
@@ -140,16 +147,54 @@
     </div>
 
     <%# ----------------------------------------------------- Notifications %>
+    <%# Which channels this account wants. Everything the app tells the user is
+        recorded on /notifications regardless of what is chosen here, which is
+        what makes turning a channel off safe to offer. %>
+    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
+      <div class="flex items-baseline justify-between gap-4 mb-1.5">
+        <h2 class="text-lg font-extrabold tracking-tight"><%= t("notifications.preferences.heading") %></h2>
+        <%= link_to t("notifications.title"), notifications_path,
+                    class: "text-sm font-bold text-emerald-600 dark:text-emerald-400 whitespace-nowrap" %>
+      </div>
+      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-4">
+        <%= t("notifications.preferences.description") %>
+      </p>
+
+      <%= form_with url: profile_notifications_path, method: :patch, scope: :user, class: "flex flex-col sm:flex-row gap-3" do |form| %>
+        <fieldset class="flex-1">
+          <legend class="sr-only"><%= t("notifications.preferences.label") %></legend>
+          <%# What makes "neither channel" submittable: with every box unchecked
+              the browser sends nothing under this name, and the preference would
+              silently keep the value the user just turned off. %>
+          <%= hidden_field_tag "user[notification_delivery][]", "", id: nil %>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <% User::NOTIFICATION_DELIVERIES.each do |channel| %>
+              <label class="flex-1 flex items-center gap-3 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-2xl bg-white dark:bg-gray-900 font-semibold cursor-pointer">
+                <%= check_box_tag "user[notification_delivery][]", channel,
+                      current_user.notification_delivery.include?(channel),
+                      id: "user_notification_delivery_#{channel}",
+                      class: "w-5 h-5 accent-emerald-600" %>
+                <%= t("notifications.preferences.#{channel}") %>
+              </label>
+            <% end %>
+          </div>
+        </fieldset>
+        <%= form.submit t("channels.actions.save"), class: "self-start sm:self-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold cursor-pointer" %>
+      <% end %>
+    </div>
+
+    <%# The iOS permission state itself. Separate from the preference above:
+        this one is about this installation, and only iOS can answer it. %>
     <% if native_app? %>
       <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6"
            data-controller="bridge--notification-preference"
            data-bridge--notification-preference-endpoint-value="<%= app_device_tokens_path %>">
         <div class="flex items-center justify-between gap-4">
           <div>
-            <h2 class="text-lg font-extrabold tracking-tight mb-1.5">Notifications</h2>
+            <h2 class="text-lg font-extrabold tracking-tight mb-1.5"><%= t("profile.push.heading") %></h2>
             <p class="text-xs font-semibold text-gray-500 dark:text-gray-400"
                data-bridge--notification-preference-target="status">
-              Get notified when items in your Queue are ready.
+              <%= t("profile.push.description") %>
             </p>
           </div>
 
@@ -157,7 +202,7 @@
                   data-bridge--notification-preference-target="button"
                   data-action="bridge--notification-preference#enable"
                   class="shrink-0 inline-flex items-center justify-center h-11 px-5 rounded-xl text-white text-sm font-extrabold whitespace-nowrap bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50">
-            Enable Notifications
+            <%= t("profile.push.enable") %>
           </button>
 
           <label style="display: none"
@@ -165,7 +210,7 @@
                  data-bridge--notification-preference-target="switch">
             <input type="checkbox"
                    role="switch"
-                   aria-label="Queue-ready notifications"
+                   aria-label="<%= t("profile.push.switch_label") %>"
                    data-bridge--notification-preference-target="switchInput"
                    data-action="change->bridge--notification-preference#toggle"
                    class="sr-only peer">
@@ -181,9 +226,9 @@
     <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
       <div class="flex items-center justify-between gap-4">
         <div>
-          <h2 class="text-lg font-extrabold tracking-tight mb-1.5">Theme</h2>
+          <h2 class="text-lg font-extrabold tracking-tight mb-1.5"><%= t("profile.theme.heading") %></h2>
           <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-            Currently <%= current_theme %>. Tap to switch between light and dark.
+            <%= t("profile.theme.description", theme: t("profile.theme.#{current_theme}")) %>
           </p>
         </div>
         <%= render "shared/theme_toggle" %>
@@ -193,7 +238,7 @@
     <%# Nothing on this page is unsaved — language and theme both apply on the
         spot — so this is a way out, not a save. Deliberately outside a card:
         it's a page-level action, not another setting. %>
-    <%= link_to "Continue Learning", root_path,
+    <%= link_to t("profile.continue"), root_path,
           data: { turbo_action: "replace" },
           class: "w-full inline-flex items-center justify-center gap-2 h-14 mb-6 rounded-2xl text-white font-extrabold transition-colors bg-emerald-600 hover:bg-emerald-700" %>
 
@@ -201,17 +246,13 @@
     <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5">
       <div class="flex items-center justify-between gap-4">
         <div>
-          <h2 class="text-lg font-extrabold tracking-tight mb-1.5">Delete my account</h2>
+          <h2 class="text-lg font-extrabold tracking-tight mb-1.5"><%= t("profile.delete.heading") %></h2>
           <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-            This permanently deletes your account and everything attached to it —
-            your saved words, progress, XP and streak, and any courses you created.
-            It can't be undone.
+            <%= t("profile.delete.description") %>
           </p>
         </div>
-        <%= button_to "Delete account", registration_path(:user), method: :delete,
-              data: {
-                turbo_confirm: "Permanently delete your account and all your saved words and progress? This can't be undone."
-              },
+        <%= button_to t("profile.delete.button"), registration_path(:user), method: :delete,
+              data: { turbo_confirm: t("profile.delete.confirm") },
               class: "inline-flex items-center justify-center h-11 px-5 rounded-xl text-white text-sm font-extrabold whitespace-nowrap transition-colors bg-red-600 hover:bg-red-700 cursor-pointer",
               form: { class: "shrink-0" } %>
       </div>

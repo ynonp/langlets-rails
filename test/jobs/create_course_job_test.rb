@@ -178,16 +178,11 @@ class CreateCourseJobTest < ActiveJob::TestCase
       true
     end
 
-    mail = Object.new
-    def mail.deliver_now = true
-
     # Note the lambdas: Minitest's stub *calls* any value that responds to :call,
     # so returning the stub directly would invoke it instead.
     CreateSongProgress.stub(:find, @progress) do
       CreateSongPipelineHttp.stub(:new, ->(**kwargs) { trigger&.call(**kwargs); stub }) do
-        CourseMailer.stub(:creation_failed, ->(*) { mail }) do
-          CreateCourseJob.perform_now(@progress.id, @course.id)
-        end
+        CreateCourseJob.perform_now(@progress.id, @course.id)
       end
     end
   end

@@ -81,13 +81,77 @@ he:
       label: "מעבר בין מצב בהיר למצב כהה"
       title: "החלפת ערכת נושא"
     menu:
+      avatar_alt: "תמונת פרופיל"
+      daily_xp: "‏%{count} XP"
       learning_language: "שפת הלימוד: %{language}"
       select: "בחירה"
       review_words: "📚 חזרה על מילים (%{language})"
       queue: "תור"
       profile: "פרופיל"
+      notifications: "התראות"
       connected_apps: "אפליקציות מחוברות"
       logout: "התנתקות"
+  notifications:
+    title: "התראות"
+    new: "חדש"
+    open: "פתיחה"
+    mark_read: "סימון כנקרא"
+    mark_all_read: "סימון הכול כנקרא"
+    time_ago: "לפני %{time}"
+    unread_badge: "%{count} התראות שלא נקראו"
+    settings_link: "שינוי אופן קבלת ההתראות"
+    empty:
+      title: "אין עדיין כלום"
+      body: "נעדכן אתכם כאן כשקורס יהיה מוכן."
+    preferences:
+      heading: "התראות"
+      description: "איך נעדכן אתכם כשקורס מוכן."
+      label: "שליחת התראות באמצעות"
+      email: "אימייל"
+      push: "פוש"
+      updated: "העדפות ההתראות נשמרו."
+    mailer:
+      details: "פרטים: %{reason}"
+      open: "פתיחת Langlets"
+      footer_html: "אפשר לבחור איך ההתראות יגיעו אליכם — אימייל, פוש, שניהם או אף אחד — ב%{link} שלכם."
+      footer_link: "עמוד הפרופיל"
+      footer_text: "אפשר לבחור איך ההתראות יגיעו אליכם — אימייל, פוש, שניהם או אף אחד — בעמוד הפרופיל:"
+  profile:
+    xp:
+      heading: "‏XP השבוע"
+      all_time: "‏%{count} XP מתחילת הדרך"
+      streak:
+        one: "רצף של יום אחד"
+        other: "רצף של %{count} ימים"
+      streak_pending:
+        one: "רצף של יום אחד — עדיין בלי שיעור היום"
+        other: "רצף של %{count} ימים — עדיין בלי שיעור היום"
+      no_streak: "השלימו שיעור כדי להתחיל רצף."
+      day_xp: "‏%{day}: %{xp} XP"
+    language:
+      heading: "שפת הלימוד"
+      label: "שפת הלימוד"
+      current: "אתם לומדים כרגע %{language}."
+      unset: "עדיין לא בחרתם שפה."
+      all: "אתם רואים תוכן בכל השפות."
+      show_all: "הצגת כל התוכן"
+      option: "%{native} — %{english}"
+    push:
+      heading: "פוש במכשיר הזה"
+      description: "נעדכן אתכם כשפריטים בתור מוכנים."
+      enable: "הפעלת התראות"
+      switch_label: "התראות על פריטים מוכנים בתור"
+    theme:
+      heading: "ערכת נושא"
+      description: "כרגע %{theme}. הקישו כדי לעבור בין בהיר לכהה."
+      light: "בהיר"
+      dark: "כהה"
+    continue: "ממשיכים ללמוד"
+    delete:
+      heading: "מחיקת החשבון שלי"
+      description: "הפעולה מוחקת לצמיתות את החשבון ואת כל מה שמקושר אליו — המילים ששמרתם, ההתקדמות, ה-XP והרצף, וכל קורס שיצרתם. אי אפשר לבטל אותה."
+      button: "מחיקת החשבון"
+      confirm: "למחוק לצמיתות את החשבון ואת כל המילים וההתקדמות שלכם? אי אפשר לבטל את זה."
   activities:
     audio_to_translation:
       matched: "%{current} / %{total} הותאמו"
@@ -253,6 +317,9 @@ he:
       label: "ניווט ראשי"
       library: "ספרייה"
       create: "יצירה"
+    menu:
+      open: "פתיחת תפריט הפרופיל"
+      review_words: "תרגול מילים (%{language})"
     import_requests:
       index:
         title: "תור"
@@ -471,6 +538,13 @@ he:
         terms: "תנאי השימוש"
         privacy: "מדיניות הפרטיות"
   js:
+    notification_preference:
+      enable: "הפעלת התראות"
+      open_settings: "פתיחת ההגדרות"
+      enabled: "ההתראות פעילות."
+      disabled: "ההתראות כבויות במכשיר הזה."
+      denied: "ההתראות חסומות בהגדרות iOS."
+      prompt: "הפעילו התראות כדי לדעת מתי פריטים בתור מוכנים."
     word_order:
       correct: "נכון! כל הכבוד!"
       incorrect: "לא בדיוק. נסו שוב!"

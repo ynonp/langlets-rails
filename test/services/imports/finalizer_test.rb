@@ -275,15 +275,10 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     builder.define_singleton_method(:call) { on_build&.call }
     builder.define_singleton_method(:add_translation) { |_language| on_build&.call }
 
-    mail = Object.new
-    def mail.deliver_now = true
-
+    # Notifications are recorded here and delivered in a job, so nothing is
+    # mailed inline and there is no mailer left to stub out.
     CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
-      CourseMailer.stub(:creation_complete, ->(*) { mail }) do
-        CourseMailer.stub(:creation_failed, ->(*) { mail }) do
-          Imports::Finalizer.call(@progress)
-        end
-      end
+      Imports::Finalizer.call(@progress)
     end
   end
 end

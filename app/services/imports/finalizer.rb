@@ -93,7 +93,6 @@ module Imports
 
       return unless newly_published
 
-      CourseMailer.creation_complete(course).deliver_now
       request_missing_languages!(course)
     end
 
@@ -121,17 +120,19 @@ module Imports
 
     def fail!(import_request, reason)
       Settlement.fail!(import_request, reason)
-      mark_course_failed(import_request.course, reason)
+      mark_course_failed(import_request.course)
     end
 
     # Only a course nobody has managed to publish. A course that is already live
     # in another language must not be knocked back to `error` because one
     # translation gave up.
-    def mark_course_failed(course, reason)
+    #
+    # Status only — telling the user is Settlement.fail!'s job, which `fail!`
+    # has already done for the request that is actually waiting.
+    def mark_course_failed(course)
       return if course.nil? || course.published? || course.error?
 
       course.error!
-      CourseMailer.creation_failed(course, StandardError.new(reason.to_s)).deliver_now
     rescue => e
       Rails.logger.error "Failed to mark course #{course&.id} as errored: #{e.message}"
     end

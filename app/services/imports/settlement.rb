@@ -33,10 +33,15 @@ module Imports
 
       return unless notify
 
-      # Separate job so a push failure can't fail an import that has already
-      # succeeded. The completion email goes out from the finalizer regardless —
-      # it's the fallback for anyone who never granted notification permission.
-      SendImportReadyPushJob.perform_later(import_request.id)
+      # One call for both channels: Notifications records it, then delivers it
+      # by email and/or push according to the user's preference, in a job — so a
+      # delivery failure can't fail an import that has already succeeded.
+      Notifications.deliver(
+        user: import_request.user,
+        kind: :course_ready,
+        course: import_request.course,
+        title: import_request.title
+      )
     end
 
     # Record why, and stop. There is deliberately no refund here any more: a
@@ -45,9 +50,28 @@ module Imports
     # taken, so there is nothing to give back — which also means there is no
     # refund idempotency to get wrong, and no way for a re-run to mint credits.
     def fail!(import_request, reason)
+      # Already failed: a second caller reaching the same conclusion (the
+      # finalizer and the timeout job can race) must not tell the user twice.
+      already_failed = import_request.failed?
+
       import_request.status = :failed
       import_request.failure_reason = reason.to_s.truncate(250)
       import_request.save!
+
+      return if already_failed
+
+      # Every way an import can die comes through here — the finalizer, the
+      # timeout job, both trigger jobs — which is why the "we couldn't build it"
+      # notification is here and not in each of them. It goes to the user who
+      # asked, not to the course's creator: on a joined import those are
+      # different people, and only one of them is waiting.
+      Notifications.deliver(
+        user: import_request.user,
+        kind: :course_failed,
+        course: import_request.course,
+        title: import_request.title,
+        reason: reason
+      )
     rescue => e
       # Never let bookkeeping bury the original failure.
       Rails.logger.error "Failed to settle ImportRequest #{import_request.id}: #{e.message}"

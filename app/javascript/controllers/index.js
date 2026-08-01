@@ -109,6 +109,9 @@ application.register("mini-player", MiniPlayerController)
 import MultiselectController from "./multiselect_controller"
 application.register("multiselect", MultiselectController)
 
+import NotificationsReaderController from "./notifications_reader_controller"
+application.register("notifications-reader", NotificationsReaderController)
+
 import PlaylistCoursesController from "./playlist_courses_controller"
 application.register("playlist-courses", PlaylistCoursesController)
 

@@ -1,0 +1,41 @@
+<% content_for :head do %>
+  <title><%= t("notifications.title") %></title>
+<% end %>
+
+<div class="min-h-screen bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
+  <%# profile-safe-area: this page is also pushed inside the native tab
+      navigator, so it owes the side insets and the tab bar the same clearance
+      the Profile page does. %>
+  <div class="profile-safe-area max-w-3xl mx-auto py-8">
+    <div class="flex items-center gap-3 mb-6">
+      <%= link_to root_path, class: "text-emerald-600 dark:text-emerald-400" do %>
+        <%= render "shared/home_icon", size: 26 %>
+      <% end %>
+      <h1 class="flex-1 text-2xl sm:text-3xl font-bold"><%= t("notifications.title") %></h1>
+
+      <% if @unread_ids.any? %>
+        <%= button_to t("notifications.mark_all_read"), read_all_notifications_path,
+                      class: "px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-extrabold whitespace-nowrap cursor-pointer" %>
+      <% end %>
+    </div>
+
+    <% if @notifications.any? %>
+      <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md overflow-hidden">
+        <% @notifications.each do |notification| %>
+          <%= render "notifications/notification",
+                     notification: notification,
+                     unread: @unread_ids.include?(notification.id) %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-8 text-center">
+        <p class="font-extrabold mb-1"><%= t("notifications.empty.title") %></p>
+        <p class="text-sm text-gray-500 dark:text-gray-400"><%= t("notifications.empty.body") %></p>
+      </div>
+    <% end %>
+
+    <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-6 text-center">
+      <%= link_to t("notifications.settings_link"), profile_path, class: "text-emerald-600 dark:text-emerald-400" %>
+    </p>
+  </div>
+</div>

@@ -106,6 +106,25 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_select "option[selected]", text: /Show All Content/
   end
 
+  # Every string on this page comes from the locale files, which is only
+  # provable in a second locale: a key that exists in English and nowhere else
+  # renders as Rails' "translation missing" here.
+  test "the profile page renders in Hebrew" do
+    Language.find_by(iso_name: "he") ||
+      Language.create!(iso_name: "he", english_name: "Hebrew", native_name: "עברית")
+    sign_in_as @user
+    ActivityLog.log_activity_completion(user: @user, active_time: 60, xp_gained: 30)
+
+    host! "he.example.com"
+    get profile_path
+
+    assert_response :success
+    assert_select "h2", text: I18n.t("profile.xp.heading", locale: :he)
+    assert_select "h2", text: I18n.t("profile.delete.heading", locale: :he)
+    assert_select "a", text: I18n.t("profile.continue", locale: :he)
+    assert_no_match(/translation missing/, response.body)
+  end
+
   test "profile renders for a user with no activity at all" do
     sign_in_as @user
 

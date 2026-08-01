@@ -17,14 +17,24 @@
              data-testid="app-profile-menu"
              data-controller="profile-menu"
              data-action="click@document->profile-menu#close">
-      <summary class="w-[34px] h-[34px] rounded-full bg-app-pill flex items-center justify-center cursor-pointer list-none [&::-webkit-details-marker]:hidden"
-               aria-label="Open profile menu">
+      <summary class="relative w-[34px] h-[34px] rounded-full bg-app-pill flex items-center justify-center cursor-pointer list-none [&::-webkit-details-marker]:hidden"
+               aria-label="<%= t("app.menu.open") %>">
         <span class="text-[13px] font-bold text-[#B9C7D2]"><%= current_user.email.first.upcase %></span>
+
+        <%# Notifications that arrived while the app was open. A launch reports
+            read_all (see the notifications-reader controller in layouts/app),
+            so on a fresh entry this is deliberately empty. %>
+        <% if unread_notifications_count.positive? %>
+          <span data-testid="app-menu-notification-badge"
+                class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-red-500 text-white text-[10px] font-extrabold flex items-center justify-center">
+            <%= unread_notifications_count > 9 ? "9+" : unread_notifications_count %>
+          </span>
+        <% end %>
       </summary>
 
       <div class="absolute right-0 top-full mt-2 w-56 rounded-2xl overflow-hidden z-50 bg-app-card border border-white/10 shadow-xl">
         <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-          <%= button_to "Practice Words (#{language.iso_name})",
+          <%= button_to t("app.menu.review_words", language: language.iso_name),
                         review_lessons_path(language_code: language.iso_name),
                         method: :post,
                         class: "w-full text-left px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
@@ -33,14 +43,24 @@
         <% if current_user.languages_with_saved_words.exists? %>
           <div class="border-t border-white/10"></div>
         <% end %>
-        <%= link_to "Profile", profile_path,
+        <%= link_to notifications_path,
+                    class: "flex items-center justify-between gap-2 px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
+                    data: { action: "click->profile-menu#dismiss" } do %>
+          <span><%= t("shared.menu.notifications") %></span>
+          <% if unread_notifications_count.positive? %>
+            <span class="min-w-[20px] px-1.5 py-0.5 rounded-full bg-red-500 text-white text-[10px] font-extrabold text-center">
+              <%= unread_notifications_count > 9 ? "9+" : unread_notifications_count %>
+            </span>
+          <% end %>
+        <% end %>
+        <%= link_to t("shared.menu.profile"), profile_path,
                     class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
                     data: { action: "click->profile-menu#dismiss" } %>
         <%= link_to t("channels.invitations.title"), invitations_path,
                     class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
                     data: { action: "click->profile-menu#dismiss" } %>
         <div class="border-t border-white/10"></div>
-        <%= link_to "Logout",
+        <%= link_to t("shared.menu.logout"),
                     destroy_user_session_path(returnto: app_home_path),
                     data: { turbo_method: :delete },
                     class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5" %>

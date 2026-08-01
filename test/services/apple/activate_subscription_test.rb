@@ -97,6 +97,48 @@ module Apple
       assert_equal 0, Subscription.count
     end
 
+    # ------------------------------------------------------- notifications
+
+    test "becoming a subscriber is a notification" do
+      ActivateSubscription.call(payload: transaction(expires_in: 365.days), user: @user)
+
+      notification = @user.notifications.sole
+      assert notification.kind_pro_activated?
+      assert_equal "You're a Pro subscriber now", notification.title
+    end
+
+    # Twelve renewals a year must not be twelve congratulations.
+    test "a renewal says nothing" do
+      ActivateSubscription.call(payload: transaction(expires_in: 30.days), user: @user)
+
+      ActivateSubscription.call(
+        payload: transaction(expires_in: 60.days, transaction_id: "2000000111111112")
+      )
+
+      assert_equal 1, @user.notifications.count
+    end
+
+    test "coming back after lapsing is news again" do
+      ActivateSubscription.call(payload: transaction(expires_in: 1.hour), user: @user)
+
+      travel 2.hours do
+        ActivateSubscription.call(payload: transaction(expires_in: -1.hour))
+        assert_equal 1, @user.notifications.count, "expiring is not an activation"
+
+        ActivateSubscription.call(
+          payload: transaction(expires_in: 30.days, transaction_id: "2000000111111113")
+        )
+      end
+
+      assert_equal 2, @user.notifications.count
+    end
+
+    test "a purchase that lands already expired says nothing" do
+      ActivateSubscription.call(payload: transaction(expires_in: -1.day), user: @user)
+
+      assert_equal 0, @user.notifications.count
+    end
+
     private
 
     def transaction(expires_in:, product_id: YEARLY, transaction_id: ORIGINAL, revoked: false, purchased_ago: 0.seconds)

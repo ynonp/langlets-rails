@@ -38,7 +38,6 @@ final class AppTabBarController: UITabBarController {
     ]
 
     static let homeTabIndex = 0
-    static let libraryTabIndex = 1
 
     private var navigators: [Navigator] = []
     private var needsRoute: [Bool]
@@ -139,11 +138,10 @@ final class AppTabBarController: UITabBarController {
         navigators[index].route(proposal)
     }
 
-    /// Badges the Library tab with the number of imports still in flight.
-    func setLibraryBadge(_ count: Int) {
-        viewControllers?[Self.libraryTabIndex].tabBarItem.badgeValue = count > 0 ? String(count) : nil
-    }
-
+    /// No tab carries a badge. The Library tab used to show imports still in
+    /// flight, which competed with the app icon badge for the same attention
+    /// while meaning something else entirely — the icon badge is unread
+    /// notifications, and the Queue is a screen the user goes to on purpose.
     func setTabsVisible(_ visible: Bool) {
         tabBar.isHidden = !visible
     }

@@ -1573,6 +1573,83 @@ settles as `imported` and the question no longer arises.
 - `source`: `imported` (this user asked for this course, and it was published into their own channel), `library` (added from the catalog with "+ Learn this", which enrolls without publishing and is free), `playlist`. Every `ImportRequest` now settles as `imported`: there is no free rider to tell apart, because riding along on somebody else's run still ends in a publication of your own.
 - `last_practiced_at` is Home's canonical "started" signal: "Keep it going" only includes enrollments where it is non-null, ordered newest first. Clearing it keeps the enrollment/library membership while returning the course to an un-started state.
 
+### Notifications
+
+Everything the app tells a user goes through one subsystem. Before it, "your
+course is ready" existed twice — a mailer view and an APNs payload builder that
+each wrote the same sentence — and nothing recorded that the user had been told,
+so there was no list to show and nothing to mark read.
+
+**`Notifications.deliver(user:, kind:, **context)` is the only entry point.**
+Callers must not reach past it into `Notification`, `DeliverNotificationJob` or
+`Push::Notifier` — those are how it works, not what it does.
+
+The order matters: **record first, deliver second.**
+
+1. `Notifications::Content.build` words the notification. Every string the app
+   sends lives here, one branch per kind, so a new kind is worded once for the
+   list, the email and the push together. An unknown kind raises
+   `Content::UnknownKind` rather than producing an empty notification.
+2. A `Notification` row is created with that copy **denormalized onto it**
+   (`title`, `body`, `url`, plus a `data` JSONB for anything a client needs —
+   `course_slug` for the iOS deep link, `reason` for the failure email's details
+   block). Rebuilding the copy at render time was rejected: a notification about
+   a course has to keep making sense after that course is deleted, and email,
+   push and the list must say the same thing.
+3. `DeliverNotificationJob` sends it over the channels the user asked for. The
+   job means a delivery failure cannot fail the thing that caused it — both
+   callers are operations that have already succeeded.
+
+Supported kinds: `course_ready`, `course_failed`, `pro_activated`.
+
+`sent_at` means delivery was *attempted*, and makes the job idempotent — a retry
+must not mail or push twice. It is stamped even when a channel failed and even
+when there was nothing to deliver to (a push-only user with no device), because
+a user who receives neither still has the notification on `/notifications`; that
+is exactly what makes turning a channel off safe to offer. Email and push are
+isolated from each other: a dead mail server must not cost the user their push.
+
+`read_at` is independent. `Notification.mark_all_read!` is one UPDATE, not a
+load-and-save loop, because it runs on every app launch.
+
+**Delivery preference.** `users.preferences["notification_delivery"]` is the
+**list** of channels that are on — any of `email` and `push`, defaulting to
+both, chosen with a checkbox each on the Profile page. A list rather than an
+enum because the channels are independent: it says everything a `both` option
+did and adds the empty list, meaning the notification is recorded and delivered
+nowhere. Unset (anything not a list) reads as the default; `[]` is a real
+choice and survives the round trip, which is why the form carries a hidden
+blank — an all-unchecked form otherwise submits nothing under that name.
+`User#notification_delivery=` intersects with the known channels, so what is
+stored is always canonical and never holds a channel the job can't read.
+
+It governs this subsystem **only** — Devise confirmations and password resets,
+and Channel invitations, are answers to something the user just did, and
+silently dropping them would break the flow that asked for them.
+
+**The list.** `/notifications` (`NotificationsController`) is one controller and
+one view for web and the native shell; only the layout differs, picked the way
+the Profile page picks it, so the read/unread rules cannot drift between
+clients. It is reached from the profile menu on both clients, which also carries
+an unread count badge (`ApplicationController#unread_notifications_count`).
+Unread rows are marked **NEW** and carry an X that marks that one read over Turbo
+Stream; "Mark all as read" does the lot. Nothing is ever deleted from the list —
+it is the record of what the app has told this user.
+
+`index` snapshots which rows were unread **before** rendering (`@unread_ids`),
+which matters because of the next paragraph.
+
+**"Entering the app" means you read everything.** The native app layout mounts
+`notifications-reader`, which POSTs `read_all` on connect and again whenever the
+page becomes visible — iOS has two ways in, a cold launch (a page load) and a
+return from background (no page load). That is what zeroes the app icon badge
+count. Because the list snapshots unread state before that report lands, a user
+who opened the app *to look at what is new* still sees it.
+
+`import_requests.notified_at` was the old push idempotency stamp, sent straight
+from the request. It has been dropped: the Notification row is what makes
+delivery happen once now, and the column was a second copy of a fact that moved.
+
 ### Workflow Management
 
 #### **ImportRequest** (`import_requests`) — the Queue
@@ -1587,7 +1664,7 @@ A user's request to turn a video into a course. There are three distinct things 
 
 > **One `CreateSongProgress` → many language-keyed translations and `ImportRequest`s → one shared `Course`.**
 
-Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry, push idempotency) can't live on either of the shared records.
+Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry) can't live on either of the shared records — and why being told about it is per-user too: a `Notification` belongs to the requester, not to the course.
 
 - An `:adopted` request is created directly as `ready` rather than passing through `queued`: there is nothing to wait for, and an active row would sit under `idx_import_requests_active_dedupe` for a course that is already finished.
 - `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility. While the language is unknown, `idx_import_requests_detecting_dedupe` separately enforces one detecting row per user, video, and translation language; an ordinary nullable unique key would allow duplicates because PostgreSQL treats NULLs as distinct. Failed imports remain visible and removable, but the Queue does not offer a user retry: an accessible info tooltip explains that the human team is reviewing the automatic import and that the user will be notified when it finishes.
@@ -1644,13 +1721,24 @@ the provisional request is immediately visible as “Detecting language…”.
 
 Users are **not** enrolled at import time: the course is `pending` and has no lessons, so Home would show something unopenable. `Imports::Finalizer` enrolls everyone attached once it publishes.
 
-#### Course-ready push notifications
+#### Course-ready notifications
 
-Once `Imports::Finalizer` publishes a course, it marks every attached `ImportRequest` ready, enrolls that request's user, and enqueues one `SendImportReadyPushJob` per request (all three via `Imports::Settlement`). Push delivery is deliberately outside the course-building transaction: an APNs outage must not turn a successfully built course into a failed import. `ImportRequest#notified_at` makes delivery idempotent, and a user with no registered device is stamped as handled because email remains the fallback.
+Once `Imports::Finalizer` publishes a course, it marks every attached
+`ImportRequest` ready, enrolls that request's user, and — through
+`Imports::Settlement.complete!` — records one `course_ready` Notification per
+request. Delivery is deliberately outside the course-building transaction: an
+APNs outage or a bouncing mailbox must not turn a successfully built course into
+a failed import. See *Notifications* below for how the row becomes an email
+and/or a push.
 
-Course creation success and failure emails use the learner-facing term
-**Langlet** in their subjects and in both HTML and plain-text bodies. Internal
-Ruby and database names remain `Course`.
+`Imports::Settlement.fail!` is the mirror image and the single place a
+`course_failed` notification comes from, which is why every failure path — the
+finalizer, `ImportRequestTimeoutJob`, `CreateCourseJob`,
+`AddCourseTranslationJob`, `DetectImportLanguageJob` — routes through it. It
+notifies the user who **asked**, not the course's creator: on a joined import
+those are different people and only one of them is waiting. Re-failing an
+already-failed request is silent, so the finalizer and the timeout job racing
+cannot notify twice.
 
 The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `App::DeviceTokensController`; tokens are owned by a user and an installation token can move to the currently signed-in account. APNs sandbox and production tokens are stored separately by environment. Apple responses that identify dead tokens invalidate the row without deleting its diagnostic history, while transient failures leave it active.
 
@@ -1665,13 +1753,26 @@ silently register it again. Turning it back on re-registers the token. If iOS
 permission was denied, enabling opens the app's system Settings because iOS
 will not present its authorization prompt a second time.
 
-`Push::CourseReadyNotification` includes the published course slug in the APNs custom payload. Notification taps are handled on both iOS paths: `UNUserNotificationCenterDelegate` for a running app and `UIScene.ConnectionOptions.notificationResponse` for a cold launch. Both reset the Home navigator to `/app?just_imported=<slug>`. `App::HomeController` only resolves that slug through the signed-in user's published enrollments, then renders the newly created course as the **JUST IMPORTED** hero whose **Start Course** button enters the standard course experience. An invalid or unauthorized slug safely falls back to ordinary Home.
+`Push::Notifier` puts the published course slug in the APNs custom payload
+(`course_slug`, alongside `url` and `notification_id`). Notification taps are handled on both iOS paths: `UNUserNotificationCenterDelegate` for a running app and `UIScene.ConnectionOptions.notificationResponse` for a cold launch. Both reset the Home navigator to `/app?just_imported=<slug>`. `App::HomeController` only resolves that slug through the signed-in user's published enrollments, then renders the newly created course as the **JUST IMPORTED** hero whose **Start Course** button enters the standard course experience. An invalid or unauthorized slug safely falls back to ordinary Home.
 
-The APNs badge is a return-to-app prompt rather than durable unread state.
-`SceneDelegate.sceneDidBecomeActive` clears the app icon badge whenever the
-native app becomes active, covering cold launches, notification taps, and
-returns from the background. This is independent of the Library tab badge,
-which continues to reflect active imports reported by the web layout.
+Note the notification's own `url` is the course page (`/courses/:slug`), not
+`/app?just_imported=…`: that screen is native-only and bounces a web reader to
+the home page, and the native deep link does not read `url` anyway.
+
+**No tab carries a badge.** The Library tab used to show active imports, which
+competed with the app icon badge for the same attention while meaning something
+else entirely. `AppTabBarController.setLibraryBadge` is gone. The `tab-badge`
+bridge message survives because receipt of it is how `SceneDelegate` knows an
+authenticated app layout rendered and the tab bar is safe to reveal; its `count`
+is now vestigial.
+
+The app icon badge is the unread notification count, sent with every push
+(`Push::Notifier#badge`) and cleared from two sides when the user comes back:
+`SceneDelegate.sceneDidBecomeActive` clears the icon locally, and the
+`notifications-reader` controller in the app layout reports `read_all` to the
+server, so the *next* push carries a fresh, smaller number rather than
+re-badging what the user has already seen.
 
 #### iOS Share Extension
 
@@ -2137,7 +2238,7 @@ option.
 - `langlets-ios/langlets/langlets/AppTabBarController.swift` — Native tabs, per-tab navigators, lazy loading and tab state retention
 - `langlets-ios/langlets/langlets/SceneDelegate.swift` — App entry point, bridge registration, and URL routing
 - `langlets-ios/langlets/langlets/LessonViewController.swift` — Native lesson-sheet close control
-- `langlets-ios/langlets/langlets/Bridge/TabBadgeComponent.swift` — Updates the native Queue badge from web content, and is the signal that reveals the tab bar
+- `langlets-ios/langlets/langlets/Bridge/TabBadgeComponent.swift` — the signal that reveals the tab bar (no tab is badged any more; its `count` is vestigial)
 - `langlets-ios/langlets/langlets/Bridge/TabVisibilityComponent.swift` — Lets a layout hide the native tab bar (onboarding); paired with `app/javascript/controllers/bridge/tab_visibility_controller.js`
 - `langlets-ios/langlets/langlets/Auth/AuthBridgeComponent.swift` — Intercepts OAuth sign-in taps and triggers native auth flow
 - `langlets-ios/langlets/langlets/Auth/AuthService.swift` — Manages `ASWebAuthenticationSession` for OAuth
@@ -2252,7 +2353,14 @@ app/models/
 ├── activity_token_translation.rb # Join table model
 ├── activity_user.rb            # User progress on activities
 ├── lesson_user.rb              # User progress on lessons
+├── notification.rb             # One thing the app told one user (see Notifications)
 └── create_song_progress.rb     # Workflow tracking
+
+app/services/notifications/     # The notification subsystem
+├── deliver.rb                  # Record first, deliver second
+└── content.rb                  # Every word the app says, one branch per kind
+app/services/notifications.rb   # Notifications.deliver — the only entry point
+app/services/push/notifier.rb   # One Notification → every registered device
 
 app/views/playlists/       # YouTube-style playlist views
 ├── show.html.erb              # Main playlist view with search/filter

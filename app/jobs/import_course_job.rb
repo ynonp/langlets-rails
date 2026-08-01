@@ -46,14 +46,16 @@ class ImportCourseJob < ApplicationJob
       Rails.logger.info "Added course #{course.id} to playlist #{playlist.id}"
     end
 
-    CourseMailer.creation_complete(course).deliver_now
+    # The legacy rake path has no ImportRequest, so it notifies the creator
+    # itself rather than through Imports::Settlement.
+    Notifications.deliver(user: user, kind: :course_ready, course: course)
 
     Rails.logger.info "ImportCourseJob completed for course #{course.id}"
 
   rescue => e
     if course&.persisted?
       course.error!
-      CourseMailer.creation_failed(course, e).deliver_now
+      Notifications.deliver(user: user, kind: :course_failed, course: course, reason: e.message)
     end
     Rails.logger.error "ImportCourseJob failed: #{e.message}"
     Rails.logger.error e.backtrace.join("\n")

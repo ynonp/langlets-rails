@@ -36,6 +36,15 @@ class ApplicationController < ActionController::Base
     User::VALID_THEMES.include?(candidate) ? candidate : User::DEFAULT_THEME
   end
 
+  # Drives the dot on the profile menu, on every authenticated page. Memoized
+  # per request because both the header and the menu ask.
+  helper_method :unread_notifications_count
+  def unread_notifications_count
+    return 0 if current_user.nil?
+
+    @unread_notifications_count ||= current_user.notifications.unread.count
+  end
+
   # Returns true if the request comes from the Hotwire Native iOS app.
   # Used to customize behavior (e.g., OAuth redirects) for the native app.
   helper_method :native_app?

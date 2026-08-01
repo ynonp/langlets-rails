@@ -79,13 +79,10 @@ class ImportCourseJobTest < ActiveJob::TestCase
     builder = Object.new
     builder.define_singleton_method(:call) { nil }
 
-    mail = Object.new
-    mail.define_singleton_method(:deliver_now) { true }
-
+    # Delivery is a job now (DeliverNotificationJob), so nothing is mailed
+    # inline and there is no mailer left to stub out.
     CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
-      CourseMailer.stub(:creation_complete, ->(*) { mail }) do
-        ImportCourseJob.perform_now(progress.id, @user.id)
-      end
+      ImportCourseJob.perform_now(progress.id, @user.id)
     end
 
     Course.find_by!(main_media_url: url, user: @user)

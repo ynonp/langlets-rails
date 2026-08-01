@@ -1,8 +1,10 @@
 import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
 
-// Mirrors the Queue badge onto the native tab bar item. The app layout renders
-// this once per page with the current active-import count;
-// the native TabBadgeComponent picks it up and sets the UITabBarItem badge.
+// Tells the native shell that an authenticated app screen has rendered, which
+// is what reveals the tab bar. It used to badge the Library tab with the
+// active-import count; no tab is badged any more — unread notifications go on
+// the app icon badge instead — and the count is retained only so the bridge
+// message keeps the shape TabBadgeComponent decodes.
 export default class extends BridgeComponent {
   static component = "tab-badge"
   static values = { count: Number }

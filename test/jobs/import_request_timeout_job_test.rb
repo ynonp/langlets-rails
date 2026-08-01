@@ -129,15 +129,8 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
     def builder.call = true
     def builder.add_translation(_language) = true
 
-    mail = Object.new
-    def mail.deliver_now = true
-
     CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
-      CourseMailer.stub(:creation_complete, ->(*) { mail }) do
-        CourseMailer.stub(:creation_failed, ->(*) { mail }) do
-          ImportRequestTimeoutJob.perform_now(@request.id)
-        end
-      end
+      ImportRequestTimeoutJob.perform_now(@request.id)
     end
   end
 end

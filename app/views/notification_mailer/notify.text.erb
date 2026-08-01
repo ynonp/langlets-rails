@@ -1,0 +1,14 @@
+<%= @notification.title %>
+<%= "=" * @notification.title.length %>
+
+<%= @notification.body %>
+<% if @details.present? %>
+
+<%= t("notifications.mailer.details", reason: @details) %>
+<% end %>
+
+<%= @action_url %>
+
+--
+<%= t("notifications.mailer.footer_text") %>
+<%= profile_url %>

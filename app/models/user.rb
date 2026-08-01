@@ -35,6 +35,11 @@ class User < ApplicationRecord
   # Devices to push "your course is ready" to.
   has_many :device_tokens, dependent: :destroy
 
+  # Everything the app has told this user. The row is created before delivery is
+  # attempted, so it is the complete history regardless of the delivery
+  # preference below — see Notification.
+  has_many :notifications, dependent: :delete_all
+
   # The user's own playlists. System playlists (user_id nil) are not included.
   has_many :playlists, dependent: :destroy
 
@@ -178,6 +183,44 @@ class User < ApplicationRecord
     self.preferences = (preferences || {}).merge("watch_video" => merged)
   end
 
+  # Which channels this account wants to be told about things over
+  # (DeliverNotificationJob). Stored under preferences["notification_delivery"]
+  # as the list of channels that are on — the channels are independent, so a
+  # list says everything a "both" option used to, and one more thing besides:
+  # the empty list, meaning the notification stays on /notifications and is
+  # delivered nowhere. Both channels is the default, because that is what the
+  # app did before the preference existed.
+  #
+  # This governs the notification subsystem only. Transactional mail that is not
+  # a notification — Devise confirmations and password resets, Channel
+  # invitations — is unaffected: those are answers to something the user just
+  # did, and silently dropping them would break the flow that asked for them.
+  NOTIFICATION_DELIVERIES = %w[email push].freeze
+  DEFAULT_NOTIFICATION_DELIVERY = NOTIFICATION_DELIVERIES
+
+  # Anything that isn't a list is a value this code never wrote, so it means
+  # "unset" and gets the default — an empty list has to survive the round trip,
+  # since it is the one preference a user can hold that looks like nothing.
+  def notification_delivery
+    stored = (preferences || {})["notification_delivery"]
+    return DEFAULT_NOTIFICATION_DELIVERY.dup unless stored.is_a?(Array)
+
+    sanitize_notification_delivery(stored)
+  end
+
+  # Intersected with the known channels rather than filtered, so the stored list
+  # is always in one canonical order, deduped, and free of anything the delivery
+  # job wouldn't recognise. Accepts a single channel as well as a list; the
+  # blank entry the form's hidden field submits drops out on its own.
+  def notification_delivery=(values)
+    self.preferences = (preferences || {}).merge(
+      "notification_delivery" => sanitize_notification_delivery(Array(values))
+    )
+  end
+
+  def email_notifications? = notification_delivery.include?("email")
+  def push_notifications? = notification_delivery.include?("push")
+
   # The platform account. It moderates everything.
   ADMIN_EMAIL = "ynon@hey.com".freeze
 
@@ -318,6 +361,10 @@ class User < ApplicationRecord
   end
 
   private
+
+  def sanitize_notification_delivery(values)
+    NOTIFICATION_DELIVERIES & values.map(&:to_s)
+  end
 
   # Keyed on the user id so a replay — or the backfill rake task — can never
   # double-grant.

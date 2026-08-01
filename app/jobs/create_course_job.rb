@@ -46,7 +46,8 @@ class CreateCourseJob < ApplicationJob
     Rails.logger.error "Course creation failed for course #{course_id}: #{e.message}"
     Rails.logger.error e.backtrace.join("\n")
 
-    CourseMailer.creation_failed(course, e).deliver_now if course
+    # No mail from here: fail_imports! above went through Imports::Settlement,
+    # which notifies every user who was waiting on this course.
     raise e
   end
 
