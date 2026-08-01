@@ -45,12 +45,6 @@ en:
     members:
       remove: "Remove"
       removed: "Member removed."
-    admin:
-      title: "Channels"
-      create: "Create public channel"
-      created: "Public channel created."
-      create_failed: "The channel could not be created."
-      updated: "Channel updated."
     mailer:
       invite:
         subject: "You're invited to %{channel}"

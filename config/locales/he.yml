@@ -45,12 +45,6 @@ he:
     members:
       remove: "הסרה"
       removed: "החבר הוסר."
-    admin:
-      title: "ערוצים"
-      create: "יצירת ערוץ ציבורי"
-      created: "הערוץ הציבורי נוצר."
-      create_failed: "לא ניתן היה ליצור את הערוץ."
-      updated: "הערוץ עודכן."
     mailer:
       invite:
         subject: "הוזמנתם אל %{channel}"

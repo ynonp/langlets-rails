@@ -111,9 +111,6 @@ Rails.application.routes.draw do
   post "channel_invitations/decline/:token", to: "channel_invitations#decline",
     as: :decline_channel_invitation_token
   resources :channel_subscriptions, only: :destroy
-  namespace :admin do
-    resources :channels, only: [ :index, :create, :update ]
-  end
   resources :guest_import_requests, only: :create
   root "courses#index"
   get "gallery", to: "gallery#index", as: :gallery

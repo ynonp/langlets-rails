@@ -88,8 +88,7 @@ Channel holding everything a Langlets Pro subscriber imports, whose defining
 property is that owning it is not enough to read it — see *Langlets Pro* below.
 Because it is a base class, **an unscoped `Channel.where(…)` sees ProChannel
 rows**: any query that means "ordinary channels" has to say `type: nil`, and the
-three that do (`Channel.owned_grant`, `Ability`'s `can :manage`, and
-`Admin::ChannelsController#manageable_channels`) each say why.
+two that do (`Channel.owned_grant` and `Ability`'s `can :manage`) each say why.
 
 Visibility is `private`, `shared`, or `public`. Private content is readable only
 by its owner and administrators. Shared Channels are invite-only and become
@@ -186,8 +185,7 @@ resend or revoke pending invitations, and remove members. Invitations are
 delivered by email and also appear in the authenticated invitations list when
 the address matches an account. `/channels/:slug` returns 404 for unauthorized
 private/shared access; a valid pending invitee sees only Channel identity and
-accept/decline controls until acceptance. Administrators manage public Channels
-under `/admin/channels`.
+accept/decline controls until acceptance.
 
 ### Full-course video playback
 
@@ -1404,10 +1402,6 @@ The rest of the rules:
 - `Ability`'s `can :manage, Channel` is scoped `type: nil`. A subscriber owns
   their Pro library, but renaming it, resharing it or inviting people into it is
   not something the subscription buys.
-- `Admin::ChannelsController#manageable_channels` is scoped `type: nil` too.
-  That screen manages public Channels, and an unscoped base-class query would
-  list — and offer to edit — every subscriber's private library. `#unique_slug`
-  deliberately stays unscoped: slugs are globally unique.
 - `courses#destroy` unpublishes from **both** the user's default Channel and
   their Pro library, and `User#owns_publication_of?` (which gates the Delete item
   in the course "..." menu) checks both. An import made while subscribed has to
