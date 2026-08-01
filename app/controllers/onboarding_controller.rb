@@ -10,7 +10,7 @@ class OnboardingController < ApplicationController
   end
 
   def language
-    @languages = Language.all.order(:english_name)
+    @languages = Language.onboarding_options.order(:english_name)
     @return_to = params[:returnto].presence || params[:return_to].presence
   end
 

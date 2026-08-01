@@ -208,6 +208,31 @@ module App
       assert_response :success
     end
 
+    # The `languages` table holds every language the platform knows about,
+    # including translation-only ones (English, Hebrew) and any that still carry
+    # legacy courses. Onboarding offers a much shorter list.
+    test "onboarding offers only the languages we teach" do
+      @user.update!(ios_lang: nil)
+      reset!
+      sign_in @user
+
+      get onboarding_language_path(returnto: "/app"), headers: NATIVE
+      assert_response :success
+
+      offered = css_select("button[data-bridge--language-selection-iso-value]")
+        .map { |button| button["data-bridge--language-selection-iso-value"] }
+      assert_equal %w[ar-JO fr es], offered
+    end
+
+    test "onboarding language screen asks for a target language" do
+      @user.update!(ios_lang: nil)
+      reset!
+      sign_in @user
+
+      get onboarding_language_path(returnto: "/app"), headers: NATIVE
+      assert_select "h1", text: "Choose target language"
+    end
+
     # The one line this project adds to the web UI.
     test "native users land on the app home instead of the web index" do
       get "/", headers: NATIVE

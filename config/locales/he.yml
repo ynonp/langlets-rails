@@ -257,10 +257,8 @@ he:
       body_3: "הדביקו קישור, או התחילו מקורס בספרייה שלנו."
       start: "מתחילים"
     language:
-      change_title: "שינוי שפת הלימוד"
-      change_prompt: "בחרו את השפה שתרצו ללמוד"
-      welcome: "ברוכים הבאים ל-Langlets"
-      prompt: "איזו שפה תרצו ללמוד?"
+      title: "בחירת שפת היעד"
+      prompt: "בחרו את השפה שתרצו ללמוד"
   courses:
     sign_in_to_view: "התחברו כדי לצפות בלנגלט הזה."
     index:

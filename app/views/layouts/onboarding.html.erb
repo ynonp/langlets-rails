@@ -6,6 +6,10 @@
     <%= render "layouts/head" %>
   </head>
   <body class="bg-app-bg text-app-text font-app antialiased">
+    <%# Onboarding is a full-screen takeover: no native tab bar behind it. %>
+    <div data-controller="bridge--tab-visibility"
+         data-bridge--tab-visibility-visible-value="false"
+         hidden></div>
     <main><%= yield %></main>
   </body>
 </html>

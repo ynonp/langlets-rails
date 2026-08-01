@@ -273,10 +273,8 @@ en:
       body_3: "Paste a link, or start with a course from our library."
       start: "Start Now"
     language:
-      change_title: "Change Learning Language"
-      change_prompt: "Select the language you want to learn"
-      welcome: "Welcome to Langlets"
-      prompt: "Which language do you want to learn?"
+      title: "Choose target language"
+      prompt: "Select the language you want to learn"
   courses:
     sign_in_to_view: "Sign in to view this Langlet."
     index:

@@ -14,6 +14,16 @@ import WebKit
 final class AppTabBarController: UITabBarController {
     private static let pendingOnboardingURLKey = "pendingOnboardingURL"
 
+    /// The onboarding flow's pages, which are the ones worth checkpointing for
+    /// the next cold launch. (Hiding the tab bar over them is not keyed on this
+    /// list — the onboarding layout declares it through the tab-visibility
+    /// bridge, because a proposal only ever carries the pre-redirect URL.)
+    private static let onboardingPaths = ["/onboarding/welcome", "/onboarding/language"]
+
+    private static func isOnboardingURL(_ url: URL) -> Bool {
+        onboardingPaths.contains(url.path)
+    }
+
     struct Tab {
         let title: String
         let path: String
@@ -143,7 +153,7 @@ final class AppTabBarController: UITabBarController {
     /// UserDefaults survives and lets the next cold launch resume this URL.
     static func rememberPendingOnboardingURL(_ url: URL) {
         guard UserDefaults.standard.string(forKey: "selectedLanguage") == nil,
-              ["/onboarding/welcome", "/onboarding/language"].contains(url.path) else { return }
+              isOnboardingURL(url) else { return }
 
         guard let source = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
 
@@ -245,7 +255,7 @@ final class AppTabBarController: UITabBarController {
     private static func pendingOnboardingURL() -> URL? {
         guard let pendingPath = UserDefaults.standard.string(forKey: pendingOnboardingURLKey),
               let pendingURL = URL(string: pendingPath, relativeTo: rootURL)?.absoluteURL,
-              ["/onboarding/welcome", "/onboarding/language"].contains(pendingURL.path),
+              isOnboardingURL(pendingURL),
               var components = URLComponents(url: pendingURL, resolvingAgainstBaseURL: true) else { return nil }
 
         components.queryItems = components.queryItems?.map { item in

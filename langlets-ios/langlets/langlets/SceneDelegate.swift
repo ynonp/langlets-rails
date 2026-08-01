@@ -13,7 +13,7 @@ import WebKit
 // the phone's own localhost is the phone. Plain http to a loopback address is
 // blocked by App Transport Security without NSAllowsLocalNetworking in
 // Info.plist, which is set for exactly this reason.
-let rootURL = URL(string: "https://langlets.app")!
+let rootURL = URL(string: "http://localhost:3000")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -89,6 +89,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             GoogleAuthComponent.self,
             AppleAuthComponent.self,
             TabBadgeComponent.self,
+            TabVisibilityComponent.self,
             PushComponent.self,
             NotificationPreferenceComponent.self,
             NativeTokenComponent.self,
@@ -137,6 +138,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self,
             selector: #selector(queueBadgeDidChange(_:)),
             name: .queueBadgeDidChange,
+            object: nil
+        )
+
+        // Listen for layouts that hide the tab bar (onboarding)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(tabVisibilityDidChange(_:)),
+            name: .tabVisibilityDidChange,
             object: nil
         )
 
@@ -270,6 +279,12 @@ extension SceneDelegate: NavigatorDelegate {
         // is the native shell's confirmation that tabs are safe to reveal.
         tabBarController.setTabsVisible(true)
         tabBarController.setLibraryBadge(count)
+    }
+
+    @objc private func tabVisibilityDidChange(_ notification: Notification) {
+        guard let visible = notification.userInfo?["visible"] as? Bool else { return }
+
+        tabBarController.setTabsVisible(visible)
     }
 
     @objc private func userDidSignOut() {
