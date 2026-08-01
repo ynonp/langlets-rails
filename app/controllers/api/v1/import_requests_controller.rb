@@ -42,9 +42,12 @@ module Api
         render_result(result)
       rescue Credits::InsufficientCredits
         # 402 rather than 403: it's a billing state, not a permission problem.
+        # The description names Pro because credits cannot be topped up — the
+        # share extension has no paywall of its own, so the sentence has to say
+        # where the way forward is.
         render status: :payment_required,
                json: { error: "insufficient_credits",
-                       error_description: "You're out of credits.",
+                       error_description: "You're out of free imports. Open Langlets to subscribe to Pro.",
                        credits_left: 0 }
       rescue VideoSource::UnavailableVideo => e
         render status: :unprocessable_entity,

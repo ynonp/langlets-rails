@@ -11,14 +11,16 @@ module Apple
   # matter: a validly signed transaction for somebody else's account, or for a
   # product id we never offered, is exactly the shape a replay takes.
   #
-  # `catalog` is the set of products the caller is willing to accept, and it is
-  # what stops a $10 consumable from being redeemed as a year of Pro: each
-  # endpoint passes only its own kind, so a real transaction cannot be pointed at
-  # the wrong grant.
+  # `catalog` is the set of products the caller is willing to accept. Langlets
+  # Pro is currently the only thing sold, so `Apple::SubscriptionPlans` is the
+  # only catalog there is — but it stays a required argument rather than a
+  # default, because the point of it is that an endpoint states which kind of
+  # product it is willing to grant. A second catalog added later must not be
+  # accepted anywhere by omission.
   class VerifyTransaction
     BUNDLE_ID = "com.ynonp.langlets"
 
-    def initialize(signed_transaction:, user:, catalog: CreditPacks)
+    def initialize(signed_transaction:, user:, catalog:)
       @signed_transaction = signed_transaction
       @user = user
       @catalog = catalog

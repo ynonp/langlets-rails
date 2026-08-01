@@ -53,6 +53,14 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
 
   # The pipeline keeps reporting its failures through the callback even though
   # nothing blocks on them now, so say what actually went wrong.
+  #
+  # The reason is the pipeline's `error_message` alone. This job's own
+  # "<step>: <message>" format does not apply here: the last-chance
+  # `Imports::Finalizer.call` at the top of #perform sees the same blocking
+  # error first, fails the request with its own wording, and #perform then
+  # returns on the `active?` check without reaching #reason. That leaves #reason
+  # for the narrow case the finalizer declines to act on — `pipeline_complete?`
+  # true while the requested language is still unfinished.
   test "a failure the pipeline reported is used as the reason" do
     @progress.update!(data: {
       "errors" => [ { "step" => "translate", "error_message" => "model refused the prompt" } ]
@@ -60,7 +68,7 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
 
     run_job
 
-    assert_equal "translate: model refused the prompt", @request.reload.failure_reason
+    assert_equal "model refused the prompt", @request.reload.failure_reason
   end
 
   test "an import that already finished is left alone" do

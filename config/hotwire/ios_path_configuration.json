@@ -118,16 +118,6 @@
     },
     {
       "patterns": [
-        "^/app/credits$"
-      ],
-      "properties": {
-        "context": "modal",
-        "modal_style": "medium",
-        "pull_to_refresh_enabled": false
-      }
-    },
-    {
-      "patterns": [
         "^/app/import_requests/new$"
       ],
       "properties": {

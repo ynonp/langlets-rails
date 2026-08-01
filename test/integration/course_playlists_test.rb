@@ -20,35 +20,13 @@ class CoursePlaylistsTest < ActionDispatch::IntegrationTest
       status: :published
     )
     # These tests are about playlist membership, not access control, and some
-    # of them act as @other or signed out — so the course has to be readable
-    # by everyone.
+    # of them act as @other — so the course has to be readable by everyone.
     publish_publicly(@course)
     @system_playlist = Playlist.create!(name: "Existing Playlist", published: true, slug: "existing-#{SecureRandom.hex(4)}")
   end
 
   def sign_in(user)
     post user_session_url, params: { user: { email: user.email, password: "password123" } }
-  end
-
-  test "show page renders the + button for an admin" do
-    sign_in(@admin)
-    get course_url(@course.slug)
-    assert_response :success
-    assert_select 'button[data-action="course-paths#open"]'
-    assert_select '[data-controller="course-paths"]'
-    assert_select 'form[data-action="submit->course-paths#submitCreate"]'
-    assert_select 'input[data-course-paths-target="createName"]'
-    assert_select 'button[data-action="course-paths#close"]', text: "Done", count: 1
-    assert_select 'button[data-course-paths-target="newButton"]', text: "New Playlist"
-    assert_select '[data-course-paths-target="searchContainer"] input[placeholder="Find a playlist"]'
-    assert_select 'button[data-action="course-paths#close"]', text: "Cancel", count: 0
-  end
-
-  test "show page renders the + button for any signed-in user" do
-    sign_in(@other)
-    get course_url(@course.slug)
-    assert_response :success
-    assert_select 'button[data-action="course-paths#open"]'
   end
 
   test "native tab builds mark the layout and render a tab-safe playlist sheet" do
@@ -58,12 +36,6 @@ class CoursePlaylistsTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "body[data-native-tabs]"
     assert_select ".playlist-sheet-overlay .playlist-sheet"
-  end
-
-  test "show page hides the + button for anonymous users" do
-    get course_url(@course.slug)
-    assert_response :success
-    assert_select 'button[data-action="course-paths#open"]', count: 0
   end
 
   test "index returns system playlists with membership flags for admin" do

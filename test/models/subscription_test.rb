@@ -52,22 +52,13 @@ class SubscriptionTest < ActiveSupport::TestCase
     spend!(2)
     assert_equal 2, @user.free_imports_used
 
-    # Buying a pack and spending it pushes the raw count past the grant. "You've
-    # used 5 of 3 free imports" is nonsense, so it clamps.
-    Credits::Ledger.grant!(user: @user, amount: 20, reason: :iap_purchase, idempotency_key: "pack:1")
+    # An account earns nothing past the signup grant, but a console grant can
+    # put more in and push the raw spend count past it. "You've used 5 of 3 free
+    # imports" is nonsense, so it clamps.
+    Credits::Ledger.grant!(user: @user, amount: 20, reason: :promo_grant, idempotency_key: "promo:1")
     spend!(3)
     assert_equal 5, @user.credit_ledger_entries.import_spend.count
     assert_equal User::SIGNUP_CREDITS, @user.free_imports_used
-  end
-
-  test "purchased_credits? flips once a pack is bought, and drives the card's copy" do
-    assert_not @user.purchased_credits?, "the signup grant is not a purchase"
-
-    spend!(1)
-    assert_not @user.purchased_credits?
-
-    Credits::Ledger.grant!(user: @user, amount: 20, reason: :iap_purchase, idempotency_key: "pack:2")
-    assert @user.purchased_credits?
   end
 
   private

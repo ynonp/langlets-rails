@@ -301,10 +301,10 @@ direction matters (`inset-inline-start`, `padding-inline-start`), and the offset
 drop shadow on the product frame is mirrored under `[dir="rtl"]`. Everything
 else flips for free because the layout is grid/flex.
 
-The homepage **does not sell anything**. It carries no pricing section, no
-PayPal form and no free-credit copy; nothing on it mentions credits, prices or
-"free". Purchases live only on the in-app credit surfaces (see *Credits and
-PayPal*). Do not reintroduce a pricing block here without being asked.
+The homepage **does not sell anything**. It carries no pricing section and no
+free-credit copy; nothing on it mentions credits, prices or "free". The only
+thing sold anywhere is Langlets Pro, in the iOS app (see *Langlets Pro*). Do not
+reintroduce a pricing block here without being asked.
 
 Sections, all wired to real data:
 - **Nav** — brand, the `#library` in-page anchor, and auth-aware controls:
@@ -1176,9 +1176,11 @@ download is verified before it counts:
 
 ### Credits
 
-New accounts get `User::SIGNUP_CREDITS` (3).
-The iOS Credits screen uses Apple consumable in-app purchases and never exposes
-PayPal checkout. Web purchase surfaces use fixed PayPal packs.
+New accounts get `User::SIGNUP_CREDITS` (3), and that is the whole of it —
+**credits cannot be bought**. There is no top-up, on any platform. Past the
+signup allowance the way forward is Langlets Pro, whose imports are not metered
+at all, so credits are strictly a free-tier meter with a fixed size rather than
+a currency.
 
 #### What a credit buys — one rule, one place
 
@@ -1260,66 +1262,60 @@ Three rules, each load-bearing:
 
 `User.has_many :credit_ledger_entries, dependent: :delete_all` — **not** `:destroy`, which would trip the immutability guard and make account deletion impossible.
 
-#### Credit purchases
+#### Credit purchases — removed
 
-Web purchase surfaces render a PayPal Payments Standard Buy Now form for each
-fixed pack. Since the pricing section was removed from the public homepage, the
-only such surface on the web is the out-of-credits state on Add Video
-(`app/import_requests/web/new`). The form posts
-directly to PayPal and includes `return`, `cancel_return`, and `notify_url`;
-returning in the browser never grants credits. Development and test use
-`https://www.sandbox.paypal.com/cgi-bin/webscr`, while production uses
-`https://www.paypal.com/cgi-bin/webscr`.
+**Individual credits are no longer sold, on any surface.** Two purchase paths
+used to exist and both are gone from the tree:
 
-The native-only Credits screen renders Apple purchase buttons.
-`bridge--apple-purchase` asks the registered iOS
-`ApplePurchaseComponent` to load and buy the server-selected StoreKit consumable
-with a deterministic, user-bound `appAccountToken`. The app returns StoreKit's
-signed transaction JWS to `POST /app/apple_purchases`; Rails verifies the ES256
-signature and Apple certificate chain, bundle ID, consumable type, product ID,
-account token, and revocation state before granting the server-defined credit
-quantity. The ledger key is `apple:<transactionId>`, so repeated delivery grants
-once. Only after Rails accepts the transaction does JavaScript ask StoreKit to
-finish it. The sole native offer is 20 credits for $10. Its product identifier,
-defined in `Apple::CreditPacks`, must exist as a $10 consumable in App Store
-Connect: `com.ynonp.langlets.credits20`.
+- **PayPal Payments Standard**, on the web. `Paypal::Client`,
+  `Paypal::CreditPacks`, `Paypal::ProcessNotification`, the `paypal/_form`
+  partial and the `POST /paypal/notify` IPN listener were all deleted, along with
+  the "Buy More" form that sat beside the balance on the web Add Video sidebar.
+  The `paypal:` credential (`merchant_id`) in the development and production
+  credential files is now unused and can be dropped at the next edit.
+- **Apple consumable in-app purchases**, in the iOS app. `Apple::CreditPacks`,
+  `App::ApplePurchasesController`, `POST /app/apple_purchases`, and the whole
+  `/app/credits` screen (controller, views, route, and its `modal_style: medium`
+  rule in both copies of the iOS path configuration) were deleted. The
+  `com.ynonp.langlets.credits20` consumable in App Store Connect is orphaned and
+  should be removed there too.
 
-The form's `custom` value is a Rails-signed payload binding the current user to
-one server-defined pack. Prices and credit quantities are never accepted from
-that token or from browser state. `POST /paypal/notify` is the public IPN
-listener. `Paypal::Client` authenticates an IPN by posting its exact raw body
-back to the matching PayPal endpoint with `cmd=_notify-validate`; only a
-`VERIFIED` response proceeds. `Paypal::ProcessNotification` then requires:
+What replaced them is a link, not a screen: every surface that used to offer a
+top-up now points at the Pro paywall — the Queue's credits pill, the Add Video
+preview's out-of-balance CTA (`get_pro`), and the insufficient-credits card in
+the Queue. `App::ImportRequestsController#redirect_to_out_of_credits` does the
+same for the residual race, with one branch that matters: `/app/pro` keeps
+`App::BaseController`'s native gate, so a browser that hits an empty balance is
+sent back to Add Video with an explanation rather than to a paywall it would be
+bounced out of. The web Add Video sidebar and web preview carry that same
+sentence (`out_of_credits_web_hint`) instead of a button, exactly as the
+`:paused` state does — the browser can explain where the user stands but cannot
+sell the way out of it.
 
-1. `payment_status == "Completed"`;
-2. `receiver_id` equals the configured PayPal merchant account ID;
-3. the signed user/pack token is valid;
-4. `item_number`, `mc_gross`, and `mc_currency` exactly match that pack; and
-5. a nonblank PayPal `txn_id`.
+The purchase-shaped state went with it. Nothing had ever been bought outside
+development, so there was no history to preserve:
 
-Fulfillment uses `Credits::Ledger.grant!` with
-`idempotency_key: "paypal:<txn_id>"`, so PayPal retries and concurrent duplicate
-notifications credit the account once. The ledger metadata keeps the provider,
-transaction, pack, gross amount, currency, and payer ID for support/audit.
-Pending notifications are acknowledged but do nothing until PayPal sends a
-later Completed IPN. If the verification postback is temporarily unavailable,
-the listener returns 502 so PayPal retries.
+- `CreditLedgerEntry`'s `iap_purchase` reason is gone, and **3 is left as a hole
+  in the enum** rather than renumbered. The remaining members keep the values
+  they were written with; a number that once meant "bought a pack" must not come
+  back meaning something else.
+- `User#purchased_credits?` is gone, and with it the branch it drove in
+  `app/home/_pro_card`. Home's upsell now always renders the
+  "used 2 of 3 free imports" line and its progress bar. The branch existed
+  because a pack made that bar meaningless — an account that had topped up was
+  not limited by the allowance any more and the bar would have sat stuck at
+  full. With no packs, the allowance *is* a free account's whole credit, so the
+  bar cannot lie and the second subtitle (`home.index.upsell.credits_left`, now
+  removed from both locales) has nothing left to say.
+- `User#free_imports_used` keeps its clamp, on a narrower justification: nothing
+  an account does can push its spend count past the grant, but a console
+  `admin_adjustment` or `promo_grant` still can.
 
-Only one environment credential is required:
-
-```yaml
-paypal:
-  merchant_id: YOUR_PAYPAL_MERCHANT_ACCOUNT_ID
-```
-
-Use the sandbox business account ID in
-`config/credentials/development.yml.enc` and the live business account ID in
-`config/credentials/production.yml.enc`. Payments Standard/IPN does not use a
-REST client ID, REST secret, SDK key, or locally verified webhook-signature
-secret. In development, expose Rails over HTTPS with ngrok and allow the active
-ngrok hostname in `config.hosts`; the form derives its PayPal `notify_url` from
-the incoming tunneled request, so open the Credits page through the ngrok URL
-before starting a sandbox checkout.
+`Apple::VerifyTransaction`'s `catalog:` argument does survive, and it lost its
+`CreditPacks` default in the process: with one catalog left there is nothing to
+disambiguate today, but the point of the argument is that an endpoint states
+which kind of product it will grant, and a default would let a second catalog
+added later be accepted somewhere by omission.
 
 ### Langlets Pro
 
@@ -1327,7 +1323,9 @@ Credits are the free tier's meter. **Pro** is the subscription that removes it,
 and it is deliberately *not* "a big pile of credits":
 
 - Every new account, web or native, still gets `User::SIGNUP_CREDITS` (3). Pro
-  changes nothing about signup.
+  changes nothing about signup. Since credits stopped being sold, those 3 are
+  also the *only* credits a free account will ever have, which is what makes
+  Pro the single thing there is to buy.
 - Everything a subscriber imports is published to a **Pro library** they hold on
   loan. Cancelling withdraws it; resubscribing hands it straight back.
 - A Pro subscriber imports without limit, and that is a *consequence* of the
@@ -1449,15 +1447,19 @@ written down, so the three numbers cannot drift apart. The price strings are US
 display copy shown before the StoreKit sheet opens; the sheet itself always shows
 the localized price.
 
-Verification reuses the credit-pack machinery. `Apple::SignedPayload` now owns
-the JWS work — Apple's envelope carries its own certificate chain, so
-authentication is entirely offline with no key to fetch and no shared secret —
-and `Apple::VerifyTransaction` keeps the checks that are about *us*: right
-bundle, right `appAccountToken`, not revoked, and a product in the caller's
-`catalog:`. That catalog argument is load-bearing: `App::ApplePurchasesController`
-passes `CreditPacks` and `App::AppleSubscriptionsController` passes
-`SubscriptionPlans`, so a $10 consumable can never be redeemed as a year of Pro.
-The two endpoints stay separate for the same reason.
+Verification is the machinery the consumable credit packs used to share.
+`Apple::SignedPayload` owns the JWS work — Apple's envelope carries its own
+certificate chain, so authentication is entirely offline with no key to fetch and
+no shared secret — and `Apple::VerifyTransaction` keeps the checks that are about
+*us*: right bundle, right `appAccountToken`, not revoked, and a product in the
+caller's `catalog:`. `App::AppleSubscriptionsController` passes
+`SubscriptionPlans`, and it is now the only caller: the sibling
+`App::ApplePurchasesController` that passed `CreditPacks` is gone with the packs.
+`catalog:` nonetheless stayed **required** rather than defaulting to the one
+remaining catalog — it exists so that an endpoint names the kind of product it
+will grant, which is what stopped a $10 consumable being redeemed as a year of
+Pro, and a default would quietly extend acceptance to whatever catalog is added
+next.
 
 `Apple::ActivateSubscription` writes the verified transaction into
 `subscriptions`, keyed on `original_transaction_id` — the identifier Apple keeps
@@ -1493,8 +1495,8 @@ be a lie told to whoever reads the table next.
 **`POST /apple/notifications` is what keeps Pro true after the first billing
 period.** StoreKit tells us about the original purchase and nothing else; every
 renewal, cancellation, billing failure, refund and expiry afterwards arrives as
-an App Store Server Notification V2. Public and unauthenticated like the PayPal
-IPN endpoint next to it — the JWS carries its own proof — and it always answers
+an App Store Server Notification V2. Public and unauthenticated — the JWS
+carries its own proof — and it always answers
 2xx for a notification it understood, because Apple retries any other status for
 days and no retry can turn a notification for an unknown subscription into one we
 can attribute (the `appAccountToken` is a one-way HMAC, so a notification
@@ -1525,10 +1527,11 @@ Plan selection is styled with `:has(:checked)` rather than JavaScript, so the
 cards are correct before Stimulus connects and stay correct for VoiceOver;
 `pro_plan_controller` does only the one thing CSS cannot, which is carrying the
 chosen product id and price onto the CTA that `bridge--apple-purchase` reads.
-That bridge controller now serves both purchase surfaces and gained a `restore`
-action — required by App Review for auto-renewable subscriptions, and genuinely
-needed, since a reinstall or a second device has the entitlement in StoreKit and
-nothing in our database until it is posted back. `ApplePurchaseComponent.restore`
+That bridge controller served the Credits sheet as well until credit packs were
+withdrawn; the paywall is its only caller now. It gained a `restore` action —
+required by App Review for auto-renewable subscriptions, and genuinely needed,
+since a reinstall or a second device has the entitlement in StoreKit and nothing
+in our database until it is posted back. `ApplePurchaseComponent.restore`
 runs `AppStore.sync()` and replies with the first verified auto-renewable
 `currentEntitlement`, which is already the *renewed* transaction rather than the
 original.
@@ -1537,16 +1540,18 @@ Home renders `app/home/_pro_card` directly under the header, in both states and
 never hidden: the upsell with a free-import progress bar while the allowance
 lasts, and a plain "Langlets Pro · ACTIVE" statement once there is a
 subscription. A subscription the app stops mentioning is one people forget they
-are paying for, and then dispute. Accounts that have bought a credit pack get
-their real balance instead of the bar, which would otherwise sit stuck at full.
+are paying for, and then dispute. Accounts that bought a credit pack back when
+packs were sold get their real balance instead of the bar, which would otherwise
+sit stuck at full.
 
 Add Video reflects the entitlement on both platforms — Pro is bought in the iOS
 app but entitles the *account*, so the browser honours it too. `pro` suppresses
 the insufficient-balance state, the price line reads "Included with Pro", the
 approve label comes from `AppHelper#app_approve_label` (shared by both previews so
 the two surfaces cannot describe one charge differently), and the web sidebar
-replaces its balance-and-"Buy More" block entirely rather than inviting a
-subscriber to buy credits they already have.
+replaces its balance block with "Langlets Pro — unlimited" rather than quoting a
+meter that no longer runs. (That sidebar also held a "Buy More" PayPal form; it
+is gone for everyone, not only for subscribers.)
 
 `import_requests` carries no billing columns at all. `charged`, `refunded` and
 `pro_covered` were all removed: the first two mirrored a ledger that now keys on
@@ -1995,16 +2000,15 @@ Two more things to know before touching this:
 
 #### The app screens (`/app`)
 
-Home, mobile Library, Create/Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, `/app/library`, and Credits are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. `App::ImportRequestsController` skips that presentation gate so authenticated browsers can use Create/Add Video. The web Library is `/gallery`, and the shared authenticated web menu links to Gallery and Create.
+Home, mobile Library, Create/Add-a-video and the Pro screens live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, `/app/library`, and `/app/pro` are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. (There was a `/app/credits` screen here too; it existed to sell consumable credit packs and was deleted with them.) `App::ImportRequestsController` skips that presentation gate so authenticated browsers can use Create/Add Video. The web Library is `/gallery`, and the shared authenticated web menu links to Gallery and Create.
 
 **`/app/import_requests` is the Create entry point on both platforms.** In the native app the tab root renders the Add-a-video form directly; there is no intermediate status list or Add New button. A browser GET redirects to `/app/import_requests/new`, which renders the responsive web variant of the same form. Import status lives in Library: `/app/library` on mobile and `/gallery` on web. The old Queue templates and polling controller remain in the tree but are no longer rendered by the Create root.
 
 The web course UI exposes the shared Queue/Add Video flow through the user menu. Signed-in native users at the web root are redirected to `app_home_path`. That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
-On the web Add Video screen, a **Buy More** PayPal form beside the available
-balance submits the server-defined 20-credit/$10 pack directly to PayPal, so
-users do not visit an intermediate Credits screen before checkout. The form is
-the same signed Payments Standard form used by the Credits screen; only its
-button presentation and cancel destination differ.
+The web Add Video sidebar states the available balance and nothing more. It
+carried a **Buy More** PayPal form beside it until individual credits stopped
+being sold; there is now no checkout on the web at all, and the sidebar closes
+with the sentence explaining that Langlets Pro is bought in the iOS app.
 
 The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and **Create** tab (the Create tab is `/app/import_requests`, drawn with the `plus.circle` SF Symbol). Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. That is deliberate for Home's first-run Create link (below); if you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
 

@@ -150,7 +150,10 @@ final class ShareViewController: UIViewController {
             let description = body?["error_description"] as? String
             switch status {
             case 401: statusLabel.text = "Open Langlets and sign in again."
-            case 402: statusLabel.text = "You’re out of credits."
+            // Both 402 shapes — an empty balance and a paused Pro library — carry a
+            // sentence naming the way forward, and credits cannot be topped up,
+            // so prefer the server's copy over anything hardcoded here.
+            case 402: statusLabel.text = description ?? "You’re out of free imports."
             case 422: statusLabel.text = description ?? "That video can’t be imported."
             default: statusLabel.text = description ?? "Something went wrong. Please try again."
             }

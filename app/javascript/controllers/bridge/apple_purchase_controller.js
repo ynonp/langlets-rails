@@ -5,9 +5,10 @@ import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
 // StoreKit to finish it, so a transaction we failed to record stays in the queue
 // and is offered again on the next launch.
 //
-// Used by two screens with different endpoints: the Credits sheet (consumable
-// packs) and the Pro paywall (auto-renewable subscriptions). Which grant a
-// transaction can buy is decided entirely by the endpoint it is posted to.
+// Used only by the Pro paywall now. It served a Credits sheet selling consumable
+// packs too, until individual credits stopped being sold; the endpoint stays a
+// value rather than a constant because which grant a transaction can buy is
+// decided entirely by the endpoint it is posted to.
 export default class extends BridgeComponent {
   static component = "apple-purchase"
   static values = { endpoint: String, accountToken: String }
@@ -46,7 +47,8 @@ export default class extends BridgeComponent {
         // re-delivers it rather than dropping a purchase we never granted.
         this.send("finish", { transactionId: message.data.transactionId })
 
-        // Credits reload in place; Pro moves on to its confirmation screen.
+        // Pro answers with its confirmation screen; the reload is the fallback
+        // for a response that names no destination.
         const body = await response.json().catch(() => ({}))
         if (body.redirect) {
           window.location.href = body.redirect

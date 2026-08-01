@@ -17,10 +17,6 @@ module App
 
     def new
       prepare_new_import
-      if web_view?
-        @paypal_client = Paypal::Client.new
-        @credit_pack = Paypal::CreditPacks.fetch("standard")
-      end
 
       render "app/import_requests/web/new" if web_view?
     end
@@ -85,7 +81,7 @@ module App
       redirect_to_result(result)
     rescue Credits::InsufficientCredits
       # Checked in #new too; this is for the race, not the common path.
-      redirect_to app_credits_path
+      redirect_to_out_of_credits(params[:url])
     rescue VideoSource::UnavailableVideo
       redirect_to new_app_import_request_path(url: params[:url]),
                   alert: "We couldn't read that video. It may be private, age-restricted or deleted."
@@ -147,7 +143,7 @@ module App
 
       redirect_to_result(result)
     rescue Credits::InsufficientCredits
-      redirect_to app_credits_path
+      redirect_to_out_of_credits(failed.youtube_url)
     rescue VideoSource::UnavailableVideo, Imports::UnsupportedLanguage
       redirect_to app_import_requests_path, alert: "That video still can't be imported."
     end
@@ -164,6 +160,19 @@ module App
 
     def web_request?
       !native_app?
+    end
+
+    # An empty balance, hit in the race between the preview's quote and delivery.
+    # Individual credits are not sold on any surface, so the only way past this
+    # is Langlets Pro — and the paywall is a native screen (App::ProController
+    # keeps App::BaseController's native gate, which this controller skips). A
+    # browser sent there would just be bounced to the root, so it gets the same
+    # explanation the web preview carries instead.
+    def redirect_to_out_of_credits(url)
+      return redirect_to app_pro_path if native_app?
+
+      redirect_to new_app_import_request_path(url: url),
+                  alert: t("app.import_requests.new.out_of_credits_web_hint")
     end
 
     def redirect_to_result(result)

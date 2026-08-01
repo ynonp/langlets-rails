@@ -81,8 +81,9 @@ class User < ApplicationRecord
   # a flag, and `Subscription.entitling` is its single definition.
   has_many :subscriptions, dependent: :destroy
 
-  # What every new account starts with. Additional credits can be purchased
-  # through the PayPal Payments Standard flow.
+  # What every new account starts with, and — since credits stopped being sold —
+  # every credit an ordinary account will ever have. Past the allowance the way
+  # forward is Langlets Pro, whose imports are not metered at all.
   SIGNUP_CREDITS = 3
 
   # after_create rather than after_create_commit so the user row, the balance and
@@ -206,17 +207,11 @@ class User < ApplicationRecord
   end
 
   # How much of the signup allowance is gone — what the Pro upsell counts down.
-  # Clamped, because buying a credit pack pushes the spend count past the grant
-  # and "you've used 7 of 3" is nonsense.
+  # Still clamped: the allowance is the only credit an account earns by itself,
+  # but a console `admin_adjustment` or `promo_grant` can put more in, and
+  # "you've used 7 of 3 free imports" is nonsense.
   def free_imports_used
     [ credit_ledger_entries.import_spend.count, SIGNUP_CREDITS ].min
-  end
-
-  # Whether the account has ever bought credits (Apple or PayPal — both land on
-  # the iap_purchase reason). Once they have, the free allowance has stopped
-  # being what limits them and a "2 of 3 free imports" bar would be misleading.
-  def purchased_credits?
-    credit_ledger_entries.iap_purchase.exists?
   end
 
   # Where a newly imported Course is published.

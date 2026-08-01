@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   # Progress patches from the Create Song pipeline service (HMAC-signed; see
   # pipeline/README.md for the protocol).
   post "/pipeline_callbacks/:id", to: "pipeline_callbacks#update", as: :pipeline_callback
-  post "/paypal/notify", to: "paypal_notifications#create", as: :paypal_notification
   # App Store Server Notifications V2 — every Langlets Pro renewal, expiry and
   # refund after the original purchase. Public: the JWS carries its own proof.
   post "/apple/notifications", to: "apple_notifications#create", as: :apple_notifications
@@ -71,10 +70,9 @@ Rails.application.routes.draw do
         get :resolve
       end
     end
-    resource :credits, only: [ :show ]
-    resources :apple_purchases, only: [ :create ]
     # Langlets Pro: the paywall, its confirmation, and the StoreKit transaction
-    # the app posts back from both a purchase and a restore.
+    # the app posts back from both a purchase and a restore. The only thing sold
+    # anywhere in the app — individual credits are not purchasable.
     get "pro", to: "pro#show", as: :pro
     get "pro/success", to: "pro#success", as: :pro_success
     resources :apple_subscriptions, only: [ :create ]

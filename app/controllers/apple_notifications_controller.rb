@@ -1,7 +1,7 @@
 # Apple's App Store Server Notifications V2 listener.
 #
-# Public and unauthenticated, like the PayPal IPN endpoint next to it: the proof
-# is in the payload. Every notification is a JWS carrying Apple's own
+# Public and unauthenticated, because the proof is in the payload rather than in
+# the request. Every notification is a JWS carrying Apple's own
 # certificate chain, so there is no shared secret to configure and nothing here
 # trusts the request itself.
 #

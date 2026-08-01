@@ -1,6 +1,6 @@
 module Apple
-  # The Langlets Pro offers, defined on the server for the same reason the credit
-  # packs are: the browser never gets to say what something costs or what it
+  # The Langlets Pro offers — the only thing Langlets sells. Defined on the
+  # server because the browser never gets to say what something costs or what it
   # grants. The paywall renders these; App::AppleSubscriptionsController accepts
   # a transaction only for a product id that appears here.
   #

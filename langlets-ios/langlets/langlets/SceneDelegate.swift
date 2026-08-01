@@ -47,8 +47,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // so every `$`-anchored pattern in ios_path_configuration.json silently
         // fails the moment a link carries a query string. Nearly all of ours do:
         // the app appends ?lang= to keep the learning language in the URL, which
-        // quietly demoted Add a video and Credits from medium-detent sheets to
-        // plain pushes inside the tab, tab bar overlapping the content and all.
+        // quietly demoted Add a video and the Credits sheet (since deleted along
+        // with credit purchases) from medium-detent sheets to plain pushes inside
+        // the tab, tab bar overlapping the content and all.
         //
         // Turned off globally rather than patching each pattern with `(\?.*)?$`:
         // that boilerplate is easy to forget on the next rule, and the failure is

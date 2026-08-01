@@ -13,8 +13,7 @@ module App
       "Started videos" => "/app/started_courses",
       "Library" => "/app/library",
       "Create" => "/app/import_requests",
-      "Add a video" => "/app/import_requests/new",
-      "Credits" => "/app/credits"
+      "Add a video" => "/app/import_requests/new"
     }.freeze
 
     setup do
@@ -70,10 +69,12 @@ module App
       assert_response :success
     end
 
-    test "a web browser cannot open native Credits" do
-      get "/app/credits", headers: WEB
+    # Individual credits are not sold any more, so the sheet that sold them is
+    # gone rather than merely emptied. Its callers all point at the Pro paywall.
+    test "the credits screen no longer exists" do
+      get "/app/credits", headers: NATIVE
 
-      assert_redirected_to root_path
+      assert_response :not_found
     end
 
     test "the web Create tab opens Add Video instead of a dedicated queue" do
@@ -147,7 +148,7 @@ module App
 
       assert_response :success
       assert_select "[data-testid='app-profile-menu']"
-      assert_select "a[href=?]", app_credits_path, count: 0
+      assert_select "#credits-pill", count: 0
     end
 
     test "Library no longer floats an add button" do
@@ -158,7 +159,7 @@ module App
     end
 
     test "other app screens remain native-only" do
-      (SCREENS.values - [ "/app/import_requests", "/app/import_requests/new", "/app/credits" ]).each do |path|
+      (SCREENS.values - [ "/app/import_requests", "/app/import_requests/new" ]).each do |path|
         get path, headers: WEB
         assert_redirected_to root_path, "#{path} should be web-gated"
       end
@@ -649,17 +650,6 @@ module App
 
       assert_response :success
       assert_match "Despacito", response.body
-    end
-
-    test "out of credits offers Apple purchases in the native app" do
-      User.where(id: @user.id).update_all(credit_balance: 0)
-
-      get "/app/credits", headers: NATIVE
-
-      assert_response :success
-      assert_match "out of credits", response.body
-      assert_select "[data-controller='bridge--apple-purchase']", count: 1
-      assert_no_match "PayPal", response.body
     end
   end
 end

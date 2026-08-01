@@ -5,13 +5,15 @@ class CreditLedgerEntry < ApplicationRecord
   belongs_to :user
   belongs_to :subject, polymorphic: true, optional: true
 
-  # PayPal purchases use the existing iap_purchase slot. Keep the numeric values
-  # stable: they are persisted in the append-only ledger.
+  # Keep the numeric values stable: they are persisted in the append-only
+  # ledger. 3 is a hole where `iap_purchase` was — the slot both the Apple
+  # consumable packs and the PayPal packs wrote to, removed with them. Leave it
+  # empty rather than renumbering: a value that once meant "bought a pack" must
+  # not come to mean something else.
   enum :reason, {
     signup_grant: 0,
     import_spend: 1,
     import_refund: 2,
-    iap_purchase: 3,
     admin_adjustment: 4,
     promo_grant: 5
   }

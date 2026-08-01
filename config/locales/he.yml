@@ -194,9 +194,6 @@ he:
         upsell:
           title: "שדרגו ל‑Pro — ייבוא בלי הגבלה"
           free_used: "השתמשתם ב‑%{used} מתוך %{count} ייבואים חינם."
-          credits_left:
-            one: "נותרה נקודת זכות אחת. עברו לבלתי מוגבל."
-            other: "נותרו %{count} נקודות זכות. עברו לבלתי מוגבל."
         pro:
           title: "Langlets Pro"
           badge: "פעיל"
@@ -266,7 +263,7 @@ he:
         native_title: "יצירה"
         intro: "אפשר ליצור לנגלטס בשיתוף סרטון מ‑YouTube או מ‑TikTok לאפליקציה, או בהקשה על ״הוספה״ כאן למטה. יצירת לנגלט אחד לוקחת כשלוש דקות ועולה נקודת זכות אחת."
         credits_remaining: "נקודות זכות שנותרו: %{credits}"
-        credits_add: "הקישו להוספה"
+        credits_add: "הקישו למעבר ל‑Langlets Pro"
         created_heading: "הלנגלטס שיצרתי"
         native_empty: "עדיין לא יצרתם אף לנגלט"
         add_new: "הוספה"
@@ -296,7 +293,8 @@ he:
         get_started: "הדביקו קישור ל‑YouTube או ל‑TikTok כדי להתחיל."
         imports_as_lesson: "מיובא כשיעור: תמלול, תרגומים וכרטיסי אוצר מילים."
         approve: "אישור · שימוש ב‑%{cost}"
-        get_credits: "רכישת נקודות זכות"
+        get_pro: "מעבר ל‑Langlets Pro"
+        out_of_credits_web_hint: "ניצלתם את הייבואים החינמיים שלכם. הירשמו ל‑Langlets Pro באפליקציית Langlets באייפון כדי להמשיך לייבא."
         already_in_library: "כבר בספרייה שלך."
         open_lesson: "פתיחת השיעור"
         already_importing: "כבר בייבוא."

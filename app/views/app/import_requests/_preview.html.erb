@@ -68,13 +68,10 @@
     <% if short %>
       <%# Kept full-colour and enabled, and the card above stays rendered: the
           user can see exactly what they'd be importing, which is the whole
-          reason to buy. A greyed-out button would just be a dead end. %>
-      <%# Carries the video, not a return path: the credits screen only ever
-          needs to come back to this sheet, and a free-form return_to would be an
-          open redirect bought for nothing. §5.1 — they come back to this exact
-          preview, never to a blank bar they have to re-paste into. %>
-      <%= link_to t("app.import_requests.new.get_credits"),
-                  app_credits_path(url: video.canonical_url),
+          reason to subscribe. A greyed-out button would just be a dead end.
+          Individual credits are not for sale, so the subscription is the only
+          way past an empty balance and the only thing this button can offer. %>
+      <%= link_to t("app.import_requests.new.get_pro"), app_pro_path,
                   data: { turbo_frame: "_top" },
                   class: "block text-center bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
     <% else %>

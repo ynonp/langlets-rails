@@ -46,7 +46,7 @@
   </div>
 
   <% if import_request.insufficient_credits? %>
-    <%= link_to t("app.import_requests.new.get_credits"), app_credits_path,
+    <%= link_to t("app.import_requests.new.get_pro"), app_pro_path,
                 data: { turbo_frame: "_top" },
                 class: "shrink-0 rounded-full bg-app-pill text-app-text-2 px-3 h-8 flex items-center text-xs font-semibold" %>
   <% elsif import_request.failed? %>

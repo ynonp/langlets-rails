@@ -22,11 +22,13 @@ module App
       assert_select "[data-product-id=?]", Apple::SubscriptionPlans.yearly.product_id
     end
 
-    test "the paywall posts to the subscription endpoint, never the credits one" do
+    # There is exactly one purchase endpoint left — the consumable credit packs
+    # and the controller that granted them are gone — so what is worth asserting
+    # is that the paywall names the subscription one rather than inventing a path.
+    test "the paywall posts to the subscription endpoint" do
       get app_pro_path(lang: "es"), headers: NATIVE
 
       assert_select "[data-bridge--apple-purchase-endpoint-value=?]", app_apple_subscriptions_path
-      assert_select "[data-bridge--apple-purchase-endpoint-value=?]", app_apple_purchases_path, false
     end
 
     test "App Review's required restore control is on the paywall" do

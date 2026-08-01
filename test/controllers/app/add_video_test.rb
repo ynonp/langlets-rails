@@ -32,23 +32,19 @@ module App
 
     test "the form and pipeline submission are available to web browsers" do
       web = { "User-Agent" => "Mozilla/5.0" }
-      paypal_client = Paypal::Client.new(merchant_id: "SANDBOXMERCHANT")
-      Paypal::Client.stub(:new, paypal_client) do
-        get "/app/import_requests/new", headers: web
-      end
+      get "/app/import_requests/new", headers: web
+
       assert_response :success
       assert_select "[data-testid='web-add-video'].lg\\:grid-cols-\\[minmax\\(0\\,1fr\\)_22rem\\]"
       assert_select "input#web-video-url[data-add-video-target=input]"
       assert_select "[data-add-video-target=clipboardChip]", count: 0
       assert_select "[data-controller='theme']", count: 1
       assert_select ".bg-\\[\\#FAF6EF\\]"
-      assert_select ".bg-\\[\\#C4451C\\]"
+      assert_select ".text-\\[\\#C4451C\\]"
       assert_select ".app-scroll-pad", count: 0
-      assert_select "form[action=?][method=post][data-turbo=false]", Paypal::Client::SANDBOX_URL do
-        assert_select "input[name=item_number][value=credits_20]"
-        assert_select "input[name=amount][value='10.00']"
-        assert_select "button[type=submit]", text: "Buy More"
-      end
+      # The sidebar states the balance and nothing else. It used to carry a
+      # "Buy More" PayPal form; individual credits are no longer sold anywhere.
+      assert_select "form[action*=?]", "paypal.com", count: 0
       assert_match "3 credits left", response.body
 
       stub_video do
@@ -148,17 +144,11 @@ module App
 
       assert_response :success
       assert_match "Despacito", response.body, "the card must stay rendered"
-      assert_match "Get credits", response.body
+      # Credits cannot be bought, so an empty balance offers the subscription
+      # that removes the meter rather than a way to top it up.
+      assert_match "Get Langlets Pro", response.body
+      assert_select "a[href*=?]", app_pro_path
       assert_no_match(/Approve · use 1 credit/, response.body)
-    end
-
-    test "the credits screen offers a way back to the video, so nothing is re-pasted" do
-      get "/app/credits?url=#{CGI.escape(CANONICAL)}", headers: NATIVE
-
-      assert_response :success
-      # The app carries ?lang= on every generated URL, so match on the part
-      # that matters: the sheet reopens already pointed at this video.
-      assert_select "a[href*=?][href*=?]", "/app/import_requests/new", "url=#{CGI.escape(CANONICAL)}"
     end
 
     # §4: duplicates short-circuit before the balance is consulted, so a course
@@ -172,7 +162,7 @@ module App
       assert_response :success
       assert_match "Already in your library.", response.body
       assert_match "Open lesson", response.body
-      assert_no_match(/Get credits/, response.body)
+      assert_no_match(/Get Langlets Pro/, response.body)
       assert_no_match(/Approve/, response.body)
     end
 

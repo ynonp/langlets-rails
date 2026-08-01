@@ -41,7 +41,11 @@
           <% end %>
         </p>
         <% if short %>
-          <%= link_to t("app.import_requests.new.get_credits"), app_credits_path(url: video.canonical_url), data: { turbo_frame: "_top" }, class: "inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410]" %>
+          <%# No button: individual credits are not sold anywhere, and the only
+              way past an empty balance is Langlets Pro, which is bought in the
+              iOS app. Same shape as the paused state above — the browser can
+              explain where they stand but cannot sell the way out of it. %>
+          <p class="shrink-0 max-w-xs text-sm text-[#8A8170]"><%= t("app.import_requests.new.out_of_credits_web_hint") %></p>
         <% else %>
           <%= form_with url: app_import_requests_path, method: :post, data: { turbo: false }, class: "shrink-0" do |f| %>
             <%= hidden_field_tag :url, video.canonical_url %>

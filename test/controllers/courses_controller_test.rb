@@ -245,7 +245,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "#pricing", count: 0
     assert_select "a[href='#pricing']", count: 0
     assert_select "a[href=?]", new_user_registration_path(returnto: "/"), count: 0
-    assert_select "form[action=?]", Paypal::Client::SANDBOX_URL, count: 0
+    assert_select "form[action*=?]", "paypal.com", count: 0
     assert_select ".lp-nav a[href=?]", new_user_session_path, text: "Sign in"
   end
 
@@ -256,8 +256,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "#pricing", count: 0
-    assert_select "form[action=?]", Paypal::Client::SANDBOX_URL, count: 0
-    assert_select "form[action=?]", Paypal::Client::LIVE_URL, count: 0
+    assert_select "form[action*=?]", "paypal.com", count: 0
   end
 
   private

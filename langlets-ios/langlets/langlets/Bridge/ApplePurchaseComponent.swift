@@ -1,8 +1,10 @@
 import HotwireNative
 import StoreKit
 
-/// Runs credit and Langlets Pro purchases through StoreKit. Rails verifies and
-/// grants the signed transaction before the web side asks us to finish it.
+/// Runs Langlets Pro purchases through StoreKit. Rails verifies and grants the
+/// signed transaction before the web side asks us to finish it. It also ran the
+/// consumable credit packs until those were withdrawn; nothing here changed when
+/// they went, which is the product-agnostic design below doing its job.
 ///
 /// The component is deliberately product-agnostic: it buys whichever product id
 /// the page names and hands the signed transaction back. What that transaction

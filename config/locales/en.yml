@@ -208,9 +208,6 @@ en:
         upsell:
           title: "Go Pro — unlimited imports"
           free_used: "You've used %{used} of %{count} free imports."
-          credits_left:
-            one: "%{count} credit left. Go unlimited."
-            other: "%{count} credits left. Go unlimited."
         pro:
           title: "Langlets Pro"
           badge: "ACTIVE"
@@ -294,7 +291,7 @@ en:
         # the habit we want, "Add New" is the button right there on screen.
         intro: "Create langlets by sharing a YouTube or TikTok video to the app, or tap “Add New” below. Each langlet takes about 3 minutes to create and costs 1 credit."
         credits_remaining: "Credits remaining: %{credits}"
-        credits_add: "Tap to add more"
+        credits_add: "Tap for Langlets Pro"
         created_heading: "My Created Langlets"
         native_empty: "You haven't created any langlets yet"
         add_new: "Add New"
@@ -335,7 +332,10 @@ en:
         get_started: "Paste a YouTube or TikTok link to get started."
         imports_as_lesson: "Imports as a lesson: transcript, translations, vocab cards."
         approve: "Approve · use %{cost}"
-        get_credits: "Get credits"
+        get_pro: "Get Langlets Pro"
+        # Web has no way to sell the subscription — Pro is an iOS in-app
+        # purchase — so out of credits it explains rather than offering a CTA.
+        out_of_credits_web_hint: "You've used your free imports. Subscribe to Langlets Pro in the Langlets app on your iPhone to keep importing."
         already_in_library: "Already in your library."
         open_lesson: "Open lesson"
         already_importing: "Already importing."

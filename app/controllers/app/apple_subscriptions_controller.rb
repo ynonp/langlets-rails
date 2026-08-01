@@ -1,10 +1,9 @@
 module App
-  # Langlets Pro purchases and restores.
-  #
-  # Deliberately separate from ApplePurchasesController even though both take a
-  # StoreKit JWS: they accept different catalogs and grant different things, and
-  # keeping them apart is what makes "a consumable can never be redeemed as a
-  # subscription" a property of the routes rather than of a conditional.
+  # Langlets Pro purchases and restores — the only in-app purchase there is.
+  # There was a sibling ApplePurchasesController for consumable credit packs;
+  # credits are no longer sold, so it is gone. The `catalog:` argument it existed
+  # to differ on stays required (see Apple::VerifyTransaction): an endpoint has
+  # to name the kind of product it will grant.
   class AppleSubscriptionsController < BaseController
     def create
       payload, = Apple::VerifyTransaction.new(

@@ -30,24 +30,19 @@
     <div class="flex-1 min-w-0">
       <p class="text-base font-bold"><%= t(".upsell.title") %></p>
 
-      <%# Two subtitles for two honest states. Someone who bought a credit pack
-          has not "used 2 of 3 free imports" any more — the free allowance stopped
-          being the thing that limits them — so they get their real balance
-          instead of a progress bar that would be stuck full. %>
-      <% if current_user.purchased_credits? %>
-        <p class="mt-0.5 text-[13px] text-app-text-2">
-          <%= t(".upsell.credits_left", count: current_user.credit_balance) %>
-        </p>
-      <% else %>
-        <% used = current_user.free_imports_used %>
-        <p class="mt-0.5 text-[13px] text-app-text-2">
-          <%= t(".upsell.free_used", used: used, count: User::SIGNUP_CREDITS) %>
-        </p>
-        <div class="mt-2.5 h-1 rounded-sm bg-white/10 overflow-hidden">
-          <div class="h-full rounded-sm bg-app-accent"
-               style="width: <%= (100.0 * used / User::SIGNUP_CREDITS).round %>%"></div>
-        </div>
-      <% end %>
+      <%# One subtitle, because there is only one honest state left. This branched
+          on whether the account had bought a credit pack — for them the free
+          allowance had stopped being what limits them and the bar would have sat
+          stuck at full. Packs are no longer sold, so the allowance is the whole
+          of a free account's credit and the bar always says something true. %>
+      <% used = current_user.free_imports_used %>
+      <p class="mt-0.5 text-[13px] text-app-text-2">
+        <%= t(".upsell.free_used", used: used, count: User::SIGNUP_CREDITS) %>
+      </p>
+      <div class="mt-2.5 h-1 rounded-sm bg-white/10 overflow-hidden">
+        <div class="h-full rounded-sm bg-app-accent"
+             style="width: <%= (100.0 * used / User::SIGNUP_CREDITS).round %>%"></div>
+      </div>
     </div>
 
     <%# rtl:rotate-180 rather than a chevron character in the locale file: this
