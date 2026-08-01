@@ -1816,6 +1816,35 @@ or success screen: after the API accepts the idempotent request it calls
 problems are actionable. The translation language is English on this main-host
 API; the source language is always detected by the pipeline.
 
+**The endpoint queues; it does not detect.** `Api::V1::ImportRequestsController#create`
+used to run `CreateSongPipelineHttp.detect_language` inline so the response could
+carry a post-dedupe status and the final credit balance. That is a pipeline round
+trip which downloads and analyses the video, and the sheet held a spinner for
+roughly ten seconds waiting for it — long enough that users cancelled. It now
+calls `Imports::Create` with no `clip_language`, taking the same provisional
+`detecting` path the Add Video form takes, so `DetectImportLanguageJob` does the
+detection and the reply is one oEmbed call away. The extension's request carries
+an 8-second `timeoutInterval`: its only control is Cancel, so a stalled network
+has to become a sentence rather than a spinner, and the `client_token` makes the
+retry that invites free.
+
+Two consequences of moving detection off the request:
+
+- **`status` comes back `detecting`, never `ready`, on a first POST.** Which
+  course a link resolves to depends on the source language, so "already in your
+  Library — no credit used" cannot be known yet. Adoption, the paused-library
+  refusal, and the charge all happen in the job moments later; the Queue and the
+  "your course is ready" push are what report them. The extension's `ready`
+  branch now only fires when a `client_token` replay finds a finished request.
+- **A detection failure is a failed Queue card, not a 422.** The
+  `language_detection_failed` response is gone, because nothing is waiting for
+  it.
+
+An unresolved edge inherited from the Add Video form, now reachable from the
+share sheet too: when detection resolves to a course in the user's *paused* Pro
+library, `Imports::Create` returns `:paused` and the job discards it, leaving the
+row `detecting` until `ImportRequestTimeoutJob` fails it ten minutes later.
+
 Its link check is **host-only, deliberately** (`isSupportedVideo`). The extension
 decides "is this worth POSTing", not "which video is this" — Rails re-validates
 and canonicalizes, and for TikTok it is the only thing that *can*: TikTok's own

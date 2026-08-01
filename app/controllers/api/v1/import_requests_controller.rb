@@ -24,19 +24,21 @@ module Api
                         json: serialize(existing).merge(credits_left: credits_left)
         end
 
-        # Keep the share-extension API contract synchronous: callers expect the
-        # response to report the post-dedupe status and final credit balance.
-        # The interactive Add Video form uses the provisional detecting state
-        # because it can immediately navigate to a live, polling UI.
-        video = VideoSource.fetch(params[:url])
-        language, detected_data = CreateSongPipelineHttp.detect_language(url: video.canonical_url)
+        # Deliberately the same provisional `detecting` path the Add Video form
+        # uses. This used to detect the language inline so the response could
+        # report a post-dedupe status and the final credit balance — but
+        # detection is a pipeline round trip that downloads and analyses the
+        # video, and the share sheet sat on it for ~10 seconds with a spinner.
+        # Nothing the extension does with the answer is worth that: it dismisses
+        # itself the moment the POST is handed off, and the Queue and the push
+        # notification are what actually report the outcome. What is left here
+        # is one oEmbed call inside Imports::Create, which is also the
+        # availability check.
         result = Imports::Create.call(
           user: current_resource_owner,
-          url: video.canonical_url,
-          clip_language: language.english_name,
+          url: params[:url],
           translation_language: params[:translation_language],
-          client_token: params[:client_token],
-          detected_data: detected_data
+          client_token: params[:client_token]
         )
 
         render_result(result)
@@ -55,10 +57,10 @@ module Api
       rescue Imports::UnsupportedLanguage => e
         render status: :unprocessable_entity,
                json: { error: "unsupported_language", error_description: e.message }
-      rescue CreateSongPipelineHttp::TriggerError => e
-        render status: :unprocessable_entity,
-               json: { error: "language_detection_failed", error_description: e.message }
       end
+      # No language_detection_failed here any more: detection runs in
+      # DetectImportLanguageJob, so a video we can't place lands as a failed
+      # card in the Queue rather than as a status code nobody is waiting for.
 
       private
 

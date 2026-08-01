@@ -124,6 +124,13 @@ final class ShareViewController: UIViewController {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        // The endpoint only queues the import — it does no pipeline work — so a
+        // response takes well under a second and the sheet can afford to wait
+        // for it. The short timeout is what keeps that promise honest: this
+        // sheet's only control is Cancel, so a stalled network has to become a
+        // sentence rather than a spinner the user sits through. `client_token`
+        // makes the retry it invites free.
+        request.timeoutInterval = 8
         request.httpBody = try? JSONSerialization.data(withJSONObject: [
             "url": sharedURL.absoluteString,
             "translation_language": "English",
@@ -142,6 +149,9 @@ final class ShareViewController: UIViewController {
         if let error {
             statusLabel.text = "Couldn’t connect: \(error.localizedDescription)"
         } else if status == 200 || status == 201 {
+            // "ready" now only comes back when a client_token replay finds a
+            // finished request: the first POST answers before the language is
+            // known, so it can't yet tell that the course was already yours.
             statusLabel.text = body?["status"] as? String == "ready"
                 ? "Already in your Library — no credit used."
                 : "Added to your Queue. We’ll notify you when it’s ready."

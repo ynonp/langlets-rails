@@ -2,6 +2,8 @@ require "test_helper"
 require "minitest/mock"
 
 class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
+  include ActiveJob::TestHelper
+
   VIDEO_ID = "kJQP7kiw5Fk".freeze
   CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 
@@ -35,11 +37,29 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :created
     body = response.parsed_body
-    assert_equal "queued", body["status"]
+    assert_equal "detecting", body["status"]
     assert_equal "Despacito", body["title"]
     assert_equal VIDEO_ID, body["youtube_video_id"]
     assert_equal 3, body["credits_left"], "queued, not delivered — the credit moves when it publishes"
     assert body["thumbnail_url"].present?
+  end
+
+  # The whole point of the share extension's endpoint: the sheet is on screen
+  # while this runs, so the request may not wait on the pipeline. Detection is a
+  # round trip that downloads and analyses the video, and it belongs to a job.
+  test "queues the import without detecting the language first" do
+    detected = false
+
+    CreateSongPipelineHttp.stub(:detect_language, ->(**) { detected = true; [ @spanish, {} ] }) do
+      Youtube::Oembed.stub(:fetch, ->(_url) { oembed_video }) do
+        post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token)
+      end
+    end
+
+    assert_response :created
+    refute detected, "detection must not run inside the request"
+    assert_enqueued_with job: DetectImportLanguageJob,
+                         args: [ response.parsed_body.fetch("id") ]
   end
 
   test "replaying a client token returns the original import without another charge" do
@@ -55,35 +75,44 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 1, @user.import_requests.count
   end
 
-  # No pipeline to run, so the share extension gets its answer immediately — and
-  # the course is published into the sharer's channel there and then, which is
-  # what the credit pays for.
-  test "an already published video comes back ready, and is paid for on the spot" do
+  # Nothing to build, but the request can't know that yet: which course this is
+  # depends on the source language, and the language isn't known until the job
+  # runs. So the answer is "detecting" and the adoption — and the credit that
+  # pays for it — happens moments later, out of the sheet's way.
+  test "an already published video is adopted, and paid for, once detection lands" do
     course = create_translated_course!(name: "Despacito", slug: "despacito-published", main_media_url: CANONICAL,
                             youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
                             user: @other, status: :published)
 
     stub_video { post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token) }
 
-    assert_response :ok
-    body = response.parsed_body
-    assert_equal "ready", body["status"]
-    assert_equal course.slug, body.dig("course", "slug")
-    assert_equal 2, body["credits_left"]
+    assert_response :created
+    assert_equal "detecting", response.parsed_body["status"]
+    assert_equal 3, response.parsed_body["credits_left"], "nothing published yet"
+
+    request = ImportRequest.find(response.parsed_body.fetch("id"))
+    stub_video { perform_enqueued_jobs }
+
+    assert_equal "ready", request.reload.status
+    assert_equal course, request.course
+    assert_equal 2, @user.reload.credit_balance
     assert @user.default_channel.channel_items.exists?(course: course)
   end
 
-  test "a video already in the sharer's own channel comes back ready and free" do
+  test "a video already in the sharer's own channel settles free once detection lands" do
     course = create_translated_course!(name: "Despacito", slug: "despacito-mine", main_media_url: CANONICAL,
                             youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
                             user: @other, status: :published)
     publish_covering_the_credit(@user.provision_default_channel!, course)
 
     stub_video { post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token) }
+    assert_response :created
 
-    assert_response :ok
-    assert_equal "ready", response.parsed_body["status"]
-    assert_equal 3, response.parsed_body["credits_left"], "nothing left to publish"
+    request = ImportRequest.find(response.parsed_body.fetch("id"))
+    stub_video { perform_enqueued_jobs }
+
+    assert_equal "ready", request.reload.status
+    assert_equal 3, @user.reload.credit_balance, "nothing left to publish"
   end
 
   test "returns 402 when out of credits" do
@@ -106,19 +135,21 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 3, @user.reload.credit_balance
   end
 
-  test "returns 422 when automatic language detection fails" do
-    video = Youtube::Oembed::Video.new(
-      video_id: VIDEO_ID, title: "Despacito", author_name: "Luis Fonsi",
-      thumbnail_url: "https://i.ytimg.com/vi/#{VIDEO_ID}/hqdefault.jpg", canonical_url: CANONICAL
-    )
-    Youtube::Oembed.stub(:fetch, ->(_url) { video }) do
-      CreateSongPipelineHttp.stub(:detect_language, ->(**) { raise CreateSongPipelineHttp::TriggerError, "unsupported" }) do
-        post api_v1_import_requests_url, params: import_params.except(:clip_language), headers: auth_headers(@token)
-      end
+  # Detection no longer happens inside the request, so a video we can't place
+  # can't be reported as a status code. It becomes a failed card in the Queue —
+  # and still costs nothing, because nothing was ever published.
+  test "a failed language detection lands in the queue rather than in the response" do
+    Youtube::Oembed.stub(:fetch, ->(_url) { oembed_video }) do
+      post api_v1_import_requests_url, params: import_params.except(:clip_language), headers: auth_headers(@token)
+    end
+    assert_response :created
+
+    request = ImportRequest.find(response.parsed_body.fetch("id"))
+    CreateSongPipelineHttp.stub(:detect_language, ->(**) { raise CreateSongPipelineHttp::TriggerError, "unsupported" }) do
+      assert_raises(CreateSongPipelineHttp::TriggerError) { perform_enqueued_jobs }
     end
 
-    assert_response :unprocessable_entity
-    assert_equal "language_detection_failed", response.parsed_body["error"]
+    assert_equal "failed", request.reload.status
     assert_equal 3, @user.reload.credit_balance
   end
 
@@ -138,7 +169,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_equal 1, response.parsed_body["import_requests"].size
-    assert_equal "queued", response.parsed_body["import_requests"].first["status"]
+    assert_equal "detecting", response.parsed_body["import_requests"].first["status"]
   end
 
   test "the queue only shows your own imports" do
@@ -165,13 +196,14 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :created
     body = response.parsed_body
-    assert_equal "queued", body["status"]
-    assert_equal TIKTOK_ID, body["youtube_video_id"]
+    assert_equal "detecting", body["status"]
+    assert_equal TIKTOK_ID, body["youtube_video_id"], "the share link was resolved to a post id"
     assert_equal 3, body["credits_left"]
   end
 
-  # TikTok covers can't be derived from the URL, so if the value oEmbed returned
-  # wasn't stored at import time the Queue card would have nothing to render.
+  # TikTok covers can't be derived from the URL, so the value oEmbed returned is
+  # the only one there will ever be. It reaches the Queue card through the course
+  # the detection job builds.
   test "a TikTok import carries the cover oEmbed returned" do
     stub_tiktok do
       post api_v1_import_requests_url,
@@ -179,8 +211,10 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
            headers: auth_headers(@token)
     end
 
-    assert_equal TIKTOK_THUMB, response.parsed_body["thumbnail_url"]
-    course = ImportRequest.find(response.parsed_body.fetch("id")).course
+    request = ImportRequest.find(response.parsed_body.fetch("id"))
+    stub_tiktok { perform_enqueued_jobs only: DetectImportLanguageJob }
+
+    course = request.reload.course
     assert_equal TIKTOK_THUMB, course.thumbnail_url
     assert course.tiktok?
   end
@@ -191,14 +225,17 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     { url: url, clip_language: clip_language, translation_language: translation_language }
   end
 
-  def stub_video(&block)
-    video = Youtube::Oembed::Video.new(
+  def oembed_video
+    Youtube::Oembed::Video.new(
       video_id: VIDEO_ID, title: "Despacito", author_name: "Luis Fonsi",
       thumbnail_url: "https://i.ytimg.com/vi/#{VIDEO_ID}/hqdefault.jpg",
       canonical_url: CANONICAL
     )
+  end
+
+  def stub_video(&block)
     CreateSongPipelineHttp.stub(:detect_language, [ @spanish, {} ]) do
-      Youtube::Oembed.stub(:fetch, ->(_url) { video }, &block)
+      Youtube::Oembed.stub(:fetch, ->(_url) { oembed_video }, &block)
     end
   end
 
