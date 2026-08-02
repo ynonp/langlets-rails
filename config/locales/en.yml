@@ -113,7 +113,7 @@ en:
       # Used when an import failed before it ever learned what it was importing.
       default_video_title: "Your video"
       course_ready:
-        title: "Your course is ready!"
+        title: "“%{video_title}” is ready!"
         body:
           one: "“%{video_title}” is now %{count} lesson. Tap to start practicing."
           other: "“%{video_title}” is now %{count} lessons. Tap to start practicing."

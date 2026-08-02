@@ -105,7 +105,7 @@ he:
     kinds:
       default_video_title: "הסרטון שלכם"
       course_ready:
-        title: "הקורס שלכם מוכן!"
+        title: "הקורס “%{video_title}” מוכן!"
         body:
           one: "“%{video_title}” הוא עכשיו שיעור אחד. אפשר להתחיל לתרגל."
           other: "“%{video_title}” הוא עכשיו %{count} שיעורים. אפשר להתחיל לתרגל."

@@ -127,7 +127,7 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
 
     stub_push(->(_device, payload) { captured = payload; ok }) { perform }
 
-    assert_equal "Your course is ready!", captured[:alert][:title]
+    assert_equal "“Despacito” is ready!", captured[:alert][:title]
     assert_equal "“Despacito” is now 2 lessons. Tap to start practicing.", captured[:alert][:body]
     assert_equal "despacito", captured[:custom_payload][:course_slug]
     assert_equal "/courses/despacito", captured[:custom_payload][:url]

@@ -67,7 +67,7 @@ class NotificationTest < ActiveSupport::TestCase
   test "copy is rendered from the row's values" do
     notification = build_notification
 
-    assert_equal "Your course is ready!", notification.title
+    assert_equal "“Despacito” is ready!", notification.title
     assert_equal "“Despacito” is now 2 lessons. Tap to start practicing.", notification.body
   end
 
@@ -84,7 +84,7 @@ class NotificationTest < ActiveSupport::TestCase
   test "the list renders in the reader's language" do
     notification = build_notification
 
-    assert_equal "הקורס שלכם מוכן!", notification.title(locale: :he)
+    assert_equal "הקורס “Despacito” מוכן!", notification.title(locale: :he)
   end
 
   # i18n pluralizes on `count`, which is what makes this right in languages

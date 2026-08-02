@@ -36,7 +36,7 @@ class NotificationsTest < ActiveSupport::TestCase
   test "course_ready says what the app has always said" do
     notification = Notifications.deliver(user: @user, kind: :course_ready, course: @course)
 
-    assert_equal "Your course is ready!", notification.title
+    assert_equal "“Despacito” is ready!", notification.title
     assert_equal "“Despacito” is now 2 lessons. Tap to start practicing.", notification.body
     assert_equal "/courses/despacito-notify", notification.url
     assert_equal "despacito-notify", notification.data["course_slug"]
