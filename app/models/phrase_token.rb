@@ -18,6 +18,9 @@ class PhraseToken < ApplicationRecord
   validate :validate_l1_indexes
 
   scope :with_questions, -> { where("questions is not null and cardinality(questions) > 0") }
+  scope :missing_l1_audio, -> {
+    left_joins(:l1_audio_attachment).where(active_storage_attachments: { id: nil })
+  }
 
   attr_accessor :resolved_translation
 

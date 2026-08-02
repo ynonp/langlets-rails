@@ -10,3 +10,6 @@ production:
   expire_subscriptions:
     class: ExpireSubscriptionsJob
     schedule: every day at 5am
+  backfill_missing_token_audio:
+    class: BackfillMissingTokenAudioJob
+    schedule: every day at 5:30am

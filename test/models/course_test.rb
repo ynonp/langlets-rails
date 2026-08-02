@@ -221,6 +221,39 @@ class CourseTest < ActiveJob::TestCase
     assert_equal "https://example.com/custom.jpg", course.thumbnail_url
   end
 
+  test "enqueue missing token audio queues only tokens without attachments" do
+    english = languages(:english)
+    course = build_course("https://www.youtube.com/watch?v=missing-audio")
+    medium = Medium.create!(url: course.main_media_url, language: english)
+    Lesson.create!(course:, medium:, user: @user, name: "Audio", slug: "audio")
+    phrase = Phrase.create!(medium:, l1: english, text_l1: "one two", timestamp: "00:01")
+    missing_token = PhraseToken.create!(phrase:, l1_start_index: 0, l1_end_index: 0)
+    attached_token = PhraseToken.create!(phrase:, l1_start_index: 1, l1_end_index: 1)
+    blob = ActiveStorage::Blob.create!(
+      key: SecureRandom.hex(16),
+      filename: "existing.wav",
+      content_type: "audio/wav",
+      service_name: "s3_public",
+      byte_size: 5,
+      checksum: Digest::MD5.base64digest("audio")
+    )
+    ActiveStorage::Attachment.create!(name: "l1_audio", record: attached_token, blob:)
+    clear_enqueued_jobs
+
+    assert_enqueued_with(job: GenerateTokenAudioJob, args: [ missing_token.id ]) do
+      assert_equal 1, course.enqueue_missing_token_audio!
+    end
+    assert_equal 1, enqueued_jobs.size
+  end
+
+  test "enqueue missing token audio does nothing when the course has no medium" do
+    course = build_course("https://www.youtube.com/watch?v=no-medium")
+
+    assert_no_enqueued_jobs do
+      assert_equal 0, course.enqueue_missing_token_audio!
+    end
+  end
+
   test "regenerate deletes the old graph and retries its import with an empty pipeline cache" do
     english = languages(:english)
     spanish = languages(:spanish)

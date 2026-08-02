@@ -2058,6 +2058,19 @@ jobs visible to the dedicated Solid Queue worker any earlier would let it look
 up an uncommitted `PhraseToken`, discard the resulting `RecordNotFound`, and
 leave the token without audio.
 
+For an existing course with missing token audio, operators can enqueue repairs
+from a production Rails console with
+`Course.find(id).enqueue_missing_token_audio!`. The method enqueues only tokens
+that do not currently have an `l1_audio` attachment and returns the number of
+jobs enqueued.
+
+`BackfillMissingTokenAudioJob` is the automatic safety net. Solid Queue runs it
+daily at 05:30; it finds every `PhraseToken` that is more than six hours old and
+still lacks an `l1_audio` attachment, then enqueues the normal
+`GenerateTokenAudioJob` for each one. The age threshold gives freshly created
+tokens time to finish their normal post-commit audio jobs before the backfill
+considers them missed.
+
 ### Audio Attachment Workflow
 ```ruby
 # From Ai::CreateSong#attach_audio_to_record

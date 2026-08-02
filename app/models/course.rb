@@ -173,6 +173,26 @@ class Course < ApplicationRecord
     lessons.first&.medium
   end
 
+  # Operator utility for repairing courses whose token audio jobs were missed.
+  # Only tokens without an attachment are enqueued, and the return value makes
+  # the amount of work visible in the Rails console.
+  def enqueue_missing_token_audio!
+    return 0 unless medium
+
+    tokens = PhraseToken
+      .joins(:phrase)
+      .where(phrases: { medium_id: medium.id })
+      .missing_l1_audio
+
+    enqueued_count = 0
+    tokens.find_each do |token|
+      GenerateTokenAudioJob.perform_later(token.id)
+      enqueued_count += 1
+    end
+
+    enqueued_count
+  end
+
   def correct_text(old_text, new_text, tokens: [], translations:)
     token_specs = normalize_correction_token_specs(tokens)
     translation_specs = normalize_correction_translations(translations)
