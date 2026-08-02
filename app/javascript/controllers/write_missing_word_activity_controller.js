@@ -190,6 +190,9 @@ export default class extends Controller {
   showCompletion() {
     this.cardTarget.classList.add("hidden")
     this.completionTarget.classList.remove("hidden")
-    this.dispatch("completed", { detail: { xp: this.totalXp }, bubbles: true })
+    this.element.dispatchEvent(new CustomEvent("activity:completed", {
+      bubbles: true,
+      detail: { xp: this.totalXp }
+    }))
   }
 }
