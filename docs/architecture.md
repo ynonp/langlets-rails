@@ -2052,6 +2052,12 @@ The platform uses **Azure Cognitive Services TTS** for generating pronunciation 
 5. **Base64 Encoding**: For secure transmission
 6. **Active Storage Attachment**: Audio file attachment to model record
 
+Token audio jobs explicitly enqueue after the surrounding database transaction
+commits. Course building creates tokens inside one transaction, so making those
+jobs visible to the dedicated Solid Queue worker any earlier would let it look
+up an uncommitted `PhraseToken`, discard the resulting `RecordNotFound`, and
+leave the token without audio.
+
 ### Audio Attachment Workflow
 ```ruby
 # From Ai::CreateSong#attach_audio_to_record

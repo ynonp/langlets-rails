@@ -1,4 +1,6 @@
 class GenerateTokenAudioJob < ApplicationJob
+  self.enqueue_after_transaction_commit = true
+
   queue_as :default
   
   # Retry with exponential backoff if TTS service is temporarily unavailable
