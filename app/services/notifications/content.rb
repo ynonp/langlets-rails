@@ -57,7 +57,10 @@ module Notifications
           # `count` and not `lessons`: it is the key i18n pluralizes on, so the
           # locale file decides how many forms a language needs rather than
           # `String#pluralize` deciding it can only ever be English.
-          "count" => course&.lessons&.size.to_i,
+          # The builder may have loaded `course.lessons` while it was still
+          # empty. Query the persisted rows so that cached pipeline state cannot
+          # freeze the ready notification at zero.
+          "count" => course&.lessons&.count.to_i,
           # Not interpolated into anything — this is the iOS deep link, read
           # back by Push::Notifier. Extra values are ignored by the templates.
           "course_slug" => course&.slug

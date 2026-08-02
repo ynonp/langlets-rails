@@ -42,6 +42,22 @@ class NotificationsTest < ActiveSupport::TestCase
     assert_equal "despacito-notify", notification.data["course_slug"]
   end
 
+  test "course_ready counts persisted lessons when the association cache is stale" do
+    course = create_translated_course!(
+      name: "New Song", slug: "new-song-notify", main_media_url: "https://www.youtube.com/watch?v=staleCount1",
+      youtube_video_id: "staleCount1", language: @spanish, translation_language: @english,
+      user: @user, status: :published
+    )
+    course.lessons.load
+    Lesson.create!(course: course, medium: @medium, user: @user, slug: "new-lesson", name: "New lesson")
+
+    notification = Notifications.deliver(user: @user, kind: :course_ready, course: course)
+
+    assert_equal 0, course.lessons.size, "the test must preserve the pipeline's stale association state"
+    assert_equal 1, notification.data["count"]
+    assert_equal "“New Song” is now 1 lesson. Tap to start practicing.", notification.body
+  end
+
   # The copy is written once, onto the row, so the course going away cannot
   # turn a notification into a blank line or an exception.
   test "a notification outlives the course it is about" do

@@ -1639,7 +1639,10 @@ What is *not* re-derived is the values. `"Despacito"` and `2` are snapshots
 copied onto the row, which is what lets a notification still read correctly
 after the course it is about has been deleted. The rule that keeps that true:
 **`data` holds values, never ids.** A `course_id` there would put the copy back
-at the mercy of the course existing.
+at the mercy of the course existing. The `course_ready` lesson count is read
+from persisted lesson rows when that snapshot is created; it deliberately does
+not use the Course instance's association cache, which the build pipeline may
+have populated before lessons existed.
 
 The cost is that a template and the rows that feed it are a contract. Adding an
 interpolation to a template that older rows have no value for makes them
