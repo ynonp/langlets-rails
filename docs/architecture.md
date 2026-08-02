@@ -179,13 +179,19 @@ Channel; deletion asks for confirmation in an in-page sheet rather than
 `window.confirm`, which the Hotwire Native app does not support — the same
 pattern the playlist delete flow uses.
 
-The Profile page manages the current default Channel's name and private/shared
-visibility. Shared owners can invite multiple normalized email addresses,
-resend or revoke pending invitations, and remove members. Invitations are
-delivered by email and also appear in the authenticated invitations list when
-the address matches an account. `/channels/:slug` returns 404 for unauthorized
-private/shared access; a valid pending invitee sees only Channel identity and
-accept/decline controls until acceptance.
+Channel name, visibility, and invitations are no longer self-service: the
+Profile page's former "My channel" card (name/visibility form, invite form,
+and member/invitation management) was removed, since Channels are now managed
+by the system rather than by their owner. `ProfileController#update_channel`
+and the `profile_channel` route are gone with it; `Channel#change_visibility!`
+still enforces the admin-only-to-public rule for whatever path does change
+visibility. The invitation *acceptance* side is untouched: `ChannelInvitationsController`
+still serves `/invitations` (the authenticated pending-invitations list),
+`/channel_invitations/:token` (an emailed invitation link), and
+accept/decline, so existing pending invitations keep working end to end.
+`/channels/:slug` returns 404 for unauthorized private/shared access; a valid
+pending invitee sees only Channel identity and accept/decline controls until
+acceptance.
 
 ### Full-course video playback
 
@@ -1559,6 +1565,17 @@ the two surfaces cannot describe one charge differently), and the web sidebar
 replaces its balance block with "Langlets Pro — unlimited" rather than quoting a
 meter that no longer runs. (That sidebar also held a "Buy More" PayPal form; it
 is gone for everyone, not only for subscribers.)
+
+The native Profile page carries the same entitlement as a plain status card
+(`profile.account.*`), gated behind `native_app?` since Pro can only be bought
+in the iOS app — the web profile page never renders it. A free account shows
+the "Free" pill and a full-width "Upgrade to Pro for unlimited imports" button
+linking to `app_pro_path`; a Pro account shows the "Pro" pill and a one-line
+description instead of the button. It reads `current_user.pro?` directly
+rather than duplicating Home's `credits?` gating, since unlike the Home
+upsell — which appears only once the free tier is actually exhausted — this
+card's job is to state the account's plan whenever the user goes looking for
+it, not to nag.
 
 `import_requests` carries no billing columns at all. `charged`, `refunded` and
 `pro_covered` were all removed: the first two mirrored a ledger that now keys on

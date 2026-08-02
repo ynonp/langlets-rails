@@ -90,7 +90,6 @@ Rails.application.routes.draw do
   get "onboarding/welcome", to: "onboarding#welcome", as: :onboarding_welcome
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   get "profile", to: "profile#show", as: :profile
-  patch "profile/channel", to: "profile#update_channel", as: :profile_channel
   patch "profile/notifications", to: "profile#update_notifications", as: :profile_notifications
 
   # The notification list, shared by web and the native shell. `read_all` is

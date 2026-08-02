@@ -20,46 +20,26 @@
       </div>
     <% end %>
 
-    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
-      <h2 class="text-lg font-extrabold tracking-tight mb-1.5"><%= t("channels.profile.heading") %></h2>
-      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-4"><%= t("channels.profile.description") %></p>
-      <%= form_with model: @channel, url: profile_channel_path, method: :patch, class: "space-y-4" do |form| %>
-        <div>
-          <%= form.label :name, t("channels.fields.name"), class: "block text-sm font-bold mb-1" %>
-          <%= form.text_field :name, required: true, class: "w-full px-4 py-3 border rounded-2xl dark:bg-gray-900 dark:border-gray-700" %>
+    <%# --------------------------------------------------------- Account %>
+    <%# Native only — Pro is bought in the iOS app, so there is nothing to
+        upgrade to from the web profile page. %>
+    <% if native_app? %>
+      <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
+        <div class="flex items-center justify-between gap-4 mb-1.5">
+          <h2 class="text-lg font-extrabold tracking-tight"><%= t("profile.account.heading") %></h2>
+          <span class="shrink-0 text-xs font-extrabold rounded-md px-2 py-1 <%= current_user.pro? ? "bg-emerald-600 text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400" %>">
+            <%= current_user.pro? ? t("profile.account.type_pro") : t("profile.account.type_free") %>
+          </span>
         </div>
-        <div>
-          <%= form.label :visibility, t("channels.fields.visibility"), class: "block text-sm font-bold mb-1" %>
-          <% choices = current_user.admin? ? Channel.visibilities.keys : %w[private shared] %>
-          <%= form.select :visibility, choices.map { |value| [t("channels.visibility.#{value}"), value] }, {}, class: "w-full px-4 py-3 border rounded-2xl dark:bg-gray-900 dark:border-gray-700" %>
-        </div>
-        <%= form.submit t("channels.actions.save"), class: "px-5 py-3 rounded-xl bg-emerald-600 text-white font-bold" %>
-        <%= link_to t("channels.actions.view"), channel_path(@channel.slug), class: "ms-3 text-emerald-600 font-bold" %>
-      <% end %>
 
-      <% if @channel.visibility_shared? %>
-        <div class="border-t dark:border-gray-700 mt-6 pt-5">
-          <h3 class="font-bold mb-2"><%= t("channels.invitations.invite") %></h3>
-          <%= form_with url: channel_invitations_path(@channel.slug), class: "flex gap-2" do |form| %>
-            <%= form.text_field :emails, required: true, placeholder: t("channels.invitations.placeholder"), class: "flex-1 px-4 py-3 border rounded-xl dark:bg-gray-900 dark:border-gray-700" %>
-            <%= form.submit t("channels.invitations.send"), class: "px-4 rounded-xl bg-emerald-600 text-white font-bold" %>
-          <% end %>
-          <% @pending_channel_invitations.each do |invitation| %>
-            <div class="flex items-center gap-3 mt-3 text-sm">
-              <span class="flex-1"><%= invitation.email %></span>
-              <%= button_to t("channels.actions.resend"), resend_channel_invitation_path(invitation), class: "text-emerald-600" %>
-              <%= button_to t("channels.actions.revoke"), revoke_channel_invitation_path(invitation), class: "text-red-600" %>
-            </div>
-          <% end %>
-          <% @channel_subscriptions.each do |subscription| %>
-            <div class="flex items-center gap-3 mt-3 text-sm">
-              <span class="flex-1"><%= subscription.user.email %></span>
-              <%= button_to t("channels.members.remove"), channel_subscription_path(subscription), method: :delete, class: "text-red-600" %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+        <% if current_user.pro? %>
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400"><%= t("profile.account.pro_description") %></p>
+        <% else %>
+          <%= link_to t("profile.account.upgrade_cta"), app_pro_path,
+                class: "mt-1 w-full inline-flex items-center justify-center h-12 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-extrabold text-center" %>
+        <% end %>
+      </div>
+    <% end %>
 
     <%# ---------------------------------------------------------------- XP %>
     <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">

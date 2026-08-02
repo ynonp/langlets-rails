@@ -4,25 +4,15 @@ he:
       private: "פרטי"
       shared: "משותף"
       public: "ציבורי"
-    fields:
-      name: "שם הערוץ"
-      visibility: "חשיפה"
     card:
       by: "מאת %{channel}"
     actions:
       save: "שמירה"
-      view: "צפייה בערוץ"
       accept: "אישור"
       decline: "דחייה"
       unsubscribe: "עזיבת הערוץ"
-      resend: "שליחה מחדש"
-      revoke: "ביטול"
     profile:
       page_title: "פרופיל - Langlets"
-      heading: "הערוץ שלי"
-      description: "קורסים שמייבאים מתפרסמים בערוץ הזה."
-      updated: "הערוץ עודכן."
-      update_failed: "לא ניתן היה לעדכן את הערוץ."
     show:
       title: "%{channel} - Langlets"
       by: "מאת %{owner}"
@@ -32,9 +22,6 @@ he:
       unsubscribed: "עזבתם את הערוץ."
     invitations:
       title: "הזמנות"
-      invite: "הזמנת אנשים"
-      placeholder: "כתובות אימייל, מופרדות בפסיקים"
-      send: "שליחת הזמנות"
       sent: "ההזמנות נשלחו."
       invalid: "בדקו את כתובות האימייל ונסו שוב."
       accepted: "ההזמנה אושרה."
@@ -43,7 +30,6 @@ he:
       resent: "ההזמנה נשלחה מחדש."
       empty: "אין הזמנות ממתינות."
     members:
-      remove: "הסרה"
       removed: "החבר הוסר."
     mailer:
       invite:
@@ -133,6 +119,12 @@ he:
       footer_link: "עמוד הפרופיל"
       footer_text: "אפשר לבחור איך ההתראות יגיעו אליכם — אימייל, פוש, שניהם או אף אחד — בעמוד הפרופיל:"
   profile:
+    account:
+      heading: "החשבון שלי"
+      type_free: "חינמי"
+      type_pro: "Pro"
+      pro_description: "‏ייבוא ללא הגבלה · הספרייה מסונכרנת"
+      upgrade_cta: "שדרוג ל-Pro לייבוא ללא הגבלה"
     xp:
       heading: "‏XP השבוע"
       all_time: "‏%{count} XP מתחילת הדרך"

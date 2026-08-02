@@ -45,13 +45,4 @@ class ChannelsTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
     assert_equal channel_path(@channel.slug), session["user_return_to"]
   end
-
-  test "regular user cannot make their profile channel public" do
-    sign_in @owner
-
-    patch profile_channel_path, params: { channel: { name: "Mine", visibility: "public" } }
-
-    assert_response :unprocessable_entity
-    assert @channel.reload.visibility_private?
-  end
 end

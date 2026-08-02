@@ -4,25 +4,15 @@ en:
       private: "Private"
       shared: "Shared"
       public: "Public"
-    fields:
-      name: "Channel name"
-      visibility: "Visibility"
     card:
       by: "By %{channel}"
     actions:
       save: "Save"
-      view: "View channel"
       accept: "Accept"
       decline: "Decline"
       unsubscribe: "Unsubscribe"
-      resend: "Resend"
-      revoke: "Revoke"
     profile:
       page_title: "Profile - Langlets"
-      heading: "My channel"
-      description: "Courses you import are published to this channel."
-      updated: "Channel updated."
-      update_failed: "The channel could not be updated."
     show:
       title: "%{channel} - Langlets"
       by: "By %{owner}"
@@ -32,9 +22,6 @@ en:
       unsubscribed: "You left the channel."
     invitations:
       title: "Invitations"
-      invite: "Invite people"
-      placeholder: "Email addresses, separated by commas"
-      send: "Send invites"
       sent: "Invitations sent."
       invalid: "Check the email addresses and try again."
       accepted: "Invitation accepted."
@@ -43,7 +30,6 @@ en:
       resent: "Invitation resent."
       empty: "You have no pending invitations."
     members:
-      remove: "Remove"
       removed: "Member removed."
     mailer:
       invite:
@@ -148,6 +134,14 @@ en:
   # The account page. `channels.profile.*` covers the channel card at the top;
   # everything below it lives here.
   profile:
+    # Native only — Pro is an iOS in-app purchase, so this card (and its
+    # upgrade button) never renders on the web profile page.
+    account:
+      heading: "Account"
+      type_free: "Free"
+      type_pro: "Pro"
+      pro_description: "Unlimited imports · library synced"
+      upgrade_cta: "Upgrade to Pro for unlimited imports"
     xp:
       heading: "XP this week"
       all_time: "%{count} XP all time"

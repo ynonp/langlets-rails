@@ -61,6 +61,46 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_select "body[data-native-tabs] .profile-safe-area", count: 1
   end
 
+  test "web profile does not show the account card" do
+    sign_in_as @user
+
+    get profile_path
+
+    assert_select "h2", text: "Account", count: 0
+    assert_select "a", text: "Upgrade to Pro for unlimited imports", count: 0
+  end
+
+  test "native profile shows a free account with an upgrade button" do
+    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
+    sign_in_as @user
+
+    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative" }
+
+    assert_response :success
+    assert_select "h2", text: "Account"
+    assert_select "span", text: "Free"
+    assert_select "a[href=?]", app_pro_path, text: "Upgrade to Pro for unlimited imports"
+  end
+
+  test "native profile shows a Pro account without the upgrade button" do
+    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
+    @user.subscriptions.create!(
+      product_id: Apple::SubscriptionPlans.yearly.product_id,
+      original_transaction_id: "2000000555555555",
+      status: :active,
+      purchased_at: Time.zone.now,
+      expires_at: 1.year.from_now
+    )
+    sign_in_as @user
+
+    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative" }
+
+    assert_response :success
+    assert_select "h2", text: "Account"
+    assert_select "span", text: "Pro"
+    assert_select "a", text: "Upgrade to Pro for unlimited imports", count: 0
+  end
+
   test "native profile initially shows only the notification permission action" do
     language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
     sign_in_as @user

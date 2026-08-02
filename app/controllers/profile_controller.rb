@@ -12,23 +12,6 @@ class ProfileController < ApplicationController
 
     @languages = Language.all.order(:english_name)
     @current_language = Language.find_by(iso_name: current_language_code)
-    @channel = current_user.provision_default_channel!
-    load_channel_members
-  end
-
-  def update_channel
-    @channel = current_user.provision_default_channel!
-    Channel.transaction do
-      @channel.name = channel_params[:name] if channel_params[:name].present?
-      @channel.save!
-      @channel.change_visibility!(channel_params[:visibility], actor: current_user) if channel_params[:visibility].present?
-    end
-    redirect_to profile_path, notice: t("channels.profile.updated")
-  rescue ActiveRecord::RecordInvalid, Channel::UnauthorizedTransition, ArgumentError
-    load_profile
-    load_channel_members
-    flash.now[:alert] = t("channels.profile.update_failed")
-    render :show, status: :unprocessable_entity
   end
 
   # The set of channels to deliver over — any of email and push, including
@@ -48,23 +31,6 @@ class ProfileController < ApplicationController
   end
 
   private
-
-  def channel_params
-    params.require(:channel).permit(:name, :visibility)
-  end
-
-  def load_profile
-    @xp_series = ActivityLog.daily_xp_series_for_user(current_user, days: XP_CHART_DAYS)
-    @total_xp = ActivityLog.total_xp_for_user(current_user)
-    @streak = ActivityLog.streak_info_for_user(current_user)
-    @languages = Language.all.order(:english_name)
-    @current_language = Language.find_by(iso_name: current_language_code)
-  end
-
-  def load_channel_members
-    @pending_channel_invitations = @channel.channel_invitations.pending.order(created_at: :desc)
-    @channel_subscriptions = @channel.channel_subscriptions.includes(:user).order(created_at: :desc)
-  end
 
   # Same shape as OnboardingController#language_redirect_url: switching language
   # is a redirect carrying ?lang=<iso>, which default_url_options then carries
