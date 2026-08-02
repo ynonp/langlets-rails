@@ -234,6 +234,14 @@ Translation-token clicks are
 also excluded from the shared phrase-seek action; only clicks elsewhere on the
 sentence move playback to that phrase. Clicking a word while the popup is open
 closes it and resumes playback.
+Saved words in the transcript have a solid emerald underline. The translation
+popover controller derives that marker from its saved token IDs and refreshes
+it immediately when the learner saves or removes a word.
+When the watch-video popover controller connects, it refreshes those IDs from a
+small authenticated `no-store` JSON endpoint. Cached or prefetched activity
+frames therefore retain their ten-minute lifetime without treating their
+serialized vocabulary state as authoritative. Save/remove actions still update
+the controller locally for an immediate response.
 When native playback begins before the activity's first phrase, the activity's
 play listener seeks forward to the segment start; playback already at or after
 that boundary is not moved.

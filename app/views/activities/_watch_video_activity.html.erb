@@ -72,6 +72,8 @@
     <div
         data-controller="popover-translation"
         data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_phrase_tokens.pluck(:id).to_json : '[]' %>"
+        data-popover-translation-saved-ids-url-value="<%= token_translation_users_path if current_user %>"
+        data-popover-translation-saved-token-classes-value="underline decoration-emerald-500 decoration-[2.5px] underline-offset-4"
         id="phrases-container"
         data-watch-video-activity-target="container"
         data-action="click->popover-translation#showPopup click->watch-video-activity#handleTranslationClick scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup click@document->watch-video-activity#resumeAfterTranslation scroll@document->popover-translation#hidePopup"

@@ -3,10 +3,49 @@ import { t } from "../utils/i18n"
 
 export default class extends Controller {
   static targets = ['translationPopup', 'translationText', 'saveButton', 'saveIcon', 'saveText'];
-  static values = { savedIds: Array };
+  static values = { savedIds: Array, savedTokenClasses: String, savedIdsUrl: String };
 
   initialize() {
     this.currentTokenId = null;
+    this.savedIdsReady = Promise.resolve();
+  }
+
+  connect() {
+    if (!this.savedIdsUrlValue) return;
+
+    this.savedIdsReady = this._refreshSavedIds();
+  }
+
+  async _refreshSavedIds() {
+    try {
+      const response = await fetch(this.savedIdsUrlValue, {
+        headers: { 'Accept': 'application/json' },
+        cache: 'no-store'
+      });
+      if (!response.ok) throw new Error(`Saved vocabulary request failed: ${response.status}`);
+
+      const data = await response.json();
+      this.savedIdsValue = data.token_ids;
+      this._updateSaveButton();
+    } catch (err) {
+      console.warn('Failed to refresh saved vocabulary:', err);
+    }
+  }
+
+  savedIdsValueChanged() {
+    if (!this.hasSavedTokenClassesValue) return;
+
+    const savedClasses = this.savedTokenClassesValue.split(' ');
+    this.element.querySelectorAll('[data-token-id]').forEach((token) => {
+      const tokenId = parseInt(token.dataset.tokenId);
+      savedClasses.forEach((className) => {
+        token.classList.toggle(className, this._isSaved(tokenId));
+      });
+    });
+  }
+
+  _isSaved(tokenId) {
+    return this.savedIdsValue.includes(tokenId);
   }
 
   hidePopup() {
@@ -63,7 +102,7 @@ export default class extends Controller {
   _updateSaveButton() {
     if (!this.hasSaveButtonTarget) return;
 
-    const isSaved = this.currentTokenId && this.savedIdsValue.includes(this.currentTokenId);
+    const isSaved = this.currentTokenId && this._isSaved(this.currentTokenId);
     if (isSaved) {
       this.saveIconTarget.textContent = '✓';
       this.saveTextTarget.textContent = t("popover_translation.saved");
@@ -84,7 +123,8 @@ export default class extends Controller {
     ev.stopPropagation();
     if (!this.currentTokenId) return;
 
-    const isSaved = this.savedIdsValue.includes(this.currentTokenId);
+    await this.savedIdsReady;
+    const isSaved = this._isSaved(this.currentTokenId);
 
     try {
       if (isSaved) {

@@ -47,9 +47,7 @@ class LessonsController < ApplicationController
 
     # Allow the browser to cache the activity frame so JS can prefetch the next
     # activity (see activity_navigation_controller.js) for an instant "Next" tap.
-    # Scoped to Turbo-Frame requests only: full-page loads stay uncached, and the
-    # frame body is a pure function of (lesson, activity order) with no per-user
-    # state, so a 10-minute private cache can't serve anything stale.
+    # Scoped to Turbo-Frame requests only: full-page loads stay uncached.
     if request.headers["Turbo-Frame"].present?
       response.headers["Cache-Control"] = "private, max-age=600"
       response.headers["Vary"] = [ response.headers["Vary"], "Turbo-Frame" ].compact.join(", ")

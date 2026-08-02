@@ -95,6 +95,49 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
       actions = phrases_container.first["data-action"]
       assert_includes actions, "click->watch-video-activity#handleTranslationClick"
       assert_includes actions, "click@document->watch-video-activity#resumeAfterTranslation"
+      assert_equal "underline decoration-emerald-500 decoration-[2.5px] underline-offset-4",
+                   phrases_container.first["data-popover-translation-saved-token-classes-value"]
+    end
+  end
+
+  test "native watch video renders saved vocabulary state" do
+    @user.update!(ios_lang: "en")
+    phrase = create_translated_phrase!(
+      medium: @medium,
+      l1: languages(:english),
+      l2: languages(:english),
+      text_l1: "Saved word",
+      text_l2: "Saved word",
+      timestamp: "00:01.00"
+    )
+    token = create_translated_token!(
+      phrase:,
+      translation: "Saved",
+      language: languages(:english),
+      l1_start_index: 0,
+      l1_end_index: 0
+    )
+    @user.phrase_token_users.create!(phrase_token: token, language: languages(:english))
+    activity = Activities::WatchVideoActivity.create!(
+      lesson: @lesson,
+      order: 2,
+      user: @user
+    )
+    activity.phrases << phrase
+
+    get course_lesson_url(@course, @lesson, a: activity.order, lang: "en"),
+        headers: { "User-Agent" => "LangletsNative", "Turbo-Frame" => "activity" }
+
+    assert_response :success
+    assert_includes response.headers["Cache-Control"], "max-age=600"
+    assert_select "#phrases-container[data-controller='popover-translation']" do |container|
+      assert_includes JSON.parse(container.first["data-popover-translation-saved-ids-value"]), token.id
+      assert_equal token_translation_users_path,
+                   container.first["data-popover-translation-saved-ids-url-value"]
+      assert_equal "underline decoration-emerald-500 decoration-[2.5px] underline-offset-4",
+                   container.first["data-popover-translation-saved-token-classes-value"]
+      assert_select "[data-token-id='#{token.id}']"
+      assert_select "[data-popover-translation-target='saveButton']"
     end
   end
 

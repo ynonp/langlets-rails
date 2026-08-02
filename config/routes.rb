@@ -158,7 +158,7 @@ Rails.application.routes.draw do
   post "/sync_local_xp", to: "progress#sync_local_xp"
   post "/log", to: "progress#log"
 
-  resources :token_translation_users, only: [ :create, :destroy ]
+  resources :token_translation_users, only: [ :index, :create, :destroy ]
 
   # Persist the user's light/dark theme choice.
   patch "preferences/theme", to: "preferences#update", as: :theme_preference

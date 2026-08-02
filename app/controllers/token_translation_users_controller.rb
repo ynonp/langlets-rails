@@ -1,6 +1,11 @@
 class TokenTranslationUsersController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    response.headers["Cache-Control"] = "private, no-store"
+    render json: { token_ids: current_user.saved_phrase_tokens.pluck(:id) }
+  end
+
   def create
     token_translation_id = params[:token_translation_id].to_i
     record = current_user.phrase_token_users.find_or_initialize_by(phrase_token_id: token_translation_id)
