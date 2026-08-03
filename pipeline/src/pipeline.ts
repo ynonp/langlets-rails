@@ -1,7 +1,7 @@
 // The workflow. Replaces CreateSongProgress#create_data's sequential run with
 // a fan-out after the transcription steps:
 //
-//   extract_lyrics                          (Supadata native; Gemini fallback for YouTube)
+//   extract_lyrics                          (Supadata + ElevenLabs -> Sol reconciliation)
 //        │
 //   force_alignment                         (ElevenLabs: word timings)
 //        │
@@ -91,8 +91,8 @@ export async function runPipeline(
   console.log(`Pipeline start with payload: ${JSON.stringify(payload)}`);
   const failed: Record<string, string> = {};
 
-  // Prefer existing provider captions. YouTube videos without usable native
-  // captions fall back to Gemini. ElevenLabs then aligns the resulting text.
+  // Collect both STT candidates. A single success is usable directly; two are
+  // reconciled by Sol; only a YouTube double failure falls back to Gemini.
   if (!store.extractLyricsDone()) {
     try {
       await extractLyrics(ctx);

@@ -1,10 +1,11 @@
 // Model wiring. This list is the wiring below, not the Ruby concerns'
 // MODEL_PARAMS it started as — the lesson steps have since moved to Google:
-//   extract_lyrics          Supadata native captions, then Gemini 2.5 Flash for YouTube
+//   extract_lyrics          Supadata + ElevenLabs, reconciled by GPT-5.6 Sol
+//   extract fallback        Gemini 2.5 Flash when both STTs fail on YouTube
 //   force_alignment fallback Gemini 2.5 Flash (line timestamps)
 //   add_lessons             gemini-3.5-flash-lite     (Google Generative AI)
 //   rate_lessons            gemini-3.5-flash-lite     (Google Generative AI)
-//   add_token_translations  deepseek-v4-pro:cloud     (Ollama cloud)
+//   add_token_translations  gemini-2.5-flash          (Google Generative AI)
 //   translate               deepseek-v4-pro:cloud     (Ollama cloud)
 //
 // Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through
@@ -12,6 +13,7 @@
 // which is what lets tests swap in MockLanguageModelV2.
 
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
+import { createOpenAI } from "@ai-sdk/openai";
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import type { LanguageModel } from "ai";
 import { llmLoggingEnabled, withLlmLogging } from "./llmLogging.ts";
@@ -19,6 +21,7 @@ import { llmLoggingEnabled, withLlmLogging } from "./llmLogging.ts";
 export interface ModelRegistry {
   detectLanguage: LanguageModel;
   extractLyrics: LanguageModel;
+  reconcileTranscripts: LanguageModel;
   forceAlignmentFallback: LanguageModel;
   addLessons: LanguageModel;
   rateLessons: LanguageModel;
@@ -33,11 +36,13 @@ export interface ModelEnv {
   GOOGLE_GENERATIVE_AI_API_KEY?: string;
   OLLAMA_API_KEY?: string;
   OLLAMA_BASE_URL?: string;
+  OPENAI_API_KEY?: string;
   PIPELINE_LOG_LLM?: string;
 }
 
 export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistry {
   const google = createGoogleGenerativeAI({ apiKey: env.GOOGLE_GENERATIVE_AI_API_KEY });
+  const openai = createOpenAI({ apiKey: env.OPENAI_API_KEY });
   const ollama = createOpenAICompatible({
     name: "ollama",
     baseURL: env.OLLAMA_BASE_URL ?? "https://ollama.com/v1",
@@ -54,6 +59,7 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     extractLyrics: llmLoggingEnabled(env)
       ? withLlmLogging(google("gemini-2.5-flash"), "extract_lyrics", { logPrompt: true })
       : google("gemini-2.5-flash"),
+    reconcileTranscripts: log(openai("gpt-5.6-sol"), "reconcile_transcripts"),
     forceAlignmentFallback: llmLoggingEnabled(env)
       ? withLlmLogging(google("gemini-2.5-flash"), "force_alignment_fallback", {
         logPrompt: true,
@@ -64,16 +70,12 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     // No translateOverrides today. Hebrew used to override to nemotron-3-super,
     // which could not translate "four score and seven" (four runs, four wrong
     // numbers). deepseek-v4-pro handles Hebrew, matches qwen3.5:397b on Spanish,
-    // and is ~10x faster, so one model now covers every target language. The
-    // mechanism stays for the next language that needs its own.
+    // and is ~10x faster, so one sentence-translation model covers every target
+    // language. The mechanism stays for the next language that needs its own.
     translate: log(ollama("deepseek-v4-pro:cloud"), "translate"),
-    // Not flash-lite. On a long chunk of a language it reads poorly it stops
-    // translating and echoes the source word back with a plausible part of
-    // speech — output that passes every structural check the parser makes and
-    // ships an Arabic course whose "English" words are the Arabic ones. The
-    // echo guard in addTokenTranslations catches it now; this is what stops it
-    // happening. Same model as translate, whose sentence output was fine on
-    // the same clips this failed on.
-    tokenTranslations: log(ollama("deepseek-v4-pro:cloud"), "add_token_translations"),
+    // Full Flash rather than flash-lite: the smaller model has echoed source
+    // words on long, difficult-language chunks. Gemini requests can run in
+    // parallel, so the four-worker pool in addTokenTranslations is effective.
+    tokenTranslations: log(google("gemini-2.5-flash"), "add_token_translations"),
   };
 }

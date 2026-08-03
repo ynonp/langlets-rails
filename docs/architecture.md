@@ -538,9 +538,10 @@ YouTube detection is a dedicated Gemini 2.5 Flash video request constrained to
 the database language ISO codes. TikTok detection downloads verified audio
 with yt-dlp and sends it to ElevenLabs Scribe without a language hint; Scribe's
 returned ISO-639 code selects the language. Its transcript and timed words seed
-the progress blob, so the regular TikTok extraction/alignment stages resume
-without a second transcription. Three-letter Scribe codes and regional seeded
-codes (notably `ar-JO`) are normalized to their base ISO language.
+`data["stt_candidates"]["elevenlabs"]`, so extraction reuses that paid result
+while still requesting the independent Supadata native candidate. Three-letter
+Scribe codes and regional seeded codes (notably `ar-JO`) are normalized to
+their base ISO language.
 
 After detection the import pipeline is split. `CreateSongProgress` is unique on
 `(youtubeurl, clip_language)` when `clip_language IS NOT NULL`; NULL provisional
@@ -677,54 +678,28 @@ words — by different routes, and converge in `phrasesFromAlignedWords`
 (`pipeline/src/alignedWords.ts`). Nothing downstream of `force_alignment` knows
 TikTok exists.
 
-**TikTok** is transcribed by ElevenLabs Scribe (`scribe_v2`), which takes the
-post URL as `source_url` and returns the transcript *and* per-word timestamps in
-one call. Consequences worth knowing:
+Every fresh extraction attempts two independent STT sources concurrently for both providers:
 
-- **No forced alignment.** The words arrive already timed, so nothing downstream
-  has to align them.
-- **Normally no `yt-dlp` either** — but see "When Scribe cannot fetch the post"
-  below, which is the one case where the TikTok path downloads audio.
-- **No Supadata and no Gemini fallback.** Apart from the audio-upload retry
-  below, a failed Scribe call fails `extract_lyrics` where it stands.
-- `extract_lyrics` stashes the timed words under `data["stt_words"]` and
-  `force_alignment` builds the provisional phrase from them. Two steps rather
-  than one so a run that dies in between resumes without paying for
-  transcription twice.
-- Scribe returns `spacing` and `audio_event` entries (`[cantando]`,
-  `[Applause]`) alongside words. Both are dropped, and the transcript is rebuilt
-  from the surviving words rather than taken from the response's `text` — square
-  brackets are reserved by the app's token markup, and more importantly
-  `add_lessons` partitions the transcript by word count against those very
-  words, so the two must describe the same thing.
+- Supadata receives the original video URL with `mode=native`, `text=false`, and the preferred
+  source-language code. The call has no application-level retry and supports both immediate and
+  asynchronous job responses.
+- The pipeline downloads verified audio with `yt-dlp` and uploads it to ElevenLabs Scribe
+  (`scribe_v2`), which returns text plus per-word timestamps. Scribe `spacing` and `audio_event`
+  entries are dropped and its text is rebuilt from the surviving speech words.
 
-#### When Scribe cannot fetch the post
+Each successful raw result is immediately checkpointed under
+`data["stt_candidates"]`, keyed by provider. This makes an interrupted run resume only the missing
+provider instead of repaying both. When both candidates exist, GPT-5.6 Sol reconciles the complete
+texts with structured output, reasoning effort `none`, and temperature 0. Neither source is treated
+as authoritative: the prompt asks Sol to preserve speech while resolving disagreement through
+context, grammar, and proper names. The reconciled transcript is aligned in the normal timing stage.
+When exactly one candidate succeeds, Sol is skipped. An ElevenLabs-only transcript reuses Scribe's
+timed words; a Supadata-only transcript proceeds through forced alignment. If Sol itself fails, the
+valid ElevenLabs transcript and timings are used rather than failing the import.
 
-TikTok sometimes blocks ElevenLabs' server-side fetch, and Scribe answers **400**
-(`ElevenLabs speech-to-text failed (400)`). That is a rejected request, not a
-flaky one: retrying the same `source_url` gets the same 400. So `extract_lyrics`
-stops the retry schedule immediately (`RetryOptions.isFatal`), downloads the
-audio with `yt-dlp`, and re-submits it as the multipart `file` field of the same
-Scribe endpoint. The result is identical in shape — transcript plus timed words —
-so the rest of the TikTok route is untouched. The temp file is deleted either
-way.
-
-Only a 400 triggers this. A 429 or a 5xx keeps being retried as before, because
-uploading audio would not help. `SpeechToTextRequestError` carries the HTTP
-status precisely so the two cases can be told apart without matching on message
-text.
-
-This is why the TikTok path now *can* depend on `yt-dlp` and on
-`YTDLP_NETWORK_NAMESPACE`, where before it never did.
-
-**YouTube** keeps its existing route, unchanged:
-
-The pipeline first asks Supadata for existing provider captions with `mode=native`; this is a single
-request with no application-level retry, and supports both immediate and asynchronous job responses.
-When native captions are unavailable for a YouTube URL, `extract_lyrics` falls back to Gemini 2.5
-Flash using the video URL and the lyric-specific transcription prompt. Non-YouTube providers do not
-yet have a generated-transcript fallback. Supadata chunks are normalized into provisional text,
-while Gemini supplies the fallback transcript. Both sources pass through the shared transcript
+If both STT candidates fail, provider behavior diverges at the final fallback only. YouTube invokes
+the existing Gemini 2.5 Flash video transcription prompt. TikTok has no third route and fails
+`extract_lyrics`. Both sources and the Gemini fallback pass through the shared transcript
 cleanup before lines are saved: bracketed and parenthetical annotations such as `[Music]`,
 `[Applause]`, and `(footsteps)` are removed, as are the `♪` symbols YouTube wraps sung caption lines
 in — left in, those are whitespace tokens like any other and become
@@ -733,8 +708,8 @@ in — left in, those are whitespace tokens like any other and become
 Supadata's `lang` parameter is a **preference, not a filter**: for a video with no caption track in
 the requested language it answers with whichever track exists. So the returned `lang` is compared
 against the requested code (on the primary subtag, so `en` and `en-US` agree) and a mismatch is
-treated as a native-caption failure, falling through to Gemini — which reads the audio itself and is
-told the clip language. Accepting the wrong track is not a visible failure: it builds a course whose
+treated as a failed Supadata candidate. ElevenLabs remains usable; Gemini is reached only if that
+candidate also fails on YouTube. Accepting the wrong track is not a visible failure: it builds a course whose
 lyrics are a *translation* of the song, and the damage only surfaces two steps later at
 `force_alignment`, as foreign text over the real audio. The requested code comes from
 `LANGUAGE_TO_ISO` in `extractLyrics.ts`, keyed on the clip language's English name; a
@@ -746,8 +721,8 @@ supported clip language: a language missing from it sends no `lang` at all, leav
 track to Supadata, which the step logs rather than passing off as verified. See
 [Adding a New Language](guides/adding-a-new-language.md).
 
-The pipeline downloads the
-YouTube audio and sends the resulting text to ElevenLabs forced alignment, which normally supplies
+For reconciled and Supadata-only transcripts, the pipeline downloads the
+video audio and sends the resulting text to ElevenLabs forced alignment, which normally supplies
 the word-level timestamps used to materialize `phrases`. If any part of that path fails—including
 `yt-dlp`, the ElevenLabs API, or validation of its response—the pipeline sends the video URL and the
 whitespace-tokenized transcript **words** to Gemini 2.5 Flash using structured output, and Gemini
@@ -834,11 +809,13 @@ the same timestamped `data["lessons"]` and version-2 `data["translations"][iso][
 consumed by course building. Token translation starts as soon as semantic phrases exist, without
 waiting for lesson rating or sentence translation. The
 token step deduplicates exact repeated phrases across the full clip before packing requests into
-100-input-line chunks (one line per learner token). Complete semantic phrases are never split, so a
+200-input-line chunks (one line per learner token). Complete semantic phrases are never split, so a
 single phrase longer than the cap occupies its own oversized chunk. One translated representative
 is fanned out to every occurrence; on resume, a
 completed occurrence is reused for its still-missing duplicates without an LLM call. Deduplication
 uses the complete ordered word text, preserving separate translations when context differs. The
+chunks run through a four-worker pool against Gemini 2.5 Flash, so independent requests overlap;
+sentence translation remains on DeepSeek through Ollama. The
 token prompt retains the established contextual, natural-translation policy and target-language
 examples. One narrow guard says to translate only the marked token and not meaning contributed by
 adjacent words. A broader standalone-gloss/bound-morpheme policy was tested and rejected because it
@@ -886,9 +863,10 @@ defaulting to `http://localhost:3000`; the callback must point at a tunnel
 `PIPELINE_HMAC_SECRET` remains secret configuration. Model-provider keys now
 live only on the pipeline host; Rails no longer needs them at all.
 
-Supadata receives the video URL directly when fetching native captions; Gemini receives the YouTube
-URL directly only when that native request fails. Forced alignment still requires the audio bytes,
-so the pipeline downloads them with `yt-dlp`. Every invocation enables
+Supadata receives the video URL directly while the ElevenLabs candidate requires audio bytes, so
+the pipeline downloads them with `yt-dlp` during extraction. Reconciled and Supadata-only
+transcripts require another audio download for forced alignment; ElevenLabs-only transcripts reuse
+Scribe timings. Gemini receives a YouTube URL only when both STT paths fail. Every download enables
 `--remote-components ejs:github`, allowing yt-dlp to fetch its external JavaScript challenge solver
 when the installed distribution does not bundle it. The host therefore needs outbound access to
 GitHub as well as a supported JavaScript runtime; the pipeline's Deno runtime satisfies the latter.

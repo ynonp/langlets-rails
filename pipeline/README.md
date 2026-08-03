@@ -11,11 +11,11 @@ mutation is streamed back to a callback URL the trigger request provides.
 Semantic segmentation is the final required transcription stage; downstream work fans out after it:
 
 ```
-extract_lyrics                              (YouTube: Supadata native captions, Gemini fallback)
-                                            (TikTok:  ElevenLabs Scribe — text + word timings)
+extract_lyrics                              (Supadata native + downloaded-audio ElevenLabs)
+                                            (Sol reconciliation; YouTube Gemini fallback)
      │
-force_alignment                             (YouTube: ElevenLabs alignment, Gemini line fallback)
-                                            (TikTok:  reuses the Scribe timings, no audio download)
+force_alignment                             (ElevenLabs alignment, Gemini timestamp fallback)
+                                            (reuses timings for ElevenLabs-only transcripts)
      │
 add_lessons                                 (semantic lines + lesson hierarchy)
      │
@@ -30,42 +30,36 @@ materialize translations                    (join with semantic phrases)
 finalize_translation                        (payload metadata + lessons snapshot)
 ```
 
-**TikTok takes a different route through both steps.** ElevenLabs Scribe (`scribe_v2`) accepts the
-post URL as `source_url` and returns the transcript *and* per-word timestamps in one call, so there
-is nothing for Supadata or Gemini to do and nothing left to align: normally the TikTok path never
-downloads audio and never invokes `yt-dlp`. The exception is a **400** from Scribe, which means
-TikTok blocked its fetch of the post — retrying the same URL cannot fix that, so `extract_lyrics`
-downloads the audio and re-submits it as the `file` field of the same endpoint. Any other Scribe
-failure fails `extract_lyrics` where it stands. The timed words are stashed under `data.stt_words` so
-a run that dies between
-`extract_lyrics` and `force_alignment` resumes without paying for transcription twice. Scribe's
-`spacing` and `audio_event` entries (`[cantando]`, `[Applause]`) are dropped, and the transcript is
-rebuilt from the surviving words rather than taken from the response's `text`, because `add_lessons`
-partitions it by word count against those very words.
+`extract_lyrics` runs two independent paths concurrently for both providers: Supadata with
+`mode=native`, and a verified `yt-dlp` audio download uploaded to ElevenLabs Scribe (`scribe_v2`).
+Each success is checkpointed under `data.stt_candidates`, so interrupted runs do not repay a
+provider that already finished. When both succeed, GPT-5.6 Sol reconciles their complete texts at
+temperature 0. When only one succeeds it is used directly and Sol is skipped. If both fail, YouTube
+uses the existing Gemini 2.5 Flash video transcription fallback; TikTok fails because no third
+transcription route exists. A Sol failure falls back to the valid ElevenLabs result.
 
-For YouTube, Supadata is requested once with `mode=native` and `text=false`. If native captions are
-unavailable — or come back in a language other than the requested one, which Supadata does freely
-because `lang` is a preference rather than a filter — Gemini 2.5 Flash transcribes the video using
-the lyric-specific prompt. Other providers
-currently stop at the native-caption failure. Supadata and Gemini transcripts share one cleanup
-that removes provider cue boundaries, `[Music]`- and `(footsteps)`-style annotations, and the `♪`
-symbols wrapping sung caption lines. ElevenLabs
-normally maps one continuous transcript to a flat timed word stream. ElevenLabs' tokenization is
-reconciled back onto the transcript's own whitespace tokens — those, not the provider's, are what
-`add_lessons` indexes and `add_token_translations` turns into clickable words — so only the timings
-come from ElevenLabs. If audio download, ElevenLabs,
-or reconciliation fails, Gemini 2.5 Flash receives the video plus the original transcript words and
-returns every word in order with optional structured start/end timestamps. The first and last word
-of every source line require timestamps so phrase timing survives; untimed middle words remain untimed. The
-pipeline preserves the original text and keeps every word token for downstream translation.
+Scribe's `spacing` and `audio_event` entries (`[cantando]`, `[Applause]`) are dropped, and its text
+is rebuilt from surviving timed words. An ElevenLabs-only result can therefore reuse those timings
+in `force_alignment`. Reconciled and Supadata-only text is aligned against the audio by the existing
+ElevenLabs forced-alignment stage. Supadata's `lang` remains a preference rather than a filter, so a
+returned language mismatch makes that candidate fail without affecting ElevenLabs. All transcript
+sources share cleanup that removes `[Music]`-, `(footsteps)`-, and `♪` annotations. ElevenLabs'
+tokenization is reconciled back onto the transcript's own whitespace tokens — those, not the
+provider's, are what `add_lessons` indexes and `add_token_translations` turns into clickable words —
+so only the timings come from ElevenLabs. If audio download, ElevenLabs, or reconciliation fails,
+Gemini 2.5 Flash receives the video plus the original transcript words and returns every word in
+order with optional structured start/end timestamps. The first and last word of every source line
+require timestamps so phrase timing survives; untimed middle words remain untimed. The pipeline
+preserves the original text and keeps every word token for downstream translation.
 
 Lesson generation receives the continuous aligned transcript and returns lesson titles and semantic
 line breaks. The pipeline uses the returned word counts only as boundaries, derives internal word
 ranges, and reconstructs exact text and phrase timestamps from aligned words or Gemini-timestamped
-source-line bounds. This makes each line a semantic comprehension/translation unit without allowing the
-model to modify the transcript. It atomically persists `lyric_lines`, `phrases`, `lesson_outline`,
-and timestamped `lessons`. The prompt uses a ten-line, two-lesson worked example in the clip
-language for the seven configured languages, falling back to English for unknown languages.
+source-line bounds. This makes each line a semantic comprehension/translation unit without allowing
+the model to modify the transcript. It atomically persists `lyric_lines`, `phrases`,
+`lesson_outline`, and timestamped `lessons`. The prompt uses a ten-line, two-lesson worked example
+in the clip language for the seven configured languages, falling back to English for unknown
+languages.
 
 Sentence translation follows the same pattern: it reads `lyric_lines` and persists
 `translation_lines.<iso>`, then copies those lines into the stable
@@ -102,12 +96,13 @@ one branch failing never discards another branch's completed — and already per
 
 ### Providers and models
 
-| Step                                                | Model                                           | Provider                                     |
-| --------------------------------------------------- | ----------------------------------------------- | -------------------------------------------- |
-| extract_lyrics                                      | Native captions / LLM fallback / speech-to-text | Supadata (`mode=native`) / Gemini 2.5 Flash / ElevenLabs Scribe (TikTok) |
-| force_alignment                                     | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash (skipped for TikTok) |
-| add_lessons / rate_lessons                          | `gemini-3.5-flash-lite`                         | Google Generative AI                         |
-| translate / add_token_translations                  | `deepseek-v4-pro:cloud`                         | Ollama cloud via `@ai-sdk/openai-compatible` |
+| Step                       | Model                                           | Provider                                               |
+| -------------------------- | ----------------------------------------------- | ------------------------------------------------------ |
+| extract_lyrics             | Dual STT + reconciliation / YouTube fallback    | Supadata + ElevenLabs + GPT-5.6 Sol / Gemini 2.5 Flash |
+| force_alignment            | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash                          |
+| add_lessons / rate_lessons | `gemini-3.5-flash-lite`                         | Google Generative AI                                   |
+| translate                  | `deepseek-v4-pro:cloud`                         | Ollama cloud via `@ai-sdk/openai-compatible`           |
+| add_token_translations     | `gemini-2.5-flash`                              | Google Generative AI, four concurrent 200-line chunks  |
 
 `add_token_translations` is deliberately not on flash-lite: on a long chunk of a language it reads
 poorly it echoes each source word back with a plausible part of speech instead of translating it,
@@ -209,7 +204,7 @@ summary }` where `failed` maps branch → error message.
 
 ```sh
 # HTTP server (what Deno Deploy runs)
-PIPELINE_HMAC_SECRET=... SUPADATA_KEY=... ELEVEN_LABS_KEY=... GOOGLE_GENERATIVE_AI_API_KEY=... OLLAMA_API_KEY=... \
+PIPELINE_HMAC_SECRET=... SUPADATA_KEY=... ELEVEN_LABS_KEY=... OPENAI_API_KEY=... GOOGLE_GENERATIVE_AI_API_KEY=... OLLAMA_API_KEY=... \
   deno task serve
 
 # CLI: same pipeline, callback URL as an argument
@@ -225,7 +220,7 @@ deno task check
 the translation language in English only, so pass `--iso` (and optionally `--lang-id`) when
 targeting a language the export's data doesn't already contain.
 
-Env vars: `PIPELINE_HMAC_SECRET` (required), `SUPADATA_KEY`, `ELEVEN_LABS_KEY`,
+Env vars: `PIPELINE_HMAC_SECRET` (required), `SUPADATA_KEY`, `ELEVEN_LABS_KEY`, `OPENAI_API_KEY`,
 `GOOGLE_GENERATIVE_AI_API_KEY`, `OLLAMA_API_KEY`, `OLLAMA_BASE_URL` (defaults to
 `https://ollama.com/v1`). For local runs copy `.env.example` to `.env` (gitignored) — the `serve`
 and `cli` tasks load it via `--env-file`; real environment variables win over the file. On Deno
@@ -233,8 +228,8 @@ Deploy set them in the dashboard instead.
 
 Set `YTDLP_NETWORK_NAMESPACE=vpn` on Linux to route only the `yt-dlp` audio download through that
 network namespace. Leave it unset for direct execution. The command enables
-`--remote-components ejs:github`, so the host (or configured namespace) must be able to reach GitHub;
-yt-dlp uses the pipeline's Deno runtime to execute the downloaded YouTube challenge solver.
+`--remote-components ejs:github`, so the host (or configured namespace) must be able to reach
+GitHub; yt-dlp uses the pipeline's Deno runtime to execute the downloaded YouTube challenge solver.
 
 `ffprobe` and `ffmpeg` must be on `PATH`. Audio downloads are verified with them, because TikTok
 serves silent HEVC renditions that yt-dlp reports as a successful download
@@ -283,16 +278,15 @@ The receiving side is implemented in the Rails app:
 
 This is the only implementation — the Ruby steps it was extracted from (`create_data`,
 `add_translation` and the `CreateSong::*` concerns) were deleted once the pipeline took over, so
-`CreateCourseJob` and `AddCourseTranslationJob` both trigger a run and there is no fallback.
-Rails configures its endpoints with:
+`CreateCourseJob` and `AddCourseTranslationJob` both trigger a run and there is no fallback. Rails
+configures its endpoints with:
 
 ```ruby
 config.x.pipeline.url = "https://pipeline.langlets.app"
 config.x.pipeline.callback_base_url = "https://langlets.app"
 ```
 
-`PIPELINE_HMAC_SECRET` remains secret configuration and must match the pipeline
-host's value. Development maps the endpoints from `PIPELINE_URL` and
-`PIPELINE_CALLBACK_BASE_URL`; the latter is the one that bites locally because
-the pipeline runs on another host, where `localhost:3000` is itself. Point it
-at an ngrok tunnel to the local Rails.
+`PIPELINE_HMAC_SECRET` remains secret configuration and must match the pipeline host's value.
+Development maps the endpoints from `PIPELINE_URL` and `PIPELINE_CALLBACK_BASE_URL`; the latter is
+the one that bites locally because the pipeline runs on another host, where `localhost:3000` is
+itself. Point it at an ngrok tunnel to the local Rails.

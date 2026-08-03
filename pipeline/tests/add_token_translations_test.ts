@@ -56,10 +56,10 @@ Deno.test("buildChunks packs whole phrases up to the word cap", () => {
       line: "x |",
     }));
 
-  const chunks = buildChunks([group(80, 0), group(30, 1), group(20, 2), group(125, 3)]);
+  const chunks = buildChunks([group(150, 0), group(60, 1), group(40, 2), group(225, 3)]);
 
-  // 80 + 30 > 100 → new chunk; 30 + 20 ≤ 100 → together; 125 alone (over cap).
-  assertEquals(chunks.map((c) => c.length), [80, 50, 125]);
+  // 150 + 60 > 200 → new chunk; 60 + 40 ≤ 200 → together; 225 alone (over cap).
+  assertEquals(chunks.map((c) => c.length), [150, 100, 225]);
   assert(chunks[2].length > LINES_PER_CHUNK);
 });
 

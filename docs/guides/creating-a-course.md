@@ -160,14 +160,14 @@ Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rai
 
 | Step | Model | Provider |
 |---|---|---|
-| `extract_lyrics` (transcript text) | Native captions; YouTube AI fallback | Supadata; Gemini 2.5 Flash |
+| `extract_lyrics` (transcript text) | Native captions + Scribe, reconciled by `gpt-5.6-sol`; YouTube double-failure fallback | Supadata + ElevenLabs + OpenAI; Gemini 2.5 Flash fallback |
 | `force_alignment` (word timings) | Forced Alignment API | ElevenLabs |
 | `add_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `rate_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
-| `add_token_translations` | `deepseek-v4-pro:cloud` | Ollama cloud |
+| `add_token_translations` | `gemini-2.5-flash` (four concurrent chunks, up to 200 token lines each) | Google Generative AI |
 | `translate` (all target languages) | `deepseek-v4-pro:cloud` | Ollama cloud |
 
-`extract_lyrics` makes one `mode=native` Supadata request. When that fails for a YouTube URL, it asks Gemini 2.5 Flash to transcribe the video with the lyric-specific prompt; other providers currently fail instead of using generated transcription. TikTok skips Supadata entirely for ElevenLabs Scribe — and when Scribe answers 400 because TikTok blocked its fetch of the post, the pipeline downloads the audio and sends Scribe the bytes instead. A `(400)` in `data.errors` for `extract_lyrics` therefore means both attempts failed; check `yt-dlp` and `ffmpeg` on the pipeline host, since silent-audio downloads are rejected on purpose. `force_alignment` downloads the audio and asks ElevenLabs to locate the continuous transcript. The lesson model then partitions those exact timed words into a `lessons -> lines` hierarchy, choosing complete comprehension and translation units rather than trusting provider cue boundaries or performance pauses.
+`extract_lyrics` starts Supadata in `mode=native` and the verified audio-download + ElevenLabs Scribe path concurrently. Each successful raw result is checkpointed under `data.stt_candidates`. Two results are reconciled into one transcript by GPT-5.6 Sol at temperature 0; one result is used directly without an LLM call. If both fail, YouTube uses the existing Gemini 2.5 Flash video fallback and TikTok fails because it has no remaining transcription route. A Sol failure degrades to the valid ElevenLabs result. `force_alignment` aligns reconciled or Supadata-only text; an ElevenLabs-only result reuses Scribe's timings. The lesson model then partitions those exact timed words into a `lessons -> lines` hierarchy, choosing complete comprehension and translation units rather than trusting provider cue boundaries or performance pauses.
 
 Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through `@ai-sdk/openai-compatible`. To change a model, edit `defaultModels()` and restart the service on the pipeline host:
 
@@ -175,7 +175,7 @@ Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through `@ai
 sudo systemctl restart langlets-pipeline
 ```
 
-Keys are set in `pipeline/.env` on that host: `SUPADATA_KEY`, `ELEVEN_LABS_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`, `OLLAMA_API_KEY`, plus the shared `PIPELINE_HMAC_SECRET`. Full LLM outputs are logged by default; set `PIPELINE_LOG_LLM=0` to silence them.
+Keys are set in `pipeline/.env` on that host: `SUPADATA_KEY`, `ELEVEN_LABS_KEY`, `OPENAI_API_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`, `OLLAMA_API_KEY`, plus the shared `PIPELINE_HMAC_SECRET`. Full LLM outputs are logged by default; set `PIPELINE_LOG_LLM=0` to silence them.
 
 ---
 

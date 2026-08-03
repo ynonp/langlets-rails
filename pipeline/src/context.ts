@@ -27,7 +27,7 @@ export interface PipelineContext {
   random?: () => number;
   // Injection point for Supadata native captions (tests avoid network calls).
   transcribeVideo?: (videoUrl: string, languageCode: string | null) => Promise<TranscriptResult>;
-  // Injection point for ElevenLabs speech-to-text, the TikTok transcription path.
+  // Legacy source-URL injection point retained for compatibility.
   transcribeSpeech?: (
     sourceUrl: string,
     languageCode: string | null,

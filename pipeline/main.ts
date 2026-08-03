@@ -1,7 +1,9 @@
 // Deno Deploy / local server entrypoint.
 //
 //   PIPELINE_HMAC_SECRET          shared secret for trigger + callback signing
-//   SUPADATA_KEY                  Supadata (transcription + timed chunks)
+//   SUPADATA_KEY                  Supadata native transcription
+//   ELEVEN_LABS_KEY               ElevenLabs transcription + word timing
+//   OPENAI_API_KEY                GPT-5.6 Sol transcript reconciliation
 //   GOOGLE_GENERATIVE_AI_API_KEY  Gemini (lesson and token work)
 //   OLLAMA_API_KEY                Ollama cloud (all other steps)
 //   OLLAMA_BASE_URL               optional, defaults to https://ollama.com/v1

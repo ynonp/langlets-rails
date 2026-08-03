@@ -66,11 +66,14 @@ export interface ProgressData {
   lyric_lines?: string[];
   extract_lyrics_in_progress?: boolean;
   force_alignment_in_progress?: boolean;
-  // TikTok only. ElevenLabs Scribe returns transcript and word timings in one
-  // call, so extract_lyrics stashes the timed words here and force_alignment
-  // builds phrases from them instead of downloading audio and aligning. Kept as
-  // its own key so a run that dies between the two steps resumes without paying
-  // for the transcription twice.
+  // Successful raw STT results are checkpointed independently. This lets a
+  // resumed dual-STT run retry only the provider that failed.
+  stt_candidates?: {
+    supadata?: { text: string };
+    elevenlabs?: { text: string; words: { text: string; start: number; end: number }[] };
+  };
+  // Set only when the final transcript is exactly ElevenLabs' result. When Sol
+  // reconciles two transcripts the corrected text must be aligned again.
   stt_words?: { text: string; start: number; end: number }[];
   video_length_seconds?: number | null;
   // Untimestamped lesson hierarchy produced from aligned word-index ranges.

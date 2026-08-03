@@ -46,8 +46,12 @@ Deno.test("TikTok downloads audio and reuses ElevenLabs detected transcript", as
 
   assertEquals(result.language, LANGUAGES[1]);
   assertEquals(result.data, {
-    lyric_lines: ["hola"],
-    stt_words: [{ text: "hola", start: 0, end: 0.5 }],
+    stt_candidates: {
+      elevenlabs: {
+        text: "hola",
+        words: [{ text: "hola", start: 0, end: 0.5 }],
+      },
+    },
   });
 });
 

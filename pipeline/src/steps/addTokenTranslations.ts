@@ -15,7 +15,7 @@ import { message, withRetries } from "../retry.ts";
 // Soft cap on input lines per LLM call. There is one line per learner token.
 // Chunks are packed by whole phrase, so a chunk may come in under this and a
 // single over-long phrase may exceed it.
-export const LINES_PER_CHUNK = 100;
+export const LINES_PER_CHUNK = 200;
 
 const MAX_CONCURRENCY = 4;
 const MAX_RETRIES = 2;
@@ -252,7 +252,7 @@ export function parseChunkTranslations(content: string, expectedCount: number): 
 // coming back unchanged is the right answer rather than a failure: punctuation
 // (rule 5 asks for it), numerals, and proper nouns. Everything else counts,
 // including cognates and loanwords — "hotel" translating to "hotel" is real,
-// but it is rare enough across a 100-line chunk that it cannot reach the bar
+// but it is rare enough across a 200-line chunk that it cannot reach the bar
 // on its own.
 const ECHO_EXEMPT_PARTS_OF_SPEECH = new Set(["punctuation", "numeral", "proper_noun"]);
 

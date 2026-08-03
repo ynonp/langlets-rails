@@ -8,8 +8,10 @@ import {
   alignment,
   HEBREW,
   queuedModel,
+  speechFixture,
   stubAlign,
   stubAudioWith,
+  stubSpeechToTextFile,
   stubTranscribe,
   transcriptFixture,
   unusedModel,
@@ -53,6 +55,7 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
     models: {
       detectLanguage: unusedModel().model,
       extractLyrics: unusedModel().model,
+      reconcileTranscripts: unusedModel().model,
       forceAlignmentFallback: unusedModel().model,
       addLessons: mocks.lessons.model,
       rateLessons: mocks.rate.model,
@@ -69,9 +72,12 @@ function timingOptions() {
   };
 }
 
-Deno.test("a fresh Supadata run walks every step and finalizes translation", async () => {
+Deno.test("a fresh dual-STT run reconciles and finalizes translation", async () => {
   const { mocks, models } = happyMocks();
   const transcriber = stubTranscribe([transcriptFixture(1, 2)]);
+  const speech = stubSpeechToTextFile([speechFixture(1, 2)]);
+  const sol = queuedModel([{ transcript: "Line 1 Line 2" }]);
+  models.reconcileTranscripts = sol.model;
   const sink = new MemorySink();
   const result = await runPipeline(payload(), {
     models,
@@ -79,6 +85,7 @@ Deno.test("a fresh Supadata run walks every step and finalizes translation", asy
     baseDelayMs: 0,
     fuzzywordFor: noDictionary,
     transcribeVideo: transcriber.transcribe,
+    transcribeSpeechFile: speech.transcribe,
     ...timingOptions(),
   });
 
@@ -92,6 +99,8 @@ Deno.test("a fresh Supadata run walks every step and finalizes translation", asy
     words: ["ת1 [noun]", "ת2 [numeral]"],
   });
   assertEquals(transcriber.calls(), 1);
+  assertEquals(speech.calls(), 1);
+  assertEquals(sol.calls(), 1);
   for (const mock of Object.values(mocks)) assertEquals(mock.calls(), 1);
   assert(sink.ops.some((op) => op.path === "phrases"));
 });

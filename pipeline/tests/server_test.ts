@@ -12,6 +12,7 @@ function models(): ModelRegistry {
   return {
     detectLanguage: unusedModel().model,
     extractLyrics: unusedModel().model,
+    reconcileTranscripts: unusedModel().model,
     forceAlignmentFallback: unusedModel().model,
     addLessons: unusedModel().model,
     rateLessons: unusedModel().model,

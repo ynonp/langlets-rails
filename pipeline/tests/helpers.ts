@@ -184,6 +184,7 @@ export function makeCtx(options: {
   const models: ModelRegistry = {
     detectLanguage: unusedModel().model,
     extractLyrics: unusedModel().model,
+    reconcileTranscripts: unusedModel().model,
     forceAlignmentFallback: unusedModel().model,
     addLessons: unusedModel().model,
     rateLessons: unusedModel().model,

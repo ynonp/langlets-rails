@@ -49,8 +49,8 @@ export async function detectLanguage(
   }
 
   if (isTiktokUrl(payload.youtubeurl)) {
-    // Detection is also TikTok's transcription step: yt-dlp supplies verified
-    // audio and ElevenLabs Scribe returns its detected language plus timed words.
+    // Keep the successful ElevenLabs result as one candidate. extract_lyrics
+    // will still obtain Supadata native captions and reconcile both when it can.
     const audio = await (options.prepareAudio ?? downloadYoutubeAudioToTemp)(payload.youtubeurl);
     let transcript: SpeechToTextResult;
     try {
@@ -61,7 +61,11 @@ export async function detectLanguage(
     if (!transcript.languageCode) throw new Error("ElevenLabs did not detect a language");
     return {
       language: resolveLanguage(transcript.languageCode, payload.supported_languages),
-      data: { lyric_lines: [transcript.text], stt_words: transcript.words },
+      data: {
+        stt_candidates: {
+          elevenlabs: { text: transcript.text, words: transcript.words },
+        },
+      },
     };
   }
 
