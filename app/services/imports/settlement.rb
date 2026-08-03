@@ -20,7 +20,21 @@ module Imports
     # it at request time; this is the residual race, and failing here is right —
     # the alternative is handing over a course nobody paid for.
     def complete!(import_request, notify: true)
-      ImportRequest.transaction do
+      # The pipeline's branches run concurrently, so two callbacks can both find
+      # this request complete and both reach here at once (see
+      # PipelineCallbacksController#finalize_later). publish! and enroll! are
+      # already safe to repeat (course-level lock, RecordNotUnique rescue), so
+      # they stay unguarded; what isn't safe to repeat is telling the user twice.
+      # The row lock serializes the racing `update!` calls, so only the one that
+      # actually flips the status notifies — the other finds it already `ready`
+      # and its own update is a no-op.
+      #
+      # Imports::Create#adopt! writes `ready` itself before calling this, so its
+      # update here is a no-op too — harmless, because it always calls with
+      # notify: false.
+      newly_settled = ImportRequest.transaction do
+        import_request.lock!
+
         # Pro imports land in the Pro library rather than the user's own default
         # Channel — see User#publishing_channel. Which one it is has to be
         # decided here, at publication, because it is a fact about this import
@@ -29,8 +43,10 @@ module Imports
         import_request.user.publishing_channel.publish!(import_request.course)
         enroll!(import_request)
         import_request.update!(status: :ready, progress_percent: 100, failure_reason: nil)
+        import_request.saved_change_to_status?
       end
 
+      return unless newly_settled
       return unless notify
 
       # One call for both channels: Notifications records it, then delivers it

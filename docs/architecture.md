@@ -1808,6 +1808,19 @@ APNs outage or a bouncing mailbox must not turn a successfully built course into
 a failed import. See *Notifications* below for how the row becomes an email
 and/or a push.
 
+`complete!` locks the `ImportRequest` row before writing `ready` to it, and
+only notifies if *that* write is the one that actually flips the status
+(`saved_change_to_status?`). This is what makes "one notification per request"
+true even though the pipeline's concurrent callbacks can enqueue more than one
+`FinalizeImportsJob` for the same completed run (see *Course-ready
+notifications* above and `PipelineCallbacksController#finalize_later`): the
+loser of the row lock finds the request already `ready` and its own write is a
+no-op, so it skips the notify step. `publish!` and `enroll!` stay unguarded
+inside the same lock — they were already safe to repeat — so `Imports::Create
+#adopt!`, which writes `ready` itself before calling `complete!`, still gets
+its publish/enroll done; it just never reaches the notify step, because it
+always calls with `notify: false`.
+
 `Imports::Settlement.fail!` is the mirror image and the single place a
 `course_failed` notification comes from, which is why every failure path — the
 finalizer, `ImportRequestTimeoutJob`, `CreateCourseJob`,

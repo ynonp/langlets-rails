@@ -33,6 +33,15 @@ class Imports::SettlementNotificationsTest < ActiveSupport::TestCase
     assert_equal 0, @user.notifications.count
   end
 
+  # The pipeline's branches can race two callbacks into completing the same
+  # request at once (see PipelineCallbacksController#finalize_later).
+  test "completing an already-ready import does not tell the user twice" do
+    Imports::Settlement.complete!(@request)
+    Imports::Settlement.complete!(@request.reload)
+
+    assert_equal 1, @user.notifications.count
+  end
+
   test "failing an import tells the user, with the reason kept for the email" do
     Imports::Settlement.fail!(@request, "Word translation count mismatch")
 
