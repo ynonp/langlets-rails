@@ -814,8 +814,9 @@ single phrase longer than the cap occupies its own oversized chunk. One translat
 is fanned out to every occurrence; on resume, a
 completed occurrence is reused for its still-missing duplicates without an LLM call. Deduplication
 uses the complete ordered word text, preserving separate translations when context differs. The
-chunks run through a four-worker pool against Gemini 2.5 Flash, so independent requests overlap;
-sentence translation remains on DeepSeek through Ollama. The
+chunks run through a four-worker pool against GPT-5.6 Terra with reasoning effort `none` and
+temperature 0, so independent requests overlap; sentence translation remains on DeepSeek through
+Ollama. The
 token prompt retains the established contextual, natural-translation policy and target-language
 examples. One narrow guard says to translate only the marked token and not meaning contributed by
 adjacent words. A broader standalone-gloss/bound-morpheme policy was tested and rejected because it

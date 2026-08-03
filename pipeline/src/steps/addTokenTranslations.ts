@@ -167,6 +167,8 @@ async function translateChunk(
           model: ctx.models.tokenTranslations,
           system: instructions,
           prompt: lines.join("\n"),
+          temperature: 0,
+          providerOptions: { openai: { reasoningEffort: "none" } },
         });
         lastResponse = text;
         const translations = parseChunkTranslations(text.trim(), chunk.length);

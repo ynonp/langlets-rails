@@ -5,7 +5,7 @@
 //   force_alignment fallback Gemini 2.5 Flash (line timestamps)
 //   add_lessons             gemini-3.5-flash-lite     (Google Generative AI)
 //   rate_lessons            gemini-3.5-flash-lite     (Google Generative AI)
-//   add_token_translations  gemini-2.5-flash          (Google Generative AI)
+//   add_token_translations  gpt-5.6-terra             (OpenAI)
 //   translate               deepseek-v4-pro:cloud     (Ollama cloud)
 //
 // Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through
@@ -73,9 +73,8 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     // and is ~10x faster, so one sentence-translation model covers every target
     // language. The mechanism stays for the next language that needs its own.
     translate: log(ollama("deepseek-v4-pro:cloud"), "translate"),
-    // Full Flash rather than flash-lite: the smaller model has echoed source
-    // words on long, difficult-language chunks. Gemini requests can run in
-    // parallel, so the four-worker pool in addTokenTranslations is effective.
-    tokenTranslations: log(google("gemini-2.5-flash"), "add_token_translations"),
+    // Terra handles the contextual token-gloss workload while allowing the
+    // four-worker pool in addTokenTranslations to overlap requests.
+    tokenTranslations: log(openai("gpt-5.6-terra"), "add_token_translations"),
   };
 }
