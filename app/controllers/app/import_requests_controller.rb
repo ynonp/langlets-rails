@@ -74,7 +74,7 @@ module App
       result = Imports::Create.call(
         user: current_user,
         url: params[:url],
-        translation_language: Current.translation_language&.english_name || params[:translation_language],
+        translation_language: default_translation_language.english_name,
         client_token: params[:client_token].presence
       )
 
