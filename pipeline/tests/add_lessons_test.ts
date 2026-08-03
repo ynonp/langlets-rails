@@ -69,6 +69,44 @@ Deno.test("addLessons creates semantic phrases and both lesson representations",
   assertEquals(model.calls(), 1);
 });
 
+Deno.test("addLessons capitalizes line starts and greedily merges dictionary tokens", async () => {
+  const model = queuedModel([{
+    lessons: [{ title: "Peace", lines: ["the United States was at peace"] }],
+  }]);
+  const rawWords = ["the", "United", "States", "was", "at", "peace"];
+  const { ctx, store } = makeCtx({
+    clipLanguage: "English",
+    data: {
+      phrases: [{
+        id: "phrase_1",
+        text_l1: rawWords.join(" "),
+        timestamp: "00:01.00",
+        timestamp_end: "00:07.00",
+        words: rawWords.map((text, index) => ({
+          text,
+          timestamp: `00:0${index + 1}.00`,
+          timestamp_end: `00:0${index + 2}.00`,
+        })),
+      }],
+    },
+    models: { addLessons: model.model },
+  });
+
+  await addLessons(ctx);
+
+  assertEquals(store.data.lyric_lines, ["The United States was at peace"]);
+  assertEquals(store.data.phrases![0].words.map((word) => word.text), [
+    "The United States",
+    "was",
+    "at",
+    "peace",
+  ]);
+  assertEquals(store.data.phrases![0].words[0].timestamp, "00:01.00");
+  assertEquals(store.data.phrases![0].words[0].timestamp_end, "00:04.00");
+  assertEquals(store.data.phrases![0].words[0].l1_start_index, 0);
+  assertEquals(store.data.phrases![0].words[0].l1_end_index, 16);
+});
+
 Deno.test("addLessons retries invalid structured output, then succeeds", async () => {
   const model = queuedModel([
     "",
@@ -138,12 +176,12 @@ Deno.test("addLessons splits long lines at periods, then commas, then the middle
 
   assertEquals(model.calls(), 1);
   assertEquals(store.data.lyric_lines, [
-    periodWords.slice(0, 8).join(" "),
-    periodWords.slice(8).join(" "),
-    commaWords.slice(0, 10).join(" "),
-    commaWords.slice(10).join(" "),
-    middleWords.slice(0, 11).join(" "),
-    middleWords.slice(11).join(" "),
+    "P" + periodWords.slice(0, 8).join(" ").slice(1),
+    "P" + periodWords.slice(8).join(" ").slice(1),
+    "C" + commaWords.slice(0, 10).join(" ").slice(1),
+    "C" + commaWords.slice(10).join(" ").slice(1),
+    "M" + middleWords.slice(0, 11).join(" ").slice(1),
+    "M" + middleWords.slice(11).join(" ").slice(1),
   ]);
 });
 

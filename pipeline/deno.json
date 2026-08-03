@@ -3,7 +3,8 @@
     "serve": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip,ffprobe,ffmpeg main.ts",
     "cli": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip,ffprobe,ffmpeg cli.ts",
     "test": "deno test --allow-net --allow-env --allow-read --allow-write tests/",
-    "check": "deno check main.ts cli.ts"
+    "check": "deno check main.ts cli.ts",
+    "compare:roosevelt": "deno run --env-file --allow-env --allow-net --allow-read scripts/compare_roosevelt_token_translations.ts"
   },
   "imports": {
     "ai": "npm:ai@^5.0.44",

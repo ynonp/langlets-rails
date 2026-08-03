@@ -1,21 +1,12 @@
-// Instruction prompt, ported verbatim from app/views/prompts/add_token_translations.md.erb. Keep the
-// wording in sync with the Rails template until the Ruby pipeline is
-// retired — these strings ARE the pipeline's behavior.
-
 const exampleInput = `Don't (*Don't* you want me like I want you baby) |
 you (Don't *you* want me like I want you baby) |
 want (Don't you *want* me like I want you baby) |
 you (Don't you want me like I want *you* baby) |
 baby (Don't you want me like I want you *baby*) |`;
 
-// Keyed by target language. There is deliberately no English entry: the
-// example phrase is English, so an English target could only be demonstrated
-// by mapping each word to itself — and a model already told to reproduce the
-// left side of the | verbatim reads that as "repeat the marked word", which is
-// exactly what it then does for a whole chunk. English targets run without an
-// example rather than with one that teaches the failure. (The Ruby prompt
-// picked examples by language *pair*, which is the real fix; see
-// app/views/prompts/_add_tokens_examples_arabic_english.md.erb.)
+// The legacy prompt selected examples by target language. Production retains
+// that established behavior; the only new instruction is the narrow scope
+// guard in buildPrompt below.
 export const examples: Record<string, string> = {
   Hebrew: `Don't (*Don't* you want me like I want you baby) | לא [auxiliary]
 you (Don't *you* want me like I want you baby) | אתה [pronoun]
@@ -48,6 +39,28 @@ export function addTokenTranslationsPrompt(
   clipLanguage: string,
   translationLanguage: string,
 ): string {
+  return buildPrompt(clipLanguage, translationLanguage, true);
+}
+
+// Used only by the comparison script to reproduce the prompt before the
+// narrow scope guard was added.
+export function legacyAddTokenTranslationsPrompt(
+  clipLanguage: string,
+  translationLanguage: string,
+): string {
+  return buildPrompt(clipLanguage, translationLanguage, false);
+}
+
+function buildPrompt(
+  clipLanguage: string,
+  translationLanguage: string,
+  includeScopeGuard: boolean,
+): string {
+  const scopeGuard = includeScopeGuard
+    ? `
+4. Translate only the marked word. Do not include meaning contributed by adjacent words.
+`
+    : "";
   return `You are a word-by-word translation assistant for a language learning app.
 
 You translate each word of a ${clipLanguage} phrase into ${translationLanguage}.
@@ -67,11 +80,21 @@ Add to each line after the | the translation of <word to translate> in the same 
    part of speech in square brackets. Use exactly one of: noun, proper_noun,
    verb, adjective, adverb, pronoun, determiner, preposition, conjunction,
    auxiliary, particle, interjection, numeral, punctuation, other.
-4. Classify the marked source-language word in this specific context, not the
+${scopeGuard}${
+    includeScopeGuard ? "5" : "4"
+  }. Classify the marked source-language word in this specific context, not the
    translated word. Proper names and place names must be [proper_noun].
-5. Never skip a line. If the marked word is punctuation-only or has no standalone
+${
+    includeScopeGuard
+      ? "6"
+      : "5"
+  }. Never skip a line. If the marked word is punctuation-only or has no standalone
    meaning, repeat it after the |.
-6. Output ONLY the translated lines — no preamble, no numbering, no markdown, no code fences.
+${
+    includeScopeGuard
+      ? "7"
+      : "6"
+  }. Output ONLY the translated lines — no preamble, no numbering, no markdown, no code fences.
 
 ${
     examples[translationLanguage]

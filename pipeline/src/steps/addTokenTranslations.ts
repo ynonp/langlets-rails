@@ -12,9 +12,10 @@ import { clearErrors, recordError } from "../context.ts";
 import { addTokenTranslationsPrompt } from "../prompts/addTokenTranslations.ts";
 import { message, withRetries } from "../retry.ts";
 
-// Soft cap on words per LLM call. Chunks are packed by whole phrase, so a
-// chunk may come in under this and a single over-long phrase may exceed it.
-export const WORDS_PER_CHUNK = 200;
+// Soft cap on input lines per LLM call. There is one line per learner token.
+// Chunks are packed by whole phrase, so a chunk may come in under this and a
+// single over-long phrase may exceed it.
+export const LINES_PER_CHUNK = 100;
 
 const MAX_CONCURRENCY = 4;
 const MAX_RETRIES = 2;
@@ -58,7 +59,10 @@ interface WordEntry {
   line: string;
 }
 
-export async function addTokenTranslations(ctx: PipelineContext): Promise<void> {
+export async function addTokenTranslations(
+  ctx: PipelineContext,
+  promptBuilder = addTokenTranslationsPrompt,
+): Promise<void> {
   const language = ctx.translationLanguage;
   if (!language) return;
 
@@ -113,7 +117,7 @@ export async function addTokenTranslations(ctx: PipelineContext): Promise<void> 
 
   if (phraseGroups.length === 0) return;
 
-  const instructions = addTokenTranslationsPrompt(ctx.clipLanguage, language.english_name);
+  const instructions = promptBuilder(ctx.clipLanguage, language.english_name);
   const chunks = buildChunks(phraseGroups);
 
   const results = await mapWithConcurrency(chunks, MAX_CONCURRENCY, async (chunk) => {
@@ -189,16 +193,14 @@ async function translateChunk(
   }
 }
 
-// Greedily pack whole phrases into chunks of at most WORDS_PER_CHUNK words. A
-// chunk must never end mid-phrase: every input line carries its full phrase as
-// context, and a phrase cut across two chunks lets the model translate words
-// it wasn't asked about, overshooting the expected line count. A phrase longer
-// than the cap gets a chunk of its own.
+// The cap counts generated prompt lines, which are one-to-one with learner
+// tokens. Whole phrases remain indivisible, so a phrase longer than the cap
+// gets a chunk of its own.
 export function buildChunks(phraseGroups: WordEntry[][]): WordEntry[][] {
   const chunks: WordEntry[][] = [];
   for (const group of phraseGroups) {
     const last = chunks.at(-1);
-    if (last && last.length + group.length <= WORDS_PER_CHUNK) {
+    if (last && last.length + group.length <= LINES_PER_CHUNK) {
       last.push(...group);
     } else {
       chunks.push([...group]);
@@ -250,7 +252,7 @@ export function parseChunkTranslations(content: string, expectedCount: number): 
 // coming back unchanged is the right answer rather than a failure: punctuation
 // (rule 5 asks for it), numerals, and proper nouns. Everything else counts,
 // including cognates and loanwords — "hotel" translating to "hotel" is real,
-// but it is rare enough across a 200-word chunk that it cannot reach the bar
+// but it is rare enough across a 100-line chunk that it cannot reach the bar
 // on its own.
 const ECHO_EXEMPT_PARTS_OF_SPEECH = new Set(["punctuation", "numeral", "proper_noun"]);
 

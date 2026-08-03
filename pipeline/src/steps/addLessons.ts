@@ -10,6 +10,7 @@ import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
 import { addLessonsPrompt } from "../prompts/addLessons.ts";
 import { withRetries } from "../retry.ts";
+import { capitalizeSentence, countLearnerTokens, mergeMultiWordTokens } from "../learnerTokens.ts";
 
 // One initial call plus one retry.
 const MAX_RETRIES = 1;
@@ -47,7 +48,7 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
   // Gemini's alignment fallback timestamps lines, not words. Carry the source
   // line range only in memory so newly segmented phrases retain usable bounds;
   // materialization removes those synthetic values from the persisted words.
-  const words = sourcePhrases.flatMap((phrase, phraseIndex) =>
+  const alignedWords = sourcePhrases.flatMap((phrase, phraseIndex) =>
     phrase.words.map((word, wordIndex) => {
       const nextStart = phrase.words[wordIndex + 1]?.l1_start_index;
       const start = word.l1_start_index;
@@ -66,6 +67,10 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
       };
     })
   );
+  // Dictionary expressions become learner tokens before the model chooses
+  // semantic line boundaries. Greedy matching prevents a longer expression
+  // from being split into smaller dictionary entries later.
+  const words = mergeMultiWordTokens(alignedWords, ctx.clipLanguage);
   if (words.length === 0) throw new Error("No aligned transcript words to segment");
   const userContent = words.map((word) => word.text).join(" ");
 
@@ -95,7 +100,7 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
         }
         lastResponse = JSON.stringify(result.object);
         try {
-          return parseAndValidateLessonPlan(result.object, words);
+          return parseAndValidateLessonPlan(result.object, words, ctx.clipLanguage);
         } catch (error) {
           validationFeedback = error instanceof Error ? error.message : String(error);
           throw error;
@@ -142,6 +147,7 @@ export async function materializeLessons(ctx: PipelineContext): Promise<void> {
 export function parseAndValidateLessonPlan(
   content: LessonOutput,
   words: Word[],
+  clipLanguage = "",
 ): LessonPlan[] {
   const lessons: LessonPlan[] = [];
   let cursor = 0;
@@ -151,13 +157,18 @@ export function parseAndValidateLessonPlan(
     const plan: LessonPlan = { title, lines: [] };
 
     for (const line of lesson.lines) {
-      const returnedWords = line.trim().split(/\s+/u);
+      const returnedWordCount = countLearnerTokens(line, clipLanguage);
       if (line.trim() === "") throw new Error("Lesson response contains an empty line");
 
       // The model owns only the boundaries. If it changes a word while copying
       // a line, retain the boundary and rebuild the text from aligned words.
-      plan.lines.push(...splitLineRange(cursor, returnedWords));
-      cursor += returnedWords.length;
+      plan.lines.push(
+        ...splitLineRange(
+          cursor,
+          words.slice(cursor, cursor + returnedWordCount).map((word) => word.text),
+        ),
+      );
+      cursor += returnedWordCount;
     }
     lessons.push(plan);
   }
@@ -214,7 +225,13 @@ function materializePlan(
     outline.push(`# ${lesson.title}`);
     timestamped.push(`# ${lesson.title}`);
     for (const range of lesson.lines) {
-      const lineWords = words.slice(range.start_word, range.end_word + 1);
+      const lineWords = words.slice(range.start_word, range.end_word + 1).map((word) => ({
+        ...word,
+      }));
+      lineWords[0].text = capitalizeSentence(lineWords[0].text);
+      if (lineWords[0].sourceFragment !== undefined) {
+        lineWords[0].sourceFragment = capitalizeSentence(lineWords[0].sourceFragment!);
+      }
       const text = lineWords.some((word) => word.sourceFragment !== undefined)
         ? lineWords.map((word) => word.sourceFragment ?? word.text).join("").trim()
         : lineWords.map((word) => word.text).join(" ").trim();

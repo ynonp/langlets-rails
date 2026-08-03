@@ -768,7 +768,13 @@ even a passing run would have yielded one untimed phrase.)
 
 **ElevenLabs' tokenization is not the pipeline's.** It splits and merges the text it is given as it
 likes — `don't` can come back as `don` + `'t`, a parenthetical can vanish, a script without word
-spaces is split per character. But the transcript's own whitespace tokens are what `add_lessons`
+spaces is split per character. The transcript's whitespace tokens are the base vocabulary units,
+then `learnerTokens.ts` greedily merges language-specific dictionary entries before `add_lessons`
+plans semantic lines. The English dictionary currently contains only `The United States`. A merged
+entry is one clickable learner token and retains the first source word's start and the last source
+word's end. This merge must happen before line planning so the model's boundary counts and the
+materialized phrase word arrays use the same units. Apart from those explicit entries, the
+transcript's tokens are what `add_lessons`
 indexes into and what `add_token_translations` turns into one clickable word each, so a provider
 split would ship `'t` as a vocabulary item. `force_alignment` therefore takes from ElevenLabs only
 what it alone can give — timings — exactly as the Gemini fallback already does, and keeps the
@@ -813,7 +819,9 @@ The model does not calculate word indexes. Application code treats its returned
 lines only as word-count boundaries and requires them to cover the complete
 transcript. Phrase text and timestamps are reconstructed from the original
 ElevenLabs words, so a spelling change in the model response neither changes
-the transcript nor fails the run. AddLessons makes at most two model calls (the
+the transcript nor fails the run. Every reconstructed semantic line and its first learner token are
+capitalized in application code; sentence translation and token translation therefore receive the
+same capitalized source phrases. AddLessons makes at most two model calls (the
 initial attempt and one retry). The semantic lines replace
 `lyric_lines` and `phrases`; both the untimestamped `lesson_outline` and final timestamped `lessons`
 are saved in the same patch. A segmentation failure blocks downstream work and is safely retried from
@@ -826,11 +834,20 @@ the same timestamped `data["lessons"]` and version-2 `data["translations"][iso][
 consumed by course building. Token translation starts as soon as semantic phrases exist, without
 waiting for lesson rating or sentence translation. The
 token step deduplicates exact repeated phrases across the full clip before packing requests into
-200-word chunks. One translated representative is fanned out to every occurrence; on resume, a
+100-input-line chunks (one line per learner token). Complete semantic phrases are never split, so a
+single phrase longer than the cap occupies its own oversized chunk. One translated representative
+is fanned out to every occurrence; on resume, a
 completed occurrence is reused for its still-missing duplicates without an LLM call. Deduplication
 uses the complete ordered word text, preserving separate translations when context differs. The
-token prompt selects its worked example by the requested target language, preventing a fixed
-example language from overriding the target instruction; unknown future languages omit the example.
+token prompt retains the established contextual, natural-translation policy and target-language
+examples. One narrow guard says to translate only the marked token and not meaning contributed by
+adjacent words. A broader standalone-gloss/bound-morpheme policy was tested and rejected because it
+degraded contextual inflection and produced incorrect dictionary-like glosses such as Hebrew
+`has → יש`. `deno task compare:roosevelt` runs the Roosevelt diagnostic block through the unmodified
+legacy prompt and the guarded production prompt and prints every learner token with its gloss;
+`--prompt legacy` or
+`--prompt current` runs one side only. `--sample edge-cases` selects the built-in possessive,
+preposition, and fixed-expression probes, while `--sample all` runs both sample sets.
 similar-sound step runs from the aligned phrases after the early branches settle.
 
 **The trigger does not wait.** It POSTs `/run?async=1`, the pipeline answers

@@ -4,14 +4,18 @@ import {
   assertNotEchoed,
   buildChunks,
   buildWordLine,
+  LINES_PER_CHUNK,
   parseChunkTranslations,
-  WORDS_PER_CHUNK,
 } from "../src/steps/addTokenTranslations.ts";
 import { initTranslationPayload } from "../src/steps/finalizeTranslation.ts";
-import { addTokenTranslationsPrompt, examples } from "../src/prompts/addTokenTranslations.ts";
+import {
+  addTokenTranslationsPrompt,
+  examples,
+  legacyAddTokenTranslationsPrompt,
+} from "../src/prompts/addTokenTranslations.ts";
 import { makeCtx, phrasesFixture, queuedModel } from "./helpers.ts";
 
-Deno.test("token translation prompt interpolates the target-language example", () => {
+Deno.test("token translation prompt selects its example by target language", () => {
   const frenchPrompt = addTokenTranslationsPrompt("Spanish", "French");
   const hebrewPrompt = addTokenTranslationsPrompt("Spanish", "Hebrew");
 
@@ -20,15 +24,14 @@ Deno.test("token translation prompt interpolates the target-language example", (
   assert(hebrewPrompt.includes(`## Expected Output:\n${examples.Hebrew}`));
 });
 
-// The example phrase is English, so an English target can only be shown as an
-// identity mapping — a worked example of the copying failure the echo guard
-// exists to catch.
-Deno.test("token translation prompt ships no example for an English target", () => {
-  const prompt = addTokenTranslationsPrompt("Arabic", "English");
+Deno.test("token translation prompt adds only the narrow scope guard to legacy", () => {
+  const prompt = addTokenTranslationsPrompt("English", "Hebrew");
+  const legacy = legacyAddTokenTranslationsPrompt("English", "Hebrew");
 
-  assertEquals(examples.English, undefined);
-  assert(!prompt.includes("## Example Input:"));
-  assert(prompt.includes("translate each word of a Arabic phrase into English"));
+  assert(prompt.includes("Translate only the marked word"));
+  assert(!legacy.includes("Translate only the marked word"));
+  assert(!prompt.includes("standalone learner gloss"));
+  assert(prompt.includes("most natural Hebrew translation"));
 });
 
 Deno.test("token translation prompt omits examples for an unknown target language", () => {
@@ -36,7 +39,6 @@ Deno.test("token translation prompt omits examples for an unknown target languag
 
   assert(!prompt.includes("## Example Input:"));
   assert(!prompt.includes("## Expected Output:"));
-  assert(prompt.includes("translate each word of a Spanish phrase into Italian"));
 });
 
 Deno.test("buildWordLine marks the target word inside its phrase context", () => {
@@ -54,11 +56,11 @@ Deno.test("buildChunks packs whole phrases up to the word cap", () => {
       line: "x |",
     }));
 
-  const chunks = buildChunks([group(150, 0), group(60, 1), group(30, 2), group(250, 3)]);
+  const chunks = buildChunks([group(80, 0), group(30, 1), group(20, 2), group(125, 3)]);
 
-  // 150 + 60 > 200 → new chunk; 60 + 30 ≤ 200 → together; 250 alone (over cap).
-  assertEquals(chunks.map((c) => c.length), [150, 90, 250]);
-  assert(chunks[2].length > WORDS_PER_CHUNK);
+  // 80 + 30 > 100 → new chunk; 30 + 20 ≤ 100 → together; 125 alone (over cap).
+  assertEquals(chunks.map((c) => c.length), [80, 50, 125]);
+  assert(chunks[2].length > LINES_PER_CHUNK);
 });
 
 Deno.test("parseChunkTranslations takes the text after the first pipe, in order", () => {
