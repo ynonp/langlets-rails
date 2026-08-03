@@ -2,6 +2,7 @@ require "test_helper"
 
 class CourseBuilder::BuildSongTokenChainTest < ActiveSupport::TestCase
   Token = Struct.new(:part_of_speech, :original_text, :translation, :phrase_id)
+  Phrase = Struct.new(:phrase_tokens)
 
   test "selects one content-word part of speech with unambiguous answers" do
     tokens = [
@@ -64,6 +65,39 @@ class CourseBuilder::BuildSongTokenChainTest < ActiveSupport::TestCase
 
     assert_equal selected.map { |token| token.original_text.downcase }.uniq.size, selected.size
     assert_equal selected.map { |token| token.translation.downcase }.uniq.size, selected.size
+  end
+
+  test "word order phrases contain no more than ten phrase tokens" do
+    phrases = [
+      Phrase.new(Array.new(10) { Token.new }),
+      Phrase.new(Array.new(11) { Token.new }),
+      Phrase.new(Array.new(2) { Token.new }),
+      Phrase.new([])
+    ]
+
+    selected = builder.send(:word_order_phrases, phrases)
+
+    assert_equal [ phrases.first, phrases.third ], selected
+  end
+
+  test "word order is removed from the activity pool without two eligible phrases" do
+    phrases = [
+      Phrase.new(Array.new(11) { Token.new }),
+      Phrase.new(Array.new(3) { Token.new })
+    ]
+
+    types = builder.send(:pooled_activity_types, { phrases: phrases })
+
+    refute_includes types, :word_order
+    assert_equal CourseBuilder::BuildSong::LESSON_ACTIVITY_POOL.size - 1, types.size
+  end
+
+  test "word order remains in the activity pool with two eligible phrases" do
+    phrases = [ Phrase.new(Array.new(3) { Token.new }), Phrase.new(Array.new(10) { Token.new }) ]
+
+    types = builder.send(:pooled_activity_types, { phrases: phrases })
+
+    assert_includes types, :word_order
   end
 
   private

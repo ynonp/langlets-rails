@@ -1121,7 +1121,12 @@ download is verified before it counts:
 - **WordOrderActivity**: Sentence-building practice whose answer row declares the
   L1 direction explicitly. The completed sentence therefore remains LTR for an
   English L1 (and RTL for an RTL L1), independently of the interface direction
-  selected by the translation-language subdomain.
+  selected by the translation-language subdomain. `CourseBuilder::BuildSong`
+  only assigns phrases containing between one and ten `PhraseToken` records—the
+  draggable units learners place—and requires at least two such phrases in a
+  lesson. If a lesson does not meet that threshold, early lessons use their
+  flashcard alternative and later lessons exclude word order before randomly
+  selecting from the remaining activity pool.
 - **SortPhrasesActivity**: Chronological phrase ordering in a compact, frameless exercise layout. The activity presents its instruction and media hint before a draggable list with visible grip handles, followed by the check action and inline result or completion feedback. Its visual states are implemented with Tailwind utilities.
 - **LanguageAlignmentActivity**: Word-level alignment exercises. Review activities
   may retain every prior phrase to define their video playback range, but rendering
