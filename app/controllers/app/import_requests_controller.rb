@@ -203,9 +203,8 @@ module App
       @translation_language = default_translation_language
     end
 
-    # Best guess at what they read. Not stored per-user yet.
     def default_translation_language
-      Language.find_by(english_name: "English")
+      Current.translation_language || Language.find_by(english_name: "English")
     end
   end
 end

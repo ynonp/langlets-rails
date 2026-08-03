@@ -17,6 +17,7 @@ module App
                            confirmed_at: Time.zone.now)
       @spanish = languages(:spanish)
       @english = languages(:english)
+      @hebrew = languages(:hebrew)
       sign_in @user
       # Native app screens are unreachable until a language is chosen.
       get "/app?lang=es", headers: NATIVE
@@ -164,6 +165,18 @@ module App
       assert_match "Open lesson", response.body
       assert_no_match(/Get Langlets Pro/, response.body)
       assert_no_match(/Approve/, response.body)
+    end
+
+    test "the Hebrew site offers to add Hebrew when only English is ready" do
+      publish_privately(publish_course!, owner: @user)
+      host! "he.example.com"
+
+      stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
+
+      assert_response :success
+      assert_select "form[action=?] input[type=submit]", app_import_requests_path
+      assert_select "input[name=translation_language][value=?]", @hebrew.english_name
+      assert_no_match(/Already in your library\./, response.body)
     end
 
     test "a video already importing offers the Library instead of a second charge" do
