@@ -1,5 +1,5 @@
 class GeneratePhraseAudioJob < ApplicationJob
-  queue_as :default
+  queue_as :audio
   
   # Retry with exponential backoff if TTS service is temporarily unavailable  
   retry_on StandardError, wait: 1.minute, attempts: 5

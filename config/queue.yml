@@ -3,7 +3,10 @@ default: &default
     - polling_interval: 1
       batch_size: 500
   workers:
-    - queues: "*"
+    # Listed in priority order: audio generation floods `audio` in bulk
+    # (course import, backfill) and must never starve out time-sensitive
+    # jobs like CreateCourseJob sitting in `default`.
+    - queues: [ default, audio ]
       threads: 3
       processes: <%= ENV.fetch("JOB_CONCURRENCY", 1) %>
       polling_interval: 0.1

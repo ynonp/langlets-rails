@@ -35,6 +35,14 @@ worker process, and one three-thread job worker. The host has swap to absorb
 short memory spikes, but sustained workload growth should be handled by
 increasing the VM size before raising concurrency.
 
+The worker polls two Solid Queue queues in priority order, `[ default, audio ]`
+(`config/queue.yml`) — it only pulls from `audio` once `default` is empty.
+`GeneratePhraseAudioJob` and `GenerateTokenAudioJob` run on `audio` because
+course imports and `BackfillMissingTokenAudioJob` can enqueue hundreds of them
+at once; without the split that flood sits ahead of time-sensitive `default`
+jobs like `CreateCourseJob` and starves the pipeline for as long as the backlog
+takes to drain.
+
 ## Core Architecture
 
 ### Console transcript correction
@@ -2098,6 +2106,9 @@ commits. Course building creates tokens inside one transaction, so making those
 jobs visible to the dedicated Solid Queue worker any earlier would let it look
 up an uncommitted `PhraseToken`, discard the resulting `RecordNotFound`, and
 leave the token without audio.
+
+Both `GeneratePhraseAudioJob` and `GenerateTokenAudioJob` run on the `audio`
+Solid Queue queue, not `default` — see "Production deployment" above for why.
 
 For an existing course with missing token audio, operators can enqueue repairs
 from a production Rails console with
