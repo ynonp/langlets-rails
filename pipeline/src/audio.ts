@@ -16,6 +16,7 @@
 // this module exists to catch, and we would pay ElevenLabs to transcribe it.
 
 import { message } from "./retry.ts";
+import { orderedNamespaces, recordSuccessfulNamespace } from "./vpnNamespace.ts";
 
 export interface DownloadedAudio {
   path: string;
@@ -217,21 +218,30 @@ export async function downloadYoutubeAudioToTemp(youtubeUrl: string): Promise<Do
   await ensureAudioVerifiers();
 
   const path = await Deno.makeTempFile({ prefix: "langlets_audio_", suffix: ".m4a" });
-  const networkNamespace = Deno.env.get("YTDLP_NETWORK_NAMESPACE") || undefined;
+  const namespaces = await orderedNamespaces();
+  const rotatingNamespaces = namespaces.length > 1;
   const failures: string[] = [];
 
   try {
-    for (const spec of AUDIO_FORMATS) {
-      const attempt = await attemptDownload(youtubeUrl, path, { ...spec, networkNamespace });
-      if (typeof attempt === "string") {
-        failures.push(`${spec.format}: ${attempt}`);
-      } else {
-        const defect = await detectAudioDefect(path);
-        if (!defect) return attempt;
-        failures.push(`${spec.format}: ${defect}`);
+    for (const networkNamespace of namespaces.length ? namespaces : [undefined]) {
+      for (const spec of AUDIO_FORMATS) {
+        const label = networkNamespace ? `${networkNamespace}/${spec.format}` : spec.format;
+        const attempt = await attemptDownload(youtubeUrl, path, { ...spec, networkNamespace });
+        if (typeof attempt === "string") {
+          failures.push(`${label}: ${attempt}`);
+        } else {
+          const defect = await detectAudioDefect(path);
+          if (!defect) {
+            if (rotatingNamespaces && networkNamespace) {
+              await recordSuccessfulNamespace(networkNamespace);
+            }
+            return attempt;
+          }
+          failures.push(`${label}: ${defect}`);
+        }
+        console.warn(`Audio download rejected — ${failures.at(-1)}`);
+        await Deno.remove(path).catch(() => {});
       }
-      console.warn(`Audio download rejected — ${failures.at(-1)}`);
-      await Deno.remove(path).catch(() => {});
     }
     throw new Error(
       `yt-dlp produced no usable audio for ${youtubeUrl} (${failures.join("; ")})`,

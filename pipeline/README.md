@@ -231,6 +231,16 @@ network namespace. Leave it unset for direct execution. The command enables
 `--remote-components ejs:github`, so the host (or configured namespace) must be able to reach
 GitHub; yt-dlp uses the pipeline's Deno runtime to execute the downloaded YouTube challenge solver.
 
+`YTDLP_NETWORK_NAMESPACE` also accepts a comma-separated list (`YTDLP_NETWORK_NAMESPACE=vpn1,vpn2,vpn3`)
+to round-robin across several standing OpenVPN tunnels — useful because a tunnel tends to work fine
+until the day it doesn't. The namespace that most recently produced a usable download is tried
+first; on failure the ladder falls through the rest of the list (retrying the full format ladder
+under each one) before giving up. That preference is persisted to `YTDLP_VPN_STATE_FILE` (default
+`/var/lib/langlets/vpn-state.json`) and read once per process — `main.ts`/`cli.ts` are long-running,
+so this is not a per-download file read. If the file names a namespace no longer in
+`YTDLP_NETWORK_NAMESPACE`, it's ignored and the configured list order is used instead — the env var
+always wins. See `src/vpnNamespace.ts`.
+
 `ffprobe` and `ffmpeg` must be on `PATH`. Audio downloads are verified with them, because TikTok
 serves silent HEVC renditions that yt-dlp reports as a successful download
 ([yt-dlp#15642](https://github.com/yt-dlp/yt-dlp/issues/15642)); a file with no audio stream or a
