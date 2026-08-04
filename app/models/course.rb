@@ -249,15 +249,20 @@ class Course < ApplicationRecord
   # them up as outstanding languages once the first publishes — the same
   # mechanism a normal multi-language import uses.
   #
+  # By default the languages come from the course's own course_translations.
+  # Pass `languages` to override that — e.g. a course with no translation
+  # data yet, where the caller wants to kick off several languages at once —
+  # in which case the existing course_translations (if any) are ignored.
+  #
   # Returns the primary (first-language) ImportRequest, the one that actually
   # started the run.
-  def regenerate!
+  def regenerate!(languages = nil)
     progress = create_song_progress ||
                CreateSongProgress.find_by!(
                  youtubeurl: main_media_url,
                  clip_language: language&.english_name
                )
-    import_requests = regeneration_import_requests(progress)
+    import_requests = regeneration_import_requests(progress, languages)
 
     transaction do
       progress.update!(data: {})
@@ -359,8 +364,8 @@ class Course < ApplicationRecord
   # #regeneration_languages (earliest course_translations first). Reuses an
   # existing request for that user/course/language if one is already there,
   # the same way the single-language version used to.
-  def regeneration_import_requests(progress)
-    regeneration_languages.map do |lang|
+  def regeneration_import_requests(progress, languages = nil)
+    regeneration_languages(languages).map do |lang|
       ImportRequest.where(course_id: id, user_id: user_id, translation_language: lang.english_name)
                    .recent_first.first ||
         user.import_requests.create!(
@@ -376,11 +381,15 @@ class Course < ApplicationRecord
     end
   end
 
-  def regeneration_languages
-    languages = course_translations.order(:id).map(&:language)
-    raise ArgumentError, "course #{id} has no course_translations to name a translation language" if languages.empty?
+  # Explicit `languages` wins outright and skips course_translations entirely,
+  # even if some exist — that's the point of passing it.
+  def regeneration_languages(languages = nil)
+    return Array(languages) if languages.present?
 
-    languages
+    derived = course_translations.order(:id).map(&:language)
+    raise ArgumentError, "course #{id} has no course_translations to name a translation language" if derived.empty?
+
+    derived
   end
 
   def slug_uniqueness_with_user_check
