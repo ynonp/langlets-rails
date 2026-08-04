@@ -168,7 +168,7 @@ async function translateChunk(
           system: instructions,
           prompt: lines.join("\n"),
           temperature: 0,
-          providerOptions: { openai: { reasoningEffort: "none" } },
+          providerOptions: { ollama: { reasoningEffort: "none" } },
         });
         lastResponse = text;
         const translations = parseChunkTranslations(text.trim(), chunk.length);

@@ -164,7 +164,7 @@ Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rai
 | `force_alignment` (word timings) | Forced Alignment API | ElevenLabs |
 | `add_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `rate_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
-| `add_token_translations` | `gpt-5.6-terra` (reasoning `none`, temperature 0, four concurrent chunks of up to 200 token lines) | OpenAI |
+| `add_token_translations` | `deepseek-v4-pro:cloud` (reasoning `none`, temperature 0, up to 200 token lines per chunk) | Ollama cloud |
 | `translate` (all target languages) | `deepseek-v4-pro:cloud` | Ollama cloud |
 
 `extract_lyrics` starts Supadata in `mode=native` and the verified audio-download + ElevenLabs Scribe path concurrently. Each successful raw result is checkpointed under `data.stt_candidates`. Two results are reconciled into one transcript by GPT-5.6 Sol at temperature 0; one result is used directly without an LLM call. If both fail, YouTube uses the existing Gemini 2.5 Flash video fallback and TikTok fails because it has no remaining transcription route. A Sol failure degrades to the valid ElevenLabs result. `force_alignment` aligns reconciled or Supadata-only text; an ElevenLabs-only result reuses Scribe's timings. The lesson model then partitions those exact timed words into a `lessons -> lines` hierarchy, choosing complete comprehension and translation units rather than trusting provider cue boundaries or performance pauses.
