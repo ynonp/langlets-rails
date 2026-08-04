@@ -14,7 +14,7 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
     @english = languages(:english)
 
     @progress = CreateSongProgress.create!(
-      youtubeurl: CANONICAL, clip_language: "Spanish", translation_language: "English", data: {}
+      youtubeurl: CANONICAL, clip_language: "Spanish", data: {}
     )
     @course = Course.create!(
       name: "Despacito", slug: "despacito-#{VIDEO_ID.downcase}", main_media_url: CANONICAL,
@@ -126,7 +126,7 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
 
   def run_job
     builder = Object.new
-    def builder.call = true
+    def builder.call(_language) = true
     def builder.add_translation(_language) = true
 
     CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do

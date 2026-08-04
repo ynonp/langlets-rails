@@ -182,14 +182,17 @@ a language-matched worked example — unknown languages fall back to the English
 
 ### 7. Test Fixtures (Optional)
 
-Test fixtures in `test/fixtures/create_song_progress/` reference languages by their `english_name` field. If you add test courses for the new language, ensure the JSON fixture has matching values:
+Test fixtures in `test/fixtures/create_song_progress/` reference languages by their `english_name` field. If you add test courses for the new language, ensure the JSON fixture's `clip_language` matches:
 
 ```json
 {
-  "clip_language": "Italian",
-  "translation_language": "English"
+  "clip_language": "Italian"
 }
 ```
+
+Older fixtures still carry a `translation_language` field from before
+`CreateSongProgress` dropped that column; it's vestigial now — the language(s)
+a fixture holds live under `data.translations`, keyed by ISO code.
 
 ---
 

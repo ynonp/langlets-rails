@@ -14,7 +14,6 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
     @progress = CreateSongProgress.create!(
       youtubeurl: "https://www.youtube.com/watch?v=XXXX",
       clip_language: "French",
-      translation_language: "Hebrew",
       data: { "phrases" => [ { "text_l1" => "bonjour" } ] }
     )
   end
@@ -27,7 +26,7 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
 
   test "posts the record's saved data and the tunnelled callback url" do
     sent = nil
-    trigger(transport: ->(body) { sent = JSON.parse(body); ok })
+    trigger(language: languages(:hebrew), transport: ->(body) { sent = JSON.parse(body); ok })
 
     assert_equal "https://www.youtube.com/watch?v=XXXX", sent.fetch("youtubeurl")
     assert_equal "French", sent.fetch("clip_language")
@@ -81,11 +80,18 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
                     { "iso_name" => "ar-JO", "english_name" => "Arabic" }
   end
 
-  test "runs an explicitly requested language instead of the record's own" do
+  test "runs the language it's given" do
     sent = nil
     trigger(language: languages(:english), transport: ->(body) { sent = JSON.parse(body); ok })
 
     assert_equal "en", sent.dig("translation_language", "iso_name")
+  end
+
+  test "runs transcription + lessons only when given no language" do
+    sent = nil
+    trigger(transport: ->(body) { sent = JSON.parse(body); ok })
+
+    assert_nil sent["translation_language"]
   end
 
   # The trigger is fire-and-forget: it asks for ?async=1, so the pipeline's 202

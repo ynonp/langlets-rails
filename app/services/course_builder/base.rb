@@ -9,7 +9,6 @@ module CourseBuilder
       result = {}
       result[:youtubeurl] = progress.youtubeurl
       result[:clip_language] = progress.clip_language
-      result[:translation_language] = progress.translation_language
 
       result[:lessons] = data["lessons"].map do |lesson|
         {

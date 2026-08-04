@@ -19,7 +19,7 @@ class CreateSongPipelineCli
       Language.find_by(iso_name: @translation_language_name)
     raise ArgumentError, "unknown translation language: #{@translation_language_name}" unless language
 
-    progress = find_or_create_progress(language, resolve_url)
+    progress = find_or_create_progress(resolve_url)
 
     Tempfile.create([ "create-song-progress-#{progress.id}-", ".json" ]) do |file|
       progress.reload.export(file.path)
@@ -66,19 +66,15 @@ class CreateSongPipelineCli
     raise ArgumentError, "could not resolve #{@youtube_url.inspect}: #{e.message}"
   end
 
-  def find_or_create_progress(language, url)
+  def find_or_create_progress(url)
     progress = CreateSongProgress.find_or_create_by!(
       youtubeurl: url,
       clip_language: @clip_language
     ) do |record|
-      record.translation_language = language.english_name
       record.data = {}
     end
 
-    updates = {}
-    updates[:translation_language] = language.english_name if progress.translation_language != language.english_name
-    updates[:data] = {} if progress.data.nil?
-    progress.update!(updates) if updates.any?
+    progress.update!(data: {}) if progress.data.nil?
     progress
   end
 

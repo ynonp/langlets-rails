@@ -557,8 +557,21 @@ The `data` blob is versioned (`CreateSongProgress::DataFormat`,
 `data["translations"]` shape above. Course building, `add_translation`, and
 both import surfaces (the admin uploader and `rake
 create_song_progress:import`) refuse legacy blobs; `rake
-create_song_progress:convert_files` / `convert_records` upgrade JSON exports
-and DB rows.
+create_song_progress:convert_files` upgrades legacy JSON exports/fixtures in
+place. All DB rows were converted once (there is no `translation_language`
+column to name a legacy blob's language from any more, so a new legacy row
+could no longer be upgraded — moot in practice, since the pipeline has written
+only version-2 blobs since the conversion).
+
+`CreateSongProgress` carries no language of its own — it is a shared cache
+keyed only on `(youtubeurl, clip_language)`, and every language it might hold
+lives under `data["translations"][iso]`. Every caller that needs a specific
+language receives it explicitly rather than reading it off the record:
+`CreateCourseJob`/`ImportCourseJob`/`AddCourseTranslationJob` all take a
+`language_id`, `CreateSongPipelineHttp.new(language:)` has no fallback (`nil`
+means "transcription + lessons only, no translation branch"), and
+`CourseBuilder::BuildSong#call(language)` takes the language as an argument
+rather than deriving it.
 
 The stored record is a cache, not a source of truth: when a published course's
 progress row is missing or empty, `CreateSongProgressRebuilder` reconstructs
@@ -1760,11 +1773,19 @@ course with the current pipeline. It empties the matching
 `CreateSongProgress.data`, deletes the old medium (and therefore its phrases,
 tokens, lessons, and activities), deletes the old course, and creates a fresh
 course shell with the same identity fields. Existing import-history rows are
-moved to the replacement shell. The owner's most recent request is forced to
-`failed` and passed through `ImportRequest#retry!`; if the course predates
-`ImportRequest`, a request with the course owner's `user_id` is created first.
-The normal retry path then resets it to queued, installs a new timeout, and
-enqueues `CreateCourseJob`. The method returns that request.
+moved to the replacement shell.
+
+It regenerates **every language the course was built in**, not just one: one
+`ImportRequest` per `course_translations` row (reusing an existing request for
+that owner/course/language where one already exists, the same way the
+single-language version used to), each forced to `failed` and passed through
+`ImportRequest#retry!` in `course_translations` order. Only the first actually
+starts a run — `ImportRequest#covered_by_sibling?` finds the rest already
+covered by that active sibling on the still-unpublished course and leaves them
+`queued` — and `Imports::Finalizer#request_missing_languages!` picks the
+remaining languages up as outstanding once the first one publishes, exactly
+the mechanism an ordinary multi-language import uses. The method returns the
+first (primary) request — the one that actually enqueued `CreateCourseJob`.
 
 #### **Imports::Create** (`app/services/imports/create.rb`)
 The single import service for the Add sheet, the share extension and the API. It decides **what has to happen** and deliberately does not decide what it costs — `Channel#publish!` charges for the publication every path ends in (see *What a credit buys*). Order is deliberate: **the video is checked before anything is committed**, so a private or deleted video costs nothing and leaves nothing behind (`Youtube::Oembed` doubles as the availability check). The interactive Add sheet omits `clip_language` and gets the provisional background-detection path. The API detects first and supplies `clip_language`, preserving its synchronous response contract for share-extension callers. Six outcomes:
@@ -2013,10 +2034,13 @@ only claims a `pending` course, so a second attempt would silently do nothing.
 - **Key Features**:
   - YouTube URL processing (`youtubeurl`)
   - Multi-step workflow management (integer step field)
-  - Source and target language tracking (`clip_language`, `translation_language`)
+  - Source language only (`clip_language`) — no language of its own for the
+    translation side; `data["translations"][iso]` holds one payload per
+    language the pipeline has produced, and every caller names the language it
+    wants explicitly (see above)
   - JSONB data storage for flexible progress tracking
-  - Unique constraint on URL + source language + target language combination
-  - Compound index for efficient querying
+  - Unique on `(youtubeurl, clip_language)` where `clip_language IS NOT NULL`
+    (`idx_create_song_progresses_video_language`)
 
 ## Active Storage Integration
 

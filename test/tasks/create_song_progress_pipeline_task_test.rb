@@ -25,13 +25,13 @@ class CreateSongProgressPipelineTaskTest < ActiveSupport::TestCase
     imported = nil
 
     CreateSongPipelineCli.stub(:new, ->(**) { pipeline }) do
-      ImportCourseJob.stub(:perform_now, ->(progress_id, user_id) { imported = [ progress_id, user_id ] }) do
+      ImportCourseJob.stub(:perform_now, ->(progress_id, user_id, language_id) { imported = [ progress_id, user_id, language_id ] }) do
         @task.invoke("https://www.youtube.com/watch?v=XXXX", "French", "Hebrew", @creator.email)
       end
     end
 
     pipeline.verify
-    assert_equal [ progress.id, @creator.id ], imported
+    assert_equal [ progress.id, @creator.id, languages(:hebrew).id ], imported
   end
 
   test "does not create a course when the Deno pipeline fails" do

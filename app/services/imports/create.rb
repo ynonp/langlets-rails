@@ -178,7 +178,6 @@ module Imports
         progress = CreateSongProgress.create!(
           youtubeurl: video.canonical_url,
           clip_language: nil,
-          translation_language: translation_language,
           data: {}
         )
         request = user.import_requests.create!(
@@ -350,7 +349,6 @@ module Imports
           youtubeurl: video.canonical_url,
           clip_language: clip_language,
         ) do |p|
-          p.translation_language = translation_language
           p.data = @detected_data || {}
         end
         # A found row may predate the multi-language format; fail here, before
@@ -376,7 +374,7 @@ module Imports
         # has no lessons; putting it on Home now would show a course you can't
         # open, and publishing it would charge for one. Imports::Settlement does
         # both once it is real.
-        CreateCourseJob.perform_later(progress.id, course.id)
+        CreateCourseJob.perform_later(progress.id, course.id, translation_language_record.id)
       end
 
       Result.new(status: :created, import_request: import_request,
@@ -451,7 +449,6 @@ module Imports
           youtubeurl: video.canonical_url,
           clip_language: clip_language
         ) do |row|
-          row.translation_language = translation_language
           row.data = {}
         end
         progress.assert_current_data_format!

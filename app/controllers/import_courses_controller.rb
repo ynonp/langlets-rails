@@ -57,7 +57,7 @@ class ImportCoursesController < ApplicationController
       end
 
       successful_imports.each do |import_data|
-        ImportCourseJob.perform_later(import_data[:progress_id], current_user.id, playlist_id)
+        ImportCourseJob.perform_later(import_data[:progress_id], current_user.id, import_data[:language_id], playlist_id)
       end
 
       flash[:notice] = "#{successful_imports.count} course(s) are being imported. You'll receive an email when each one is ready."
@@ -113,6 +113,8 @@ class ImportCoursesController < ApplicationController
     end
 
     required_fields = %w[youtubeurl clip_language translation_language data]
+    # translation_language is not stored on CreateSongProgress; it is only used
+    # here to resolve the Language that ImportCourseJob builds the course in.
     missing_fields = required_fields - json_data.keys
 
     if missing_fields.any?
@@ -150,10 +152,18 @@ class ImportCoursesController < ApplicationController
       }
     end
 
+    language = Language.find_by(english_name: translation_language)
+    if language.nil?
+      filename = file.respond_to?(:original_filename) ? file.original_filename : "unknown"
+      return {
+        success: false,
+        error: "Unknown translation language '#{translation_language}' in #{filename}"
+      }
+    end
+
     progress = CreateSongProgress.find_or_initialize_by(
       youtubeurl: json_data["youtubeurl"],
-      clip_language: clip_language,
-      translation_language: translation_language
+      clip_language: clip_language
     )
 
     progress.assign_attributes(
@@ -162,7 +172,7 @@ class ImportCoursesController < ApplicationController
     )
 
     if progress.save
-      { success: true, progress_id: progress.id }
+      { success: true, progress_id: progress.id, language_id: language.id }
     else
       filename = file.respond_to?(:original_filename) ? file.original_filename : "unknown"
       {

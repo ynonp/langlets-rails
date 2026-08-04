@@ -30,14 +30,12 @@ class CreateSongPipelineCliTest < ActiveSupport::TestCase
     assert_equal "http://rails.test/pipeline_callbacks/#{progress.id}", command[3]
     assert_equal "he", command[command.index("--iso") + 1]
     assert_equal languages(:hebrew).id.to_s, command[command.index("--lang-id") + 1]
-    assert_equal "Hebrew", progress.translation_language
   end
 
   test "re-exports fresh database state when resuming an existing record" do
     progress = CreateSongProgress.create!(
       youtubeurl: "https://www.youtube.com/watch?v=XXXX",
       clip_language: "French",
-      translation_language: "English",
       data: { "phrases" => [ { "text_l1" => "bonjour" } ] }
     )
 
@@ -50,7 +48,6 @@ class CreateSongPipelineCliTest < ActiveSupport::TestCase
     result = build_runner(command_runner: runner).call
 
     assert_equal progress.id, result.id
-    assert_equal "Hebrew", result.translation_language
   end
 
   test "raises when the CLI exits unsuccessfully" do

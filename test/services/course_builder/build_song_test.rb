@@ -19,7 +19,6 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
     @progress = CreateSongProgress.new(
       youtubeurl: @fixture_data["youtubeurl"],
       clip_language: @fixture_data["clip_language"],
-      translation_language: @fixture_data["translation_language"],
       data: @fixture_data["data"]
     )
     @progress.save!
@@ -36,7 +35,7 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
 
   test "phrases have similar sounds after build" do
     builder = CourseBuilder::BuildSong.new(@progress, @course)
-    builder.call
+    builder.call(@english)
 
     @course.reload
 
@@ -53,7 +52,7 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
 
   test "ListenActivity in lesson 2 has phrases with similar sounds" do
     builder = CourseBuilder::BuildSong.new(@progress, @course)
-    builder.call
+    builder.call(@english)
 
     @course.reload
 
@@ -75,7 +74,7 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
 
   test "all ListenActivity and SpeakActivity instances have phrases with similar sounds" do
     builder = CourseBuilder::BuildSong.new(@progress, @course)
-    builder.call
+    builder.call(@english)
 
     @course.reload
 

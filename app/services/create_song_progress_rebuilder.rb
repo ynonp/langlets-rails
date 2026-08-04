@@ -31,16 +31,8 @@ class CreateSongProgressRebuilder
       youtubeurl: course.main_media_url,
       clip_language: course.language.english_name
     ) do |row|
-      row.translation_language = default_translation_language
       row.data = {}
     end
-  end
-
-  def default_translation_language
-    language = course.course_translations.order(:id).first&.language
-    raise ArgumentError, "course #{course.id} has no course_translations to name a translation language" unless language
-
-    language.english_name
   end
 
   def rebuild!(progress)

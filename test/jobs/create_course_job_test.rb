@@ -18,7 +18,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
     @english = languages(:english)
 
     @progress = CreateSongProgress.create!(
-      youtubeurl: CANONICAL, clip_language: "Spanish", translation_language: "English", data: {}
+      youtubeurl: CANONICAL, clip_language: "Spanish", data: {}
     )
     @course = create_translated_course!(
       name: "Despacito", slug: "despacito-#{VIDEO_ID.downcase}", main_media_url: CANONICAL,
@@ -182,7 +182,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
     # so returning the stub directly would invoke it instead.
     CreateSongProgress.stub(:find, @progress) do
       CreateSongPipelineHttp.stub(:new, ->(**kwargs) { trigger&.call(**kwargs); stub }) do
-        CreateCourseJob.perform_now(@progress.id, @course.id)
+        CreateCourseJob.perform_now(@progress.id, @course.id, @english.id)
       end
     end
   end

@@ -19,16 +19,17 @@ class CreateCourseJob < ApplicationJob
   # rather than a balance yo-yo. Adding retries naively would also be unsafe:
   # the rescue sets the course to `error`, and Course#process only claims a
   # `pending` course, so a second attempt would silently do nothing.
-  def perform(create_song_progress_id, course_id)
+  def perform(create_song_progress_id, course_id, language_id)
     progress = CreateSongProgress.find(create_song_progress_id)
     course = Course.find(course_id)
+    language = Language.find(language_id)
 
     claimed = course.process do |claimed_course|
       Rails.logger.info "Starting CreateCourseJob #{create_song_progress_id} / #{course_id}"
       # Inside the claim: only the job that actually owns this course should move
       # its requests. If another job holds it, that one has already done this.
       start_imports!(claimed_course)
-      trigger!(progress)
+      trigger!(progress, language)
     end
 
     Rails.logger.info "Another job already processing or completed CreateSongProgress #{create_song_progress_id} / #{course_id}" unless claimed
@@ -56,12 +57,11 @@ class CreateCourseJob < ApplicationJob
   # Fire-and-forget: the pipeline answers 202 and streams its results back to
   # PipelineCallbacksController. A raise here means the run never started at
   # all, which is the one failure this job is still on the hook for.
-  def trigger!(progress)
-    language = Language.find_by(english_name: progress.translation_language)
+  def trigger!(progress, language)
     return if progress.complete_for?(language)
 
     Rails.logger.info "CreateSongProgress #{progress.id}: triggering the pipeline at #{CreateSongPipelineHttp.base_url}"
-    CreateSongPipelineHttp.new(progress: progress).call
+    CreateSongPipelineHttp.new(progress: progress, language: language).call
   end
 
   # Requests waiting on this course. Usually one, but several users can ride on a

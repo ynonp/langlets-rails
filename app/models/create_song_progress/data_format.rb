@@ -1,8 +1,9 @@
 # The shape contract for CreateSongProgress#data.
 #
 # Version 1 (legacy) blobs carry a single language inline: each phrase has a
-# "text_l2" and each word a "translation", and the language is named only by
-# the record's translation_language column.
+# "text_l2" and each word a "translation", and the language they belong to is
+# named only outside the blob (the export file's translation_language field,
+# back when CreateSongProgress carried that column).
 #
 # Version 2 blobs keep data["phrases"] language-neutral and hold every
 # language's content under data["translations"][iso] (see
@@ -37,9 +38,9 @@ module CreateSongProgress::DataFormat
   # Moves the inline per-phrase/per-word translations out of data["phrases"]
   # into the given language's payload and stamps the version. Mutates and
   # returns `data`. This is the single writer of the payload shape: the
-  # pipeline calls it after translating into a new language, and the format
-  # converter calls it to upgrade legacy blobs (where the inline content is
-  # the translation_language's).
+  # pipeline calls it after translating into a new language, and
+  # rake create_song_progress:convert_files calls it to upgrade legacy export
+  # files (where the inline content is the file's translation_language field).
   def pack_translation(data, language)
     data["translations"] ||= {}
     data["translations"][language.iso_name] = {

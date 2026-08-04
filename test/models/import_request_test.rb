@@ -16,7 +16,7 @@ class ImportRequestTest < ActiveJob::TestCase
     @english = languages(:english)
 
     @progress = CreateSongProgress.create!(
-      youtubeurl: CANONICAL, clip_language: "Spanish", translation_language: "English", data: {}
+      youtubeurl: CANONICAL, clip_language: "Spanish", data: {}
     )
     @course = Course.create!(
       name: "Despacito", slug: "despacito-#{VIDEO_ID.downcase}", main_media_url: CANONICAL,
@@ -44,7 +44,7 @@ class ImportRequestTest < ActiveJob::TestCase
   end
 
   test "the course is reset to pending so CreateCourseJob can claim it" do
-    assert_enqueued_with(job: CreateCourseJob, args: [ @progress.id, @course.id ]) do
+    assert_enqueued_with(job: CreateCourseJob, args: [ @progress.id, @course.id, @english.id ]) do
       @request.retry!
     end
 

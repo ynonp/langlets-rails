@@ -46,7 +46,6 @@ class CourseCorrectionTest < ActiveJob::TestCase
     progress = CreateSongProgress.create!(
       youtubeurl: @course.main_media_url,
       clip_language: @english.english_name,
-      translation_language: @hebrew.english_name,
       data: {
         "format_version" => CreateSongProgress::DataFormat::VERSION,
         "phrases" => [

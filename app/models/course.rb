@@ -241,13 +241,23 @@ class Course < ApplicationRecord
   # CreateCourseJob to claim. Preserve the course's identity fields in a fresh
   # shell, move its import requests to that shell, then let the normal retry
   # path start the import.
+  #
+  # A multi-language course gets one request per language it was built in
+  # (see #regeneration_import_requests). Only the first one actually triggers
+  # CreateCourseJob; ImportRequest#retry! finds the rest already covered by
+  # that active sibling and leaves them queued, and Imports::Finalizer picks
+  # them up as outstanding languages once the first publishes — the same
+  # mechanism a normal multi-language import uses.
+  #
+  # Returns the primary (first-language) ImportRequest, the one that actually
+  # started the run.
   def regenerate!
     progress = create_song_progress ||
                CreateSongProgress.find_by!(
                  youtubeurl: main_media_url,
                  clip_language: language&.english_name
                )
-    import_request = regeneration_import_request(progress)
+    import_requests = regeneration_import_requests(progress)
 
     transaction do
       progress.update!(data: {})
@@ -269,15 +279,21 @@ class Course < ApplicationRecord
 
       replacement = Course.create!(course_attributes.merge("status" => :error))
       requests.update_all(course_id: replacement.id, updated_at: Time.zone.now)
-      import_request.update!(
-        course: replacement,
-        create_song_progress: progress,
-        status: :failed
-      )
-      import_request.retry!
+
+      import_requests.each do |import_request|
+        import_request.update!(
+          course: replacement,
+          create_song_progress: progress,
+          status: :failed
+        )
+      end
+      # Order matters: the first retry! finds no active sibling yet and starts
+      # the run; every later one finds that request already active and rides
+      # along instead of starting a second one (ImportRequest#covered_by_sibling?).
+      import_requests.each(&:retry!)
     end
 
-    import_request
+    import_requests.first
   end
 
   def unique_lesson_slug(base_slug)
@@ -339,18 +355,32 @@ class Course < ApplicationRecord
     end
   end
 
-  def regeneration_import_request(progress)
-    ImportRequest.where(course_id: id, user_id: user_id).recent_first.first ||
-      user.import_requests.create!(
-        youtube_url: main_media_url,
-        youtube_video_id: video_id,
-        clip_language: progress.clip_language,
-        translation_language: progress.translation_language,
-        title: name,
-        course: self,
-        create_song_progress: progress,
-        status: :failed
-      )
+  # One request per language the course was built in, ordered to match
+  # #regeneration_languages (earliest course_translations first). Reuses an
+  # existing request for that user/course/language if one is already there,
+  # the same way the single-language version used to.
+  def regeneration_import_requests(progress)
+    regeneration_languages.map do |lang|
+      ImportRequest.where(course_id: id, user_id: user_id, translation_language: lang.english_name)
+                   .recent_first.first ||
+        user.import_requests.create!(
+          youtube_url: main_media_url,
+          youtube_video_id: video_id,
+          clip_language: progress.clip_language,
+          translation_language: lang.english_name,
+          title: name,
+          course: self,
+          create_song_progress: progress,
+          status: :failed
+        )
+    end
+  end
+
+  def regeneration_languages
+    languages = course_translations.order(:id).map(&:language)
+    raise ArgumentError, "course #{id} has no course_translations to name a translation language" if languages.empty?
+
+    languages
   end
 
   def slug_uniqueness_with_user_check

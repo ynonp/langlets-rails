@@ -16,7 +16,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     @english = languages(:english)
 
     @progress = CreateSongProgress.create!(
-      youtubeurl: CANONICAL, clip_language: "Spanish", translation_language: "English", data: {}
+      youtubeurl: CANONICAL, clip_language: "Spanish", data: {}
     )
     @course = Course.create!(
       name: "Despacito", slug: "despacito-#{VIDEO_ID.downcase}", main_media_url: CANONICAL,
@@ -272,7 +272,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
   # got built", so lessons are faked with a counter the assertions can read.
   def finalize(on_build: nil)
     builder = Object.new
-    builder.define_singleton_method(:call) { on_build&.call }
+    builder.define_singleton_method(:call) { |_language| on_build&.call }
     builder.define_singleton_method(:add_translation) { |_language| on_build&.call }
 
     # Notifications are recorded here and delivered in a job, so nothing is

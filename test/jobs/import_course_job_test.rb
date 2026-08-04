@@ -71,18 +71,18 @@ class ImportCourseJobTest < ActiveJob::TestCase
 
   def perform(url)
     progress = CreateSongProgress.create!(
-      youtubeurl: url, clip_language: "Spanish", translation_language: "English", data: {}
+      youtubeurl: url, clip_language: "Spanish", data: {}
     )
 
     # BuildSong needs a fully populated pipeline blob; this job's provider
     # handling is what's under test, so the build is stubbed out.
     builder = Object.new
-    builder.define_singleton_method(:call) { nil }
+    builder.define_singleton_method(:call) { |*| nil }
 
     # Delivery is a job now (DeliverNotificationJob), so nothing is mailed
     # inline and there is no mailer left to stub out.
     CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
-      ImportCourseJob.perform_now(progress.id, @user.id)
+      ImportCourseJob.perform_now(progress.id, @user.id, languages(:english).id)
     end
 
     Course.find_by!(main_media_url: url, user: @user)

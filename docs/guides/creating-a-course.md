@@ -53,11 +53,10 @@ english = Language.find_by(iso_name: "en")
 url = "https://www.youtube.com/watch?v=VIDEO_ID"
 slug = "my-course-slug"
 
-# 1. Create the progress tracker
+# 1. Create the progress tracker (no language of its own -- see below)
 progress = CreateSongProgress.find_or_create_by!(
   youtubeurl: url,
-  clip_language: "German",       # Must match Language.english_name
-  translation_language: "English"
+  clip_language: "German"        # Must match Language.english_name
 )
 progress.data = {}               # Initialize empty JSONB
 progress.save!
@@ -72,8 +71,9 @@ course = Course.create!(
   status: :pending
 )
 
-# 3. Enqueue the job
-CreateCourseJob.perform_later(progress.id, course.id)
+# 3. Enqueue the job -- the target language is passed explicitly,
+#    never read off the progress row
+CreateCourseJob.perform_later(progress.id, course.id, english.id)
 ```
 
 ### Monitoring Progress

@@ -38,15 +38,15 @@ module CourseBuilder
       @course = course
     end
 
-    def call
+    def call(language)
       progress.assert_current_data_format!
       previous_language = Current.translation_language
-      Current.translation_language = Language.find_by(english_name: progress.translation_language)
+      Current.translation_language = language
       ActiveRecord::Base.transaction do
         course.lessons.destroy_all
 
         l1 = Language.find_by(english_name: progress.clip_language)
-        l2 = Language.find_by(english_name: progress.translation_language)
+        l2 = language
         translation_data = progress.translation_payload(l2)
         raise "translation data is missing for #{l2.iso_name}" unless translation_data
         user = course.user

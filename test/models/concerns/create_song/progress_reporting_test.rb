@@ -6,7 +6,6 @@ module CreateSong
       @progress = CreateSongProgress.new(
         youtubeurl: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
         clip_language: "Spanish",
-        translation_language: "English",
         data: {}
       )
     end

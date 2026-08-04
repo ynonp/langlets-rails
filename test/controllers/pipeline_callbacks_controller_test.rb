@@ -10,7 +10,6 @@ class PipelineCallbacksControllerTest < ActionDispatch::IntegrationTest
     @progress = CreateSongProgress.create!(
       youtubeurl: "https://www.youtube.com/watch?v=callback-test",
       clip_language: "French",
-      translation_language: "Hebrew",
       data: {}
     )
   end
@@ -143,7 +142,7 @@ class PipelineCallbacksControllerTest < ActionDispatch::IntegrationTest
       youtube_url: @progress.youtubeurl,
       youtube_video_id: "callback-test",
       clip_language: @progress.clip_language,
-      translation_language: @progress.translation_language,
+      translation_language: "Hebrew",
       status: :importing,
       progress_percent: 0,
       create_song_progress_id: @progress.id

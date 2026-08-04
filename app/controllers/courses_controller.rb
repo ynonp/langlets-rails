@@ -216,22 +216,24 @@ class CoursesController < ApplicationController
     @create_song_progress = CreateSongProgress.find_or_initialize_by(
       youtubeurl: @course.main_media_url,
       clip_language: params[:clip_language],
-      translation_language: params[:translation_language],
     ) do |p|
       p.lyrics = params[:lyrics]
       p.data = { lesson_template: params[:lesson_template] }
     end
 
+    translation_language = Language.find_by(english_name: params[:translation_language])
+    @course.errors.add(:translation_language, "is unknown") if translation_language.nil?
+
     # Validate both course and progress record
     course_valid = @course.valid?
     progress_valid = @create_song_progress.valid?
 
-    if course_valid && progress_valid
+    if course_valid && progress_valid && translation_language.present?
       @course.save!
       @create_song_progress.save!
 
       # Queue the background job with the validated records
-      CreateCourseJob.perform_later(@create_song_progress.id, @course.id)
+      CreateCourseJob.perform_later(@create_song_progress.id, @course.id, translation_language.id)
 
       redirect_to courses_path, notice: "Your new course is being created! You'll receive an email when it's ready."
     else
@@ -242,8 +244,6 @@ class CoursesController < ApplicationController
           @course.errors.add(:main_media_url, error.message)
         when :clip_language
           @course.errors.add(:clip_language, error.message)
-        when :translation_language
-          @course.errors.add(:translation_language, error.message)
         end
       end
 

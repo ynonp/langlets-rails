@@ -60,7 +60,6 @@ class MultiLanguageTranslationTest < ActiveSupport::TestCase
     progress = CreateSongProgress.create!(
       youtubeurl: @medium.url,
       clip_language: @spanish.english_name,
-      translation_language: @english.english_name,
       data: {
         "translations" => {
           german.iso_name => {

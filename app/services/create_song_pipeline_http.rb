@@ -85,8 +85,10 @@ class CreateSongPipelineHttp
     end
   end
 
-  # language: nil runs the record's own translation_language. Pass one to run a
-  # different target (the extra languages other imports asked for).
+  # language: nil runs transcription + lessons only, with no translation
+  # branch. Every caller that wants a translation must pass the language
+  # explicitly -- CreateSongProgress has no language of its own to fall back
+  # on.
   # wait: true blocks until the run finishes and raises unless every branch
   # succeeded — the rake tasks' shape, never a worker's.
   # transport is the injection point tests use, mirroring the CLI service's
@@ -148,10 +150,9 @@ class CreateSongPipelineHttp
   #
   # translation_language: null is legal — it runs transcription + lessons only.
   def language_ref
-    language = @language || Language.find_by(english_name: @progress.translation_language)
-    return nil if language.nil?
+    return nil if @language.nil?
 
-    { id: language.id, iso_name: language.iso_name, english_name: language.english_name }
+    { id: @language.id, iso_name: @language.iso_name, english_name: @language.english_name }
   end
 
   def post(body)

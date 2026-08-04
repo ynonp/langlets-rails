@@ -3,13 +3,14 @@
 require "json"
 require "open3"
 
-progress_id = ARGV.first
-abort "Usage: bin/rails runner script/print_add_lessons_prompt.rb CREATE_SONG_PROGRESS_ID" if progress_id.blank?
+progress_id, translation_language = ARGV
+if progress_id.blank? || translation_language.blank?
+  abort "Usage: bin/rails runner script/print_add_lessons_prompt.rb CREATE_SONG_PROGRESS_ID TRANSLATION_LANGUAGE"
+end
 
 ActiveRecord::Base.logger = nil
 progress = CreateSongProgress.find(progress_id)
 clip_language = progress.clip_language
-translation_language = progress.translation_language.presence || "English"
 
 deno_source = <<~JAVASCRIPT
   import { addLessonsPrompt } from "./src/prompts/addLessons.ts";

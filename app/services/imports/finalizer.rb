@@ -80,7 +80,7 @@ module Imports
       course.with_lock do
         course.reload
 
-        CourseBuilder::BuildSong.new(progress, course).call unless course.lessons.exists?
+        CourseBuilder::BuildSong.new(progress, course).call(language) unless course.lessons.exists?
         unless course.translation_ready?(language)
           CourseBuilder::BuildSong.new(progress, course).add_translation(language)
         end

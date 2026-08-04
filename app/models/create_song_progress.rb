@@ -90,20 +90,7 @@ class CreateSongProgress < ApplicationRecord
 
     raise LegacyFormatError,
           "CreateSongProgress #{id || youtubeurl} data is in the legacy single-language format; " \
-          "convert it with rake create_song_progress:convert_records (or convert_files for JSON exports)"
-  end
-
-  # Upgrade a legacy blob in place: the inline text_l2 / word translations are
-  # the translation_language's, so move them into that language's payload.
-  def upgrade_data_format!
-    return self if current_data_format?
-
-    language = resolve_translation_language(translation_language)
-    raise LegacyFormatError, "cannot upgrade #{youtubeurl}: unknown translation language #{translation_language.inspect}" unless language
-
-    DataFormat.pack_translation(data, language)
-    save!
-    self
+          "convert it with rake create_song_progress:convert_files"
   end
 
   def ready?
@@ -117,7 +104,6 @@ class CreateSongProgress < ApplicationRecord
     export_data = {
       youtubeurl: youtubeurl,
       clip_language: clip_language,
-      translation_language: translation_language,
       step: step,
       data: data,
       created_at: created_at,

@@ -261,10 +261,9 @@ class CourseTest < ActiveJob::TestCase
     progress = CreateSongProgress.create!(
       youtubeurl: url,
       clip_language: "Spanish",
-      translation_language: "English",
       data: { "phrases" => [ { "text_l1" => "old" } ] }
     )
-    course = Course.create!(
+    course = create_translated_course!(
       name: "Old Course",
       slug: "old-course-regenerate1",
       main_media_url: url,
@@ -272,7 +271,8 @@ class CourseTest < ActiveJob::TestCase
       language: spanish,
       user: @user,
       status: :published,
-      create_song_progress: progress
+      create_song_progress: progress,
+      translation_language: english
     )
     medium = Medium.create!(url: url, language: spanish)
     Lesson.create!(course: course, medium: medium, user: @user, name: "Old Lesson", slug: "old-lesson")
@@ -303,14 +303,14 @@ class CourseTest < ActiveJob::TestCase
 
   test "regenerate creates a failed import request for the course owner before retrying" do
     spanish = languages(:spanish)
+    english = languages(:english)
     url = "https://www.youtube.com/watch?v=regenerate2"
     progress = CreateSongProgress.create!(
       youtubeurl: url,
       clip_language: "Spanish",
-      translation_language: "English",
       data: { "format_version" => 2 }
     )
-    course = Course.create!(
+    course = create_translated_course!(
       name: "Legacy Course",
       slug: "legacy-course-regenerate2",
       main_media_url: url,
@@ -318,7 +318,8 @@ class CourseTest < ActiveJob::TestCase
       language: spanish,
       user: @user,
       status: :published,
-      create_song_progress: progress
+      create_song_progress: progress,
+      translation_language: english
     )
 
     assert_difference -> { ImportRequest.count }, 1 do
@@ -331,6 +332,50 @@ class CourseTest < ActiveJob::TestCase
     assert_equal progress, request.create_song_progress
     assert request.course.pending?
     refute_equal course.id, request.course_id
+  end
+
+  test "regenerate creates a request for every language the course was built in" do
+    spanish = languages(:spanish)
+    english = languages(:english)
+    hebrew = languages(:hebrew)
+    url = "https://www.youtube.com/watch?v=regenerate3"
+    progress = CreateSongProgress.create!(
+      youtubeurl: url,
+      clip_language: "Spanish",
+      data: { "phrases" => [ { "text_l1" => "old" } ] }
+    )
+    course = create_translated_course!(
+      name: "Bilingual Course",
+      slug: "bilingual-course-regenerate3",
+      main_media_url: url,
+      youtube_video_id: "regenerate3",
+      language: spanish,
+      user: @user,
+      status: :published,
+      create_song_progress: progress,
+      translation_language: english
+    )
+    course.course_translations.create!(language: hebrew, name: course.name, status: :ready)
+    clear_enqueued_jobs
+
+    primary = nil
+    assert_difference -> { ImportRequest.count }, 2 do
+      assert_enqueued_with(job: CreateCourseJob) { primary = course.regenerate! }
+    end
+
+    # Only the first language's request actually starts a run — the second is
+    # covered by that active sibling (ImportRequest#covered_by_sibling?) and
+    # picks up its own run later, once Imports::Finalizer sees the course
+    # publish and finds it still outstanding.
+    assert_equal 1, enqueued_jobs.count { |job| job["job_class"] == "CreateCourseJob" }
+    assert_equal 0, enqueued_jobs.count { |job| job["job_class"] == "AddCourseTranslationJob" }
+    assert_equal "English", primary.translation_language
+
+    replacement = primary.course
+    requests = ImportRequest.where(course: replacement)
+    assert_equal [ "English", "Hebrew" ], requests.pluck(:translation_language).sort
+    assert requests.all?(&:queued?)
+    assert_equal [ progress ], requests.map(&:create_song_progress).uniq
   end
 
   private

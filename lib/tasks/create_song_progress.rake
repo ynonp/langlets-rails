@@ -30,31 +30,32 @@ namespace :create_song_progress do
     creator = User.find_by(email: creator_email)
     raise ArgumentError, "unknown course creator: #{creator_email}" unless creator
 
-    ImportCourseJob.perform_now(progress.id, creator.id)
+    language = Language.find_by(english_name: args[:translation_language])
+    raise ArgumentError, "unknown translation language: #{args[:translation_language]}" unless language
+
+    ImportCourseJob.perform_now(progress.id, creator.id, language.id)
     puts "Course created successfully for CreateSongProgress #{progress.id}."
   rescue ArgumentError => e
     abort e.message
   end
 
   desc "Export a CreateSongProgress record to JSON file"
-  task :export, [ :youtubeurl, :clip_language, :translation_language, :output_file ] => :environment do |t, args|
-    if args[:youtubeurl].blank? || args[:clip_language].blank? || args[:translation_language].blank?
-      puts "Usage: rake create_song_progress:export[youtubeurl,clip_language,translation_language,output_file]"
-      puts "Example: rake create_song_progress:export['https://youtube.com/watch?v=abc123','Spanish','English','progress.json']"
+  task :export, [ :youtubeurl, :clip_language, :output_file ] => :environment do |t, args|
+    if args[:youtubeurl].blank? || args[:clip_language].blank?
+      puts "Usage: rake create_song_progress:export[youtubeurl,clip_language,output_file]"
+      puts "Example: rake create_song_progress:export['https://youtube.com/watch?v=abc123','Spanish','progress.json']"
       exit 1
     end
 
     progress = CreateSongProgress.find_by(
       youtubeurl: args[:youtubeurl],
-      clip_language: args[:clip_language],
-      translation_language: args[:translation_language]
+      clip_language: args[:clip_language]
     )
 
     if progress.nil?
       puts "CreateSongProgress not found for:"
       puts "  YouTube URL: #{args[:youtubeurl]}"
       puts "  Clip Language: #{args[:clip_language]}"
-      puts "  Translation Language: #{args[:translation_language]}"
       exit 1
     end
 
@@ -63,7 +64,6 @@ namespace :create_song_progress do
     export_data = {
       youtubeurl: progress.youtubeurl,
       clip_language: progress.clip_language,
-      translation_language: progress.translation_language,
       step: progress.step,
       data: progress.data,
       created_at: progress.created_at,
@@ -100,7 +100,7 @@ namespace :create_song_progress do
       exit 1
     end
 
-    required_fields = %w[youtubeurl clip_language translation_language step]
+    required_fields = %w[youtubeurl clip_language step]
     missing_fields = required_fields - import_data.keys
 
     if missing_fields.any?
@@ -118,15 +118,13 @@ namespace :create_song_progress do
 
     existing_progress = CreateSongProgress.find_by(
       youtubeurl: import_data["youtubeurl"],
-      clip_language: import_data["clip_language"],
-      translation_language: import_data["translation_language"]
+      clip_language: import_data["clip_language"]
     )
 
     if existing_progress && !overwrite
       puts "CreateSongProgress already exists for:"
       puts "  YouTube URL: #{import_data['youtubeurl']}"
       puts "  Clip Language: #{import_data['clip_language']}"
-      puts "  Translation Language: #{import_data['translation_language']}"
       puts "Use overwrite=true to replace existing record"
       exit 1
     end
@@ -136,7 +134,6 @@ namespace :create_song_progress do
     progress.assign_attributes(
       youtubeurl: import_data["youtubeurl"],
       clip_language: import_data["clip_language"],
-      translation_language: import_data["translation_language"],
       step: import_data["step"],
       data: import_data["data"]
     )
@@ -146,7 +143,6 @@ namespace :create_song_progress do
       puts "CreateSongProgress #{action} successfully!"
       puts "  YouTube URL: #{progress.youtubeurl}"
       puts "  Clip Language: #{progress.clip_language}"
-      puts "  Translation Language: #{progress.translation_language}"
       puts "  Step: #{progress.step}"
       puts "  Data keys: #{progress.data&.keys&.join(', ') || 'none'}"
 
@@ -175,6 +171,8 @@ namespace :create_song_progress do
 
     clip_language = args[:clip_language] || "Hebrew"
     translation_language = args[:translation_language] || "English"
+    language = Language.find_by(english_name: translation_language)
+    raise ArgumentError, "unknown translation language: #{translation_language}" unless language
 
     output_dir = Rails.root.join("test", "fixtures", "create_song_progress")
     FileUtils.mkdir_p(output_dir)
@@ -196,8 +194,7 @@ namespace :create_song_progress do
 
       progress = CreateSongProgress.find_or_initialize_by(
         youtubeurl: url,
-        clip_language: clip_language,
-        translation_language: translation_language
+        clip_language: clip_language
       )
 
       progress.data ||= {}
@@ -205,7 +202,7 @@ namespace :create_song_progress do
       begin
         # The pipeline needs a persisted record to address its callbacks to.
         progress.save!
-        CreateSongPipelineHttp.new(progress: progress, wait: true).call
+        CreateSongPipelineHttp.new(progress: progress, language: language, wait: true).call
 
         video_id = url.gsub(/[^a-zA-Z0-9]/, "_")
         output_file = output_dir.join("#{video_id}.json")
@@ -245,10 +242,12 @@ namespace :create_song_progress do
     phrases = WordTimingParser.parse(File.read(args[:json_file]))
     puts "Parsed #{phrases.length} phrases (#{phrases.sum { |p| p["words"].length }} words) from #{args[:json_file]}"
 
+    language = Language.find_by(english_name: args[:translation_language])
+    raise ArgumentError, "unknown translation language: #{args[:translation_language]}" unless language
+
     progress = CreateSongProgress.find_or_initialize_by(
       youtubeurl: args[:youtubeurl],
-      clip_language: args[:clip_language],
-      translation_language: args[:translation_language]
+      clip_language: args[:clip_language]
     )
     progress.data = { "phrases" => phrases }
     progress.save!
@@ -257,7 +256,7 @@ namespace :create_song_progress do
     # extract_lyrics on their presence, so this run does lessons, ratings,
     # similar sounds and the translation without re-transcribing.
     puts "Running the pipeline (skipping transcription — phrases are seeded)..."
-    CreateSongPipelineHttp.new(progress: progress, wait: true).call
+    CreateSongPipelineHttp.new(progress: progress, language: language, wait: true).call
 
     output_file = args[:output_file] || "word_timed_progress_#{Time.zone.now.to_i}.json"
     progress.export(output_file)
@@ -307,29 +306,6 @@ namespace :create_song_progress do
     exit 1 if failed > 0
   end
 
-  desc "Convert legacy-format CreateSongProgress DB records to the multi-language format"
-  task convert_records: :environment do
-    converted = skipped = failed = 0
-
-    CreateSongProgress.find_each do |progress|
-      if progress.current_data_format?
-        skipped += 1
-        next
-      end
-
-      progress.upgrade_data_format!
-      puts "converted #{progress.id} #{progress.youtubeurl} (#{progress.clip_language} / #{progress.translation_language})"
-      converted += 1
-    rescue => e
-      puts "FAILED #{progress.id} #{progress.youtubeurl}: #{e.message}"
-      failed += 1
-    end
-
-    puts
-    puts "#{converted} converted, #{skipped} already current, #{failed} failed"
-    exit 1 if failed > 0
-  end
-
   desc "List all CreateSongProgress records"
   task list: :environment do
     progresses = CreateSongProgress.all
@@ -345,7 +321,7 @@ namespace :create_song_progress do
     progresses.each do |progress|
       puts "YouTube URL: #{progress.youtubeurl}"
       puts "Clip Language: #{progress.clip_language}"
-      puts "Translation Language: #{progress.translation_language}"
+      puts "Translations: #{progress.data&.dig("translations")&.keys&.join(", ").presence || "none"}"
       puts "Step: #{progress.step}"
       puts "Created: #{progress.created_at}"
       puts "Updated: #{progress.updated_at}"

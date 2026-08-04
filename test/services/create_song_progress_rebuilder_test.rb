@@ -18,7 +18,6 @@ class CreateSongProgressRebuilderTest < ActiveSupport::TestCase
     @progress = CreateSongProgress.create!(
       youtubeurl: @fixture_data["youtubeurl"],
       clip_language: @fixture_data["clip_language"],
-      translation_language: @fixture_data["translation_language"],
       data: @fixture_data["data"]
     )
 
@@ -31,7 +30,7 @@ class CreateSongProgressRebuilderTest < ActiveSupport::TestCase
       status: :processing
     )
 
-    CourseBuilder::BuildSong.new(@progress, @course).call
+    CourseBuilder::BuildSong.new(@progress, @course).call(@english)
     @course.reload
   end
 

@@ -54,29 +54,11 @@ class CreateSongProgressDataFormatTest < ActiveSupport::TestCase
     progress = CreateSongProgress.new(
       youtubeurl: "https://www.youtube.com/watch?v=legacy1",
       clip_language: "Spanish",
-      translation_language: "English",
       data: legacy_data
     )
 
     assert_raises(CreateSongProgress::LegacyFormatError) do
-      CourseBuilder::BuildSong.new(progress, Course.new).call
+      CourseBuilder::BuildSong.new(progress, Course.new).call(languages(:english))
     end
-  end
-
-  test "upgrade_data_format! converts a legacy record in place" do
-    progress = CreateSongProgress.create!(
-      youtubeurl: "https://www.youtube.com/watch?v=legacy2",
-      clip_language: "Spanish",
-      translation_language: "English",
-      data: legacy_data
-    )
-
-    assert_equal 1, progress.data_format_version
-    progress.upgrade_data_format!
-    progress.reload
-
-    assert progress.current_data_format?
-    assert progress.translation_complete?(languages(:english))
-    assert_equal "hello world", progress.translation_payload(languages(:english))["phrases"][0]["text"]
   end
 end

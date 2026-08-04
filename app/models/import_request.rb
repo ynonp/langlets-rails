@@ -159,7 +159,7 @@ class ImportRequest < ApplicationRecord
           AddCourseTranslationJob.perform_later(create_song_progress_id, course_id, language.id)
         else
           course.update!(status: :pending)
-          CreateCourseJob.perform_later(create_song_progress_id, course_id)
+          CreateCourseJob.perform_later(create_song_progress_id, course_id, language.id)
         end
       end
     end
