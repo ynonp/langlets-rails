@@ -1,5 +1,5 @@
 import { assertEquals, assertRejects } from "@std/assert";
-import { translate } from "../src/steps/translate.ts";
+import { assertLinesNotEchoed, translate } from "../src/steps/translate.ts";
 import {
   initTranslationPayload,
   materializeTranslationLines,
@@ -147,6 +147,70 @@ Deno.test("translate falls back to the default model for other languages", async
   assertEquals(fallback.calls(), 1);
   assertEquals(hebrew.calls(), 0);
   assertEquals(store.data.translation_lines!.en, ["Hello world", "Hi again"]);
+});
+
+Deno.test("translate fails when the response echoes the source lines", async () => {
+  // The real failure this guards against: the model repeats the Arabic
+  // source back instead of translating it into Hebrew, and nothing else
+  // catches it because the line count matches.
+  const lines = [
+    "الدكتور حسام",
+    "الفاضل يعني",
+    "اريد ان",
+    "اذكره بشيء",
+    "اول شيء",
+    "في هذا",
+    "الوقت بالذات",
+    "شكرا جزيلا",
+  ];
+  const model = queuedModel([lines.join("\n")]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: lines },
+    models: { translate: model.model },
+  });
+
+  await assertRejects(
+    () => translate(ctx),
+    Error,
+    "echo the source language: 8/8 lines came back unchanged",
+  );
+
+  const error = store.data.errors![0];
+  assertEquals(error.step, "translate");
+  assertEquals(store.data.translation_lines, undefined);
+});
+
+Deno.test("assertLinesNotEchoed allows a real translation that happens to share a line", () => {
+  // A cognate or a proper name translating to itself is not the failure —
+  // only a response that echoes wholesale is.
+  const source = [
+    "Bonjour le monde",
+    "Salut encore",
+    "Comment ça va",
+    "Je vais bien",
+    "Merci beaucoup",
+    "À plus tard",
+    "Hotel",
+    "Au revoir",
+  ];
+  const translated = [
+    "Hello world",
+    "Hi again",
+    "How are you",
+    "I am well",
+    "Thank you",
+    "See you later",
+    "Hotel",
+    "Goodbye",
+  ];
+
+  assertLinesNotEchoed(source, translated);
+});
+
+Deno.test("assertLinesNotEchoed ignores a clip too short to judge", () => {
+  const lines = ["Bonjour", "Salut", "Merci"];
+
+  assertLinesNotEchoed(lines, lines);
 });
 
 Deno.test("translate is a no-op without a target language", async () => {

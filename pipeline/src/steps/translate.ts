@@ -13,6 +13,16 @@ import { withRetries } from "../retry.ts";
 
 const MAX_RETRIES = 0;
 
+// A response that repeats the source lines instead of translating them
+// passes the line-count check below — the same gap addTokenTranslations.ts's
+// assertNotEchoed closes for word translations. Guard the sentence level the
+// same way: too many lines coming back unchanged is a bad response, not a
+// real translation. Kept as its own copy rather than shared with
+// addTokenTranslations.ts's version — that one judges words against a part-
+// of-speech exemption list that has no equivalent at the line level.
+export const MAX_ECHO_RATIO = 0.3;
+export const MIN_ECHO_SAMPLE = 8;
+
 export async function translate(ctx: PipelineContext): Promise<void> {
   const language = ctx.translationLanguage;
   if (!language) return;
@@ -52,6 +62,7 @@ export async function translate(ctx: PipelineContext): Promise<void> {
             `Bad translation, line count doesnt match ${lines.length} != ${originalLyrics.length}`,
           );
         }
+        assertLinesNotEchoed(originalLyrics, lines);
         return lines;
       },
       {
@@ -74,4 +85,40 @@ export async function translate(ctx: PipelineContext): Promise<void> {
     });
     throw error;
   }
+}
+
+// Throw when too much of the response came back as the source line. Some
+// echo is legitimate — a line that's just a proper name, a number, or an
+// interjection can translate to itself — which is why the bar is a ratio
+// over the whole response rather than a single line, and why a clip too
+// short for the ratio to mean anything is never failed on it.
+export function assertLinesNotEchoed(sourceLines: string[], translatedLines: string[]): void {
+  let counted = 0;
+  let echoed = 0;
+
+  sourceLines.forEach((line, index) => {
+    const source = normalizeForEcho(line);
+    const translation = normalizeForEcho(translatedLines[index] ?? "");
+    if (source === "" || translation === "") return;
+
+    counted += 1;
+    if (source === translation) echoed += 1;
+  });
+
+  if (counted < MIN_ECHO_SAMPLE) return;
+  const ratio = echoed / counted;
+  if (ratio < MAX_ECHO_RATIO) return;
+
+  throw new Error(
+    `Translated lines echo the source language: ${echoed}/${counted} lines came back unchanged`,
+  );
+}
+
+// Mirrors addTokenTranslations.ts's normalizeForEcho: case, surrounding
+// punctuation and quoting differences are not a translation.
+function normalizeForEcho(value: string): string {
+  return value
+    .normalize("NFC")
+    .toLowerCase()
+    .replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, "");
 }
