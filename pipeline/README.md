@@ -63,7 +63,14 @@ languages.
 
 Sentence translation follows the same pattern: it reads `lyric_lines` and persists
 `translation_lines.<iso>`, then copies those lines into the stable
-`translations.<iso>.phrases.<i>.text` payload slots.
+`translations.<iso>.phrases.<i>.text` payload slots. Its 1:1 line mapping is carried by explicit
+line numbers: every input line is sent as `<n>. <text>` and every output line must repeat that
+number. Numbering is global across chunks, so a number identifies a line in the whole transcript.
+Lines are packed into chunks of at most 200 and run four at a time. Correctly numbered answers are
+kept, and up to two repair passes ask again for only the numbers still missing — with the whole
+chunk still in the prompt as context, so a one-word fragment is never translated in isolation. Blank
+source lines are filled in place and never requested. The step fails only when lines are still
+missing after the third attempt, and the failure names them.
 
 Token translation begins after semantic segmentation, alongside lesson rating and sentence
 translation.

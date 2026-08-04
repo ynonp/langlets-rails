@@ -60,5 +60,22 @@ Deno.test("translatePrompt threads clip/translation language names and line coun
 
   assertStringIncludes(prompt, "Translate these Arabic subtitles into Hebrew.");
   assertStringIncludes(prompt, "idiomatic Hebrew in the word order");
-  assertStringIncludes(prompt, "Output exactly 7 lines");
+  assertStringIncludes(prompt, "Output exactly 7 lines, one for each numbered input line");
+});
+
+Deno.test("translatePrompt numbers both halves of the worked example", () => {
+  const prompt = translatePrompt("Arabic", "Hebrew", 3);
+
+  assertStringIncludes(prompt, "1. أنا سعيد جدًا لسماع صوتك، حتى وأنا نائم");
+  assertStringIncludes(prompt, "3. وأنا، ببطء، أفقدك");
+  assertStringIncludes(prompt, "1. כל כך שמח לשמוע את קולך, גם כשאני ישן");
+  assertStringIncludes(prompt, "3. ואני, לאט לאט, מאבד אותך");
+});
+
+Deno.test("translatePrompt asks a repair pass for only the numbers it names", () => {
+  const prompt = translatePrompt("Arabic", "Hebrew", 2, [46, 59]);
+
+  assertStringIncludes(prompt, "Output exactly 2 lines");
+  assertStringIncludes(prompt, "input line numbers, in this order: 46, 59");
+  assertStringIncludes(prompt, "context only");
 });

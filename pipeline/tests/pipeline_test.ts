@@ -44,7 +44,7 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
       lessons: [{ title: "Lesson", lines: ["Line 1", "Line 2"] }],
     }]),
     rate: queuedModel([RATINGS]),
-    translate: queuedModel(["שורה 1\nשורה 2"]),
+    translate: queuedModel(["1. שורה 1\n2. שורה 2"]),
     tokens: queuedModel([
       "Line | ת1 [noun]\n1 | ת2 [numeral]\nLine | ת3 [noun]\n2 | ת4 [numeral]",
     ]),
@@ -122,7 +122,10 @@ Deno.test("failed native captions and Gemini fallback stop before downstream bra
 });
 
 Deno.test("rerunning saved data retries only the failed translation", async () => {
-  const first = happyMocks({ translate: queuedModel(["only one line"]) });
+  // Line 2 never comes back, and the repair passes cannot supply it either.
+  const first = happyMocks({
+    translate: queuedModel(["1. only one line", "1. only one line", "1. only one line"]),
+  });
   const firstRun = await runPipeline(payload(), {
     models: first.models,
     sink: new MemorySink(),

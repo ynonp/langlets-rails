@@ -11,6 +11,7 @@ import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
 import { addTokenTranslationsPrompt } from "../prompts/addTokenTranslations.ts";
 import { message, withRetries } from "../retry.ts";
+import { mapWithConcurrency } from "../concurrency.ts";
 
 // Soft cap on input lines per LLM call. There is one line per learner token.
 // Chunks are packed by whole phrase, so a chunk may come in under this and a
@@ -298,29 +299,4 @@ function normalizeForEcho(value: string): string {
     .normalize("NFC")
     .toLowerCase()
     .replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, "");
-}
-
-// Run `fn` over every item with at most `limit` in flight; resolves with one
-// settled result per item (successes persist even when siblings fail).
-async function mapWithConcurrency<T, R>(
-  items: T[],
-  limit: number,
-  fn: (item: T) => Promise<R>,
-): Promise<PromiseSettledResult<R>[]> {
-  const results: PromiseSettledResult<R>[] = new Array(items.length);
-  let next = 0;
-
-  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
-    while (next < items.length) {
-      const index = next++;
-      try {
-        results[index] = { status: "fulfilled", value: await fn(items[index]) };
-      } catch (reason) {
-        results[index] = { status: "rejected", reason };
-      }
-    }
-  });
-
-  await Promise.all(workers);
-  return results;
 }

@@ -1,8 +1,16 @@
 // The system prompt for the translate step. The one mechanical requirement is
-// the 1:1 line mapping (steps/translate.ts rejects a mismatched line count) —
-// everything else is deliberately short. Earlier versions piled on "stay
-// literal" / "each line must stand on its own" instructions, and the models
-// obliged by calquing English word order line by line.
+// the 1:1 line mapping — everything else is deliberately short. Earlier
+// versions piled on "stay literal" / "each line must stand on its own"
+// instructions, and the models obliged by calquing English word order line by
+// line.
+//
+// Every input line carries its own number and every output line must repeat
+// it. Asking for a bare line count instead was not enough: on a transcript
+// with a long run of one-word fragment lines ("وكل." / "كل." / "اللي.") the
+// model merges neighbours into the one natural clause they make together, and
+// an unnumbered response gives no way to tell *which* lines it merged — the
+// whole run fails on the count alone. Numbers make the damage addressable, so
+// steps/translate.ts can ask again for exactly the lines that went missing.
 
 interface Example {
   input: string;
@@ -59,28 +67,48 @@ function exampleFor(clipLanguage: string, translationLanguage: string): Example 
     (translationLanguage === "Hebrew" ? examples.Spanish.Hebrew : examples.Spanish.English);
 }
 
+// `requestedLineNumbers` names the subset to translate on a repair pass: the
+// input still carries the whole chunk so context is never lost, but only those
+// lines are wanted back. Omit it to ask for every input line.
 export function translatePrompt(
   clipLanguage: string,
   translationLanguage: string,
   expectedLineCount: number,
+  requestedLineNumbers?: number[],
 ): string {
   const example = exampleFor(clipLanguage, translationLanguage);
+  const scope = requestedLineNumbers
+    ? `Output exactly ${expectedLineCount} lines — one for each of these input line numbers, in this order: ${
+      requestedLineNumbers.join(", ")
+    }. Every other input line is context only: read it, but do not translate it.`
+    : `Output exactly ${expectedLineCount} lines, one for each numbered input line, in the same order.`;
 
   return `Translate these ${clipLanguage} subtitles into ${translationLanguage}.
 
 Translate the text as a whole, the way a professional subtitler would: idiomatic ${translationLanguage} in the word order the language actually uses. Keep the register and the ambiguity of the original — don't make implied or slang meanings more explicit than the source is.
 
-The subtitles are line-aligned to audio in a language-learning app: output line N is the translation of input line N. Output exactly ${expectedLineCount} lines, in the same order, never merging or splitting a line and never moving content from one line to another. Read the whole passage before you start, so that word choice and word order come from the full text and not from the fragment.
+The subtitles are line-aligned to audio in a language-learning app. Every input line begins with its line number. Begin each output line with the same number followed by a period and a space, then the translation of that line and nothing else. Repeat the numbers exactly as given — they are not always consecutive.
 
-Reply with the translation only — no commentary, no numbering, no blank lines.
+${scope}
+
+Never merge two input lines into one output line and never split one input line across two. A line that is only a fragment — a single word, a bare conjunction, a repetition of the line before it — still gets its own numbered output line, translated as the fragment it is. Read the whole passage before you start, so that word choice and word order come from the full text and not from the fragment.
+
+Reply with the numbered translation only — no commentary, no blank lines, nothing outside the numbered lines.
 
 ## Example input
 
-${example.input}
+${numberedExample(example.input)}
 
 ## Example output
 
-${example.output}
+${numberedExample(example.output)}
 
 ## Input`;
+}
+
+function numberedExample(text: string): string {
+  return text
+    .split("\n")
+    .map((line, index) => `${index + 1}. ${line}`)
+    .join("\n");
 }

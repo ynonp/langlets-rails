@@ -825,7 +825,25 @@ the preserved provisional aligned phrase.
 
 After semantic segmentation, lesson rating, sentence translation, and token translation run
 concurrently. Sentence translation persists its result under
-`data["translation_lines"][iso]`. Using the timed phrases, the pipeline materializes
+`data["translation_lines"][iso]`.
+
+Sentence translation enforces its 1:1 line mapping with explicit line numbers rather than with a
+line count. Each input line is sent as `<n>. <text>` and each output line must repeat that number;
+numbering is global across chunks, so a number identifies a line in the whole transcript. Source
+lines are packed into chunks of at most 200 and run through a four-worker pool. Whatever comes back
+correctly numbered is kept, and up to two repair passes ask again for only the numbers still
+missing, with the full chunk still in the prompt as context so a one-word fragment is never
+translated in isolation. Blank source lines are filled in place and never requested. A response
+that fails the echo guard is discarded whole rather than banked, since echo means the task was
+misunderstood rather than half-answered; the assembled result is echo-checked once more before it
+is persisted. The step fails only when lines are still missing after the third attempt, and the
+error names the missing line numbers — the reason for numbering in the first place. A bare count
+check could say only "82 != 84": on a transcript with a long run of one-word fragment lines
+(`وكل.` / `كل.` / `اللي.`) the model merges neighbours into the one natural clause they make
+together, and an unnumbered response gives no way to tell which lines were merged or to ask for
+them again.
+
+Using the timed phrases, the pipeline materializes
 the same timestamped `data["lessons"]` and version-2 `data["translations"][iso]["phrases"]` formats
 consumed by course building. Token translation starts as soon as semantic phrases exist, without
 waiting for lesson rating or sentence translation. The
