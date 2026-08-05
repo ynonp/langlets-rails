@@ -47,4 +47,11 @@ class ActivitiesHelperTest < ActionView::TestCase
     assert_includes html, 'data-answer="one"'
     assert_equal 1, html.scan("________").size
   end
+
+  test "similar sounds fall back to the legacy phrase token array" do
+    phrase = Struct.new(:text_l1, :similar_sounds).new("A Dios le pido", [])
+    token = Struct.new(:l1_start_index, :l1_end_index, :similar_sound).new(14, 17, [ "nido", "olvido" ])
+
+    assert_equal [ "nido", "olvido" ], similar_sounds_for_token(phrase, token)
+  end
 end

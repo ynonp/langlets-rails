@@ -1162,7 +1162,14 @@ download is verified before it counts:
   the current highlighted phrase plus the next phrase, exposes choices as the
   missing phrase begins, and pauses at that phrase's end if it remains
   unanswered. Correct answers fill the selected indexed token occurrence, so
-  repeated words elsewhere in the phrase are not blanked accidentally.
+  repeated words elsewhere in the phrase are not blanked accidentally. Answer
+  distractors support both normalized `SimilarSound` rows and the legacy
+  `phrase_tokens.similar_sound` array used by older phrase-timed courses.
+  Legacy data is upgraded with
+  `bin/rails data:migrate_legacy_similar_sounds`; the idempotent task creates
+  missing normalized rows in a transaction per token and clears that token's
+  legacy array only after every row succeeds. `DRY_RUN=1` reports the work
+  without writing, and `PHRASE_TOKEN_ID=<id>` can safely scope a trial run.
 - **FindAnswerActivity**: Question-answer exercises
 
 #### 12. **Playlist** (`playlists`)

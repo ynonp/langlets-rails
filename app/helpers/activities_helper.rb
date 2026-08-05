@@ -322,18 +322,24 @@ module ActivitiesHelper
   end
 
   def similar_sounds_for_token(phrase, token_translation)
-    return nil unless phrase.respond_to?(:similar_sounds)
+    matching = if phrase.respond_to?(:similar_sounds)
+      token_start_word = char_index_to_word_index(token_translation.l1_start_index, phrase.text_l1)
+      token_end_word = char_index_to_word_index(token_translation.l1_end_index, phrase.text_l1, inclusive: true)
 
-    token_start_word = char_index_to_word_index(token_translation.l1_start_index, phrase.text_l1)
-    token_end_word = char_index_to_word_index(token_translation.l1_end_index, phrase.text_l1, inclusive: true)
-
-    matching = phrase.similar_sounds.select do |ss|
-      ss.start_word_index >= token_start_word && ss.end_word_index <= token_end_word
+      phrase.similar_sounds.select do |ss|
+        ss.start_word_index >= token_start_word && ss.end_word_index <= token_end_word
+      end
+    else
+      []
     end
 
-    return nil if matching.blank?
+    record_sounds = matching.map(&:replacement_text)
+    return record_sounds if record_sounds.present?
 
-    matching.map(&:replacement_text)
+    # Courses created by the legacy pipeline stored distractors directly on the
+    # PhraseToken. Keep them playable alongside the normalized SimilarSound rows.
+    legacy_sounds = token_translation.similar_sound if token_translation.respond_to?(:similar_sound)
+    Array(legacy_sounds).presence
   end
 
   def char_index_to_word_index(char_index, text, inclusive: false)

@@ -14,6 +14,8 @@ describe("listen activity timing modes", () => {
     assert.match(source, /at >= missingStart/);
     assert.match(source, /pauseForQuestion\(this\.currentIndex\)/);
     assert.match(source, /if \(!this\.wordTimingValue\) this\.presentQuestion/);
+    assert.match(source, /this\.stageTarget\.classList\.remove\("hidden"\)/);
+    assert.match(source, /\.listen-word\[data-missing='true'\].*toggleAttribute\("data-revealed"/);
   });
 
   test("phrase timing pauses at line end and completes through the shared event", async () => {

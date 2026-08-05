@@ -58,7 +58,7 @@
       </p>
     </header>
 
-    <div class="relative mx-4 mt-4 h-[240px] flex-none overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-950"
+    <div class="relative mx-4 mt-4 h-[240px] flex-none overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-950 <%= 'hidden' if word_timing %>"
          dir="<%= params[:rtl] ? 'rtl' : 'ltr' %>"
          data-listen-activity-target="stage">
       <% phrases.each_with_index do |phrase, index| %>

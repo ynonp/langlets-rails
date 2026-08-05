@@ -32,6 +32,7 @@ export default class extends Controller {
       return
     }
 
+    this.stageTarget.classList.remove("hidden")
     if (nextIndex !== this.currentIndex) {
       this.currentIndex = nextIndex
       this.showWindow(nextIndex)
@@ -77,6 +78,9 @@ export default class extends Controller {
   presentQuestion(index) {
     if (!this.hasUnansweredBlank(index)) return
     const phrase = this.phraseTargets[index]
+    if (this.wordTimingValue) {
+      phrase.querySelector(".listen-word[data-missing='true']")?.toggleAttribute("data-revealed", true)
+    }
     const translation = phrase.querySelector("[data-listen-activity-target='translation']")
     const choices = phrase.querySelector("template[data-listen-activity-target='choices']")
     if (translation) translation.classList.remove("hidden")
