@@ -2,173 +2,159 @@ import { Controller } from "@hotwired/stimulus"
 import { animate } from "motion/mini"
 
 export default class extends Controller {
-  static targets = ['subtitles', 'phrase', 'translation', 'wordSelection', 'wordOption', 'showTranslation', 'phrasesContainer', 'completion']
-  
+  static targets = ["phrase", "phraseText", "translation", "choices", "wordSelection", "startInstruction", "completion", "stage"]
+  static values = { wordTiming: Boolean }
+
   connect() {
-    this.currentTokenIndex = 0;
-    this.allTokens = this.getAllTokens();
+    this.currentIndex = 0
+    this.started = false
+    this.pausedForIndex = null
+    this.answered = new Set()
+    this.showWindow(0, false)
   }
 
-  progress({detail: {at}}) {
-    const currentTime = at;
-    const subtitlesLines = this.subtitlesTargets;
-    const index = subtitlesLines.map(item => Number(item.dataset.timestamp)).findLastIndex(t => t < currentTime);
+  start() {
+    this.started = true
+    this.startInstructionTarget.classList.add("invisible")
+    this.showWindow(this.currentIndex, false)
 
-    if (index !== -1) {
-      this.handlePhraseActivated(subtitlesLines[index]);
+    if (!this.wordTimingValue) this.presentQuestion(this.currentIndex)
+  }
+
+  progress({ detail: { at } }) {
+    if (!this.started) return
+
+    const nextIndex = this.phraseTargets.findLastIndex((phrase) => Number(phrase.dataset.start) <= at)
+    if (nextIndex < 0) return
+
+    if (!this.wordTimingValue) {
+      this.progressByPhrase(nextIndex, at)
+      return
+    }
+
+    if (nextIndex !== this.currentIndex) {
+      this.currentIndex = nextIndex
+      this.showWindow(nextIndex)
+    }
+    this.revealWords(this.phraseTargets[this.currentIndex], at)
+  }
+
+  progressByPhrase(nextIndex, at) {
+    const current = this.phraseTargets[this.currentIndex]
+    if (current && at >= Number(current.dataset.end) && this.hasUnansweredBlank(this.currentIndex)) {
+      this.pauseForQuestion(this.currentIndex)
+      return
+    }
+
+    if (nextIndex !== this.currentIndex) {
+      this.currentIndex = nextIndex
+      this.showWindow(nextIndex)
+      this.presentQuestion(nextIndex)
     }
   }
-  
-  handlePhraseActivated(currentPhraseElement) {
-    const currentPhraseId = parseInt(currentPhraseElement.dataset.phraseId);
-    
-    // Find the previous phrase
-    const previousPhraseId = currentPhraseId - 1;
-    if (previousPhraseId >= 0) {
-      const previousPhraseElement = this.phraseTargets.find(p => 
-        parseInt(p.dataset.phraseId) === previousPhraseId
-      );
-      
-      if (previousPhraseElement) {
-        // Check for unfilled blanks in the previous phrase
-        const blankLines = previousPhraseElement.querySelectorAll('.blank-line');
-        const unfilledBlanks = Array.from(blankLines).filter(blank => 
-          blank.textContent === '________' || blank.classList.contains('text-gray-400')
-        );
-        
-        if (unfilledBlanks.length > 0) {
-          // Dispatch event to pause the video
-          const event = new CustomEvent('listen-activity:pause-video');
-          this.element.dispatchEvent(event);
-        }
-      }
+
+  revealWords(phrase, at) {
+    const missingStart = Number(phrase.dataset.missingStart)
+    if (this.hasUnansweredBlank(this.currentIndex) && Number.isFinite(missingStart) && at >= missingStart) {
+      this.pauseForQuestion(this.currentIndex)
     }
+
+    let blocked = false
+    phrase.querySelectorAll(".listen-word").forEach((word) => {
+      const isMissing = word.dataset.missing === "true"
+      if (isMissing && !this.answered.has(this.currentIndex)) blocked = true
+      if (!blocked && Number(word.dataset.start) <= at) word.dataset.revealed = ""
+    })
   }
-  
-  getAllTokens() {
-    const tokens = [];
-    this.phraseTargets.forEach(phraseElement => {
-      const phraseId = phraseElement.dataset.phraseId;
-      const blanks = phraseElement.querySelectorAll('.blank-line');
-      
-      blanks.forEach(blank => {
-        const tokenData = JSON.parse(blank.dataset.token);
-        tokens.push({
-          phraseId,
-          blank,
-          tokenData,
-          filled: false
-        });
-      });
-    });
-    
-    return tokens;
+
+  pauseForQuestion(index) {
+    if (this.pausedForIndex === index) return
+    this.pausedForIndex = index
+    this.presentQuestion(index)
+    this.element.dispatchEvent(new CustomEvent("listen-activity:pause-video"))
+  }
+
+  presentQuestion(index) {
+    if (!this.hasUnansweredBlank(index)) return
+    const phrase = this.phraseTargets[index]
+    const translation = phrase.querySelector("[data-listen-activity-target='translation']")
+    const choices = phrase.querySelector("template[data-listen-activity-target='choices']")
+    if (translation) translation.classList.remove("hidden")
+    if (!choices) return
+
+    this.wordSelectionTarget.replaceChildren(choices.content.cloneNode(true))
+    this.wordSelectionTarget.classList.remove("hidden")
+    this.wordSelectionTarget.classList.add("flex")
   }
 
   selectWord(event) {
-    const selectedWord = event.currentTarget.dataset.word;
-    const isCorrect = event.currentTarget.dataset.correct === 'true';
-    
-    // Add visual feedback animation
-    if (isCorrect) {
-      event.currentTarget.classList.add('correct-animation');
-    } else {
-      event.currentTarget.classList.add('incorrect-animation');
-    }
-    
-    // Remove animation class after animation completes
-    setTimeout(() => {
-      event.currentTarget.classList.remove('correct-animation', 'incorrect-animation');
-    }, 600);
-    
-    if (isCorrect) {
-      // Dispatch event to play the video instead of direct call
-      const playEvent = new CustomEvent('listen-activity:play-video');
-      this.element.dispatchEvent(playEvent);
-    }
+    const button = event.currentTarget
+    const correct = button.dataset.correct === "true"
+    button.classList.add(correct ? "is-correct" : "is-incorrect")
+    setTimeout(() => button.classList.remove("is-correct", "is-incorrect"), 600)
+    if (!correct) return
 
-    if (isCorrect && this.currentTokenIndex < this.allTokens.length) {
-      const currentToken = this.allTokens[this.currentTokenIndex];
-      currentToken.blank.textContent = selectedWord;
-      currentToken.blank.classList.remove('text-gray-400');
-      currentToken.blank.classList.remove('blank-line');
-      currentToken.blank.classList.add('text-gray-900', 'dark:text-gray-50');
-      currentToken.filled = true;
-      
-      // Award XP for correct answer (2 XP per correct answer)
-      this.awardXp(2);
-      
-      // Move to next token
-      this.currentTokenIndex++;
-      
-      // Delay updating word selection to allow animation to be visible
-      setTimeout(() => {
-        // Update word selection if we have more tokens
-        if (this.currentTokenIndex < this.allTokens.length) {
-          this.updateWordSelection();
-        } else {
-          // All tokens filled, show completion message
-          this.wordSelectionTarget.classList.add('hidden');
-          this.completionTarget.classList.remove('hidden');
-          animate(this.completionTarget, 
-            { opacity: [0, 1], scale: [0.8, 1] }, 
-            { duration: 0.3, easing: 'easeOut' }
-          );
-          this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
-        }
-      }, 650); // Slightly longer than animation duration
+    const index = this.currentIndex
+    const phrase = this.phraseTargets[index]
+    phrase.querySelectorAll(".blank-line").forEach((blank) => {
+      blank.textContent = blank.dataset.answer || button.dataset.word
+      blank.classList.remove("blank-line")
+      blank.dataset.revealed = ""
+    })
+    phrase.querySelector("[data-listen-activity-target='translation']")?.classList.add("hidden")
+    this.wordSelectionTarget.classList.add("hidden")
+    this.wordSelectionTarget.classList.remove("flex")
+    this.answered.add(index)
+    this.pausedForIndex = null
+    this.awardXp(2)
+
+    this.element.dispatchEvent(new CustomEvent("listen-activity:play-video"))
+  }
+
+  handleVideoEnd() {
+    const finalIndex = this.phraseTargets.length - 1
+    if (this.hasUnansweredBlank(finalIndex)) {
+      this.pauseForQuestion(finalIndex)
+    } else if (this.allQuestionsAnswered()) {
+      this.complete()
     }
   }
-  
-  updateWordSelection() {
-    if (this.currentTokenIndex < this.allTokens.length) {
-      const token = this.allTokens[this.currentTokenIndex];
-      
-      // Get token data from data attribute
-      const tokenData = token.tokenData;
-      const correctWord = tokenData.original_text;
-      let similarWord = null;
-      if (tokenData.similar_sound) {
-        if (Array.isArray(tokenData.similar_sound)) {
-          if (tokenData.similar_sound.length > 0) {
-            similarWord = tokenData.similar_sound[Math.floor(Math.random() * tokenData.similar_sound.length)];
-          }
-        } else if (typeof tokenData.similar_sound === 'string') {
-          similarWord = tokenData.similar_sound;
-        }
-      }
 
-      if (!similarWord) {
-        this.wordSelectionTarget.classList.add('hidden');
-        return;
-      }
+  showWindow(index, animateExit = true) {
+    this.phraseTargets.forEach((phrase, phraseIndex) => {
+      const previousSlot = phrase.dataset.slot
+      let slot = "hidden"
+      if (phraseIndex === index) slot = "0"
+      if (phraseIndex === index + 1) slot = "1"
+      if (animateExit && phraseIndex === index - 1 && previousSlot === "0") slot = "exit"
+      phrase.dataset.slot = slot
+      phrase.toggleAttribute("data-active", phraseIndex === index)
+      phrase.classList.toggle("bg-emerald-50", phraseIndex === index)
+      phrase.classList.toggle("dark:bg-emerald-950/30", phraseIndex === index)
+    })
+  }
 
-      const words = [
-        { word: correctWord, correct: true },
-        { word: similarWord, correct: false }
-      ].sort(() => Math.random() - 0.5);
+  hasUnansweredBlank(index) {
+    const phrase = this.phraseTargets[index]
+    return phrase?.dataset.hasMissing === "true" && !this.answered.has(index)
+  }
 
-      this.wordSelectionTarget.innerHTML = words.map(word => `
-        <button data-listen-activity-target="wordOption" 
-                data-word="${word.word}" 
-                data-correct="${word.correct}" 
-                data-action="click->listen-activity#selectWord"
-                class="px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-50 font-medium rounded-lg transition-colors duration-200 text-center word-option-button">
-          ${word.word}
-        </button>
-      `).join('');
-    }
-  }  
-  
-  // Award XP by calling the progress tracker controller
+  allQuestionsAnswered() {
+    return this.phraseTargets.every((_, index) => !this.hasUnansweredBlank(index))
+  }
+
+  complete() {
+    this.wordSelectionTarget.classList.add("hidden")
+    this.stageTarget.classList.add("hidden")
+    this.completionTarget.classList.remove("hidden")
+    this.completionTarget.classList.add("flex")
+    animate(this.completionTarget, { opacity: [0, 1], scale: [0.9, 1] }, { duration: 0.3, easing: "easeOut" })
+    this.element.dispatchEvent(new CustomEvent("activity:completed", { bubbles: true }))
+  }
+
   awardXp(amount) {
-    // Find the progress tracker controller on the gamification bar
-    const gamificationBar = document.getElementById('gamification-bar');
-    if (gamificationBar && gamificationBar.dataset.controller) {
-      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
-      if (controller) {
-        controller.awardXp(amount);
-      }
-    }
+    const bar = document.getElementById("gamification-bar")
+    const controller = bar && this.application.getControllerForElementAndIdentifier(bar, "progress-tracker")
+    controller?.awardXp(amount)
   }
 }

@@ -167,6 +167,26 @@ under the `#main-player` container), but:
 The player container is shown for this activity because the lesson layout
 renders `#main-player` visibly when `activity_params[:video_player]` is set.
 
+### Listen activity playback
+
+`ListenActivity` uses this same visible, preloaded, interactive lesson player.
+The provider's native Play control starts the exercise; the activity has no
+separate mini-player button. A short instruction remains visible until the
+shared player emits `video:play`, and that event also applies the normal segment
+start guard.
+
+Below the video, the activity keeps only the current and next lyric lines in a
+two-row clipped stage. Moving to the next phrase translates both rows upward.
+For new courses where every phrase token has a start timestamp, words are
+revealed as `video:progress` reaches their individual timestamps. Playback
+pauses immediately before an unanswered missing token, then reveals that
+token's translation and two answer choices. A correct choice fills the blank
+and resumes playback. If any token lacks timing, the activity uses the legacy
+phrase timestamps instead: the current row is highlighted, choices appear when
+its phrase starts, and an unanswered blank pauses playback at the phrase end.
+This fallback deliberately requires complete word timing rather than mixing
+word and phrase behavior within one exercise.
+
 ### Arriving here by Turbo-Frame navigation
 
 The lesson layout bakes `preload_player` / `interactive_video_player` into

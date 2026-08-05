@@ -136,6 +136,57 @@ module ActivitiesHelper
     end
   end
 
+  # Splits a listen-activity phrase into timestamped pieces while preserving the
+  # original punctuation and whitespace. Untokenized gaps appear with the word
+  # that follows them; trailing punctuation appears with the final word.
+  def listen_phrase_segments(phrase, missing_token:)
+    tokens = filter_overlapping_tokens(phrase.phrase_tokens.to_a).sort_by(&:l1_start_index)
+    return [ { text: phrase.text_l1, start: phrase.timestamp_seconds, missing: false } ] if tokens.empty?
+
+    segments = []
+    cursor = 0
+
+    tokens.each do |token|
+      if cursor < token.l1_start_index
+        segments << {
+          text: phrase.text_l1[cursor...token.l1_start_index],
+          start: token.start_timestamp_seconds,
+          missing: false
+        }
+      end
+
+      segments << {
+        text: token.original_text,
+        start: token.start_timestamp_seconds,
+        missing: token == missing_token
+      }
+      cursor = token.l1_end_index + 1
+    end
+
+    if cursor < phrase.text_l1.length
+      segments << {
+        text: phrase.text_l1[cursor..],
+        start: tokens.last.start_timestamp_seconds,
+        missing: false
+      }
+    end
+
+    segments
+  end
+
+  def render_listen_phrase_with_blank(phrase, missing_token)
+    before = phrase.text_l1[0...missing_token.l1_start_index]
+    after = phrase.text_l1[(missing_token.l1_end_index + 1)..]
+    blank = content_tag(
+      :span,
+      "________",
+      class: "blank-line underline decoration-2 underline-offset-4",
+      data: { answer: missing_token.original_text }
+    )
+
+    safe_join([ before, blank, after ])
+  end
+
   def prepare_tokens_for_matching(token_translations)
     require "set"
 

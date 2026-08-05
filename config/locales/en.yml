@@ -219,6 +219,7 @@ en:
       completed: "You've matched all the words correctly."
     listen_activity:
       instruction: "Listen and click on the missing word"
+      start_video: "Press Play on the video to start"
       great_job: "Great job!"
       completed: "You've completed all the listening exercises."
     match_tokens_activity:

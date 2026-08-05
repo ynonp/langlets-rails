@@ -197,6 +197,7 @@ he:
       completed: "התאמתם נכון את כל המילים."
     listen_activity:
       instruction: "האזינו והקישו על המילה החסרה"
+      start_video: "לחצו על Play בסרטון כדי להתחיל"
       great_job: "כל הכבוד!"
       completed: "השלמתם את כל תרגילי ההאזנה."
     match_tokens_activity:

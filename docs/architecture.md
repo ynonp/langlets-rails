@@ -1153,7 +1153,16 @@ download is verified before it counts:
   scalar timestamp-boundary queries so long review courses do not preload every
   token, translation, and Active Storage record.
 - **SpeakActivity**: Pronunciation practice
-- **ListenActivity**: Audio comprehension with token identification
+- **ListenActivity**: Video-led audio comprehension with token identification.
+  It shows the lesson's native-controls video and begins only when the learner
+  presses Play. The transcript is a clipped two-line window rather than a full
+  list. When every phrase token has timing, each word appears at its start time
+  and playback stops immediately before an unanswered blank; only then are the
+  token translation and two choices shown. Legacy phrase-timed content shows
+  the current highlighted phrase plus the next phrase, exposes choices as the
+  missing phrase begins, and pauses at that phrase's end if it remains
+  unanswered. Correct answers fill the selected indexed token occurrence, so
+  repeated words elsewhere in the phrase are not blanked accidentally.
 - **FindAnswerActivity**: Question-answer exercises
 
 #### 12. **Playlist** (`playlists`)

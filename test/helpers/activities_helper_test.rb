@@ -23,4 +23,28 @@ class ActivitiesHelperTest < ActionView::TestCase
     assert_equal 3600.0, timestamp_to_seconds("60:00")
     assert_equal 3660.5, timestamp_to_seconds("61:00.5")
   end
+
+  test "listen phrase segments preserve text and identify the timed missing token" do
+    token_class = Struct.new(:id, :l1_start_index, :l1_end_index, :original_text, :start_timestamp_seconds)
+    first = token_class.new(1, 0, 4, "hello", 10.0)
+    missing = token_class.new(2, 6, 10, "world", 10.5)
+    phrase = Struct.new(:text_l1, :phrase_tokens, :timestamp_seconds).new("hello world!", [ first, missing ], 10.0)
+
+    segments = listen_phrase_segments(phrase, missing_token: missing)
+
+    assert_equal "hello world!", segments.pluck(:text).join
+    assert_equal "world", segments.find { |segment| segment[:missing] }[:text]
+    assert_equal 10.5, segments.find { |segment| segment[:missing] }[:start]
+  end
+
+  test "phrase-level blank uses the selected token indexes, not every repeated word" do
+    token = Struct.new(:l1_start_index, :l1_end_index, :original_text).new(4, 6, "one")
+    phrase = Struct.new(:text_l1).new("one one")
+
+    html = render_listen_phrase_with_blank(phrase, token)
+
+    assert_match(/\Aone <span/, html)
+    assert_includes html, 'data-answer="one"'
+    assert_equal 1, html.scan("________").size
+  end
 end

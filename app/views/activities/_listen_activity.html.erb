@@ -1,148 +1,128 @@
 <%
-    phrases = params[:phrases]
-    rtl = params[:rtl]
+  phrases = params[:phrases]
+  activity_token_ids = params[:activity_translation_ids].to_set
+  word_timing = params[:word_timing]
 %>
 
 <style>
-  @keyframes pulse-attention {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+  .listen-line {
+    transform: translateY(calc(var(--listen-slot, 2) * 100%));
+    transition: transform 280ms ease, opacity 220ms ease, background-color 220ms ease;
   }
-  
-  .word-option-button {
-    --option-bg: var(--color-gray-100);
+  .lyric-card {
+    height: auto;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
   }
-  [data-theme="dark"] .word-option-button {
-    --option-bg: var(--color-gray-800);
-  }
-
-  @keyframes correct-feedback {
-    0% { background-color: var(--option-bg); }
-    50% { background-color: rgb(34, 197, 94); }
-    100% { background-color: var(--option-bg); }
-  }
-
-  @keyframes incorrect-feedback {
-    0% { background-color: var(--option-bg); }
-    50% { background-color: rgb(239, 68, 68); }
-    100% { background-color: var(--option-bg); }
-  }
-  
-  .word-option-button {
-    animation: pulse-attention 1.5s infinite ease-in-out;
-  }
-  
-  .correct-animation {
-    animation: correct-feedback 0.6s ease-in-out;
-  }
-  
-  .incorrect-animation {
-    animation: incorrect-feedback 0.6s ease-in-out;
-  }
+  .listen-line[data-slot="exit"] { --listen-slot: -1; opacity: 0; }
+  .listen-line[data-slot="0"] { --listen-slot: 0; opacity: 1; }
+  .listen-line[data-slot="1"] { --listen-slot: 1; opacity: .55; }
+  .listen-line[data-slot="hidden"] { --listen-slot: 2; opacity: 0; visibility: hidden; }
+  .listen-word { opacity: 0; transition: opacity 100ms ease; }
+  .listen-word[data-revealed] { opacity: 1; }
+  .listen-answer { animation: listen-pulse 1.5s ease-in-out infinite; }
+  @keyframes listen-pulse { 50% { transform: scale(1.04); } }
+  .listen-answer.is-correct { animation: listen-correct 600ms ease; }
+  .listen-answer.is-incorrect { animation: listen-incorrect 600ms ease; }
+  @keyframes listen-correct { 50% { background-color: rgb(34 197 94); color: white; } }
+  @keyframes listen-incorrect { 50% { background-color: rgb(239 68 68); color: white; } }
 </style>
 
 <div
-    class="flex-1 min-h-0 flex-col flex items-center bg-emerald-50 dark:bg-gray-950 overflow-hidden"
-    data-controller="listen-activity"
-    data-main-video-player-target="videoListener videoSegment"
-    data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
-    data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
-    data-next-activity-path="<%= @next_activity_path %>"
-    data-action="
-      video:progress->listen-activity#progress
-      listen-activity:pause-video->main-video-player#stopPlayback
-      listen-activity:play-video->main-video-player#resume"
->
-  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-2xl shadow-md flex flex-col flex-1 min-h-0 bg-white dark:bg-gray-900 dark:border dark:border-gray-800">
-    <div class="mb-6 text-center">
-      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || t(".instruction") %></h2>
-      <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400"><%= @activity.text_subheader %></p>
-    </div>
+  class="contents"
+  data-controller="listen-activity"
+  data-main-video-player-target="videoListener videoSegment"
+  data-show-player="true"
+  data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
+  data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
+  data-listen-activity-word-timing-value="<%= word_timing %>"
+  data-action="
+    video:play->main-video-player#seekToSegmentStartIfBefore
+    video:play->listen-activity#start
+    video:progress->listen-activity#progress
+    video:end->listen-activity#handleVideoEnd
+    listen-activity:pause-video->main-video-player#stopPlayback
+    listen-activity:play-video->main-video-player#resume
+  ">
+  <div class="order-4 flex min-h-0 flex-1 flex-col bg-white dark:bg-gray-900">
+    <header class="px-5 pt-4 text-center">
+      <h2 class="text-xl font-extrabold text-gray-900 dark:text-gray-50"><%= @activity.text_header || t(".instruction") %></h2>
+      <% if @activity.text_subheader.present? %>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400"><%= @activity.text_subheader %></p>
+      <% end %>
+      <p class="mt-2 text-sm font-semibold text-emerald-700 dark:text-emerald-300" data-listen-activity-target="startInstruction">
+        <%= t(".start_video", default: "Press Play on the video to start") %>
+      </p>
+    </header>
 
-    <%= render partial: 'activities/mini_video_player', locals: {params: params} %>
-
-    <!-- Completion Message (Initially Hidden) -->
-    <div class="my-4 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4 hidden" data-listen-activity-target="completion">
-      <div>
-        <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
-        <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
-      </div>
-      <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
-    </div>
-
-    <!-- Phrases Container with scrolling -->
-    <div
-        id="phrases-container"
-        data-listen-activity-target="phrasesContainer container"
-        class="w-full mx-auto bg-white dark:bg-gray-900 flex-1 overflow-y-auto"
-        dir="<%= rtl ? 'rtl' : 'ltr' %>"
-        >
-      <div
-        id="phrases-list"
-        data-listen-activity-target="phrasesList"
-        class="text-gray-900 dark:text-gray-50 text-sm sm:text-base pb-14 ">
-        <% phrases.each_with_index do |phrase, phrase_index| %>
-          <div
-            data-listen-activity-target="subtitles phrase"
-            data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
-            data-phrase-id="<%= phrase_index %>"
-            class="px-4 py-3 transition-all duration-200">
-            <div class="text-gray-900 dark:text-gray-50 text-md md:text-xl">
-              <%= render_phrase_with_blanks(phrase) %>
-            </div>
-            <div class="text-gray-500 dark:text-gray-400 mt-1 text-md md:text-xl hidden" data-listen-activity-target="translation">
-              <%= phrase.text_l2 %>
-            </div>
+    <div class="relative mx-4 mt-4 h-[240px] flex-none overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-950"
+         dir="<%= params[:rtl] ? 'rtl' : 'ltr' %>"
+         data-listen-activity-target="stage">
+      <% phrases.each_with_index do |phrase, index| %>
+        <%
+          eligible_tokens = phrase.phrase_tokens.select { |token| activity_token_ids.include?(token.id) && similar_sounds_for_token(phrase, token).present? }
+          missing_token = eligible_tokens.sample
+          alternatives = missing_token ? similar_sounds_for_token(phrase, missing_token) : []
+          choices = missing_token && alternatives.present? ? [
+            { word: missing_token.original_text, correct: true },
+            { word: alternatives.sample, correct: false }
+          ].shuffle : []
+          phrase_end = phrases[index + 1]&.timestamp_seconds || timestamp_to_seconds(params[:end_timestamp])
+        %>
+        <article
+          class="listen-line lyric-card absolute inset-x-0 top-0"
+          data-listen-activity-target="phrase"
+          data-index="<%= index %>"
+          data-start="<%= phrase.timestamp_seconds %>"
+          data-end="<%= phrase_end %>"
+          data-has-missing="<%= missing_token.present? %>"
+          data-missing-start="<%= missing_token&.start_timestamp_seconds %>"
+          data-slot="hidden">
+          <div class="text-lg font-bold leading-relaxed text-gray-900 dark:text-gray-50" data-listen-activity-target="phraseText">
+            <% if word_timing %>
+              <% listen_phrase_segments(phrase, missing_token: missing_token).each do |segment| %>
+                <span class="listen-word <%= 'blank-line underline decoration-2 underline-offset-4' if segment[:missing] %>"
+                      data-start="<%= segment[:start] %>"
+                      data-missing="<%= segment[:missing] %>"
+                      <% if segment[:missing] %>data-answer="<%= segment[:text] %>"<% end %>><%= segment[:missing] ? "________" : segment[:text] %></span>
+              <% end %>
+            <% elsif missing_token %>
+              <%= render_listen_phrase_with_blank(phrase, missing_token) %>
+            <% else %>
+              <%= phrase.text_l1 %>
+            <% end %>
           </div>
-        <% end %>
+          <% if missing_token %>
+            <p class="mt-1 hidden text-sm font-semibold text-emerald-700 dark:text-emerald-300" data-listen-activity-target="translation">
+              <%= missing_token.translation %>
+            </p>
+            <template data-listen-activity-target="choices">
+              <% choices.each do |choice| %>
+                <button type="button"
+                        data-word="<%= choice[:word] %>"
+                        data-correct="<%= choice[:correct] %>"
+                        data-action="click->listen-activity#selectWord"
+                        class="listen-answer min-h-12 flex-1 rounded-xl bg-gray-100 px-5 py-3 font-bold text-gray-900 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-50 dark:hover:bg-gray-700">
+                  <%= choice[:word] %>
+                </button>
+              <% end %>
+            </template>
+          <% end %>
+        </article>
+      <% end %>
+    </div>
+
+    <div class="hidden min-h-20 items-center justify-center gap-3 px-5 py-4" data-listen-activity-target="wordSelection"></div>
+
+    <div class="mx-5 my-4 hidden items-center justify-between gap-4 rounded-2xl bg-emerald-50 p-4 dark:bg-gray-800" data-listen-activity-target="completion">
+      <div>
+        <h3 class="text-lg font-extrabold"><%= t(".great_job") %></h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
       </div>
+      <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex h-12 items-center justify-center rounded-xl bg-emerald-500 px-5 font-extrabold text-white hover:bg-emerald-600") %>
     </div>
-
-    <!-- Word Selection Area -->
-    <div class="my-6 flex justify-center space-x-4" data-listen-activity-target="wordSelection">
-      <%
-        token_with_similar = nil
-        phrases.each do |p|
-          next unless p.phrase_tokens.present?
-          p.phrase_tokens.each do |t|
-            if similar_sounds_for_token(p, t).present?
-              token_with_similar = { phrase: p, token: t }
-              break
-            end
-          end
-          break if token_with_similar
-        end
-
-        if token_with_similar
-          first_phrase_with_tokens = token_with_similar[:phrase]
-          first_token = token_with_similar[:token]
-          words = []
-
-          if first_token
-            correct_word = first_token.original_text
-            similar_candidates = similar_sounds_for_token(first_phrase_with_tokens, first_token) || []
-            similar_word = similar_candidates.sample
-
-            if correct_word.present? && similar_word.present?
-              words = [{word: correct_word, correct: true}, {word: similar_word, correct: false}].shuffle
-            end
-          end
-
-          words.each do |word_data|
-      %>
-            <button 
-              data-listen-activity-target="wordOption" 
-              data-word="<%= word_data[:word] %>" 
-              data-correct="<%= word_data[:correct] %>"
-              data-action="click->listen-activity#selectWord"
-              class="px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-50 font-medium rounded-lg transition-colors duration-200 text-center word-option-button">
-              <%= word_data[:word] %>
-            </button>
-      <%  end
-        end
-      %>
-    </div>
-
   </div>
 </div>
