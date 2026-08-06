@@ -9,11 +9,12 @@
 
   This activity shows a 2x4 grid where users match tokens to their translations:
   1. Left column shows words in L1, right column shows translations in L2
-  2. Columns are shuffled separately so words and translations are not aligned
+  2. L1 and L2 columns are shuffled independently server-side so a pair's
+     L1 and L2 cells are not in the same row
   3. User clicks on a word in one column, then its match in the other column
   4. Successful matches flash green and stay in place dimmed with a ✓
   5. Failed matches flash red and selection is cleared
-  6. Tapping any cell (L1 or L2) plays the L1 audio for that pair
+  6. Tapping an L1 cell plays the L1 audio for that pair; L2 cells are silent
   7. Progress bar + counter show completion status
   8. When all tokens on a page are matched, the page is hidden and the next
      page (up to PAGE_SIZE pairs = 8 cells per page) is revealed
@@ -72,9 +73,14 @@
         <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
-      <!-- Pages: each page holds up to page_size pairs (8 boxes: 4 L1 + 4 L2) -->
+      <!-- Pages: each page holds up to page_size pairs (8 boxes: 4 L1 + 4 L2).
+           The L1 and L2 columns are shuffled independently so the same pair
+           doesn't end up in the same row. Cells in the two columns still match
+           each other via the shared data-token-id, which is checked by the
+           controller. -->
       <% token_pages.each_with_index do |page_tokens, page_index| %>
-        <% shuffled_page_tokens = page_tokens.shuffle %>
+        <% l1_column_tokens = page_tokens.shuffle %>
+        <% l2_column_tokens = page_tokens.shuffle %>
         <div
           data-match-tokens-activity-target="page"
           class="grid grid-cols-2 gap-x-4 gap-y-3.5 <%= 'hidden' if page_index.positive? %>"
@@ -84,7 +90,7 @@
           <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l1.english_name %> Words</div>
           <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l2.english_name %> Translations</div>
 
-          <% shuffled_page_tokens.each do |token| %>
+          <% l1_column_tokens.each do |token| %>
             <!-- L1 cell (audio + word) -->
             <div
               class="<%= cell_base %> justify-center text-center <%= cell_state %>"
@@ -97,7 +103,9 @@
               <span lang="<%= l1.iso_name %>" class="line-clamp-2 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l1_word] %></span>
               <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
             </div>
+          <% end %>
 
+          <% l2_column_tokens.each do |token| %>
             <!-- L2 cell (translation) -->
             <div
               class="<%= cell_base %> justify-center text-center <%= cell_state %>"

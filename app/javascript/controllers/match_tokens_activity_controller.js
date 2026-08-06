@@ -9,8 +9,9 @@ import { animate } from "motion/mini"
 // after a correct pair, mirroring the audio-to-translation activity: the
 // cell stays in place but is dimmed so the learner keeps a visual record
 // of the solved pairs. Once every pair on a page is matched, the page is
-// hidden and the next page is revealed. Tapping any cell plays the L1
-// audio for the pair it belongs to.
+// hidden and the next page is revealed. Tapping an L1 cell always plays
+// the L1 audio for that pair (whether it's tapped first, second, or used
+// to switch selection); tapping an L2 cell is silent.
 export default class extends Controller {
   static targets = ['page', 'progressBar', 'progressText', 'completionMessage'];
   static values = {
@@ -68,6 +69,9 @@ export default class extends Controller {
 
     this.clearSelection();
     this.selectNewToken(l1Touch.element);
+    // The L1 audio belongs to the L1 word — play it on the multi-touch path
+    // too, mirroring the single-click behavior in selectToken().
+    this.playTokenAudio(l1Touch.element);
     this.attemptMatch(l2Touch.element);
   }
 
@@ -94,9 +98,12 @@ export default class extends Controller {
       return;
     }
 
-    // Always play the L1 audio for the pair, regardless of which column was
-    // tapped first — the audio belongs to the word (L1), not the cell.
-    this.playTokenAudio(clickedToken);
+    // The L1 audio belongs to the L1 word. Play it on every L1 tap, whether
+    // it's the first cell tapped, the second (to complete a match), or a
+    // switch from another L1 cell. Tapping an L2 cell never plays audio.
+    if (clickedToken.dataset.column === 'l1') {
+      this.playTokenAudio(clickedToken);
+    }
 
     // If clicking the same cell, deselect it
     if (this.selectedToken && this.selectedToken.element === clickedToken) {
