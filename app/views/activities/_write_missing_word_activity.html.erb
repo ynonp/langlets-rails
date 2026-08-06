@@ -14,7 +14,7 @@
 
     <div data-write-missing-word-activity-target="card"
          dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
-         class="bg-gray-100 dark:bg-gray-800 p-4 sm:p-8 rounded-lg text-gray-900 dark:text-gray-50 flex flex-col gap-4">
+         class="text-gray-900 dark:text-gray-50 flex flex-col gap-4">
 
       <div data-write-missing-word-activity-target="translation"
            class="text-yellow-700 dark:text-yellow-300 text-base sm:text-lg font-medium"></div>
@@ -28,7 +28,7 @@
           type="text"
           data-write-missing-word-activity-target="answer"
           data-action="keydown.enter->write-missing-word-activity#checkAnswer"
-          class="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 text-base sm:text-lg border-2 border-gray-300 dark:border-gray-600 focus:border-emerald-500 focus:outline-none"
+          class="flex-1 min-w-0 px-4 py-3 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 text-base sm:text-lg border-2 border-gray-300 dark:border-gray-600 focus:border-emerald-500 focus:outline-none"
           placeholder="Type the missing word..."
           autocomplete="off"
           autocorrect="off"

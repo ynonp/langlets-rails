@@ -4,19 +4,22 @@ import { animate } from "motion/mini"
 
 // Connects to data-controller="tokens-chain-activity"
 export default class extends Controller {
-  static targets = ['grid', 'startButton', 'completionMessage', 'progressBar', 'progressText', 'stopPracticingContainer'];
-  static values = { 
+  static targets = ['page', 'startButton', 'completionMessage', 'progressBar', 'progressText', 'stopPracticingContainer'];
+  static values = {
     tokens: Array,
-    totalTokens: Number
+    totalTokens: Number,
+    pageSize: Number,
+    l1IsoName: String
   };
 
   connect() {
     this.currentIndex = 0; // Start at first token (already displayed in top-left)
     this.tokensArray = this.tokensValue || [];
-    this.currentL1Element = this.startButtonTarget; // Track which element shows current L1
+    this.currentPageIndex = 0; // Track which page is currently visible
+    this.currentL1Element = this.startButtonTargets[0]; // Track which element shows current L1
 
     // Mark initial L1 as current
-    this.startButtonTarget.classList.add('current-l1');
+    this.startButtonTargets[0].classList.add('current-l1');
 
     // Warm the shared audio cache for the start of the chain
     this.preloadUpcomingAudio();
@@ -88,40 +91,77 @@ export default class extends Controller {
     this.preloadUpcomingAudio();
 
     if (this.currentIndex >= this.tokensArray.length) {
-      // All tokens matched
+      // All tokens matched across every page
       setTimeout(() => {
         this.showCompletion();
       }, 600);
-    } else {
-      // Flip the matched square to show next L1 word
+      return;
+    }
+
+    // A page is complete once we've matched pageSizeValue tokens on it
+    const crossingPageBoundary = this.currentIndex % this.pageSizeValue === 0;
+
+    if (crossingPageBoundary) {
+      // Reveal the next page instead of flipping the current square
       setTimeout(() => {
         const currentToken = this.tokensArray[this.currentIndex];
-        const textElement = element.querySelector('.token-text');
-        if (textElement) {
-          textElement.textContent = currentToken.l1_text;
-        }
-        // Remove current highlight from previous L1
-        if (this.currentL1Element) {
-          this.currentL1Element.classList.remove('current-l1');
-          this.currentL1Element.classList.add('found-translation');
-        }
-        // Update styling to show it's now displaying L1
-        element.classList.remove('flash-success', 'bg-white', 'dark:bg-gray-900', 'hover:bg-gray-100', 'dark:hover:bg-gray-800');
-        element.classList.remove('found-translation');
-        element.classList.add('showing-l1', 'bg-gray-100', 'dark:bg-gray-800', 'cursor-pointer', 'current-l1');
-        // Store the audio URL so tapping the square replays its word
-        element.dataset.audioUrl = currentToken.audio_url || '';
-        // Add click handler for L1 audio playback
-        element.setAttribute('data-action', 'click->tokens-chain-activity#playL1Audio');
-        // Remove token ID since it now shows L1
-        element.removeAttribute('data-token-id');
-        // Update current L1 element reference
-        this.currentL1Element = element;
-
-        // Play the next token's word
-        this.playAudioUrl(currentToken.audio_url);
+        this.advanceToNextPage(currentToken);
       }, 600);
+      return;
     }
+
+    // Flip the matched square to show next L1 word
+    setTimeout(() => {
+      const currentToken = this.tokensArray[this.currentIndex];
+      const textElement = element.querySelector('.token-text');
+      if (textElement) {
+        textElement.textContent = currentToken.l1_text;
+        // The square now shows an L1 word, so hyphenation must follow L1 rules
+        textElement.lang = this.l1IsoNameValue;
+      }
+      // Remove current highlight from previous L1
+      if (this.currentL1Element) {
+        this.currentL1Element.classList.remove('current-l1');
+        this.currentL1Element.classList.add('found-translation');
+      }
+      // Update styling to show it's now displaying L1
+      element.classList.remove('flash-success', 'bg-white', 'dark:bg-gray-900', 'hover:bg-gray-100', 'dark:hover:bg-gray-800');
+      element.classList.remove('found-translation');
+      element.classList.add('showing-l1', 'bg-gray-100', 'dark:bg-gray-800', 'cursor-pointer', 'current-l1');
+      // Store the audio URL so tapping the square replays its word
+      element.dataset.audioUrl = currentToken.audio_url || '';
+      // Add click handler for L1 audio playback
+      element.setAttribute('data-action', 'click->tokens-chain-activity#playL1Audio');
+      // Remove token ID since it now shows L1
+      element.removeAttribute('data-token-id');
+      // Update current L1 element reference
+      this.currentL1Element = element;
+
+      // Play the next token's word
+      this.playAudioUrl(currentToken.audio_url);
+    }, 600);
+  }
+
+  // Hide the finished page and reveal the next one, highlighting its
+  // (already rendered) L1 start square instead of flipping a square.
+  advanceToNextPage(currentToken) {
+    const previousPage = this.pageTargets[this.currentPageIndex];
+    this.currentPageIndex++;
+    const nextPage = this.pageTargets[this.currentPageIndex];
+
+    previousPage.classList.add('hidden');
+    nextPage.classList.remove('hidden');
+
+    if (this.currentL1Element) {
+      this.currentL1Element.classList.remove('current-l1');
+      this.currentL1Element.classList.add('found-translation');
+    }
+
+    const nextStartButton = this.startButtonTargets[this.currentPageIndex];
+    nextStartButton.classList.add('current-l1');
+    this.currentL1Element = nextStartButton;
+
+    this.playAudioUrl(currentToken.audio_url);
   }
 
   handleWrongMatch(element) {
@@ -154,7 +194,7 @@ export default class extends Controller {
       { duration: 0.3, easing: 'easeOut' }
     );
     this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }));
-    this.gridTarget.classList.add('hidden');
+    this.pageTargets[this.currentPageIndex].classList.add('hidden');
   }
 
   // Award XP by calling the progress tracker controller

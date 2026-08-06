@@ -2,7 +2,7 @@
   params[:tokens] - An array of token objects with id, l1_text, l2_text
   params[:l1] - Language object for L1 tokens
   params[:l2] - Language object for L2 translations
-  
+
   This activity shows a grid of 4-15 words sharing one part of speech:
   1. Top-left square shows the first L1 token
   2. Other squares show the L2 translations, shuffled
@@ -10,24 +10,28 @@
   4. Matched square flips to show next L1 token
   5. Chain continues through matched squares
   6. Activity ends when all tokens are matched
+
+  To keep boxes large and readable, tokens are split into pages of at most
+  PAGE_SIZE tokens each (PAGE_SIZE + 1 boxes per page, including the L1
+  box). The chain flows continuously across pages.
 %>
 
-<% 
+<%
   tokens = params[:tokens] || []
   l1 = params[:l1]
   l2 = params[:l2]
   total_tokens = tokens.length
-  
-  # Get first token for the top-left square (L1 word)
-  first_token = tokens.first
-  
-  shuffled_tokens = tokens.shuffle
+
+  page_size = 5 # 5 L2 boxes + 1 L1 box = 6 boxes per page
+  token_pages = tokens.each_slice(page_size).to_a
 %>
 
 <div
     data-controller="tokens-chain-activity"
     data-tokens-chain-activity-tokens-value="<%= tokens.to_json %>"
     data-tokens-chain-activity-total-tokens-value="<%= total_tokens %>"
+    data-tokens-chain-activity-page-size-value="<%= page_size %>"
+    data-tokens-chain-activity-l1-iso-name-value="<%= l1.iso_name %>"
     class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center">
 
   <div class="w-full max-w-[640px] p-4 sm:p-6">
@@ -55,27 +59,41 @@
         <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
-      <!-- Vocabulary grid -->
-      <div class="grid grid-cols-4 gap-3" data-tokens-chain-activity-target="grid">
-        <% # Top-left square: first L1 word %>
-        <div
-          data-tokens-chain-activity-target="startButton"
-          data-action="click->tokens-chain-activity#playL1Audio"
-          data-audio-url="<%= first_token[:audio_url] %>"
-          class="grid-square px-4 py-6 border-2 border-gray-200 dark:border-gray-700 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 font-semibold transition-all duration-200 flex items-center justify-center min-h-[100px] text-lg cursor-pointer showing-l1 current-l1 <%= l1.rtl ? 'text-right' : 'text-left' %>">
-          <span class="token-text text-center break-words"><%= first_token[:l1_text] %></span>
-        </div>
+      <!-- Vocabulary grid, one page per chunk of tokens -->
+      <% token_pages.each_with_index do |page_tokens, page_index| %>
+        <% shuffled_page_tokens = page_tokens.shuffle %>
+        <%
+          box_count = page_tokens.length + 1
 
-        <% # Remaining squares: shuffled L2 translations %>
-        <% shuffled_tokens.each do |token| %>
+          # A 3-column layout leaves a lone box on its own last row (an
+          # "orphan") whenever box_count > 3 and doesn't divide evenly by 3.
+          # In that case stay at 2 columns instead of switching at 740px.
+          three_cols_orphan = box_count > 3 && box_count % 3 == 1
+          grid_cols_classes = three_cols_orphan ? 'grid-cols-2' : 'grid-cols-2 min-[740px]:grid-cols-3'
+        %>
+        <div
+          data-tokens-chain-activity-target="page"
+          class="grid <%= grid_cols_classes %> gap-4 <%= 'hidden' if page_index.positive? %>">
+          <% # Top-left square: first L1 word of this page %>
           <div
-            class="grid-square px-4 py-6 border-2 border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 flex items-center justify-center min-h-[100px] cursor-pointer <%= l2.rtl ? 'text-right' : 'text-left' %>"
-            data-token-id="<%= token[:id] %>"
-            data-action="click->tokens-chain-activity#selectSquare">
-            <span class="token-text text-center break-words"><%= token[:l2_text] %></span>
+            data-tokens-chain-activity-target="startButton"
+            data-action="click->tokens-chain-activity#playL1Audio"
+            data-audio-url="<%= page_tokens.first[:audio_url] %>"
+            class="grid-square px-6 py-8 border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 font-semibold transition-all duration-200 flex items-center justify-center min-h-[140px] text-xl sm:text-2xl cursor-pointer showing-l1 current-l1 <%= l1.rtl ? 'text-right' : 'text-left' %>">
+            <span lang="<%= l1.iso_name %>" class="token-text text-center break-words hyphens-auto w-full min-w-0"><%= page_tokens.first[:l1_text] %></span>
           </div>
-        <% end %>
-      </div>
+
+          <% # Remaining squares: shuffled L2 translations for this page %>
+          <% shuffled_page_tokens.each do |token| %>
+            <div
+              class="grid-square px-6 py-8 border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 flex items-center justify-center min-h-[140px] text-xl sm:text-2xl cursor-pointer <%= l2.rtl ? 'text-right' : 'text-left' %>"
+              data-token-id="<%= token[:id] %>"
+              data-action="click->tokens-chain-activity#selectSquare">
+              <span lang="<%= l2.iso_name %>" class="token-text text-center break-words hyphens-auto w-full min-w-0"><%= token[:l2_text] %></span>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
     </div>
   </div>
