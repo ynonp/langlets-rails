@@ -9,15 +9,17 @@
 
   This activity shows a 2x4 grid where users match tokens to their translations:
   1. Left column shows words in L1, right column shows translations in L2
-  2. L1 and L2 columns are shuffled independently server-side so a pair's
-     L1 and L2 cells are not in the same row
+  2. The pairs are built as a list, sliced into pages of max_tokens_in_page
+     pairs, then each page's pairs are split into an L1 list and an L2 list
+     and shuffled independently so the L1 and L2 cells of the same pair are
+     not in the same row
   3. User clicks on a word in one column, then its match in the other column
   4. Successful matches flash green and stay in place dimmed with a ✓
   5. Failed matches flash red and selection is cleared
   6. Tapping an L1 cell plays the L1 audio for that pair; L2 cells are silent
   7. Progress bar + counter show completion status
   8. When all tokens on a page are matched, the page is hidden and the next
-     page (up to PAGE_SIZE pairs = 8 cells per page) is revealed
+     page (up to max_tokens_in_page pairs = 8 cells per page) is revealed
   9. When all tokens are matched, shows completion message
  %>
 
@@ -30,8 +32,20 @@
 
   # Same page-sizing convention as tokens-chain-activity: at most 4 pairs per
   # page so the L1/L2 columns stay readable (4 boxes per column).
-  page_size = 4
-  token_pages = tokens.each_slice(page_size).to_a
+  max_tokens_in_page = 4
+  # Spread the pairs across pages as evenly as possible.
+  #   page_count   = ceil(total / max_tokens_in_page)  (fewest pages allowed)
+  #   page_size    = ceil(total / page_count)          (so each page holds as
+  #                                                    many pairs as it can)
+  # With max=4 and 5 total pairs that gives page_count=2, page_size=3, and the
+  # activity renders as 3+2 instead of an awkward 4+1.
+  page_count = (total_tokens.to_f / max_tokens_in_page).ceil
+  page_count = 1 if page_count < 1
+  page_size = (total_tokens.to_f / page_count).ceil
+  page_size = 1 if page_size < 1
+  # Build the full list of pairs, slice into pages, then split each page into
+  # an L1 list and an L2 list so we can render the two columns independently.
+  token_pages = tokens.shuffle.each_slice(page_size).to_a
 
   # Shared cell styling. The state variants mirror audio-to-translation: a
   # gentle emerald outline while selected, and a dimmed "done" look once
@@ -45,7 +59,7 @@
     data-controller="match-tokens-activity"
     data-match-tokens-activity-tokens-value="<%= tokens.to_json %>"
     data-match-tokens-activity-total-tokens-value="<%= total_tokens %>"
-    data-match-tokens-activity-page-size-value="<%= page_size %>"
+    data-match-tokens-activity-page-size-value="<%= max_tokens_in_page %>"
     data-match-tokens-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>"
     class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center">
 
@@ -73,52 +87,56 @@
         <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
-      <!-- Pages: each page holds up to page_size pairs (8 boxes: 4 L1 + 4 L2).
-           The L1 and L2 columns are shuffled independently so the same pair
-           doesn't end up in the same row. Cells in the two columns still match
-           each other via the shared data-token-id, which is checked by the
-           controller. -->
-      <% token_pages.each_with_index do |page_tokens, page_index| %>
-        <% l1_column_tokens = page_tokens.shuffle %>
-        <% l2_column_tokens = page_tokens.shuffle %>
+      <!-- Pages: each page holds up to max_tokens_in_page pairs. We split each
+           page's pair list into an L1 list and an L2 list and render the two
+           columns independently. This keeps every L1 cell in the left column
+           and every L2 cell in the right column while still allowing the two
+           columns to be shuffled in different orders. Cells in the two
+           columns still match each other via the shared data-token-id, which
+           is checked by the controller. -->
+      <% token_pages.each_with_index do |page_pairs, page_index| %>
+        <% l1_list = page_pairs.shuffle %>
+        <% l2_list = page_pairs.shuffle %>
         <div
           data-match-tokens-activity-target="page"
           class="grid grid-cols-2 gap-x-4 gap-y-3.5 <%= 'hidden' if page_index.positive? %>"
           data-action="touchstart->match-tokens-activity#handleTouchStart:!passive touchend->match-tokens-activity#handleTouchEnd:!passive">
 
-          <!-- Column headers -->
-          <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l1.english_name %> Words</div>
-          <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l2.english_name %> Translations</div>
+          <!-- L1 column: header + L1 list -->
+          <div class="flex flex-col gap-3">
+            <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l1.english_name %> Words</div>
+            <% l1_list.each do |token| %>
+              <div
+                class="<%= cell_base %> justify-center text-center <%= cell_state %>"
+                data-token-id="<%= token[:id] %>"
+                data-column="l1"
+                data-l1-text="<%= token[:l1_word] %>"
+                data-l2-text="<%= token[:l2_translation] %>"
+                data-audio-url="<%= token[:audio_url] %>"
+                data-action="click->match-tokens-activity#selectToken">
+                <span lang="<%= l1.iso_name %>" class="line-clamp-2 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l1_word] %></span>
+                <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
+              </div>
+            <% end %>
+          </div>
 
-          <% l1_column_tokens.each do |token| %>
-            <!-- L1 cell (audio + word) -->
-            <div
-              class="<%= cell_base %> justify-center text-center <%= cell_state %>"
-              data-token-id="<%= token[:id] %>"
-              data-column="l1"
-              data-l1-text="<%= token[:l1_word] %>"
-              data-l2-text="<%= token[:l2_translation] %>"
-              data-audio-url="<%= token[:audio_url] %>"
-              data-action="click->match-tokens-activity#selectToken">
-              <span lang="<%= l1.iso_name %>" class="line-clamp-2 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l1_word] %></span>
-              <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
-            </div>
-          <% end %>
-
-          <% l2_column_tokens.each do |token| %>
-            <!-- L2 cell (translation) -->
-            <div
-              class="<%= cell_base %> justify-center text-center <%= cell_state %>"
-              data-token-id="<%= token[:id] %>"
-              data-column="l2"
-              data-l1-text="<%= token[:l1_word] %>"
-              data-l2-text="<%= token[:l2_translation] %>"
-              data-audio-url="<%= token[:audio_url] %>"
-              data-action="click->match-tokens-activity#selectToken">
-              <span lang="<%= l2.iso_name %>" class="line-clamp-3 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l2_translation] %></span>
-              <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
-            </div>
-          <% end %>
+          <!-- L2 column: header + L2 list -->
+          <div class="flex flex-col gap-3">
+            <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l2.english_name %> Translations</div>
+            <% l2_list.each do |token| %>
+              <div
+                class="<%= cell_base %> justify-center text-center <%= cell_state %>"
+                data-token-id="<%= token[:id] %>"
+                data-column="l2"
+                data-l1-text="<%= token[:l1_word] %>"
+                data-l2-text="<%= token[:l2_translation] %>"
+                data-audio-url="<%= token[:audio_url] %>"
+                data-action="click->match-tokens-activity#selectToken">
+                <span lang="<%= l2.iso_name %>" class="line-clamp-3 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l2_translation] %></span>
+                <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
+              </div>
+            <% end %>
+          </div>
         </div>
       <% end %>
 
