@@ -149,13 +149,18 @@ export default class extends Controller {
     this.currentPageIndex++;
     const nextPage = this.pageTargets[this.currentPageIndex];
 
-    previousPage.classList.add('hidden');
-    nextPage.classList.remove('hidden');
-
+    // Strip the glow/scale styling (transform + box-shadow) before hiding
+    // the page it lives on, and force a reflow so the change is committed
+    // first. Safari can otherwise leave a ghost of a GPU-composited element
+    // on screen when its ancestor is set to display:none mid-transition.
     if (this.currentL1Element) {
       this.currentL1Element.classList.remove('current-l1');
       this.currentL1Element.classList.add('found-translation');
     }
+    void previousPage.offsetHeight;
+
+    previousPage.classList.add('hidden');
+    nextPage.classList.remove('hidden');
 
     const nextStartButton = this.startButtonTargets[this.currentPageIndex];
     nextStartButton.classList.add('current-l1');
@@ -187,14 +192,22 @@ export default class extends Controller {
   showCompletion() {
     // Play completion sound
     this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }));
-    
+
     this.completionMessageTarget.classList.remove('hidden');
-    animate(this.completionMessageTarget, 
-      { opacity: [0, 1], scale: [0.8, 1] }, 
+    animate(this.completionMessageTarget,
+      { opacity: [0, 1], scale: [0.8, 1] },
       { duration: 0.3, easing: 'easeOut' }
     );
     this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }));
-    this.pageTargets[this.currentPageIndex].classList.add('hidden');
+
+    // Same Safari ghosting concern as advanceToNextPage: strip the glow
+    // styling and force a reflow before hiding the page it lives on.
+    const lastPage = this.pageTargets[this.currentPageIndex];
+    if (this.currentL1Element) {
+      this.currentL1Element.classList.remove('current-l1');
+    }
+    void lastPage.offsetHeight;
+    lastPage.classList.add('hidden');
   }
 
   // Award XP by calling the progress tracker controller
