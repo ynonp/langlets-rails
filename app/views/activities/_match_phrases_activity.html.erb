@@ -26,7 +26,7 @@
     data-match-activity-total-phrases-value="<%= total_phrases %>"
     class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
 
-  <div class="w-full max-w-[460px] p-4 sm:py-6">
+  <div class="w-full max-w-[460px] p-4 sm:py-6 flex-1 flex flex-col">
     <h2 class="sr-only"><%= @activity.text_header || t(".instruction") %></h2>
 
     <div class="flex items-center justify-between gap-4 mb-5">
@@ -48,7 +48,7 @@
       <div 
         data-match-activity-target="phraseContainer"
         data-index="<%= index %>"        
-        class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
+        class="phraseContainer flex-1 flex flex-col <%= index == 0 ? '' : 'hidden' %>">
 
         <!-- Original phrase (Spanish) -->
         <div 
@@ -91,9 +91,12 @@
           </svg>
           <span><%= params[:l2].english_name %></span>
         </div>
-        
+
+        <!-- Feedback message (Correct / Incorrect) — appears above the options -->
+        <div data-match-activity-target="feedbackMessage" class="hidden mb-3 p-3 rounded-lg text-center text-lg sm:text-xl font-semibold"></div>
+
         <!-- Options section for this phrase -->
-        <div class="space-y-5" data-match-activity-target="optionsContainer" data-phrase-index="<%= index %>">
+        <div class="flex-1 flex flex-col gap-3 sm:gap-4 mt-3" data-match-activity-target="optionsContainer" data-phrase-index="<%= index %>">
           <% 
             # Create distractors - using other translations
             all_translations = params[:phrases].map { |p| phrase_text_l2(p) }
@@ -113,27 +116,23 @@
               distractors += additional_distractors
             end
             
-            # Add the correct answer
-            options = distractors + [translation]
-            # Shuffle the options
-            options = options.shuffle
+            # Add the correct answer, then shuffle all options
+            options = ([translation] + distractors).shuffle
           %>
           
           <% options.each do |option| %>
-            <button 
+            <button
               data-action="click->match-activity#selectOption"
               data-match-activity-target="optionButton"
               data-correct="<%= option == translation %>"
-              class="optionButton <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-4 py-3.5 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 text-sm sm:text-base">
-              <%= option %>
+              class="optionButton flex-1 <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-5 py-4 sm:py-6 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 text-lg sm:text-xl font-medium flex items-center">
+              <span class="w-full break-words leading-snug"><%= option %></span>
             </button>
           <% end %>
         </div>
       </div>
     <% end %>
-    
-    <div data-match-activity-target="feedbackMessage" class="hidden mt-4 p-3 rounded-lg text-center text-lg font-medium"></div>
-    
+
     <div data-match-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden mt-8 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>

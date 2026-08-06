@@ -5,11 +5,10 @@ import { animate } from "motion/mini"
 // Connects to data-controller="match-activity"
 export default class extends Controller {
   static targets = [
-    'phraseContainer', 
-    'optionButton', 
-    'progressBar', 
+    'phraseContainer',
+    'optionButton',
+    'progressBar',
     'progressText',
-    'feedbackMessage',
     'completionMessage',
     'speakerButton'
   ];
@@ -48,19 +47,21 @@ export default class extends Controller {
   selectOption(event) {
     const option = event.currentTarget;
     const isCorrect = option.dataset.correct === 'true';
-    
+    const phraseContainer = event.target.closest('.phraseContainer');
+    const feedbackEl = phraseContainer.querySelector('[data-match-activity-target="feedbackMessage"]');
+
     // Mark the selected option
     if (isCorrect) {
       // Play correct sound
       this.element.dispatchEvent(new CustomEvent('audio:correct', { bubbles: true }));
-      
+
       // Disable all options for this phrase to prevent multiple selections
-      event.target.closest('.phraseContainer').querySelectorAll('.optionButton').forEach(button => {
+      phraseContainer.querySelectorAll('.optionButton').forEach(button => {
         button.disabled = true;
       });
       option.classList.add('correct-answer');
       this.incrementScore();
-      this.showFeedback(t("match.correct"), "bg-green-600");
+      this.showFeedback(feedbackEl, t("match.correct"), "bg-green-600");
         // Wait a moment before moving to the next phrase
       setTimeout(() => {
         this.moveToNextPhrase();
@@ -69,22 +70,21 @@ export default class extends Controller {
     } else {
       // Play incorrect sound
       this.element.dispatchEvent(new CustomEvent('audio:incorrect', { bubbles: true }));
-      
+
       option.classList.add('incorrect-answer');
-      this.showFeedback(t("match.incorrect"), "bg-red-600");
+      this.showFeedback(feedbackEl, t("match.incorrect"), "bg-red-600");
       setTimeout(() => {
         option.classList.remove('incorrect-answer');
-        this.feedbackMessageTarget.classList.add('hidden');
+        feedbackEl.classList.add('hidden');
       }, 1500);
-    }    
+    }
   }
-  
-  showFeedback(message, bgClass) {
-    const feedbackEl = this.feedbackMessageTarget;
+
+  showFeedback(feedbackEl, message, bgClass) {
     feedbackEl.textContent = message;
     feedbackEl.classList.remove('hidden', 'bg-green-600', 'bg-red-600');
     feedbackEl.classList.add(bgClass, 'animate-fade-in');
-    
+
     setTimeout(() => {
       feedbackEl.classList.add('hidden');
       feedbackEl.classList.remove('animate-fade-in');

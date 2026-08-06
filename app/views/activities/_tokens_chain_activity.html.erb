@@ -48,7 +48,7 @@
       <div data-tokens-chain-activity-target="stopPracticingContainer" class="mb-2 text-center"></div>
     </div>
 
-    <div id="tokens-chain-activity" class="flex flex-col gap-4">
+    <div id="tokens-chain-activity" class="flex flex-col gap-4 flex-1">
 
       <!-- Completion message -->
       <div data-tokens-chain-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -73,7 +73,7 @@
         %>
         <div
           data-tokens-chain-activity-target="page"
-          class="grid <%= grid_cols_classes %> gap-4 <%= 'hidden' if page_index.positive? %>">
+          class="grid <%= grid_cols_classes %> gap-4 auto-rows-fr flex-1 <%= 'hidden' if page_index.positive? %>">
           <% # Top-left square: first L1 word of this page %>
           <div
             data-tokens-chain-activity-target="startButton"
