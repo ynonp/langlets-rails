@@ -6,39 +6,59 @@
   params[:start_timestamp] - Start timestamp for the video segment
   params[:end_timestamp] - End timestamp for the video segment
   current_script - Script object for current script (passed as local)
-  
-  This activity shows a 2x5 grid where users match tokens to their translations:
+
+  This activity shows a 2x4 grid where users match tokens to their translations:
   1. Left column shows words in L1, right column shows translations in L2
   2. Columns are shuffled separately so words and translations are not aligned
   3. User clicks on a word in one column, then its match in the other column
-  4. Successful matches flash green and disappear
+  4. Successful matches flash green and stay in place dimmed with a ✓
   5. Failed matches flash red and selection is cleared
-  6. New token pairs are inserted randomly when matches are made
-  7. Progress bar shows completion status
-  8. When all tokens are matched, shows completion message
+  6. Tapping any cell (L1 or L2) plays the L1 audio for that pair
+  7. Progress bar + counter show completion status
+  8. When all tokens on a page are matched, the page is hidden and the next
+     page (up to PAGE_SIZE pairs = 8 cells per page) is revealed
+  9. When all tokens are matched, shows completion message
  %>
 
-<% 
+<%
   # Prepare tokens data using helper
   tokens = prepare_tokens_for_matching(params[:phrase_tokens])
   l1 = params[:l1]
   l2 = params[:l2]
   total_tokens = tokens.length
+
+  # Same page-sizing convention as tokens-chain-activity: at most 4 pairs per
+  # page so the L1/L2 columns stay readable (4 boxes per column).
+  page_size = 4
+  token_pages = tokens.each_slice(page_size).to_a
+
+  # Shared cell styling. The state variants mirror audio-to-translation: a
+  # gentle emerald outline while selected, and a dimmed "done" look once
+  # matched (kept in place instead of hiding/replacing).
+  cell_base = "group relative flex items-center min-h-[96px] overflow-hidden px-4 py-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+  cell_state = "data-[state=selected]:border-emerald-400 data-[state=selected]:ring-2 data-[state=selected]:ring-emerald-500/25 data-[state=selected]:bg-emerald-50/70 dark:data-[state=selected]:bg-emerald-900/40 data-[state=matched]:border-emerald-500 data-[state=matched]:bg-emerald-50 dark:data-[state=matched]:bg-emerald-900/40 data-[state=matched]:opacity-[0.6] data-[state=matched]:cursor-default data-[state=matched]:pointer-events-none data-[state=matched]:grayscale"
+  check_classes = "hidden group-data-[state=matched]:block shrink-0 text-base font-bold leading-none text-emerald-600 dark:text-emerald-300"
 %>
 
 <div
     data-controller="match-tokens-activity"
     data-match-tokens-activity-tokens-value="<%= tokens.to_json %>"
     data-match-tokens-activity-total-tokens-value="<%= total_tokens %>"
+    data-match-tokens-activity-page-size-value="<%= page_size %>"
     data-match-tokens-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>"
-    class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
+    class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center">
 
-  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
+  <div class="w-full max-w-[640px] p-4 sm:p-6">
     <div class="mb-6">
-      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || t(".instruction") %></h2>
-      <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mt-4">
-        <div data-match-tokens-activity-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      <div class="flex items-center gap-3 sm:gap-4">
+        <p data-match-tokens-activity-target="progressText" class="shrink-0 text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 tabular-nums">
+          <%= t(".matched", current: 0, total: total_tokens) %>
+        </p>
+        <div class="min-w-0 flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-2.5">
+          <div data-match-tokens-activity-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+        </div>
       </div>
+      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-4"><%= @activity.text_header || t(".instruction") %></p>
     </div>
 
     <div id="match-tokens" class="flex flex-col gap-4">
@@ -52,69 +72,48 @@
         <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
-      <!-- Grid container -->
-      <div class="grid grid-cols-2 gap-4 min-h-[400px]" data-match-tokens-activity-target="grid" data-action="touchstart->match-tokens-activity#handleTouchStart:!passive touchend->match-tokens-activity#handleTouchEnd:!passive">
-        <!-- Left column (L1 words) -->
-        <div class="flex flex-col gap-3">
-          <div class="text-center px-2 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 font-semibold rounded text-sm">
-            <%= l1.english_name %> Words
-          </div>
-          <div data-match-tokens-activity-target="l1Column" class="flex flex-col gap-3">
-            <!-- L1 words will be inserted here -->
-          </div>
-        </div>
+      <!-- Pages: each page holds up to page_size pairs (8 boxes: 4 L1 + 4 L2) -->
+      <% token_pages.each_with_index do |page_tokens, page_index| %>
+        <% shuffled_page_tokens = page_tokens.shuffle %>
+        <div
+          data-match-tokens-activity-target="page"
+          class="grid grid-cols-2 gap-x-4 gap-y-3.5 <%= 'hidden' if page_index.positive? %>"
+          data-action="touchstart->match-tokens-activity#handleTouchStart:!passive touchend->match-tokens-activity#handleTouchEnd:!passive">
 
-        <!-- Right column (L2 translations) -->
-        <div class="flex flex-col gap-3">
-          <div class="text-center px-2 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 font-semibold rounded text-sm">
-            <%= l2.english_name %> Translations
-          </div>
-          <div data-match-tokens-activity-target="l2Column" class="flex flex-col gap-3">
-            <!-- L2 translations will be inserted here -->
-          </div>
+          <!-- Column headers -->
+          <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l1.english_name %> Words</div>
+          <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l2.english_name %> Translations</div>
+
+          <% shuffled_page_tokens.each do |token| %>
+            <!-- L1 cell (audio + word) -->
+            <div
+              class="<%= cell_base %> justify-center text-center <%= cell_state %>"
+              data-token-id="<%= token[:id] %>"
+              data-column="l1"
+              data-l1-text="<%= token[:l1_word] %>"
+              data-l2-text="<%= token[:l2_translation] %>"
+              data-audio-url="<%= token[:audio_url] %>"
+              data-action="click->match-tokens-activity#selectToken">
+              <span lang="<%= l1.iso_name %>" class="line-clamp-2 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l1_word] %></span>
+              <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
+            </div>
+
+            <!-- L2 cell (translation) -->
+            <div
+              class="<%= cell_base %> justify-center text-center <%= cell_state %>"
+              data-token-id="<%= token[:id] %>"
+              data-column="l2"
+              data-l1-text="<%= token[:l1_word] %>"
+              data-l2-text="<%= token[:l2_translation] %>"
+              data-audio-url="<%= token[:audio_url] %>"
+              data-action="click->match-tokens-activity#selectToken">
+              <span lang="<%= l2.iso_name %>" class="line-clamp-3 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l2_translation] %></span>
+              <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
+            </div>
+          <% end %>
         </div>
-      </div>
+      <% end %>
 
     </div>
   </div>
 </div>
-
-<style>
-@keyframes flash-success {
-  0% { background-color: rgb(34, 197, 94); }
-  100% { background-color: transparent; }
-}
-
-@keyframes flash-error {
-  0% { background-color: rgb(239, 68, 68); }
-  100% { background-color: transparent; }
-}
-
-.flash-success {
-  animation: flash-success 0.6s ease-out;
-}
-
-.flash-error {
-  animation: flash-error 0.6s ease-out;
-}
-
-.token-word {
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.token-word:hover {
-  transform: scale(1.02);
-}
-
-.token-word.selected {
-  border-color: var(--color-emerald-500);
-  box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-emerald-500) 30%, transparent);
-}
-
-.token-word.matched {
-  opacity: 0;
-  transform: scale(0.8);
-  pointer-events: none;
-}
-</style>

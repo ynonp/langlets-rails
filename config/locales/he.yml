@@ -204,6 +204,7 @@ he:
       instruction: "התאימו מילים לתרגומים שלהן"
       great_job: "כל הכבוד!"
       completed: "התאמתם נכון את כל המילים."
+      matched: "%{current} / %{total} הותאמו"
     tokens_chain_activity:
       instruction: "הקישו על התרגום של המילה המודגשת"
       great_job: "כל הכבוד!"
@@ -579,6 +580,8 @@ he:
     audio_to_translation:
       matched: "%{current} / %{total} הותאמו"
     tokens_chain:
+      matched: "%{current} / %{total} הותאמו"
+    match_tokens:
       matched: "%{current} / %{total} הותאמו"
     popover_translation:
       save: "שמירה"
