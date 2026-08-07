@@ -147,6 +147,9 @@
 [data-controller="word-order-activity"] .word-item:hover { transform: translateY(-2px); }
 [data-controller="word-order-activity"] .word-item.dragging { opacity: 0.7; transform: scale(1.05); z-index: 10; }
 
+/* Reserves a placed word's spot in the bank so remaining tiles don't reflow */
+[data-controller="word-order-activity"] .word-item-placeholder { visibility: hidden; flex-shrink: 0; pointer-events: none; }
+
 /* Tiles placed into the answer line read as accent chips */
 [data-controller="word-order-activity"] .result-line .word-item {
   background: var(--color-emerald-500);

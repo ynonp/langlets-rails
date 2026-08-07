@@ -60,6 +60,7 @@ export default class extends Controller {
         button.disabled = true;
       });
       option.classList.add('correct-answer');
+      option.querySelector('[data-role="correct-icon"]').classList.remove('hidden');
       this.incrementScore();
       this.showFeedback(feedbackEl, t("match.correct"), "bg-green-600");
         // Wait a moment before moving to the next phrase
@@ -72,9 +73,11 @@ export default class extends Controller {
       this.element.dispatchEvent(new CustomEvent('audio:incorrect', { bubbles: true }));
 
       option.classList.add('incorrect-answer');
+      option.querySelector('[data-role="incorrect-icon"]').classList.remove('hidden');
       this.showFeedback(feedbackEl, t("match.incorrect"), "bg-red-600");
       setTimeout(() => {
         option.classList.remove('incorrect-answer');
+        option.querySelector('[data-role="incorrect-icon"]').classList.add('hidden');
         feedbackEl.classList.add('hidden');
       }, 1500);
     }
@@ -119,8 +122,6 @@ export default class extends Controller {
       );
       if (nextContainer) {
         nextContainer.classList.remove('hidden');
-        // Update progress text
-        this.progressTextTarget.textContent = t("match.question_of", { current: this.currentPhraseValue + 1, total: this.totalPhrasesValue });
         // Preload the next batch of word audio, then refresh the current
         // phrase's recency in the cache
         this.preloadPhraseAudio(this.currentPhraseValue + 1);

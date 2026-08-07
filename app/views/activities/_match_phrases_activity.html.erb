@@ -31,7 +31,7 @@
 
     <div class="flex items-center justify-between gap-4 mb-5">
       <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
-        <span data-match-activity-target="progressText"><%= t(".question_of", current: 1, total: total_phrases) %></span>
+        <span data-match-activity-target="progressText"><%= t(".listen_choose_meaning", language: params[:l2].english_name) %></span>
       </p>
     </div>
     
@@ -81,12 +81,8 @@
           <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden fixed bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 p-2 rounded shadow-lg z-50 max-w-xs" } %>
         </div>
 
-        <div class="flex items-center gap-2 mx-0.5 my-3 text-xs font-medium text-gray-600 dark:text-gray-400">
-          <span><%= params[:l1].english_name %></span>
-          <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true">
-            <path d="M4 10h12m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span><%= params[:l2].english_name %></span>
+        <div class="mx-0.5 my-3 text-xs font-medium text-gray-600 dark:text-gray-400">
+          <%= t(".tap_to_check") %>
         </div>
 
         <!-- Feedback message (Correct / Incorrect) — appears above the options -->
@@ -117,13 +113,21 @@
             options = ([translation] + distractors).shuffle
           %>
           
-          <% options.each do |option| %>
+          <% option_labels = %w[A B C D] %>
+          <% options.each_with_index do |option, opt_index| %>
             <button
               data-action="click->match-activity#selectOption"
               data-match-activity-target="optionButton"
               data-correct="<%= option == translation %>"
-              class="optionButton flex-1 <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-5 py-4 sm:py-6 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 text-lg sm:text-xl font-medium flex items-center">
+              class="optionButton flex-1 <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-5 py-4 sm:py-6 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 text-lg sm:text-xl font-medium flex items-center gap-4">
+              <span class="option-badge flex-shrink-0 w-9 h-9 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center text-sm font-semibold text-gray-500 dark:text-gray-400 transition-colors duration-200"><%= option_labels[opt_index] %></span>
               <span class="w-full break-words leading-snug"><%= option %></span>
+              <svg data-role="correct-icon" class="hidden flex-shrink-0 w-6 h-6 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <svg data-role="incorrect-icon" class="hidden flex-shrink-0 w-6 h-6 text-red-600 dark:text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+              </svg>
             </button>
           <% end %>
         </div>
@@ -168,5 +172,17 @@
 .incorrect-answer {
   background-color: rgba(239, 68, 68, 0.2) !important;
   border-color: rgb(239, 68, 68) !important;
+}
+
+.correct-answer .option-badge {
+  background-color: rgb(16, 185, 129) !important;
+  border-color: rgb(16, 185, 129) !important;
+  color: white !important;
+}
+
+.incorrect-answer .option-badge {
+  background-color: rgb(239, 68, 68) !important;
+  border-color: rgb(239, 68, 68) !important;
+  color: white !important;
 }
 </style>

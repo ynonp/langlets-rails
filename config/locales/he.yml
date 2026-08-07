@@ -220,7 +220,8 @@ he:
       next: "הבא"
     match_phrases_activity:
       instruction: "הקישו על התרגום"
-      question_of: "שאלה %{current} מתוך %{total}"
+      listen_choose_meaning: "הקשיבו, ואז בחרו את המשמעות ב%{language}"
+      tap_to_check: "הקישו על תשובה כדי לבדוק אותה"
       great_job: "כל הכבוד!"
       completed: "השלמתם את כל המשפטים."
     speak_activity:
@@ -565,7 +566,6 @@ he:
     match:
       correct: "נכון!"
       incorrect: "לא נכון"
-      question_of: "שאלה %{current} מתוך %{total}"
     write_missing_word:
       question_of: "שאלה %{current} מתוך %{total}"
       check: "בדיקה"

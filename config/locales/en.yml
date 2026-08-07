@@ -242,7 +242,8 @@ en:
       next: "Next"
     match_phrases_activity:
       instruction: "Click On The Translation"
-      question_of: "Question %{current} of %{total}"
+      listen_choose_meaning: "Listen, then choose the %{language} meaning"
+      tap_to_check: "Tap an answer to check it"
       great_job: "Great job!"
       completed: "You've completed all the phrases."
     speak_activity:
@@ -640,7 +641,6 @@ en:
     match:
       correct: "Correct!"
       incorrect: "Incorrect"
-      question_of: "Question %{current} of %{total}"
     write_missing_word:
       question_of: "Question %{current} of %{total}"
       check: "Check"

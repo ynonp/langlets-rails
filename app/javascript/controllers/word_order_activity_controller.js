@@ -29,6 +29,9 @@ export default class extends Controller {
     this.touchStartTime = null
     this.touchStartPosition = null
     this.isDragging = false
+    // Maps a word tile currently sitting in a slot to the placeholder holding
+    // its spot open in the word bank, so removing it doesn't reflow the rest.
+    this.bankPlaceholders = new Map()
   }
 
   // All drag/touch/click actions are bound once on the controller root and
@@ -93,8 +96,10 @@ export default class extends Controller {
       return
     }
 
-    // Dropping on the word bank - free the slot the word came from, if any
+    // Dropping on the word bank - free the slot the word came from, if any,
+    // and drop its reserved placeholder since it's being placed explicitly.
     this.releaseFromSlot(draggedElement)
+    this.discardBankPlaceholder(draggedElement)
 
     // Find the insertion point based on drop position
     const insertionPoint = this.findInsertionPoint(dropTarget, event.clientX, event.clientY)
@@ -121,17 +126,58 @@ export default class extends Controller {
         // Swap: the occupant takes the dragged word's slot, which stays filled
         originSlot.appendChild(occupant)
       } else {
-        occupant.classList.remove('in-slot')
         const wordBank = this.getWordBankForPhrase(this.getCurrentPhraseIndex())
-        wordBank.appendChild(occupant)
+        this.returnWordToBank(occupant, wordBank)
       }
     } else if (originSlot) {
       originSlot.classList.remove('filled')
     }
 
-    slot.appendChild(draggedElement)
+    this.placeWordInSlot(slot, draggedElement)
+  }
+
+  // Move a word tile into a slot. If it's coming straight from the word bank,
+  // leave an invisible placeholder in its place so the remaining tiles don't
+  // reflow to fill the gap.
+  placeWordInSlot(slot, wordItem) {
+    const wordBank = this.getWordBankForPhrase(this.getCurrentPhraseIndex())
+    if (wordItem.parentElement === wordBank) {
+      this.reserveBankPosition(wordItem, wordBank)
+    }
+    slot.appendChild(wordItem)
     slot.classList.add('filled')
-    draggedElement.classList.add('in-slot')
+    wordItem.classList.add('in-slot')
+  }
+
+  // Send a word tile back to the word bank, restoring it to the exact spot
+  // its placeholder is holding open when there is one.
+  returnWordToBank(wordItem, wordBank) {
+    this.releaseFromSlot(wordItem)
+    const placeholder = this.bankPlaceholders.get(wordItem)
+    if (placeholder && placeholder.isConnected) {
+      this.bankPlaceholders.delete(wordItem)
+      placeholder.replaceWith(wordItem)
+    } else {
+      wordBank.appendChild(wordItem)
+    }
+  }
+
+  reserveBankPosition(wordItem, wordBank) {
+    const rect = wordItem.getBoundingClientRect()
+    const placeholder = document.createElement('span')
+    placeholder.className = 'word-item-placeholder'
+    placeholder.style.width = `${rect.width}px`
+    placeholder.style.height = `${rect.height}px`
+    wordBank.insertBefore(placeholder, wordItem)
+    this.bankPlaceholders.set(wordItem, placeholder)
+  }
+
+  discardBankPlaceholder(wordItem) {
+    const placeholder = this.bankPlaceholders.get(wordItem)
+    if (placeholder) {
+      placeholder.remove()
+      this.bankPlaceholders.delete(wordItem)
+    }
   }
 
   // Detach a word from the slot it currently occupies (if any) so that slot
@@ -152,8 +198,7 @@ export default class extends Controller {
     if (existingToken) {
       const phraseIndex = this.getCurrentPhraseIndex()
       const wordBank = this.getWordBankForPhrase(phraseIndex)
-      existingToken.classList.remove('in-slot')
-      wordBank.appendChild(existingToken)
+      this.returnWordToBank(existingToken, wordBank)
     }
     tokenSlot.classList.remove('filled')
   }
@@ -279,8 +324,10 @@ export default class extends Controller {
         if (tokenSlot) {
           this.dropWordOnSlot(tokenSlot, this.draggedElement)
         } else if (wordBank) {
-          // Return to word bank - free the slot the word came from, if any
+          // Return to word bank - free the slot the word came from, if any,
+          // and drop its reserved placeholder since it's being placed explicitly.
           this.releaseFromSlot(this.draggedElement)
+          this.discardBankPlaceholder(this.draggedElement)
 
           // Find the insertion point based on touch position
           const insertionPoint = this.findInsertionPoint(wordBank, touch.clientX, touch.clientY)
@@ -315,16 +362,13 @@ export default class extends Controller {
 
     if (wordItem.classList.contains('in-slot')) {
       // Token is in a slot, move it back to word bank
-      this.releaseFromSlot(wordItem)
-      wordBank.appendChild(wordItem)
+      this.returnWordToBank(wordItem, wordBank)
     } else {
       // Token is in word bank, try to place it in the first available slot
       const tokenSlot = this.findFirstAvailableSlot(phraseIndex)
       if (tokenSlot) {
         this.clearTokenSlot(tokenSlot)
-        tokenSlot.appendChild(wordItem)
-        tokenSlot.classList.add('filled')
-        wordItem.classList.add('in-slot')
+        this.placeWordInSlot(tokenSlot, wordItem)
       }
       this.playWordItemAudio(wordItem)
     }
@@ -480,8 +524,7 @@ export default class extends Controller {
     tokenSlots.forEach(slot => {
       const token = slot.querySelector('[data-word-order-activity-target="wordItem"]')
       if (token) {
-        token.classList.remove('in-slot')
-        wordBank.appendChild(token)
+        this.returnWordToBank(token, wordBank)
       }
       slot.classList.remove('filled', 'correct', 'incorrect')
     })
