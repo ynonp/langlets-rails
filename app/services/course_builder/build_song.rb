@@ -100,6 +100,7 @@ module CourseBuilder
         @flashcard_assignments = build_flashcard_assignments(lesson_data)
         lesson_index = 0
         created_lessons = []
+        previous_review_lesson = nil
 
         lesson_data.each_with_index do |l, idx|
           next_l = lesson_data[idx + 1]
@@ -132,7 +133,8 @@ module CourseBuilder
           if is_review_lesson?(lesson_number)
             review_phrases_list = review_phrases(lesson, phrases, created_lessons)
             review_token_translations_list = review_token_translations(review_phrases_list)
-            create_review_lesson_activities(lesson, review_phrases_list, review_token_translations_list, user)
+            create_review_lesson_activities(lesson, review_phrases_list, review_token_translations_list, user, previous_review_lesson)
+            previous_review_lesson = lesson
           elsif lesson_number == 1
             create_lesson_1_activities(lesson, all_lesson_phrases, all_token_translations, user)
           elsif lesson_number <= 3
@@ -153,7 +155,8 @@ module CourseBuilder
               created_lessons << review_lesson
               review_phrases_list = review_phrases(review_lesson, phrases, created_lessons)
               review_token_translations_list = review_token_translations(review_phrases_list)
-              create_review_lesson_activities(review_lesson, review_phrases_list, review_token_translations_list, user)
+              create_review_lesson_activities(review_lesson, review_phrases_list, review_token_translations_list, user, previous_review_lesson)
+              previous_review_lesson = review_lesson
             end
           end
         end
@@ -676,38 +679,46 @@ module CourseBuilder
       end
     end
 
-    def create_review_lesson_activities(lesson, review_phrases, review_token_translations, user)
-      # 1. LanguageAlignmentActivity on all phrases from all previous lessons in order
+    def create_review_lesson_activities(lesson, review_phrases, review_token_translations, user, previous_review_lesson)
+      # 1. WatchVideoActivity covering just the new ground since the last review:
+      # from where the previous review lesson left off (or the start of the course,
+      # for the first review lesson) through the end of this one.
+      watch_start_timestamp = previous_review_lesson&.end_timestamp || lesson.start_timestamp
+      watch_phrases = review_phrases.where("timestamp >= ?", watch_start_timestamp).order(timestamp: :asc)
+      a0 = Activities::WatchVideoActivity.create!(lesson:, order: 1, user:)
+      a0.phrases = watch_phrases
+
+      # 2. LanguageAlignmentActivity on all phrases from all previous lessons in order
       tt_with_l2 = PhraseToken
         .joins(:localized_translation)
         .where(phrase_id: review_phrases.pluck(:id))
         .where.not(token_translations: { l2_start_index: nil })
 
       unless tt_with_l2.empty?
-        a1 = Activities::LanguageAlignmentActivity.create!(lesson:, order: 1, user:)
+        a1 = Activities::LanguageAlignmentActivity.create!(lesson:, order: 2, user:)
         a1.phrases = review_phrases.order(timestamp: :asc)
         a1.phrase_tokens = tt_with_l2.sample(5)
       end
 
-      # 2. AudioToTranslation (100% review, all completed lessons)
+      # 3. AudioToTranslation (100% review, all completed lessons)
       review_phrases_for_audio = review_phrases.order(timestamp: :asc).limit(5).to_a
       distinct_review_phrases_audio = distinct_phrases_by_text_l2(review_phrases_for_audio)
-      a2 = Activities::AudioToTranslation.create!(lesson:, order: 2, user:)
+      a2 = Activities::AudioToTranslation.create!(lesson:, order: 3, user:)
       a2.phrases = distinct_review_phrases_audio
 
-      # 3. TokenChainActivity (100% review)
+      # 4. TokenChainActivity (100% review)
       chain_tokens = token_chain_tokens(review_token_translations)
       if chain_tokens.size >= MIN_TOKEN_CHAIN_TOKENS
-        a3 = Activities::TokensChainActivity.create!(lesson:, order: 3, user:)
+        a3 = Activities::TokensChainActivity.create!(lesson:, order: 4, user:)
         a3.phrase_tokens = chain_tokens
       end
 
-      # 4. ListenActivity (all phrases from all previous lessons in order, only if
+      # 5. ListenActivity (all phrases from all previous lessons in order, only if
       # a fillable blank can be rendered)
       ordered_review_phrases = review_phrases.order(timestamp: :asc)
       listen_tokens = listen_blank_tokens(ordered_review_phrases)
       unless listen_tokens.empty?
-        a4 = Activities::ListenActivity.create!(lesson:, order: 4, user:)
+        a4 = Activities::ListenActivity.create!(lesson:, order: 5, user:)
         a4.phrases = ordered_review_phrases
         a4.phrase_tokens = listen_tokens.uniq
       end
