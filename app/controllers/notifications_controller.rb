@@ -13,6 +13,12 @@ class NotificationsController < ApplicationController
     # Snapshotted before anything marks them read, so a native launch — which
     # reports read_all as the page loads — still shows the user what was new.
     @unread_ids = @notifications.reject(&:read?).map(&:id).to_set
+
+    # Entering this page is itself "the user has seen what's new", same as the
+    # native shell's launch report. Marking read here (after the snapshot
+    # above) is what makes the header/menu badge gone by the time this page
+    # renders, on web as well as native.
+    Notification.mark_all_read!(current_user)
   end
 
   # The individual "X". Marking read, not deleting: the list is the record of

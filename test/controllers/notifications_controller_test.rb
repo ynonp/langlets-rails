@@ -35,6 +35,34 @@ class NotificationsControllerTest < ActionDispatch::IntegrationTest
     assert_select "##{dom_id(@read)}", text: /New/, count: 0
   end
 
+  # Entering the page is itself "seen it" — the header/menu badge must be gone
+  # by the time this same response renders, not only after an explicit
+  # "Mark all as read".
+  test "entering the page clears the unread count" do
+    sign_in @user
+    assert @user.notifications.unread.exists?
+
+    get notifications_path
+
+    assert_response :success
+    assert_equal 0, @user.notifications.unread.count
+    assert_select "[data-testid=app-menu-notification-badge]", count: 0
+    assert_select "[data-testid=user-menu-notification-badge]", count: 0
+  end
+
+  test "a failed course notification has no Open button" do
+    failed = Notification.create!(user: @user, kind: :course_failed, data: { "video_title" => "Boom" })
+    sign_in @user
+
+    get notifications_path
+
+    assert_response :success
+    within_notification = ->(record) { assert_select "##{dom_id(record)}" }
+    within_notification.call(failed)
+    assert_select "##{dom_id(failed)} a", text: /Open/, count: 0
+    assert_select "##{dom_id(@unread)} a", text: /Open/, count: 1
+  end
+
   test "another user's notifications are not listed" do
     stranger = User.create!(email: "stranger-notifications@example.com", password: "password123",
                             confirmed_at: Time.zone.now)

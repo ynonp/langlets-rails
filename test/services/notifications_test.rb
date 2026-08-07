@@ -78,6 +78,14 @@ class NotificationsTest < ActiveSupport::TestCase
     assert_equal "Word translation count mismatch", notification.data["reason"]
   end
 
+  # A failed import has nothing specific to open, so the list and the push
+  # payload should offer no "Open" at all rather than a generic screen.
+  test "course_failed has no url" do
+    notification = Notifications.deliver(user: @user, kind: :course_failed, course: @course, reason: "boom")
+
+    assert_nil notification.url
+  end
+
   # A failed import may never have got as far as a Course row; the request's
   # title is all there is.
   test "course_failed falls back to the requested title when there is no course" do

@@ -70,7 +70,13 @@ module Notifications
 
     def course_failed
       Built.new(
-        url: "/app/import_requests",
+        # No destination: unlike a ready course or an activated subscription,
+        # a failed import has nothing specific to open — "/app/import_requests"
+        # would just land on the empty Add Video screen, not the failure
+        # itself. Omitted rather than pointed anywhere, so the notification
+        # list and the push payload don't offer an "Open" that goes nowhere
+        # useful.
+        url: nil,
         data: {
           "video_title" => video_title(context[:course]),
           # Kept out of the body and out of the push on purpose: it is a
