@@ -102,7 +102,7 @@
           <% end %>
         <% end %>
         <% if user_signed_in? %>
-          <%= link_to "Add A Video", app_import_requests_path, class: "gallery-add-video" %>
+          <%= link_to "Add A Video", new_app_import_request_path, class: "gallery-add-video" %>
         <% end %>
         <% if user_signed_in? %>
           <%= render "shared/user_menu",

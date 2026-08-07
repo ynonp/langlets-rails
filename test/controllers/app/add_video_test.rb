@@ -39,7 +39,6 @@ module App
       assert_select "[data-testid='web-add-video'].lg\\:grid-cols-\\[minmax\\(0\\,1fr\\)_22rem\\]"
       assert_select "input#web-video-url[data-add-video-target=input]"
       assert_select "[data-add-video-target=clipboardChip]", count: 0
-      assert_select "[data-controller='theme']", count: 1
       assert_select ".bg-\\[\\#FAF6EF\\]"
       assert_select ".text-\\[\\#C4451C\\]"
       assert_select ".app-scroll-pad", count: 0

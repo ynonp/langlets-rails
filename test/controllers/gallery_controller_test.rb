@@ -42,7 +42,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     get gallery_url(lang: @language.iso_name)
 
     assert_response :success
-    assert_select "nav a[href='#{app_import_requests_path}']", text: "Add A Video"
+    assert_select "nav a[href='#{new_app_import_request_path}']", text: "Add A Video"
     assert_select "[data-controller='profile-menu']", count: 1
     assert_select "a", text: "Profile"
   end

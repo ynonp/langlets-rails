@@ -12,8 +12,7 @@ module App
       "Home" => "/app",
       "Started videos" => "/app/started_courses",
       "Library" => "/app/library",
-      "Create" => "/app/import_requests",
-      "Add a video" => "/app/import_requests/new"
+      "Create" => "/app/import_requests/new"
     }.freeze
 
     setup do
@@ -62,9 +61,6 @@ module App
     end
 
     test "a web browser can open Add Video" do
-      get "/app/import_requests", headers: WEB
-      assert_redirected_to new_app_import_request_path
-
       get "/app/import_requests/new", headers: WEB
       assert_response :success
     end
@@ -85,13 +81,12 @@ module App
         status: :queued
       )
 
-      get app_import_requests_path, headers: WEB
+      get new_app_import_request_path, headers: WEB
 
-      assert_redirected_to new_app_import_request_path
-      follow_redirect!
+      assert_response :success
       assert_select "[data-testid='web-add-video']"
       assert_select "[data-import-request-status]", count: 0
-      assert_select "nav a[href=?][aria-current=page]", app_import_requests_path, text: "Create"
+      assert_select "nav a[href=?][aria-current=page]", new_app_import_request_path, text: "Create"
     end
 
     test "native Library uses the same filters and course-shaped progress cards" do
@@ -129,7 +124,7 @@ module App
     test "the native Create tab directly renders the Add a video form" do
       @user.update!(credit_balance: 7)
 
-      get app_import_requests_path, headers: NATIVE
+      get new_app_import_request_path, headers: NATIVE
 
       assert_response :success
       assert_select "h1", text: "Add a video"
@@ -159,7 +154,7 @@ module App
     end
 
     test "other app screens remain native-only" do
-      (SCREENS.values - [ "/app/import_requests", "/app/import_requests/new" ]).each do |path|
+      (SCREENS.values - [ "/app/import_requests/new" ]).each do |path|
         get path, headers: WEB
         assert_redirected_to root_path, "#{path} should be web-gated"
       end
@@ -370,7 +365,7 @@ module App
       assert_response :success
       assert_select "h2", text: "Jump right in"
       assert_select "h2", text: "Library", count: 0
-      assert_select "a[data-testid='first-run-create'][href=?]", app_import_requests_path
+      assert_select "a[data-testid='first-run-create'][href=?]", new_app_import_request_path
     end
 
     # Newest-first, not random: a shelf that reshuffles every visit gives a
@@ -415,7 +410,7 @@ module App
 
       assert_response :success
       assert_select ".grid a[href^='/courses/']", count: 0
-      assert_select "a[data-testid='first-run-create'][href=?]", app_import_requests_path
+      assert_select "a[data-testid='first-run-create'][href=?]", new_app_import_request_path
     end
 
     # The whole point of gating it: a returning user never sees the onboarding.
@@ -571,7 +566,7 @@ module App
                                        index_type: :character_index, translation: "Hello")
       @user.saved_phrase_tokens << token
 
-      [app_home_path, app_library_path, app_import_requests_path].each do |path|
+      [app_home_path, app_library_path, new_app_import_request_path].each do |path|
         get path, headers: NATIVE
         assert_response :success
         assert_select "[data-testid='daily-vocab-banner']", count: 1
@@ -580,7 +575,7 @@ module App
       review = ReviewLessonBuilder.new(@user, language_code: @spanish.iso_name).build!
       LessonUser.create!(user: @user, lesson: review)
 
-      [app_home_path, app_library_path, app_import_requests_path].each do |path|
+      [app_home_path, app_library_path, new_app_import_request_path].each do |path|
         get path, headers: NATIVE
         assert_response :success
         assert_select "[data-testid='daily-vocab-banner']", count: 0
@@ -615,7 +610,7 @@ module App
 
       delete app_import_request_path(queued), headers: NATIVE
 
-      assert_redirected_to app_import_requests_path
+      assert_redirected_to new_app_import_request_path
       assert queued.reload.canceled?
       assert_equal before, @user.reload.credit_balance
       assert_equal 0, @user.credit_ledger_entries.import_refund.count

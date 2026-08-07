@@ -17,7 +17,7 @@ class ConfigurationsControllerTest < ActionDispatch::IntegrationTest
     get "/configurations/ios_v1.json"
     rules = JSON.parse(response.body)["rules"]
 
-    tab_roots = ["^/app$", "^/app/library$", "^/app/import_requests$"]
+    tab_roots = ["^/app$", "^/app/library$", "^/app/import_requests/new$"]
     assert_not rules.any? { |rule|
       rule.dig("properties", "presentation") == "replace_root" &&
         (rule.fetch("patterns", []) & tab_roots).any?

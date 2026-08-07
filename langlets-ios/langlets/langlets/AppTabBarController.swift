@@ -34,7 +34,7 @@ final class AppTabBarController: UITabBarController {
     static let tabs: [Tab] = [
         Tab(title: "Home", path: "/app", image: "house", selectedImage: "house.fill"),
         Tab(title: "Library", path: "/app/library", image: "square.grid.2x2", selectedImage: "square.grid.2x2.fill"),
-        Tab(title: "Create", path: "/app/import_requests", image: "plus.circle", selectedImage: "plus.circle.fill")
+        Tab(title: "Create", path: "/app/import_requests/new", image: "plus.circle", selectedImage: "plus.circle.fill")
     ]
 
     static let homeTabIndex = 0

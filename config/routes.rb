@@ -61,7 +61,7 @@ Rails.application.routes.draw do
     resource :library, only: [ :show ], controller: "library"
     resources :started_courses, only: [ :index ]
     resources :enrollments, only: [ :create ]
-    resources :import_requests, only: [ :index, :new, :create, :destroy ] do
+    resources :import_requests, only: [ :new, :create, :destroy ] do
       member do
         post :retry
       end

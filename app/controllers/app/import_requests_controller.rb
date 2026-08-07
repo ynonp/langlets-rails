@@ -1,19 +1,12 @@
 module App
-  # Screens 03 (Queue) and 04 (Add a video).
+  # Screen 04 (Add a video). The Queue's job — showing pending/failed imports —
+  # now lives on the Library screen instead, so this controller has no index.
+  #
+  # Add Video is shared by the native and web apps. The rest of the /app
+  # surface remains native-only through App::BaseController.
   class ImportRequestsController < BaseController
-    # Queue and Add Video are shared by the native and web apps. The rest of
-    # the /app surface remains native-only through App::BaseController.
     skip_before_action :require_native_app
     layout :import_requests_layout
-
-    def index
-      if web_request?
-        return redirect_to new_app_import_request_path
-      end
-
-      prepare_new_import
-      render :new
-    end
 
     def new
       prepare_new_import
@@ -119,7 +112,7 @@ module App
           template = web_request? ? "app/import_requests/web/queue_update" : "app/import_requests/queue_update"
           render template, locals: { active_count: active_count }
         end
-        format.html { redirect_to app_import_requests_path }
+        format.html { redirect_to new_app_import_request_path }
       end
     end
 
@@ -128,7 +121,7 @@ module App
     # channel. The old failed request is removed — the retried item replaces it.
     def retry
       failed = current_user.import_requests.find(params[:id])
-      return redirect_to app_import_requests_path unless failed.failed?
+      return redirect_to new_app_import_request_path unless failed.failed?
 
       result = Imports::Create.call(
         user: current_user,
@@ -145,7 +138,7 @@ module App
     rescue Credits::InsufficientCredits
       redirect_to_out_of_credits(failed.youtube_url)
     rescue VideoSource::UnavailableVideo, Imports::UnsupportedLanguage
-      redirect_to app_import_requests_path, alert: "That video still can't be imported."
+      redirect_to new_app_import_request_path, alert: "That video still can't be imported."
     end
 
     private
@@ -155,7 +148,7 @@ module App
     end
 
     def web_view?
-      web_request? && action_name.in?(%w[index new resolve])
+      web_request? && action_name.in?(%w[new resolve])
     end
 
     def web_request?

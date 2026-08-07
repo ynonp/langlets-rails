@@ -71,7 +71,7 @@ module Notifications
     def course_failed
       Built.new(
         # No destination: unlike a ready course or an activated subscription,
-        # a failed import has nothing specific to open — "/app/import_requests"
+        # a failed import has nothing specific to open — "/app/import_requests/new"
         # would just land on the empty Add Video screen, not the failure
         # itself. Omitted rather than pointed anywhere, so the notification
         # list and the push payload don't offer an "Open" that goes nowhere

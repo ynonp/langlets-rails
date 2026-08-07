@@ -102,11 +102,11 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     sign_in(@user)
 
     get playlist_path(@menu_playlist)
-    assert_select "a[href=?]", app_import_requests_path, text: "Create", count: 1
+    assert_select "a[href=?]", new_app_import_request_path, text: "Create", count: 1
 
     User.where(id: @user.id).update_all(credit_balance: 0)
     get playlist_path(@menu_playlist)
-    assert_select "a[href=?]", app_import_requests_path, text: "Create", count: 1
+    assert_select "a[href=?]", new_app_import_request_path, text: "Create", count: 1
   end
 
   test "menu shows single language when user has tokens from one language" do

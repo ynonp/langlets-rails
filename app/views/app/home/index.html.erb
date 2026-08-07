@@ -79,12 +79,10 @@
       no picks either (a language with an empty library) this link is the only
       thing on the screen, which is exactly when it matters most.
 
-      Points at the Create tab root rather than /new — that screen is the one
-      that explains both entry points and the price, which is what a first-run
-      user needs before a paste field. Plain push with a back arrow; there is no
-      tab-switch bridge, and adding one for a link this rare isn't worth it. %>
+      Plain push with a back arrow; there is no tab-switch bridge, and adding
+      one for a link this rare isn't worth it. %>
   <% if first_run %>
-    <%= link_to t(".first_run_create"), app_import_requests_path,
+    <%= link_to t(".first_run_create"), new_app_import_request_path,
                 data: { testid: "first-run-create" },
                 class: "self-start text-app-accent text-[14px] font-semibold" %>
   <% end %>
