@@ -3,8 +3,15 @@
   current_activity_order = @activity.order if current_activity_order == 0
 %>
 
-<% step_base = "w-[30px] h-[30px] rounded-full inline-flex items-center justify-center font-extrabold text-[13px] no-underline flex-shrink-0 transition-transform" %>
-<div class="flex items-center gap-2.5 px-5 py-3 bg-emerald-50 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-700 flex-shrink-0 overflow-x-auto activity-stepnav">
+<%# Option A of docs' lesson nav redesign: a close icon, one segmented
+    progress track (one segment per activity; the current segment fills
+    live from `activity:progress`/`activity:completed` events dispatched by
+    the activity's own controller — see progress_controller.js), and a
+    labelled "Skip lesson" button. Each segment is itself a link to that
+    activity, so tapping the track still jumps directly to any activity —
+    only the previous-lesson arrow was dropped; the close icon already
+    returns to the course, where every lesson is reachable. %>
+<div class="flex items-center gap-3 px-5 py-3 bg-emerald-50 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-700 flex-shrink-0 activity-stepnav">
   <% unless native_app? %>
     <%= link_to @course_path,
       class: "flex items-center justify-center flex-shrink-0 text-gray-400 dark:text-gray-600",
@@ -14,14 +21,7 @@
     <% end %>
   <% end %>
 
-  <div class="flex-1 flex items-center justify-center gap-2">
-    <% if @prev_lesson.present? %>
-      <%= link_to course_lesson_path(@course, @prev_lesson),
-        class: "#{step_base} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700",
-        title: t(".previous_lesson"),
-        data: { turbo_frame: 'activity' } do %>«<% end %>
-    <% end %>
-
+  <div class="flex-1 flex items-center gap-1.5" data-controller="progress" data-action="activity:progress@document->progress#setRatio activity:completed@document->progress#complete" role="group" aria-label="<%= t(".lesson_progress") %>">
     <% @activities.each do |activity| %>
       <%
         status = if activity.order < current_activity_order
@@ -31,44 +31,47 @@
                  else
                    "upcoming"
                  end
-        step_classes = case status
-                       when "done" then "bg-emerald-500 text-white"
-                       when "current" then "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 ring-2 ring-emerald-500"
-                       else "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700"
-                       end
       %>
+      <%# The link's vertical padding (offset by -my-2) enlarges the tap
+          target beyond the thin visual bar without changing its height. %>
       <%= link_to course_lesson_path(@course, @lesson, a: activity.order),
-        class: "#{step_base} #{step_classes}",
-        data: { turbo_frame: 'activity' }, aria: { label: t(".activity", number: activity.order) } do %>
-        <% if status == "done" %>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        class: "flex-1 block py-2 -my-2",
+        data: { turbo_frame: 'activity' },
+        aria: { label: t(".activity", number: activity.order) } do %>
+        <% if status == "current" %>
+          <%# Taller than the other segments, with a leading dot that rides
+              the fill's edge like a playhead — a shape/height cue for "you
+              are here" that still reads at 0% or 100% fill and doesn't rely
+              on color alone. %>
+          <div class="relative h-3 flex items-center">
+            <div class="w-full h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div data-progress-target="fill" class="h-full w-0 rounded-full bg-emerald-500 transition-all duration-300"></div>
+            </div>
+            <div data-progress-target="dot" class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-emerald-50 dark:ring-gray-950 transition-all duration-300" style="left: 0%;"></div>
+          </div>
         <% else %>
-          <%= activity.order %>
+          <div class="h-2 rounded-full <%= status == "done" ? "bg-emerald-500" : "bg-gray-200 dark:bg-gray-700" %>"></div>
         <% end %>
       <% end %>
     <% end %>
-
-    <% if @next_lesson.present? %>
-      <%= link_to course_lesson_path(@course, @next_lesson),
-        class: "#{step_base} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700",
-        title: t(".next_lesson"),
-        data: {
-          turbo_frame: 'activity',
-          controller: 'lesson-navigation',
-          action: 'click->lesson-navigation#markLessonCompleted',
-          'lesson-navigation-lesson-id-value': @lesson.id
-        } do %>»<% end %>
-    <% else %>
-      <%= link_to course_path(@course.slug),
-        class: "#{step_base} bg-emerald-500 text-white",
-        title: t(".back_to_course"),
-        data: {
-          controller: 'lesson-navigation',
-          action: 'click->lesson-navigation#markLessonCompleted',
-          'lesson-navigation-lesson-id-value': @lesson.id
-        } do %>»<% end %>
-    <% end %>
   </div>
 
-  <div class="w-[22px] flex-shrink-0"></div>
+  <% if @next_lesson.present? %>
+    <%= link_to t(".skip_lesson"), course_lesson_path(@course, @next_lesson),
+      class: "flex-shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors",
+      data: {
+        turbo_frame: 'activity',
+        controller: 'lesson-navigation',
+        action: 'click->lesson-navigation#markLessonCompleted',
+        'lesson-navigation-lesson-id-value': @lesson.id
+      } %>
+  <% else %>
+    <%= link_to t(".skip_lesson"), course_path(@course.slug),
+      class: "flex-shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1.5 rounded-full bg-emerald-500 text-white hover:bg-emerald-600 transition-colors",
+      data: {
+        controller: 'lesson-navigation',
+        action: 'click->lesson-navigation#markLessonCompleted',
+        'lesson-navigation-lesson-id-value': @lesson.id
+      } %>
+  <% end %>
 </div>

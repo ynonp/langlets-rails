@@ -127,6 +127,9 @@ application.register("pro-plan", ProPlanController)
 import ProfileMenuController from "./profile_menu_controller"
 application.register("profile-menu", ProfileMenuController)
 
+import ProgressController from "./progress_controller"
+application.register("progress", ProgressController)
+
 import ProgressTrackerController from "./progress_tracker_controller"
 application.register("progress-tracker", ProgressTrackerController)
 

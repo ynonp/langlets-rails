@@ -1,10 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
 import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 // Connects to data-controller="audio-to-translation-activity"
 export default class extends Controller {
-  static targets = ['progressBar', 'counter', 'waveform', 'completionMessage', 'grid'];
+  static targets = ['counter', 'waveform', 'completionMessage', 'grid'];
   static values = {
     totalPhrases: Number
   };
@@ -257,8 +258,7 @@ export default class extends Controller {
   }
 
   updateProgress() {
-    const percentage = (this.matchedPhrases / this.totalPhrasesValue) * 100;
-    this.progressBarTarget.style.width = `${percentage}%`;
+    reportActivityProgress(this.element, this.matchedPhrases / this.totalPhrasesValue);
     if (this.hasCounterTarget) {
       this.counterTarget.textContent = t("audio_to_translation.matched", { current: this.matchedPhrases, total: this.totalPhrasesValue });
     }

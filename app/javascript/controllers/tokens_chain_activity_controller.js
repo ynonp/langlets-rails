@@ -1,10 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
 import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 // Connects to data-controller="tokens-chain-activity"
 export default class extends Controller {
-  static targets = ['page', 'startButton', 'completionMessage', 'progressBar', 'progressText', 'stopPracticingContainer'];
+  static targets = ['page', 'startButton', 'completionMessage', 'progressText', 'stopPracticingContainer'];
   static values = {
     tokens: Array,
     totalTokens: Number,
@@ -184,9 +185,8 @@ export default class extends Controller {
 
   updateProgress() {
     const matchedCount = this.currentIndex;
-    const percentage = (matchedCount / this.totalTokensValue) * 100;
     this.progressTextTarget.textContent = t("tokens_chain.matched", { current: matchedCount, total: this.totalTokensValue });
-    this.progressBarTarget.style.width = `${percentage}%`;
+    reportActivityProgress(this.element, matchedCount / this.totalTokensValue);
   }
 
   showCompletion() {

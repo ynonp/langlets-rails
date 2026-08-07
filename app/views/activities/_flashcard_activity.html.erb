@@ -13,9 +13,6 @@
 
     <div class="flex items-center justify-between gap-4 mb-5">
       <p data-flashcard-activity-target="progress" class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm"><%= t(".question_of", current: 1, total: cards.length) %></p>
-      <div data-flashcard-activity-target="progressTrack" class="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-1 overflow-hidden" role="progressbar" aria-label="Question progress" aria-valuemin="1" aria-valuemax="<%= cards.length %>" aria-valuenow="<%= cards.any? ? 1 : 0 %>">
-        <div data-flashcard-activity-target="progressBar" class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: <%= cards.any? ? 100.0 / cards.length : 0 %>%"></div>
-      </div>
     </div>
 
     <div data-flashcard-activity-target="card" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>" class="bg-transparent px-1 py-5 text-gray-900 dark:text-gray-50 <%= l1_rtl ? 'text-right' : 'text-left' %>">

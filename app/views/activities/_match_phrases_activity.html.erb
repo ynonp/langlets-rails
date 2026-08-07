@@ -33,9 +33,6 @@
       <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
         <span data-match-activity-target="progressText"><%= t(".question_of", current: 1, total: total_phrases) %></span>
       </p>
-      <div class="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-1 overflow-hidden" role="progressbar" aria-label="Question progress" aria-valuemin="1" aria-valuemax="<%= total_phrases %>" aria-valuenow="<%= total_phrases.positive? ? 1 : 0 %>">
-        <div data-match-activity-target="progressBar" class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: <%= total_phrases.positive? ? 100.0 / total_phrases : 0 %>%"></div>
-      </div>
     </div>
     
     <% params[:phrases].each_with_index do |phrase, index| %>

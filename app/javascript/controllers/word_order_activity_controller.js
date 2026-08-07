@@ -1,12 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 export default class extends Controller {
   static targets = [
-    "progressText", 
-    "progressBar", 
-    "phraseContainer", 
+    "progressText",
+    "phraseContainer",
     "speakerButton", 
     "resultLine", 
     "wordBank", 
@@ -492,12 +492,9 @@ export default class extends Controller {
     currentContainer.classList.add('hidden')
     
     this.currentPhraseIndex++
-    
+
     // Update progress
-    const progress = ((this.currentPhraseIndex) / this.totalPhrasesValue) * 100
-    if (this.hasProgressBarTarget) {
-      this.progressBarTarget.style.width = `${progress}%`
-    }
+    reportActivityProgress(this.element, this.currentPhraseIndex / this.totalPhrasesValue)
     this.progressTextTarget.textContent = t("word_order.question_of", { current: this.currentPhraseIndex + 1, total: this.totalPhrasesValue })
     
     if (this.currentPhraseIndex < this.phraseContainerTargets.length) {
@@ -513,9 +510,6 @@ export default class extends Controller {
 
   showCompletionMessage() {
     this.progressTextTarget.textContent = t("word_order.completed_of", { current: this.totalPhrasesValue, total: this.totalPhrasesValue })
-    if (this.hasProgressBarTarget) {
-      this.progressBarTarget.style.width = '100%'
-    }
     this.completionMessageTarget.classList.remove('hidden')
     
     animate(this.completionMessageTarget, 

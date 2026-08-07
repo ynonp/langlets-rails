@@ -582,6 +582,8 @@ en:
       previous_lesson: "Previous Lesson"
       next_lesson: "Next Lesson"
       activity: "Activity %{number}"
+      lesson_progress: "Lesson progress"
+      skip_lesson: "Skip lesson"
   devise:
     sessions:
       new:

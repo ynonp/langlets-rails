@@ -36,11 +36,6 @@
         <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50"><%= @activity.text_header || t(".instruction", language: params[:l1]) %></h2>
         <%= link_to_next_activity("Can't Speak Now", @next_activity_path, class: "px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-50 text-sm font-medium rounded-lg transition-colors duration-200 text-center whitespace-nowrap") %>
       </div>
-
-      <!-- Progress Bar -->
-      <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mt-3">
-        <div data-speak-activity-target="progressBar" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
-      </div>
     </div>
     
     <!-- Audio Player -->

@@ -1,9 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 import { animate } from "motion/mini"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 // Connects to data-controller="language-alignment-activity.js"
 export default class extends Controller {
-  static targets = ['activityContent', 'question', 'progressBar', 'completionMessage'];
+  static targets = ['activityContent', 'question', 'completionMessage'];
   static values = {
     questions: Array,
     currentQuestion: Number,
@@ -39,8 +40,7 @@ export default class extends Controller {
   }
 
   updateProgress() {
-    const percentage = (this.currentQuestionValue / this.questionsValue.length) * 100;
-    this.progressBarTarget.style.width = `${percentage}%`;
+    reportActivityProgress(this.element, this.currentQuestionValue / this.questionsValue.length);
 
     if (this.currentQuestionValue === this.questionsValue.length) {
       this.activityContentTarget.classList.add('hidden');

@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 // Connects to data-controller="match-tokens-activity"
 //
@@ -13,7 +14,7 @@ import { animate } from "motion/mini"
 // the L1 audio for that pair (whether it's tapped first, second, or used
 // to switch selection); tapping an L2 cell is silent.
 export default class extends Controller {
-  static targets = ['page', 'progressBar', 'progressText', 'completionMessage'];
+  static targets = ['page', 'progressText', 'completionMessage'];
   static values = {
     tokens: Array,
     totalTokens: Number,
@@ -230,8 +231,7 @@ export default class extends Controller {
   }
 
   updateProgress() {
-    const percentage = (this.matchedTokens / this.totalTokensValue) * 100;
-    this.progressBarTarget.style.width = `${percentage}%`;
+    reportActivityProgress(this.element, this.matchedTokens / this.totalTokensValue);
     if (this.hasProgressTextTarget) {
       this.progressTextTarget.textContent = t("match_tokens.matched", { current: this.matchedTokens, total: this.totalTokensValue });
     }

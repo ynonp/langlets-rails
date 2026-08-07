@@ -263,6 +263,67 @@ clock between authoritative `onCurrentTime` messages and resynchronizes whenever
 TikTok sends a new position. This keeps transcript, karaoke, progress, and
 segment boundaries moving continuously without changing stored timestamps.
 
+### Lesson activity navigation bar
+
+`app/views/lessons/_activity_navigation.html.erb` renders the top bar shown
+above every activity: a close icon back to the course (hidden in the native
+app, which has its own chrome), one segmented progress track with one segment
+per activity in the lesson, and a "Skip lesson" button. Each segment is a
+`link_to course_lesson_path(@course, @lesson, a: activity.order)`, so tapping
+the track still jumps directly to any activity, the same way the old
+per-circle stepper did; only the previous-lesson arrow was dropped, since the
+close icon already returns to the course where every lesson is reachable. The
+link's own box is only the bar's 8px height, so each segment carries `py-2
+-my-2` to grow its tap target without changing what's visually drawn.
+`review_lessons/_activity_navigation.html.erb` is a separate, older partial
+for review lessons (numbered circles, no lesson bar) and is untouched by this
+design; it still owns the shared `lessons.activity_navigation.activity`
+locale key.
+
+Each segment's done/current/upcoming state is computed server-side the same
+way the old per-circle stepper was: `done` (activity.order <
+current_activity_order) renders solid emerald, `upcoming` renders empty gray,
+and only the single `current` segment is taller (`h-3` vs. `h-2`) and carries
+an inner fill div (`data-progress-target="fill"`) plus a leading dot
+(`data-progress-target="dot"`) that starts at 0%. The dot rides the same
+percentage as the fill but lives outside the fill track's `overflow-hidden`
+box (a sibling inside a shared `relative` wrapper), so it's never clipped and
+stays visible as a "you are here" playhead even at 0% or 100% — height and
+shape carry that meaning, not color alone. Those two elements are the only
+thing JavaScript ever touches — segments never change on their own between
+full-frame reloads, since navigating to a different activity re-renders the
+whole nav bar from the server with a fresh "current" segment.
+
+The fill and dot are driven by one shared `progress` Stimulus controller
+(`app/javascript/controllers/progress_controller.js`), mounted on the
+segment track and wired via `data-action` on `document` (the bubbling events
+below reach it regardless of DOM nesting inside the turbo-frame). It is the
+single place that knows how to render sub-progress — no activity controller
+touches nav bar markup directly. Instead, every activity controller reports
+its own progress by dispatching two bubbling `CustomEvent`s from
+`this.element`:
+
+- `activity:progress` (detail: `{ ratio }`, 0–1) — the `progress` controller
+  sets the current segment's fill width, dot position, and `aria-valuenow`
+  accordingly. `app/javascript/utils/activity_progress.js` exports
+  `reportActivityProgress(element, ratio)` as the one call site every
+  activity controller uses instead of duplicating the dispatch.
+- `activity:completed` — already dispatched by every activity controller
+  before this change (consumed by `progress-tracker#sendProgressUpdate` for
+  XP/analytics); the `progress` controller now also listens for it and snaps
+  the current segment's fill and dot to 100%, so a final `activity:progress`
+  ratio that rounds short of 1 never leaves a visibly incomplete segment.
+
+Activities that used to render their own local progress bar (flashcard,
+find-answers, find-words/language-alignment, match-activity, match-tokens,
+audio-to-translation, speak-activity, tokens-chain-activity, word-order-activity)
+had that bar markup and its `progressBar`/`progressTrack` Stimulus targets
+removed — the nav bar segment is now the only progress bar on screen. Textual
+counters ("3 / 8 matched", "Question 2 of 5") were kept where they already
+existed; only the redundant visual bar was removed. `_activity_progress_bar.html.erb`
+(the shared partial the find-answers activity used to render) was deleted as
+now-unused.
+
 ### Homepage language selection
 
 The public homepage honours the optional `lang` query parameter by initially

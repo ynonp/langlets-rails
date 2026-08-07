@@ -1,9 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 import { stopPracticingHtml } from "../utils/stop_practicing_html"
 import { t } from "../utils/i18n"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 export default class extends Controller {
-  static targets = ["activityContent", "card", "completion", "progress", "progressBar", "progressTrack"]
+  static targets = ["activityContent", "card", "completion", "progress"]
   static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean }
 
   connect() {
@@ -13,19 +14,15 @@ export default class extends Controller {
   }
 
   updateProgress() {
-    if (!this.hasProgressTarget) return
-    if (this.index >= this.cardsValue.length) {
-      this.progressTarget.textContent = ''
-      if (this.hasProgressBarTarget) this.progressBarTarget.style.width = '100%'
-    } else {
-      this.progressTarget.textContent = t("flashcard.question_of", { current: this.index + 1, total: this.cardsValue.length })
-      if (this.hasProgressBarTarget) {
-        this.progressBarTarget.style.width = `${(this.index + 1) / this.cardsValue.length * 100}%`
-      }
-      if (this.hasProgressTrackTarget) {
-        this.progressTrackTarget.setAttribute('aria-valuenow', this.index + 1)
+    if (this.hasProgressTarget) {
+      if (this.index >= this.cardsValue.length) {
+        this.progressTarget.textContent = ''
+      } else {
+        this.progressTarget.textContent = t("flashcard.question_of", { current: this.index + 1, total: this.cardsValue.length })
       }
     }
+    const current = Math.min(this.index + 1, this.cardsValue.length)
+    reportActivityProgress(this.element, current / this.cardsValue.length)
   }
 
   renderCard() {

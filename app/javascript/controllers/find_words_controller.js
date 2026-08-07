@@ -1,9 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 import { animate } from "motion/mini"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 // Connects to data-controller="language-alignment-activity.js"
 export default class extends Controller {
-  static targets = ['progressBar', 'token', 'completionMessage', 'translationPhrase', 'originalPhrasesContainer'];
+  static targets = ['token', 'completionMessage', 'translationPhrase', 'originalPhrasesContainer'];
   
   connect() {
     this.currentPhraseIndex = 0;
@@ -82,11 +83,10 @@ export default class extends Controller {
       }
     }
     
-    // Update overall progress bar
+    // Report overall progress
     const totalTokens = this.tokenTargets.length;
     const totalFoundTokens = this.tokenTargets.filter(t => t.dataset.found === "true").length;
-    const percentage = (totalFoundTokens / totalTokens) * 100;
-    this.progressBarTarget.style.width = `${percentage}%`;
+    reportActivityProgress(this.element, totalFoundTokens / totalTokens);
   }
 
   scrollToOriginalPhrase(phraseIndex) {

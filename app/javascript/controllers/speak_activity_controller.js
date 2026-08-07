@@ -1,11 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 // Connects to data-controller="speak-activity"
 export default class extends Controller {
-  static targets = ['pronunciationText', 'assessmentResult', 'completionMessage', 
-                    'accuracyScore', 'fluencyScore', 'completenessScore', 'progressBar',
+  static targets = ['pronunciationText', 'assessmentResult', 'completionMessage',
+                    'accuracyScore', 'fluencyScore', 'completenessScore',
                     'originalPhrase', 'translationPhrase', 'phrasesContainer', 'phraseContainer'];
   static values = {
     phrases: Array,
@@ -33,10 +34,7 @@ export default class extends Controller {
   }
   
   updateProgressBar() {
-    if (this.hasProgressBarTarget) {
-      const progressPercentage = (this.completedPhrases / this.totalPhrases) * 100;
-      this.progressBarTarget.style.width = `${progressPercentage}%`;
-    }
+    reportActivityProgress(this.element, this.completedPhrases / this.totalPhrases);
   }
 
   handleAssessmentComplete(event) {

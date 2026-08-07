@@ -510,6 +510,8 @@ he:
       previous_lesson: "השיעור הקודם"
       next_lesson: "השיעור הבא"
       activity: "פעילות %{number}"
+      lesson_progress: "התקדמות בשיעור"
+      skip_lesson: "דלג על השיעור"
   devise:
     sessions:
       new:

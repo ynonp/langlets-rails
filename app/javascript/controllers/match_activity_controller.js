@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
+import { reportActivityProgress } from "../utils/activity_progress"
 
 // Connects to data-controller="match-activity"
 export default class extends Controller {
   static targets = [
     'phraseContainer',
     'optionButton',
-    'progressBar',
     'progressText',
     'completionMessage',
     'speakerButton'
@@ -142,9 +142,7 @@ export default class extends Controller {
   
   updateProgress() {
     const currentQuestion = Math.min(this.currentPhraseValue + 1, this.totalPhrasesValue);
-    const percentage = currentQuestion / this.totalPhrasesValue * 100;
-    this.progressBarTarget.style.width = `${percentage}%`;
-    this.progressBarTarget.parentElement.setAttribute('aria-valuenow', currentQuestion);
+    reportActivityProgress(this.element, currentQuestion / this.totalPhrasesValue);
   }
 
   // Award XP by calling the progress tracker controller
