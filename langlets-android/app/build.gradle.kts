@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     id("com.android.application")
@@ -7,6 +8,17 @@ plugins {
     // @Serializable data classes.
     id("org.jetbrains.kotlin.plugin.serialization")
 }
+
+// Release signing lives outside version control (see keystore.properties.example
+// and .gitignore): every developer who cuts a release build generates or is
+// handed their own keystore.properties + keystore/release.keystore locally.
+val keystoreProperties = Properties().apply {
+    val file = rootProject.file("keystore.properties")
+    if (file.exists()) {
+        file.inputStream().use { load(it) }
+    }
+}
+val hasReleaseSigning = keystoreProperties.containsKey("STORE_FILE")
 
 android {
     namespace = "com.ynonp.langlets"
@@ -21,6 +33,17 @@ android {
         versionName = "1.0"
     }
 
+    signingConfigs {
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = rootProject.file(keystoreProperties.getProperty("STORE_FILE"))
+                storePassword = keystoreProperties.getProperty("STORE_PASSWORD")
+                keyAlias = keystoreProperties.getProperty("KEY_ALIAS")
+                keyPassword = keystoreProperties.getProperty("KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -28,6 +51,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            if (hasReleaseSigning) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
 
         getByName("debug") {

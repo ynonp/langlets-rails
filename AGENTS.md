@@ -69,3 +69,10 @@ env(safe-area-inset-right, 1em);
 env(titlebar-area-y, 40px);
 env(viewport-segment-width 0 0, 40%);
 ```
+
+## Native App Tabs
+1. Every time we change paths in the app also check the links on the native (iOS + Android) apps tabs.
+   - iOS tab URLs are defined in `langlets-ios/langlets/langlets/AppTabBarController.swift` (the `tabs` array).
+   - Android tab URLs are defined in `langlets-android/app/src/main/java/com/ynonp/langlets/MainActivity.kt` (the `tabs` property).
+   - Path configuration rules that affect tab routing are in `config/hotwire/ios_path_configuration.json` and `config/hotwire/android_path_configuration.json`.
+   - Offline fallback copies live in the native app bundles and must stay identical (enforced by test).

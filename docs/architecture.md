@@ -111,10 +111,12 @@ may transition a Channel to or from public.
 native Home and Library. It selects ChannelItems from the union of public,
 subscribed, and owned Channels, applies Course publication, translation
 readiness, and optional learning-language filters, and orders contributions by
-`channel_items.published_at`. It intentionally keeps two rows when two Channels
-publish the same Course while avoiding duplicates from overlapping access
-paths. Cards include the contributing Channel identity. Reading Channel content
-never creates an Enrollment; enrollment remains personal learning state.
+`channel_items.published_at`. When the same Course is published in multiple
+visible Channels (e.g. the user's own default Channel and a public Channel),
+the query deduplicates by `course_id` with `DISTINCT ON`, preferring the user's
+own Channel so the same course never appears twice in a feed. Cards include the
+contributing Channel identity. Reading Channel content never creates an
+Enrollment; enrollment remains personal learning state.
 
 ### Course readability
 
