@@ -48,6 +48,13 @@ Rails.application.routes.draw do
     get "users/auth/native_success", to: "users/omniauth_callbacks#native_success"
     post "users/auth/native_google", to: "users/omniauth_callbacks#native_google"
     post "users/auth/native_apple", to: "users/omniauth_callbacks#native_apple"
+
+    # The two ends of the Android browser-to-web-view session handoff; see
+    # NativeAuthHandoff. Single-segment paths on purpose — Devise's own
+    # `/users/auth/:provider/callback` route is two segments, and a nested
+    # `native_handoff/start` would sit right next to it for no benefit.
+    get "users/auth/native_handoff_start", to: "users/omniauth_callbacks#native_handoff_start"
+    get "users/auth/native_handoff", to: "users/omniauth_callbacks#native_handoff"
   end
   # Hotwire Native path configuration for the native apps (see
   # ConfigurationsController). One endpoint per platform: the routing decisions

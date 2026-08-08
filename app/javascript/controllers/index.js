@@ -61,6 +61,9 @@ application.register("bridge--tab-badge", Bridge__TabBadgeController)
 import Bridge__TabVisibilityController from "./bridge/tab_visibility_controller"
 application.register("bridge--tab-visibility", Bridge__TabVisibilityController)
 
+import Bridge__WebAuthController from "./bridge/web_auth_controller"
+application.register("bridge--web-auth", Bridge__WebAuthController)
+
 import CourseMenuController from "./course_menu_controller"
 application.register("course-menu", CourseMenuController)
 

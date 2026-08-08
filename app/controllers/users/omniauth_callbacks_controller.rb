@@ -9,6 +9,30 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # replaced by an InvalidAuthenticityToken response.
   skip_before_action :verify_authenticity_token, only: [ :native_google, :native_apple, :apple, :failure ]
 
+  # Providers whose flow the native app may open in the device browser. An
+  # allowlist because the value is pasted straight into the redirect below, and
+  # an open redirect on an unauthenticated endpoint is exactly the thing an
+  # OAuth flow must not have. Google is absent deliberately: it refuses to
+  # render its consent screen in any embedded or app-launched browser context we
+  # can use here, which is what the native Google SDKs exist for.
+  HANDOFF_PROVIDERS = %w[github apple].freeze
+
+  # Marks a device-browser session as belonging to the native app, and carries
+  # the app's PKCE-style challenge from the start of the flow to its end.
+  HANDOFF_COOKIE = :native_auth_handoff
+
+  # How long a started flow may take. Generous — it spans reading a consent
+  # screen, and possibly a password manager and a 2FA prompt — because the
+  # cookie is only a marker; the credential it leads to lives for
+  # NativeAuthHandoff::TTL.
+  HANDOFF_WINDOW = 30.minutes
+
+  # What the handoff endpoint answers with. Nobody reads it: the caller is a
+  # throwaway web view that exists to receive Set-Cookie and report that the
+  # page loaded. A document rather than an empty body so that it definitely
+  # commits and fires the callback the app is waiting on.
+  HANDOFF_BODY = "<!DOCTYPE html><title>Langlets</title>".html_safe.freeze
+
   def google_oauth2
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
@@ -62,6 +86,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     if native_app?
+      forget_handoff_challenge
       redirect_to "langlets://auth-failure", allow_other_host: true
     else
       redirect_to root_path
@@ -69,13 +94,79 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def native_success
-    if user_signed_in?
-      url = "langlets://auth-success"
-      url = "#{url}?ios_lang=#{CGI.escape(current_user.ios_lang)}" if current_user.ios_lang.present?
-      redirect_to url, allow_other_host: true
-    else
+    # Read before the early return: whether this succeeded or failed, the
+    # browser is done with the challenge and should not keep a cookie that
+    # marks every later request in it as native.
+    challenge = handoff_challenge
+    forget_handoff_challenge
+
+    unless user_signed_in?
       redirect_to "langlets://auth-failure", allow_other_host: true
+      return
     end
+
+    query = {}
+    query[:ios_lang] = current_user.ios_lang if current_user.ios_lang.present?
+    # Present only for the Android flow, which reached here in a Chrome Custom
+    # Tab and therefore established its session in the wrong cookie jar. iOS
+    # sets no challenge because it does not need one: ASWebAuthenticationSession
+    # already shares its jar with the web view.
+    query[:handoff] = NativeAuthHandoff.issue!(current_user, challenge) if challenge.present?
+
+    url = "langlets://auth-success"
+    url = "#{url}?#{query.to_query}" if query.any?
+
+    redirect_to url, allow_other_host: true
+  end
+
+  # Opens an OAuth flow that will run start-to-finish in the device browser
+  # rather than in the app's web view, and marks this browser as belonging to
+  # the native app so the callback knows where to send the user afterwards.
+  #
+  # The redirect is the point. Sending the app straight to
+  # `/users/auth/:provider` would work just as well for GitHub, but the marker
+  # has to be set *before* the request phase for Apple: Apple answers with a
+  # cross-site form POST, which a SameSite=Lax session cookie does not
+  # accompany, so by the time the callback runs `omniauth.params` — where
+  # `native_app=1` would have been kept — is gone. A separate cookie of our own
+  # survives that, which is why the flow starts here instead.
+  def native_handoff_start
+    provider = params[:provider].to_s
+    challenge = params[:challenge].to_s
+
+    unless HANDOFF_PROVIDERS.include?(provider) && challenge.match?(NativeAuthHandoff::CHALLENGE_FORMAT)
+      redirect_to new_user_session_path, alert: "Sign-in could not be started"
+      return
+    end
+
+    remember_handoff_challenge(challenge)
+
+    # `native_app=1` is redundant here for GitHub and unavailable for Apple, but
+    # it costs nothing and keeps the request phase identical to the one iOS
+    # opens, so a provider console only ever sees the one shape.
+    redirect_to "/users/auth/#{provider}?native_app=1"
+  end
+
+  # Spends a handoff token, which is the moment the session finally exists in
+  # the web view's cookie jar. Called by the app immediately after the
+  # `langlets://auth-success` deep link, and by nothing else.
+  #
+  # Answers with a tiny page rather than a redirect: the caller is a throwaway
+  # web view whose only job is to receive `Set-Cookie` — Android's CookieManager
+  # is process-global, so cookies it stores are the tab web views' cookies —
+  # and it should not spend a round trip rendering a real screen nobody sees.
+  def native_handoff
+    user = NativeAuthHandoff.redeem(params[:token], params[:verifier])
+
+    if user.nil?
+      render html: HANDOFF_BODY, layout: false, status: :unauthorized
+      return
+    end
+
+    sign_in(user, event: :authentication)
+    remember_me(user)
+
+    render html: HANDOFF_BODY, layout: false
   end
 
   # Signs the user in from a Google credential obtained natively, by whichever of
@@ -284,9 +375,46 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  # Whether this request belongs to one of the native shells.
+  #
+  # Three spellings because the three flows leave three different traces. The
+  # user agent covers anything running in the app's own web view. `omniauth
+  # .params` covers a browser flow whose session survived to the callback — iOS
+  # via ASWebAuthenticationSession, and GitHub on Android. The handoff cookie
+  # covers the one case neither reaches: Apple's cross-site POST callback, which
+  # arrives in the device browser with no session and no `omniauth.params` at
+  # all. Without it that callback would look like an ordinary web sign-in and
+  # strand the user on a marketing page inside a Custom Tab.
   def native_app?
     request.user_agent&.include?("LangletsNative") ||
-      request.env["omniauth.params"]&.dig("native_app").present?
+      request.env["omniauth.params"]&.dig("native_app").present? ||
+      handoff_challenge.present?
+  end
+
+  def handoff_challenge
+    cookies.encrypted[HANDOFF_COOKIE].presence
+  end
+
+  # `SameSite=None` because Apple's callback is a cross-site POST and a Lax
+  # cookie would not be sent with it — the same reason, and the same shape, as
+  # omniauth-apple's own `omniauth_apple_store` nonce cookie. That pairing
+  # requires `Secure`, and therefore HTTPS: over plain http (a dev server on
+  # 10.0.2.2) the cookie degrades to Lax, which is enough for GitHub's
+  # same-site GET callback but not for Apple's. Apple sign-in cannot be tested
+  # against an http origin either way, since its own nonce cookie is
+  # unconditionally `Secure`.
+  def remember_handoff_challenge(challenge)
+    cookies.encrypted[HANDOFF_COOKIE] = {
+      value: challenge,
+      expires: HANDOFF_WINDOW.from_now,
+      httponly: true,
+      secure: request.ssl?,
+      same_site: request.ssl? ? :none : :lax
+    }
+  end
+
+  def forget_handoff_challenge
+    cookies.delete(HANDOFF_COOKIE)
   end
 
   # Data structures that mimic OmniAuth::AuthHash for User.from_omniauth

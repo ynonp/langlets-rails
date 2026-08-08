@@ -559,6 +559,39 @@ module App
       end
     end
 
+    # A tab root has no back arrow, so the avatar is the only way off it to
+    # Notifications, Profile or Sign out. Library and Create shipped without one
+    # because the menu lived inside a header only Home rendered; both were dead
+    # ends. One shared header on every root is what keeps that from recurring.
+    test "all three tab roots carry the profile menu" do
+      [ app_home_path, app_library_path, new_app_import_request_path ].each do |path|
+        get path, headers: NATIVE
+
+        assert_response :success
+        assert_select "details[data-testid='app-profile-menu'][data-controller='profile-menu']",
+                      count: 1, message: "#{path} is missing the profile menu"
+        assert_select "a[href=?]", profile_path, count: 1
+      end
+    end
+
+    # The header's `title:` decides its left-hand side and nothing else: a screen
+    # that names itself gets its own <h1>, and only Home — which has no title,
+    # because the brand is its title — falls back to the wordmark. Never both.
+    test "the shared header shows the wordmark only where a screen has no title" do
+      get app_home_path, headers: NATIVE
+      assert_response :success
+      assert_select "span", text: "langlets.", count: 1
+
+      { app_library_path => "Library", new_app_import_request_path => "Add a video" }.each do |path, title|
+        get path, headers: NATIVE
+
+        assert_response :success
+        assert_select "h1", text: title
+        assert_select "span", text: "langlets.", count: 0,
+                      message: "#{path} names itself; it should not also carry the wordmark"
+      end
+    end
+
     test "all three tabs invite vocabulary review until today's language review is completed" do
       phrase = create_translated_phrase!(medium: @medium, l1: @spanish, l2: @english,
                               text_l1: "Hola", text_l2: "Hello", timestamp: "00:00:01")

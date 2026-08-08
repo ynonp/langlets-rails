@@ -1,15 +1,26 @@
 package com.ynonp.langlets
 
 import android.Manifest
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.provider.Settings
+import android.util.Log
 import android.view.View
+import android.webkit.CookieManager
+import android.webkit.WebResourceError
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.browser.customtabs.CustomTabColorSchemeParams
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.net.toUri
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -180,11 +191,17 @@ class MainActivity : HotwireActivity() {
      * `langlets://auth-success`, which the library's non-http route handler turns
      * into an Intent back into this Activity.
      *
-     * Unlike iOS there is no browser-to-web-view cookie handoff to wait for: the
-     * OAuth flow runs inside the app's own web view (see the note in
-     * [LangletsApplication] about why `auth-bridge` is not registered), so the
-     * session cookie is already where it needs to be. All that is left is to
-     * replace the pages that were rendered before it existed.
+     * Two shapes arrive here, and the difference is which cookie jar the session
+     * ended up in:
+     *
+     * - **With a `handoff` token** — GitHub and Apple, which ran their whole
+     *   flow in a Chrome Custom Tab and are therefore signed in *there*. The
+     *   token has to be spent before anything is reloaded, or every tab would
+     *   just re-render the signed-out pages it already had. See [AuthHandoff].
+     *
+     * - **Without one** — Google, whose credential was obtained natively and
+     *   posted from the web view itself, so the session cookie is already where
+     *   it needs to be and only the stale pages remain.
      */
     private fun handleDeepLink(intent: Intent?) {
         val uri = intent?.data ?: return
@@ -193,15 +210,152 @@ class MainActivity : HotwireActivity() {
         when (uri.host) {
             "auth-success" -> {
                 LanguageStore.restoreFrom(uri.toString())
-                reloadTabs()
+
+                val token = uri.getQueryParameter("handoff")
+                val verifier = if (token != null) AuthHandoff.takeVerifier() else null
+
+                if (token != null && verifier != null) {
+                    redeemHandoff(token, verifier)
+                } else {
+                    reloadTabs()
+                }
             }
             // langlets://auth-failure — the sign-in screen is still on screen
-            // behind this and already shows the server's flash message.
+            // behind this and already shows the server's flash message. Drop any
+            // verifier the abandoned flow left behind so it cannot be spent by a
+            // deep link that arrives afterwards.
+            "auth-failure" -> AuthHandoff.forget()
             else -> Unit
         }
 
         // Don't replay it if the Activity is recreated (rotation, process death).
         intent.data = null
+    }
+
+    /**
+     * Open a provider's sign-in in a Chrome Custom Tab. Called by
+     * [com.ynonp.langlets.bridge.WebAuthComponent] when the user taps GitHub or
+     * Apple; [AuthHandoff] explains why the browser rather than the web view.
+     *
+     * Launched from this Activity, and therefore into this Activity's task,
+     * which is what lets the server's closing `langlets://auth-success` redirect
+     * come back to a `singleTask` MainActivity and clear the Custom Tab off the
+     * top on its way in. Launch it from the application context instead and the
+     * tab ends up in a task of its own, left behind in the recents list after
+     * sign-in finishes.
+     */
+    fun startBrowserSignIn(provider: String) {
+        val colors = CustomTabColorSchemeParams.Builder()
+            .setToolbarColor(Langlets.backgroundColor)
+            .setNavigationBarColor(Langlets.backgroundColor)
+            .build()
+
+        val intent = CustomTabsIntent.Builder()
+            .setShowTitle(true)
+            // Nothing on a sign-in page is worth sharing, and the entry it adds
+            // to the overflow menu is one more way out of a flow that should go
+            // forward or be dismissed.
+            .setShareState(CustomTabsIntent.SHARE_STATE_OFF)
+            .setUrlBarHidingEnabled(false)
+            .setDefaultColorSchemeParams(colors)
+            .build()
+
+        try {
+            intent.launchUrl(this, AuthHandoff.begin(provider).toUri())
+        } catch (e: ActivityNotFoundException) {
+            // No browser at all on the device. `launchUrl` already falls back to
+            // a plain VIEW intent when the browser simply lacks Custom Tabs
+            // support, so reaching here means there is nothing to fall back to
+            // and the flow cannot start. Drop the verifier rather than leave it
+            // for a deep link that will never come.
+            Log.w(TAG, "No browser available to sign in with $provider", e)
+            AuthHandoff.forget()
+        }
+    }
+
+    /**
+     * Spend a handoff token, which is the moment the session finally exists in
+     * this app's cookie jar, and only then rebuild the tabs.
+     *
+     * **Why a throwaway WebView.** Android's [CookieManager] is process-global:
+     * cookies stored by any WebView in this process are the tab WebViews'
+     * cookies. So the cheapest correct way to move a session in is to let a
+     * WebView make the request and handle `Set-Cookie` itself — no parsing of
+     * headers, no guessing at attributes, no second implementation of cookie
+     * semantics to keep in step with the first.
+     *
+     * **Why not just navigate a tab there.** Because the answer is a bare
+     * acknowledgement page, and a Turbo visit that lands on one would leave it
+     * on screen inside the sign-in modal. The tabs need a full reset regardless
+     * — every page they hold was rendered for a signed-out visitor and carries a
+     * CSRF token from a session that no longer exists — so the request is better
+     * made somewhere invisible with the reset sequenced explicitly after it.
+     *
+     * The reset runs on any outcome, including failure. A spent-or-rejected
+     * token leaves the user signed out, and reloading then simply re-renders the
+     * sign-in screen, which is the correct place for them to be; hanging on to
+     * stale pages instead would not be.
+     */
+    private fun redeemHandoff(token: String, verifier: String) {
+        val webView = WebView(this)
+        var settled = false
+
+        // A plain Handler, not `webView.post*`. A View that was never added to a
+        // window has no AttachInfo, so View.post queues the work until it is
+        // attached — which for this WebView is never, and the watchdog below
+        // would simply not exist.
+        val handler = Handler(Looper.getMainLooper())
+
+        // Named for what it does rather than `finish()`, which on an Activity
+        // already means something rather different.
+        fun completeHandoff() {
+            if (settled) return
+            settled = true
+
+            CookieManager.getInstance().flush()
+            handler.removeCallbacksAndMessages(null)
+
+            // Callers are WebView callbacks, and tearing a WebView down from
+            // inside one of its own callbacks is how you get a native crash.
+            // Posting lets the call stack unwind first. `stopLoading` matters on
+            // the watchdog path, where the request this is abandoning is still
+            // in flight.
+            handler.post {
+                webView.stopLoading()
+                webView.destroy()
+            }
+
+            reloadTabs()
+        }
+
+        // A watchdog, because every other path out of here depends on the
+        // network answering. Without it a request that never completes leaves
+        // the user looking at a sign-in form they already signed in on.
+        handler.postDelayed({
+            Log.w(TAG, "Sign-in handoff timed out")
+            completeHandoff()
+        }, HANDOFF_TIMEOUT_MILLIS)
+
+        webView.settings.javaScriptEnabled = false
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView, url: String) {
+                completeHandoff()
+            }
+
+            override fun onReceivedError(
+                view: WebView,
+                request: WebResourceRequest,
+                error: WebResourceError
+            ) {
+                if (!request.isForMainFrame) return
+
+                Log.w(TAG, "Sign-in handoff failed: ${error.errorCode}")
+                completeHandoff()
+            }
+        }
+
+        CookieManager.getInstance().setAcceptCookie(true)
+        webView.loadUrl(AuthHandoff.redemptionUrl(token, verifier))
     }
 
     /**
@@ -331,5 +485,14 @@ class MainActivity : HotwireActivity() {
 
     companion object {
         const val HOME_TAB_INDEX = 0
+
+        private const val TAG = "MainActivity"
+
+        /**
+         * How long to wait for the handoff request before giving up and
+         * reloading anyway. One short request against an endpoint that renders
+         * nothing; if it has not answered by now it is not going to.
+         */
+        private const val HANDOFF_TIMEOUT_MILLIS = 15_000L
     }
 }

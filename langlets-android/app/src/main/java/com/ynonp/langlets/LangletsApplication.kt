@@ -8,6 +8,7 @@ import com.ynonp.langlets.bridge.ProgressHapticComponent
 import com.ynonp.langlets.bridge.SignOutComponent
 import com.ynonp.langlets.bridge.TabBadgeComponent
 import com.ynonp.langlets.bridge.TabVisibilityComponent
+import com.ynonp.langlets.bridge.WebAuthComponent
 import com.ynonp.langlets.features.LessonFragment
 import com.ynonp.langlets.features.WebFragment
 import dev.hotwire.core.bridge.BridgeComponentFactory
@@ -27,6 +28,7 @@ class LangletsApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         LanguageStore.initialize(this)
+        AuthHandoff.initialize(this)
         configureHotwire()
     }
 
@@ -61,14 +63,13 @@ class LangletsApplication : Application() {
         //   actually makes sound.
         //
         // - `auth-bridge` (GitHub) and `apple-auth`: on iOS these lift OAuth out
-        //   of the web view into `ASWebAuthenticationSession`, which shares its
-        //   cookie jar with `WKWebsiteDataStore.default()`. Android has no
-        //   equivalent — a Custom Tab's cookies belong to Chrome — so a lifted
-        //   sign-in would succeed in the browser and leave the app signed out.
-        //   Unregistered, these forms submit inside the WebView, where the
-        //   session cookie lands where it is needed. Google is the exception and
-        //   cannot do that (it blocks embedded WebViews), which is what
-        //   GoogleAuthComponent is for; see its class comment.
+        //   of the web view into `ASWebAuthenticationSession` and Apple's own
+        //   sheet, and both end with a credential in the app's hands. Android
+        //   has neither, so `web-auth` below stands in for the pair; all three
+        //   sit on the same two buttons and only the registered one is enabled.
+        //   Google is separate again and cannot use any of them, because it
+        //   refuses to serve its consent screen to a browser it can tell an app
+        //   launched — see GoogleAuthComponent's class comment.
         //
         // - `push` / `native-token` / `apple-purchase`: FCM, the share extension
         //   and StoreKit respectively. None have an Android counterpart yet.
@@ -79,7 +80,8 @@ class LangletsApplication : Application() {
             BridgeComponentFactory("tab-badge", ::TabBadgeComponent),
             BridgeComponentFactory("tab-visibility", ::TabVisibilityComponent),
             BridgeComponentFactory("notification-preference", ::NotificationPreferenceComponent),
-            BridgeComponentFactory("google-auth", ::GoogleAuthComponent)
+            BridgeComponentFactory("google-auth", ::GoogleAuthComponent),
+            BridgeComponentFactory("web-auth", ::WebAuthComponent)
         )
 
         // Replaces the library's default handler list. Ours stands in for

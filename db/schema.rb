@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_04_061529) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_08_054813) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -472,6 +472,18 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_04_061529) do
     t.index ["url", "language_id"], name: "index_media_on_url_and_language_id", unique: true
   end
 
+  create_table "native_auth_handoffs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "token_digest", null: false
+    t.string "challenge", null: false
+    t.datetime "expires_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expires_at"], name: "index_native_auth_handoffs_on_expires_at"
+    t.index ["token_digest"], name: "index_native_auth_handoffs_on_token_digest", unique: true
+    t.index ["user_id"], name: "index_native_auth_handoffs_on_user_id"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "kind", null: false
@@ -746,6 +758,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_04_061529) do
   add_foreign_key "lessons", "languages", column: "review_language_id"
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
+  add_foreign_key "native_auth_handoffs", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"

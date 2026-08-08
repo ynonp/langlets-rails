@@ -2380,9 +2380,19 @@ The handoff also unwinds Create's own stack on the way out. A deduped import red
 
 This rule **cannot** be expressed in path configuration, and that is a structural property worth remembering rather than a limitation to work around: path configuration is a function of the URL alone, and `/courses/:id` is the same URL from all three tabs. `NavigatorDelegate.handle(proposal:from:)` is the only place the *source* of a visit is known, so any rule of the form "this destination behaves differently depending on where it was reached from" belongs there. The cross-tab root interception above uses the same lever.
 
-The Home header profile menu is an HTML `details` element managed by `profile_menu_controller.js`: a document-level click closes it when the tap lands outside the menu. Because each native tab retains its webview and HTML state, `AppTabBarController` also closes open profile menus in tabs moving to the background whenever the user switches tabs, including programmatic cross-tab routing.
+The tab-root profile menu is an HTML `details` element managed by `profile_menu_controller.js`: a document-level click closes it when the tap lands outside the menu. Because each native tab retains its webview and HTML state, `AppTabBarController` also closes open profile menus in tabs moving to the background whenever the user switches tabs, including programmatic cross-tab routing.
+
+**Every tab root renders `app/views/app/shared/_header.html.erb`, and there is only one of these.** A tab root has no back arrow and no native chrome of its own, so the header's avatar is the only route from it to Notifications, Profile, Invitations and Sign out; a root without one is a dead end the user can leave only by switching tabs. Library and Create were exactly that until this partial became shared, because the menu was inline in a header only Home rendered. Rendering it is what makes the omission impossible to repeat — a new tab root gets the menu by existing.
+
+Its optional `title:` local decides the left-hand side and nothing else. Pass a screen name and the header draws it as that page's `<h1>` (Library, Create); omit it and it falls back to the wordmark, which is what Home wants — Home has no title of its own, the brand *is* its title. Do not render both: `langlets.` above `Library` is two heavy rows naming a brand the user is already inside. The avatar lands in the same place either way. The menu is guarded on `current_user`, so the header is safe to drop into a title row on screens that can render without one.
+
+Screen furniture belonging to a single tab stays out of the header — see the credits pill on Create.
 
 The native tab controller, navigator roots and non-opaque webviews all use the app background token (`#0A1521`). A lazily loaded tab can therefore expose its empty native surface while the first request is in flight without producing a white flash before the web page renders.
+
+**App icons on both stores are ports of `public/icon.svg`** — a rose speech bubble (`#F43F5E` → `#FB7185`) with a play triangle, on a slate gradient (`#0F172A` → `#1E293B`). Note this is *not* the app accent green: the icon is the brand mark, and `colors.xml` / `AccentColor.colorset` remain the palette for native chrome only. There is no build step that regenerates either icon, so changing `icon.svg` means porting it twice:
+- iOS: `Assets.xcassets/AppIcon.appiconset`, three flattened 1024px PNGs (light, dark, tinted).
+- Android: an adaptive icon in `res/mipmap-anydpi-v26/ic_launcher.xml` over three vector drawables — `ic_launcher_background` (the gradient, with stops anchored at 18,18 → 90,90 so the full ramp falls inside the 72dp a launcher actually shows), `ic_launcher_foreground` (the mark), and `ic_launcher_monochrome` (the same geometry, flat black, for themed icons — the launcher tints it from the wallpaper, so only its alpha survives). The two mark drawables carry `icon.svg`'s path data verbatim in its own 1024 viewport and reach this 108dp canvas through nested `<group>` transforms, so a change to the SVG can be pasted straight in. Android was a green wordmark period until this port.
 
 **There is no floating "+" on Home, Library or Create.** Creating a langlet is the Create tab's entire job, so its root is the form itself. Home has no paste box. `app/views/app/shared/_fab.html.erb` survives only for the Started-videos screen; do not reintroduce it on the three tab roots. The native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Library item. The native web views extend beneath `UITabBar`, so every scrolling app screen uses `app-scroll-pad` to reserve the full tab-bar height plus the bottom safe-area inset.
 
@@ -2479,12 +2489,65 @@ option.
 - The native profile presents the current learning language in a compact select. Changing it sends the selected option's ISO code and redirect URL through the same bridge, keeping iOS `UserDefaults` and the Rails `?lang=` session in sync. Although the profile uses the regular web layout, its content clears the horizontal safe-area insets and reserves the native tab-bar height plus the bottom inset; the shared body already clears the top inset.
 
 #### OAuth Authentication in Native App
-- Google and GitHub OAuth flows use `ASWebAuthenticationSession` (Safari) instead of the embedded WKWebView, because Google blocks OAuth in embedded browsers.
-- The `AuthBridgeComponent` intercepts OAuth sign-in button taps in the web view and sends a bridge message to iOS, which starts `ASWebAuthenticationSession`.
-- **Native App Detection in OAuth Callback**: `ASWebAuthenticationSession` uses Safari's standard user agent, so the server cannot detect the native app via the `LangletsNative` user-agent string. Instead, the iOS app appends `?native_app=1` to the initial OAuth URL (`/users/auth/:provider?native_app=1`). OmniAuth preserves this parameter in `request.env["omniauth.params"]` during the callback phase.
-- The `Users::OmniauthCallbacksController#native_app?` method checks both the user agent and `omniauth.params["native_app"]` to determine if the request came from the native app.
-- On successful authentication, the server redirects to `langlets://auth-success`, which `ASWebAuthenticationSession` intercepts and closes. The app then routes back to the start location. The session cookie is shared between Safari and `WKWebsiteDataStore.default()`, so the WKWebView picks up the authenticated session on reload.
-- On failure, the server redirects to `langlets://auth-failure` for native app flows.
+
+OAuth cannot run inside a native shell's web view. The providers refuse to serve
+consent screens to embedded browsers, and lifting the flow out of the web view
+splits it across two cookie jars. Every difference between the two platforms
+below follows from how far each one can close that split.
+
+**Shared shape.** Both shells intercept the sign-in buttons in
+`devise/shared/_social_buttons` with a bridge component, run the flow outside the
+web view, and are told the outcome by a `langlets://auth-success` or
+`langlets://auth-failure` redirect. Both mark the flow with `?native_app=1` on
+the initial OAuth URL, which OmniAuth keeps in `request.env["omniauth.params"]`
+through the callback — the browser sends its own user agent, so the
+`LangletsNative` marker is not available there.
+`Users::OmniauthCallbacksController#native_app?` reads the user agent, that
+parameter, and (Android only) the handoff cookie described below.
+
+**iOS** uses `ASWebAuthenticationSession`, which shares a cookie jar with
+`WKWebsiteDataStore.default()`. The session the browser establishes is therefore
+already the web view's session, and `auth-success` only has to trigger a reload.
+Apple sign-in goes further and never reaches a browser at all: `apple-auth`
+drives the native AuthenticationServices sheet and posts the resulting identity
+token to `/users/auth/native_apple`, which verifies it against Apple's JWKS.
+
+**Android has no shared jar.** A Custom Tab's cookies belong to Chrome. So:
+
+- **Google** avoids the browser entirely — `google-auth` obtains an ID token from
+  Credential Manager and posts it to `/users/auth/native_google`, verified
+  against Google's JWKS. This is the only provider that must work this way:
+  Google refuses any app-launched browser.
+- **GitHub and Apple** go through the browser, and are the reason
+  `NativeAuthHandoff` exists. The `web-auth` bridge component (Android's stand-in
+  for `auth-bridge` and `apple-auth`, all three living on the same buttons with
+  only the registered one enabled) opens a Custom Tab at
+  `/users/auth/native_handoff_start`. Running the *whole* flow there — request
+  phase and callback in one jar — is what makes OmniAuth's `state` and
+  omniauth-apple's nonce verifiable again; the previous behaviour started the
+  request phase in the web view and left the callback with nothing to check
+  against, which is why both providers were broken on Android.
+
+**The handoff.** `native_handoff_start` records the app's PKCE-style challenge in
+an encrypted `native_auth_handoff` cookie and redirects into the omniauth request
+phase. That cookie is `SameSite=None; Secure` for the same reason
+omniauth-apple's own nonce cookie is: Apple answers with a cross-site form POST,
+which no `Lax` cookie accompanies, so at that callback both the session and
+`omniauth.params` are gone and this cookie is the only surviving evidence that
+the flow is native. After sign-in, `native_success` mints a `NativeAuthHandoff`
+and redirects to `langlets://auth-success?handoff=<token>`. The app spends it at
+`/users/auth/native_handoff` from a throwaway `WebView`, whose `Set-Cookie`
+lands in the process-global `CookieManager` shared by every tab web view, and
+only then resets the tabs.
+
+The token is a live session for someone's account travelling over a custom
+scheme any installed app may also claim, so it is 256 random bits, lives for
+`NativeAuthHandoff::TTL` (2 minutes), is stored only as a SHA-256 digest, can be
+redeemed exactly once (enforced by the row delete, not a flag), and requires the
+verifier whose digest was registered as the challenge — RFC 7636's S256
+exchange, so an intercepted redirect yields a value the interceptor cannot spend.
+`HANDOFF_PROVIDERS` allowlists what `native_handoff_start` will redirect to,
+since it is an unauthenticated endpoint that redirects on a supplied parameter.
 
 #### Key Files
 - `langlets-ios/langlets/langlets/AppTabBarController.swift` — Native tabs, per-tab navigators, lazy loading and tab state retention
@@ -2498,8 +2561,13 @@ option.
 - `langlets-ios/langlets/LangletsShare/ShareStore.swift` — Shared Keychain token and App Group language preferences
 - `langlets-ios/langlets/langlets/Bridge/NativeTokenComponent.swift` — Receives the session-bootstrapped import token and language catalog
 - `app/controllers/app/native_tokens_controller.rb` — Authenticated, CSRF-protected native token bootstrap
-- `app/controllers/users/omniauth_callbacks_controller.rb` — Handles OAuth callbacks and redirects to `langlets://auth-success` for native app
-- `app/javascript/controllers/bridge/auth_bridge_controller.js` — Stimulus bridge controller for OAuth sign-in buttons
+- `app/controllers/users/omniauth_callbacks_controller.rb` — Handles OAuth callbacks and redirects to `langlets://auth-success` for native app; also both ends of the Android handoff
+- `app/javascript/controllers/bridge/auth_bridge_controller.js` — Stimulus bridge controller for OAuth sign-in buttons (iOS)
+- `app/javascript/controllers/bridge/web_auth_controller.js` — Stimulus bridge controller that hands GitHub/Apple to the Android shell's browser flow
+- `app/models/native_auth_handoff.rb` — Single-use, PKCE-bound ticket that moves a browser session into the Android web view
+- `langlets-android/app/src/main/java/com/ynonp/langlets/AuthHandoff.kt` — App side of the handoff: verifier generation, storage, and the two URLs
+- `langlets-android/app/src/main/java/com/ynonp/langlets/bridge/WebAuthComponent.kt` — Receives the sign-in tap and asks MainActivity for a Custom Tab
+- `langlets-android/app/src/main/java/com/ynonp/langlets/bridge/GoogleAuthComponent.kt` — Credential Manager sign-in, the one provider that cannot use a browser
 
 ### Content Processing Pipeline
 1. **YouTube URL Input**: Extract video metadata and audio
@@ -2933,8 +3001,10 @@ behavior consistent across both menu implementations. Profile links explicitly
 dismiss the menu before navigation; this prevents Turbo snapshots on web and
 retained tab webviews on iOS from restoring the menu in its open state.
 
-The native app Home header is the wordmark and that avatar only — no credits pill (see the Create tab below for where the balance lives). It uses its top-right initials as a profile dropdown. It links to Profile and Logout, and shows one language-specific "Practice Words" action for each language in which the user has saved vocabulary:
-- `app/views/app/shared/_header.html.erb`
+The native app avatar is a top-right initials dropdown linking to Notifications, Profile, Invitations and Logout, plus one language-specific "Practice Words" action for each language in which the user has saved vocabulary. It is part of the one shared header, so it appears on all three tab roots:
+- `app/views/app/shared/_header.html.erb` — the header: `title:` or the wordmark on the left, the avatar and its menu on the right. No credits pill (see the Create tab below for where the balance lives)
+- `app/views/app/home/index.html.erb` — renders it with no `title:`, so Home gets the wordmark
+- `app/views/app/library/show.html.erb` and `app/views/app/import_requests/new.html.erb` — pass `title:`, so the header draws each screen's own name where Home draws the brand. Library keeps its description in a wrapper with the header so it holds its 4px gap under the title rather than the column's 16px
 
 Daily vocabulary invitations use `User#daily_vocab_review_available?`. The user
 must have a saved span whose phrase is in the current learning language, and

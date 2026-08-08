@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The themed-icon layer: the same mark as ic_launcher_foreground, flat.
+
+  It needs a file of its own now that the foreground carries gradients. A themed
+  icon is tinted by the launcher from the user's wallpaper colours, so only this
+  layer's alpha survives — pointing <monochrome> at the gradient drawable would
+  have worked, but it would have implied the rose ramp meant something here when
+  the system was about to throw it away. Solid black states the contract: shape
+  only, colour supplied by the launcher.
+
+  Same geometry as the foreground, so the two line up if a launcher cross-fades
+  between them. See ic_launcher_foreground.xml for where the numbers come from.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <group
+        android:scaleX="0.0755"
+        android:scaleY="0.0755"
+        android:translateX="15.344"
+        android:translateY="13.608">
+        <group
+            android:translateX="512"
+            android:translateY="480">
+
+            <path
+                android:pathData="M -180,-130 C -260,-130 -280,-60 -280,20 L -280,80 C -280,140 -240,170 -180,170 L -60,170 L 0,240 L 60,170 L 180,170 C 240,170 280,140 280,80 L 280,20 C 280,-60 260,-130 180,-130 Z"
+                android:strokeColor="#FF000000"
+                android:strokeWidth="36"
+                android:strokeLineJoin="round" />
+
+            <path
+                android:pathData="M -50,-30 L -50,70 L 70,20 Z"
+                android:fillColor="#FF000000" />
+        </group>
+    </group>
+</vector>

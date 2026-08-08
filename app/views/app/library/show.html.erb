@@ -1,8 +1,13 @@
 <% content_for :title, "Library · langlets." %>
 
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4">
+  <%# Passing a title makes the shared header draw "Library" where Home draws the
+      wordmark, and carries the avatar in with it — this is a tab root, so that
+      menu is the only way off the screen to Notifications, Profile or Sign out.
+      The description stays out of the header and inside this wrapper so it
+      keeps its 4px gap under the title rather than the column's 16px. %>
   <div>
-    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".title") %></h1>
+    <%= render "app/shared/header", title: t(".title") %>
     <p class="text-app-text-2 text-sm mt-1"><%= t(".description") %></p>
   </div>
 

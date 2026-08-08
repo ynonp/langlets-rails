@@ -1,70 +1,94 @@
-<%# Wordmark and avatar. The brand is "langlets." — lowercase, with a green full
-    stop. (The written spec calls the app "Turn"; the mockup never does, and
-    "turn" is the verb from the tagline.)
+<%# The header every app tab root renders. There is exactly one of these on
+    purpose: a tab root has no back arrow and no native chrome of its own, so
+    the avatar is its only route to Notifications, Profile, Invitations and Sign
+    out. Library and Create shipped without one because this markup used to live
+    inline in the Home-only wordmark header, and both screens became dead ends.
+    Rendering this partial is what makes that impossible to forget — a new tab
+    root gets the menu by existing.
 
-    No credits pill here. The balance only means something where it gets spent,
-    and that is the Create tab, which now carries its own pill beside its title
-    (app/views/app/import_requests/_credits_pill.html.erb). Home is for what the
-    user already has; a balance in this corner was a second, quieter ask on a
-    screen with nothing to buy. %>
-<div class="flex items-center justify-between">
-  <span class="text-2xl font-extrabold tracking-[-0.5px]">
-    langlets<span class="text-app-accent">.</span>
-  </span>
+    `title:` is optional and decides the left-hand side only. Pass a screen name
+    and the header draws it as the page's <h1>; omit it and it falls back to the
+    wordmark, which is what Home wants — Home has no title of its own, the brand
+    is its title. Stacking both would put "langlets." above "Library", two heavy
+    rows saying a brand the user is already inside.
+
+    The brand is "langlets." — lowercase, with a green full stop. (The written
+    spec calls the app "Turn"; the mockup never does, and "turn" is the verb
+    from the tagline.)
+
+    Screen furniture that belongs to one tab stays out of here. The credit
+    balance in particular is Create's, and it lives beside that tab's own
+    controls (app/views/app/import_requests/_credits_pill.html.erb); a balance
+    in this corner on Home would be a second, quieter ask on a screen with
+    nothing to buy. %>
+<% title = local_assigns[:title].presence %>
+
+<div class="flex items-center justify-between gap-3">
+  <% if title %>
+    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= title %></h1>
+  <% else %>
+    <span class="text-2xl font-extrabold tracking-[-0.5px]">
+      langlets<span class="text-app-accent">.</span>
+    </span>
+  <% end %>
 
   <div class="flex items-center gap-2.5">
-    <details class="relative"
-             data-testid="app-profile-menu"
-             data-controller="profile-menu"
-             data-action="click@document->profile-menu#close">
-      <summary class="relative w-[34px] h-[34px] rounded-full bg-app-pill flex items-center justify-center cursor-pointer list-none [&::-webkit-details-marker]:hidden"
-               aria-label="<%= t("app.menu.open") %>">
-        <span class="text-[13px] font-bold text-[#B9C7D2]"><%= current_user.email.first.upcase %></span>
+    <%# Guarded so the header can sit unconditionally in a title row: the
+        onboarding and signed-out paths render app screens without a user. %>
+    <% if current_user %>
+      <details class="relative"
+               data-testid="app-profile-menu"
+               data-controller="profile-menu"
+               data-action="click@document->profile-menu#close">
+        <summary class="relative w-[34px] h-[34px] rounded-full bg-app-pill flex items-center justify-center cursor-pointer list-none [&::-webkit-details-marker]:hidden"
+                 aria-label="<%= t("app.menu.open") %>">
+          <span class="text-[13px] font-bold text-[#B9C7D2]"><%= current_user.email.first.upcase %></span>
 
-        <%# Notifications that arrived while the app was open. A launch reports
-            read_all (see the notifications-reader controller in layouts/app),
-            so on a fresh entry this is deliberately empty. %>
-        <% if unread_notifications_count.positive? %>
-          <span data-testid="app-menu-notification-badge"
-                class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-red-500 text-white text-[10px] font-extrabold flex items-center justify-center">
-            <%= unread_notifications_count > 9 ? "9+" : unread_notifications_count %>
-          </span>
-        <% end %>
-      </summary>
-
-      <div class="absolute right-0 top-full mt-2 w-56 rounded-2xl overflow-hidden z-50 bg-app-card border border-white/10 shadow-xl">
-        <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-          <%= button_to t("app.menu.review_words", language: language.iso_name),
-                        review_lessons_path(language_code: language.iso_name),
-                        method: :post,
-                        class: "w-full text-left px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
-                        data: { turbo: false } %>
-        <% end %>
-        <% if current_user.languages_with_saved_words.exists? %>
-          <div class="border-t border-white/10"></div>
-        <% end %>
-        <%= link_to notifications_path,
-                    class: "flex items-center justify-between gap-2 px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
-                    data: { action: "click->profile-menu#dismiss" } do %>
-          <span><%= t("shared.menu.notifications") %></span>
+          <%# Notifications that arrived while the app was open. A launch reports
+              read_all (see the notifications-reader controller in layouts/app),
+              so on a fresh entry this is deliberately empty. %>
           <% if unread_notifications_count.positive? %>
-            <span class="min-w-[20px] px-1.5 py-0.5 rounded-full bg-red-500 text-white text-[10px] font-extrabold text-center">
+            <span data-testid="app-menu-notification-badge"
+                  class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-red-500 text-white text-[10px] font-extrabold flex items-center justify-center">
               <%= unread_notifications_count > 9 ? "9+" : unread_notifications_count %>
             </span>
           <% end %>
-        <% end %>
-        <%= link_to t("shared.menu.profile"), profile_path,
-                    class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
-                    data: { action: "click->profile-menu#dismiss" } %>
-        <%= link_to t("channels.invitations.title"), invitations_path,
-                    class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
-                    data: { action: "click->profile-menu#dismiss" } %>
-        <div class="border-t border-white/10"></div>
-        <%= link_to t("shared.menu.logout"),
-                    destroy_user_session_path(returnto: app_home_path),
-                    data: { turbo_method: :delete },
-                    class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5" %>
-      </div>
-    </details>
+        </summary>
+
+        <div class="absolute right-0 top-full mt-2 w-56 rounded-2xl overflow-hidden z-50 bg-app-card border border-white/10 shadow-xl">
+          <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
+            <%= button_to t("app.menu.review_words", language: language.iso_name),
+                          review_lessons_path(language_code: language.iso_name),
+                          method: :post,
+                          class: "w-full text-left px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
+                          data: { turbo: false } %>
+          <% end %>
+          <% if current_user.languages_with_saved_words.exists? %>
+            <div class="border-t border-white/10"></div>
+          <% end %>
+          <%= link_to notifications_path,
+                      class: "flex items-center justify-between gap-2 px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
+                      data: { action: "click->profile-menu#dismiss" } do %>
+            <span><%= t("shared.menu.notifications") %></span>
+            <% if unread_notifications_count.positive? %>
+              <span class="min-w-[20px] px-1.5 py-0.5 rounded-full bg-red-500 text-white text-[10px] font-extrabold text-center">
+                <%= unread_notifications_count > 9 ? "9+" : unread_notifications_count %>
+              </span>
+            <% end %>
+          <% end %>
+          <%= link_to t("shared.menu.profile"), profile_path,
+                      class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
+                      data: { action: "click->profile-menu#dismiss" } %>
+          <%= link_to t("channels.invitations.title"), invitations_path,
+                      class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
+                      data: { action: "click->profile-menu#dismiss" } %>
+          <div class="border-t border-white/10"></div>
+          <%= link_to t("shared.menu.logout"),
+                      destroy_user_session_path(returnto: app_home_path),
+                      data: { turbo_method: :delete },
+                      class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5" %>
+        </div>
+      </details>
+    <% end %>
   </div>
 </div>

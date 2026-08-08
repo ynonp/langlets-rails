@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- The wordmark's period, in the app accent, on the app background. -->
+<!--
+  The brand mark — a speech bubble with a play triangle in it — ported from
+  public/icon.svg, which is also the source of the iOS AppIcon. It replaces the
+  green wordmark period this file used to draw, so both stores now show the same
+  icon.
+
+  GEOMETRY. The path data below is verbatim from icon.svg, in that file's own
+  1024 viewport with the origin at its `translate(512, 480)`; the two groups do
+  the conversion so the curves never had to be re-typed (and so a change to
+  icon.svg can be pasted straight back in). Inner group: icon.svg's translate.
+  Outer group: scale to this 108 canvas, then centre.
+
+  The scale is 0.0755, which puts the mark at 45dp across. Two constraints fix
+  that number. It has to clear the safe zone — a launcher may mask this to a
+  66dp circle, and the mark's half-diagonal at 45dp wide is 27.2dp against a
+  33dp radius. And it has to look like the iOS icon, where the mark is 58% of
+  the square; 45 of the 72dp a launcher actually shows is 62%, marginally larger
+  because a circular mask eats corners that iOS's squircle keeps.
+
+  The stroke scales with the group (36 * 0.0755 = 2.7dp), so its weight relative
+  to the mark stays exactly what icon.svg draws. icon.svg's Gaussian `glow`
+  filter has no VectorDrawable equivalent and is dropped; at launcher size it
+  was never visible.
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path
-        android:fillColor="#1DC77C"
-        android:pathData="M38,38h6v28h20v6H38z" />
-    <path
-        android:fillColor="#1DC77C"
-        android:pathData="M68,64m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0" />
+
+    <group
+        android:scaleX="0.0755"
+        android:scaleY="0.0755"
+        android:translateX="15.344"
+        android:translateY="13.608">
+        <group
+            android:translateX="512"
+            android:translateY="480">
+
+            <path
+                android:pathData="M -180,-130 C -260,-130 -280,-60 -280,20 L -280,80 C -280,140 -240,170 -180,170 L -60,170 L 0,240 L 60,170 L 180,170 C 240,170 280,140 280,80 L 280,20 C 280,-60 260,-130 180,-130 Z"
+                android:strokeWidth="36"
+                android:strokeLineJoin="round">
+                <aapt:attr name="android:strokeColor">
+                    <gradient
+                        android:type="linear"
+                        android:startX="-298"
+                        android:startY="-148"
+                        android:endX="298"
+                        android:endY="258">
+                        <item android:offset="0" android:color="#FFF43F5E" />
+                        <item android:offset="1" android:color="#FFFB7185" />
+                    </gradient>
+                </aapt:attr>
+            </path>
+
+            <path android:pathData="M -50,-30 L -50,70 L 70,20 Z">
+                <aapt:attr name="android:fillColor">
+                    <gradient
+                        android:type="linear"
+                        android:startX="-298"
+                        android:startY="-148"
+                        android:endX="298"
+                        android:endY="258">
+                        <item android:offset="0" android:color="#FFF43F5E" />
+                        <item android:offset="1" android:color="#FFFB7185" />
+                    </gradient>
+                </aapt:attr>
+            </path>
+        </group>
+    </group>
 </vector>

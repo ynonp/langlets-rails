@@ -13,7 +13,10 @@
      data-controller="add-video"
      data-add-video-resolve-url-value="<%= resolve_app_import_requests_path %>">
 
-  <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".title") %></h1>
+  <%# The Create tab's root — no back arrow — so the shared header's avatar is
+      the only way out to Notifications, Profile and Sign out. Passing a title
+      swaps the wordmark Home shows for this screen's own name. %>
+  <%= render "app/shared/header", title: t(".title") %>
 
   <%= render "app/shared/daily_vocab_card" %>
 

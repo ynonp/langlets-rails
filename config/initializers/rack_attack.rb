@@ -17,6 +17,16 @@ Rack::Attack.throttle("oauth/register", limit: 5, period: 1.hour) do |req|
   req.ip if req.post? && req.path == "/oauth/register"
 end
 
+# Redeeming a native sign-in handoff is unauthenticated by construction — the
+# token in the query string is the whole credential — and every call costs a
+# lookup. The token is 256 random bits and single-use, so this is not what stands
+# between an attacker and an account; it is what keeps a stranger from spending
+# the endpoint. One device signs in once and redeems once, so the ceiling is far
+# above any real use even on a shared IP.
+Rack::Attack.throttle("users/native_handoff", limit: 30, period: 5.minutes) do |req|
+  req.ip if req.get? && req.path == "/users/auth/native_handoff"
+end
+
 Rack::Attack.throttled_responder = lambda do |request|
   match_data = request.env["rack.attack.match_data"]
   retry_after = match_data ? match_data[:period] : 3600
