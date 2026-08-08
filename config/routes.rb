@@ -49,8 +49,11 @@ Rails.application.routes.draw do
     post "users/auth/native_google", to: "users/omniauth_callbacks#native_google"
     post "users/auth/native_apple", to: "users/omniauth_callbacks#native_apple"
   end
-  # Hotwire Native path configuration for the iOS app (see ConfigurationsController).
+  # Hotwire Native path configuration for the native apps (see
+  # ConfigurationsController). One endpoint per platform: the routing decisions
+  # match, but Android's file additionally names a Fragment destination per rule.
   get "/configurations/ios_v1", to: "configurations#ios_v1"
+  get "/configurations/android_v1", to: "configurations#android_v1"
 
   # The langlets. app screens. Most are shown only inside the native shell;
   # Queue and Add Video are also linked from the authenticated web UI.

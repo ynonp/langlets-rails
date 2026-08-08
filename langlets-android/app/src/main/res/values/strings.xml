@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">langlets</string>
+
+    <!-- Tab titles. These are English-only on purpose: the iOS tab bar hard-codes
+         the same three words, and the Hebrew build is a separate host
+         (he.langlets.app), not a locale switch inside one app. -->
+    <string name="tab_home">Home</string>
+    <string name="tab_library">Library</string>
+    <string name="tab_create">Create</string>
+
+    <string name="close_lesson">Close lesson</string>
+</resources>

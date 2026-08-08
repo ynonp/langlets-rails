@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The wordmark's period, in the app accent, on the app background. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#1DC77C"
+        android:pathData="M38,38h6v28h20v6H38z" />
+    <path
+        android:fillColor="#1DC77C"
+        android:pathData="M68,64m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0" />
+</vector>

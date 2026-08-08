@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      Dark-only, matching layouts/app.html.erb's hard-coded data-theme="dark".
+      There is deliberately no values-night variant: a user who picked light mode
+      on the web still gets the app's dark palette here, same as on iOS.
+
+      `android:colorBackground` matters beyond aesthetics — Hotwire's fragment and
+      error layouts paint with it, so it is what shows in the moment between a tab
+      being created and its first page painting. Leaving it at the Material default
+      is the white flash the iOS app avoids with `appBackgroundColor`.
+    -->
+    <style name="Theme.Langlets" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:colorBackground">@color/app_background</item>
+        <item name="colorSurface">@color/app_background</item>
+        <item name="colorSurfaceContainer">@color/app_surface</item>
+        <item name="colorPrimary">@color/app_accent</item>
+        <item name="colorOnPrimary">@color/app_on_accent</item>
+        <item name="colorSecondary">@color/app_accent</item>
+        <item name="android:textColorPrimary">@color/app_text</item>
+        <item name="android:textColorSecondary">@color/app_text_secondary</item>
+
+        <!-- Edge to edge. The web pages own their own safe-area padding through
+             `env(safe-area-inset-*)`, and MainActivity feeds the real window
+             insets to the WebView so those CSS variables are not always zero. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/app_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="29">false</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="29">false</item>
+
+        <item name="toolbarStyle">@style/Widget.Langlets.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.Langlets.BottomNavigation</item>
+    </style>
+
+    <style name="Widget.Langlets.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/app_background</item>
+        <item name="titleTextColor">@color/app_text</item>
+        <item name="subtitleTextColor">@color/app_text_secondary</item>
+        <item name="navigationIconTint">@color/app_text</item>
+    </style>
+
+    <style name="Widget.Langlets.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/app_surface</item>
+        <item name="itemIconTint">@color/bottom_navigation_item</item>
+        <item name="itemTextColor">@color/bottom_navigation_item</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.Langlets.BottomNavigation.ActiveIndicator</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Widget.Langlets.BottomNavigation.ActiveIndicator"
+        parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/bottom_navigation_active_indicator</item>
+    </style>
+</resources>

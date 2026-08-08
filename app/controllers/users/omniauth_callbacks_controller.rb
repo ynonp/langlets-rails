@@ -78,38 +78,50 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  # Accepts a Google serverAuthCode from the native iOS app (Google Sign-In SDK)
-  # and exchanges it for an access token, then signs the user in.
+  # Signs the user in from a Google credential obtained natively, by whichever of
+  # the two shapes the platform's SDK produces:
+  #
+  # - `id_token` — a Google ID token (a JWT), what Android's Credential Manager
+  #   returns. Verified here against Google's JWKS, exactly like `native_apple`
+  #   verifies Apple's. Nothing is exchanged with Google: the signature, the
+  #   audience and the expiry are the proof.
+  #
+  # - `code` — a serverAuthCode, what the iOS Google Sign-In SDK returns. Traded
+  #   with Google for an access token, which is then spent on the userinfo
+  #   endpoint.
+  #
+  # Both exist because the two platforms' supported SDKs disagree, not because
+  # the app wants two flows. Android's route is the ID token because Credential
+  # Manager is the API Google supports there, and because obtaining a
+  # serverAuthCode on Android additionally requires registering an Android OAuth
+  # client bound to the app's signing certificate — configuration this flow does
+  # not otherwise need.
+  #
+  # Note neither shape involves a redirect_uri, which is the other reason Android
+  # signs in this way: the browser-redirect flow cannot complete there at all.
+  # It starts in the app's WebView, where Rails writes `omniauth.state` into the
+  # session cookie, and Hotwire hands accounts.google.com to a Chrome Custom Tab
+  # — a separate cookie jar, so the callback arrives without the state it is
+  # checked against, and any session it did establish would belong to Chrome
+  # rather than to the app.
   def native_google
-    code = params[:code]
-    redirect_uri = params[:redirect_uri].presence || ""
-
-    if code.blank?
-      redirect_to new_user_session_path, alert: "Missing authorization code"
-      return
+    identity = if params[:id_token].present?
+                 google_identity_from_id_token(params[:id_token])
+    elsif params[:code].present?
+                 google_identity_from_auth_code(params[:code], params[:redirect_uri].presence || "")
+    else
+                 redirect_to new_user_session_path, alert: "Missing Google credential"
+                 return
     end
 
-    # Exchange the code with Google for tokens
-    token_response = exchange_google_code(code, redirect_uri)
-
-    if token_response["access_token"].blank?
-      Rails.logger.error "Google token exchange failed: #{token_response.inspect}"
+    if identity.nil?
       redirect_to new_user_session_path, alert: "Google authentication failed"
       return
     end
 
-    # Fetch user info from Google
-    user_info = fetch_google_user_info(token_response["access_token"])
-
-    if user_info["email"].blank?
-      Rails.logger.error "Google user info missing email: #{user_info.inspect}"
-      redirect_to new_user_session_path, alert: "Could not retrieve user info"
-      return
-    end
-
     # Build an OmniAuth-style auth hash and sign the user in
-    info = AuthInfo.new(email: user_info["email"], name: user_info["name"])
-    auth = AuthHash.new(provider: "google_oauth2", uid: user_info["id"], info: info)
+    info = AuthInfo.new(email: identity[:email], name: identity[:name])
+    auth = AuthHash.new(provider: "google_oauth2", uid: identity[:uid], info: info)
 
     @user = User.from_omniauth(auth)
 
@@ -118,7 +130,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       remember_me(@user)
       redirect_to root_path
     else
-      session["devise.google_data"] = { info: { email: user_info["email"] } }
+      session["devise.google_data"] = { info: { email: identity[:email] } }
       redirect_to new_user_registration_url
     end
   end
@@ -177,6 +189,63 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   rescue StandardError => e
     Rails.logger.error "Apple identity token verification failed: #{e.message}"
     nil
+  end
+
+  # Google signs its ID tokens with the keys published here, and stamps them with
+  # one of these two issuer spellings — both are current, and Google's own
+  # libraries accept either, so checking for one alone rejects valid tokens.
+  GOOGLE_JWKS_URL = "https://www.googleapis.com/oauth2/v3/certs".freeze
+  GOOGLE_ISSUERS = [ "https://accounts.google.com", "accounts.google.com" ].freeze
+
+  # Verifies a Google ID token and returns { uid:, email:, name: }, or nil.
+  #
+  # The audience check is the load-bearing one. A Google ID token is not a
+  # capability, it is an assertion about a user made *to a particular client*,
+  # and any app can obtain a validly-signed token for its own client id. Without
+  # pinning `aud` to our client id, a token minted for someone else's app would
+  # verify here and sign that person in.
+  #
+  # `email_verified` matters for the same reason accounts are keyed on email:
+  # User.from_omniauth matches on it, so an unverified address would let someone
+  # claim an existing account by asserting its address at their identity
+  # provider.
+  def google_identity_from_id_token(token)
+    id_token = JSON::JWT.decode(token, :skip_verification)
+    jwk = JSON::JWK::Set::Fetcher.fetch(GOOGLE_JWKS_URL, kid: id_token.kid)
+    id_token.verify!(jwk)
+
+    return nil unless GOOGLE_ISSUERS.include?(id_token[:iss])
+    return nil unless id_token[:aud] == Rails.application.credentials.google_client_id
+    return nil unless id_token[:exp].to_i >= Time.now.to_i
+    # The claim arrives as a real boolean from Google and as the string "true"
+    # from some intermediaries; treat anything else as unverified.
+    return nil unless [ true, "true" ].include?(id_token[:email_verified])
+    return nil if id_token[:email].blank?
+
+    { uid: id_token[:sub], email: id_token[:email], name: id_token[:name] }
+  rescue StandardError => e
+    Rails.logger.error "Google identity token verification failed: #{e.message}"
+    nil
+  end
+
+  # Trades an iOS serverAuthCode for an access token and spends it on the
+  # userinfo endpoint. Returns { uid:, email:, name: }, or nil.
+  def google_identity_from_auth_code(code, redirect_uri)
+    token_response = exchange_google_code(code, redirect_uri)
+
+    if token_response["access_token"].blank?
+      Rails.logger.error "Google token exchange failed: #{token_response.inspect}"
+      return nil
+    end
+
+    user_info = fetch_google_user_info(token_response["access_token"])
+
+    if user_info["email"].blank?
+      Rails.logger.error "Google user info missing email: #{user_info.inspect}"
+      return nil
+    end
+
+    { uid: user_info["id"], email: user_info["email"], name: user_info["name"] }
   end
 
   def exchange_google_code(code, redirect_uri)

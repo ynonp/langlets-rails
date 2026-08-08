@@ -29,15 +29,29 @@ export default class extends BridgeComponent {
     })
   }
 
+  // The two platforms' Google SDKs return different credentials, and this is
+  // where that difference stops: Android's Credential Manager gives an ID token,
+  // the iOS Sign-In SDK gives a serverAuthCode, and native_google accepts either.
+  // Both are posted under the name the server expects; nothing else differs.
   handleAuthorization(data) {
-    if (!data.code) {
+    // Backing out of the account sheet is a choice, not a failure. Android says
+    // so explicitly; without this the user gets told Google couldn't
+    // authenticate them, which is both wrong and slightly alarming.
+    if (data.cancelled) return
+
+    const credential = data.idToken
+      ? { id_token: data.idToken }
+      : data.code
+        ? { code: data.code, redirect_uri: "" }
+        : null
+
+    if (!credential) {
       this.showError(data.error || t("bridge.google.could_not_authenticate"))
       return
     }
 
     const formData = new FormData()
-    formData.append("code", data.code)
-    formData.append("redirect_uri", "")
+    Object.entries(credential).forEach(([key, value]) => formData.append(key, value))
 
     fetch("/users/auth/native_google", {
       method: "POST",

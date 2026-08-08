@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One NavigatorHost per tab, all of them full-height, with the bottom navigation
+  drawn on top rather than beside them.
+
+  That overlap is deliberate and it is what the web CSS already expects. The iOS
+  web views extend beneath UITabBar, which is why every scrolling app screen uses
+  `app-scroll-pad` (96px + the bottom safe-area inset, see
+  application.tailwind.css). Constraining the hosts above the bar instead would
+  make that padding a second, empty 96px gap under the last card on every screen.
+
+  The bar therefore needs an opaque background — @color/app_surface, from the
+  theme — because content really does scroll underneath it.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/home_navigator_host"
+        android:name="dev.hotwire.navigation.navigator.NavigatorHost"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/library_navigator_host"
+        android:name="dev.hotwire.navigation.navigator.NavigatorHost"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/create_navigator_host"
+        android:name="dev.hotwire.navigation.navigator.NavigatorHost"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,11 +45,49 @@ class ApplicationController < ActionController::Base
     @unread_notifications_count ||= current_user.notifications.unread.count
   end
 
-  # Returns true if the request comes from the Hotwire Native iOS app.
-  # Used to customize behavior (e.g., OAuth redirects) for the native app.
+  # Returns true if the request comes from one of the Hotwire Native apps.
+  # Used to customize behavior (e.g., OAuth redirects) for the native shells.
+  #
+  # Deliberately platform-blind: iOS and Android send the same "LangletsNative"
+  # marker because they route to the same /app content, and there is no
+  # version- or platform-specific native routing on the server. Reach for
+  # android_app? only where the platforms genuinely differ.
   helper_method :native_app?
   def native_app?
     request.user_agent&.include?("LangletsNative")
+  end
+
+  # Returns true only for the Hotwire Native Android app.
+  #
+  # This is for content that is *false* on one platform rather than merely
+  # styled differently — currently just Add Video's "share to Langlets from the
+  # provider's share menu" hint, which describes the iOS share extension.
+  # Android has no counterpart, so the sentence would send users looking for a
+  # feature that isn't there.
+  #
+  # Presentation differences do not belong here: both shells render the same
+  # native views, and a rule keyed on the platform is a rule the other platform
+  # silently stops getting.
+  helper_method :android_app?
+  def android_app?
+    native_app? && request.user_agent&.include?("(Android)")
+  end
+
+  # Whether this client can actually complete a Langlets Pro purchase.
+  #
+  # Pro is an Apple in-app purchase, driven by the `apple-purchase` bridge
+  # component and StoreKit. A browser has no way to buy it, and neither does the
+  # Android app — there is no Play Billing counterpart, and its shell does not
+  # register that bridge component, so the paywall's CTA would be a button that
+  # silently does nothing.
+  #
+  # Every Pro CTA in the app routes through App::ProController, so gating there
+  # is what keeps a dead end from existing at all. Callers that need to explain
+  # the situation use app.import_requests.new.out_of_credits_web_hint, which
+  # already says where the subscription is sold.
+  helper_method :can_purchase_pro?
+  def can_purchase_pro?
+    native_app? && !android_app?
   end
 
   # Returns true for mobile browsers (including tablets).

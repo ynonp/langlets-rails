@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The native chrome's palette, mirroring the `color-app-*` custom properties at
+  the bottom of app/assets/stylesheets/application.tailwind.css. (Their real
+  names carry the two leading dashes every CSS custom property has; XML comments
+  cannot contain that sequence, so they are written bare throughout this file.)
+
+  The app layout hard-codes data-theme="dark", so there is no values-night
+  variant here either — the native surfaces have to match the one theme the web
+  app renders.
+
+  Kept in sync by hand, exactly like the iOS AccentColor colorset. Change both
+  together.
+-->
+<resources>
+    <!-- color-app-bg: the screen background behind every web view. -->
+    <color name="app_background">#0A1521</color>
+    <!-- color-app-card, used for the bottom navigation bar so it reads as a
+         raised surface over the page rather than a hole in it. -->
+    <color name="app_surface">#11202F</color>
+    <!-- color-app-accent: the selected tab, and the toolbar's controls. -->
+    <color name="app_accent">#1DC77C</color>
+    <!-- color-app-text and color-app-text-2 -->
+    <color name="app_text">#FFFFFF</color>
+    <color name="app_text_secondary">#8FA0AE</color>
+    <color name="app_on_accent">#052012</color>
+</resources>

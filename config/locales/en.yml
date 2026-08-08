@@ -624,14 +624,15 @@ en:
         privacy: "Privacy Policy"
   js:
     # What bridge/notification_preference_controller.js writes over the Profile
-    # push card once iOS has answered. Keep in step with profile.push.*, which
-    # is what the server renders first.
+    # push card once the native shell has answered. Keep in step with
+    # profile.push.*, which is what the server renders first. Deliberately names
+    # no platform — both iOS and Android render these strings.
     notification_preference:
       enable: "Enable Notifications"
       open_settings: "Open Settings"
       enabled: "Notifications are enabled."
       disabled: "Notifications are turned off for this device."
-      denied: "Notifications are disabled in iOS Settings."
+      denied: "Notifications are disabled in your device settings."
       prompt: "Enable notifications to know when items in your Queue are ready."
     word_order:
       correct: "Correct! Well done!"

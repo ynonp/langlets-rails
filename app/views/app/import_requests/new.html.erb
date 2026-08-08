@@ -28,9 +28,15 @@
         <%= t(".credits_subtitle", credits: app_credits_label(current_user.credit_balance)) %>
       <% end %>
     </p>
-    <p class="text-app-text-2 text-sm mt-2 leading-[1.45]">
-      <%= t(".share_hint") %>
-    </p>
+    <%# The share extension is iOS-only, so this sentence is simply untrue on
+        Android — it would send users hunting through TikTok's share sheet for a
+        Langlets target that isn't installed. Hidden there until Android grows a
+        SEND intent filter, at which point this guard comes back out. %>
+    <% unless android_app? %>
+      <p class="text-app-text-2 text-sm mt-2 leading-[1.45]">
+        <%= t(".share_hint") %>
+      </p>
+    <% end %>
   </div>
 
   <% if flash[:alert] %>

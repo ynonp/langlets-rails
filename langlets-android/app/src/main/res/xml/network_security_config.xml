@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The debug build talks to `bin/dev` on the developer's Mac. From inside the
+  emulator that host is 10.0.2.2 (the emulator's own localhost is the emulator),
+  and it is plain http, which Android blocks by default since API 28. This is the
+  Android counterpart of NSAllowsLocalNetworking in the iOS Info.plist.
+
+  Only the emulator loopback alias is exempted, so a release build pointed at
+  langlets.app still cannot fall back to cleartext.
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">10.0.2.2</domain>
+        <domain includeSubdomains="false">localhost</domain>
+    </domain-config>
+</network-security-config>

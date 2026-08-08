@@ -162,7 +162,7 @@ module App
     # browser sent there would just be bounced to the root, so it gets the same
     # explanation the web preview carries instead.
     def redirect_to_out_of_credits(url)
-      return redirect_to app_pro_path if native_app?
+      return redirect_to app_pro_path if can_purchase_pro?
 
       redirect_to new_app_import_request_path(url: url),
                   alert: t("app.import_requests.new.out_of_credits_web_hint")
