@@ -37,7 +37,7 @@ class BuildReviewLessonJob < ApplicationJob
     Turbo::StreamsChannel.broadcast_action_to(
       build,
       action: :visit,
-      attributes: { url: url }
+      attributes: { url: url, "data-visit-action" => "replace" }
     )
   rescue StandardError => error
     Rails.logger.warn(

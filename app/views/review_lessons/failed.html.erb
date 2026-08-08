@@ -1,9 +1,11 @@
-<main class="min-h-dvh bg-slate-950 text-white flex items-center justify-center px-6 py-12">
-  <section class="max-w-md text-center">
-    <div class="text-6xl" aria-hidden="true">🙈</div>
-    <h1 class="mt-6 text-3xl font-extrabold"><%= t(".heading") %></h1>
-    <p class="mt-3 text-slate-300"><%= t(".message") %></p>
-    <%= button_to t(".retry"), review_lessons_path(language_code: @review_lesson_build.language&.iso_name),
-                  method: :post, class: "mt-7 rounded-full bg-emerald-400 px-6 py-3 font-bold text-slate-950" %>
-  </section>
-</main>
+<div class="h-dvh-safe min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 max-w-[480px] mx-auto w-full">
+  <main class="flex-1 flex items-center justify-center px-6 py-12">
+    <section class="max-w-md text-center">
+      <div class="text-6xl" aria-hidden="true">🙈</div>
+      <h1 class="mt-6 text-3xl font-extrabold"><%= t(".heading") %></h1>
+      <p class="mt-3 text-gray-500 dark:text-slate-300"><%= t(".message") %></p>
+      <%= button_to t(".retry"), review_lessons_path(language_code: @review_lesson_build.language&.iso_name),
+                    method: :post, class: "mt-7 rounded-full bg-emerald-400 px-6 py-3 font-bold text-slate-950" %>
+    </section>
+  </main>
+</div>
