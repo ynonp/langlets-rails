@@ -249,6 +249,26 @@ class User < ApplicationRecord
     subscriptions.entitling.order(expires_at: :desc).first
   end
 
+  # Grants Langlets Pro by hand from the console — the only way an account
+  # becomes Pro now that nothing is sold. Writes the same kind of row a real
+  # Apple purchase would (a Subscription `subscriptions.entitling` sees), so
+  # `pro?` and everything built on it (the Pro library, unmetered imports)
+  # need no separate branch for a console grant. `product_id` deliberately
+  # matches no entry in `Apple::SubscriptionPlans`, so `apple_plan` — and any
+  # screen that reads it — correctly shows no purchase receipt.
+  def pro!(expires_at: 100.years.from_now)
+    subscription = subscriptions.create!(
+      plan: :yearly,
+      status: :active,
+      product_id: "console_grant",
+      original_transaction_id: "console_grant:#{id}:#{SecureRandom.uuid}",
+      purchased_at: Time.zone.now,
+      expires_at: expires_at
+    )
+    reload
+    subscription
+  end
+
   # How much of the signup allowance is gone — what the Pro upsell counts down.
   # Still clamped: the allowance is the only credit an account earns by itself,
   # but a console `admin_adjustment` or `promo_grant` can put more in, and

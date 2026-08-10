@@ -1,9 +1,9 @@
 <% content_for :title, t(".page_title") %>
 
-<%# Reached only once the transaction has been verified and the entitlement
-    written, so this screen states rather than promises. It is also where an
-    already-Pro user lands if they open the paywall again, which is why it names
-    the plan and its renewal date instead of only celebrating. %>
+<%# Reached only once Pro has actually been granted — by console for everyone
+    now, or historically by a verified Apple transaction — so this screen
+    states rather than promises. It is also where an already-Pro user lands if
+    they open the Pro screen again. %>
 <div class="h-dvh-safe app-sheet-pad px-8 flex flex-col items-center justify-center text-center">
   <div class="w-[88px] h-[88px] rounded-full bg-app-accent/[0.15] border-2 border-app-accent text-app-accent flex items-center justify-center">
     <%= app_icon "check", class: "w-10 h-10" %>
@@ -13,17 +13,14 @@
 
   <p class="mt-3 text-base text-app-text-2 leading-[1.5]"><%= t(".body") %></p>
 
-  <% if (plan = @subscription.apple_plan) %>
-    <p class="mt-2.5 text-[13px] text-app-text-3">
-      <%= t(".receipt",
-            plan: t("app.pro.show.plan.#{plan.id}"),
-            price: t("app.pro.show.price.#{plan.id}"),
-            renews_on: l(@subscription.expires_at.to_date, format: :long)) %>
-    </p>
-  <% end %>
-
   <%= link_to t(".cta"), new_app_import_request_path,
               class: "mt-9 rounded-app-card bg-app-accent text-app-on-accent px-10 py-4 text-[17px] font-extrabold" %>
 
-  <p class="mt-4 text-xs text-app-text-3"><%= t(".manage") %></p>
+  <%# Only an actual Apple subscription has an App Store entry to manage or
+      cancel; a console grant (Apple::SubscriptionPlans.find returns nil for
+      its product id) has nothing there, so the sentence would be pointing
+      somewhere that isn't true. %>
+  <% if @subscription.apple_plan %>
+    <p class="mt-4 text-xs text-app-text-3"><%= t(".manage") %></p>
+  <% end %>
 </div>

@@ -139,4 +139,22 @@ class UserTest < ActiveSupport::TestCase
     tokens = @user.saved_phrase_tokens_for_language(@spanish.iso_name)
     assert_equal 0, tokens.count
   end
+
+  test "pro! grants entitlement immediately, with no purchase behind it" do
+    assert_not @user.pro?
+
+    subscription = @user.pro!
+
+    assert @user.pro?
+    assert_equal subscription, @user.pro_subscription
+    assert_nil subscription.apple_plan
+  end
+
+  test "pro! can be called more than once, each grant getting its own row" do
+    @user.pro!
+    @user.pro!
+
+    assert_equal 2, @user.subscriptions.count
+    assert @user.pro?
+  end
 end

@@ -73,21 +73,18 @@ class ApplicationController < ActionController::Base
     native_app? && request.user_agent&.include?("(Android)")
   end
 
-  # Whether this client can actually complete a Langlets Pro purchase.
+  # Whether this client can see the Pro screen.
   #
-  # Pro is an Apple in-app purchase, driven by the `apple-purchase` bridge
-  # component and StoreKit. A browser has no way to buy it, and neither does the
-  # Android app — there is no Play Billing counterpart, and its shell does not
-  # register that bridge component, so the paywall's CTA would be a button that
-  # silently does nothing.
-  #
-  # Every Pro CTA in the app routes through App::ProController, so gating there
-  # is what keeps a dead end from existing at all. Callers that need to explain
-  # the situation use app.import_requests.new.out_of_credits_web_hint, which
-  # already says where the subscription is sold.
-  helper_method :can_purchase_pro?
-  def can_purchase_pro?
-    native_app? && !android_app?
+  # Pro is no longer sold anywhere — it is granted by hand from the console
+  # (see User#pro!) after someone reaches out on Discord, and the screen just
+  # explains that and links out. There is nothing left to transact, so both
+  # native shells can show it; a browser still can't, because every Pro CTA in
+  # the app routes through App::ProController and the web equivalents already
+  # carry their own explanation (app.import_requests.new.out_of_credits_web_hint)
+  # instead of linking here.
+  helper_method :can_view_pro_screen?
+  def can_view_pro_screen?
+    native_app?
   end
 
   # Returns true for mobile browsers (including tablets).

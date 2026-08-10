@@ -259,7 +259,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LangletsShare/LangletsShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = U39ZVCW9HE;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LangletsShare/Info.plist;
@@ -286,7 +286,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LangletsShare/LangletsShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = U39ZVCW9HE;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LangletsShare/Info.plist;
@@ -315,7 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = langlets/langlets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = U39ZVCW9HE;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = langlets/Info.plist;
@@ -348,7 +348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = langlets/langlets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = U39ZVCW9HE;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = langlets/Info.plist;

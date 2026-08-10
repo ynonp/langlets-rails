@@ -385,8 +385,9 @@ drop shadow on the product frame is mirrored under `[dir="rtl"]`. Everything
 else flips for free because the layout is grid/flex.
 
 The homepage **does not sell anything**. It carries no pricing section and no
-free-credit copy; nothing on it mentions credits, prices or "free". The only
-thing sold anywhere is Langlets Pro, in the iOS app (see *Langlets Pro*). Do not
+free-credit copy; nothing on it mentions credits, prices or "free". Nothing is
+sold anywhere any more — Langlets Pro (see *Langlets Pro*) is granted by hand
+from the console after someone asks on Discord, not purchased. Do not
 reintroduce a pricing block here without being asked.
 
 Sections, all wired to real data:
@@ -1412,16 +1413,16 @@ used to exist and both are gone from the tree:
   should be removed there too.
 
 What replaced them is a link, not a screen: every surface that used to offer a
-top-up now points at the Pro paywall — the Queue's credits pill, the Add Video
+top-up now points at the Pro screen — the Queue's credits pill, the Add Video
 preview's out-of-balance CTA (`get_pro`), and the insufficient-credits card in
 the Queue. `App::ImportRequestsController#redirect_to_out_of_credits` does the
 same for the residual race, with one branch that matters: `/app/pro` keeps
 `App::BaseController`'s native gate, so a browser that hits an empty balance is
-sent back to Add Video with an explanation rather than to a paywall it would be
+sent back to Add Video with an explanation rather than to a screen it would be
 bounced out of. The web Add Video sidebar and web preview carry that same
 sentence (`out_of_credits_web_hint`) instead of a button, exactly as the
-`:paused` state does — the browser can explain where the user stands but cannot
-sell the way out of it.
+`:paused` state does — the browser can explain where the user stands but has no
+Pro screen of its own to send them to.
 
 The purchase-shaped state went with it. Nothing had ever been bought outside
 development, so there was no history to preserve:
@@ -1437,7 +1438,7 @@ development, so there was no history to preserve:
 - `User#free_imports_used` keeps its clamp, on a narrower justification: nothing
   an account does can push its spend count past the grant, but a console
   `admin_adjustment` or `promo_grant` still can. Its only caller now is the
-  paywall's two-lead copy — Home stopped asking.
+  Pro screen's two-lead copy — Home stopped asking.
 
 `Apple::VerifyTransaction`'s `catalog:` argument does survive, and it lost its
 `CreditPacks` default in the process: with one catalog left there is nothing to
@@ -1447,15 +1448,27 @@ added later be accepted somewhere by omission.
 
 ### Langlets Pro
 
-Credits are the free tier's meter. **Pro** is the subscription that removes it,
+Credits are the free tier's meter. **Pro** is the entitlement that removes it,
 and it is deliberately *not* "a big pile of credits":
 
 - Every new account, web or native, still gets `User::SIGNUP_CREDITS` (3). Pro
   changes nothing about signup. Since credits stopped being sold, those 3 are
-  also the *only* credits a free account will ever have, which is what makes
-  Pro the single thing there is to buy.
-- Everything a subscriber imports is published to a **Pro library** they hold on
-  loan. Cancelling withdraws it; resubscribing hands it straight back.
+  also the *only* credits a free account will ever have.
+- **Pro is not sold anywhere any more.** `User#pro!` is the only way an
+  account becomes Pro: a console-only method, called by hand after someone
+  reaches out on the Discord the `/app/pro` screen now links to (see *The Pro
+  screens* below and *Apple subscriptions* for the dormant purchase machinery
+  it replaced). It writes a `Subscription` row exactly like a real Apple
+  purchase would — `product_id: "console_grant"`, `status: :active`, a
+  far-future `expires_at` — so `pro?` and everything built on it need no
+  separate branch for a console grant. `Apple::SubscriptionPlans.find` returns
+  `nil` for that product id by design, which is what keeps any screen that
+  reads `Subscription#apple_plan` from inventing a price for a grant that
+  never had one.
+- Everything a Pro account imports is published to a **Pro library** they hold
+  on loan. The entitlement lapsing (an old Apple subscription expiring, or a
+  console grant's `expires_at` passing) withdraws it; granting it again hands
+  it straight back.
 - A Pro subscriber imports without limit, and that is a *consequence* of the
   library rather than a rule of its own: the charge lives in `Channel#publish!`
   and `ProChannel` overrides it to nothing, so a subscriber's imports are free
@@ -1553,15 +1566,25 @@ as an explanation plus a **Reactivate Pro** button rather than a price — meeti
 your own paused library is the best moment there is to offer the subscription
 back — and `App::ImportRequestsController#redirect_to_result` sends an approved
 one to `/app/pro`. Nothing is charged, no request is created, and no second
-Enrollment is made. The web preview explains the same state but cannot sell out
-of it, since Pro is bought in the iOS app. The bearer API answers `402` with
-`status: "paused"`, because the share extension has no paywall to present. The
+Enrollment is made. The web preview explains the same state but cannot offer a
+way out of it, since the Pro screen is native-only. The bearer API answers `402`
+with `status: "paused"`, because the share extension has no such screen to
+present. The
 Enrollment from the *original* import is deliberately left alone throughout: it
 is what puts the course back on Home the moment they resubscribe, and Home and
 `started_courses` re-check readability on every render, which is what keeps it off
 the screen meanwhile.
 
 #### Apple subscriptions
+
+**This machinery is dormant.** Nothing in the app links to a purchase any
+more — the `/app/pro` screen sends people to Discord instead (see *The Pro
+screens*) and `User#pro!` is now the only path to the entitlement. Everything
+below is kept in place rather than deleted (an explicit choice — see *Pro is
+no longer sold* below) so `Apple::VerifyTransaction`, `ActivateSubscription`
+and the App Store Server Notifications webhook keep working exactly as
+described if a purchase path is ever reintroduced, and so a `Subscription` row
+written by a real historical purchase still verifies and renews the same way.
 
 The offers live in `Apple::SubscriptionPlans` — `$10 / month` and `$100 / year`
 (`com.ynonp.langlets.pro.monthly` / `.yearly`), which must exist in App Store
@@ -1636,29 +1659,46 @@ keeps `status` honest for support and reporting. That a dropped notification
 costs accuracy in a column rather than an entitlement somebody keeps for free is
 precisely what the derived design bought.
 
+#### Pro is no longer sold
+
+There used to be a paywall here: `/app/pro` showed plan cards with prices
+("$10 / month" / "$100 / year", a "SAVE 17%" badge), a `pro_plan_controller`
+that carried the chosen product id onto a purchase button, and a "Restore
+purchases" action wired to the `bridge--apple-purchase` Stimulus controller and
+StoreKit. All of that UI is gone: `/app/pro` now explains that Pro is free to
+ask for and links out to the Langlets Discord
+(`App::ProController::DISCORD_INVITE_URL`) so someone can introduce themselves
+and get it granted by console (`User#pro!`, see *Langlets Pro* above). The
+`pro_plan_controller` Stimulus controller was deleted outright — it existed
+only for the plan cards. `bridge--apple-purchase` (the JS controller and the
+native Swift/Kotlin bridge component behind it) was deliberately **left in
+place but disconnected**, along with the whole Apple verification/webhook
+stack described in *Apple subscriptions* above, rather than removed with the
+purchase UI.
+
+`can_view_pro_screen?` (`ApplicationController`, renamed from
+`can_purchase_pro?`) is the gate: it used to be `native_app? && !android_app?`,
+because only iOS could drive StoreKit. Now that the screen has nothing to
+transact — just a link — it is plain `native_app?`, so both native shells show
+it; a browser is still redirected away, since every Pro CTA in the app is
+written for the native shell and the web equivalents keep their own
+`out_of_credits_web_hint` copy instead of linking here.
+
 #### The Pro screens
 
-`/app/pro` (the paywall) and `/app/pro/success` are one full-screen native modal
-sharing a stack, so the purchase navigates between them inside the sheet the user
-opened. `modal_style: full` rather than `medium` because the plan cards, the CTA
-and the subscription disclosure must all be visible at once — a detent that
-scrolls the price out of view is an App Review rejection. The paywall redirects an
-already-entitled user to the confirmation, and the confirmation redirects a
-visitor with no entitlement back to the offer, so neither screen can assert
-something the database disagrees with.
-
-Plan selection is styled with `:has(:checked)` rather than JavaScript, so the
-cards are correct before Stimulus connects and stay correct for VoiceOver;
-`pro_plan_controller` does only the one thing CSS cannot, which is carrying the
-chosen product id and price onto the CTA that `bridge--apple-purchase` reads.
-That bridge controller served the Credits sheet as well until credit packs were
-withdrawn; the paywall is its only caller now. It gained a `restore` action —
-required by App Review for auto-renewable subscriptions, and genuinely needed,
-since a reinstall or a second device has the entitlement in StoreKit and nothing
-in our database until it is posted back. `ApplePurchaseComponent.restore`
-runs `AppStore.sync()` and replies with the first verified auto-renewable
-`currentEntitlement`, which is already the *renewed* transaction rather than the
-original.
+`/app/pro` and `/app/pro/success` are one full-screen native modal sharing a
+stack, so `#show` redirecting an already-entitled user to `#success` stays
+inside the sheet the user opened. `modal_style: full` rather than `medium`
+survives from the paywall days but still earns its keep: the Discord
+explanation, the CTA and the fine print need to be visible without scrolling on
+the smallest supported iPhone. The confirmation redirects a visitor with no
+entitlement back to the offer, so neither screen can assert something the
+database disagrees with. `/app/pro/success` also drops the price receipt it
+used to show (`%{plan} plan · %{price} · renews %{renews_on}`) — there is no
+price to name any more — and only shows the "Manage or cancel anytime in
+Settings" line when `@subscription.apple_plan` is present, i.e. for a genuine
+historical Apple purchase; a console grant has nothing in App Store Settings to
+point at.
 
 Home renders `app/home/_pro_card` directly under the header. It has two states
 and a third in which it renders nothing:
@@ -1684,8 +1724,8 @@ them up lazily. They sat under `app.home.index.*` for a while, which resolved to
 nothing and rendered Rails' humanised key names — the card literally read
 "Title" / "Free Used" on device.
 
-Add Video reflects the entitlement on both platforms — Pro is bought in the iOS
-app but entitles the *account*, so the browser honours it too. `pro` suppresses
+Add Video reflects the entitlement on both platforms — Pro is granted to the
+*account*, not a device, so the browser honours it too. `pro` suppresses
 the insufficient-balance state, the price line reads "Included with Pro", the
 approve label comes from `AppHelper#app_approve_label` (shared by both previews so
 the two surfaces cannot describe one charge differently), and the web sidebar
@@ -1694,8 +1734,8 @@ meter that no longer runs. (That sidebar also held a "Buy More" PayPal form; it
 is gone for everyone, not only for subscribers.)
 
 The native Profile page carries the same entitlement as a plain status card
-(`profile.account.*`), gated behind `native_app?` since Pro can only be bought
-in the iOS app — the web profile page never renders it. A free account shows
+(`profile.account.*`), gated behind `native_app?` since the Pro screen it links
+to is native-only — the web profile page never renders it. A free account shows
 the "Free" pill and a full-width "Upgrade to Pro for unlimited imports" button
 linking to `app_pro_path`; a Pro account shows the "Pro" pill and a one-line
 description instead of the button. It reads `current_user.pro?` directly
@@ -2370,7 +2410,7 @@ The web course UI exposes the shared Queue/Add Video flow through the user menu.
 The web Add Video sidebar states the available balance and nothing more. It
 carried a **Buy More** PayPal form beside it until individual credits stopped
 being sold; there is now no checkout on the web at all, and the sidebar closes
-with the sentence explaining that Langlets Pro is bought in the iOS app.
+with the sentence explaining that the Pro screen is native-only.
 
 The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and **Create** tab (the Create tab is `/app/import_requests/new`, drawn with the `plus.circle` SF Symbol). Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests/new` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. That is deliberate for Home's first-run Create link (below); if you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
 

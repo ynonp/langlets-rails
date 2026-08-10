@@ -330,31 +330,16 @@ en:
           library:
             title: "Your whole library, in the cloud"
             body: "Every lesson you generate stays synced and ready."
-        plans_legend: "Choose a plan"
-        plan:
-          yearly: "Yearly"
-          monthly: "Monthly"
-        price:
-          yearly: "$100 / year"
-          monthly: "$10 / month"
-        price_detail:
-          yearly: "$100 / year · works out to %{equivalent} / mo"
-          monthly: "$10 / month · cancel anytime"
-        save: "SAVE %{percent}%"
-        cta: "Continue — %{price}"
-        restore: "Restore purchases"
-        # Required disclosure for an auto-renewable subscription. The last
-        # sentence is not marketing hedging — it is literally what the Pro
-        # library does: imports made while subscribed are published to a channel
-        # lent for the life of the subscription, so cancelling withdraws them and
-        # resubscribing hands them all back. Saying so here is the only warning
-        # the user gets before paying.
-        legal: "Billed through the App Store. Renews automatically — cancel anytime in Settings. Pro includes cloud access to the lessons you generate; if your subscription ends, your generated library is paused until you reactivate. Anything you imported with credits, and every word you've saved, stays yours."
+        # Pro is free to ask for — there is no plan to pick, just an invite.
+        discord:
+          title: "Get Pro for free"
+          body: "Join our Discord, introduce yourself, and we'll set your account up with Pro by hand."
+          cta: "Join the Discord"
+          note: "Pro includes cloud access to the lessons you generate; anything you imported with credits, and every word you've saved, stays yours either way."
       success:
         page_title: "You're Pro!"
         title: "You're Pro!"
         body: "Unlimited imports are live, and every lesson you generate stays synced in your cloud library."
-        receipt: "%{plan} plan · %{price} · renews %{renews_on}"
         cta: "Start importing"
         manage: "Manage or cancel anytime in Settings."
     library:

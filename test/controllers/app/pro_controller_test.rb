@@ -11,30 +11,18 @@ module App
       sign_in @user, scope: :user
     end
 
-    test "the paywall offers both server-defined plans" do
+    test "the Pro screen links out to the Discord invite" do
       get app_pro_path(lang: "es"), headers: NATIVE
 
       assert_response :success
-      Apple::SubscriptionPlans.all.each do |plan|
-        assert_select "input[name=pro_plan][value=?]", plan.product_id
-      end
-      assert_select "input[name=pro_plan][checked]", 1, "exactly one plan starts selected"
-      assert_select "[data-product-id=?]", Apple::SubscriptionPlans.yearly.product_id
+      assert_select "a[href=?]", App::ProController::DISCORD_INVITE_URL
     end
 
-    # There is exactly one purchase endpoint left — the consumable credit packs
-    # and the controller that granted them are gone — so what is worth asserting
-    # is that the paywall names the subscription one rather than inventing a path.
-    test "the paywall posts to the subscription endpoint" do
-      get app_pro_path(lang: "es"), headers: NATIVE
+    test "the Pro screen is available on Android too, since there is nothing left to purchase" do
+      get app_pro_path(lang: "es"), headers: { "User-Agent" => "LangletsNative/1.0 (Android)" }
 
-      assert_select "[data-bridge--apple-purchase-endpoint-value=?]", app_apple_subscriptions_path
-    end
-
-    test "App Review's required restore control is on the paywall" do
-      get app_pro_path(lang: "es"), headers: NATIVE
-
-      assert_select "[data-action='bridge--apple-purchase#restore']"
+      assert_response :success
+      assert_select "a[href=?]", App::ProController::DISCORD_INVITE_URL
     end
 
     test "an entitled user is sent to their subscription rather than the offer" do
@@ -45,26 +33,34 @@ module App
       assert_redirected_to app_pro_success_path
     end
 
-    test "success names the plan and its renewal date" do
+    test "success points a real Apple subscriber to App Store Settings" do
       subscribe!
 
       get app_pro_success_path(lang: "es"), headers: NATIVE
 
       assert_response :success
       assert_select "h1", text: I18n.t("app.pro.success.title")
-      assert_match "$100 / year", response.body
+      assert_match I18n.t("app.pro.success.manage"), response.body
     end
 
-    # Reaching success without an entitlement means the StoreKit sheet was
-    # cancelled, or somebody navigated back into it. "You're Pro!" would be a
-    # flat lie.
+    test "success does not point a console-granted user to App Store Settings" do
+      @user.pro!
+
+      get app_pro_success_path(lang: "es"), headers: NATIVE
+
+      assert_response :success
+      assert_no_match I18n.t("app.pro.success.manage"), response.body
+    end
+
+    # Reaching success without an entitlement means nobody has granted Pro yet,
+    # or a stale back-navigation. "You're Pro!" would be a flat lie.
     test "success without an entitlement goes back to the offer" do
       get app_pro_success_path(lang: "es"), headers: NATIVE
 
       assert_redirected_to app_pro_path
     end
 
-    test "the paywall is native-only" do
+    test "the Pro screen is native-only" do
       get app_pro_path(lang: "es")
 
       assert_redirected_to root_path
