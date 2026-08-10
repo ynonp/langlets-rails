@@ -63,7 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if Self.isLessonURL(url) {
                 return LessonViewController(url: url)
             }
-            return HotwireWebViewController(url: url)
+            return WebViewController(url: url)
         }
 
         #if DEBUG
