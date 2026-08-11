@@ -174,6 +174,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "header.lp-hero img.lp-product-img[src='/product.png']", count: 1
     assert_select "header.lp-hero h1", text: "Turn any video to a language practice"
+    assert_select "header.lp-hero .lp-supported", text: "Supported languages: Spanish, French, Hebrew, Arabic"
     assert_select "header.lp-hero .lp-lead", text: /Free account required/
     refute_includes response.body, ".lp-hero .lp-lead { display:none; }"
     assert_select "header.lp-hero form", count: 0

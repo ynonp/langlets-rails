@@ -417,9 +417,9 @@ Sections, all wired to real data:
 - **Nav** — brand, optional daily-vocabulary action, and auth-aware controls:
   signed-out visitors get only *Sign in*; signed-in users get *My Langlets*
   (the Gallery's `my_imports` filter), *Add a video*, and the account menu.
-- **Hero** — the lesson-building promise and free-account explanation sit beside
-  the static `public/product.png` product preview. Both lines remain visible at
-  the mobile breakpoint.
+- **Hero** — the lesson-building promise, supported-language list, and
+  free-account explanation sit beside the static `public/product.png` product
+  preview. All three lines remain visible at the mobile breakpoint.
 - **"Try now"** — the dark section starts directly with a URL field for any
   YouTube or TikTok link and a fresh random sample of up to eight examples from
   `config/homepage_videos.yml` on every page load.

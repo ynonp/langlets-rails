@@ -499,6 +499,7 @@ en:
         sign_in: "Sign in"
       hero:
         heading: "Turn any video to a language practice"
+        supported_languages: "Supported languages: Spanish, French, Hebrew, Arabic"
         lead: "Free account required — building a lesson takes real processing, and your Langlets are saved to your library."
         product_alt: "Langlets synchronized video transcript, translation, and vocabulary exercises"
       library:
