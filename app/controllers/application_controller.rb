@@ -114,7 +114,9 @@ class ApplicationController < ActionController::Base
     return unless native_app?
     return if user_signed_in?
     return if devise_controller?
-    return if controller_name == "onboarding" && action_name == "language"
+    return if controller_name == "courses" && action_name == "index"
+    return if controller_name == "onboarding" && action_name.in?([ "welcome", "video", "language" ])
+    return if controller_name == "try" && action_name == "show"
     return if controller_name == "health"
     return if request.path.in?(["/home/privacy", "/home/terms", "/up"])
 
@@ -125,6 +127,7 @@ class ApplicationController < ActionController::Base
     return unless native_app?
     return unless user_signed_in?
     return if current_language_code.present?
+    return if pending_guest_claim?
     return if devise_controller?
     return if controller_name == "onboarding" && action_name.in?([ "welcome", "language" ])
     return if controller_name == "health"
@@ -181,20 +184,43 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # A guest who started from "Create Your Own" lands on Add Video after their
-  # first successful authentication — once. Both markers are consumed here, so
-  # every later sign-in follows the normal rules.
+  # A guest who approved a /try preview gets their admin-started import attached
+  # after the first successful authentication — once. The legacy raw-URL marker
+  # remains readable for cookies issued by older deployments.
   def pending_import_path
+    cookie_evaluation = pending_evaluation_signup
+    if cookie_evaluation&.user.present? && cookie_evaluation.user != current_user
+      cookies.delete(GuestImportRequestsController::EVALUATION_SIGNUP_COOKIE)
+      cookie_evaluation = nil
+    end
+    evaluation_signup = if cookie_evaluation && (cookie_evaluation.user.nil? || cookie_evaluation.user == current_user)
+      cookie_evaluation
+    else
+      account_evaluation = current_user.evaluation_signup
+      account_evaluation if account_evaluation && EvaluationSignup.available.exists?(id: account_evaluation.id)
+    end
+
+    if evaluation_signup
+      claim = evaluation_signup.claim!(current_user)
+      evaluation_signup.update!(course: claim.course) if claim.course && evaluation_signup.course_id != claim.course_id
+      evaluation_signup.consume!
+      cookies.delete(GuestImportRequestsController::EVALUATION_SIGNUP_COOKIE)
+
+      if native_app? && current_user.ios_lang.blank? && claim.clip_language.present?
+        detected_language = Language.find_by(english_name: claim.clip_language)
+        current_user.update!(ios_lang: detected_language.iso_name) if detected_language
+      end
+
+      return course_path(evaluation_signup.course)
+    end
+
     video_url = cookies.encrypted[GuestImportRequestsController::PENDING_VIDEO_COOKIE]
     if video_url.present?
       cookies.delete(GuestImportRequestsController::PENDING_VIDEO_COOKIE)
       return new_app_import_request_path(url: video_url)
     end
 
-    return if cookies.encrypted[GuestImportRequestsController::PENDING_IMPORT_COOKIE].blank?
-
-    cookies.delete(GuestImportRequestsController::PENDING_IMPORT_COOKIE)
-    new_app_import_request_path
+    nil
   end
 
   def persist_ios_language(code)
@@ -203,6 +229,31 @@ class ApplicationController < ActionController::Base
     return if current_user.ios_lang == code
 
     current_user.update!(ios_lang: code)
+  end
+
+  def pending_evaluation_signup
+    token = cookies.encrypted[GuestImportRequestsController::EVALUATION_SIGNUP_COOKIE]
+    EvaluationSignup.available.find_by(token: token) if token.present?
+  end
+
+  def link_pending_evaluation_signup(user)
+    evaluation_signup = pending_evaluation_signup
+    return unless evaluation_signup
+    if evaluation_signup.user.present? && evaluation_signup.user != user
+      cookies.delete(GuestImportRequestsController::EVALUATION_SIGNUP_COOKIE)
+      return
+    end
+
+    evaluation_signup.claim!(user)
+    cookies.delete(GuestImportRequestsController::EVALUATION_SIGNUP_COOKIE)
+  end
+
+  def pending_guest_claim?
+    return false unless native_app? && current_user
+
+    current_user.import_requests.detecting.where(
+      create_song_progress_id: ImportRequest.where(guest_started: true).select(:create_song_progress_id)
+    ).exists?
   end
 
   def native_language_code

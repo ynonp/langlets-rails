@@ -39,7 +39,10 @@ class ChannelsTest < ActionDispatch::IntegrationTest
     assert @channel.channel_subscriptions.exists?(user: @invitee)
 
     follow_redirect!
-    assert_select ".lp-card-title", text: course.name
+    assert_response :success
+
+    get gallery_path
+    assert_select ".gallery-card", text: /#{Regexp.escape(course.name)}/
   end
 
   test "signed-out invitation links preserve a return location through authentication" do

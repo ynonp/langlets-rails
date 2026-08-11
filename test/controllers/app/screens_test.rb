@@ -173,14 +173,14 @@ module App
       assert_redirected_to root_path
     end
 
-    test "signed-out users are sent to sign in" do
+    test "signed-out app screens require sign in but onboarding is public" do
       sign_out @user
 
       get "/app", headers: NATIVE
       assert_redirected_to new_user_session_path(returnto: "/app")
 
       get onboarding_welcome_path, headers: NATIVE
-      assert_redirected_to new_user_session_path(returnto: onboarding_welcome_path)
+      assert_response :success
     end
 
     test "new native users see welcome before language selection and Home" do
@@ -194,7 +194,7 @@ module App
       get onboarding_welcome_path(returnto: "/app"), headers: NATIVE
       assert_response :success
       assert_select "h1", count: 1
-      assert_select "a[href=?]", onboarding_language_path(returnto: "/app")
+      assert_select "a[href=?]", onboarding_video_path
 
       get onboarding_language_path(returnto: "/app"), headers: NATIVE
       assert_response :success

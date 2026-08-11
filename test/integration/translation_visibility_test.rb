@@ -68,18 +68,18 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
 
   teardown { Current.reset }
 
-  test "the homepage grid hides courses not translated to the subdomain language" do
-    get root_path
+  test "the gallery grid hides courses not translated to the subdomain language" do
+    get gallery_path
     assert_response :success
-    assert_select ".lp-card-title", text: /Untranslated Course/
-    assert_select ".lp-card-title", text: /Hebrew Only Course/, count: 0
+    assert_select ".gallery-card", text: /Untranslated Course/
+    assert_select ".gallery-card", text: /Hebrew Only Course/, count: 0
   end
 
-  test "the homepage grid shows Hebrew-translated content on the Hebrew subdomain" do
+  test "the gallery grid shows Hebrew-translated content on the Hebrew subdomain" do
     host! "he.example.com"
-    get root_path
+    get gallery_path
     assert_response :success
-    assert_select ".lp-card-title", text: /Hebrew Only Course/
+    assert_select ".gallery-card", text: /Hebrew Only Course/
   end
 
   test "a playlist page only lists courses translated to the subdomain language" do

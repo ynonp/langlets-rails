@@ -7,6 +7,7 @@ class ImportRequest < ApplicationRecord
   belongs_to :user
   belongs_to :course, optional: true
   belongs_to :create_song_progress, optional: true
+  has_many :evaluation_signups, foreign_key: :admin_import_request_id, dependent: :restrict_with_exception
 
   enum :status, {
     queued: 0,

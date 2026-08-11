@@ -100,7 +100,9 @@ Rails.application.routes.draw do
   get "home/terms"
   get "support", to: "home#support"
   get "onboarding/welcome", to: "onboarding#welcome", as: :onboarding_welcome
+  get "onboarding/video", to: "onboarding#video", as: :onboarding_video
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
+  get "try", to: "try#show", as: :try
   get "profile", to: "profile#show", as: :profile
   patch "profile/notifications", to: "profile#update_notifications", as: :profile_notifications
 

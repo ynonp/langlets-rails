@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :lessons, dependent: :destroy
   has_many :activities, dependent: :destroy
   has_many :review_lesson_builds, dependent: :destroy
+  belongs_to :evaluation_signup, optional: true
 
   # Courses on the user's Home — imported by them, or added from the Library.
   has_many :enrollments, dependent: :destroy

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_11_090000) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_11_154500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -268,6 +268,29 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_11_090000) do
     t.index ["user_id"], name: "index_enrollments_on_user_id"
   end
 
+  create_table "evaluation_signups", force: :cascade do |t|
+    t.uuid "token", default: -> { "gen_random_uuid()" }, null: false
+    t.bigint "admin_import_request_id", null: false
+    t.bigint "initial_course_id", null: false
+    t.bigint "course_id", null: false
+    t.string "video_url", null: false
+    t.string "video_id", null: false
+    t.string "provider", null: false
+    t.string "title", null: false
+    t.string "author_name"
+    t.string "thumbnail_url"
+    t.string "translation_language", null: false
+    t.datetime "claimed_at"
+    t.datetime "consumed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "clip_language"
+    t.index ["admin_import_request_id"], name: "index_evaluation_signups_on_admin_import_request_id"
+    t.index ["course_id"], name: "index_evaluation_signups_on_course_id"
+    t.index ["initial_course_id"], name: "index_evaluation_signups_on_initial_course_id"
+    t.index ["token"], name: "index_evaluation_signups_on_token", unique: true
+  end
+
   create_table "good_job_batches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -374,6 +397,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_11_090000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pipeline_step"
+    t.boolean "guest_started", default: false, null: false
     t.index ["client_token"], name: "index_import_requests_on_client_token", unique: true
     t.index ["course_id"], name: "index_import_requests_on_course_id"
     t.index ["create_song_progress_id"], name: "index_import_requests_on_create_song_progress_id"
@@ -707,7 +731,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_11_090000) do
     t.bigint "preferred_language_id"
     t.jsonb "preferences", default: {}, null: false
     t.integer "credit_balance", default: 0, null: false
+    t.bigint "evaluation_signup_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["evaluation_signup_id"], name: "index_users_on_evaluation_signup_id", unique: true
     t.index ["preferred_language_id"], name: "index_users_on_preferred_language_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.check_constraint "credit_balance >= 0", name: "credit_balance_non_negative"
@@ -745,6 +771,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_11_090000) do
   add_foreign_key "device_tokens", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
+  add_foreign_key "evaluation_signups", "courses"
+  add_foreign_key "evaluation_signups", "courses", column: "initial_course_id"
+  add_foreign_key "evaluation_signups", "import_requests", column: "admin_import_request_id"
   add_foreign_key "import_requests", "courses"
   add_foreign_key "import_requests", "create_song_progresses"
   add_foreign_key "import_requests", "users"
@@ -780,5 +809,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_11_090000) do
   add_foreign_key "token_translations", "languages"
   add_foreign_key "token_translations", "phrase_tokens"
   add_foreign_key "user_game_stats", "users"
+  add_foreign_key "users", "evaluation_signups", on_delete: :nullify
   add_foreign_key "users", "languages", column: "preferred_language_id"
 end

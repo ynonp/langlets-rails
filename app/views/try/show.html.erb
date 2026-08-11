@@ -1,0 +1,44 @@
+<% content_for :title, t("try.show.page_title") %>
+
+<div class="min-h-dvh bg-app-bg text-app-text px-5 pt-[max(1.5rem,env(safe-area-inset-top,1rem))] pb-[max(2rem,env(safe-area-inset-bottom,1rem))]">
+  <div class="mx-auto max-w-3xl">
+    <p class="text-app-accent text-sm font-bold uppercase tracking-wider"><%= t("try.show.eyebrow") %></p>
+    <h1 class="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight"><%= t("try.show.title") %></h1>
+    <p class="mt-3 text-app-text-2 text-base sm:text-lg"><%= t("try.show.lead") %></p>
+
+    <div class="mt-7 overflow-hidden rounded-app-card bg-app-card app-hairline">
+      <%= image_tag @video.thumbnail_url, alt: "", class: "w-full aspect-video object-cover bg-black" %>
+      <div class="p-5">
+        <h2 class="text-xl font-bold"><%= @video.title %></h2>
+        <p class="mt-1 text-app-text-3"><%= @video.author_name %></p>
+      </div>
+    </div>
+
+    <div class="mt-6 grid sm:grid-cols-3 gap-3">
+      <% %w[transcript vocabulary practice].each do |benefit| %>
+        <div class="rounded-app-field bg-app-inset p-4 app-inset-hairline">
+          <h3 class="font-bold"><%= t("try.show.benefits.#{benefit}.title") %></h3>
+          <p class="mt-1 text-sm leading-relaxed text-app-text-2"><%= t("try.show.benefits.#{benefit}.body") %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4">
+      <% if user_signed_in? %>
+        <%= link_to t("try.show.create"), new_app_import_request_path(url: @video.canonical_url),
+                    class: "flex-1 rounded-full bg-app-accent text-app-on-accent text-center py-4 text-lg font-bold" %>
+      <% else %>
+        <%= form_with url: guest_import_requests_path, method: :post, data: { turbo: false }, class: "flex-1" do %>
+          <%= hidden_field_tag :url, @video.canonical_url %>
+          <button class="w-full rounded-full bg-app-accent text-app-on-accent py-4 text-lg font-bold"><%= t("try.show.signup") %></button>
+        <% end %>
+        <%= form_with url: guest_import_requests_path, method: :post, data: { turbo: false }, class: "text-center" do %>
+          <%= hidden_field_tag :url, @video.canonical_url %>
+          <%= hidden_field_tag :authentication, "login" %>
+          <span class="text-app-text-2"><%= t("try.show.have_account") %></span>
+          <button class="text-app-accent font-bold"><%= t("try.show.log_in") %></button>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

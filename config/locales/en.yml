@@ -429,9 +429,37 @@ en:
       body_2: "Our AI transcribes and translates any video, then builds vocabulary practice from it."
       body_3: "Paste a link, or start with a course from our library."
       start: "Start Now"
+    video:
+      eyebrow: "Step 2 of 3"
+      title: "Choose your first video"
+      lead: "Select a video to convert into your first language lesson, or paste any YouTube or TikTok link."
+      url_placeholder: "Paste a video link"
+      url_label: "Video link"
+      submit: "Preview"
+      examples: "Choose an example"
     language:
       title: "Choose target language"
       prompt: "Select the language you want to learn"
+  try:
+    show:
+      page_title: "Preview your first Langlet"
+      eyebrow: "Your first Langlet"
+      title: "Turn this video into a language lesson"
+      lead: "Langlets will build a guided lesson around the real words and phrases in this video."
+      benefits:
+        transcript:
+          title: "Understand every line"
+          body: "Follow a synchronized transcript with clear translations."
+        vocabulary:
+          title: "Learn useful words"
+          body: "Tap into word meanings and build vocabulary from context."
+        practice:
+          title: "Practice what you heard"
+          body: "Short listening, speaking, and recall activities make it stick."
+      signup: "Signup to create"
+      create: "Create this Langlet"
+      have_account: "Already have an account?"
+      log_in: "Log in"
   courses:
     sign_in_to_view: "Sign in to view this Langlet."
     index:
@@ -472,6 +500,13 @@ en:
         all: "All"
         empty: "No Langlets yet — paste a video below to create the first one."
         browse_all: "Browse All Langlets"
+      try_now:
+        heading: "Try now"
+        subhead: "Choose a video or paste your own YouTube or TikTok link."
+        url_placeholder: "Paste a YouTube or TikTok link"
+        url_label: "Video link"
+        submit: "Preview"
+        or_choose: "Or start with one of these videos"
       footer:
         tagline: "© %{year} Langlets · practice languages with native content"
       create_your_own:
@@ -481,6 +516,7 @@ en:
         url_label: "Video link"
         submit: "Create"
         sign_in: "Sign in"
+        try_now: "Try now"
         ready_in: "⏱ Ready in ~3 minutes"
         steps:
           automatic:
@@ -501,6 +537,12 @@ en:
       sign_up: "Sign up"
       watch_full_video: "Watch full video"
       intro: "Pick any lesson to begin. Each one breaks down a line of the song. Pro tip: practice one lesson a day to maximize spaced repetition."
+    waiting:
+      page_title: "%{title} is being created"
+      eyebrow: "Creating your first Langlet"
+      body: "Your video is already in your account. This page will open the lesson automatically when it is ready."
+      failed_eyebrow: "We couldn't create this Langlet"
+      failed_body: "The video is still saved in your account. Please try another video while we review what happened."
     lesson_count:
       one: "1 lesson"
       other: "%{count} lessons"

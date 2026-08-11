@@ -44,7 +44,7 @@ module App
         @preview = Imports::Preview.call(
           user: current_user,
           url: VideoSource.loose_canonical(@query),
-          clip_language: nil,
+          clip_language: HomepageVideos.find_by_url(@query)&.clip_language,
           translation_language: @translation_language.english_name
         )
       end
@@ -67,6 +67,7 @@ module App
       result = Imports::Create.call(
         user: current_user,
         url: params[:url],
+        clip_language: HomepageVideos.find_by_url(params[:url])&.clip_language,
         translation_language: default_translation_language.english_name,
         client_token: params[:client_token].presence
       )

@@ -141,6 +141,14 @@ used for Course; listings go through `ChannelContentQuery` instead.
 build finished — it never implied visibility, which is why
 `status: :published` alone used to be enough to reach a Course by URL.
 
+The one pre-publication exception is an EvaluationSignup waiting page. Its
+provisional Course exists specifically so the first authenticated visit has a
+stable `/courses/:slug` URL; `Course#readable_by?` admits only the User whose
+single `evaluation_signup_id` points to that EvaluationSignup (or a user with
+their own ImportRequest for that Course),
+plus the ordinary admin override. It exposes no lessons or course actions and
+switches to normal Channel authority as soon as the Course publishes.
+
 The `CourseReadable` controller concern applies the rule wherever course
 content renders: `courses#show`, `#mark_done`, `#reset_progress`,
 `lessons#show`, `#finish`, `full_player#show`, and `course_playlists`. A
@@ -336,15 +344,13 @@ now-unused.
 
 ### Homepage language selection
 
-The public homepage honours the optional `lang` query parameter by initially
-selecting the matching "Jump right in" client-side filter while still rendering
-all available language pills. Unknown language codes are ignored and the grid
-shows all languages. Picking a pill rewrites `?lang=` via `history.replaceState`,
-so the address bar keeps matching what is on screen and the view stays
-shareable and reload-safe. The
-redesigned landing page no longer renders a per-language header subhead, so the
-`homepage_subhead` helper and the `subhead.<iso>` locale copy it reads are
-currently unused by the UI (kept in place for possible reuse).
+The public homepage still carries the optional `lang` query parameter through
+generated links, but the "Try now" examples do not filter by it. Each homepage
+or native video-selection render samples at most eight entries from the YAML;
+they are acquisition choices backed by already-built courses, and their source
+languages are declared in `config/homepage_videos.yml`. The
+`homepage-filter` controller and `homepage_subhead` helper remain in the tree
+for older surfaces but the homepage no longer mounts or reads them.
 
 ### Where the learning language lives
 
@@ -405,16 +411,15 @@ Sections, all wired to real data:
   `public/product.png` product preview. At the mobile breakpoint, its supporting
   subhead is hidden to bring the library closer to the first viewport; the
   headline and product preview remain visible.
-- **"Jump right in" library** — the dark grid renders the newest
-  `@all_courses` contributed through Channels visible to the viewer, mixing
-  courses that belong to playlists with courses that do not. Signed-out viewers
-  receive system Channel content only; signed-in viewers additionally receive
-  owned and subscribed non-public Channel content. Playlist membership does not affect
-  inclusion or ordering.
-  Language filter chips are derived from the complete available course set and
-  filter the grid client-side via the `homepage-filter` controller (each card
-  carries `data-lang`; no server round-trip). Chips only appear when more than
-  one language is present.
+- **"Try now"** — the dark section renders a URL field for any YouTube or
+  TikTok link and a fresh random sample of up to eight examples from
+  `config/homepage_videos.yml` on every page load.
+  Both paths lead to `/try?url=…`; the examples use derived YouTube thumbnails
+  and require no per-card network calls. Operators choose examples that already
+  have published Courses; their configured `clip_language` is trusted only when
+  the submitted canonical URL still matches that entry. The guest handoff and
+  the signed-in Add Video endpoint both resolve this value server-side; neither
+  trusts a language parameter supplied by the browser.
 - **"Create Your Own"** — the last content section, following the library. Two
   columns: the heading, lead, the call to action and the "ready in ~3 minutes"
   line on the left (sticky while the section scrolls), and a four-step
@@ -427,25 +432,8 @@ Sections, all wired to real data:
   The call to action differs by session. Signed-in users get the
   paste-a-YouTube-link box, which GETs directly to `new_app_import_request_path`
   (`turbo: false`) with the current learning language in a hidden `lang` field.
-  Guests are not asked for a link at all — they get a single **Sign in**
-  button, because a pasted link is worthless until there is an account to spend
-  a credit from. It POSTs (no `url`) to `GuestImportRequestsController`, which
-  stores a marker for one day in the encrypted, HTTP-only
-  `pending_import_request` cookie and redirects to `new_user_session_path`. The
-  day-long TTL covers the confirmation email round-trip, since `User` is
-  `:confirmable` and the first real sign-in happens after the user clicks that
-  link.
-
-  `ApplicationController#pending_import_path` resolves both guest markers and is
-  consulted first by `after_sign_in_path_for` / `after_sign_up_path_for` (the
-  latter is also overridden in `Users::RegistrationsController`). It consumes
-  the cookie and sends that one authentication to Add Video; every later sign-in
-  falls back to `returnto` / `omniauth.origin` / the homepage as usual. The
-  older `pending_video_url` cookie still works the same way and additionally
-  prefills the URL — `GuestImportRequestsController#create` keeps honouring a
-  posted, canonicalized link even though the homepage no longer sends one. From
-  Add Video the resolver previews the video and the one-credit import POST
-  automatically detects its language before redirecting to Queue.
+  Guests are sent back to the section's `/try` preview so creation always starts
+  from a concrete video rather than an empty authentication marker.
 - **Footer** — copyright plus `/home/privacy` and `/home/terms`.
 
 The controller's existing `@playlists` / `@recommended_courses` assigns are left
@@ -466,6 +454,74 @@ host whitelist is deliberately limited to `langlets.app` and
 unexpected Host header cannot leak into public metadata. When adding another
 localized subdomain, add it to `SeoHelper::CANONICAL_HOSTS` and extend the
 canonical metadata tests at the same time.
+
+### Guest "Try now" import handoff
+
+`GET /try?url=…` is public and provider-neutral. It resolves the video through
+`VideoSource`, shows the same large oEmbed preview on web and in the native
+onboarding layout, explains the transcript/vocabulary/practice output, and
+offers **Signup to create** plus an existing-account login action. Both actions
+POST the selected URL to `GuestImportRequestsController`; authentication is the
+only difference in their redirect.
+
+That POST starts work immediately under `User::ADMIN_EMAIL`. The resulting
+`ImportRequest` is marked `guest_started`. A configured homepage/native example
+passes its known clip language, skips detection, and adopts its published Course
+immediately. The legacy-course lookup falls back to canonical `main_media_url`
+when an older Course has no `youtube_video_id`; arbitrary pasted URLs still
+create an admin-owned provisional Course before asynchronous detection. The controller then
+creates one `EvaluationSignup` per visitor. It snapshots the canonical URL,
+provider/video id, title, thumbnail, known clip language and translation
+language; references the
+admin request, its initial Course and its current Course; and receives a random,
+database-generated UUID. Only that UUID is stored for one day in the encrypted,
+HTTP-only `evaluation_signup_token` cookie. Starting another evaluation in the
+same browser overwrites the cookie, so the latest explicit choice wins. Repeated
+visitors may reuse the shared admin import but receive separate EvaluationSignup
+records.
+Unconsumed records are claimable only during that same one-day window, so a
+copied old UUID cannot revive an abandoned evaluation later.
+
+`Users::RegistrationsController#create` claims the EvaluationSignup as soon as
+the new User row is valid, before confirmation, and `GuestImports::Claim`
+creates the user's own ImportRequest from that durable intent snapshot while
+reading mutable pipeline state through the referenced admin request. The User
+has one nullable, uniquely indexed `evaluation_signup_id`; linking a newer row
+consumes and replaces the previous one. The cookie is deleted as soon as the
+association is saved, and the database pointer carries the selection through
+the confirmation-email round trip. If the admin source is still
+detecting, the claim points at the same provisional Course and
+`CreateSongProgress`; it never enqueues a second detection.
+
+On the first successful login, `ApplicationController#pending_import_path`
+accepts the UUID only when the EvaluationSignup is unclaimed or already selected
+by that user, marks it consumed, deletes the cookie, and redirects directly to
+`/courses/:slug`. The private waiting view shows the stored video thumbnail,
+pipeline stage and progress, and refreshes every five seconds until the normal
+course page is ready. Only the linked user and admin may read an unpublished
+evaluation Course; ordinary Channel visibility remains the authority for every
+other Course.
+
+The cookie is discovery state, not durable ownership. Once signup has linked
+the row, first login reads only `user.evaluation_signup`; it never searches an
+older history, so an abandoned video cannot resurface later. Confirmation can
+therefore be opened in another browser or device with no cookie and still land
+on the one promised Course. On a shared browser, the first successful signup or
+login claims the latest cookie and deletes it; a later account cannot inherit it.
+
+`DetectImportLanguageJob` promotes the guest-started admin request first, fills
+the provisional Course's clip language, and promotes every linked claimant into
+the same run. If detection discovers a pre-existing canonical Course, the
+EvaluationSignup's `course_id` follows it while `initial_course_id` preserves
+the URL already shown to the user; visiting that initial URL redirects to the
+canonical one. Normal `Imports::Settlement` publishes the finished Course into
+each claimant's publishing Channel, enrolls them, and charges their signup
+allowance exactly as an ordinary import. The admin request itself bypasses the
+admin account's affordability reservation and never publishes, charges,
+enrolls, or notifies the admin.
+
+The legacy encrypted `pending_video_url` reader remains for cookies issued by
+older deployments; new evaluation requests write only the UUID cookie.
 
 ### Search engine indexing
 
@@ -508,14 +564,9 @@ This is a *discoverability* boundary, not an authorization one. Course
 controllers still apply `Course#readable_by?`; a guest with the slug can read a
 course only when it belongs to a public or system Channel.
 
-The "Jump right in" grid is a preview rather than the full catalog. It renders
-the eight most recently created courses for the selected language, or the eight
-most recently created courses across all languages when **All** is selected.
-Playlist membership has no effect. The grid uses four columns on larger screens
-and two compact columns on phones. Its filter pills are derived from the
-complete available course set rather than only the visible eight cards. Both
-the navigation's "Browse Langlets" item and the grid's "Browse All Langlets"
-action lead to `/gallery`.
+The homepage no longer previews the catalog; `/gallery` remains the complete
+browsing surface for built Langlets. Homepage navigation points to "Try now",
+while authenticated navigation still exposes Gallery and Add Video elsewhere.
 
 ### Public gallery (`gallery#index`)
 
@@ -2431,7 +2482,17 @@ Home, mobile Library, Create/Add-a-video and the Pro screens live under `App::Ba
 
 **`/app/import_requests/new` is the Create entry point on both platforms, and also the Create tab's root** — there is no `#index` action or route; the bare `/app/import_requests` collection path only accepts `POST` (`#create`). Earlier the tab root was the bare path and `#index` redirected browsers to `/new`; that indirection was removed since nothing ever needed the bare path to resolve on its own. In the native app `/new` renders the Add-a-video form directly; there is no intermediate status list or Add New button. A browser hitting `/new` gets the responsive web variant of the same form. Import status lives in Library: `/app/library` on mobile and `/gallery` on web. The old Queue templates and polling controller remain in the tree but are no longer rendered by anything reachable.
 
-The web course UI exposes the shared Queue/Add Video flow through the user menu. Signed-in native users at the web root are redirected to `app_home_path`. That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
+The web course UI exposes the shared Queue/Add Video flow through the user menu.
+Signed-in native users at the web root are redirected to `app_home_path`;
+signed-out native users are redirected to `/onboarding/welcome`. The native
+acquisition flow is three pages: welcome/explanation, `/onboarding/video` with
+the configured examples and paste field, then the shared `/try` preview. Only
+the preview's creation action enters the existing signup or login page. These
+three paths use the onboarding layout, keep tabs hidden, and are checkpointed
+by both native shells so an interrupted cold launch resumes in place. The
+served path configurations and both offline copies list the new paths.
+
+That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
 The web Add Video sidebar states the available balance and nothing more. It
 carried a **Buy More** PayPal form beside it until individual credits stopped
 being sold; there is now no checkout on the web at all, and the sidebar closes
@@ -2440,6 +2501,15 @@ with the sentence explaining that the Pro screen is native-only.
 The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and **Create** tab (the Create tab is `/app/import_requests/new`, drawn with the `plus.circle` SF Symbol). Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests/new` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. That is deliberate for Home's first-run Create link (below); if you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
 
 Authentication (`/users/sign_in`, `/users/sign_up`, password recovery, and provider handoffs) is a default-context `replace_root` flow on both platforms, not a modal. A signed-out user has no meaningful underlying app screen to dismiss back to, so the native auth pages also omit the HTML close X. The tab bar starts hidden and is revealed only after the authenticated app layout reports through the tab-badge bridge. Entering an auth URL hides tabs immediately in the iOS proposal delegate or Android route handler, while the rendered application layout independently sends `bridge--tab-visibility visible=false`; that second assertion covers server redirects because native proposal handlers may only see the pre-redirect URL. Sign-out hides tabs through its bridge as well. Authentication and language changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
+
+A native user who authenticates while a guest-started request is still detecting
+may enter its `/courses/:slug` waiting page without `ios_lang`; otherwise the normal
+language-onboarding gate would replay the welcome page between signup and the
+waiting Langlet. This exception is narrowly recognized by the shared
+guest-started `CreateSongProgress`. When the single detection finishes,
+`DetectImportLanguageJob` stores that clip's ISO code in the claimant's
+`ios_lang`, restoring the ordinary invariant without asking them to identify
+the language a second time.
 
 Email/password registration does not return an unconfirmed user to the home or
 sign-in page. `Users::RegistrationsController#after_inactive_sign_up_path_for`

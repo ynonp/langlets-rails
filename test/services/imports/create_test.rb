@@ -154,6 +154,33 @@ module Imports
       assert enrollment.imported?, "they asked for this course themselves"
     end
 
+    test "guest evaluation adopts a legacy published course without detection or publication" do
+      published = publish_course!(user: @other)
+      published.update_column(:youtube_video_id, nil)
+
+      result = nil
+      assert_no_enqueued_jobs only: [ DetectImportLanguageJob, CreateCourseJob ] do
+        result = stub_video do
+          Create.call(
+            user: @user,
+            url: CANONICAL,
+            clip_language: "Spanish",
+            translation_language: "English",
+            guest_started: true
+          )
+        end
+      end
+
+      assert result.adopted?
+      assert_equal published, result.course
+      assert_equal 0, result.cost
+      assert result.import_request.ready?
+      assert result.import_request.guest_started?
+      assert_equal published, result.import_request.course
+      assert_empty @user.enrollments
+      assert_empty @user.default_channel.channel_items
+    end
+
     test "importing a course already in your own channel changes and costs nothing" do
       published = publish_course!(user: @other)
       publish_privately(published, owner: @user)

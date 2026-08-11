@@ -83,9 +83,9 @@ class CourseAccessTest < ActionDispatch::IntegrationTest
     get course_url(@course.slug)
     assert_response :success
 
-    get root_url
+    get gallery_url
     assert_response :success
-    assert_select ".lp-card[href=?]", course_path(@course.slug), count: 1
+    assert_select "a[href=?]", course_path(@course.slug), minimum: 1
   end
 
   # --- private channel: not readable by the world ---

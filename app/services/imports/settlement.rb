@@ -35,6 +35,11 @@ module Imports
       newly_settled = ImportRequest.transaction do
         import_request.lock!
 
+        if import_request.guest_started?
+          import_request.update!(status: :ready, progress_percent: 100, failure_reason: nil)
+          next import_request.saved_change_to_status?
+        end
+
         # Pro imports land in the Pro library rather than the user's own default
         # Channel — see User#publishing_channel. Which one it is has to be
         # decided here, at publication, because it is a fact about this import
@@ -47,6 +52,7 @@ module Imports
       end
 
       return unless newly_settled
+      return if import_request.guest_started?
       return unless notify
 
       # One call for both channels: Notifications records it, then delivers it

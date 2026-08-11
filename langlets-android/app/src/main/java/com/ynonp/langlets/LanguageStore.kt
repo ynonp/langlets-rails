@@ -22,7 +22,7 @@ object LanguageStore {
     private const val KEY_PENDING_ONBOARDING_URL = "pendingOnboardingURL"
 
     /** The onboarding pages worth checkpointing for the next cold launch. */
-    private val onboardingPaths = listOf("/onboarding/welcome", "/onboarding/language")
+    private val onboardingPaths = listOf("/onboarding/welcome", "/onboarding/video", "/try", "/onboarding/language")
 
     private lateinit var prefs: SharedPreferences
 

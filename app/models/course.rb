@@ -23,6 +23,9 @@ class Course < ApplicationRecord
   has_many :enrolled_users, through: :enrollments, source: :user
   has_many :channel_items, dependent: :destroy
   has_many :channels, through: :channel_items
+  has_many :evaluation_signups, dependent: :restrict_with_exception
+  has_many :initial_evaluation_signups, class_name: "EvaluationSignup",
+           foreign_key: :initial_course_id, dependent: :restrict_with_exception
 
   # Reading a Course — the course page, its lessons, its activities, the full
   # player — is governed by Channel visibility. Public and system Channels make
@@ -32,6 +35,10 @@ class Course < ApplicationRecord
   def readable_by?(user)
     # Admins moderate everything, including a Course in no Channel at all.
     return true if user&.admin?
+    # Guest-started Courses get stable URLs before they are publishable. Only a
+    # user with their own request for this exact Course may see its waiting page.
+    return true if user && user.import_requests.active.where(course_id: id).exists?
+    return true if user && !published? && user.evaluation_signup&.initial_course_id == id
 
     ChannelContentQuery.courses_visible_to(user).where(id: id).exists?
   end

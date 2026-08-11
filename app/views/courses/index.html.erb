@@ -39,27 +39,6 @@
 <% end %>
 
 <%
-  # One accent dot per language, keyed by base ISO. Falls back to the brand red.
-  lang_dot = Hash.new("#C4451C").merge(
-    "es" => "#E8B93E", "fr" => "#7C9ED9", "ar" => "#6FBF8F",
-    "he" => "#C98BD9", "de" => "#E89A5C", "en" => "#8FB7E0", "ru" => "#D98B8B"
-  )
-  base_iso = ->(language) { language&.iso_name.to_s.split("-").first.to_s.downcase }
-
-  # Keep every available language pill visible even when one is selected via
-  # ?lang=. The Stimulus controller ignores unknown selections.
-  filter_langs = @all_courses.map(&:language).compact.uniq { |l| base_iso.call(l) }
-  filter_isos = filter_langs.map { |language| base_iso.call(language) }
-  initial_filter = filter_isos.include?(current_language_code) ? current_language_code : "all"
-
-  # Render enough newest-first candidates for every pill to show its latest
-  # eight courses. The filter controller reveals only the selected eight.
-  grid_courses = (
-    @all_courses.first(8) +
-    @all_courses.group_by { |course| base_iso.call(course.language) }
-                .values.flat_map { |courses| courses.first(8) }
-  ).uniq(&:id).sort_by(&:created_at).reverse
-
 %>
 
 <style>
@@ -122,6 +101,9 @@
   .lp-lib-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:32px; }
   .lp-h2 { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.02em; margin:0 0 8px; }
   .lp-lib-sub { margin:0; font-size:16.5px; color:var(--dark-muted); }
+  .lp-try-form { max-width:680px; margin-bottom:24px; }
+  .lp-try-form .lp-paste { border-color:#5A5245; }
+  .lp-try-or { color:var(--dark-muted); margin:0 0 18px; }
   .lp-filters { display:flex; gap:8px; flex-wrap:wrap; }
   .lp-chip { background:transparent; color:var(--dark-muted); border:1px solid #4A443A; border-radius:999px;
     padding:9px 18px; font-family:'Instrument Sans', sans-serif; font-size:14.5px; font-weight:600; cursor:pointer; }
@@ -227,7 +209,7 @@
           <% end %>
         <% end %>
       <% end %>
-      <%= link_to t(".nav.browse"), gallery_path, class: "lp-navlink" %>
+      <%= link_to t(".nav.browse"), "#try", class: "lp-navlink" %>
       <% if user_signed_in? %>
         <%= link_to t(".nav.add_video"), new_app_import_request_path(lang: current_language_code), class: "lp-navlink" %>
         <%= render "shared/user_menu",
@@ -254,61 +236,37 @@
     </div>
   </header>
 
-  <!-- Library -->
-  <section id="library" class="lp-library"
-           data-controller="homepage-filter"
-           data-homepage-filter-initial-lang-value="<%= current_language_code %>">
+  <!-- Try now -->
+  <section id="try" class="lp-library">
     <div class="lp-lib-inner">
       <div class="lp-lib-head">
         <div>
-          <h2 class="lp-h2"><%= t(".library.heading") %></h2>
-          <p class="lp-lib-sub"><%= t(".library.subhead") %></p>
+          <h2 class="lp-h2"><%= t(".try_now.heading") %></h2>
+          <p class="lp-lib-sub"><%= t(".try_now.subhead") %></p>
         </div>
-        <% if filter_langs.size > 1 %>
-          <div class="lp-filters">
-            <button type="button" class="lp-chip"
-                    data-homepage-filter-target="chip" data-homepage-filter-lang-param="all"
-                    data-action="homepage-filter#filter"><%= t(".library.all") %></button>
-            <% filter_langs.each do |language| %>
-              <button type="button" class="lp-chip"
-                      data-homepage-filter-target="chip"
-                      data-homepage-filter-lang-param="<%= base_iso.call(language) %>"
-                      data-action="homepage-filter#filter"><%= localized_language_name(language) %></button>
-            <% end %>
-          </div>
-        <% end %>
       </div>
 
-      <% if grid_courses.any? %>
-        <div class="lp-grid">
-          <% grid_courses.each do |course| %>
-            <% iso = base_iso.call(course.language) %>
-            <% initially_visible = (initial_filter == "all" || initial_filter == iso) &&
-                                   grid_courses.count { |candidate|
-                                     candidate.created_at > course.created_at &&
-                                       (initial_filter == "all" || base_iso.call(candidate.language) == initial_filter)
-                                   } < 8 %>
-            <%= link_to course_path(id: course.slug), class: "lp-card",
-                  hidden: !initially_visible,
-                  data: { "homepage-filter-target": "card", lang: iso } do %>
-              <img class="lp-card-thumb" loading="lazy" alt=""
-                   src="<%= course_thumbnail_url(course) %>">
-              <div class="lp-card-body">
-                <div class="lp-card-title" dir="<%= course.language&.rtl? ? "rtl" : "ltr" %>">
-                  <%= course.localized_name.presence || t("courses.card.untitled") %>
-                </div>
-                <div class="lp-card-meta">
-                  <span class="lp-card-dot" style="background: <%= lang_dot[iso] %>;"></span>
-                  <span><%= localized_language_name(course.language) %> · <%= t("courses.lesson_count", count: course.lessons_count) %></span>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
+      <%= form_with url: try_path, method: :get, data: { turbo: false }, class: "lp-try-form" do %>
+        <div class="lp-paste">
+          <input type="url" required name="url" inputmode="url" autocomplete="off" autocapitalize="off"
+                 autocorrect="off" spellcheck="false" enterkeyhint="go"
+                 placeholder="<%= t('.try_now.url_placeholder') %>" aria-label="<%= t('.try_now.url_label') %>">
+          <button type="submit" class="lp-create"><%= t(".try_now.submit") %></button>
         </div>
-      <% else %>
-        <p class="lp-empty"><%= t(".library.empty") %></p>
       <% end %>
-      <div class="lp-browse-all"><%= link_to t(".library.browse_all"), gallery_path %></div>
+
+      <p class="lp-try-or"><%= t(".try_now.or_choose") %></p>
+      <div class="lp-grid">
+        <% @homepage_videos.each do |video| %>
+          <%= link_to try_path(url: video.url), class: "lp-card" do %>
+            <%= image_tag video.thumbnail_url, alt: "", loading: "lazy", class: "lp-card-thumb" %>
+            <div class="lp-card-body">
+              <div class="lp-card-title"><%= video.title %></div>
+              <div class="lp-card-meta"><%= video.clip_language %></div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </section>
 
@@ -331,11 +289,7 @@
             </div>
           <% end %>
         <% else %>
-          <%# Guests are not asked for a link yet: the button only starts sign-in,
-              and the first authentication lands them on Add Video. %>
-          <%= form_with url: guest_import_requests_path, method: :post, data: { turbo: false } do %>
-            <button type="submit" class="lp-create lp-own-cta"><%= t(".create_your_own.sign_in") %></button>
-          <% end %>
+          <%= link_to t(".create_your_own.try_now"), "#try", class: "lp-create lp-own-cta" %>
         <% end %>
 
         <div class="lp-meta">

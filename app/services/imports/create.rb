@@ -55,7 +55,7 @@ module Imports
     def self.call(...) = new(...).call
 
     def initialize(user:, url:, translation_language:, clip_language: nil, client_token: nil,
-                   detected_data: nil, existing_request: nil)
+                   detected_data: nil, existing_request: nil, guest_started: false)
       @user = user
       @url = url
       @clip_language = clip_language
@@ -63,6 +63,7 @@ module Imports
       @client_token = client_token
       @detected_data = detected_data
       @existing_request = existing_request
+      @guest_started = guest_started
     end
 
     # Raises VideoSource::UnavailableVideo for a bad/private/deleted video,
@@ -133,7 +134,8 @@ module Imports
 
     private
 
-    attr_reader :user, :url, :clip_language, :translation_language, :client_token, :existing_request
+    attr_reader :user, :url, :clip_language, :translation_language, :client_token, :existing_request,
+                :guest_started
 
     # What this import will cost when it publishes — asked of the course it will
     # actually publish, so every branch quotes the number the sheet quoted and
@@ -170,7 +172,7 @@ module Imports
     # to an import, so refuse it here rather than ten minutes later when the
     # language is known and the user has been watching a progress bar.
     def create_detection_request!(video)
-      Pricing.ensure_affordable!(user, cost: cost_for)
+      Pricing.ensure_affordable!(user, cost: cost_for) unless guest_started
 
       request = nil
 
@@ -180,6 +182,8 @@ module Imports
           clip_language: nil,
           data: {}
         )
+        course = build_course!(video) if guest_started
+        course&.update!(create_song_progress: progress)
         request = user.import_requests.create!(
           youtube_url: video.canonical_url,
           youtube_video_id: video.video_id,
@@ -187,8 +191,10 @@ module Imports
           translation_language: translation_language,
           title: video.title,
           client_token: client_token,
+          course: course,
           create_song_progress: progress,
-          status: :detecting
+          status: :detecting,
+          guest_started: guest_started
         )
         DetectImportLanguageJob.perform_later(request.id)
       end
@@ -204,13 +210,13 @@ module Imports
     end
 
     # The Library's canonical course for this video and pair, if anyone has
-    # already made it. Compared on youtube_video_id, never on main_media_url —
-    # youtu.be/X and watch?v=X&t=9 are the same video but different strings.
+    # already made it. Prefer the provider id so youtu.be/X and watch?v=X&t=9
+    # are the same video. Older courses predate that column, however, so fall
+    # back to their canonical stored URL rather than rebuilding known content.
     def published_course_for(video)
-      Course.published.find_by(
-        youtube_video_id: video.video_id,
-        language: clip_language_record,
-      )
+      relation = Course.published.where(language: clip_language_record)
+      relation.find_by(youtube_video_id: video.video_id) ||
+        relation.find_by(main_media_url: video.canonical_url)
     end
 
     def active_request_for(video)
@@ -278,6 +284,24 @@ module Imports
     # happened and so the ordinary settlement path — enroll, publish, mark ready —
     # is the one that runs here too.
     def adopt!(course, video)
+      if guest_started
+        import_request = persist_request!(
+          youtube_url: video.canonical_url,
+          youtube_video_id: video.video_id,
+          clip_language: clip_language,
+          translation_language: translation_language,
+          title: video.title,
+          client_token: client_token,
+          course: course,
+          create_song_progress: course.create_song_progress || existing_request&.create_song_progress,
+          status: :ready,
+          progress_percent: 100,
+          guest_started: true
+        )
+        Settlement.complete!(import_request, notify: false)
+        return Result.new(status: :adopted, course: course, import_request: import_request, cost: 0)
+      end
+
       if Pricing.already_published?(user: user, course: course)
         # Nothing left to publish, so nothing to charge. Enrolling is still worth
         # doing: the channel holds the publication and the enrollment is what puts
@@ -338,7 +362,7 @@ module Imports
     end
 
     def create_and_queue!(video)
-      Pricing.ensure_affordable!(user, cost: cost_for, excluding: existing_request&.id)
+      Pricing.ensure_affordable!(user, cost: cost_for, excluding: existing_request&.id) unless guest_started
 
       import_request = nil
 
@@ -355,7 +379,11 @@ module Imports
         # any work is queued, rather than inside the pipeline.
         progress.assert_current_data_format!
 
-        course = build_course!(video)
+        course = if guest_started && existing_request&.course&.language_id.nil?
+          existing_request.course.tap { |provisional| provisional.update!(language: clip_language_record) }
+        else
+          build_course!(video)
+        end
         course.update!(create_song_progress: progress)
 
         import_request = persist_request!(

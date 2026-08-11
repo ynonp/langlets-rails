@@ -1,12 +1,15 @@
 class OnboardingController < ApplicationController
   layout "onboarding"
 
-  skip_before_action :require_authentication_for_native_app, only: [:language]
-  skip_before_action :require_language_for_native_app, only: [ :welcome, :language ]
-  before_action :redirect_web_browsers, only: [ :welcome, :language ]
+  skip_before_action :require_authentication_for_native_app, only: [ :welcome, :video, :language ]
+  skip_before_action :require_language_for_native_app, only: [ :welcome, :video, :language ]
+  before_action :redirect_web_browsers, only: [ :welcome, :video, :language ]
 
   def welcome
-    @return_to = params[:returnto].presence || app_home_path
+  end
+
+  def video
+    @homepage_videos = HomepageVideos.for_page
   end
 
   def language

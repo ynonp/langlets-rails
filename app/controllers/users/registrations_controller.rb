@@ -13,10 +13,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def check_email
   end
 
-  # POST /resource
-  # def create
-  #   super
-  # end
+  # Link the pre-account evaluation as soon as the User row exists. The cookie
+  # is deleted immediately; the User's one evaluation pointer carries the
+  # selection through confirmation and the first login.
+  def create
+    super do |resource|
+      link_pending_evaluation_signup(resource) if resource.persisted?
+    end
+  end
 
   # GET /resource/edit
   # def edit

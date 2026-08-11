@@ -15,14 +15,48 @@ class DetectImportLanguageJob < ApplicationJob
       translation_language: import_request.translation_language,
       client_token: import_request.client_token,
       detected_data: detected_data,
-      existing_request: import_request
+      existing_request: import_request,
+      guest_started: import_request.guest_started?
     )
+
+    if import_request.guest_started?
+      import_request.reload
+      EvaluationSignup.where(admin_import_request: import_request)
+                      .update_all(
+                        course_id: import_request.course_id,
+                        clip_language: language.english_name,
+                        updated_at: Time.zone.now
+                      )
+      attach_guest_claims(import_request, language, detected_data)
+    end
   rescue => error
     Imports::Settlement.fail!(import_request, error.message) if import_request&.persisted?
     raise
   end
 
   private
+
+  def attach_guest_claims(source, language, detected_data)
+    ImportRequest.detecting
+                 .where(create_song_progress_id: source.create_song_progress_id, guest_started: false)
+                 .where.not(id: source.id)
+                 .find_each do |claim|
+      begin
+        Imports::Create.call(
+          user: claim.user,
+          url: source.youtube_url,
+          clip_language: language.english_name,
+          translation_language: claim.translation_language,
+          detected_data: detected_data,
+          existing_request: claim
+        )
+        claim.user.update!(ios_lang: language.iso_name) if claim.user.ios_lang.blank?
+      rescue => error
+        Imports::Settlement.fail!(claim, error.message)
+        Rails.logger.error "Could not attach guest import claim #{claim.id}: #{error.message}"
+      end
+    end
+  end
 
   def detect_language!(import_request)
     CreateSongPipelineHttp.detect_language(url: import_request.youtube_url)

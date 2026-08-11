@@ -34,7 +34,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "homepage course grid is empty when all channels are private" do
+  test "homepage examples do not depend on channel visibility" do
     @course.update!(status: :published)
     Channel.system.unpublish!(@course)
     @public_channel.update!(visibility: :private)
@@ -42,10 +42,11 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url
 
     assert_response :success
-    assert_select ".lp-card:not([hidden])", count: 0
+    assert_select "#try .lp-card", count: homepage_video_count
+    assert_select ".lp-card[href=?]", course_path(@course.slug), count: 0
   end
 
-  test "signed-in owners see courses from their private channels on the homepage" do
+  test "signed-in owners see the same Try now examples" do
     @course.update!(status: :published)
     Channel.system.unpublish!(@course)
     @public_channel.update!(visibility: :private)
@@ -54,7 +55,8 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url
 
     assert_response :success
-    assert_select ".lp-card:not([hidden])[href=?]", course_path(@course.slug)
+    assert_select "#try .lp-card", count: homepage_video_count
+    assert_select ".lp-card[href=?]", course_path(@course.slug), count: 0
   end
 
   test "signed-in homepage shows the user menu and highlighted daily vocabulary practice" do
@@ -94,7 +96,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "h1.truncate[title=?]", @course.name, text: @course.name
   end
 
-  test "homepage shows at most eight videos and links to the gallery" do
+  test "homepage shows only configured Try now videos" do
     @course.update!(status: :published)
     9.times do |index|
       course = create_public_course!(
@@ -112,9 +114,10 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url
 
     assert_response :success
-    assert_select ".lp-card:not([hidden])", count: 8
-    assert_select "a[href='#{gallery_path}']", text: "Browse Langlets"
-    assert_select "a[href='#{gallery_path}']", text: "Browse All Langlets"
+    assert_select "#try .lp-card", count: homepage_video_count
+    configured_paths = HomepageVideos.all.map { |video| try_path(url: video.url) }
+    rendered_paths = css_select("#try .lp-card").map { |card| card["href"] }
+    assert_empty rendered_paths - configured_paths
   end
 
   test "homepage exposes its social sharing cover" do
@@ -164,7 +167,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "meta[property='og:image'][content='https://langlets.app/cover.png']"
   end
 
-  test "homepage presents the product image before the library and creation form" do
+  test "homepage presents the product image before Try now and the creation explainer" do
     get root_url
 
     assert_response :success
@@ -173,13 +176,14 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "header.lp-hero form", count: 0
     assert_select "#create h2", text: "Create Your Own"
     assert_select "#create", text: /full transcript, translation and vocabulary exercises/
-    assert_select "#create form[action=?][method=post]", guest_import_requests_path
+    assert_select "#try form[action=?][method=get] input[name=url]", try_path
+    assert_select "#create a[href='#try']", text: "Try now"
 
     body = response.body
-    assert_operator body.index('id="library"'), :<, body.index('id="create"')
+    assert_operator body.index('id="try"'), :<, body.index('id="create"')
   end
 
-  test "homepage keeps all language pills when French is selected" do
+  test "homepage Try now examples are unchanged when a language is selected" do
     french_course = create_public_course!(
       name: "French homepage course",
       slug: "french-homepage-course",
@@ -206,24 +210,20 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url(lang: "fr")
 
     assert_response :success
-    assert_select ".lp-card:not([hidden])", count: 1
-    assert_select ".lp-card:not([hidden])[href='#{course_path(french_course.slug)}']"
-    assert_select ".lp-chip", text: "French"
-    assert_select "#library[data-homepage-filter-initial-lang-value='fr']"
-    assert_select ".lp-chip[data-homepage-filter-lang-param='en']", text: "English"
+    assert_select "#try .lp-card", count: homepage_video_count
+    assert_select ".lp-card[href='#{course_path(french_course.slug)}']", count: 0
   end
 
-  test "homepage ignores an unsupported initial language filter" do
+  test "homepage tolerates an unsupported language while showing Try now" do
     @course.update!(status: :published)
 
     get root_url(lang: "xx")
 
     assert_response :success
-    assert_select "#library[data-homepage-filter-initial-lang-value='xx']"
-    assert_select ".lp-chip[data-homepage-filter-lang-param='xx']", count: 0
+    assert_select "#try .lp-card", count: homepage_video_count
   end
 
-  test "homepage mixes playlist and standalone courses newest first" do
+  test "homepage examples are sampled from YAML rather than course creation order" do
     @course.update!(status: :published, created_at: 2.days.ago)
     playlist_course = create_public_course!(
       name: "Newest playlist course",
@@ -241,9 +241,11 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url
 
     assert_response :success
-    cards = css_select(".lp-card:not([hidden])")
-    assert_equal course_path(playlist_course.slug), cards.first["href"]
-    assert_includes cards.map { |card| card["href"] }, course_path(@course.slug)
+    cards = css_select("#try .lp-card")
+    configured_paths = HomepageVideos.all.map { |video| try_path(url: video.url) }
+    assert_equal homepage_video_count, cards.size
+    assert_empty cards.map { |card| card["href"] } - configured_paths
+    refute_includes cards.map { |card| card["href"] }, course_path(playlist_course.slug)
   end
 
   test "a public-only course is link-readable but unlisted on the homepage" do
@@ -279,6 +281,10 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   private
+
+  def homepage_video_count
+    [ HomepageVideos.all.size, HomepageVideos::PAGE_LIMIT ].min
+  end
 
   def save_word_for(language)
     translation_language = languages(:spanish)

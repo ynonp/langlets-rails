@@ -53,6 +53,37 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     assert_equal 3, @user.reload.credit_balance
   end
 
+  test "a guest claim reuses detection and joins the admin-owned course" do
+    source = Youtube::Oembed.stub(:fetch, @video) do
+      Imports::Create.call(
+        user: @user,
+        url: CANONICAL,
+        translation_language: "English",
+        guest_started: true
+      ).import_request
+    end
+    learner = User.create!(email: "guest-claim@example.com", password: "password123", confirmed_at: Time.zone.now)
+    claim = GuestImports::Claim.call(user: learner, source_import_request: source)
+    detected_data = { "lyric_lines" => [ "hola" ], "stt_words" => [ { "text" => "hola" } ] }
+
+    assert_no_enqueued_jobs only: DetectImportLanguageJob do
+      CreateSongPipelineHttp.stub(:detect_language, [ @spanish, detected_data ]) do
+        Youtube::Oembed.stub(:fetch, @video) do
+          DetectImportLanguageJob.perform_now(source.id)
+        end
+      end
+    end
+
+    source.reload
+    claim.reload
+    assert source.queued?
+    assert claim.importing?
+    assert_equal source.course, claim.course
+    assert_equal @user, source.course.user
+    assert_equal source.create_song_progress, claim.create_song_progress
+    assert_equal "es", learner.reload.ios_lang
+  end
+
   private
 
   def create_provisional_request

@@ -1,0 +1,35 @@
+<% content_for :head do %>
+  <title><%= t("courses.waiting.page_title", title: @course.name) %></title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="refresh" content="5">
+<% end %>
+
+<div class="min-h-dvh bg-emerald-50 px-5 py-[max(2rem,env(safe-area-inset-top,1rem))] text-gray-900 dark:bg-gray-950 dark:text-gray-50">
+  <main class="mx-auto flex min-h-[calc(100dvh-4rem)] w-full max-w-md flex-col justify-center">
+    <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg dark:border-gray-800 dark:bg-gray-900">
+      <% if @course.thumbnail_url.present? %>
+        <%= image_tag @course.thumbnail_url, alt: "", class: "aspect-video w-full object-cover bg-gray-100 dark:bg-gray-800" %>
+      <% end %>
+
+      <div class="p-6 text-center">
+        <% if @course.error? || @import_request&.failed? %>
+          <p class="text-sm font-bold uppercase tracking-wider text-red-500"><%= t("courses.waiting.failed_eyebrow") %></p>
+          <h1 class="mt-2 text-2xl font-extrabold"><%= @course.name %></h1>
+          <p class="mt-3 text-gray-500 dark:text-gray-400"><%= t("courses.waiting.failed_body") %></p>
+        <% else %>
+          <div class="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-emerald-100 border-t-emerald-500 dark:border-gray-700 dark:border-t-emerald-400" aria-hidden="true"></div>
+          <p class="mt-5 text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400"><%= t("courses.waiting.eyebrow") %></p>
+          <h1 class="mt-2 text-2xl font-extrabold"><%= @course.name %></h1>
+          <p class="mt-3 text-gray-500 dark:text-gray-400"><%= t("courses.waiting.body") %></p>
+
+          <% if @import_request %>
+            <div class="mt-6 h-2 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
+              <div class="h-full rounded-full bg-emerald-500 transition-[width]" style="width: <%= @import_request.display_percent %>%"></div>
+            </div>
+            <p class="mt-2 text-sm font-semibold text-gray-500 dark:text-gray-400"><%= @import_request.stage_label %></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>

@@ -18,7 +18,7 @@ final class AppTabBarController: UITabBarController {
     /// the next cold launch. (Hiding the tab bar over them is not keyed on this
     /// list — the onboarding layout declares it through the tab-visibility
     /// bridge, because a proposal only ever carries the pre-redirect URL.)
-    private static let onboardingPaths = ["/onboarding/welcome", "/onboarding/language"]
+    private static let onboardingPaths = ["/onboarding/welcome", "/onboarding/video", "/try", "/onboarding/language"]
 
     private static func isOnboardingURL(_ url: URL) -> Bool {
         onboardingPaths.contains(url.path)

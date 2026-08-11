@@ -10,6 +10,9 @@ class CoursesController < ApplicationController
     # changing the app's start location) means it can be changed without an App
     # Store release.
     return redirect_to app_home_path if native_app? && user_signed_in?
+    return redirect_to onboarding_welcome_path if native_app?
+
+    @homepage_videos = HomepageVideos.for_page
 
     @daily_vocab_language = if user_signed_in?
       current_user.daily_vocab_review_language(current_language_code)&.iso_name
@@ -116,6 +119,17 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
     return unless authorize_course_read!(@course)
+
+    handoff = current_user&.evaluation_signup
+    handoff = nil unless handoff&.initial_course_id == @course.id
+    if handoff && handoff.course_id != @course.id
+      return redirect_to course_path(handoff.course)
+    end
+
+    @import_request = current_user&.import_requests&.recent_first&.find_by(course: @course)
+    if @import_request&.active? || (!@course.published? && handoff)
+      return render :waiting
+    end
 
     response.headers["Turbo-Visit"] = "reload"
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
