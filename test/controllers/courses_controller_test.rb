@@ -167,20 +167,18 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "meta[property='og:image'][content='https://langlets.app/cover.png']"
   end
 
-  test "homepage presents the product image before Try now and the creation explainer" do
+  test "homepage presents the product image before Try now without a duplicate creation section" do
     get root_url
 
     assert_response :success
     assert_select "header.lp-hero img.lp-product-img[src='/product.png']", count: 1
     assert_includes response.body, ".lp-hero .lp-lead { display:none; }"
     assert_select "header.lp-hero form", count: 0
-    assert_select "#create h2", text: "Create Your Own"
-    assert_select "#create", text: /full transcript, translation and vocabulary exercises/
     assert_select "#try form[action=?][method=get] input[name=url]", try_path
-    assert_select "#create a[href='#try']", text: "Try now"
+    assert_select "#create", count: 0
 
     body = response.body
-    assert_operator body.index('id="try"'), :<, body.index('id="create"')
+    assert_operator body.index('id="try"'), :<, body.index('class="lp-footer"')
   end
 
   test "homepage Try now examples are unchanged when a language is selected" do

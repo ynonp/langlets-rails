@@ -509,28 +509,6 @@ en:
         or_choose: "Or start with one of these videos"
       footer:
         tagline: "© %{year} Langlets · practice languages with native content"
-      create_your_own:
-        heading: "Create Your Own"
-        lead: "Paste any YouTube link to create a Langlet with full transcript, translation and vocabulary exercises — so you can understand every line and every word."
-        url_placeholder: "Paste a YouTube or TikTok link"
-        url_label: "Video link"
-        submit: "Create"
-        sign_in: "Sign in"
-        try_now: "Try now"
-        ready_in: "⏱ Ready in ~3 minutes"
-        steps:
-          automatic:
-            title: "One click, fully automatic"
-            body: "Our AI pipeline builds your lesson from any video — ready in about 3 minutes."
-          understand:
-            title: "Understand every word"
-            body: "A full transcript with playful vocabulary practice turns any video into comprehensible input you actually retain."
-          bite_sized:
-            title: "Short lessons that fit your day"
-            body: "The video is split into bite-sized, easy lessons. Practice 5 minutes a day and own the whole video in a week."
-          vocabulary:
-            title: "Build your personal vocabulary"
-            body: "Save new words as you go and review them daily with spaced repetition."
     show:
       lessons: "Lessons"
       done: "%{current}/%{total} done"

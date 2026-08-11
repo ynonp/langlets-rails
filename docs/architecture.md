@@ -392,7 +392,7 @@ specificity war.
 
 Every string on the page — including the `<title>` and the Open Graph
 title/description — is localized under `courses.index.*` (`meta`, `nav`, `hero`,
-`library`, `create_your_own`, `footer`), so `he.langlets.app` renders a fully
+`try_now`, `footer`), so `he.langlets.app` renders a fully
 Hebrew landing page. The page is laid out with logical properties where
 direction matters (`inset-inline-start`, `padding-inline-start`), and the offset
 drop shadow on the product frame is mirrored under `[dir="rtl"]`. Everything
@@ -420,20 +420,6 @@ Sections, all wired to real data:
   the submitted canonical URL still matches that entry. The guest handoff and
   the signed-in Add Video endpoint both resolve this value server-side; neither
   trusts a language parameter supplied by the browser.
-- **"Create Your Own"** — the last content section, following the library. Two
-  columns: the heading, lead, the call to action and the "ready in ~3 minutes"
-  line on the left (sticky while the section scrolls), and a four-step
-  numbered explainer on the right
-  ("One click, fully automatic" → "Build your personal vocabulary"), whose
-  markers are joined by a connector. Both columns stack below 860px. The four
-  steps are rendered by iterating their key names under
-  `courses.index.create_your_own.steps`.
-
-  The call to action differs by session. Signed-in users get the
-  paste-a-YouTube-link box, which GETs directly to `new_app_import_request_path`
-  (`turbo: false`) with the current learning language in a hidden `lang` field.
-  Guests are sent back to the section's `/try` preview so creation always starts
-  from a concrete video rather than an empty authentication marker.
 - **Footer** — copyright plus `/home/privacy` and `/home/terms`.
 
 The controller's existing `@playlists` / `@recommended_courses` assigns are left
