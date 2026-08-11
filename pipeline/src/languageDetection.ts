@@ -1,7 +1,12 @@
 import { generateText } from "ai";
 import type { LanguageModel } from "ai";
 import { downloadYoutubeAudioToTemp } from "./audio.ts";
-import { type SpeechToTextResult, transcribeFileWithElevenLabs } from "./speechToText.ts";
+import { message } from "./retry.ts";
+import {
+  type SpeechToTextResult,
+  transcribeFileWithElevenLabs,
+  transcribeWithElevenLabs,
+} from "./speechToText.ts";
 import { isTiktokUrl, isYoutubeUrl } from "./steps/extractLyrics.ts";
 
 export interface SupportedLanguage {
@@ -23,6 +28,7 @@ export interface DetectionOptions {
   model: LanguageModel;
   prepareAudio?: typeof downloadYoutubeAudioToTemp;
   transcribeFile?: typeof transcribeFileWithElevenLabs;
+  transcribeUrl?: typeof transcribeWithElevenLabs;
 }
 
 export async function detectLanguage(
@@ -49,15 +55,7 @@ export async function detectLanguage(
   }
 
   if (isTiktokUrl(payload.youtubeurl)) {
-    // Keep the successful ElevenLabs result as one candidate. extract_lyrics
-    // will still obtain Supadata native captions and reconcile both when it can.
-    const audio = await (options.prepareAudio ?? downloadYoutubeAudioToTemp)(payload.youtubeurl);
-    let transcript: SpeechToTextResult;
-    try {
-      transcript = await (options.transcribeFile ?? transcribeFileWithElevenLabs)(audio.path, null);
-    } finally {
-      await Deno.remove(audio.path).catch(() => {});
-    }
+    const transcript = await transcribeTiktok(payload.youtubeurl, options);
     if (!transcript.languageCode) throw new Error("ElevenLabs did not detect a language");
     return {
       language: resolveLanguage(transcript.languageCode, payload.supported_languages),
@@ -72,7 +70,9 @@ export async function detectLanguage(
   throw new Error("unsupported video provider");
 }
 
-const ISO_639_3_TO_1: Record<string, string> = {
+// Scribe v2 reports these supported languages as ISO-639-3 while Langlets'
+// database uses ISO-639-1 (and may carry a regional suffix such as ar-JO).
+const SCRIBE_ISO_639_3_TO_1: Record<string, string> = {
   ara: "ar",
   deu: "de",
   eng: "en",
@@ -84,10 +84,35 @@ const ISO_639_3_TO_1: Record<string, string> = {
 
 export function resolveLanguage(value: string, supported: SupportedLanguage[]): SupportedLanguage {
   const raw = value.trim().toLowerCase().replace(/[^a-z-]/g, "");
-  const base = ISO_639_3_TO_1[raw] ?? raw.split("-")[0];
+  const base = SCRIBE_ISO_639_3_TO_1[raw] ?? raw.split("-")[0];
   const language = supported.find((candidate) =>
     candidate.iso_name.toLowerCase().split("-")[0] === base
   );
   if (!language) throw new Error(`detected unsupported language: ${value.trim() || "unknown"}`);
   return language;
+}
+
+async function transcribeTiktok(
+  url: string,
+  options: DetectionOptions,
+): Promise<SpeechToTextResult> {
+  let audio: Awaited<ReturnType<typeof downloadYoutubeAudioToTemp>>;
+  try {
+    // Downloading ourselves is the cheaper path and lets us reject silent or
+    // audio-less TikTok renditions before paying ElevenLabs to process them.
+    audio = await (options.prepareAudio ?? downloadYoutubeAudioToTemp)(url);
+  } catch (error) {
+    // If every yt-dlp format/namespace failed, let ElevenLabs fetch the TikTok
+    // URL itself. This costs more, so it is deliberately the second choice.
+    console.warn(
+      `TikTok audio download failed (${message(error)}); falling back to ElevenLabs URL fetch`,
+    );
+    return await (options.transcribeUrl ?? transcribeWithElevenLabs)(url, null);
+  }
+
+  try {
+    return await (options.transcribeFile ?? transcribeFileWithElevenLabs)(audio.path, null);
+  } finally {
+    await Deno.remove(audio.path).catch(() => {});
+  }
 }

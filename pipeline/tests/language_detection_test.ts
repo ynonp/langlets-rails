@@ -6,6 +6,9 @@ const LANGUAGES = [
   { iso_name: "en", english_name: "English" },
   { iso_name: "es", english_name: "Spanish" },
   { iso_name: "ar-JO", english_name: "Arabic" },
+  { iso_name: "de", english_name: "German" },
+  { iso_name: "fr", english_name: "French" },
+  { iso_name: "he", english_name: "Hebrew" },
 ];
 
 Deno.test("YouTube language detection uses Gemini and resolves a seeded language", async () => {
@@ -55,8 +58,47 @@ Deno.test("TikTok downloads audio and reuses ElevenLabs detected transcript", as
   });
 });
 
-Deno.test("regional seeded codes match detected base codes and unsupported codes fail", () => {
-  assertEquals(resolveLanguage("ara", LANGUAGES), LANGUAGES[2]);
+Deno.test("TikTok falls back to ElevenLabs URL fetch when yt-dlp cannot produce audio", async () => {
+  let fetchedUrl: string | undefined;
+  const result = await detectLanguage(
+    {
+      youtubeurl: "https://www.tiktok.com/@scout/video/6718335390845095173",
+      supported_languages: LANGUAGES,
+    },
+    {
+      model: queuedModel([]).model,
+      prepareAudio: () => Promise.reject(new Error("all formats failed")),
+      transcribeUrl: (url, languageCode) => {
+        fetchedUrl = url;
+        assertEquals(languageCode, null);
+        return Promise.resolve({
+          text: "שלום",
+          words: [{ text: "שלום", start: 0, end: 0.5 }],
+          languageCode: "heb",
+          languageProbability: 0.99,
+        });
+      },
+    },
+  );
+
+  assertEquals(fetchedUrl, "https://www.tiktok.com/@scout/video/6718335390845095173");
+  assertEquals(result.language, LANGUAGES[5]);
+  assertEquals(result.data, {
+    stt_candidates: {
+      elevenlabs: {
+        text: "שלום",
+        words: [{ text: "שלום", start: 0, end: 0.5 }],
+      },
+    },
+  });
+});
+
+Deno.test("Scribe ISO-639-3 codes map to the Langlets language catalog", () => {
+  const expected = ["eng", "spa", "ara", "deu", "fra", "heb"];
+  expected.forEach((code, index) =>
+    assertEquals(resolveLanguage(code, LANGUAGES), LANGUAGES[index])
+  );
+
   assertThrows(
     () => resolveLanguage("ita", LANGUAGES),
     Error,

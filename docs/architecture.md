@@ -607,13 +607,17 @@ provisional progress row, marks the visible request failed, and costs no
 credit.
 
 YouTube detection is a dedicated Gemini 2.5 Flash video request constrained to
-the database language ISO codes. TikTok detection downloads verified audio
-with yt-dlp and sends it to ElevenLabs Scribe without a language hint; Scribe's
-returned ISO-639 code selects the language. Its transcript and timed words seed
-`data["stt_candidates"]["elevenlabs"]`, so extraction reuses that paid result
-while still requesting the independent Supadata native candidate. Three-letter
-Scribe codes and regional seeded codes (notably `ar-JO`) are normalized to
-their base ISO language.
+the database language ISO codes. TikTok detection first downloads verified
+audio with yt-dlp and sends it to ElevenLabs Scribe without a language hint;
+this is the cheaper path and rejects silent/audio-less renditions before they
+reach ElevenLabs. If every configured yt-dlp format and network namespace
+fails, detection falls back to asking ElevenLabs to fetch the canonical TikTok
+URL directly. Scribe's returned ISO-639 code selects the language. Its
+transcript and timed words seed `data["stt_candidates"]["elevenlabs"]`, so
+extraction reuses that paid result while still requesting the independent
+Supadata native candidate. Scribe v2's three-letter codes (`eng`, `spa`, `deu`,
+`fra`, `heb`, `ara`) and regional seeded codes (notably `ar-JO`) are normalized
+to the database's base ISO language.
 
 After detection the import pipeline is split. `CreateSongProgress` is unique on
 `(youtubeurl, clip_language)` when `clip_language IS NOT NULL`; NULL provisional
