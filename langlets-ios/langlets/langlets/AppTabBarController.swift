@@ -8,8 +8,8 @@ import WebKit
 ///
 /// Tabs route lazily, on first selection, not up front. A signed-out cold
 /// launch would otherwise fire three parallel visits that all redirect to the
-/// sign-in modal, and only the visible tab can actually present it — the other
-/// two would be left stranded mid-redirect.
+/// sign-in root, doing redundant work and leaving three independent copies of
+/// the authentication flow alive.
 @MainActor
 final class AppTabBarController: UITabBarController {
     private static let pendingOnboardingURLKey = "pendingOnboardingURL"
@@ -96,7 +96,7 @@ final class AppTabBarController: UITabBarController {
     /// Queues a fresh load for every tab except the one `navigator` belongs
     /// to. Used when one tab is heading into the auth flow: whatever the
     /// others show predates it either way, and re-routing them also clears any
-    /// sign-in modal a background tab tried (and failed) to present.
+    /// stale authentication root from a background tab.
     func reloadOtherTabs(than navigator: Navigator) {
         for index in navigators.indices where navigators[index] !== navigator {
             needsRoute[index] = true

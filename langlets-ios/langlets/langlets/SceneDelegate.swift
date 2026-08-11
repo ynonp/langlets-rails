@@ -13,7 +13,7 @@ import WebKit
 // the phone's own localhost is the phone. Plain http to a loopback address is
 // blocked by App Transport Security without NSAllowsLocalNetworking in
 // Info.plist, which is set for exactly this reason.
-let rootURL = URL(string: "https://langlets.app")!
+let rootURL = URL(string: "http://localhost:3000")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -221,6 +221,10 @@ extension SceneDelegate: NavigatorDelegate {
         }
         AppTabBarController.rememberPendingOnboardingURL(proposal.url)
 
+        if Self.isAuthenticationURL(proposal.url) {
+            tabBarController.setTabsVisible(false)
+        }
+
         if proposal.url.path == "/" {
             returnHome(from: navigator)
             return .reject
@@ -240,6 +244,13 @@ extension SceneDelegate: NavigatorDelegate {
         // user actually lands on the home screen.
         tabBarController.routeHomeTab()
     }
+
+    private static func isAuthenticationURL(_ url: URL) -> Bool {
+        url.path.hasPrefix("/users/auth/") ||
+            url.path == "/users/sign_in" ||
+            url.path == "/users/sign_up" ||
+            url.path == "/users/password/new"
+    }
     
     private static func isSignedOutRedirect(_ url: URL) -> Bool {
         guard url.path == "/users/sign_in",
@@ -254,7 +265,7 @@ extension SceneDelegate: NavigatorDelegate {
         // OAuth completed via ASWebAuthenticationSession. Re-route every tab to
         // pick up the session cookie that was set in Safari's cookie store
         // (shared with WKWebsiteDataStore.default()) — re-routing the visible
-        // tab also dismisses its sign-in modal.
+        // tab also replaces its authentication root.
         tabBarController.reloadAllTabs()
     }
 

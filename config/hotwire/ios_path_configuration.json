@@ -8,8 +8,8 @@
     "",
     "The catch-all therefore has to come FIRST, as the baseline that specific",
     "rules below override. It used to sit last, which silently defeated every",
-    "modal rule in this file — auth, lessons and /new have all been presenting",
-    "as plain pushes regardless of what they asked for.",
+    "modal rule in this file — lessons and /new have both been presenting as",
+    "plain pushes regardless of what they asked for.",
     "",
     "Keep the most specific rules at the bottom.",
     "",
@@ -24,6 +24,12 @@
     "This file is served to the app by ConfigurationsController and must stay",
     "identical to langlets-ios/langlets/langlets/Configuration/path_configuration.json,",
     "which is the offline fallback. A test enforces it.",
+    "",
+    "Authentication is a default-context replace_root flow, not a modal. There",
+    "is no useful screen behind login for a signed-out user to dismiss back to.",
+    "The native proposal handler and the rendered auth layout both hide tabs;",
+    "the layout assertion also covers server redirects whose destination was not",
+    "visible in the original native proposal.",
     "",
     "PATTERNS ARE MATCHED AGAINST THE PATH ONLY, and that is a choice, not a",
     "default. Hotwire Native ships matchQueryStrings = true, which matches rules",
@@ -78,7 +84,8 @@
         "/users/password/new"
       ],
       "properties": {
-        "context": "modal",
+        "context": "default",
+        "presentation": "replace_root",
         "pull_to_refresh_enabled": false
       }
     },

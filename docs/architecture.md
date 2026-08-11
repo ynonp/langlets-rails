@@ -2374,8 +2374,8 @@ The platform implements a modern, accessible authentication system with the foll
 - **Interactive Elements**: Smooth transitions and hover effects throughout
 
 #### UI Components & Patterns
-- **Navigation Elements**: 
-  - Close button (top-left) for modal-style interaction
+- **Navigation Elements**:
+  - Browser auth pages have a top-left close button; native auth is a non-dismissible full-screen root and omits it
   - Sign-up link (top-right) for account creation
 - **Social Authentication**: 
   - Apple, Google and GitHub buttons with proper branding (shared partial `devise/shared/_social_buttons`)
@@ -2403,7 +2403,7 @@ The platform implements a modern, accessible authentication system with the foll
 
 The iOS app is a Hotwire Native wrapper around the Rails web application. It uses WKWebView with shared cookies via `WKWebsiteDataStore.default()`, allowing seamless session sharing with Safari.
 
-#### Path Configuration (which screens are modals)
+#### Path Configuration (screen presentation)
 
 `SceneDelegate` loads path configuration from two sources, **in order**:
 1. `.file(...)` — the copy bundled at `langlets-ios/langlets/langlets/Configuration/path_configuration.json`. Offline fallback and first-launch seed.
@@ -2411,7 +2411,7 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 
 > **Rule order is the opposite of what it looks like.** Hotwire Native merges the properties of *every* rule whose pattern matches, with **later rules winning** (`PathConfiguration#properties`: `properties.merge(rule.properties) { _, new in new }`), and patterns are unanchored regexes so `.*` matches everything. The catch-all therefore belongs **first**, as the baseline that later, more specific rules override.
 >
-> It used to sit last, which silently defeated every modal rule in the file — auth, lessons and `/new` were all presenting as plain pushes no matter what they asked for. Fixed in Phase 3; keep the most specific rules at the bottom.
+> It used to sit last, which silently defeated every modal rule in the file — lessons and `/new` were presenting as plain pushes no matter what they asked for. Fixed in Phase 3; keep the most specific rules at the bottom.
 
 Two more things to know before touching this:
 - `ConfigurationsController` inherits `ActionController::API`, *not* `ApplicationController`. Under `ApplicationController`, `require_authentication_for_native_app` would answer a signed-out native request with a redirect to the sign-in page and the app would parse that HTML as path configuration.
@@ -2431,7 +2431,7 @@ with the sentence explaining that the Pro screen is native-only.
 
 The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and **Create** tab (the Create tab is `/app/import_requests/new`, drawn with the `plus.circle` SF Symbol). Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests/new` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. That is deliberate for Home's first-run Create link (below); if you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
 
-The native tab bar starts hidden and is revealed only after the authenticated app layout reports its active-import badge through the bridge (`setLibraryBadge`); entering authentication or completing sign-out hides it again, so login screens never expose app navigation. Authentication and language changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
+Authentication (`/users/sign_in`, `/users/sign_up`, password recovery, and provider handoffs) is a default-context `replace_root` flow on both platforms, not a modal. A signed-out user has no meaningful underlying app screen to dismiss back to, so the native auth pages also omit the HTML close X. The tab bar starts hidden and is revealed only after the authenticated app layout reports through the tab-badge bridge. Entering an auth URL hides tabs immediately in the iOS proposal delegate or Android route handler, while the rendered application layout independently sends `bridge--tab-visibility visible=false`; that second assertion covers server redirects because native proposal handlers may only see the pre-redirect URL. Sign-out hides tabs through its bridge as well. Authentication and language changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
 
 **A course opened from the Create navigator lands on Home, not on Create's stack.** `SceneDelegate` intercepts any `/courses/…` proposal originating from that navigator, clears Home to its root, selects the Home tab and re-runs the proposal there. Courses opened from Home or the Library are untouched.
 

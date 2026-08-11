@@ -5,6 +5,15 @@
   </head>
 
   <body class="bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50" <%= "data-native-tabs" if native_app? %>>
+    <%# Authentication is a full-screen native root. Assert its chrome from the
+        rendered destination too, because a redirect can hide the auth URL from
+        the native proposal handler. %>
+    <% if native_app? && devise_controller? %>
+      <div data-controller="bridge--tab-visibility"
+           data-bridge--tab-visibility-visible-value="false"
+           hidden></div>
+    <% end %>
+
     <main class="flex flex-col min-h-screen"
           data-controller="audio-cache"
           data-action="click->audio-cache#handleClick:capture audio-cache:play->audio-cache#playEvent audio-cache:preload->audio-cache#preloadEvent audio-cache:stop->audio-cache#stop">

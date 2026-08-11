@@ -286,7 +286,7 @@ class MainActivity : HotwireActivity() {
      *
      * **Why not just navigate a tab there.** Because the answer is a bare
      * acknowledgement page, and a Turbo visit that lands on one would leave it
-     * on screen inside the sign-in modal. The tabs need a full reset regardless
+     * on screen in place of the sign-in root. The tabs need a full reset regardless
      * — every page they hold was rendered for a signed-out visitor and carries a
      * CSRF token from a session that no longer exists — so the request is better
      * made somewhere invisible with the reset sequenced explicitly after it.
@@ -405,6 +405,10 @@ class MainActivity : HotwireActivity() {
      */
     fun observeProposedLocation(location: String) {
         LanguageStore.rememberPendingOnboardingUrl(location)
+
+        if (isAuthPath(location)) {
+            setTabsVisible(false)
+        }
 
         if (LanguageStore.restoreFrom(location)) {
             reloadTabs()

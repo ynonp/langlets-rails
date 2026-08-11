@@ -1,10 +1,12 @@
 <div class="min-h-screen w-full flex items-center justify-center relative bg-emerald-50 dark:bg-gray-950" style="min-height: 100dvh;">
-  <!-- Close button -->
-  <% close_path = params[:returnto].presence || root_path %>
-  <%= link_to close_path, class: "absolute top-6 left-4 w-11 h-11 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400" do %>
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-    </svg>
+  <% unless native_app? %>
+    <!-- Close button -->
+    <% close_path = params[:returnto].presence || root_path %>
+    <%= link_to close_path, class: "absolute top-6 left-4 w-11 h-11 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400", data: { testid: "auth-close" } do %>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    <% end %>
   <% end %>
 
   <!-- Log in link -->

@@ -41,6 +41,15 @@ class ConfigurationsControllerTest < ActionDispatch::IntegrationTest
                  "tabs are native now — a replace_root rule would reset a tab's stack on every tab-root link"
     end
 
+    test "the #{platform} authentication flow replaces the root instead of opening a modal" do
+      rules = JSON.parse(File.read(Rails.root.join(paths[:served])))["rules"]
+      auth_rule = rules.find { |rule| rule.fetch("patterns", []).include?("/users/sign_in") }
+
+      assert auth_rule, "expected an authentication routing rule"
+      assert_equal "default", auth_rule.dig("properties", "context")
+      assert_equal "replace_root", auth_rule.dig("properties", "presentation")
+    end
+
     # The trap this guards: ConfigurationsController inherits ActionController::API
     # rather than ApplicationController. Under ApplicationController,
     # require_authentication_for_native_app would answer a signed-out native request
