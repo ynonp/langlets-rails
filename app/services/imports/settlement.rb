@@ -85,9 +85,13 @@ module Imports
         user: import_request.user,
         kind: :course_failed,
         course: import_request.course,
-        title: import_request.title,
-        reason: reason
+        title: import_request.title
       )
+
+      # This is import operations policy, not user notification policy. It is
+      # deliberately independent of the requester's email preference and the
+      # generic Notification they receive.
+      ImportFailureMailer.failed(import_request).deliver_later
     rescue => e
       # Never let bookkeeping bury the original failure.
       Rails.logger.error "Failed to settle ImportRequest #{import_request.id}: #{e.message}"

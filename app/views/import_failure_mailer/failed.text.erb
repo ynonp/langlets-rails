@@ -1,0 +1,11 @@
+Course import failed
+====================
+
+Video: <%= @video_title %>
+User: <%= @user.email %>
+Import request ID: <%= @import_request.id %>
+Course ID: <%= @course&.id || "Not created" %>
+URL: <%= @import_request.youtube_url %>
+
+Technical details:
+<%= @reason %>

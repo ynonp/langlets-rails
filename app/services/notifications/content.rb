@@ -78,11 +78,7 @@ module Notifications
         # useful.
         url: nil,
         data: {
-          "video_title" => video_title(context[:course]),
-          # Kept out of the body and out of the push on purpose: it is a
-          # pipeline message ("Word translation count mismatch"), useful in the
-          # email's details block and to support, not in a lock-screen banner.
-          "reason" => context[:reason].to_s.truncate(500)
+          "video_title" => video_title(context[:course])
         }.compact_blank
       )
     end

@@ -105,7 +105,7 @@ en:
           other: "“%{video_title}” is now %{count} lessons. Tap to start practicing."
       course_failed:
         title: "Course creation failed"
-        body: "We couldn't build a course from “%{video_title}”. No credit was charged — try importing it again."
+        body: "We couldn't import “%{video_title}”. No credit was charged. We're looking into it and will let you know when it's ready."
       pro_activated:
         title: "You're a Pro subscriber now"
         body: "Great — Langlets Pro is active. Import as much as you like; every course you add is included."
@@ -126,7 +126,6 @@ en:
     # plain-text alternative says the same thing and puts the URL on its own
     # line underneath.
     mailer:
-      details: "Details: %{reason}"
       open: "Open Langlets"
       footer_html: "You choose how notifications reach you — email, push, both or neither — on your %{link}."
       footer_link: "profile page"

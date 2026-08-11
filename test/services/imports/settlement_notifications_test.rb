@@ -3,6 +3,8 @@ require "test_helper"
 # Settlement is where every import ends, either way — which is why it is the
 # single place both the "ready" and the "failed" notification come from.
 class Imports::SettlementNotificationsTest < ActiveSupport::TestCase
+  include ActionMailer::TestHelper
+
   VIDEO_ID = "settleVid01".freeze
   CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 
@@ -42,18 +44,34 @@ class Imports::SettlementNotificationsTest < ActiveSupport::TestCase
     assert_equal 1, @user.notifications.count
   end
 
-  test "failing an import tells the user, with the reason kept for the email" do
-    Imports::Settlement.fail!(@request, "Word translation count mismatch")
+  test "failing an import tells the user, with the reason kept for support" do
+    assert_enqueued_email_with ImportFailureMailer, :failed, args: [ @request ] do
+      Imports::Settlement.fail!(@request, "Word translation count mismatch")
+    end
 
     notification = @user.notifications.sole
     assert notification.kind_course_failed?
-    assert_equal "Word translation count mismatch", notification.data["reason"]
+    assert_not notification.data.key?("reason")
+  end
+
+  test "failure details email goes only to the operational recipient" do
+    @user.update!(notification_delivery: [])
+    Imports::Settlement.fail!(@request, "Word translation count mismatch")
+
+    email = ImportFailureMailer.failed(@request.reload)
+    assert_equal [ ImportFailureMailer::RECIPIENT ], email.to
+    assert_not_includes email.to, @user.email
+    assert_includes email.text_part.body.decoded, "Word translation count mismatch"
+    assert_includes email.text_part.body.decoded, @user.email
+    assert_includes email.text_part.body.decoded, @request.youtube_url
   end
 
   # The finalizer and the timeout job can both conclude the same import failed.
   test "failing an already-failed import does not tell the user twice" do
-    Imports::Settlement.fail!(@request, "boom")
-    Imports::Settlement.fail!(@request.reload, "boom again")
+    assert_enqueued_emails 1 do
+      Imports::Settlement.fail!(@request, "boom")
+      Imports::Settlement.fail!(@request.reload, "boom again")
+    end
 
     assert_equal 1, @user.notifications.count
   end

@@ -4,8 +4,6 @@ class NotificationMailerPreview < ActionMailer::Preview
     NotificationMailer.notify(preview_notification(:course_ready, course: Course.published.last))
   end
 
-  # The one kind with a details block: the pipeline's own message, kept out of
-  # the body and out of the push.
   def course_failed
     NotificationMailer.notify(
       preview_notification(:course_failed, title: "Some Video", reason: "Word translation count mismatch")

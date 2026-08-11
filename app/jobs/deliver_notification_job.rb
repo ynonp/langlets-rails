@@ -37,4 +37,5 @@ class DeliverNotificationJob < ApplicationJob
   rescue StandardError => e
     Rails.logger.error "Notification #{notification.id} push failed: #{e.class}: #{e.message}"
   end
+
 end

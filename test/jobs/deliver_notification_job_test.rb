@@ -47,6 +47,23 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
     assert_equal 1, sent
   end
 
+  test "a failed import sends only the generic notification email" do
+    notification = Notification.create!(
+      user: @user,
+      kind: :course_failed,
+      data: { "video_title" => "Broken Song", "reason" => "Word translation count mismatch" }
+    )
+
+    assert_emails 1 do
+      DeliverNotificationJob.perform_now(notification.id)
+    end
+
+    user_email = ActionMailer::Base.deliveries.last
+    assert_equal [ @user.email ], user_email.to
+    assert_includes user_email.text_part.body.decoded, "We're looking into it"
+    assert_not_includes user_email.text_part.body.decoded, "Word translation count mismatch"
+  end
+
   # A push-only user with no device is the ordinary case for anyone who never
   # granted iOS permission: nothing goes out, and the notification is still on
   # /notifications. It must not be left to retry forever.

@@ -1,0 +1,19 @@
+<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827; max-width: 600px; margin: 0 auto; padding: 24px;">
+  <h1 style="font-size: 20px; margin: 0 0 16px;">Course import failed</h1>
+
+  <dl>
+    <dt style="font-weight: bold;">Video</dt>
+    <dd style="margin: 0 0 12px;"><%= @video_title %></dd>
+    <dt style="font-weight: bold;">User</dt>
+    <dd style="margin: 0 0 12px;"><%= @user.email %></dd>
+    <dt style="font-weight: bold;">Import request ID</dt>
+    <dd style="margin: 0 0 12px;"><%= @import_request.id %></dd>
+    <dt style="font-weight: bold;">Course ID</dt>
+    <dd style="margin: 0 0 12px;"><%= @course&.id || "Not created" %></dd>
+    <dt style="font-weight: bold;">URL</dt>
+    <dd style="margin: 0 0 12px; overflow-wrap: anywhere;"><%= @import_request.youtube_url %></dd>
+  </dl>
+
+  <h2 style="font-size: 16px; margin: 20px 0 8px;">Technical details</h2>
+  <pre style="white-space: pre-wrap; overflow-wrap: anywhere; background: #f3f4f6; border-radius: 8px; padding: 12px;"><%= @reason %></pre>
+</div>

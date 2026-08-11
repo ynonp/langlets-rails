@@ -1780,8 +1780,7 @@ The order matters: **record first, deliver second.**
    producing an empty notification.
 2. A `Notification` row is created from that: `kind`, `url`, and a `data` JSONB
    holding the interpolation values (`video_title`, `count`) alongside anything a
-   client needs (`course_slug` for the iOS deep link, `reason` for the failure
-   email's details block). **No copy is stored.**
+   client needs (`course_slug` for the iOS deep link). **No copy is stored.**
 3. `DeliverNotificationJob` sends it over the channels the user asked for. The
    job means a delivery failure cannot fail the thing that caused it — both
    callers are operations that have already succeeded.
@@ -1831,6 +1830,14 @@ when there was nothing to deliver to (a push-only user with no device), because
 a user who receives neither still has the notification on `/notifications`; that
 is exactly what makes turning a channel off safe to offer. Email and push are
 isolated from each other: a dead mail server must not cost the user their push.
+
+Failed-course copy is deliberately generic on every user-facing surface: it
+says the import failed and that the team is looking into it, without exposing
+or storing the pipeline error on the Notification. `Imports::Settlement.fail!`
+separately enqueues `ImportFailureMailer`, which sends the persisted failure
+reason and request context only to `ynon@hey.com`. This diagnostic is independent
+of the requester's notification preferences and keeps import escalation policy
+out of the generic notification delivery job.
 
 `read_at` is independent. `Notification.mark_all_read!` is one UPDATE, not a
 load-and-save loop, because it runs on every app launch.
@@ -1983,6 +1990,12 @@ notifies the user who **asked**, not the course's creator: on a joined import
 those are different people and only one of them is waiting. Re-failing an
 already-failed request is silent, so the finalizer and the timeout job racing
 cannot notify twice.
+
+The same first failure also enqueues the admin-only `ImportFailureMailer` with
+the technical reason, requester, source URL, and import/course identifiers.
+That operational email is deliberately initiated here rather than by
+`Notifications::Deliver` or `DeliverNotificationJob`: the notification system
+only delivers the generic user message and has no failed-import policy.
 
 The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `App::DeviceTokensController`; tokens are owned by a user and an installation token can move to the currently signed-in account. APNs sandbox and production tokens are stored separately by environment. Apple responses that identify dead tokens invalidate the row without deleting its diagnostic history, while transient failures leave it active.
 

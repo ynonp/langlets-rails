@@ -67,7 +67,7 @@ class NotificationsTest < ActiveSupport::TestCase
     assert_equal "“Despacito” is now 2 lessons. Tap to start practicing.", notification.reload.body
   end
 
-  test "course_failed keeps the pipeline's reason out of the body" do
+  test "course_failed does not store or render the pipeline reason" do
     notification = Notifications.deliver(
       user: @user, kind: :course_failed, course: @course, reason: "Word translation count mismatch"
     )
@@ -75,7 +75,7 @@ class NotificationsTest < ActiveSupport::TestCase
     assert_equal "Course creation failed", notification.title
     assert_includes notification.body, "Despacito"
     assert_not_includes notification.body, "mismatch"
-    assert_equal "Word translation count mismatch", notification.data["reason"]
+    assert_not notification.data.key?("reason")
   end
 
   # A failed import has nothing specific to open, so the list and the push
