@@ -1,9 +1,9 @@
-<% content_for :title, t("try.show.page_title") %>
+<% content_for :title, t("try.show.page_title", name: @video.title) %>
 
 <div class="min-h-dvh bg-app-bg text-app-text px-5 pt-[max(1.5rem,env(safe-area-inset-top,1rem))] pb-[max(2rem,env(safe-area-inset-bottom,1rem))]">
   <div class="mx-auto max-w-3xl">
     <p class="text-app-accent text-sm font-bold uppercase tracking-wider"><%= t("try.show.eyebrow") %></p>
-    <h1 class="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight"><%= t("try.show.title") %></h1>
+    <h1 class="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight"><%= t("try.show.title", name: @video.title) %></h1>
     <p class="mt-3 text-app-text-2 text-base sm:text-lg"><%= t("try.show.lead") %></p>
 
     <div class="mt-7 overflow-hidden rounded-app-card bg-app-card app-hairline">
@@ -11,6 +11,15 @@
       <div class="p-5">
         <h2 class="text-xl font-bold"><%= @video.title %></h2>
         <p class="mt-1 text-app-text-3"><%= @video.author_name %></p>
+        <% if @video_info %>
+          <p class="mt-3 text-sm font-semibold text-app-text-2">
+            <%= t("try.show.info_line",
+                  language: @video_info.language,
+                  duration: @video_info.duration,
+                  lines: number_with_delimiter(@video_info.line_count),
+                  words: number_with_delimiter(@video_info.unique_word_count)) %>
+          </p>
+        <% end %>
       </div>
     </div>
 
@@ -23,7 +32,16 @@
       <% end %>
     </div>
 
-    <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4">
+    <% unless user_signed_in? %>
+      <div class="mt-7 rounded-app-card bg-app-inset p-5 app-inset-hairline">
+        <h2 class="text-lg font-extrabold text-app-text"><%= t("try.show.account.label") %></h2>
+        <p class="mt-2 text-base leading-relaxed text-app-text-2"><%= t("try.show.account.ownership") %></p>
+        <p class="mt-2 text-base leading-relaxed text-app-text-2"><%= t("try.show.account.processing") %></p>
+        <p class="mt-2 font-extrabold text-app-accent"><%= t("try.show.account.no_card") %></p>
+      </div>
+    <% end %>
+
+    <div class="mt-5 flex flex-col sm:flex-row sm:items-center gap-4">
       <% if user_signed_in? %>
         <%= link_to t("try.show.create"), new_app_import_request_path(url: @video.canonical_url),
                     class: "flex-1 rounded-full bg-app-accent text-app-on-accent text-center py-4 text-lg font-bold" %>

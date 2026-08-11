@@ -348,7 +348,10 @@ The public homepage still carries the optional `lang` query parameter through
 generated links, but the "Try now" examples do not filter by it. Each homepage
 or native video-selection render samples at most eight entries from the YAML;
 they are acquisition choices backed by already-built courses, and their source
-languages are declared in `config/homepage_videos.yml`. The
+languages are declared in `config/homepage_videos.yml`. An example card is a
+button managed by `homepage-video-picker`: it fills and focuses the shared URL
+field, marks itself selected, and never navigates. The visitor must explicitly
+press **Build my langlet** to reach `/try`. The
 `homepage-filter` controller and `homepage_subhead` helper remain in the tree
 for older surfaces but the homepage no longer mounts or reads them.
 
@@ -377,6 +380,11 @@ impossible to clear from the UI — a reload kept serving the stored language an
 guests had no control that reached the session. The session copy has been
 removed; do not reintroduce it without also providing a clear path.
 
+Every browser/native page layout (`application`, `app`, `onboarding`, and both
+Doorkeeper layouts) renders `shared/_beta_notice` above its page content. It is
+localized and safe-area aware, so **Free while in beta** remains visible across
+the complete acquisition and authenticated flows.
+
 ### Public homepage (`courses#index`)
 
 The web root (`courses#index`, rendered for everyone except signed-in native
@@ -398,24 +406,26 @@ direction matters (`inset-inline-start`, `padding-inline-start`), and the offset
 drop shadow on the product frame is mirrored under `[dir="rtl"]`. Everything
 else flips for free because the layout is grid/flex.
 
-The homepage **does not sell anything**. It carries no pricing section and no
-free-credit copy; nothing on it mentions credits, prices or "free". Nothing is
-sold anywhere any more — Langlets Pro (see *Langlets Pro*) is granted by hand
-from the console after someone asks on Discord, not purchased. Do not
-reintroduce a pricing block here without being asked.
+The homepage **does not sell anything**. It carries no pricing section or
+credit-price copy. The shared top notice says **Free while in beta**, and the
+hero explains why building requires a free account. Nothing is sold
+anywhere any more — Langlets Pro (see *Langlets Pro*) is granted by hand from
+the console after someone asks on Discord, not purchased. Do not reintroduce a
+pricing block here without being asked.
 
 Sections, all wired to real data:
-- **Nav** — brand, the `#library` in-page anchor, and auth-aware controls:
-  signed-out visitors get *Sign in*; signed-in get *Add a video* / *Sign out*.
-- **Hero** — the marketing introduction sits beside the static
-  `public/product.png` product preview. At the mobile breakpoint, its supporting
-  subhead is hidden to bring the library closer to the first viewport; the
-  headline and product preview remain visible.
-- **"Try now"** — the dark section renders a URL field for any YouTube or
-  TikTok link and a fresh random sample of up to eight examples from
+- **Nav** — brand, optional daily-vocabulary action, and auth-aware controls:
+  signed-out visitors get only *Sign in*; signed-in users get *My Langlets*
+  (the Gallery's `my_imports` filter), *Add a video*, and the account menu.
+- **Hero** — the lesson-building promise and free-account explanation sit beside
+  the static `public/product.png` product preview. Both lines remain visible at
+  the mobile breakpoint.
+- **"Try now"** — the dark section starts directly with a URL field for any
+  YouTube or TikTok link and a fresh random sample of up to eight examples from
   `config/homepage_videos.yml` on every page load.
-  Both paths lead to `/try?url=…`; the examples use derived YouTube thumbnails
-  and require no per-card network calls. Operators choose examples that already
+  Submitting the form leads to `/try?url=…`; selecting an example only copies
+  its URL into that form. Examples use derived YouTube thumbnails and require
+  no per-card network calls. Operators choose examples that already
   have published Courses; their configured `clip_language` is trusted only when
   the submitted canonical URL still matches that entry. The guest handoff and
   the signed-in Add Video endpoint both resolve this value server-side; neither
@@ -445,10 +455,17 @@ canonical metadata tests at the same time.
 
 `GET /try?url=…` is public and provider-neutral. It resolves the video through
 `VideoSource`, shows the same large oEmbed preview on web and in the native
-onboarding layout, explains the transcript/vocabulary/practice output, and
+onboarding layout, titles the page **Ready to build: [video name]**, explains
+the transcript/vocabulary/practice output and why an account is required, and
 offers **Signup to create** plus an existing-account login action. Both actions
 POST the selected URL to `GuestImportRequestsController`; authentication is the
 only difference in their redirect.
+
+`TryVideoInfo` adds a compact language/duration/dialogue-line/approximate unique
+word summary when the URL matches a published Course with stored Medium and
+Phrase data. It derives duration from lesson boundaries (falling back to the
+last phrase) and unique words from Unicode word spans in the source dialogue;
+an arbitrary video with only oEmbed metadata simply omits the line.
 
 That POST starts work immediately under `User::ADMIN_EMAIL`. The resulting
 `ImportRequest` is marked `guest_started`. A configured homepage/native example

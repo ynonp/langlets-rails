@@ -115,9 +115,10 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "#try .lp-card", count: homepage_video_count
-    configured_paths = HomepageVideos.all.map { |video| try_path(url: video.url) }
-    rendered_paths = css_select("#try .lp-card").map { |card| card["href"] }
-    assert_empty rendered_paths - configured_paths
+    configured_urls = HomepageVideos.all.map(&:url)
+    rendered_urls = css_select("#try .lp-card").map { |card| card["data-video-url"] }
+    assert_empty rendered_urls - configured_urls
+    assert_select "#try a.lp-card", count: 0
   end
 
   test "homepage exposes its social sharing cover" do
@@ -172,7 +173,9 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "header.lp-hero img.lp-product-img[src='/product.png']", count: 1
-    assert_includes response.body, ".lp-hero .lp-lead { display:none; }"
+    assert_select "header.lp-hero h1", text: "Turn any video to a language practice"
+    assert_select "header.lp-hero .lp-lead", text: /Free account required/
+    refute_includes response.body, ".lp-hero .lp-lead { display:none; }"
     assert_select "header.lp-hero form", count: 0
     assert_select "#try form[action=?][method=get] input[name=url]", try_path
     assert_select "#create", count: 0
@@ -240,10 +243,10 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     cards = css_select("#try .lp-card")
-    configured_paths = HomepageVideos.all.map { |video| try_path(url: video.url) }
+    configured_urls = HomepageVideos.all.map(&:url)
     assert_equal homepage_video_count, cards.size
-    assert_empty cards.map { |card| card["href"] } - configured_paths
-    refute_includes cards.map { |card| card["href"] }, course_path(playlist_course.slug)
+    assert_empty cards.map { |card| card["data-video-url"] } - configured_urls
+    refute_includes cards.map { |card| card["data-video-url"] }, playlist_course.main_media_url
   end
 
   test "a public-only course is link-readable but unlisted on the homepage" do
@@ -265,6 +268,8 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href='#pricing']", count: 0
     assert_select "a[href=?]", new_user_registration_path(returnto: "/"), count: 0
     assert_select "form[action*=?]", "paypal.com", count: 0
+    assert_select ".lp-nav a", text: "Browse Langlets", count: 0
+    assert_select ".lp-nav a", text: "My Langlets", count: 0
     assert_select ".lp-nav a[href=?]", new_user_session_path, text: "Sign in"
   end
 
@@ -276,6 +281,8 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "#pricing", count: 0
     assert_select "form[action*=?]", "paypal.com", count: 0
+    assert_select ".lp-nav a[href=?]", gallery_path(imports: "my_imports"), text: "My Langlets"
+    assert_select ".lp-nav a", text: "Browse Langlets", count: 0
   end
 
   private

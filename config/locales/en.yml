@@ -46,6 +46,7 @@ en:
     de: "German"
     ar: "Arabic"
   shared:
+    beta_notice: "Free while in beta"
     home: "Home"
     sign_in_prompt: "Sign in now to not lose your progress"
     footer:
@@ -435,17 +436,23 @@ en:
       lead: "Select a video to convert into your first language lesson, or paste any YouTube or TikTok link."
       url_placeholder: "Paste a video link"
       url_label: "Video link"
-      submit: "Preview"
+      submit: "Build my langlet"
       examples: "Choose an example"
     language:
       title: "Choose target language"
       prompt: "Select the language you want to learn"
   try:
     show:
-      page_title: "Preview your first Langlet"
+      page_title: "Ready to build: %{name}"
       eyebrow: "Your first Langlet"
-      title: "Turn this video into a language lesson"
+      title: "Ready to build: %{name}"
       lead: "Langlets will build a guided lesson around the real words and phrases in this video."
+      info_line: "%{language} · %{duration} · %{lines} lines of dialogue · ~%{words} unique words"
+      account:
+        label: "Loud and clear:"
+        ownership: "Your Langlets are yours: saved, reviewable, with your vocabulary in them."
+        processing: "Every Langlet is generated and stored on our end, so we ask for an account before building one."
+        no_card: "No card needed."
       benefits:
         transcript:
           title: "Understand every line"
@@ -486,13 +493,13 @@ en:
         day_streak:
           one: "%{count} day streak"
           other: "%{count} day streak"
-        browse: "Browse Langlets"
+        my_langlets: "My Langlets"
         add_video: "Add a video"
         sign_out: "Sign out"
         sign_in: "Sign in"
       hero:
-        heading: "Practice your target language with videos you love"
-        lead: "Turn native YouTube videos you enjoy into structured listening and vocabulary practice—designed for intermediate learners."
+        heading: "Turn any video to a language practice"
+        lead: "Free account required — building a lesson takes real processing, and your Langlets are saved to your library."
         product_alt: "Langlets synchronized video transcript, translation, and vocabulary exercises"
       library:
         heading: "Jump right in"
@@ -501,12 +508,11 @@ en:
         empty: "No Langlets yet — paste a video below to create the first one."
         browse_all: "Browse All Langlets"
       try_now:
-        heading: "Try now"
-        subhead: "Choose a video or paste your own YouTube or TikTok link."
+        paste_prompt: "Paste any YouTube or TikTok link to build"
         url_placeholder: "Paste a YouTube or TikTok link"
         url_label: "Video link"
-        submit: "Preview"
-        or_choose: "Or start with one of these videos"
+        submit: "Build my langlet"
+        or_choose: "No link handy? These are just example videos — pick one and we'll build the lesson from it."
       footer:
         tagline: "© %{year} Langlets · practice languages with native content"
     show:

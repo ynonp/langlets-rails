@@ -88,6 +88,9 @@ application.register("hello", HelloController)
 import HomepageFilterController from "./homepage_filter_controller"
 application.register("homepage-filter", HomepageFilterController)
 
+import HomepageVideoPickerController from "./homepage_video_picker_controller"
+application.register("homepage-video-picker", HomepageVideoPickerController)
+
 import LanguageSelectController from "./language_select_controller"
 application.register("language-select", LanguageSelectController)
 

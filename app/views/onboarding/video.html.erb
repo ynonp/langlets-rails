@@ -1,6 +1,7 @@
 <% content_for :title, t(".title") %>
 
-<div class="min-h-dvh px-5 pt-[max(1.5rem,env(safe-area-inset-top,1rem))] pb-[max(1.5rem,env(safe-area-inset-bottom,1rem))]">
+<div class="min-h-dvh px-5 pt-[max(1.5rem,env(safe-area-inset-top,1rem))] pb-[max(1.5rem,env(safe-area-inset-bottom,1rem))]"
+     data-controller="homepage-video-picker">
   <div class="mx-auto max-w-md">
     <p class="text-app-accent text-xs font-bold uppercase tracking-wider"><%= t(".eyebrow") %></p>
     <h1 class="mt-2 text-3xl font-extrabold tracking-tight"><%= t(".title") %></h1>
@@ -9,6 +10,7 @@
     <%= form_with url: try_path, method: :get, data: { turbo: false }, class: "mt-6" do %>
       <label class="app-hairline bg-app-card rounded-app-field flex gap-2 p-2">
         <input name="url" type="url" required inputmode="url" autocomplete="off" autocapitalize="off"
+               data-homepage-video-picker-target="input"
                placeholder="<%= t('.url_placeholder') %>" aria-label="<%= t('.url_label') %>"
                class="min-w-0 flex-1 bg-transparent px-2 text-[16px] outline-none">
         <button class="rounded-full bg-app-accent px-5 font-bold text-app-on-accent"><%= t(".submit") %></button>
@@ -18,10 +20,14 @@
     <p class="mt-7 mb-3 text-sm font-bold text-app-text-2"><%= t(".examples") %></p>
     <div class="grid grid-cols-2 gap-3">
       <% @homepage_videos.each do |video| %>
-        <%= link_to try_path(url: video.url), class: "overflow-hidden rounded-app-card bg-app-card app-hairline" do %>
+        <button type="button" aria-pressed="false"
+                class="overflow-hidden rounded-app-card bg-app-card app-hairline text-left aria-pressed:ring-2 aria-pressed:ring-app-accent"
+                data-homepage-video-picker-target="card"
+                data-video-url="<%= video.url %>"
+                data-action="homepage-video-picker#select">
           <%= image_tag video.thumbnail_url, alt: "", class: "w-full aspect-video object-cover bg-black" %>
           <p class="p-3 text-sm font-semibold leading-snug line-clamp-2"><%= video.title %></p>
-        <% end %>
+        </button>
       <% end %>
     </div>
   </div>

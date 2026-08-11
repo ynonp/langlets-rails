@@ -20,12 +20,20 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
     )
   end
 
-  test "homepage offers a URL field and configured videos in Try now" do
+  test "homepage offers an explicit build form and example selectors" do
     get root_path
 
-    assert_select "#try h2", text: "Try now"
-    assert_select "#try form[action=?][method=get] input[name=url]", try_path
-    assert_select "#try .lp-card[href^='/try?url=']", count: homepage_video_count
+    assert_select "[data-testid=beta-notice]", text: "Free while in beta"
+    assert_select ".lp-hero h1", text: "Turn any video to a language practice"
+    assert_select ".lp-hero .lp-lead", text: /Free account required/
+    assert_select "#try h2", count: 0
+    assert_select "#try", text: /Free account required/, count: 0
+    assert_select "#try .lp-try-label", text: "Paste any YouTube or TikTok link to build"
+    assert_select "#try form[action=?][method=get] input[name=url][data-homepage-video-picker-target=input]", try_path
+    assert_select "#try form button", text: "Build my langlet"
+    assert_select "#try .lp-try-or", text: /No link handy?/
+    assert_select "#try button.lp-card[data-video-url][data-action='homepage-video-picker#select']", count: homepage_video_count
+    assert_select "#try a.lp-card", count: 0
   end
 
   test "configured example saves its full evaluation snapshot and reuses a legacy course" do
@@ -83,11 +91,24 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
   end
 
   test "try page shows a large preview and both authentication choices" do
-    VideoSource.stub(:fetch, @video) { get try_path(url: SHARED_URL) }
+    info = TryVideoInfo::Info.new(
+      language: "French",
+      duration: "4:12",
+      line_count: 96,
+      unique_word_count: 340
+    )
+    VideoSource.stub(:fetch, @video) do
+      TryVideoInfo.stub(:for, info) { get try_path(url: SHARED_URL) }
+    end
 
     assert_response :success
     assert_select "img.aspect-video[src=?]", @video.thumbnail_url
     assert_select "h2", text: @video.title
+    assert_select "h1", text: "Ready to build: #{@video.title}"
+    assert_select "body", text: /French · 4:12 · 96 lines of dialogue · ~340 unique words/
+    assert_select "body", text: /Loud and clear:/
+    assert_select "body", text: /Your Langlets are yours/
+    assert_select "body", text: /No card needed\./
     assert_select "form[action=?][method=post] button", guest_import_requests_path, text: "Signup to create"
     assert_select "form[action=?][method=post] input[name=authentication][value=login]", guest_import_requests_path
   end
@@ -193,12 +214,15 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
     assert_redirected_to onboarding_welcome_path
 
     get onboarding_welcome_path, headers: NATIVE
+    assert_select "[data-testid=beta-notice]", text: "Free while in beta"
     assert_select "a[href=?]", onboarding_video_path
 
     get onboarding_video_path, headers: NATIVE
     assert_response :success
-    assert_select "form[action=?] input[name=url]", try_path
-    assert_select "a[href^='/try?url=']", count: homepage_video_count
+    assert_select "form[action=?] input[name=url][data-homepage-video-picker-target=input]", try_path
+    assert_select "form[action=?] button", try_path, text: "Build my langlet"
+    assert_select "button[data-video-url][data-action='homepage-video-picker#select']", count: homepage_video_count
+    assert_select "a[href^='/try?url=']", count: 0
 
     VideoSource.stub(:fetch, @video) { get try_path(url: SHARED_URL), headers: NATIVE }
     assert_response :success

@@ -6,6 +6,7 @@
     <%= render "layouts/head" %>
   </head>
   <body class="bg-app-bg text-app-text font-app antialiased">
+    <%= render "shared/beta_notice" %>
     <%# Onboarding is a full-screen takeover: no native tab bar behind it. %>
     <div data-controller="bridge--tab-visibility"
          data-bridge--tab-visibility-visible-value="false"

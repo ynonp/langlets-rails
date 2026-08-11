@@ -97,21 +97,20 @@
   /* Library */
   .lp-library { background:var(--dark); color:var(--dark-fg); padding:72px 40px 80px; }
   .lp-lib-inner { max-width:1100px; margin:0 auto; }
-  .lp-lib-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:32px; }
-  .lp-h2 { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.02em; margin:0 0 8px; }
-  .lp-lib-sub { margin:0; font-size:16.5px; color:var(--dark-muted); }
   .lp-try-form { max-width:680px; margin-bottom:24px; }
+  .lp-try-label { margin:0 0 12px; color:var(--dark-fg); font-size:20px; line-height:1.4; font-weight:700; }
   .lp-try-form .lp-paste { border-color:#5A5245; }
-  .lp-try-or { color:var(--dark-muted); margin:0 0 18px; }
+  .lp-try-or { max-width:800px; color:var(--dark-fg); margin:0 0 22px; font-size:18px; line-height:1.5; }
   .lp-filters { display:flex; gap:8px; flex-wrap:wrap; }
   .lp-chip { background:transparent; color:var(--dark-muted); border:1px solid #4A443A; border-radius:999px;
     padding:9px 18px; font-family:'Instrument Sans', sans-serif; font-size:14.5px; font-weight:600; cursor:pointer; }
   .lp-chip:hover { border-color:var(--accent); }
   .lp-chip.is-active { background:var(--bg); color:var(--ink); }
   .lp-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:20px; }
-  .lp-card { display:flex; flex-direction:column; background:#2A261F; border-radius:16px; overflow:hidden;
-    color:var(--dark-fg); border:1px solid #3A352C; }
+  .lp-card { display:flex; flex-direction:column; width:100%; padding:0; background:#2A261F; border-radius:16px; overflow:hidden;
+    color:var(--dark-fg); border:1px solid #3A352C; text-align:start; font:inherit; cursor:pointer; }
   .lp-card:hover { border-color:var(--accent); color:var(--dark-fg); }
+  .lp-card[aria-pressed="true"] { border-color:var(--accent); box-shadow:0 0 0 2px var(--accent); }
   .lp-card-thumb { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#0B1220; }
   .lp-card-body { padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
   .lp-card-title { font-weight:600; font-size:15.5px; line-height:1.35; display:-webkit-box;
@@ -139,7 +138,6 @@
   @media (max-width:860px) {
     .lp-nav { padding:16px 20px; }
     .lp-hero { grid-template-columns:1fr; gap:36px; padding:24px 20px 40px; }
-    .lp-hero .lp-lead { display:none; }
     .lp-h1 { font-size:38px; }
     .lp-library { padding:56px 20px 64px; }
     .lp-footer { padding:24px 20px; }
@@ -176,8 +174,8 @@
           <% end %>
         <% end %>
       <% end %>
-      <%= link_to t(".nav.browse"), "#try", class: "lp-navlink" %>
       <% if user_signed_in? %>
+        <%= link_to t(".nav.my_langlets"), gallery_path(imports: "my_imports"), class: "lp-navlink" %>
         <%= link_to t(".nav.add_video"), new_app_import_request_path(lang: current_language_code), class: "lp-navlink" %>
         <%= render "shared/user_menu",
                    avatar_type: :initial,
@@ -204,19 +202,14 @@
   </header>
 
   <!-- Try now -->
-  <section id="try" class="lp-library">
+  <section id="try" class="lp-library" data-controller="homepage-video-picker">
     <div class="lp-lib-inner">
-      <div class="lp-lib-head">
-        <div>
-          <h2 class="lp-h2"><%= t(".try_now.heading") %></h2>
-          <p class="lp-lib-sub"><%= t(".try_now.subhead") %></p>
-        </div>
-      </div>
-
       <%= form_with url: try_path, method: :get, data: { turbo: false }, class: "lp-try-form" do %>
+        <p class="lp-try-label"><%= t(".try_now.paste_prompt") %></p>
         <div class="lp-paste">
           <input type="url" required name="url" inputmode="url" autocomplete="off" autocapitalize="off"
                  autocorrect="off" spellcheck="false" enterkeyhint="go"
+                 data-homepage-video-picker-target="input"
                  placeholder="<%= t('.try_now.url_placeholder') %>" aria-label="<%= t('.try_now.url_label') %>">
           <button type="submit" class="lp-create"><%= t(".try_now.submit") %></button>
         </div>
@@ -225,13 +218,16 @@
       <p class="lp-try-or"><%= t(".try_now.or_choose") %></p>
       <div class="lp-grid">
         <% @homepage_videos.each do |video| %>
-          <%= link_to try_path(url: video.url), class: "lp-card" do %>
+          <button type="button" class="lp-card" aria-pressed="false"
+                  data-homepage-video-picker-target="card"
+                  data-video-url="<%= video.url %>"
+                  data-action="homepage-video-picker#select">
             <%= image_tag video.thumbnail_url, alt: "", loading: "lazy", class: "lp-card-thumb" %>
             <div class="lp-card-body">
               <div class="lp-card-title"><%= video.title %></div>
               <div class="lp-card-meta"><%= video.clip_language %></div>
             </div>
-          <% end %>
+          </button>
         <% end %>
       </div>
     </div>
