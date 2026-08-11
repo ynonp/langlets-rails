@@ -2433,6 +2433,16 @@ The iOS app uses `AppTabBarController`, a native `UITabBarController` with one H
 
 Authentication (`/users/sign_in`, `/users/sign_up`, password recovery, and provider handoffs) is a default-context `replace_root` flow on both platforms, not a modal. A signed-out user has no meaningful underlying app screen to dismiss back to, so the native auth pages also omit the HTML close X. The tab bar starts hidden and is revealed only after the authenticated app layout reports through the tab-badge bridge. Entering an auth URL hides tabs immediately in the iOS proposal delegate or Android route handler, while the rendered application layout independently sends `bridge--tab-visibility visible=false`; that second assertion covers server redirects because native proposal handlers may only see the pre-redirect URL. Sign-out hides tabs through its bridge as well. Authentication and language changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
 
+Email/password registration does not return an unconfirmed user to the home or
+sign-in page. `Users::RegistrationsController#after_inactive_sign_up_path_for`
+redirects to `/users/sign_up/check_email`, which tells the user to open the
+confirmation email and press its link before continuing, with a route to resend
+the message. This is one shared Devise-rendered page for web, iOS, and Android.
+Its `/users/sign_up` prefix keeps it inside the native authentication
+`replace_root` rule, and the application layout keeps both native tab bars
+hidden. Confirmation resend is part of the same native authentication rule and
+omits the browser-only close control.
+
 **A course opened from the Create navigator lands on Home, not on Create's stack.** `SceneDelegate` intercepts any `/courses/…` proposal originating from that navigator, clears Home to its root, selects the Home tab and re-runs the proposal there. Courses opened from Home or the Library are untouched.
 
 The handoff also unwinds Create's own stack on the way out. A deduped import redirects straight to `course_path`; `openFromHome(_:leaving:)` prevents the spent form from remaining under the back arrow. An already-importing preview links to the Pending filter in Library instead of back to Create, because Create now contains only the form.

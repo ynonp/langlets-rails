@@ -48,6 +48,9 @@ class ConfigurationsControllerTest < ActionDispatch::IntegrationTest
       assert auth_rule, "expected an authentication routing rule"
       assert_equal "default", auth_rule.dig("properties", "context")
       assert_equal "replace_root", auth_rule.dig("properties", "presentation")
+      assert auth_rule.fetch("patterns").any? { |pattern| Regexp.new(pattern).match?("/users/sign_up/check_email") },
+             "expected the post-signup check-email page to stay in the authentication root"
+      assert_includes auth_rule.fetch("patterns"), "/users/confirmation/new"
     end
 
     # The trap this guards: ConfigurationsController inherits ActionController::API

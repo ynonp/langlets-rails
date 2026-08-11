@@ -81,6 +81,7 @@
         "/users/auth/.*",
         "/users/sign_in",
         "/users/sign_up",
+        "/users/confirmation/new",
         "/users/password/new"
       ],
       "properties": {

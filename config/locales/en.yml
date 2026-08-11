@@ -594,6 +594,12 @@ en:
         agree_html: "By signing up to Langlets, you agree to our %{terms_link} and %{privacy_link}"
         terms: "Terms"
         privacy: "Privacy Policy"
+      check_email:
+        title: "Check your inbox"
+        instructions: "We sent you a confirmation link. Open the email and press the link to continue."
+        spam_hint: "It may take a few minutes to arrive. Check your spam folder if you don't see it."
+        not_received: "Didn't receive the email?"
+        resend: "Send it again"
     passwords:
       new:
         sign_in: "SIGN IN"

@@ -9,6 +9,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  # GET /users/sign_up/check_email
+  def check_email
+  end
+
   # POST /resource
   # def create
   #   super
@@ -60,7 +64,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_inactive_sign_up_path_for(_resource)
+    user_registration_check_email_path
+  end
 end

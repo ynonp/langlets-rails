@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
+    get "users/sign_up/check_email", to: "users/registrations#check_email",
+      as: :user_registration_check_email
     get "users/auth/native_success", to: "users/omniauth_callbacks#native_success"
     post "users/auth/native_google", to: "users/omniauth_callbacks#native_google"
     post "users/auth/native_apple", to: "users/omniauth_callbacks#native_apple"

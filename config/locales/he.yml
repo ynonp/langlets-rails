@@ -527,6 +527,12 @@ he:
         agree_html: "בהרשמה ל-Langlets אתם מסכימים ל%{terms_link} ול%{privacy_link}"
         terms: "תנאי השימוש"
         privacy: "מדיניות הפרטיות"
+      check_email:
+        title: "בדקו את תיבת הדואר"
+        instructions: "שלחנו לכם קישור לאימות. פתחו את ההודעה ולחצו על הקישור כדי להמשיך."
+        spam_hint: "ייתכן שיחלפו כמה דקות עד שההודעה תגיע. אם אינכם רואים אותה, בדקו בתיקיית הספאם."
+        not_received: "לא קיבלתם את ההודעה?"
+        resend: "שלחו שוב"
     passwords:
       new:
         sign_in: "התחברו"
