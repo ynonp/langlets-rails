@@ -2,10 +2,12 @@
 
 ## Status
 
-**Proposed implementation plan.** Channels are not present in the current
-database schema or in the maintained production architecture. After this
-feature is implemented, update the *Channels* section of
-[docs/architecture.md](architecture.md) to describe the shipped behavior.
+**Superseded historical proposal.** This document describes the original
+Channel-profile design and is not the maintained production behavior. Channel
+profiles and `/channels/:slug` were subsequently removed; course cards do not
+show Channel attribution, and invitation acceptance returns to the homepage.
+See the *Channels* section of [docs/architecture.md](architecture.md) for the
+shipped behavior.
 
 ## Goal
 

@@ -40,10 +40,14 @@ class CoursesQueryTest < ActiveSupport::TestCase
     assert_empty result[:items]
   end
 
-  test "a nil user sees only public channels" do
+  test "a nil user sees system channels but not unlisted public channels" do
     assert_empty CoursesQuery.new(user: nil, language: "es").call[:items]
 
     publish_publicly(@published)
+    assert_empty CoursesQuery.new(user: nil, language: "es").call[:items]
+
+    User.create!(email: User::ADMIN_EMAIL, password: "password123", confirmed_at: Time.zone.now)
+    publish_system(@published)
 
     assert_equal [ "spanish-songs" ], CoursesQuery.new(user: nil, language: "es").call[:items].map { |i| i[:slug] }
   end

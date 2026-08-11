@@ -11,6 +11,7 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
       password: "password123",
       confirmed_at: Time.zone.now
     )
+    User.create!(email: User::ADMIN_EMAIL, password: "password123", confirmed_at: Time.zone.now)
 
     # Both standalone and playlist courses can appear in the homepage grid.
     @hebrew_only_course = Course.create!(
@@ -55,10 +56,10 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
       status: :published
     )
     # Both surfaces under test are viewed signed-out, and readability is
-    # Channel-based, so every course here needs a public Channel. The gate
+    # Channel-based, so every course here needs the listed system Channel. The gate
     # being tested is the translation one, not access.
     [ @hebrew_only_course, @untranslated_course,
-      @playlist_hebrew_course, @playlist_untranslated_course ].each { |course| publish_publicly(course) }
+      @playlist_hebrew_course, @playlist_untranslated_course ].each { |course| publish_system(course) }
 
     @mixed_playlist = Playlist.create!(name: "Mixed Playlist", published: true, slug: "mixed-#{SecureRandom.hex(4)}")
     @mixed_playlist.courses << @playlist_hebrew_course

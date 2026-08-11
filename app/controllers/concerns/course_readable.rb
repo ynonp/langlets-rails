@@ -1,7 +1,7 @@
 # Guards every surface that renders course content: the course page, its
 # lessons and activities, and the full player. Course readability is Channel
-# visibility (see Course#readable_by?) — only Courses in a public Channel are
-# world-readable.
+# visibility (see Course#readable_by?) — only Courses in a public or system
+# Channel are world-readable.
 #
 # Before this existed, `courses#show` and `lessons#show` looked a Course up by
 # slug and rendered it, so a private Channel hid a Course from the feeds while

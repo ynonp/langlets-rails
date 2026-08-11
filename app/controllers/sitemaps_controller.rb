@@ -3,10 +3,11 @@ class SitemapsController < ApplicationController
     # Only what a logged-out visitor can browse. `published_courses` alone is a
     # pipeline status ("the build finished"), not a visibility rule, so it also
     # matches every user's personal import sitting in their private default
-    # Channel. Scoping to public Channels keeps those out of Google, and
+    # Channel. Scoping to the system Channel keeps private and unlisted public
+    # courses out of Google, and
     # `ready_in` matches the homepage so a course whose English translation is
     # still processing is not indexed mid-build.
-    @courses = ChannelContentQuery.public_courses
+    @courses = ChannelContentQuery.listed_courses
       .published_courses
       .ready_in(Current.translation_language)
       .includes(:language)

@@ -158,6 +158,6 @@ class GalleryController < ApplicationController
   end
 
   def gallery_visible_courses
-    ChannelContentQuery.courses_visible_to(current_user).published.ready_in(Current.translation_language)
+    ChannelContentQuery.courses_listed_to(current_user).published.ready_in(Current.translation_language)
   end
 end

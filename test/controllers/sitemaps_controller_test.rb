@@ -11,14 +11,26 @@ class SitemapsControllerTest < ActionDispatch::IntegrationTest
     @channel = @user.default_channel
   end
 
-  test "lists courses published to a public channel" do
+  test "lists courses published to the system channel" do
+    User.create!(email: User::ADMIN_EMAIL, password: "password123", confirmed_at: Time.zone.now)
+    course = create_course("System Sitemap Course")
+    publish_system(course)
+
+    get "/sitemap.xml"
+
+    assert_response :success
+    assert_includes @response.body, course_path(course)
+  end
+
+
+  test "omits courses that only live in a public channel" do
     @channel.update!(visibility: :public)
     course = create_course("Public Sitemap Course")
 
     get "/sitemap.xml"
 
     assert_response :success
-    assert_includes @response.body, course_path(course)
+    refute_includes @response.body, course_path(course)
   end
 
   test "omits courses that only live in a private channel" do

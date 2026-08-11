@@ -27,7 +27,7 @@ class ChannelInvitationsController < ApplicationController
   def accept
     invitation = invitation_from_params
     invitation.accept!(current_user)
-    redirect_to channel_path(invitation.channel.slug), notice: t("channels.invitations.accepted")
+    redirect_to root_path, notice: t("channels.invitations.accepted")
   end
 
   def decline

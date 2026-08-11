@@ -15,6 +15,25 @@ class ChannelTest < ActiveSupport::TestCase
     assert_equal @channel, @owner.provision_default_channel!
   end
 
+  test ".system returns one system channel owned by the administrator" do
+    first = Channel.system
+    second = Channel.system
+
+    assert_equal first, second
+    assert first.visibility_system?
+    assert_equal @admin, first.user
+    assert_equal Channel::SYSTEM_NAME, first.name
+    assert_equal Channel::SYSTEM_SLUG, first.slug
+    assert_equal 1, Channel.where(visibility: :system).count
+  end
+
+  test "a system channel must belong to the administrator" do
+    channel = Channel.new(user: @owner, name: "Wrong owner", slug: "wrong-system", visibility: :system)
+
+    assert_not channel.valid?
+    assert_includes channel.errors[:user], "must be the administrator for a system channel"
+  end
+
   # Publishing is the sale. Everything about import pricing follows from these
   # four tests: the charge lives here, so no import path can price itself.
   test "publishing into an ordinary channel costs the owner one credit" do
@@ -101,6 +120,20 @@ class ChannelTest < ActiveSupport::TestCase
   test "admin can make a channel public" do
     @channel.change_visibility!(:public, actor: @admin)
     assert @channel.visibility_public?
+  end
+
+  test "only an admin can transition a channel to or from system" do
+    assert_raises(Channel::UnauthorizedTransition) do
+      @channel.change_visibility!(:system, actor: @owner)
+    end
+
+    system_candidate = Channel.create!(user: @admin, name: "Candidate", slug: "system-candidate")
+    system_candidate.change_visibility!(:system, actor: @admin)
+    assert system_candidate.visibility_system?
+
+    assert_raises(Channel::UnauthorizedTransition) do
+      system_candidate.change_visibility!(:private, actor: @owner)
+    end
   end
 
   test "moving shared to private revokes invitations and subscriptions" do

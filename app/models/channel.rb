@@ -10,11 +10,26 @@ class Channel < ApplicationRecord
   has_many :subscribers, through: :channel_subscriptions, source: :user
   has_many :channel_invitations, dependent: :destroy
 
-  enum :visibility, { private: 0, shared: 1, public: 2 }, prefix: true
+  SYSTEM_NAME = "Langlets".freeze
+  SYSTEM_SLUG = "system".freeze
+
+  enum :visibility, { private: 0, shared: 1, public: 2, system: 3 }, prefix: true
 
   validates :name, :slug, presence: true
   validates :slug, uniqueness: true
   validates :default, uniqueness: { scope: :user_id }, if: :default?
+  validate :system_channel_belongs_to_admin
+
+  # The platform's one curated, globally listed Channel. The partial unique
+  # index on visibility makes this safe when two processes provision it at the
+  # same time; create_or_find_by! retries by finding the winning row.
+  def self.system
+    find_by(visibility: :system) || create_or_find_by!(visibility: :system) do |channel|
+      channel.user = User.find_by!(email: User::ADMIN_EMAIL)
+      channel.name = SYSTEM_NAME
+      channel.slug = SYSTEM_SLUG
+    end
+  end
 
   # Which Channels this user may read.
   #
@@ -28,7 +43,7 @@ class Channel < ApplicationRecord
   # `or` requires structurally compatible relations and `ProChannel.where(…)` is
   # not compatible with `Channel.where(…)` on its own.
   scope :visible_to, ->(user) {
-    return none unless user
+    return public_grant.or(system_grant) unless user
     return all if user.admin?
 
     grants(user)
@@ -37,11 +52,30 @@ class Channel < ApplicationRecord
   }
 
   def self.grants(user)
-    [ public_grant, owned_grant(user), subscribed_grant(user), ProChannel.owned_grant(user) ].compact
+    [ public_grant, system_grant, owned_grant(user), subscribed_grant(user), ProChannel.owned_grant(user) ].compact
   end
 
   def self.public_grant
     where(visibility: visibilities[:public])
+  end
+
+  def self.system_grant
+    where(visibility: visibilities[:system])
+  end
+
+  # Channels whose courses belong on Home and Library. Public is intentionally
+  # absent: it grants link access, while system is the globally listed source.
+  scope :listed_to, ->(user) {
+    return system_grant unless user
+    return where.not(visibility: visibilities[:public]) if user.admin?
+
+    listed_grants(user)
+      .map { |grant| where(id: grant.select(:id)) }
+      .reduce { |listed, grant| listed.or(grant) }
+  }
+
+  def self.listed_grants(user)
+    [ system_grant, owned_listed_grant(user), subscribed_listed_grant(user), ProChannel.owned_grant(user) ].compact
   end
 
   # An ordinary Channel is readable by its owner forever. `type: nil` matters:
@@ -51,8 +85,16 @@ class Channel < ApplicationRecord
     where(type: nil, user_id: user.id)
   end
 
+  def self.owned_listed_grant(user)
+    owned_grant(user).where.not(visibility: visibilities[:public])
+  end
+
   def self.subscribed_grant(user)
     where(id: ChannelSubscription.where(user_id: user.id).select(:channel_id))
+  end
+
+  def self.subscribed_listed_grant(user)
+    subscribed_grant(user).where.not(visibility: visibilities[:public])
   end
 
   # Put a course in this channel — and take payment for it.
@@ -101,25 +143,19 @@ class Channel < ApplicationRecord
   end
 
   def readable_by?(actor)
+    return true if visibility_public? || visibility_system?
     return false unless actor
-    return true if actor.admin? || actor.id == user_id || visibility_public?
+    return true if actor.admin? || actor.id == user_id
     visibility_shared? && channel_subscriptions.exists?(user_id: actor.id)
-  end
-
-  def discoverable_by?(actor)
-    return true if readable_by?(actor)
-    return false unless actor && visibility_shared?
-
-    channel_invitations.pending.valid_now.where(
-      "invitee_id = :id OR email = :email", id: actor.id, email: self.class.normalize_email(actor.email)
-    ).exists?
   end
 
   def change_visibility!(new_visibility, actor:)
     target = new_visibility.to_s
     raise ArgumentError, "invalid visibility" unless self.class.visibilities.key?(target)
     raise UnauthorizedTransition unless actor&.admin? || actor&.id == user_id
-    raise UnauthorizedTransition if !actor.admin? && (visibility_public? || target == "public")
+    raise UnauthorizedTransition if !actor.admin? && (
+      visibility_public? || visibility_system? || %w[public system].include?(target)
+    )
 
     transaction do
       lock!
@@ -159,6 +195,13 @@ class Channel < ApplicationRecord
   end
 
   private
+
+  def system_channel_belongs_to_admin
+    return unless visibility_system?
+    return if user&.admin?
+
+    errors.add(:user, "must be the administrator for a system channel")
+  end
 
   # The price of one publication, charged to whoever owns the channel it lands
   # in. Overridden — to nothing — by ProChannel.

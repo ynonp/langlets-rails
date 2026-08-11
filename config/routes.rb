@@ -111,10 +111,8 @@ Rails.application.routes.draw do
     member { patch :read }
     collection { post :read_all }
   end
-  resources :channels, only: :show, param: :slug do
-    member { delete :unsubscribe }
-    resources :invitations, only: :create, controller: "channel_invitations"
-  end
+  post "channels/:channel_slug/invitations", to: "channel_invitations#create",
+    as: :channel_invitations
   get "invitations", to: "channel_invitations#index", as: :invitations
   get "channel_invitations/:token", to: "channel_invitations#show",
     as: :channel_invitation_token

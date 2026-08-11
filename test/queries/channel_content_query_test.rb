@@ -17,10 +17,27 @@ class ChannelContentQueryTest < ActiveSupport::TestCase
     refute_includes query(@viewer), @item
   end
 
-  test "public and subscribed shared items are visible" do
+  test "public courses are readable but absent from listed items" do
     admin = User.create!(email: "ynon@hey.com", password: "password123", confirmed_at: Time.zone.now)
     @owner.default_channel.change_visibility!(:public, actor: admin)
-    assert_includes query(@viewer), @item
+
+    assert_includes ChannelContentQuery.courses_visible_to(@viewer), @course
+    refute_includes query(@viewer), @item
+    refute_includes query(@owner), @item
+  end
+
+  test "system items are listed for guests and every signed-in user" do
+    admin = User.create!(email: "ynon@hey.com", password: "password123", confirmed_at: Time.zone.now)
+    system_item = publish_covering_the_credit(Channel.system, @course)
+
+    assert_includes query(nil), system_item
+    assert_includes query(@viewer), system_item
+    assert_includes ChannelContentQuery.courses_listed_to(nil), @course
+    assert_equal admin, system_item.channel.user
+  end
+
+  test "subscribed shared items are listed" do
+    admin = User.create!(email: "ynon@hey.com", password: "password123", confirmed_at: Time.zone.now)
 
     @owner.default_channel.change_visibility!(:shared, actor: admin)
     @owner.default_channel.channel_subscriptions.create!(user: @viewer)

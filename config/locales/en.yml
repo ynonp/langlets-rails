@@ -1,25 +1,14 @@
 en:
   channels:
-    visibility:
-      private: "Private"
-      shared: "Shared"
-      public: "Public"
-    card:
-      by: "By %{channel}"
     actions:
       save: "Save"
       accept: "Accept"
       decline: "Decline"
-      unsubscribe: "Unsubscribe"
     profile:
       page_title: "Profile - Langlets"
     show:
-      title: "%{channel} - Langlets"
       by: "By %{owner}"
       invited: "You have been invited to this shared channel. Accept to see its courses."
-      empty: "This channel has no courses yet."
-    flash:
-      unsubscribed: "You left the channel."
     invitations:
       title: "Invitations"
       sent: "Invitations sent."

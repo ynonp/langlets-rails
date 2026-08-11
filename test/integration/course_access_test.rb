@@ -76,6 +76,18 @@ class CourseAccessTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "a guest can read and browse a course in the system channel" do
+    @channel.unpublish!(@course)
+    publish_covering_the_credit(Channel.system, @course)
+
+    get course_url(@course.slug)
+    assert_response :success
+
+    get root_url
+    assert_response :success
+    assert_select ".lp-card[href=?]", course_path(@course.slug), count: 1
+  end
+
   # --- private channel: not readable by the world ---
 
   test "a guest is sent to sign in for a course in a private channel" do

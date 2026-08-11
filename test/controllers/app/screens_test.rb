@@ -457,6 +457,28 @@ module App
       assert_no_match "Turn any YouTube video into a Spanish lesson.", response.body
     end
 
+    test "public courses stay out of Library but appear on Home after enrollment" do
+      owner = User.create!(email: "unlisted-owner@example.com", password: "password123", confirmed_at: Time.zone.now)
+      public_course = Course.create!(
+        name: "Unlisted Public Video", slug: "unlisted-public-video",
+        main_media_url: "https://www.youtube.com/watch?v=unlistedpub",
+        youtube_video_id: "unlistedpub", language: @spanish, user: owner, status: :published
+      )
+      public_channel = owner.default_channel
+      public_channel.update!(visibility: :public)
+      publish_covering_the_credit(public_channel, public_course)
+      Lesson.create!(course: public_course, user: owner, name: "Public lesson", slug: "public-lesson", order: 0)
+
+      get app_library_path, headers: NATIVE
+      assert_response :success
+      assert_no_match "Unlisted Public Video", response.body
+
+      Enrollment.create!(user: @user, course: public_course, source: :library, last_practiced_at: 1.minute.ago)
+      get app_home_path, headers: NATIVE
+      assert_response :success
+      assert_match "Unlisted Public Video", response.body
+    end
+
     test "Home uses the main media URL for legacy course thumbnails like the web app" do
       Enrollment.delete_all
       @course.update_column(:youtube_video_id, nil)
@@ -713,6 +735,8 @@ module App
 
       assert_response :success
       assert_select "turbo-frame#library-results a[href=?][data-turbo-frame=_top]", course_path(@course)
+      assert_select "turbo-frame#library-results a[href^='/channels/']", count: 0
+      assert_no_match @user.default_channel.name, response.body
     end
 
     test "the Library search accepts a pasted link" do

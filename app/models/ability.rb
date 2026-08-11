@@ -16,11 +16,11 @@ class Ability
   # authenticate_user! plus a credit balance, creates an ImportRequest, and lets
   # CreateCourseJob build the Course server-side.
   def initialize(user)
-    # Declared before the guest bail-out: a Course in a public Channel is the
-    # one thing the world may read, so this rule must exist for `user == nil`
+    # Declared before the guest bail-out: a Course in a public or system Channel
+    # is readable by the world, so this rule must exist for `user == nil`
     # too. Everything else — own Channels, subscribed Channels, admin — is
     # folded into Course#readable_by?, keeping a single definition of "can see
-    # this course" shared with the listing queries.
+    # this course" shared with direct-access queries.
     #
     # A block (rather than hash conditions) because readability is a property
     # of the Channels a Course was published to, not of its own columns. Blocks

@@ -98,38 +98,43 @@ Because it is a base class, **an unscoped `Channel.where(…)` sees ProChannel
 rows**: any query that means "ordinary channels" has to say `type: nil`, and the
 two that do (`Channel.owned_grant` and `Ability`'s `can :manage`) each say why.
 
-Visibility is `private`, `shared`, or `public`. Private content is readable only
+Visibility is `private`, `shared`, `public`, or `system`. Private content is readable only
 by its owner and administrators. Shared Channels are invite-only and become
 readable only after an email-bound, expiring invitation is accepted and creates
-a `ChannelSubscription`. Public Channels are ordinary administrator-owned
-Channels and are readable by every signed-in user without a subscription; there
-are no system Channels. Moving a Channel to private transactionally revokes
+a `ChannelSubscription`. Public Channels are readable to guests and signed-in
+users who have the link, but are deliberately omitted from Home, Library,
+gallery, API enumeration, and the sitemap. The sole system Channel is the
+globally listed publishing source: `Channel.system` returns it or provisions it
+under `User::ADMIN_EMAIL`, and a partial unique index on `visibility = 3`
+enforces the singleton at the database layer. Moving a Channel to private transactionally revokes
 pending invitations and removes non-owner subscriptions. Only administrators
-may transition a Channel to or from public.
+may transition a Channel to or from public or system.
 
-`ChannelContentQuery` is the common authorization and feed boundary used by
-native Home and Library. It selects ChannelItems from the union of public,
-subscribed, and owned Channels, applies Course publication, translation
+`ChannelContentQuery` defines separate read and listing boundaries. Direct
+readability (`courses_visible_to`) uses public, system, subscribed, and owned
+Channels. Browse surfaces use `courses_listed_to`/`items`, which replace public
+with system while retaining subscribed and owned non-public Channels. It applies Course publication, translation
 readiness, and optional learning-language filters, and orders contributions by
 `channel_items.published_at`. When the same Course is published in multiple
-visible Channels (e.g. the user's own default Channel and a public Channel),
+listed Channels (e.g. the user's own default Channel and the system Channel),
 the query deduplicates by `course_id` with `DISTINCT ON`, preferring the user's
-own Channel so the same course never appears twice in a feed. Cards include the
-contributing Channel identity. Reading Channel content never creates an
-Enrollment; enrollment remains personal learning state.
+own Channel so the same course never appears twice in a feed. Course cards do
+not expose Channel names or link to Channel profiles. Reading Channel content
+never creates an Enrollment; enrollment remains personal learning state.
 
 ### Course readability
 
-Channel visibility governs **reading** a Course, not just listing it. Only
-Courses published to a public Channel are readable by the world; everything
-else requires ownership, an accepted subscription, or admin.
+Channel visibility governs **reading** a Course independently from listing it.
+Courses published to public or system Channels are readable by the world;
+everything else requires ownership, an accepted subscription, or admin. Only
+system content is globally discoverable. Public content is unlisted, though an
+Enrollment can surface it later in the learner's enrollment-driven Home and
+Started Videos sections.
 
 `Course#readable_by?(user)` is the single definition, and it is deliberately
-expressed through `ChannelContentQuery.courses_visible_to` rather than a
-parallel condition — listing and direct access drifting apart is exactly the
-class of bug it exists to prevent. `Ability` exposes it as `can :read, Course`
+expressed through `ChannelContentQuery.courses_visible_to`. `Ability` exposes it as `can :read, Course`
 via a block, declared *before* the `return if user.blank?` guard so guests
-carry the public-Channel rule. The block form means `accessible_by` cannot be
+carry the public/system-Channel rule. The block form means `accessible_by` cannot be
 used for Course; listings go through `ChannelContentQuery` instead.
 
 `Course#status` is orthogonal. `published` is a pipeline state meaning the AI
@@ -145,8 +150,10 @@ because authenticating may genuinely grant access. A signed-in user who still
 lacks access gets a 404 rather than a 403, so the response never confirms which
 imports exist.
 
-Listing surfaces apply the same scope: the home page grid and gallery already
-did; `playlists#show` now intersects playlist membership with the readable
+Listing surfaces use the narrower listed scope: the home page grid, gallery,
+native Home suggestions, native Library, API course enumeration, and sitemap
+exclude public Channels and include the system Channel. `playlists#show`
+intersects playlist membership with the readable
 scope, since membership is not access and a Channel can go private after a
 Course was added; native Home and `started_courses` re-check readability on
 every render because an Enrollment outlives its Channel's visibility; and
@@ -199,9 +206,10 @@ visibility. The invitation *acceptance* side is untouched: `ChannelInvitationsCo
 still serves `/invitations` (the authenticated pending-invitations list),
 `/channel_invitations/:token` (an emailed invitation link), and
 accept/decline, so existing pending invitations keep working end to end.
-`/channels/:slug` returns 404 for unauthorized private/shared access; a valid
-pending invitee sees only Channel identity and accept/decline controls until
-acceptance.
+There is no Channel profile route. Invitees see Channel identity and
+accept/decline controls only on the invitations list or expiring token page;
+acceptance redirects to the homepage, where the newly readable courses already
+appear.
 
 ### Full-course video playback
 
@@ -400,8 +408,8 @@ Sections, all wired to real data:
 - **"Jump right in" library** — the dark grid renders the newest
   `@all_courses` contributed through Channels visible to the viewer, mixing
   courses that belong to playlists with courses that do not. Signed-out viewers
-  receive public Channel content only; signed-in viewers additionally receive
-  owned and subscribed Channel content. Playlist membership does not affect
+  receive system Channel content only; signed-in viewers additionally receive
+  owned and subscribed non-public Channel content. Playlist membership does not affect
   inclusion or ordering.
   Language filter chips are derived from the complete available course set and
   filter the grid client-side via the `homepage-filter` controller (each card
@@ -485,20 +493,20 @@ driving actual indexing rather than only link previews.
 request and lists three collections: three hardcoded static pages, published
 system Playlists, and courses.
 
-The course scope is deliberately `ChannelContentQuery.public_courses`, not
+The course scope is deliberately `ChannelContentQuery.listed_courses`, not
 `Course.published_courses`. `status: :published` is a *pipeline* state meaning
 the AI build finished; it says nothing about visibility, so on its own it also
 matched every user's personal import sitting in its default **private**
 Channel. The sitemap must advertise only what a logged-out visitor can browse
-from the home page and gallery, which is the public-Channel set. `ready_in` is
+from the home page and gallery, which is the system-Channel set. Public Channels
+remain link-accessible but unlisted. `ready_in` is
 applied for the same reason: a course whose translation is still `pending`
 should not be indexed mid-build. Playlists were already correct —
 `system_playlists.published` is exactly `Playlist.visible_to(nil)`.
 
-Note that this is a *discoverability* boundary, not an authorization one.
-`CoursesController#show` has no channel check, so any published course still
-renders for a guest who has its slug. Adding authorization there is a separate
-decision, since it would also break existing shared links.
+This is a *discoverability* boundary, not an authorization one. Course
+controllers still apply `Course#readable_by?`; a guest with the slug can read a
+course only when it belongs to a public or system Channel.
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
 the eight most recently created courses for the selected language, or the eight
@@ -512,8 +520,8 @@ action lead to `/gallery`.
 ### Public gallery (`gallery#index`)
 
 `/gallery` is the complete browsing surface. Its Course authority is ChannelItems
-rather than `Course.published` alone: signed-out viewers see public Channels,
-while signed-in viewers see public, subscribed, and owned Channels. Content
+rather than `Course.published` alone: signed-out viewers see the system Channel,
+while signed-in viewers additionally see subscribed and owned non-public Channels. Content
 outside that viewer-specific set does not leak into filters, counts, playlists,
 or cards. Courses and playlists share
 one reverse-chronological, 16-item page rather than appearing in separate tabs.
@@ -1544,8 +1552,8 @@ The rest of the rules:
   included: public would publish one person's private imports to the world, and
   shared would let the subscriber hand out access that outlives their
   subscription.
-- `ProChannel#readable_by?` requires `actor.pro?` on top of ownership, which is
-  what `/channels/:slug` and `discoverable_by?` go through.
+- `ProChannel#readable_by?` requires `actor.pro?` on top of ownership; ownership
+  alone never grants access to a paused Pro library.
 - `Ability`'s `can :manage, Channel` is scoped `type: nil`. A subscriber owns
   their Pro library, but renaming it, resharing it or inviting people into it is
   not something the subscription buys.
@@ -2495,10 +2503,10 @@ filter semantics. Published cards still come only from
 `ChannelContentQuery`; showing an ImportRequest never grants access to a Course.
 Both surfaces render All, Pending, Failed, and My imports pills:
 
-- All shows visible published courses plus the signed-in user's active imports.
+- All shows listed published courses plus the signed-in user's active imports.
 - Pending shows only that user's queued/importing requests.
 - Failed shows only that user's failed requests.
-- My imports shows visible published courses referenced by that user's ready
+- My imports shows listed published courses referenced by that user's ready
   ImportRequests, plus their queued, importing, and failed requests.
 
 Pending, Failed, and My imports are only rendered when the current user has at
@@ -2518,7 +2526,7 @@ published cards together. The web Add Video header links Library to `/gallery`
 and Create to `/app/import_requests/new`.
 
 Mobile Library additionally derives one language pill per learning language
-present in the complete `ChannelContentQuery` result visible to that user. It
+present in the complete listed `ChannelContentQuery` result for that user. It
 does not derive the pills from the current 60-card render limit, and inaccessible
 Channel content cannot create a pill. All shows authorized courses across those
 languages; choosing a language filters both published cards and the user's

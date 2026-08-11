@@ -13,10 +13,11 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     )
     @public_channel = @user.default_channel
     @public_channel.update!(visibility: :public)
+    User.create!(email: User::ADMIN_EMAIL, password: "password123", confirmed_at: Time.zone.now)
   end
 
   test "is empty when all channels are private" do
-    create_course("Private Course", @language)
+    create_course("Private Course", @language, listed: false)
     @public_channel.update!(visibility: :private)
 
     get gallery_url
@@ -26,7 +27,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "signed-in owners see courses from their private channels" do
-    course = create_course("Owned Private Course", @language)
+    course = create_course("Owned Private Course", @language, listed: false)
     @public_channel.update!(visibility: :private)
     sign_in @user
 
@@ -162,6 +163,15 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-import-request-status]", count: 0
   end
 
+  test "a public-only course is absent from the gallery" do
+    course = create_course("Unlisted Public Course", @language, listed: false)
+
+    get gallery_url
+
+    assert_response :success
+    assert_select ".gallery-card h2", text: course.name, count: 0
+  end
+
   test "shows courses and playlists in one paginated grid" do
     course = create_course("Gallery Course", @language)
     playlist = Playlist.create!(name: "Gallery Playlist", slug: "gallery-playlist", published: true)
@@ -272,7 +282,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
 
   private
 
-  def create_course(name, language)
+  def create_course(name, language, listed: true)
     course = Course.create!(
       name: name,
       slug: name.parameterize,
@@ -281,7 +291,11 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
       user: @user,
       status: :published
     )
-    publish_covering_the_credit(@public_channel, course)
+    if listed
+      publish_system(course)
+    else
+      publish_covering_the_credit(@public_channel, course)
+    end
     course
   end
 

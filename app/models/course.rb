@@ -25,13 +25,10 @@ class Course < ApplicationRecord
   has_many :channels, through: :channel_items
 
   # Reading a Course — the course page, its lessons, its activities, the full
-  # player — is governed entirely by Channel visibility. Only Courses in a
-  # public Channel are readable by the world; everything else needs ownership,
-  # an accepted subscription, or admin.
-  #
-  # Deliberately expressed through ChannelContentQuery rather than a parallel
-  # condition: listing and direct access diverging is exactly the bug this
-  # closes, and one scope makes that divergence impossible.
+  # player — is governed by Channel visibility. Public and system Channels make
+  # a Course readable by the world; listing is narrower because public is
+  # link-only while system is globally discoverable. Everything else needs
+  # ownership, an accepted subscription, or admin.
   def readable_by?(user)
     # Admins moderate everything, including a Course in no Channel at all.
     return true if user&.admin?

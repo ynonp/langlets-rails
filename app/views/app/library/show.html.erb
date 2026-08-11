@@ -59,8 +59,7 @@
         <% @items.each do |item| %>
           <%= render "app/library/card", course: item.course,
                      lessons_count: @lesson_counts[item.course_id].to_i,
-                     enrolled: @enrolled_course_ids.include?(item.course_id),
-                     channel: item.channel %>
+                     enrolled: @enrolled_course_ids.include?(item.course_id) %>
         <% end %>
       </div>
     <% end %>

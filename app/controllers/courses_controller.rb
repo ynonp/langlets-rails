@@ -20,9 +20,9 @@ class CoursesController < ApplicationController
     # their own playlists. Only courses with a ready translation in the
     # subdomain's language are shown, and a playlist with none of those is
     # hidden entirely.
-    visible_courses = ChannelContentQuery.courses_visible_to(current_user)
+    visible_courses = ChannelContentQuery.courses_listed_to(current_user)
       .published.ready_in(Current.translation_language)
-    @all_courses = ChannelContentQuery.courses_visible_to(current_user)
+    @all_courses = ChannelContentQuery.courses_listed_to(current_user)
                          .published.ready_in(Current.translation_language)
                          .includes(:language, :localized_translation)
                          .order(created_at: :desc)

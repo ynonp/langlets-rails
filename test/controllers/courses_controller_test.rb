@@ -12,6 +12,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     )
     @public_channel = @user.default_channel
     @public_channel.update!(visibility: :public)
+    User.create!(email: User::ADMIN_EMAIL, password: "password123", confirmed_at: Time.zone.now)
     @course = create_public_course!(
       name: "Query course",
       slug: "query-course",
@@ -19,6 +20,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
       language: @language,
       user: @user
     )
+    publish_system(@course)
 
     3.times do |index|
       lesson = Lesson.create!(
@@ -34,6 +36,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
   test "homepage course grid is empty when all channels are private" do
     @course.update!(status: :published)
+    Channel.system.unpublish!(@course)
     @public_channel.update!(visibility: :private)
 
     get root_url
@@ -44,6 +47,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
   test "signed-in owners see courses from their private channels on the homepage" do
     @course.update!(status: :published)
+    Channel.system.unpublish!(@course)
     @public_channel.update!(visibility: :private)
     sign_in @user
 
@@ -93,7 +97,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   test "homepage shows at most eight videos and links to the gallery" do
     @course.update!(status: :published)
     9.times do |index|
-      create_public_course!(
+      course = create_public_course!(
         name: "Homepage course #{index}",
         slug: "homepage-course-#{index}",
         main_media_url: "https://www.youtube.com/watch?v=homepage#{index}",
@@ -101,6 +105,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
         user: @user,
         status: :published
       )
+      publish_system(course)
     end
 
     sign_in @user
@@ -183,9 +188,10 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
       user: @user,
       status: :published
     )
+    publish_system(french_course)
 
     8.times do |index|
-      create_public_course!(
+      course = create_public_course!(
         name: "Newer English course #{index}",
         slug: "newer-english-course-#{index}",
         main_media_url: "https://www.youtube.com/watch?v=newer#{index}",
@@ -193,6 +199,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
         user: @user,
         status: :published
       )
+      publish_system(course)
     end
 
     french_course.touch(time: 1.day.ago)
@@ -227,6 +234,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
       status: :published,
       created_at: 1.hour.ago
     )
+    publish_system(playlist_course)
     playlist = Playlist.create!(name: "Homepage playlist", published: true)
     playlist.courses << playlist_course
 
@@ -236,6 +244,17 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     cards = css_select(".lp-card:not([hidden])")
     assert_equal course_path(playlist_course.slug), cards.first["href"]
     assert_includes cards.map { |card| card["href"] }, course_path(@course.slug)
+  end
+
+  test "a public-only course is link-readable but unlisted on the homepage" do
+    Channel.system.unpublish!(@course)
+
+    get course_url(@course)
+    assert_response :success
+
+    get root_url
+    assert_response :success
+    assert_select ".lp-card[href=?]", course_path(@course.slug), count: 0
   end
 
   test "the homepage sells nothing and points guests at sign in" do

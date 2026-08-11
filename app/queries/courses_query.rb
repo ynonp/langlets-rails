@@ -4,7 +4,7 @@
 # to nil-means-everything: this query feeds the bearer API and the MCP tool,
 # both of which hand out course URLs, and an unscoped listing there would
 # enumerate every user's private imports. Passing nil is still meaningful and
-# explicit — it yields the public-Channel catalogue.
+# explicit — it yields the globally listed system-Channel catalogue.
 class CoursesQuery < PaginatedQuery
   def initialize(language:, user:, page: 1, per_page: DEFAULT_PER_PAGE, base_url: nil)
     @language_code = language.presence
@@ -18,7 +18,7 @@ class CoursesQuery < PaginatedQuery
     raise ArgumentError, "language is required" if @language_code.nil?
     language = find_language!(@language_code)
 
-    scope = ChannelContentQuery.courses_visible_to(@user)
+    scope = ChannelContentQuery.courses_listed_to(@user)
                                .published
                                .ready_in(Current.translation_language)
                                .where(language: language)

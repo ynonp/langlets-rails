@@ -22,6 +22,13 @@ module ChannelPublishingHelpers
     course
   end
 
+  # Publishes into the one globally listed Channel. The administrator must
+  # already exist because Channel.system deliberately never invents an account.
+  def publish_system(course)
+    publish_covering_the_credit(Channel.system, course)
+    course
+  end
+
   # Publish into a Channel the test already has, on the same terms: the owner's
   # balance is left exactly as it was found. Use this anywhere a test publishes
   # only so that something is readable.

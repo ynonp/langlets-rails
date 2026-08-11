@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_08_054813) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_11_090000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -155,7 +155,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_08_054813) do
     t.index ["user_id"], name: "index_channels_on_user_id"
     t.index ["user_id"], name: "index_channels_on_user_id_where_default", unique: true, where: "(\"default\" = true)"
     t.index ["visibility", "created_at"], name: "index_channels_on_visibility_and_created_at"
-    t.check_constraint "visibility = ANY (ARRAY[0, 1, 2])", name: "channels_visibility_valid"
+    t.index ["visibility"], name: "idx_channels_one_system_channel", unique: true, where: "(visibility = 3)"
+    t.check_constraint "visibility = ANY (ARRAY[0, 1, 2, 3])", name: "channels_visibility_valid"
   end
 
   create_table "course_tags", force: :cascade do |t|

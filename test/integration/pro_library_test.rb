@@ -200,7 +200,6 @@ class ProLibraryTest < ActiveSupport::TestCase
     channel = @user.reload.pro_channel
 
     assert_not channel.readable_by?(@stranger)
-    assert_not channel.discoverable_by?(@stranger)
     assert_not course.readable_by?(@stranger)
     assert_equal 0, ChannelContentQuery.courses_visible_to(@stranger).where(id: course.id).count
   end

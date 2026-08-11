@@ -1,25 +1,14 @@
 he:
   channels:
-    visibility:
-      private: "פרטי"
-      shared: "משותף"
-      public: "ציבורי"
-    card:
-      by: "מאת %{channel}"
     actions:
       save: "שמירה"
       accept: "אישור"
       decline: "דחייה"
-      unsubscribe: "עזיבת הערוץ"
     profile:
       page_title: "פרופיל - Langlets"
     show:
-      title: "%{channel} - Langlets"
       by: "מאת %{owner}"
       invited: "הוזמנתם לערוץ משותף. אשרו את ההזמנה כדי לראות את הקורסים."
-      empty: "אין עדיין קורסים בערוץ הזה."
-    flash:
-      unsubscribed: "עזבתם את הערוץ."
     invitations:
       title: "הזמנות"
       sent: "ההזמנות נשלחו."
