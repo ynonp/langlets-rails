@@ -8,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 min-h-screen">
-  <%= render "shared/beta_notice" %>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
     <nav class="flex items-center gap-4 mb-8">
       <%= link_to t('doorkeeper.layouts.admin.nav.oauth2_provider'), oauth_applications_path, class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>

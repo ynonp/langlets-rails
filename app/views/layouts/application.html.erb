@@ -5,10 +5,10 @@
   </head>
 
   <body class="bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50" <%= "data-native-tabs" if native_app? %>>
-    <%= render "shared/beta_notice" %>
-    <%# Authentication is a full-screen native root. Assert its chrome from the
-        rendered destination too, because a redirect can hide the auth URL from
-        the native proposal handler. %>
+    <% unless native_app? %>
+      <%= render "shared/beta_notice" %>
+    <% end %>
+    
     <% if native_app? && devise_controller? %>
       <div data-controller="bridge--tab-visibility"
            data-bridge--tab-visibility-visible-value="false"
