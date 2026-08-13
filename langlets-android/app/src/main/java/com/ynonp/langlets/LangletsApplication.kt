@@ -2,7 +2,6 @@ package com.ynonp.langlets
 
 import android.app.Application
 import com.ynonp.langlets.bridge.GoogleAuthComponent
-import com.ynonp.langlets.bridge.LanguageSelectionComponent
 import com.ynonp.langlets.bridge.NotificationPreferenceComponent
 import com.ynonp.langlets.bridge.ProgressHapticComponent
 import com.ynonp.langlets.bridge.SignOutComponent
@@ -27,7 +26,6 @@ import dev.hotwire.navigation.routing.SystemNavigationRouteDecisionHandler
 class LangletsApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        LanguageStore.initialize(this)
         AuthHandoff.initialize(this)
         configureHotwire()
     }
@@ -76,7 +74,6 @@ class LangletsApplication : Application() {
         Hotwire.registerBridgeComponents(
             BridgeComponentFactory("progress-haptic", ::ProgressHapticComponent),
             BridgeComponentFactory("sign-out", ::SignOutComponent),
-            BridgeComponentFactory("language-selection", ::LanguageSelectionComponent),
             BridgeComponentFactory("tab-badge", ::TabBadgeComponent),
             BridgeComponentFactory("tab-visibility", ::TabVisibilityComponent),
             BridgeComponentFactory("notification-preference", ::NotificationPreferenceComponent),

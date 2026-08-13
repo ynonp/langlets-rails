@@ -125,14 +125,6 @@ he:
         other: "רצף של %{count} ימים — עדיין בלי שיעור היום"
       no_streak: "השלימו שיעור כדי להתחיל רצף."
       day_xp: "‏%{day}: %{xp} XP"
-    language:
-      heading: "שפת הלימוד"
-      label: "שפת הלימוד"
-      current: "אתם לומדים כרגע %{language}."
-      unset: "עדיין לא בחרתם שפה."
-      all: "אתם רואים תוכן בכל השפות."
-      show_all: "הצגת כל התוכן"
-      option: "%{native} — %{english}"
     push:
       heading: "פוש במכשיר הזה"
       description: "נעדכן אתכם כשפריטים בתור מוכנים."
@@ -355,16 +347,13 @@ he:
       body_3: "הדביקו קישור, או התחילו מקורס בספרייה שלנו."
       start: "מתחילים"
     video:
-      eyebrow: "שלב 2 מתוך 3"
+      eyebrow: "שלב 2 מתוך 2"
       title: "בחרו את הסרטון הראשון שלכם"
       lead: "בחרו סרטון שיהפוך לשיעור השפה הראשון שלכם, או הדביקו כל קישור מ־YouTube או TikTok."
       url_placeholder: "הדביקו קישור לסרטון"
       url_label: "קישור לסרטון"
       submit: "בניית הלנגלט שלי"
       examples: "בחרו דוגמה"
-    language:
-      title: "בחירת שפת היעד"
-      prompt: "בחרו את השפה שתרצו ללמוד"
   try:
     show:
       page_title: "מוכנים לבנות: %{name}"

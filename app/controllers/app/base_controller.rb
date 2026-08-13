@@ -41,8 +41,7 @@ module App
     end
 
     def set_daily_vocab_language
-      @daily_vocab_language = current_language_code if
-        current_user.daily_vocab_review_available?(current_language_code)
+      @daily_vocab_language = current_user.daily_vocab_review_language&.iso_name
     end
 
     # Whether the app should put up the iOS notification prompt on this page load.

@@ -32,8 +32,6 @@ class CourseProgressResetTest < ActionDispatch::IntegrationTest
       source: :library,
       last_practiced_at: 1.hour.ago
     )
-    @user.update!(ios_lang: "en")
-
     post user_session_url,
       params: { user: { email: @user.email, password: "password123" } }
   end

@@ -50,7 +50,6 @@ class DetectImportLanguageJob < ApplicationJob
           detected_data: detected_data,
           existing_request: claim
         )
-        claim.user.update!(ios_lang: language.iso_name) if claim.user.ios_lang.blank?
       rescue => error
         Imports::Settlement.fail!(claim, error.message)
         Rails.logger.error "Could not attach guest import claim #{claim.id}: #{error.message}"

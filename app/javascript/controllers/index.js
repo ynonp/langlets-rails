@@ -34,8 +34,6 @@ application.register("bridge--auth-bridge", Bridge__AuthBridgeController)
 import Bridge__GoogleAuthController from "./bridge/google_auth_controller"
 application.register("bridge--google-auth", Bridge__GoogleAuthController)
 
-import Bridge__LanguageSelectionController from "./bridge/language_selection_controller"
-application.register("bridge--language-selection", Bridge__LanguageSelectionController)
 
 import Bridge__NativeAudioFeedbackController from "./bridge/native_audio_feedback_controller"
 application.register("bridge--native-audio-feedback", Bridge__NativeAudioFeedbackController)
@@ -91,8 +89,6 @@ application.register("homepage-filter", HomepageFilterController)
 import HomepageVideoPickerController from "./homepage_video_picker_controller"
 application.register("homepage-video-picker", HomepageVideoPickerController)
 
-import LanguageSelectController from "./language_select_controller"
-application.register("language-select", LanguageSelectController)
 
 import LessonNavigationController from "./lesson_navigation_controller"
 application.register("lesson-navigation", LessonNavigationController)

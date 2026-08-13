@@ -2,7 +2,6 @@ package com.ynonp.langlets.bridge
 
 import android.webkit.CookieManager
 import android.webkit.WebStorage
-import com.ynonp.langlets.LanguageStore
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
 import dev.hotwire.navigation.destinations.HotwireDestination
@@ -34,7 +33,6 @@ class SignOutComponent(
     override fun onReceive(message: Message) {
         if (message.event != "signedOut") return
 
-        LanguageStore.reset()
         WebStorage.getInstance().deleteAllData()
 
         val activity = this.activity

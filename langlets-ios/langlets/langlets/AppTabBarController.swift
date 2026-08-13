@@ -12,18 +12,6 @@ import WebKit
 /// the authentication flow alive.
 @MainActor
 final class AppTabBarController: UITabBarController {
-    private static let pendingOnboardingURLKey = "pendingOnboardingURL"
-
-    /// The onboarding flow's pages, which are the ones worth checkpointing for
-    /// the next cold launch. (Hiding the tab bar over them is not keyed on this
-    /// list — the onboarding layout declares it through the tab-visibility
-    /// bridge, because a proposal only ever carries the pre-redirect URL.)
-    private static let onboardingPaths = ["/onboarding/welcome", "/onboarding/video", "/try", "/onboarding/language"]
-
-    private static func isOnboardingURL(_ url: URL) -> Bool {
-        onboardingPaths.contains(url.path)
-    }
-
     struct Tab {
         let title: String
         let path: String
@@ -86,21 +74,10 @@ final class AppTabBarController: UITabBarController {
 
     /// Re-routes the visible tab to its root and queues a fresh load for the
     /// others. Called whenever the server-side session changed under the
-    /// webviews — sign-in, sign-out, language switch — since every tab's
+    /// webviews — sign-in or sign-out — since every tab's
     /// content is stale from that moment.
     func reloadAllTabs() {
         needsRoute = Array(repeating: true, count: Self.tabs.count)
-        routeTabIfNeeded(at: selectedIndex)
-    }
-
-    /// Queues a fresh load for every tab except the one `navigator` belongs
-    /// to. Used when one tab is heading into the auth flow: whatever the
-    /// others show predates it either way, and re-routing them also clears any
-    /// stale authentication root from a background tab.
-    func reloadOtherTabs(than navigator: Navigator) {
-        for index in navigators.indices where navigators[index] !== navigator {
-            needsRoute[index] = true
-        }
         routeTabIfNeeded(at: selectedIndex)
     }
 
@@ -144,50 +121,6 @@ final class AppTabBarController: UITabBarController {
     /// notifications, and the Queue is a screen the user goes to on purpose.
     func setTabsVisible(_ visible: Bool) {
         tabBar.isHidden = !visible
-    }
-
-    /// Checkpoint an unfinished onboarding page before Hotwire follows it.
-    /// The web navigation stack is lost when iOS terminates the app, while
-    /// UserDefaults survives and lets the next cold launch resume this URL.
-    static func rememberPendingOnboardingURL(_ url: URL) {
-        guard UserDefaults.standard.string(forKey: "selectedLanguage") == nil,
-              isOnboardingURL(url) else { return }
-
-        guard let source = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
-
-        var components = URLComponents()
-        components.percentEncodedPath = source.percentEncodedPath
-        // Preserve the query's existing escaping. Assigning `url.query` to
-        // `query` encodes its percent signs again (`%2F` -> `%252F`).
-        components.percentEncodedQuery = source.percentEncodedQuery
-        UserDefaults.standard.set(components.string, forKey: pendingOnboardingURLKey)
-    }
-
-    static func clearPendingOnboardingURL() {
-        UserDefaults.standard.removeObject(forKey: pendingOnboardingURLKey)
-    }
-
-    /// Restore the authenticated account's server-side language preference.
-    /// Rails sends it as `ios_lang` after login so a prior sign-out can safely
-    /// clear device state without forcing a returning user through onboarding.
-    static func restoreLanguageSelection(from url: URL) {
-        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
-              let language = components.queryItems?.first(where: { $0.name == "ios_lang" })?.value,
-              !language.isEmpty else { return }
-
-        UserDefaults.standard.set(language, forKey: "selectedLanguage")
-        UserDefaults(suiteName: NativeShareStore.appGroup)?.set(language, forKey: "selectedLanguage")
-        clearPendingOnboardingURL()
-    }
-
-    /// Reset every account-specific language checkpoint. Called both by the
-    /// sign-out bridge and when the navigator sees the server's signed-out
-    /// redirect, so account deletion does not depend on JavaScript mounting a
-    /// bridge component before the user signs in again.
-    static func resetLanguageSelection() {
-        UserDefaults.standard.removeObject(forKey: "selectedLanguage")
-        UserDefaults(suiteName: NativeShareStore.appGroup)?.removeObject(forKey: "selectedLanguage")
-        clearPendingOnboardingURL()
     }
 
     /// Force-route the Home tab to its root URL, regardless of whether it
@@ -234,33 +167,8 @@ final class AppTabBarController: UITabBarController {
         return matches
     }
 
-    /// The tab's start URL, carrying the language picked during onboarding —
-    /// the same UserDefaults key SceneDelegate used for the single-navigator
-    /// start location. Without it, a cold launch's first request has no `lang`
-    /// and the server bounces to language onboarding.
     private static func url(for tab: Tab) -> URL {
-        var url = rootURL.appending(path: tab.path)
-        if let lang = UserDefaults.standard.string(forKey: "selectedLanguage") {
-            url = url.appending(queryItems: [URLQueryItem(name: "lang", value: lang)])
-        } else if let pendingURL = pendingOnboardingURL() {
-            url = pendingURL
-        }
-        return url
-    }
-
-    /// Rebuild the checkpoint from decoded query items. Besides validating the
-    /// path, this repairs `%252F` values written by the first implementation.
-    private static func pendingOnboardingURL() -> URL? {
-        guard let pendingPath = UserDefaults.standard.string(forKey: pendingOnboardingURLKey),
-              let pendingURL = URL(string: pendingPath, relativeTo: rootURL)?.absoluteURL,
-              isOnboardingURL(pendingURL),
-              var components = URLComponents(url: pendingURL, resolvingAgainstBaseURL: true) else { return nil }
-
-        components.queryItems = components.queryItems?.map { item in
-            guard item.name == "returnto" else { return item }
-            return URLQueryItem(name: item.name, value: item.value?.removingPercentEncoding ?? item.value)
-        }
-        return components.url
+        rootURL.appending(path: tab.path)
     }
 }
 

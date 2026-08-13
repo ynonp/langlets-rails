@@ -9,7 +9,6 @@ module App
 
     def index
       @hero_course = hero_course
-      @learning_language = Language.find_by(iso_name: current_language_code) if current_language_code.present?
       @playlists = current_user.playlists
                                .includes(courses: [ :language, { course_translations: :language } ])
                                .order(updated_at: :desc)
@@ -76,7 +75,7 @@ module App
       scope.limit(20).to_a
     end
 
-    # Courses from the Library the user hasn't added yet, in their language.
+    # Courses from the Library the user hasn't added yet.
     #
     # Newest first, not random. On first run this grid is the whole screen and
     # its subhead promises "any recently created Langlet" — random picks would
@@ -84,7 +83,7 @@ module App
     # a returning user nothing to recognize. Recency is also the only signal
     # available here; real selection comes later.
     def library_picks(count:)
-      scope = ChannelContentQuery.new(user: current_user, language: @learning_language).items
+      scope = ChannelContentQuery.new(user: current_user).items
       scope = scope.where.not(course_id: current_user.enrollments.select(:course_id))
       scope = scope.where.not(course_id: @hero_course.id) if @hero_course
       scope.limit(count).to_a

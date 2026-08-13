@@ -106,7 +106,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     query = {}
-    query[:ios_lang] = current_user.ios_lang if current_user.ios_lang.present?
     # Present only for the Android flow, which reached here in a Chrome Custom
     # Tab and therefore established its session in the wrong cookie jar. iOS
     # sets no challenge because it does not need one: ASWebAuthenticationSession

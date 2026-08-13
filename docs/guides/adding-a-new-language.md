@@ -148,10 +148,6 @@ Without these entries, the `SpeakActivity` and any other TTS-dependent feature w
 Once the language record exists in the database, it automatically appears in:
 
 - **Create Course form** (`courses/new`) — queries `Language.all.order(:english_name)`
-- **User menu / profile language switcher** (native app) — same query
-- **Course listing filters** (`courses#index`) — filters by `current_language_code` via `params[:lang]`
-
-**The one place it does not appear automatically is the onboarding language picker** (`/onboarding/language`), which queries `Language.onboarding_options` — a fixed allowlist, `Language::ONBOARDING_ISO_NAMES` in `app/models/language.rb`. That screen is the first thing a new native user sees, so it only lists languages with enough published content to be worth starting; a language with two courses on it is a bad first impression, and translation-only languages (English, Hebrew) do not belong there at all. **Add the new ISO code to `ONBOARDING_ISO_NAMES` once the language has real content** — and update the assertion in `test/controllers/app/screens_test.rb` ("onboarding offers only the languages we teach"), which pins the exact list.
 
 No other view or controller changes are required.
 
@@ -222,22 +218,6 @@ CreateCourseJob → CourseBuilder::BuildSong
         ▼
 Course.create_song!  → Language.find_by(english_name: ...)
 ```
-
-### Runtime Language Filtering
-
-```
-User selects language (iso_name stored in session[:lang] or params[:lang])
-        │
-        ▼
-ApplicationController#current_language_code returns iso_name
-        │
-        ▼
-CoursesController#index:
-  language = Language.find_by(iso_name: current_language_code)
-  Course.where(language: language)
-```
-
----
 
 ## Quick Reference: Existing Languages
 

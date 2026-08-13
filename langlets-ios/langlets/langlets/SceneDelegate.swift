@@ -86,7 +86,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             AudioFeedbackComponent.self,
             SignOutComponent.self,
             AuthBridgeComponent.self,
-            LanguageSelectionBridgeComponent.self,
             GoogleAuthComponent.self,
             AppleAuthComponent.self,
             TabBadgeComponent.self,
@@ -123,14 +122,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self,
             selector: #selector(oauthDidSucceed),
             name: .oauthDidSucceed,
-            object: nil
-        )
-
-        // Listen for language selection from onboarding page
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(languageDidSelect(_:)),
-            name: .languageDidSelect,
             object: nil
         )
 
@@ -204,7 +195,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         if url.scheme == "langlets" && url.host == "auth-success" {
-            AppTabBarController.restoreLanguageSelection(from: url)
             // OAuth completed — every tab's content predates the session
             oauthDidSucceed()
         }
@@ -215,12 +205,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate: NavigatorDelegate {
     func handle(proposal: VisitProposal, from navigator: Navigator) -> ProposalResult {
-        AppTabBarController.restoreLanguageSelection(from: proposal.url)
-        if Self.isSignedOutRedirect(proposal.url) {
-            AppTabBarController.resetLanguageSelection()
-        }
-        AppTabBarController.rememberPendingOnboardingURL(proposal.url)
-
         if Self.isAuthenticationURL(proposal.url) {
             tabBarController.setTabsVisible(false)
         }
@@ -252,36 +236,12 @@ extension SceneDelegate: NavigatorDelegate {
             url.path == "/users/password/new"
     }
     
-    private static func isSignedOutRedirect(_ url: URL) -> Bool {
-        guard url.path == "/users/sign_in",
-              let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return false }
-
-        return components.queryItems?.contains {
-            $0.name == "signed_out" && $0.value == "1"
-        } == true
-    }
-
     @objc private func oauthDidSucceed() {
         // OAuth completed via ASWebAuthenticationSession. Re-route every tab to
         // pick up the session cookie that was set in Safari's cookie store
         // (shared with WKWebsiteDataStore.default()) — re-routing the visible
         // tab also replaces its authentication root.
         tabBarController.reloadAllTabs()
-    }
-
-    @objc private func languageDidSelect(_ notification: Notification) {
-        // The bridge component already stored the language in UserDefaults, so
-        // the tab URLs pick it up. When onboarding was interrupted on its way
-        // somewhere specific, honor that redirect in the visible tab.
-        if let redirectUrlString = notification.userInfo?["redirectUrl"] as? String,
-           let redirectUrl = URL(string: redirectUrlString, relativeTo: rootURL)?.absoluteURL {
-            tabBarController.reloadOtherTabs(than: tabBarController.activeNavigator)
-            let properties: PathProperties = ["presentation": "replace_root"]
-            let proposal = VisitProposal(url: redirectUrl, options: VisitOptions(action: .replace), properties: properties)
-            tabBarController.activeNavigator.route(proposal)
-        } else {
-            tabBarController.reloadAllTabs()
-        }
     }
 
     @objc private func queueBadgeDidChange(_ notification: Notification) {

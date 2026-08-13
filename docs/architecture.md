@@ -365,30 +365,17 @@ press **Build my langlet** to reach `/try`. The
 `homepage-filter` controller and `homepage_subhead` helper remain in the tree
 for older surfaces but the homepage no longer mounts or reads them.
 
-### Where the learning language lives
+### No user target language
 
-`ApplicationController#current_language_code` resolves the language of learning,
-and the two clients store it differently:
+Langlets does not store a target language on the user. Users access content they
+created or content made available through their channels, and each course owns
+its source language. Translation language remains request-scoped through the
+subdomain and `Current.translation_language`; it is independent of the course's
+source language.
 
-- **Web** keeps it in the URL alone. `default_url_options` merges `lang` into
-  every generated URL, so the selection follows the user across links, while
-  removing the param — or passing `?lang=all` — clears it. Nothing is written
-  server-side, so there is no hidden state that outlives the address bar.
-- **Native** picks a language during onboarding and must keep it across app
-  launches, so `persist_native_language` writes it to `user.ios_lang`
-  (a key in the `users.preferences` JSON) and `current_language_code` reads it
-  back for signed-in native requests.
-
-This deliberately gives signed-in web users no persistence: their selection is
-per-URL, not per-account. `users.preferred_language_id` exists in the schema
-with an FK and index but is currently unused; it is the natural home if durable
-per-account language ever becomes a requirement.
-
-Earlier revisions cached the selection in `session[:lang]`. Combined with
-`default_url_options` re-adding the param to every link, that made the language
-impossible to clear from the UI — a reload kept serving the stored language and
-guests had no control that reached the session. The session copy has been
-removed; do not reintroduce it without also providing a clear path.
+The public homepage may still carry an optional `lang` query parameter for its
+client-side acquisition filters. Rails does not persist or propagate that value,
+and native onboarding and profile screens do not ask for a target language.
 
 Every browser/native page layout (`application`, `app`, `onboarding`, and both
 Doorkeeper layouts) renders `shared/_beta_notice` above its page content. It is
@@ -1895,9 +1882,6 @@ per-user locale. The mailer and the APNs payload render inside
 `I18n.default_locale` — English. `#title(locale:)` / `#body(locale:)` take the
 locale explicitly, so giving those two the recipient's own language is a matter
 of persisting a user locale and passing it here; nothing else has to move.
-(Note `users.preferred_language_id` exists in the schema but is dead — no
-association, never written.)
-
 `sent_at` means delivery was *attempted*, and makes the job idempotent — a retry
 must not mail or push twice. It is stamped even when a channel failed and even
 when there was nothing to deliver to (a push-only user with no device), because
@@ -2162,29 +2146,18 @@ passes the response through the `native-token` Hotwire bridge. The endpoint
 creates or reuses the fixed public Doorkeeper client `langlets-ios-share-extension`
 and issues a 30-day token limited to `imports:read imports:write credits:read`.
 Swift stores it in the app/extension Keychain access group; native sign-out both
-revokes those tokens server-side and clears the local Keychain item, and also
-removes the stored `selectedLanguage` from standard and App Group defaults —
-otherwise the next sign-in could briefly inherit the previous account's
-language. The selected language is also stored per account as
-`User#preferences["ios_lang"]`; after authentication Rails sends that account's
-value to the native shell in the explicit `ios_lang` URL parameter, which
-repopulates both defaults and prevents repeat onboarding. For the same reason,
+revokes those tokens server-side and clears the local Keychain item.
 `ApplicationController#after_sign_out_path_for` (shared by sign-out and account
-deletion) sends native users straight to `/users/sign_in?signed_out=1` with
-`lang` explicitly dropped: any other target would bounce a signed-out native
-user to sign-in and lose the `signed_out` marker before a page rendered, so the
+deletion) sends native users straight to `/users/sign_in?signed_out=1`: any other
+target would bounce a signed-out native user to sign-in and lose the `signed_out`
+marker before a page rendered, so the
 bridge--sign-out wipe would never fire. Once the wipe completes, the shell
 re-routes every tab — the page that fired the bridge was rendered under the
-now-deleted session, so its form's CSRF token is dead. Rails also deletes the
-session-cached language during the redirect. As a second native safeguard, the
-navigator clears its stored language as soon as it sees that signed-out URL;
-account deletion therefore cannot leak `?lang=` into the next account even if
-the page's JavaScript bridge has not connected yet. The bridge
-also mirrors the current `Language` catalog into App Group defaults, while the
-language-selection bridge mirrors `selectedLanguage`, so the extension stays
+now-deleted session, so its form's CSRF token is dead. The bridge also mirrors
+the current `Language` catalog into App Group defaults, so the extension stays
 in step with languages added by Rails without an App Store release. If the
-shared token or learning language is unavailable, the sheet directs the user
-to open Langlets and complete sign-in/onboarding.
+shared token is unavailable, the sheet directs the user to open Langlets and
+complete sign-in.
 
 #### Import lifecycle — nothing waits, and nothing gets stuck
 
@@ -2494,9 +2467,8 @@ signed-out native users are redirected to `/onboarding/welcome`. The native
 acquisition flow is three pages: welcome/explanation, `/onboarding/video` with
 the configured examples and paste field, then the shared `/try` preview. Only
 the preview's creation action enters the existing signup or login page. These
-three paths use the onboarding layout, keep tabs hidden, and are checkpointed
-by both native shells so an interrupted cold launch resumes in place. The
-served path configurations and both offline copies list the new paths.
+three paths use the onboarding layout and keep tabs hidden. The served path
+configurations and both offline copies list the new paths.
 
 That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
 The web Add Video sidebar states the available balance and nothing more. It
@@ -2506,16 +2478,7 @@ with the sentence explaining that the Pro screen is native-only.
 
 The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and **Create** tab (the Create tab is `/app/import_requests/new`, drawn with the `plus.circle` SF Symbol). Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests/new` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. That is deliberate for Home's first-run Create link (below); if you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
 
-Authentication (`/users/sign_in`, `/users/sign_up`, password recovery, and provider handoffs) is a default-context `replace_root` flow on both platforms, not a modal. A signed-out user has no meaningful underlying app screen to dismiss back to, so the native auth pages also omit the HTML close X. The tab bar starts hidden and is revealed only after the authenticated app layout reports through the tab-badge bridge. Entering an auth URL hides tabs immediately in the iOS proposal delegate or Android route handler, while the rendered application layout independently sends `bridge--tab-visibility visible=false`; that second assertion covers server redirects because native proposal handlers may only see the pre-redirect URL. Sign-out hides tabs through its bridge as well. Authentication and language changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
-
-A native user who authenticates while a guest-started request is still detecting
-may enter its `/courses/:slug` waiting page without `ios_lang`; otherwise the normal
-language-onboarding gate would replay the welcome page between signup and the
-waiting Langlet. This exception is narrowly recognized by the shared
-guest-started `CreateSongProgress`. When the single detection finishes,
-`DetectImportLanguageJob` stores that clip's ISO code in the claimant's
-`ios_lang`, restoring the ordinary invariant without asking them to identify
-the language a second time.
+Authentication (`/users/sign_in`, `/users/sign_up`, password recovery, and provider handoffs) is a default-context `replace_root` flow on both platforms, not a modal. A signed-out user has no meaningful underlying app screen to dismiss back to, so the native auth pages also omit the HTML close X. The tab bar starts hidden and is revealed only after the authenticated app layout reports through the tab-badge bridge. Entering an auth URL hides tabs immediately in the iOS proposal delegate or Android route handler, while the rendered application layout independently sends `bridge--tab-visibility visible=false`; that second assertion covers server redirects because native proposal handlers may only see the pre-redirect URL. Sign-out hides tabs through its bridge as well. Authentication changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
 
 Email/password registration does not return an unconfirmed user to the home or
 sign-in page. `Users::RegistrationsController#after_inactive_sign_up_path_for`
@@ -2622,24 +2585,10 @@ falls back to All rather than leaving a selected pill with no corresponding
 option.
 
 #### Onboarding Flow
-1. **Mandatory Authentication**: The server enforces authentication for all native app requests via `ApplicationController#require_authentication_for_native_app`. Unauthenticated native app users are redirected to the sign-in page.
-2. **Welcome**: After authentication, if no `?lang=<code>` is present, the server redirects to `/onboarding/welcome`. This large, native-styled screen explains that Langlets turns YouTube **or TikTok** videos into transcribed, translated lessons with vocabulary practice. (The title said YouTube only until TikTok support had already shipped; when a provider is added, `onboarding.welcome.title` in every locale is part of the checklist — see `docs/add-new-video-provider.md`.) "Start Now" advances to language selection while preserving the originally requested app URL. The screen is sized to fit a single viewport with no scrolling on every iPhone (fluid `clamp()` title size, `h-dvh-safe` flex column — plain `h-dvh` overflows by the nav-bar inset because `body` already pads `env(safe-area-inset-top)`). Copy is a three-level hierarchy (eyebrow / title / three short body paragraphs, `body_1..body_3` locale keys) — keep it short enough to preserve the no-scroll fit.
-3. **Language Selection**: `/onboarding/language` communicates the choice to iOS via `LanguageSelectionBridgeComponent`, then redirects to the preserved URL (normally `/app`) with the selected `lang` query parameter. The heading is **"Choose target language"** (`onboarding.language.title`) — a single string, not the returnto-dependent pair it used to be: the welcome screen always passes a `returnto`, so the "first visit" variant was unreachable and the screen read "Change Learning Language" to users who had never chosen one.
-
-   The list comes from `Language.onboarding_options`, not `Language.all`. The `languages` table holds every language the platform knows about — translation-only ones (English, Hebrew, which are what the subdomain selects) and any still carrying legacy courses — while onboarding offers only the three we have enough content to teach: **French, Spanish, Arabic** (`Language::ONBOARDING_ISO_NAMES = %w[fr es ar-JO]`). Adding a language to the platform therefore does **not** put it on this screen; see `docs/guides/adding-a-new-language.md`. The profile language control is deliberately *not* narrowed — an account already learning something outside the list keeps it and can still see it selected.
-
-   **No tab bar during onboarding.** Both onboarding screens use `layouts/onboarding`, which renders `bridge--tab-visibility` with `visible=false`; iOS `TabVisibilityComponent` posts `.tabVisibilityDidChange` and `SceneDelegate` calls `AppTabBarController#setTabsVisible(false)`. Onboarding is mandatory and every tab behind it just redirects back into it, so tabs there are both meaningless and an escape hatch out of a required flow. This is the mirror image of `bridge--tab-badge`, which the authenticated app layout renders and which reveals the tabs again — **both fire on `connect` only**, so each rendered page asserts its own chrome and leaving onboarding (forward *or* back) restores the tabs without either component having to undo anything. A cold launch already starts with the tabs hidden (`AppTabBarController.init`); the bridge covers the case that motivated it — an in-app screen server-redirecting to `/onboarding/welcome` after the tabs were already revealed. Note this could **not** be done from `NavigatorDelegate#handle(proposal:)`: a proposal carries the pre-redirect URL, which is exactly the case that matters.
-4. **Persistence and restoration**: The selected language ISO code is stored in iOS `UserDefaults` under key `selectedLanguage` and per account in the user's JSONB preferences under `ios_lang`. An authenticated native request carrying a valid `lang` updates that preference. Sign-out still clears the device copy to prevent cross-account leakage; after the next login Rails adds the signed-in account's value as `ios_lang` (and `lang`) to the redirect, and iOS restores both standard and App Group defaults. Only accounts without a saved value see onboarding. Until a language is selected, the native navigator also checkpoints the current welcome or language-selection URL (including `returnto`) under `pendingOnboardingURL`. The checkpoint preserves the URL's percent-encoded query rather than encoding it again, and restoration rebuilds `returnto` from its decoded query value. A cold launch resumes that page instead of rebuilding the flow from `/app`; selecting a language or signing out clears the checkpoint.
-5. **URL Param Propagation**: The iOS app appends `?lang=<code>` to the root/start URL. Rails propagates this param through `default_url_options` so all generated links include it.
-6. **Content Filtering**: `CoursesController#index` and `PlaylistsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
-6. **Tabbed Home Browsing**: The root page (`CoursesController#index`) renders a reusable tabs partial (`app/views/shared/_tabs.html.erb`) backed by `tabs_controller.js`, with a default **Courses** tab (playlist grid) and a secondary **Standalone clips** tab (standalone course grid).
-
-#### Changing Learning Language
-- Users can change their learning language at any time from the user dropdown menu (avatar icon) on any authenticated page.
-- The dropdown shows the currently selected language and links to `/onboarding/language?returnto=<current_url>`.
-- The language page has one heading, "Choose target language", for every entry point. It used to branch on `returnto` and show "Change Learning Language"; since the welcome screen also passes a `returnto`, that branch was what first-time users actually saw. First-time product copy is kept on the preceding welcome screen.
-- When a language is selected, the bridge message includes a `redirectUrl` so the app navigates back to the originating page with the updated `?lang=` parameter instead of jumping to the root URL.
-- The native profile presents the current learning language in a compact select. Changing it sends the selected option's ISO code and redirect URL through the same bridge, keeping iOS `UserDefaults` and the Rails `?lang=` session in sync. Although the profile uses the regular web layout, its content clears the horizontal safe-area insets and reserves the native tab-bar height plus the bottom inset; the shared body already clears the top inset.
+1. **Acquisition**: Signed-out native users start at `/onboarding/welcome`, continue to `/onboarding/video`, and preview the selected video in `/try`. The flow explains the product and asks for content, not a target language.
+2. **Authentication**: Building the preview enters the shared signup or login flow. The server enforces authentication for protected native app requests via `ApplicationController#require_authentication_for_native_app`.
+3. **Authenticated entry**: Signed-in native users go directly to `/app`; there is no language gate or device/account language restoration. The legacy `/onboarding/language` route redirects to `/app` so old links and cached pages fail safely.
+4. **Native chrome**: Acquisition and authentication layouts hide the tab bar. The authenticated app layout reveals it through the tab-badge bridge.
 
 #### OAuth Authentication in Native App
 

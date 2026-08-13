@@ -81,7 +81,6 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     assert_equal source.course, claim.course
     assert_equal @user, source.course.user
     assert_equal source.create_song_progress, claim.create_song_progress
-    assert_equal "es", learner.reload.ios_lang
   end
 
   private

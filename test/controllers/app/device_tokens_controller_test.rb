@@ -73,7 +73,7 @@ module App
 
       post app_device_tokens_path, params: { token: TOKEN }, headers: NATIVE
 
-      assert_redirected_to new_user_session_path(returnto: "/app/device_tokens?lang=es")
+      assert_redirected_to new_user_session_path(returnto: "/app/device_tokens")
       assert_equal 0, DeviceToken.count
     end
 

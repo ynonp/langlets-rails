@@ -85,47 +85,6 @@
       </div>
     </div>
 
-    <%# ---------------------------------------------------------- Language %>
-    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
-      <h2 class="text-lg font-extrabold tracking-tight mb-1.5"><%= t("profile.language.heading") %></h2>
-      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-4">
-        <% if @current_language %>
-          <%# The language names live in the database in English; `languages.*`
-              translates the ones the app knows and leaves the rest as they are. %>
-          <%= t("profile.language.current",
-                language: t("languages.#{@current_language.iso_name}", default: @current_language.english_name)) %>
-        <% elsif native_app? %>
-          <%= t("profile.language.unset") %>
-        <% else %>
-          <%= t("profile.language.all") %>
-        <% end %>
-      </p>
-
-      <%# The native app always has a language, picked during onboarding, so it
-          gets the button list without the "show all content" escape hatch. %>
-      <% if native_app? %>
-        <%= render "native_languages", languages: @languages, current_language: @current_language %>
-      <% else %>
-        <select
-          data-controller="language-select"
-          data-action="change->language-select#navigate"
-          aria-label="<%= t("profile.language.label") %>"
-          class="w-full px-4 py-3 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 font-semibold border border-gray-200 dark:border-gray-700 rounded-2xl cursor-pointer"
-        >
-          <option value="<%= language_redirect_url(ApplicationController::ALL_LANGUAGES) %>" <%= "selected" if @current_language.nil? %>>
-            <%= t("profile.language.show_all") %>
-          </option>
-          <% @languages.each do |language| %>
-            <option value="<%= language_redirect_url(language.iso_name) %>" <%= "selected" if @current_language&.id == language.id %>>
-              <%= t("profile.language.option",
-                    native: language.native_name,
-                    english: t("languages.#{language.iso_name}", default: language.english_name)) %>
-            </option>
-          <% end %>
-        </select>
-      <% end %>
-    </div>
-
     <%# ----------------------------------------------------- Notifications %>
     <%# Which channels this account wants. Everything the app tells the user is
         recorded on /notifications regardless of what is chosen here, which is

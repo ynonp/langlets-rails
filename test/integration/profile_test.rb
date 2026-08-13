@@ -15,7 +15,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
   end
 
-  test "profile renders the XP chart, language picker, theme toggle and delete button" do
+  test "profile renders the XP chart, theme toggle and delete button" do
     sign_in_as @user
     ActivityLog.log_activity_completion(user: @user, active_time: 60, xp_gained: 30)
 
@@ -24,7 +24,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "h1", text: "Profile"
     assert_select "h2", text: "XP this week"
-    assert_select "h2", text: "Learning language"
+    assert_select "h2", text: "Learning language", count: 0
     assert_select "h2", text: "Theme"
     assert_select "h2", text: "Delete my account"
     # The delete button posts to Devise's registrations#destroy.
@@ -33,31 +33,14 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", root_path, text: "Continue Learning"
   end
 
-  test "web profile shows a language select defaulting to all content" do
-    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
+  test "native profile has no target language control" do
     sign_in_as @user
 
-    get profile_path
-
-    assert_select "select[data-controller=?]", "language-select"
-    assert_select "select option[selected]", text: /Show All Content/
-    assert_select "select option", text: /#{language.english_name}/
-    # The native-only bridge buttons stay off the web page.
-    assert_select "[data-controller=?]", "bridge--language-selection", count: 0
-  end
-
-  test "native profile shows the current language in a compact bridge select" do
-    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
-    sign_in_as @user
-
-    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative" }
+    get profile_path, headers: { "User-Agent" => "LangletsNative" }
 
     assert_response :success
-    assert_select "select[data-controller=?][data-action=?]",
-      "bridge--language-selection", "change->bridge--language-selection#selectLanguage", count: 1
-    assert_select "select option[selected][value=?]", language.iso_name, text: /#{language.english_name}/
+    assert_select "[data-controller=?]", "bridge--language-selection", count: 0
     assert_select "[data-controller=?]", "language-select", count: 0
-    assert_select "button[data-controller=?]", "bridge--language-selection", count: 0
     assert_select "body[data-native-tabs] .profile-safe-area", count: 1
   end
 
@@ -71,10 +54,9 @@ class ProfileTest < ActionDispatch::IntegrationTest
   end
 
   test "native profile shows a free account with an upgrade button" do
-    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
     sign_in_as @user
 
-    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative" }
+    get profile_path, headers: { "User-Agent" => "LangletsNative" }
 
     assert_response :success
     assert_select "h2", text: "Account"
@@ -83,7 +65,6 @@ class ProfileTest < ActionDispatch::IntegrationTest
   end
 
   test "native profile shows a Pro account without the upgrade button" do
-    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
     @user.subscriptions.create!(
       product_id: Apple::SubscriptionPlans.yearly.product_id,
       original_transaction_id: "2000000555555555",
@@ -93,7 +74,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
     )
     sign_in_as @user
 
-    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative" }
+    get profile_path, headers: { "User-Agent" => "LangletsNative" }
 
     assert_response :success
     assert_select "h2", text: "Account"
@@ -102,48 +83,15 @@ class ProfileTest < ActionDispatch::IntegrationTest
   end
 
   test "native profile initially shows only the notification permission action" do
-    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
     sign_in_as @user
 
-    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative" }
+    get profile_path, headers: { "User-Agent" => "LangletsNative" }
 
     assert_select "[data-controller=?]", "bridge--notification-preference", count: 1
     assert_select "button[data-bridge--notification-preference-target=?]",
       "button", text: "Enable Notifications", count: 1
     assert_select "label[data-bridge--notification-preference-target=?][style=?]",
       "switch", "display: none", count: 1
-  end
-
-  # On web the URL is the only home for the selection: nothing is stored
-  # server-side, so the param is both what selects a language and what clears
-  # it. default_url_options is what carries it from page to page.
-  test "selecting a language keeps lang on generated urls, and all content clears it" do
-    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
-    sign_in_as @user
-
-    get profile_path(lang: language.iso_name)
-    assert_select "option[selected]", text: /#{language.english_name}/
-    assert_select "a[href*=?]", "lang=#{language.iso_name}"
-
-    get profile_path(lang: "all")
-    assert_select "option[selected]", text: /Show All Content/
-  end
-
-  test "dropping lang from the url clears the language, with nothing left in the session" do
-    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
-    sign_in_as @user
-
-    get profile_path(lang: language.iso_name)
-    assert_select "option[selected]", text: /#{language.english_name}/
-
-    # A literal path, not profile_path: the integration session reverse-merges
-    # the previous controller's url_options, so the helper would re-add lang
-    # exactly the way an on-page link does. This models clearing the param by
-    # hand — the regression being guarded is that the selection used to be
-    # cached in the session, so a bare URL kept serving the old language with
-    # no way to clear it short of ?lang=all or dropping cookies.
-    get "/profile"
-    assert_select "option[selected]", text: /Show All Content/
   end
 
   # Every string on this page comes from the locale files, which is only

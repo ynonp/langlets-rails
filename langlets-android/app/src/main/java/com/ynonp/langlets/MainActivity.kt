@@ -51,10 +51,7 @@ class MainActivity : HotwireActivity() {
     }
 
     /**
-     * Tab definitions. Recomputed on every access rather than held in a `val`,
-     * because [NavigatorHost] reads `navigatorConfigurations()` again each time it
-     * builds its graph — which is how a tab picks up a language chosen after
-     * launch. See [reloadTabs].
+     * Tab definitions. Recomputed when NavigatorHost rebuilds its graph.
      */
     private val tabs: List<HotwireBottomTab>
         get() = listOf(
@@ -64,7 +61,7 @@ class MainActivity : HotwireActivity() {
                 configuration = NavigatorConfiguration(
                     name = "home",
                     navigatorHostId = R.id.home_navigator_host,
-                    startLocation = LanguageStore.startUrl("/app")
+                    startLocation = Langlets.rootUrl + "/app"
                 )
             ),
             HotwireBottomTab(
@@ -73,7 +70,7 @@ class MainActivity : HotwireActivity() {
                 configuration = NavigatorConfiguration(
                     name = "library",
                     navigatorHostId = R.id.library_navigator_host,
-                    startLocation = LanguageStore.startUrl("/app/library")
+                    startLocation = Langlets.rootUrl + "/app/library"
                 )
             ),
             // The Create tab's root is the Add-a-video form itself, not a bare
@@ -84,7 +81,7 @@ class MainActivity : HotwireActivity() {
                 configuration = NavigatorConfiguration(
                     name = "create",
                     navigatorHostId = R.id.create_navigator_host,
-                    startLocation = LanguageStore.startUrl("/app/import_requests/new")
+                    startLocation = Langlets.rootUrl + "/app/import_requests/new"
                 )
             )
         )
@@ -161,7 +158,7 @@ class MainActivity : HotwireActivity() {
      * one somewhere specific afterwards.
      *
      * Called whenever the server-side session changed underneath the web views —
-     * sign-in, sign-out, a language switch — since from that moment every tab's
+     * sign-in or sign-out — since from that moment every tab's
      * content is stale and, worse, carries a CSRF token from a session that no
      * longer exists.
      *
@@ -209,8 +206,6 @@ class MainActivity : HotwireActivity() {
 
         when (uri.host) {
             "auth-success" -> {
-                LanguageStore.restoreFrom(uri.toString())
-
                 val token = uri.getQueryParameter("handoff")
                 val verifier = if (token != null) AuthHandoff.takeVerifier() else null
 
@@ -398,24 +393,13 @@ class MainActivity : HotwireActivity() {
             path == "/users/password/new"
     }
 
-    /**
-     * Keep device state in step with what the server just told us, then let the
-     * caller decide whether that warrants a reload. Called from the navigator's
-     * route decision handler, which sees every proposed visit.
-     */
+    /** Keep native chrome in step with every proposed visit. */
     fun observeProposedLocation(location: String) {
-        LanguageStore.rememberPendingOnboardingUrl(location)
-
         if (isAuthPath(location)) {
             setTabsVisible(false)
         }
 
-        if (LanguageStore.restoreFrom(location)) {
-            reloadTabs()
-        }
-
         if (isSignedOutRedirect(location)) {
-            LanguageStore.reset()
             setTabsVisible(false)
         }
     }

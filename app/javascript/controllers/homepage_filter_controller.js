@@ -4,9 +4,8 @@ import { Controller } from "@hotwired/stimulus"
 // carries a data-lang; each chip a lang param ("all" shows everything). No
 // server round-trip, so the grid filters instantly.
 //
-// Picking a chip rewrites ?lang= in the address bar. The server reads the same
-// param (ApplicationController#current_language_code), so the URL keeps telling
-// the truth: it survives a reload, and it is shareable.
+// Picking a chip rewrites ?lang= in the address bar so this client-side filter
+// survives a reload and remains shareable.
 export default class extends Controller {
   static targets = ["chip", "card"]
   static classes = ["active"]

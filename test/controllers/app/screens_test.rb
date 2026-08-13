@@ -29,10 +29,6 @@ module App
       Enrollment.create!(user: @user, course: @course, source: :imported, last_practiced_at: 1.hour.ago)
       sign_in @user
 
-      # ApplicationController#require_language_for_native_app sends native users
-      # to /onboarding/language until they've chosen one, so every app screen is
-      # unreachable without it. One request stores the language on the user.
-      get "/app?lang=es", headers: NATIVE
     end
 
     # Screen fixtures represent content already contributed to the signed-in
@@ -183,50 +179,20 @@ module App
       assert_response :success
     end
 
-    test "new native users see welcome before language selection and Home" do
-      @user.update!(ios_lang: nil)
+    test "signed-in native users reach Home without language onboarding" do
       reset!
       sign_in @user
 
       get "/app", headers: NATIVE
-      assert_redirected_to onboarding_welcome_path(returnto: "/app")
-
-      get onboarding_welcome_path(returnto: "/app"), headers: NATIVE
-      assert_response :success
-      assert_select "h1", count: 1
-      assert_select "a[href=?]", onboarding_video_path
-
-      get onboarding_language_path(returnto: "/app"), headers: NATIVE
-      assert_response :success
-      assert_select "button[data-bridge--language-selection-redirect-url-value='/app?lang=es']"
-
-      get "/app?lang=es", headers: NATIVE
       assert_response :success
     end
 
-    # The `languages` table holds every language the platform knows about,
-    # including translation-only ones (English, Hebrew) and any that still carry
-    # legacy courses. Onboarding offers a much shorter list.
-    test "onboarding offers only the languages we teach" do
-      @user.update!(ios_lang: nil)
+    test "legacy language onboarding urls redirect to Home" do
       reset!
       sign_in @user
 
       get onboarding_language_path(returnto: "/app"), headers: NATIVE
-      assert_response :success
-
-      offered = css_select("button[data-bridge--language-selection-iso-value]")
-        .map { |button| button["data-bridge--language-selection-iso-value"] }
-      assert_equal %w[ar-JO fr es], offered
-    end
-
-    test "onboarding language screen asks for a target language" do
-      @user.update!(ios_lang: nil)
-      reset!
-      sign_in @user
-
-      get onboarding_language_path(returnto: "/app"), headers: NATIVE
-      assert_select "h1", text: "Choose target language"
+      assert_redirected_to app_home_path
     end
 
     # The one line this project adds to the web UI.
@@ -429,7 +395,7 @@ module App
       assert_select "a[data-testid='first-run-create']", count: 0
     end
 
-    test "the library grid only offers courses in the user's language" do
+    test "the library grid does not require a user target language" do
       Enrollment.delete_all
       french = languages(:french)
       create_translated_course!(name: "La Vie en Rose", slug: "la-vie-en-rose", main_media_url: "https://www.youtube.com/watch?v=frenchaaaaa",
@@ -440,7 +406,7 @@ module App
 
       assert_response :success
       assert_match "Despacito", response.body
-      assert_no_match "La Vie en Rose", response.body
+      assert_match "La Vie en Rose", response.body
     end
 
     test "Home suggests library courses the user is not enrolled in" do

@@ -73,14 +73,12 @@ class Users::NativeAuthHandoffTest < ActionDispatch::IntegrationTest
     assert_equal 0, NativeAuthHandoff.count
   end
 
-  test "native_success carries the account's language alongside the token" do
-    @user.ios_lang = "fr"
-    @user.save!
+  test "native_success carries only the handoff token" do
     sign_in_through_browser_flow
 
     get "/users/auth/native_success"
 
-    assert_equal "fr", redirect_query["ios_lang"]
+    assert_nil redirect_query["ios_lang"]
     assert_not_nil redirect_query["handoff"]
   end
 

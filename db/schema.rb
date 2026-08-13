@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_13_120000) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_13_190000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -711,13 +711,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_13_120000) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
-    t.bigint "preferred_language_id"
     t.jsonb "preferences", default: {}, null: false
     t.integer "credit_balance", default: 0, null: false
     t.bigint "evaluation_signup_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["evaluation_signup_id"], name: "index_users_on_evaluation_signup_id", unique: true
-    t.index ["preferred_language_id"], name: "index_users_on_preferred_language_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.check_constraint "credit_balance >= 0", name: "credit_balance_non_negative"
   end
@@ -790,5 +788,4 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_13_120000) do
   add_foreign_key "token_translations", "phrase_tokens"
   add_foreign_key "user_game_stats", "users"
   add_foreign_key "users", "evaluation_signups", on_delete: :nullify
-  add_foreign_key "users", "languages", column: "preferred_language_id"
 end

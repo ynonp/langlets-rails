@@ -101,7 +101,6 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "native watch video renders saved vocabulary state" do
-    @user.update!(ios_lang: "en")
     phrase = create_translated_phrase!(
       medium: @medium,
       l1: languages(:english),
@@ -142,7 +141,6 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "native read translated activity renders its text in the main scroll region" do
-    @user.update!(ios_lang: "en")
     phrase = Phrase.create!(
       medium: @medium,
       l1: languages(:english),

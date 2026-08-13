@@ -10,7 +10,7 @@ import dev.hotwire.navigation.destinations.HotwireDestination
  *
  * The reach from a component to the Activity is short but worth naming: bridge
  * messages arrive on the destination fragment, and several of them
- * (`tab-badge`, `tab-visibility`, `sign-out`, `language-selection`) are really
+ * (`tab-badge`, `tab-visibility`, `sign-out`) are really
  * addressed to the tab bar. On iOS that hop is a `NotificationCenter` post,
  * because the sending page may be a modal sheet whose view controller has no
  * `tabBarController`. Android has no such gap — a fragment in a modal context is

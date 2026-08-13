@@ -14,11 +14,6 @@ final class SignOutComponent: BridgeComponent {
 
         NativeShareStore.clearToken()
 
-        // The next sign-in may be a different (or freshly re-created) account.
-        // The stored language is what makes the app append ?lang= to every
-        // URL — leaving it behind lets the next account skip onboarding.
-        AppTabBarController.resetLanguageSelection()
-
         // Clear cookies stored at the URLSession level as well.
         HTTPCookieStorage.shared.removeCookies(since: .distantPast)
 

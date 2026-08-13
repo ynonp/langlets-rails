@@ -144,14 +144,6 @@ en:
         other: "%{count} days streak — no lesson yet today"
       no_streak: "Complete a lesson to start a streak."
       day_xp: "%{day}: %{xp} XP"
-    language:
-      heading: "Learning language"
-      label: "Learning language"
-      current: "You're currently learning %{language}."
-      unset: "You haven't picked a language yet."
-      all: "You're seeing content in every language."
-      show_all: "Show All Content"
-      option: "%{native} — %{english}"
     # The iOS permission card. Its copy is replaced live by
     # bridge/notification_preference_controller.js — see js.notification_preference,
     # which has to stay in step with this.
@@ -422,16 +414,13 @@ en:
       body_3: "Paste a link, or start with a course from our library."
       start: "Start Now"
     video:
-      eyebrow: "Step 2 of 3"
+      eyebrow: "Step 2 of 2"
       title: "Choose your first video"
       lead: "Select a video to convert into your first language lesson, or paste any YouTube or TikTok link."
       url_placeholder: "Paste a video link"
       url_label: "Video link"
       submit: "Build my langlet"
       examples: "Choose an example"
-    language:
-      title: "Choose target language"
-      prompt: "Select the language you want to learn"
   try:
     show:
       page_title: "Ready to build: %{name}"

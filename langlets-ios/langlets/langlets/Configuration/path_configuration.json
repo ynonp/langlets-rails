@@ -89,7 +89,6 @@
       "patterns": [
         "/onboarding/welcome",
         "/onboarding/video",
-        "/onboarding/language",
         "^/try$"
       ],
       "properties": {

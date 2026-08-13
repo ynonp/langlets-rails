@@ -176,7 +176,7 @@
       <% end %>
       <% if user_signed_in? %>
         <%= link_to t(".nav.my_langlets"), gallery_path(imports: "my_imports"), class: "lp-navlink" %>
-        <%= link_to t(".nav.add_video"), new_app_import_request_path(lang: current_language_code), class: "lp-navlink" %>
+        <%= link_to t(".nav.add_video"), new_app_import_request_path, class: "lp-navlink" %>
         <%= render "shared/user_menu",
                    avatar_type: :initial,
                    menu_item_class: "block px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#FAF6EF]",

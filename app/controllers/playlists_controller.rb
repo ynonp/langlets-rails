@@ -101,11 +101,6 @@ class PlaylistsController < ApplicationController
                        .ready_in(Current.translation_language)
                        .includes(:language, :lessons, :tags)
 
-    if current_language_code.present?
-      language = Language.find_by(iso_name: current_language_code)
-      courses = courses.where(language: language) if language
-    end
-
     # Filter by tag if specified
     if params[:tag].present? && params[:tag] != "all"
       courses = courses.joins(:tags).where(tags: { name: params[:tag] })
