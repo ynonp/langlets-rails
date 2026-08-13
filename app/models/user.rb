@@ -335,10 +335,11 @@ class User < ApplicationRecord
 
   def current_review_lesson(language_code)
     language = Language.find_by!(iso_name: language_code)
-    lessons.review_lessons.where(review_language: language)
-      .where(review_build_status: [ :started, :pending ])
-      .order(Arel.sql("CASE review_build_status WHEN #{Lesson.review_build_statuses[:started]} THEN 0 ELSE 1 END"), created_at: :desc)
-      .first!
+
+    with_lock do
+      current_review_lesson_for(language) ||
+        ReviewLessonBuilder.new(self, language_code: language.iso_name).build!
+    end
   end
 
   def refresh_review_lesson!(language)
@@ -359,6 +360,15 @@ class User < ApplicationRecord
       .joins(phrase: :l1)
       .where(languages: { id: language.id })
   end
+
+  def current_review_lesson_for(language)
+    lessons.review_lessons.where(review_language: language)
+      .where(review_build_status: [ :started, :pending ])
+      .order(Arel.sql("CASE review_build_status WHEN #{Lesson.review_build_statuses[:started]} THEN 0 ELSE 1 END"), created_at: :desc)
+      .first
+  end
+
+  private :current_review_lesson_for
 
   def daily_vocab_review_available?(language_code)
     language = Language.find_by(iso_name: language_code)

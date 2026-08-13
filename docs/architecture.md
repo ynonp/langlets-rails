@@ -3058,6 +3058,10 @@ Users can save individual word/token translations they encounter during lessons 
 - Saving or unsaving a word expires pending reviews for that word's L1 language
   and queues a replacement build. The user row lock serializes invalidation and
   building so a word change cannot leave a stale pending review behind.
+- `GET /review_lessons?language_code=:code` synchronously creates a pending
+  review under that same lock when an existing user has no pending or started
+  review, then opens it. This is a one-time fallback for users whose saved
+  vocabulary predates the prebuild lifecycle, so they never receive a 404.
 - `CleanupExpiredReviewLessonsJob` runs daily and destroys only `expired`
   reviews. Started reviews are never removed by cleanup.
 

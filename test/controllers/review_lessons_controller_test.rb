@@ -19,6 +19,15 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     assert lesson.reload.review_started?
   end
 
+  test "show builds and starts a review when an existing user has none ready" do
+    assert_difference("Lesson.count", 1) do
+      get review_lessons_url(language_code: @english.iso_name)
+    end
+
+    assert_response :success
+    assert @user.lessons.review_lessons.last.review_started?
+  end
+
   test "show resumes a started review" do
     lesson = pending_review
     lesson.update!(review_build_status: :started)
