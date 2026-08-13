@@ -249,20 +249,8 @@ en:
           body: "A few minutes today will help these words stick."
         your_playlists: "Your playlists"
         continue: "Continue"
-        library: "Library"
-        # First run only — nothing enrolled, nothing in progress. The grid is the
-        # whole screen then, so it gets an invitation instead of a section label,
-        # and the create link names the other way in. Both revert once the user
-        # has a course.
-        #
-        # The heading matches courses.index.library.heading word for word: the
-        # marketing root and the app's first run are the same moment for the same
-        # person. Duplicated rather than shared, because a change to one is not
-        # automatically right for the other. Its subhead is deliberately NOT
-        # carried over — the cards say what they are, and the screen reads better
-        # without a line of prose between the heading and the grid.
-        first_run_library: "Jump right in"
-        first_run_create: "Or import any YouTube / TikTok video ›"
+        recommendations: "Recommended for you"
+        no_langlets: "No langlets yet. Share any video in Spanish, French, Hebrew, Arabic or German to langlets to turn it into a language practice."
       # The Pro row, directly under the header. Keyed to the partial that renders
       # it (_pro_card), not to index — these lived under `index` while the
       # partial looked them up lazily, so every string resolved to nothing and

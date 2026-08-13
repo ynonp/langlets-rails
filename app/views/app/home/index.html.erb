@@ -1,15 +1,5 @@
 <% content_for :title, "langlets." %>
 
-<%# First run: nothing imported, nothing in progress. Home's usual job — showing
-    what the user already has — has nothing to show, so the library grid stops
-    being a suggestion shelf and becomes the screen. It gets an imperative
-    heading and a way out to Create underneath. Both revert the moment the user
-    has a single course, so returning users never pay for the onboarding.
-
-    Deliberately not a permanent intro paragraph: onboarding/welcome already
-    says what the app does, one tap before this screen. %>
-<% first_run = @hero_course.nil? && @enrollments.empty? %>
-
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-6">
   <%= render "app/shared/header" %>
 
@@ -49,42 +39,26 @@
     </div>
   <% end %>
 
-  <%# 3. Four compact Library suggestions in a 2×2 grid. %>
-  <% if @library_picks.any? %>
+  <%# 3. Up to four unfinished courses already in this account. %>
+  <% if @recommendation_enrollments.any? %>
     <div class="flex flex-col gap-2.5">
-      <%# Accent, not muted: this and the first-run Create link below are the two
-          ways off this section, so they read as the same kind of thing. The
-          "See all" in Continue above stays muted — it sits under a muted
-          heading, where accent would outweigh the courses it points at. %>
-      <div class="flex items-baseline justify-between">
-        <h2 class="text-[18px] font-bold">
-          <%= first_run ? t(".first_run_library") : t(".library") %>
-        </h2>
-        <%= link_to "See all ›", app_library_path, class: "text-app-accent text-[13px] font-semibold" %>
-      </div>
+      <h2 class="text-[18px] font-bold"><%= t(".recommendations") %></h2>
 
       <div class="grid grid-cols-2 gap-2.5">
-        <% @library_items.each do |item| %>
-          <%= render "app/library/card", course: item.course,
-                     lessons_count: @lesson_counts[item.course_id].to_i,
-                     enrolled: false, show_enrollment_action: false,
+        <% @recommendation_enrollments.each do |enrollment| %>
+          <%= render "app/library/card", course: enrollment.course,
+                     lessons_count: @lesson_counts[enrollment.course_id].to_i,
+                     enrolled: true, show_enrollment_action: false,
                      compact: true %>
         <% end %>
       </div>
     </div>
   <% end %>
 
-  <%# The other way in, stated once, on the one visit where the user has no
-      reason to know it exists. Outside the @library_picks guard on purpose: with
-      no picks either (a language with an empty library) this link is the only
-      thing on the screen, which is exactly when it matters most.
-
-      Plain push with a back arrow; there is no tab-switch bridge, and adding
-      one for a link this rare isn't worth it. %>
-  <% if first_run %>
-    <%= link_to t(".first_run_create"), new_app_import_request_path,
-                data: { testid: "first-run-create" },
-                class: "self-start text-app-accent text-[14px] font-semibold" %>
+  <% unless @has_unfinished_courses %>
+    <div data-testid="no-langlets" class="app-hairline bg-app-card rounded-app-card px-4 py-4 text-[14px] leading-relaxed text-app-text-2">
+      <%= t(".no_langlets") %>
+    </div>
   <% end %>
 
   <%# Personal playlists, when the user has any. %>

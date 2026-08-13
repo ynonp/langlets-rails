@@ -1,6 +1,6 @@
 module App
-  # Screen 01. The user's own courses (Enrollments — imported or added from the
-  # Library), plus a compact horizontal shelf of Library suggestions.
+  # Screen 01. The user's unfinished courses (Enrollments — imported or added
+  # from the Library). Home never recommends somebody else's content.
   class HomeController < BaseController
     # Within this window a finished import still counts as "just imported" and
     # gets the hero card. Also how the push deep link lands: it routes to
@@ -18,15 +18,14 @@ module App
       @lesson_counts = lesson_counts_for(candidates.map(&:course) + [ @hero_course ].compact)
       @completed_counts = completed_counts_for(candidates.map(&:course_id))
 
-      # "Continue" is in-progress work only; finished courses
-      # drop out (they'd read as broken under that heading).
-      @enrollments = candidates.reject { |enrollment| finished?(enrollment) }.first(2)
+      unfinished = candidates.reject { |enrollment| finished?(enrollment) }
 
-      # The paste CTA is now the primary way in, so there's no separate first-run
-      # picker — the library grid carries the empty account too, hence four picks.
-      @library_items = library_picks(count: 4)
-      @library_picks = @library_items.map(&:course)
-      @lesson_counts.merge!(lesson_counts_for(@library_picks))
+      # "Continue" remains for started work. Recommendations can draw from any
+      # other unfinished course, including courses that have never been opened.
+      @enrollments = unfinished.select(&:last_practiced_at?).first(2)
+      shown_ids = @enrollments.map(&:course_id)
+      @recommendation_enrollments = unfinished.reject { |enrollment| shown_ids.include?(enrollment.course_id) }.first(4)
+      @has_unfinished_courses = @hero_course.present? || unfinished.any?
     end
 
     private
@@ -60,33 +59,20 @@ module App
       ).exists?
     end
 
-    # Everything on their Home except whatever's already in the hero. An
-    # Enrollment survives its Channel going private, so readability is
-    # re-checked here rather than trusted from when it was created.
+    # Every account course except whatever is already in the hero. Started and
+    # not-started enrollments both belong here; completion is filtered after the
+    # grouped lesson counts are loaded. An Enrollment survives its Channel going
+    # private, so readability is re-checked here rather than trusted from when it
+    # was created.
     def candidate_enrollments
       scope = current_user.enrollments
-                          .in_progress
                           .includes(course: [ :language, { course_translations: :language } ])
                           .joins(:course)
                           .merge(Course.published)
                           .merge(ChannelContentQuery.courses_visible_to(current_user))
                           .recently_practiced
       scope = scope.where.not(course_id: @hero_course.id) if @hero_course
-      scope.limit(20).to_a
-    end
-
-    # Courses from the Library the user hasn't added yet.
-    #
-    # Newest first, not random. On first run this grid is the whole screen and
-    # its subhead promises "any recently created Langlet" — random picks would
-    # have made that copy a lie, and a grid that reshuffles on every visit gives
-    # a returning user nothing to recognize. Recency is also the only signal
-    # available here; real selection comes later.
-    def library_picks(count:)
-      scope = ChannelContentQuery.new(user: current_user).items
-      scope = scope.where.not(course_id: current_user.enrollments.select(:course_id))
-      scope = scope.where.not(course_id: @hero_course.id) if @hero_course
-      scope.limit(count).to_a
+      scope.to_a
     end
 
     # "Keep it going" means in progress. A finished course showing "Lesson 16 of

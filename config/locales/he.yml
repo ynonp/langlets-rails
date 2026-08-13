@@ -227,11 +227,8 @@ he:
           body: "כמה דקות היום יעזרו למילים להישאר בזיכרון."
         your_playlists: "הפלייליסטים שלכם"
         continue: "המשך"
-        library: "ספרייה"
-        # The chevron points the other way in RTL, so it lives in the string
-        # rather than in the view. The heading mirrors courses.index.library.heading.
-        first_run_library: "מתחילים מיד"
-        first_run_create: "‹ או ייבאו כל סרטון YouTube / TikTok"
+        recommendations: "מומלץ בשבילכם"
+        no_langlets: "אין עדיין langlets. שתפו עם langlets כל סרטון בספרדית, צרפתית, עברית, ערבית או גרמנית כדי להפוך אותו לתרגול שפה."
       # Keyed to the partial (_pro_card) that renders it, matching en.yml.
       pro_card:
         upsell:

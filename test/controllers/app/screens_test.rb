@@ -305,111 +305,51 @@ module App
       assert_select "a[href=?]", course_path(older_course), text: /Older Course/
     end
 
-    # With nothing to continue, Home leads with the library grid (courses in the
-    # user's language they aren't enrolled in) — there is no separate first-run
-    # picker, and no paste box either: importing lives in the Create tab.
-    test "Home with an empty account shows library courses and no paste box" do
+    test "Home with an empty account shows only the no-langlets message" do
       Enrollment.delete_all
 
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_no_match "Turn any YouTube video into a Spanish lesson.", response.body
+      assert_select "[data-testid='no-langlets']", text: /No langlets yet\. Share any video in Spanish, French, Hebrew, Arabic or German/
       assert_select "form[action^='/app/import_requests/new']", count: 0
       assert_select "input[name='url']", count: 0
-      assert_match "Despacito", response.body
+      assert_no_match "Despacito", response.body
+      assert_select "h2", text: "Recommended for you", count: 0
       assert_no_match(/<h2[^>]*>Continue<\/h2>/, response.body)
     end
 
-    # First run: the grid is the whole screen, so it gets an instruction rather
-    # than the "Library" section label, and the only other way in gets named.
-    test "Home with an empty account instructs and links to Create" do
-      Enrollment.delete_all
+    test "Home recommends an unfinished not-started course from the account" do
+      @user.enrollments.find_by!(course: @course).update!(last_practiced_at: nil)
 
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_select "h2", text: "Jump right in"
-      assert_select "h2", text: "Library", count: 0
-      assert_select "a[data-testid='first-run-create'][href=?]", new_app_import_request_path
+      assert_select "h2", text: "Recommended for you"
+      assert_select "a[href=?]", course_path(@course), text: "Despacito"
+      assert_select "[data-testid='no-langlets']", count: 0
     end
 
-    # Newest-first, not random: a shelf that reshuffles every visit gives a
-    # returning user nothing to recognize.
-    test "the library grid shows the newest courses first" do
-      Enrollment.delete_all
-      %w[oldest middle newest].each_with_index do |name, index|
-        create_translated_course!(name: name, slug: "pick-#{name}",
-                       main_media_url: "https://www.youtube.com/watch?v=pick#{index}aaaaaa",
-                       youtube_video_id: "pick#{index}aaaaaa", language: @spanish,
-                       translation_language: @english, user: @user, status: :published)
-          .update_column(:created_at, index.days.from_now)
+    test "Home can recommend a started unfinished course not already shown in Continue" do
+      2.times do |index|
+        course = create_translated_course!(name: "Started #{index}", slug: "started-#{index}",
+                     main_media_url: "https://www.youtube.com/watch?v=started#{index}aaaa",
+                     youtube_video_id: "started#{index}aaaa", language: @spanish,
+                     translation_language: @english, user: @user, status: :published)
+        Lesson.create!(course: course, user: @user, name: "Lesson", slug: "started-lesson-#{index}", order: 0)
+        Enrollment.create!(user: @user, course: course, source: :imported,
+                           last_practiced_at: index.minutes.ago)
       end
 
       get "/app", headers: NATIVE
 
       assert_response :success
-      # @course predates all three and takes the last of the four slots.
-      assert_match(/newest.*middle.*oldest.*Despacito/m, response.body)
+      assert_select "[data-testid='keep-it-going'] a[href^='/courses/']", count: 2
+      assert_select "h2", text: "Recommended for you"
+      assert_select "a[href=?]", course_path(@course), text: "Despacito"
     end
 
-    # Both ways off the library section are accent-coloured, in both states.
-    # Enrolled here, so it needs a course to keep the section on screen at all.
-    test "the library See all link uses the accent colour" do
-      create_translated_course!(name: "Bailando", slug: "bailando-z", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
-                     youtube_video_id: "bailandoaaa", language: @spanish,
-                     translation_language: @english, user: @user, status: :published)
-
-      get "/app", headers: NATIVE
-
-      assert_response :success
-      assert_select "a.text-app-accent[href=?]", app_library_path
-    end
-
-    # Even with no library courses to show — a language nobody has imported yet —
-    # the way into Create is still on screen. That is the blank-Home case.
-    test "Home with an empty account links to Create even with an empty library" do
-      Enrollment.delete_all
-      Course.update_all(status: Course.statuses[:pending])
-
-      get "/app", headers: NATIVE
-
-      assert_response :success
-      assert_select ".grid a[href^='/courses/']", count: 0
-      assert_select "a[data-testid='first-run-create'][href=?]", new_app_import_request_path
-    end
-
-    # The whole point of gating it: a returning user never sees the onboarding.
-    # Needs a second course so the library grid actually renders — otherwise the
-    # heading assertion would pass on an absent section.
-    test "Home drops the first-run heading and Create link once enrolled" do
-      create_translated_course!(name: "Bailando", slug: "bailando-y", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
-                     youtube_video_id: "bailandoaaa", language: @spanish,
-                     translation_language: @english, user: @user, status: :published)
-
-      get "/app", headers: NATIVE
-
-      assert_response :success
-      assert_select "h2", text: "Library"
-      assert_select "h2", text: "Jump right in", count: 0
-      assert_select "a[data-testid='first-run-create']", count: 0
-    end
-
-    test "the library grid does not require a user target language" do
-      Enrollment.delete_all
-      french = languages(:french)
-      create_translated_course!(name: "La Vie en Rose", slug: "la-vie-en-rose", main_media_url: "https://www.youtube.com/watch?v=frenchaaaaa",
-                     youtube_video_id: "frenchaaaaa", language: french,
-                     translation_language: @english, user: @user, status: :published)
-
-      get "/app", headers: NATIVE
-
-      assert_response :success
-      assert_match "Despacito", response.body
-      assert_match "La Vie en Rose", response.body
-    end
-
-    test "Home suggests library courses the user is not enrolled in" do
+    test "Home excludes unenrolled library courses from recommendations" do
       create_translated_course!(name: "Bailando", slug: "bailando-x", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
                      youtube_video_id: "bailandoaaa", language: @spanish,
                      translation_language: @english, user: @user, status: :published)
@@ -418,9 +358,17 @@ module App
 
       assert_response :success
       assert_match "Continue", response.body
-      assert_match "Library", response.body
-      assert_match "Bailando", response.body
-      assert_no_match "Turn any YouTube video into a Spanish lesson.", response.body
+      assert_no_match "Bailando", response.body
+    end
+
+    test "Home shows the empty message when every account course is finished" do
+      @course.lessons.each { |lesson| LessonUser.create!(lesson: lesson, user: @user) }
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "[data-testid='no-langlets']"
+      assert_select "a[href=?]", course_path(@course), count: 0
     end
 
     test "public courses stay out of Library but appear on Home after enrollment" do
@@ -446,7 +394,7 @@ module App
     end
 
     test "Home uses the main media URL for legacy course thumbnails like the web app" do
-      Enrollment.delete_all
+      @user.enrollments.find_by!(course: @course).update!(last_practiced_at: nil)
       @course.update_column(:youtube_video_id, nil)
 
       get "/app", headers: NATIVE
