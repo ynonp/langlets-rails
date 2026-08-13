@@ -30,6 +30,14 @@ jobs:
         run: |
           install -m 600 /dev/null config/credentials/production.key
           printf '%s' "$RAILS_MASTER_KEY" > config/credentials/production.key
+          install -m 700 -d .kamal
+          install -m 600 /dev/null .kamal/secrets
+          printf '%s\n' \
+            'RAILS_MASTER_KEY=$RAILS_MASTER_KEY' \
+            'DATABASE_URL=$(./bin/rails credentials:show --environment production | ruby -ryaml -e '\''puts YAML.safe_load(STDIN.read, aliases: true).dig("db", "kamal", "url")'\'')' \
+            'POSTGRES_PASSWORD=$(./bin/rails credentials:show --environment production | ruby -ryaml -ruri -e '\''puts URI.parse(YAML.safe_load(STDIN.read, aliases: true).dig("db", "kamal", "url")).password'\'')' \
+            > .kamal/secrets
+          ./bin/rails credentials:show --environment production > /dev/null
 
       - name: Configure SSH
         env:
