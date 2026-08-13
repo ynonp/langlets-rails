@@ -1,13 +1,11 @@
 require "tempfile"
 
 class CreateSongPipelineCli
-  DEFAULT_CALLBACK_BASE_URL = "http://localhost:3000"
-
-  def initialize(youtube_url:, clip_language:, translation_language:, callback_base_url: nil, command_runner: nil)
+  def initialize(youtube_url:, clip_language:, translation_language:, callback_base_url:, command_runner: nil)
     @youtube_url = youtube_url
     @clip_language = clip_language
     @translation_language_name = translation_language
-    @callback_base_url = callback_base_url.presence || DEFAULT_CALLBACK_BASE_URL
+    @callback_base_url = callback_base_url
     @command_runner = command_runner || method(:run_command)
   end
 

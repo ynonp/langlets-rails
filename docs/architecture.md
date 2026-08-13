@@ -23,6 +23,16 @@ depend on a persistent third-party container registry. PostgreSQL 17 is a Kamal
 accessory on the same private Docker network, persists in its `data` accessory
 directory, and does not publish port 5432 on the host.
 
+Production deploys are started manually from `.github/workflows/deploy.yml`
+using GitHub Actions' **Run workflow** control. The deploy workflow checks out
+the selected branch or commit and serializes deployments so two production
+releases cannot overlap. Its GitHub Actions secrets are `RAILS_MASTER_KEY`,
+`KAMAL_SSH_PRIVATE_KEY`, and `KAMAL_SSH_KNOWN_HOSTS`. The Rails key decrypts the
+production credentials; `.kamal/secrets` derives `DATABASE_URL` and
+`POSTGRES_PASSWORD` from those credentials. Kamal runs the temporary registry
+on the GitHub-hosted runner and makes it available to the production host over
+its SSH tunnel, so no registry port or registry credentials are exposed.
+
 The application, Solid Cache, Solid Queue, and Solid Cable share the
 `langlets_production` database and use separate `public`, `cache`, `queue`, and
 `cable` schemas. `DATABASE_URL` is injected from the encrypted
@@ -2291,15 +2301,6 @@ The platform integrates audio files using Active Storage attachments on two core
 - **Field**: `TokenTranslation#l1_audio` (has_one_attached)
 - **Purpose**: Individual word/token pronunciation in source language (L1)
 - **Format**: WAV files generated via Azure Text-to-Speech
-
-## Azure Text-to-Speech Integration
-
-The platform uses **Azure Cognitive Services TTS** for generating pronunciation audio:
-
-### Service Configuration (`AzureTextToSpeechService`)
-- **Output Format**: `raw-16khz-16bit-mono-pcm` → converted to WAV
-- **Audio Specs**: 16kHz sample rate, 16-bit depth, mono channel
-- **Workflow**: Raw PCM → WAV conversion → Base64 encoding → Active Storage attachment
 
 ### Language Support
 - **English**: `en-US-AriaNeural`

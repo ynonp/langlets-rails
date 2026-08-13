@@ -92,7 +92,6 @@ class CreateSongPipelineHttp
   # wait: true blocks until the run finishes and raises unless every branch
   # succeeded — the rake tasks' shape, never a worker's.
   # transport is the injection point tests use, mirroring the CLI service's
-  # command_runner: it takes the signed body and returns [status, body].
   def initialize(progress:, language: nil, wait: false, transport: nil)
     @progress = progress
     @language = language
