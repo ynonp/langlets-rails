@@ -23,7 +23,7 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
   test "homepage offers an explicit build form and example selectors" do
     get root_path
 
-    assert_select "[data-testid=beta-notice]", text: "Free while in beta"
+    assert_select "[data-testid=beta-notice]", count: 0
     assert_select ".lp-hero h1", text: "Turn any video to a language practice"
     assert_select ".lp-hero .lp-supported", text: "Supported languages: Spanish, French, Hebrew, Arabic"
     assert_select ".lp-hero .lp-lead", text: /Free account required/
@@ -215,7 +215,7 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
     assert_redirected_to onboarding_welcome_path
 
     get onboarding_welcome_path, headers: NATIVE
-    assert_select "[data-testid=beta-notice]", text: "Free while in beta"
+    assert_select "[data-testid=beta-notice]", count: 0
     assert_select "a[href=?]", onboarding_video_path
 
     get onboarding_video_path, headers: NATIVE

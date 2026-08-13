@@ -46,7 +46,6 @@ en:
     de: "German"
     ar: "Arabic"
   shared:
-    beta_notice: "Free while in beta"
     home: "Home"
     sign_in_prompt: "Sign in now to not lose your progress"
     footer:

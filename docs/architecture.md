@@ -377,10 +377,9 @@ The public homepage may still carry an optional `lang` query parameter for its
 client-side acquisition filters. Rails does not persist or propagate that value,
 and native onboarding and profile screens do not ask for a target language.
 
-Every browser/native page layout (`application`, `app`, `onboarding`, and both
-Doorkeeper layouts) renders `shared/_beta_notice` above its page content. It is
-localized and safe-area aware, so **Free while in beta** remains visible across
-the complete acquisition and authenticated flows.
+The former global **Free while in beta** banner has been removed. Layouts do not
+inject a notice above page content, including on acquisition, course, lesson,
+authentication, and native app screens.
 
 ### Public homepage (`courses#index`)
 
@@ -404,8 +403,7 @@ drop shadow on the product frame is mirrored under `[dir="rtl"]`. Everything
 else flips for free because the layout is grid/flex.
 
 The homepage **does not sell anything**. It carries no pricing section or
-credit-price copy. The shared top notice says **Free while in beta**, and the
-hero explains why building requires a free account. Nothing is sold
+credit-price copy. The hero explains why building requires a free account. Nothing is sold
 anywhere any more — Langlets Pro (see *Langlets Pro*) is granted by hand from
 the console after someone asks on Discord, not purchased. Do not reintroduce a
 pricing block here without being asked.
