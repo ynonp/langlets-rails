@@ -13,3 +13,6 @@ production:
   backfill_missing_token_audio:
     class: BackfillMissingTokenAudioJob
     schedule: every day at 5:30am
+  cleanup_expired_review_lessons:
+    class: CleanupExpiredReviewLessonsJob
+    schedule: every day at 6am

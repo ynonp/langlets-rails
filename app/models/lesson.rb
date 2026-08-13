@@ -5,7 +5,6 @@ class Lesson < ApplicationRecord
   belongs_to :review_language, class_name: "Language", optional: true
   has_many :activities, dependent: :destroy
   has_many :activity_logs, dependent: :nullify
-  has_one :review_lesson_build, dependent: :nullify
   has_many :lesson_translations, dependent: :destroy, inverse_of: :lesson
   has_one :localized_translation,
           -> { where(language_id: Current.translation_language_id) },
@@ -16,6 +15,14 @@ class Lesson < ApplicationRecord
   validates :slug, uniqueness: { scope: :course_id }, allow_blank: true
 
   scope :review_lessons, -> { where.not(review_language_id: nil) }
+  scope :pending_review_lessons, -> { review_lessons.where(review_build_status: :pending) }
+
+  enum :review_build_status, {
+    pending: 0,
+    expired: 1,
+    started: 2,
+    finished: 3
+  }, prefix: :review
 
   def localized_name = localized_translation&.name || name
 

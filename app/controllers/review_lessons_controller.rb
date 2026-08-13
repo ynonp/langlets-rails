@@ -2,27 +2,21 @@ class ReviewLessonsController < ApplicationController
   include Xp
   before_action :authenticate_user!
 
-  def create
-    language = Language.find_by!(iso_name: params[:language_code]) if params[:language_code].present?
-    build = current_user.review_lesson_builds.create!(language: language)
-    BuildReviewLessonJob.perform_later(build.id)
-    redirect_to review_lesson_build_path(build.request_id)
-  end
-
   def show
-    @lesson = current_user.lessons.find(params[:id])
+    @lesson = current_user.current_review_lesson(params[:language_code])
+    @lesson.update!(review_build_status: :started) if @lesson.review_pending?
 
     @activities = @lesson.activities.order(order: :asc).load
     @activity = @activities.find { |a| a.order == params[:a].to_i } || @activities.first
 
-    @current_url = review_lesson_path(@lesson, a: @activity.order)
+    @current_url = review_lessons_path(language_code: @lesson.review_language.iso_name, a: @activity.order)
 
     next_activity = @lesson.activities.where("activities.order > ?", @activity.order).order(order: :asc).first
 
     @next_activity_path = if next_activity.present?
-      review_lesson_path(@lesson, a: next_activity.order)
+      review_lessons_path(language_code: @lesson.review_language.iso_name, a: next_activity.order)
     else
-      finish_review_lesson_path(@lesson)
+      finish_review_lessons_path(language_code: @lesson.review_language.iso_name)
     end
 
     @is_last_activity = next_activity.blank?
@@ -40,8 +34,10 @@ class ReviewLessonsController < ApplicationController
   end
 
   def finish
-    @lesson = current_user.lessons.find(params[:id])
+    @lesson = current_user.current_review_lesson(params[:language_code])
+    @lesson.update!(review_build_status: :finished) if @lesson.review_started?
     add_lesson_xp
+    current_user.refresh_review_lesson!(@lesson.review_language)
 
     @course_path = root_path
     @next_lesson = nil

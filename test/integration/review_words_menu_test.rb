@@ -95,7 +95,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     get playlist_path(@menu_playlist)
     assert_response :success
 
-    assert_select "button.btn", text: /Review Words/, count: 0
+    assert_select "a.btn", text: /Review Words/, count: 0
   end
 
   test "menu always links to Create even when the user has no credits" do
@@ -116,8 +116,8 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     get playlist_path(@menu_playlist)
     assert_response :success
 
-    assert_select "button", text: /Review Words/, count: 1
-    assert_select "button", text: "📚 Review Words (#{@english.iso_name})"
+    assert_select "a", text: /Review Words/, count: 1
+    assert_select "a", text: "📚 Review Words (#{@english.iso_name})"
   end
 
   test "menu shows multiple languages when user has tokens from multiple languages" do
@@ -129,11 +129,11 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     get playlist_path(@menu_playlist)
     assert_response :success
 
-    assert_select "button", text: /Review Words/, count: 3
+    assert_select "a", text: /Review Words/, count: 3
 
-    assert_select "button", text: "📚 Review Words (#{@arabic.iso_name})"
-    assert_select "button", text: "📚 Review Words (#{@english.iso_name})"
-    assert_select "button", text: "📚 Review Words (#{@hebrew.iso_name})"
+    assert_select "a", text: "📚 Review Words (#{@arabic.iso_name})"
+    assert_select "a", text: "📚 Review Words (#{@english.iso_name})"
+    assert_select "a", text: "📚 Review Words (#{@hebrew.iso_name})"
   end
 
   test "menu shows language buttons alphabetically ordered by iso_name" do
@@ -163,10 +163,10 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     get playlist_path(@menu_playlist)
     assert_response :success
 
-    assert_select "button", text: /Review Words/, count: 1
+    assert_select "a", text: /Review Words/, count: 1
 
-    assert_select "button", text: "📚 Review Words (#{@arabic.iso_name})"
-    assert_select "button", text: "Review Words (#{@hebrew.iso_name})", count: 0
+    assert_select "a", text: "📚 Review Words (#{@arabic.iso_name})"
+    assert_select "a", text: "Review Words (#{@hebrew.iso_name})", count: 0
   end
 
   test "courses show page shows language-specific review buttons" do
@@ -184,8 +184,8 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     get course_path(course)
     assert_response :success
 
-    assert_select "button", text: "📚 Review Words (#{@english.iso_name})"
-    assert_select "button", text: "📚 Review Words (#{@arabic.iso_name})"
+    assert_select "a", text: "📚 Review Words (#{@english.iso_name})"
+    assert_select "a", text: "📚 Review Words (#{@arabic.iso_name})"
     assert_web_profile_menu
   end
 
@@ -202,7 +202,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     get playlist_path(playlist)
     assert_response :success
 
-    assert_select "button", text: "📚 Review Words (#{@hebrew.iso_name})"
+    assert_select "a", text: "📚 Review Words (#{@hebrew.iso_name})"
     assert_web_profile_menu
   end
 
@@ -229,7 +229,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     get playlist_path(@menu_playlist)
     assert_response :success
 
-    assert_select "button", text: /Review Words/, count: 0
+    assert_select "a", text: /Review Words/, count: 0
   end
 
   private

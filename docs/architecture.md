@@ -2558,7 +2558,7 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
 - **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.
 - Tabs use `presentation: replace_root`; the sheets use `context: modal, modal_style: medium`, which maps onto a real `UISheetPresentationController` detent with no Swift. The sheets are **full pages, not Turbo Frames** — a frame overlay inside the web view fights the native modal and you get two competing dismissal gestures.
 - Course lesson sheets use `LessonViewController`, a `HotwireWebViewController` subclass selected by `SceneDelegate` for `/courses/:course/lessons/:lesson` and its activity URLs. It adds a native top-right X that dismisses the whole lesson sheet; this is deliberately a close action rather than back navigation between activities.
-- Review lessons get the same modal treatment as course lessons, and for the same reason: taking a review lesson is one continuous session that shouldn't expose the tab bar underneath. `ios_path_configuration.json` marks both `/review_lessons/.*` and `/review_lesson_builds/.*` (the async build's waiting/failed screens) as `context: modal` with no `modal_style`, and `SceneDelegate.isLessonURL` — the same predicate that picks `LessonViewController` for course lessons — also matches these paths, so the waiting screen, the activities and the finish page all share one modal sheet with the native close X, from the "Review words" tap through to completion. `review_lesson_builds` needs its own pattern because the `_builds` suffix doesn't match `/review_lessons/.*`. Because `NavigationHierarchyController` pushes onto the existing modal navigation stack rather than presenting a second modal when a new proposal arrives while already in modal context, the waiting page's Turbo Stream `visit` to the finished lesson stays inside the same sheet instead of stacking another one on top.
+- Review lessons get the same modal treatment as course lessons, and for the same reason: taking a review lesson is one continuous session that shouldn't expose the tab bar underneath. `ios_path_configuration.json` and `android_path_configuration.json` mark `/review_lessons.*` as a lesson modal, so the activities and finish page share one modal sheet with the native close X from the "Review words" tap through to completion. Reviews are prebuilt after vocabulary changes, so opening this route never passes through a waiting screen.
 - Create presentation is platform-specific only in styling. Both platforms hit `/app/import_requests/new`; the controller branches on `native_app?` to render the compact dark form for Hotwire Native versus the responsive two-column form for browsers, with no redirect between them. Both resolve and submit through the same controller and services.
 - Add Video is platform-specific at the view layer too. Hotwire Native keeps the compact pushed-screen form and result partials directly under `app/import_requests`; browsers use the responsive two-column page and result partials under `app/import_requests/web`. The browser page shares the public homepage's fixed warm-cream, ink, and coral palette plus its Bricolage Grotesque/Instrument Sans typography. Both variants resolve previews through the shared `add_video_result` Turbo Frame and the same controller/service code. The web approval form opts out of Turbo so its POST redirect replaces the whole document and returns through the Create entry point; native keeps the existing `_top` Turbo-frame submission handled by its navigator.
   The native form explicitly tells users that, instead of copying a link, they
@@ -3051,15 +3051,15 @@ Users can save individual word/token translations they encounter during lessons 
 - Review lessons have random slug prefixed with `review-`
 - The unique index on `(course_id, slug)` is partial (`WHERE course_id IS NOT NULL`)
 
-#### ReviewLessonBuild
-- A lightweight, durable request record with a random `request_id`, user,
-  optional learning language, `pending`/`ready`/`failed` status, and the
-  resulting Lesson.
-- Build state lives here rather than on Lesson: a Lesson is created only after
-  the background job has assembled the complete practice transactionally.
-- The request ID correlates one browser tab with one job and prevents
-  simultaneous reviews or languages from receiving each other's completion
-  signal.
+#### Review lesson lifecycle
+- Vocabulary reviews use `lessons.review_build_status`: a completed background
+  build is `pending`, entering it changes it to `started`, and completion
+  changes it to `finished`.
+- Saving or unsaving a word expires pending reviews for that word's L1 language
+  and queues a replacement build. The user row lock serializes invalidation and
+  building so a word change cannot leave a stale pending review behind.
+- `CleanupExpiredReviewLessonsJob` runs daily and destroys only `expired`
+  reviews. Started reviews are never removed by cleanup.
 
 ### New Activity Type
 
@@ -3074,21 +3074,10 @@ Users can save individual word/token translations they encounter during lessons 
 
 #### ReviewLessonBuilder (`app/services/review_lesson_builder.rb`)
 - Creates a review lesson (no course, no medium) for a user from their saved token translations
-- Review creation is asynchronous. `POST /review_lessons` synchronously creates
-  only a `ReviewLessonBuild`, enqueues `BuildReviewLessonJob`, and redirects to
-  its animated waiting page. No vocabulary graph is loaded and no Lesson is
-  inserted in the request.
-- The waiting page subscribes to the build's signed Turbo Stream over Action
-  Cable. The job creates the Lesson and all activities in one transaction,
-  marks the build ready, then broadcasts a request-scoped Turbo visit to the
-  lesson. The build show action also redirects when it observes ready state, so
-  a job that finishes before the browser subscribes cannot strand the user.
-  A low-frequency ten-second page refresh is the fallback for a socket outage;
-  Action Cable remains the normal instant path. Failures persist on the build,
-  broadcast a visit back to the build page, and offer a retry without losing
-  saved vocabulary. On the native iOS app the whole sequence — waiting screen,
-  activities, finish page — presents as one modal sheet with the tab bar
-  hidden; see the mobile app section's path configuration notes.
+- `BuildReviewLessonJob` runs after a vocabulary mutation or review completion,
+  creates the Lesson and all activities transactionally, and marks the Lesson
+  `pending`. It skips work when that user and language already have a pending
+  review, so repeated saves coalesce naturally.
 - Activity composition:
   - FlashcardActivity (if ≥3 saved tokens, up to 15)
   - MatchTokensActivity (if ≥3 saved tokens, up to 15)
@@ -3108,16 +3097,13 @@ Users can save individual word/token translations they encounter during lessons 
 - `POST /token_translation_users` — save a token translation (authenticated users only)
 - `DELETE /token_translation_users/:id` — unsave (uses token_translation_id as param)
 - JSON responses: `{saved: true/false, token_translation_id: N}`
+- Both mutations trigger the asynchronous replacement review lifecycle.
 
 #### ReviewLessonsController
-- `POST /review_lessons` — create and enqueue a review build, then redirect to
-  its request-specific waiting page
-- `GET /review_lessons/:id` — play a completed review lesson
-- `GET /review_lessons/:id/finish` — completion page
-
-#### ReviewLessonBuildsController
-- `GET /review_lesson_builds/:request_id` — authorize the request by its owner,
-  render waiting/failed state, or redirect to the completed Lesson
+- `GET /review_lessons?language_code=:code` — load the user's current pending
+  or started review for that language, marking a pending review started on entry
+- `GET /review_lessons/finish?language_code=:code` — finish the current review
+  and queue its replacement
 
 ### Frontend Changes
 

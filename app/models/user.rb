@@ -11,7 +11,6 @@ class User < ApplicationRecord
   has_many :courses, dependent: :destroy
   has_many :lessons, dependent: :destroy
   has_many :activities, dependent: :destroy
-  has_many :review_lesson_builds, dependent: :destroy
   belongs_to :evaluation_signup, optional: true
 
   # Courses on the user's Home — imported by them, or added from the Library.
@@ -332,6 +331,24 @@ class User < ApplicationRecord
     Language.joins(phrases_as_l1: { phrase_tokens: :phrase_token_users })
       .where(phrase_token_users: { user_id: id })
       .distinct
+  end
+
+  def current_review_lesson(language_code)
+    language = Language.find_by!(iso_name: language_code)
+    lessons.review_lessons.where(review_language: language)
+      .where(review_build_status: [ :started, :pending ])
+      .order(Arel.sql("CASE review_build_status WHEN #{Lesson.review_build_statuses[:started]} THEN 0 ELSE 1 END"), created_at: :desc)
+      .first!
+  end
+
+  def refresh_review_lesson!(language)
+    with_lock do
+      lessons.pending_review_lessons.where(review_language: language).update_all(
+        review_build_status: Lesson.review_build_statuses[:expired],
+        updated_at: Time.zone.now
+      )
+    end
+    BuildReviewLessonJob.perform_later(id, language.id)
   end
 
   def saved_phrase_tokens_for_language(language_code)

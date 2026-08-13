@@ -53,13 +53,9 @@
     "own rule to escape the '/new' modal pattern above it — and that same rule is",
     "what lets this path double as the Create tab's root.",
     "",
-    "review_lessons and review_lesson_builds are both modal, matching the course",
-    "lesson rule above: taking a review lesson is one continuous session from the",
-    "tap on 'Review words' through the waiting screen to the activities and the",
-    "finish page, and it should present and dismiss as a single modal context with",
-    "the tab bar hidden throughout rather than flash the tab bar during the wait.",
-    "review_lesson_builds needs its own pattern because the '_builds' suffix means",
-    "it doesn't match '/review_lessons/.*'.",
+    "Review lessons are modal, matching the course lesson rule above: taking a",
+    "review lesson is one continuous session from the tap on 'Review words'",
+    "through the activities and finish page, with the tab bar hidden throughout.",
     "",
     "The Pro paywall and its confirmation are one modal context, sharing a stack:",
     "the purchase POST navigates from /app/pro to /app/pro/success, and both being",
@@ -118,8 +114,7 @@
     },
     {
       "patterns": [
-        "/review_lessons/.*",
-        "/review_lesson_builds/.*"
+        "/review_lessons.*"
       ],
       "properties": {
         "context": "modal",

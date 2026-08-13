@@ -34,7 +34,8 @@ class ReviewLessonBuilder
         course: nil,
         medium: nil,
         name: lesson_name,
-        review_language: @language
+        review_language: @language,
+        review_build_status: :pending
       )
       order = 1
       previous_tokens = []

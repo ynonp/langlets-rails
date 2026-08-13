@@ -160,9 +160,8 @@
     <% end %>
     <div class="lp-nav-links">
       <% if @daily_vocab_language %>
-        <%= button_to review_lessons_path(language_code: @daily_vocab_language),
-                      method: :post, form_class: "contents", class: "lp-daily-vocab",
-                      data: { turbo: false, testid: "daily-vocab-nav" } do %>
+        <%= link_to review_lessons_path(language_code: @daily_vocab_language),
+                    class: "lp-daily-vocab", data: { turbo: false, testid: "daily-vocab-nav" } do %>
           <span><%= t(".nav.daily_vocab") %></span>
           <% if @daily_vocab_streak.to_i.positive? %>
             <span class="inline-flex items-center gap-1" aria-label="<%= t(".nav.day_streak", count: @daily_vocab_streak) %>">

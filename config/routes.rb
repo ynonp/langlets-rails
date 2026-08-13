@@ -178,12 +178,8 @@ Rails.application.routes.draw do
   # Persist the watch-video activity toggles (translation / karaoke).
   patch "preferences/watch_video", to: "preferences#watch_video", as: :watch_video_preferences
 
-  resources :review_lessons, only: [ :create, :show ] do
-    member do
-      get :finish
-    end
-  end
-  resources :review_lesson_builds, only: :show, param: :id
+  get "review_lessons", to: "review_lessons#show", as: :review_lessons
+  get "review_lessons/finish", to: "review_lessons#finish", as: :finish_review_lessons
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

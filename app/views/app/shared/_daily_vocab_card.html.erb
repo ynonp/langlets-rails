@@ -1,5 +1,5 @@
 <% if @daily_vocab_language %>
-  <%= button_to review_lessons_path(language_code: @daily_vocab_language), method: :post,
+  <%= link_to review_lessons_path(language_code: @daily_vocab_language),
                 class: "w-full rounded-xl border border-white/10 bg-app-card p-3 text-left",
                 data: { testid: "daily-vocab-banner", turbo: false } do %>
     <span class="flex items-center gap-2.5">

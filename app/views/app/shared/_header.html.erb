@@ -57,9 +57,8 @@
 
         <div class="absolute right-0 top-full mt-2 w-56 rounded-2xl overflow-hidden z-50 bg-app-card border border-white/10 shadow-xl">
           <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-            <%= button_to t("app.menu.review_words", language: language.iso_name),
+            <%= link_to t("app.menu.review_words", language: language.iso_name),
                           review_lessons_path(language_code: language.iso_name),
-                          method: :post,
                           class: "w-full text-left px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
                           data: { turbo: false } %>
           <% end %>

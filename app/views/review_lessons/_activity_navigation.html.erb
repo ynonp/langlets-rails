@@ -26,7 +26,7 @@
                        else "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700"
                        end
       %>
-      <%= link_to review_lesson_path(@lesson, a: activity.order),
+      <%= link_to review_lessons_path(language_code: @lesson.review_language.iso_name, a: activity.order),
           class: "#{step_base} #{step_classes}",
           data: { turbo_frame: 'activity' },
           aria: { label: t("lessons.activity_navigation.activity", number: activity.order) } do %>

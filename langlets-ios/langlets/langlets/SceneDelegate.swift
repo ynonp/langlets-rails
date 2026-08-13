@@ -180,8 +180,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     /// Course lesson URLs (`/courses/:course/lessons/:lesson`, plus their
     /// activity and finish variants) and review lesson URLs
-    /// (`/review_lessons/:id`, `/review_lesson_builds/:request_id`, plus
-    /// finish) — everything that path configuration presents as a modal
+    /// (`/review_lessons`, including its activity query and finish variant) —
+    /// everything that path configuration presents as a modal
     /// sheet and that should therefore get the native close X.
     private static func isLessonURL(_ url: URL) -> Bool {
         let components = url.path.split(separator: "/")
@@ -191,7 +191,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return components.count >= 4 && components[2] == "lessons"
         }
 
-        return first == "review_lessons" || first == "review_lesson_builds"
+        return first == "review_lessons"
     }
 
     // Handle deep links (OAuth callbacks via custom URL scheme)

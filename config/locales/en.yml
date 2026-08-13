@@ -249,15 +249,6 @@ en:
       hint: "Listening is the hint — the lines appear in order in the song."
       great_job: "Great job!"
       completed: "You've sorted all the phrases correctly."
-  review_lessons:
-    waiting:
-      title: "Preparing your vocabulary review"
-      heading: "Your vocabulary review is being created"
-      message: "It will begin shortly."
-    failed:
-      heading: "That review needs another try"
-      message: "We couldn't prepare it this time. Your saved words are safe."
-      retry: "Try again"
   app:
     home:
       index:

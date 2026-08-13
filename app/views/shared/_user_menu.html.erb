@@ -51,8 +51,7 @@
       <div class="sm:hidden <%= divider_class %>"></div>
     <% end %>
     <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-      <%= button_to t("shared.menu.review_words", language: language.iso_name), review_lessons_path(language_code: language.iso_name),
-        method: :post,
+      <%= link_to t("shared.menu.review_words", language: language.iso_name), review_lessons_path(language_code: language.iso_name),
         class: review_button_class,
         data: { turbo: false }
       %>

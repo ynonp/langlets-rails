@@ -1,6 +1,7 @@
 require "test_helper"
 
 class TokenTranslationUsersControllerTest < ActionDispatch::IntegrationTest
+  include ActiveJob::TestHelper
   setup do
     @user = User.create!(
       email: "saved-token-state@example.com",
@@ -11,13 +12,13 @@ class TokenTranslationUsersControllerTest < ActionDispatch::IntegrationTest
       url: "https://www.youtube.com/watch?v=saved-token-state",
       language: languages(:english)
     )
-    phrase = Phrase.create!(
+    @phrase = Phrase.create!(
       medium:,
       l1: languages(:english),
       text_l1: "Saved",
       timestamp: "00:01.00"
     )
-    @token = phrase.phrase_tokens.create!(l1_start_index: 0, l1_end_index: 0)
+    @token = @phrase.phrase_tokens.create!(l1_start_index: 0, l1_end_index: 0)
     @user.phrase_token_users.create!(phrase_token: @token, language: languages(:english))
 
     post user_session_url, params: {
@@ -32,5 +33,44 @@ class TokenTranslationUsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal [@token.id], response.parsed_body["token_ids"]
     assert_includes response.headers["Cache-Control"], "private"
     assert_includes response.headers["Cache-Control"], "no-store"
+  end
+
+  test "destroy expires the pending review and queues a rebuild" do
+    review = Lesson.create!(
+      user: @user,
+      name: "Review Words (en)",
+      review_language: languages(:english),
+      review_build_status: :pending
+    )
+
+    assert_enqueued_with(job: BuildReviewLessonJob, args: [ @user.id, languages(:english).id ]) do
+      delete token_translation_user_url(@token), as: :json
+    end
+
+    assert_response :success
+    assert review.reload.review_expired?
+  end
+
+  test "create expires the pending review and queues a rebuild" do
+    phrase = Phrase.create!(
+      medium: @phrase.medium,
+      l1: languages(:english),
+      text_l1: "Again",
+      timestamp: "00:02.00"
+    )
+    token = phrase.phrase_tokens.create!(l1_start_index: 0, l1_end_index: 0)
+    review = Lesson.create!(
+      user: @user,
+      name: "Review Words (en)",
+      review_language: languages(:english),
+      review_build_status: :pending
+    )
+
+    assert_enqueued_with(job: BuildReviewLessonJob, args: [ @user.id, languages(:english).id ]) do
+      post token_translation_users_url, params: { token_translation_id: token.id }, as: :json
+    end
+
+    assert_response :success
+    assert review.reload.review_expired?
   end
 end

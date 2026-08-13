@@ -3,6 +3,7 @@ class PhraseTokenUser < ApplicationRecord
   belongs_to :phrase_token
   belongs_to :language
   before_validation :pin_available_language, on: :create
+  after_commit :refresh_review_lesson, on: [ :create, :update, :destroy ]
 
   validates :phrase_token_id, uniqueness: { scope: :user_id }
 
@@ -15,5 +16,12 @@ class PhraseTokenUser < ApplicationRecord
 
   def pin_available_language
     self.language ||= Current.translation_language || phrase_token&.token_translations&.first&.language
+  end
+
+  def refresh_review_lesson
+    return if user.destroyed?
+
+    language = phrase_token.phrase.l1
+    user.refresh_review_lesson!(language)
   end
 end

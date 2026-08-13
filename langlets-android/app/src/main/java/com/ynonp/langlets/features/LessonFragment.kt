@@ -17,8 +17,7 @@ import dev.hotwire.navigation.destinations.HotwireDestinationDeepLink
  * already swaps the toolbar's back arrow for a close icon. What it does not do
  * is change what the icon means — the stock handler is `navigator.pop()`, one
  * entry at a time. Most of a lesson's activities swap inside a Turbo Frame and
- * never touch the back stack, but the ones that do visit (a review build's
- * waiting screen handing off to the finished lesson, a lesson's finish page)
+ * never touch the back stack, but a lesson's finish page may visit a new URL
  * would otherwise leave the user tapping X repeatedly to get out of a session
  * they asked to leave once.
  *
@@ -51,8 +50,7 @@ class LessonFragment : WebFragment() {
      * a course page). Pop, then check again on the next frame and pop any further
      * modal entry. Most of a lesson's activities swap inside a Turbo Frame and
      * never touch the back stack, so this usually pops exactly once; the loop is
-     * for the visits that do stack, such as a review build's waiting screen
-     * handing off to the finished lesson. It cannot run away, because the entry
+     * for the visits that do stack. It cannot run away, because the entry
      * underneath the modal context is by definition not a [LessonFragment].
      *
      * `Navigator.pop` defers its work until the current destination reports

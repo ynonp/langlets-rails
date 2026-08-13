@@ -86,9 +86,8 @@
       <%= link_to "langlets", root_path, class: "gallery-brand", aria: { label: "Langlets home" } %>
       <div class="gallery-nav-actions">
         <% if @daily_vocab_language %>
-          <%= button_to review_lessons_path(language_code: @daily_vocab_language), method: :post,
-                        form_class: "contents", class: "gallery-daily-vocab",
-                        data: { turbo: false, testid: "daily-vocab-nav" } do %>
+          <%= link_to review_lessons_path(language_code: @daily_vocab_language),
+                      class: "gallery-daily-vocab", data: { turbo: false, testid: "daily-vocab-nav" } do %>
             <span><%= t("courses.index.nav.daily_vocab") %></span>
             <% if @daily_vocab_streak.to_i.positive? %>
               <span class="inline-flex items-center gap-1" aria-label="<%= t("courses.index.nav.day_streak", count: @daily_vocab_streak) %>">
