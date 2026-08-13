@@ -1,8 +1,8 @@
 require "test_helper"
 
-# The local/manual path: `rake create_song_progress:pipeline` runs the Deno CLI
-# and then calls this job synchronously. It predates the queue and does its own
-# oEmbed lookup, so the provider handling here is separate from Imports::Create's.
+# The local/manual path starts temporary HTTP servers and then calls this job
+# synchronously. It predates the queue and does its own oEmbed lookup, so the
+# provider handling here is separate from Imports::Create's.
 class ImportCourseJobTest < ActiveJob::TestCase
   TIKTOK_ID = "6718335390845095173".freeze
   TIKTOK_URL = "https://www.tiktok.com/@scout2015/video/#{TIKTOK_ID}".freeze

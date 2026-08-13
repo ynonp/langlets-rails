@@ -60,8 +60,8 @@ class CreateCourseJob < ApplicationJob
   def trigger!(progress, language)
     return if progress.complete_for?(language)
 
-    Rails.logger.info "CreateSongProgress #{progress.id}: triggering the pipeline at #{CreateSongPipelineHttp.base_url}"
-    CreateSongPipelineHttp.new(progress: progress, language: language).call
+    Rails.logger.info "CreateSongProgress #{progress.id}: triggering the pipeline at #{PipelineClient.base_url}"
+    progress.run_pipeline(language:)
   end
 
   # Requests waiting on this course. Usually one, but several users can ride on a

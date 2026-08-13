@@ -105,7 +105,7 @@ Pipeline states via `data` keys:
 
 ## Where the Pipeline Runs
 
-The AI steps run **only** in the Deno pipeline, on a separate host. Rails triggers a run with `CreateSongPipelineHttp` and stores what comes back; it no longer performs any of the steps itself, and needs no model-provider keys.
+The AI steps run **only** in the Deno pipeline, on a separate host. Rails builds run payloads through `CreateSongProgress` and sends them through the transport-only `PipelineClient`; it stores what comes back and needs no model-provider keys.
 
 Both entry points go through it:
 
@@ -120,7 +120,7 @@ Nothing can hang: each `ImportRequest` schedules an `ImportRequestTimeoutJob` fo
 
 Retriggering resumes: each branch persists as it completes, and the saved `data` goes back with the next trigger.
 
-There is no in-process fallback. `create_data`, `add_translation` and the `CreateSong::*` step concerns were removed when the pipeline became the only implementation, so `Rails.configuration.x.pipeline.url` is required — unset, it raises `CreateSongPipelineHttp::ConfigurationError`.
+There is no in-process fallback. `create_data`, `add_translation` and the `CreateSong::*` step concerns were removed when the pipeline became the only implementation, so `Rails.configuration.x.pipeline.url` is required — unset, it raises `PipelineClient::ConfigurationError`.
 
 ### Configuration
 
@@ -257,7 +257,7 @@ To run a job synchronously (for debugging):
 ```ruby
 CreateCourseJob.new.perform(progress.id, course.id)
 ```
-This returns as soon as the pipeline accepts the run — it does not wait for the course. To watch the run itself, poll `CreateSongProgress#progress_percent` / `#current_step_label`, or trigger it in the foreground with `CreateSongPipelineHttp.new(progress: progress, wait: true).call` (what the rake tasks use).
+This returns as soon as the pipeline accepts the run — it does not wait for the course. To watch the run itself, poll `CreateSongProgress#progress_percent` / `#current_step_label`, or trigger it in the foreground with `progress.run_pipeline(language:, wait: true)` (what the rake tasks use).
 
 ---
 

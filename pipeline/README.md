@@ -214,23 +214,19 @@ summary }` where `failed` maps branch → error message.
 PIPELINE_HMAC_SECRET=... SUPADATA_KEY=... ELEVEN_LABS_KEY=... OPENAI_API_KEY=... GOOGLE_GENERATIVE_AI_API_KEY=... OLLAMA_API_KEY=... \
   deno task serve
 
-# CLI: same pipeline, callback URL as an argument
-deno task cli https://langlets.app/pipeline_callbacks/123 \
-  --input progress-export.json --iso he --lang-id 3
-
 # tests / typecheck
 deno task test
 deno task check
 ```
 
-`--input` accepts either a raw trigger payload or a `CreateSongProgress#export` file. Exports name
-the translation language in English only, so pass `--iso` (and optionally `--lang-id`) when
-targeting a language the export's data doesn't already contain.
+For a local end-to-end run, use Rails' `create_song_progress:pipeline` rake task. It starts this
+HTTP server and a Rails callback server on random loopback ports, then sends the same request used
+in production.
 
 Env vars: `PIPELINE_HMAC_SECRET` (required), `SUPADATA_KEY`, `ELEVEN_LABS_KEY`, `OPENAI_API_KEY`,
 `GOOGLE_GENERATIVE_AI_API_KEY`, `OLLAMA_API_KEY`, `OLLAMA_BASE_URL` (defaults to
 `https://ollama.com/v1`). For local runs copy `.env.example` to `.env` (gitignored) — the `serve`
-and `cli` tasks load it via `--env-file`; real environment variables win over the file. On Deno
+task loads it via `--env-file`; real environment variables win over the file. On Deno
 Deploy set them in the dashboard instead.
 
 Set `YTDLP_NETWORK_NAMESPACE=vpn` on Linux to route only the `yt-dlp` audio download through that
@@ -243,7 +239,7 @@ to round-robin across several standing OpenVPN tunnels — useful because a tunn
 until the day it doesn't. The namespace that most recently produced a usable download is tried
 first; on failure the ladder falls through the rest of the list (retrying the full format ladder
 under each one) before giving up. That preference is persisted to `YTDLP_VPN_STATE_FILE` (default
-`/var/lib/langlets/vpn-state.json`) and read once per process — `main.ts`/`cli.ts` are long-running,
+`/var/lib/langlets/vpn-state.json`) and read once per process — `main.ts` is long-running,
 so this is not a per-download file read. If the file names a namespace no longer in
 `YTDLP_NETWORK_NAMESPACE`, it's ignored and the configured list order is used instead — the env var
 always wins. See `src/vpnNamespace.ts`.
@@ -258,8 +254,7 @@ the silent-audio downloads come back.
 ## Layout
 
 ```
-main.ts                 Deno Deploy entrypoint (Deno.serve)
-cli.ts                  CLI entrypoint
+main.ts                 Deno Deploy and local server entrypoint (Deno.serve)
 src/pipeline.ts         orchestrator: guards + fan-out + finalize
 src/steps/*.ts          one file per step
 src/progress.ts         working copy of data + patch ops + step guards

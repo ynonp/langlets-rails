@@ -24,7 +24,7 @@ class AddCourseTranslationJob < ApplicationJob
     # One run covers whatever is still missing: the pipeline transcribes only
     # when there are no phrases yet, and guards every other branch on the same
     # data keys, so a record that just needs the new language only gets that.
-    CreateSongPipelineHttp.new(progress: progress, language: language).call unless progress.complete_for?(language)
+    progress.run_pipeline(language:) unless progress.complete_for?(language)
 
     # A no-op unless the record already holds this language — the usual case is
     # a callback getting here first.

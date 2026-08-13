@@ -41,7 +41,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
     run_job(trigger: ->(**kwargs) { received << kwargs })
 
     assert_equal 1, received.size, "one run covers the record's own language"
-    assert_equal @progress, received.first[:progress]
+    assert_equal @english, received.first[:language]
     assert @request.reload.importing?, "the card shows as importing while the pipeline works"
     assert @course.reload.processing?, "publishing waits for the data, not for this job"
   end
@@ -66,7 +66,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
   # A trigger that never got off the ground is the one failure this job still
   # owns — the run's own failures arrive through the callback instead.
   test "a trigger that fails records why and costs the user nothing" do
-    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "pipeline unreachable") }
+    assert_raises(PipelineClient::Error) { run_job(raising: "pipeline unreachable") }
 
     @request.reload
     assert @request.failed?
@@ -78,7 +78,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
   # There is nothing to refund because there was nothing to refund *from*: the
   # credit only moves in Channel#publish!, which a failed import never reaches.
   test "a failure moves no credits in either direction" do
-    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
+    assert_raises(PipelineClient::Error) { run_job(raising: "boom") }
 
     assert_equal 0, @user.credit_ledger_entries.import_spend.count
     assert_equal 0, @user.credit_ledger_entries.import_refund.count
@@ -88,14 +88,14 @@ class CreateCourseJobTest < ActiveJob::TestCase
   # Solid Queue leaves the failed execution failed, so the job's rescue is the
   # final word — and a manual re-run has no bookkeeping to get wrong.
   test "failing twice still costs nothing" do
-    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
+    assert_raises(PipelineClient::Error) { run_job(raising: "boom") }
 
     # reload first: the job called error! on its own instance, so this one still
     # reads `pending` and update! would issue no SQL at all.
     @request.reload.update!(status: :importing)
     @course.reload.update!(status: :pending)
 
-    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom again") }
+    assert_raises(PipelineClient::Error) { run_job(raising: "boom again") }
 
     assert_equal 3, @user.reload.credit_balance
   end
@@ -106,7 +106,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
     rider = User.create!(email: "rider@example.com", password: "password123", confirmed_at: Time.zone.now)
     rider_request = create_request(user: rider, status: :importing)
 
-    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
+    assert_raises(PipelineClient::Error) { run_job(raising: "boom") }
 
     rider_request.reload
     assert rider_request.failed?
@@ -171,17 +171,13 @@ class CreateCourseJobTest < ActiveJob::TestCase
   # Replaces the job's one slow part — starting the run — leaving its
   # bookkeeping (claim, charge, refund, status) under test.
   def run_job(trigger: nil, raising: nil)
-    stub = Object.new
-    stub.define_singleton_method(:call) do
-      raise CreateSongPipelineHttp::TriggerError, raising if raising
-
-      true
-    end
-
-    # Note the lambdas: Minitest's stub *calls* any value that responds to :call,
-    # so returning the stub directly would invoke it instead.
     CreateSongProgress.stub(:find, @progress) do
-      CreateSongPipelineHttp.stub(:new, ->(**kwargs) { trigger&.call(**kwargs); stub }) do
+      @progress.stub(:run_pipeline, ->(**kwargs) {
+        trigger&.call(**kwargs)
+        raise PipelineClient::Error, raising if raising
+
+        true
+      }) do
         CreateCourseJob.perform_now(@progress.id, @course.id, @english.id)
       end
     end

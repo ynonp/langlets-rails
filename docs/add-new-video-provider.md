@@ -47,7 +47,7 @@ id. That single fact has consequences everywhere:
   otherwise. Same for the iOS share extension, which checks **host only** on
   purpose.
 - Anything that keys a record on a URL must canonicalize **through oEmbed** when
-  the id can't be read offline. See `CreateSongPipelineCli#resolve_url` — the web
+  the id can't be read offline. See `CreateSong::Pipeline.resolve_pipeline_url` — the web
   path gets this free from `Imports::Create`, the rake task had to do it itself,
   and not doing it produced a course with `video_id == nil`: no player, no cover,
   after a full paid pipeline run.
@@ -230,7 +230,7 @@ is the starting point.
 - [ ] `Api::V1::ImportRequestsController` — the iOS share extension's endpoint
 - [ ] `App::ImportRequestsController#resolve` — use `importable?`
 - [ ] `GuestImportRequestsController`
-- [ ] `CreateSongPipelineCli` + `ImportCourseJob` — the local rake path, which
+- [ ] `CreateSongProgress.run_pipeline` + `ImportCourseJob` — the local rake path, which
       canonicalizes and fetches oEmbed *itself*
 
 **Rendering**

@@ -22,7 +22,7 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     detected_data = { "lyric_lines" => [ "hola" ], "stt_words" => [ { "text" => "hola" } ] }
 
     assert_enqueued_with(job: CreateCourseJob) do
-      CreateSongPipelineHttp.stub(:detect_language, [ @spanish, detected_data ]) do
+      CreateSongProgress.stub(:detect_language, [ @spanish, detected_data ]) do
         Youtube::Oembed.stub(:fetch, @video) do
           DetectImportLanguageJob.perform_now(request.id)
         end
@@ -42,7 +42,7 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     request = create_provisional_request
 
     assert_raises(Imports::UnsupportedLanguage) do
-      CreateSongPipelineHttp.stub(:detect_language, [ @english, {} ]) do
+      CreateSongProgress.stub(:detect_language, [ @english, {} ]) do
         Youtube::Oembed.stub(:fetch, @video) do
           DetectImportLanguageJob.perform_now(request.id)
         end
@@ -67,7 +67,7 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     detected_data = { "lyric_lines" => [ "hola" ], "stt_words" => [ { "text" => "hola" } ] }
 
     assert_no_enqueued_jobs only: DetectImportLanguageJob do
-      CreateSongPipelineHttp.stub(:detect_language, [ @spanish, detected_data ]) do
+      CreateSongProgress.stub(:detect_language, [ @spanish, detected_data ]) do
         Youtube::Oembed.stub(:fetch, @video) do
           DetectImportLanguageJob.perform_now(source.id)
         end

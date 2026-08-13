@@ -209,14 +209,10 @@ module App
     test "approving in Add Video creates the request and starts its pipeline job" do
       pipeline_runs = 0
       pipeline_arguments = []
-      pipeline = Object.new
-      pipeline.define_singleton_method(:call) do
+      run_pipeline = lambda do |payload, wait:|
         pipeline_runs += 1
+        pipeline_arguments << [ payload, wait ]
         true
-      end
-      build_pipeline = lambda do |**kwargs|
-        pipeline_arguments << kwargs
-        pipeline
       end
 
       get new_app_import_request_path, headers: NATIVE
@@ -226,8 +222,8 @@ module App
       assert_response :success
       assert_select "form[action=?][data-turbo-frame=_top]", app_import_requests_path
 
-      CreateSongPipelineHttp.stub(:base_url, "https://pipeline.test") do
-        CreateSongPipelineHttp.stub(:new, build_pipeline) do
+      PipelineClient.stub(:base_url, "https://pipeline.test") do
+        PipelineClient.stub(:run, run_pipeline) do
           perform_enqueued_jobs(only: [ DetectImportLanguageJob, CreateCourseJob ]) do
             stub_video do
               post app_import_requests_path,
@@ -249,7 +245,8 @@ module App
       assert_equal 3, @user.reload.credit_balance, "still in flight, so still unpaid"
       assert_equal CANONICAL, import_request.youtube_url
       assert_equal 1, pipeline_runs
-      assert_equal import_request.create_song_progress, pipeline_arguments.sole.fetch(:progress)
+      assert_equal CANONICAL, pipeline_arguments.sole.first.fetch(:youtubeurl)
+      assert_not pipeline_arguments.sole.second
     end
 
     private
@@ -264,7 +261,7 @@ module App
         thumbnail_url: "https://i.ytimg.com/vi/#{VIDEO_ID}/hqdefault.jpg",
         canonical_url: CANONICAL
       )
-      CreateSongPipelineHttp.stub(:detect_language, [ @spanish, {} ]) do
+      CreateSongProgress.stub(:detect_language, [ @spanish, {} ]) do
         Youtube::Oembed.stub(:fetch, ->(_url) { video }, &block)
       end
     end

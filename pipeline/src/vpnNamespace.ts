@@ -10,7 +10,7 @@
 // in steady state every call tries the tunnel already known to work instead
 // of round-robining needlessly. That preference is remembered in a small
 // JSON file (YTDLP_VPN_STATE_FILE) so it survives a process restart — read
-// once per process since main.ts/cli.ts are long-running, not once per call.
+// once per process since main.ts is long-running, not once per call.
 
 import { message } from "./retry.ts";
 

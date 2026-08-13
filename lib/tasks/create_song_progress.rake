@@ -1,3 +1,87 @@
+require "socket"
+require "timeout"
+
+module CreateSongProgressTasks
+  module_function
+
+  def with_local_pipeline_servers
+    secret = PipelineHmac.secret
+    raise ArgumentError, "PIPELINE_HMAC_SECRET is not configured" if secret.blank?
+
+    pipeline_port = free_port
+    rails_port = free_port while rails_port.nil? || rails_port == pipeline_port
+    pipeline_url = "http://127.0.0.1:#{pipeline_port}"
+    callback_base_url = "http://127.0.0.1:#{rails_port}"
+    environment = {
+      "PIPELINE_HMAC_SECRET" => secret,
+      "PIPELINE_URL" => pipeline_url,
+      "PIPELINE_CALLBACK_BASE_URL" => callback_base_url
+    }
+
+    processes = []
+    processes << spawn_process(
+      environment.merge("PORT" => pipeline_port.to_s),
+      [ "deno", "task", "serve" ],
+      Rails.root.join("pipeline")
+    )
+    processes << spawn_process(
+      environment,
+      [ "./bin/rails", "server", "-e", Rails.env, "-b", "127.0.0.1", "-p", rails_port.to_s,
+        "-P", Rails.root.join("tmp/pids/create-song-progress-#{rails_port}.pid").to_s ],
+      Rails.root
+    )
+
+    wait_for_port(pipeline_port, "pipeline")
+    wait_for_port(rails_port, "Rails")
+
+    old_pipeline_url = Rails.configuration.x.pipeline.url
+    old_callback_url = Rails.configuration.x.pipeline.callback_base_url
+    Rails.configuration.x.pipeline.url = pipeline_url
+    Rails.configuration.x.pipeline.callback_base_url = callback_base_url
+    yield
+  ensure
+    Rails.configuration.x.pipeline.url = old_pipeline_url if defined?(old_pipeline_url)
+    Rails.configuration.x.pipeline.callback_base_url = old_callback_url if defined?(old_callback_url)
+    Array(processes).reverse_each { |pid| stop_process(pid) }
+  end
+
+  def free_port
+    server = TCPServer.new("127.0.0.1", 0)
+    server.addr[1]
+  ensure
+    server&.close
+  end
+
+  def spawn_process(environment, command, directory)
+    Process.spawn(environment, *command, chdir: directory.to_s, pgroup: true)
+  rescue Errno::ENOENT => error
+    raise "Unable to start #{command.first}: #{error.message}"
+  end
+
+  def wait_for_port(port, name)
+    Timeout.timeout(30) do
+      loop do
+        TCPSocket.new("127.0.0.1", port).close
+        break
+      rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH
+        sleep 0.1
+      end
+    end
+  rescue Timeout::Error
+    raise "Timed out waiting for local #{name} server on port #{port}"
+  end
+
+  def stop_process(pid)
+    Process.kill("TERM", -pid)
+    Timeout.timeout(5) { Process.wait(pid) }
+  rescue Errno::ESRCH, Errno::ECHILD
+    nil
+  rescue Timeout::Error
+    Process.kill("KILL", -pid)
+    Process.wait(pid)
+  end
+end
+
 namespace :create_song_progress do
   desc "Run the Deno pipeline, create the course, and wait (video_url, clip_language, translation_language, creator_email)"
   task :pipeline, [ :youtube_url, :clip_language, :translation_language, :creator_email ] => :environment do |_task, args|
@@ -11,18 +95,20 @@ namespace :create_song_progress do
         resolved to its post id through oEmbed before the run starts, so shell-quote
         it and expect one network call up front.
 
-        Start Rails separately with the same PIPELINE_HMAC_SECRET. The callback base URL
-        comes from Rails.configuration.x.pipeline.callback_base_url.
+        The task starts temporary Rails and pipeline servers on random local ports,
+        then connects them over HTTP using the production callback flow.
         creator_email defaults to COURSE_CREATOR_EMAIL, then ynon@hey.com.
       USAGE
     end
 
-    progress = CreateSongPipelineCli.new(
-      youtube_url: args[:youtube_url],
-      clip_language: args[:clip_language],
-      translation_language: args[:translation_language],
-      callback_base_url: Rails.configuration.x.pipeline.callback_base_url
-    ).call
+    progress = CreateSongProgressTasks.with_local_pipeline_servers do
+      CreateSongProgress.run_pipeline(
+        youtube_url: args[:youtube_url],
+        clip_language: args[:clip_language],
+        translation_language: args[:translation_language],
+        wait: true
+      )
+    end
 
     puts "Deno pipeline finished successfully for CreateSongProgress #{progress.id}."
 
@@ -202,7 +288,7 @@ namespace :create_song_progress do
       begin
         # The pipeline needs a persisted record to address its callbacks to.
         progress.save!
-        CreateSongPipelineHttp.new(progress: progress, language: language, wait: true).call
+        progress.run_pipeline(language:, wait: true)
 
         video_id = url.gsub(/[^a-zA-Z0-9]/, "_")
         output_file = output_dir.join("#{video_id}.json")
@@ -256,7 +342,7 @@ namespace :create_song_progress do
     # extract_lyrics on their presence, so this run does lessons, ratings,
     # similar sounds and the translation without re-transcribing.
     puts "Running the pipeline (skipping transcription — phrases are seeded)..."
-    CreateSongPipelineHttp.new(progress: progress, language: language, wait: true).call
+    progress.run_pipeline(language:, wait: true)
 
     output_file = args[:output_file] || "word_timed_progress_#{Time.zone.now.to_i}.json"
     progress.export(output_file)

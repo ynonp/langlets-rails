@@ -716,8 +716,8 @@ keyed only on `(youtubeurl, clip_language)`, and every language it might hold
 lives under `data["translations"][iso]`. Every caller that needs a specific
 language receives it explicitly rather than reading it off the record:
 `CreateCourseJob`/`ImportCourseJob`/`AddCourseTranslationJob` all take a
-`language_id`, `CreateSongPipelineHttp.new(language:)` has no fallback (`nil`
-means "transcription + lessons only, no translation branch"), and
+`language_id`, `CreateSongProgress#run_pipeline(language:)` has no fallback
+(`nil` means "transcription + lessons only, no translation branch"), and
 `CourseBuilder::BuildSong#call(language)` takes the language as an argument
 rather than deriving it.
 
@@ -738,8 +738,9 @@ that action while preserving errors from concurrently failing actions.
 
 For local/manual pipeline runs, `rake
 "create_song_progress:pipeline[VIDEO_URL,CLIP_LANGUAGE,TRANSLATION_LANGUAGE,CREATOR_EMAIL]"`
-takes a YouTube or TikTok URL. **`CreateSongPipelineCli` canonicalizes it before
-keying the progress row**, which the web path gets from `Imports::Create` and
+takes a YouTube or TikTok URL. **`CreateSongProgress.run_pipeline` canonicalizes
+it before keying the progress row**, which the web path gets from
+`Imports::Create` and
 this one has to do itself. That is not cosmetic: the stored URL becomes the
 course's `main_media_url`, and `Course#video_id` / `#provider` / `#thumbnail_url`
 are all derived from that string, so a row keyed on a TikTok share link would
@@ -756,25 +757,26 @@ Note this legacy path still leaves `youtube_video_id` NULL; `Course#video_id`
 falls back to parsing `main_media_url`, so playback works, but these courses are
 not covered by `idx_courses_published_video_language`.
 
-The task resolves the target `Language`, creates or reuses the shared progress row,
-exports its latest database state to a temporary file, and runs the Deno CLI
-synchronously. After the Deno process succeeds, the task synchronously runs
+The task resolves the target `Language`, starts the Deno pipeline and a Rails
+callback server on separate random loopback ports, and sets `PIPELINE_URL` and
+`PIPELINE_CALLBACK_BASE_URL` so they communicate over TCP exactly as they do in
+production. It creates or reuses the shared progress row and calls the blocking
+HTTP `/run` endpoint. After the pipeline succeeds, the task synchronously runs
 `ImportCourseJob` to build and publish the course. The optional creator email
 falls back to `COURSE_CREATOR_EMAIL`, then the administrative
 `ynon@hey.com` account. Course creation is not attempted when the pipeline
-fails. The callback server must already be running; its base URL comes from
-`Rails.configuration.x.pipeline.callback_base_url` (default
-`http://localhost:3000` in development). Rails and the task must share
-`PIPELINE_HMAC_SECRET`, while the task process also supplies
-the model provider keys inherited by Deno. A retry always re-exports first, so
-completed callback work is not unnecessarily repeated, and a failed Deno exit
-status fails the rake task.
+fails. Both temporary servers inherit `PIPELINE_HMAC_SECRET`; Deno also inherits
+the task's model-provider keys. The servers are stopped when the task finishes.
+A retry sends the latest stored `data`, so completed callback work is not
+unnecessarily repeated.
 
-The AI steps run **only** in the Deno pipeline. `CreateSongPipelineHttp` signs
-the record's exported `data` with `PipelineHmac` and POSTs it to the pipeline
-server's `/run`; results come back through `PipelineCallbacksController`. Both
-entry points use it — `CreateCourseJob` (the `/courses/new` form) and
-`AddCourseTranslationJob` (adding a language to an existing course).
+The AI steps run **only** in the Deno pipeline. `PipelineClient` in `lib` is the
+single transport boundary: it signs JSON with `PipelineHmac` and POSTs to the
+pipeline's `/detect-language` and `/run` endpoints. Model concerns own the
+database-aware behavior: `CreateSong::Pipeline` builds run payloads and maps
+detection responses to `Language` rows. Results come back through
+`PipelineCallbacksController`. Both import entry points use this path —
+`CreateCourseJob` and `AddCourseTranslationJob`.
 
 ### Video providers
 
@@ -1018,12 +1020,12 @@ the pipeline became the only implementation — the model is now the store and
 the guard predicates, not the worker. `CreateSong::ProgressReporting` remains,
 because the percent is derived from `data`, which the pipeline fills in the
 same shape. `Rails.configuration.x.pipeline.url` is therefore required; an unset value raises
-`CreateSongPipelineHttp::ConfigurationError` rather than silently degrading.
+`PipelineClient::ConfigurationError` rather than silently degrading.
 
-The synchronous `/run` form survives behind `CreateSongPipelineHttp.new(...,
-wait: true)`, which blocks and raises unless every branch succeeded. Only the
-rake tasks use it, because they run a pipeline and then export the record from
-the same process. Because each branch persists as it completes, a failed run
+The synchronous `/run` form is exposed by
+`CreateSongProgress#run_pipeline(wait: true)`, which blocks and raises unless
+every branch succeeded. Rake tasks use it when they must export or build from
+the completed record. Because each branch persists as it completes, a failed run
 leaves its finished work saved and retriggering with the same `data` resumes
 rather than redoes.
 
@@ -2114,7 +2116,7 @@ problems are actionable. The translation language is English on this main-host
 API; the source language is always detected by the pipeline.
 
 **The endpoint queues; it does not detect.** `Api::V1::ImportRequestsController#create`
-used to run `CreateSongPipelineHttp.detect_language` inline so the response could
+used to run `CreateSongProgress.detect_language` inline so the response could
 carry a post-dedupe status and the final credit balance. That is a pipeline round
 trip which downloads and analyses the video, and the sheet held a spinner for
 roughly ten seconds waiting for it — long enough that users cancelled. It now

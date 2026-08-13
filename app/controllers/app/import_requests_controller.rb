@@ -82,7 +82,7 @@ module App
     rescue Imports::UnsupportedLanguage
       redirect_to new_app_import_request_path(url: params[:url]),
                   alert: "We don't teach that language yet."
-    rescue CreateSongPipelineHttp::TriggerError
+    rescue PipelineClient::Error
       redirect_to new_app_import_request_path(url: params[:url]),
                   alert: "We couldn't detect the video's language."
     end

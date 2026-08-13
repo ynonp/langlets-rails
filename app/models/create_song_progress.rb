@@ -6,6 +6,7 @@ class CreateSongProgress < ApplicationRecord
   validates :youtubeurl, presence: true
 
   include CreateSong::ProgressReporting
+  include CreateSong::Pipeline
 
   # This row is shared by every user importing the same video + language pair, so
   # one pipeline legitimately backs several people's queue cards — hence
@@ -19,8 +20,8 @@ class CreateSongProgress < ApplicationRecord
   # The AI steps that used to live here (extract_lyrics, add_lessons,
   # rate_lessons, add_similar_sound, translate, add_token_translation) now run
   # in the Deno pipeline and reach this record through
-  # PipelineCallbacksController. Trigger a run with CreateSongPipelineHttp;
-  # this class is the store and the guard predicates, not the worker.
+  # PipelineCallbacksController. CreateSong::Pipeline owns triggering and this
+  # class remains the store and source of the guard predicates.
 
   def translation_complete?(language)
     language = resolve_translation_language(language)

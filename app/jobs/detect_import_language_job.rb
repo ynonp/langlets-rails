@@ -59,7 +59,7 @@ class DetectImportLanguageJob < ApplicationJob
   end
 
   def detect_language!(import_request)
-    CreateSongPipelineHttp.detect_language(url: import_request.youtube_url)
+    CreateSongProgress.detect_language(url: import_request.youtube_url)
   rescue => error
     record_detection_error(import_request, error)
     raise

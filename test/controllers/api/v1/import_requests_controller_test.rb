@@ -50,7 +50,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
   test "queues the import without detecting the language first" do
     detected = false
 
-    CreateSongPipelineHttp.stub(:detect_language, ->(**) { detected = true; [ @spanish, {} ] }) do
+    CreateSongProgress.stub(:detect_language, ->(**) { detected = true; [ @spanish, {} ] }) do
       Youtube::Oembed.stub(:fetch, ->(_url) { oembed_video }) do
         post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token)
       end
@@ -145,8 +145,8 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_response :created
 
     request = ImportRequest.find(response.parsed_body.fetch("id"))
-    CreateSongPipelineHttp.stub(:detect_language, ->(**) { raise CreateSongPipelineHttp::TriggerError, "unsupported" }) do
-      assert_raises(CreateSongPipelineHttp::TriggerError) { perform_enqueued_jobs }
+    CreateSongProgress.stub(:detect_language, ->(**) { raise PipelineClient::Error, "unsupported" }) do
+      assert_raises(PipelineClient::Error) { perform_enqueued_jobs }
     end
 
     assert_equal "failed", request.reload.status
@@ -234,7 +234,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def stub_video(&block)
-    CreateSongPipelineHttp.stub(:detect_language, [ @spanish, {} ]) do
+    CreateSongProgress.stub(:detect_language, [ @spanish, {} ]) do
       Youtube::Oembed.stub(:fetch, ->(_url) { oembed_video }, &block)
     end
   end
@@ -250,7 +250,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
       author_name: "scout2015", thumbnail_url: TIKTOK_THUMB,
       canonical_url: TIKTOK_CANONICAL
     )
-    CreateSongPipelineHttp.stub(:detect_language, [ @spanish, {
+    CreateSongProgress.stub(:detect_language, [ @spanish, {
       "lyric_lines" => [ "hola" ], "stt_words" => []
     } ]) do
       Tiktok::Oembed.stub(:fetch, ->(_url) { video }, &block)

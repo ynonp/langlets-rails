@@ -19,4 +19,6 @@ if (!secret) {
   Deno.exit(1);
 }
 
-Deno.serve(createHandler({ secret, models: defaultModels() }));
+const port = Number(Deno.env.get("PORT") ?? "8000");
+
+Deno.serve({ port }, createHandler({ secret, models: defaultModels() }));
