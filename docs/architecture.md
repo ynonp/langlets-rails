@@ -381,16 +381,38 @@ The former global **Free while in beta** banner has been removed. Layouts do not
 inject a notice above page content, including on acquisition, course, lesson,
 authentication, and native app screens.
 
+### Primary web layout and header
+
+The three primary browser surfaces — the homepage (`courses#index`), Library
+(`gallery#index`), and browser Add Video (`app/import_requests#new`) — render
+through `layouts/web.html.erb`. That layout owns the warm-cream document shell,
+shared Bricolage Grotesque/Instrument Sans font load, audio-cache wiring,
+structured data, sign-out bridge, and the single `shared/_web_header` partial.
+Page views must not add another brand/navigation row.
+
+The header is one non-wrapping flex row at every breakpoint. Its brand and
+account controls never shrink. Below Tailwind's `lg` breakpoint, Library and
+Create labels are hidden because both destinations remain in the account menu,
+and Daily Vocab collapses to its flame plus optional streak. This keeps the
+signed-in mobile web header to one line without removing a route. Desktop
+restores the labels and marks Library or Create with `aria-current="page"`.
+Signed-out visitors get the same brand position and a single Sign in action.
+
+This layout is intentionally scoped to those three surfaces. Course, lesson,
+and authentication pages retain `layouts/application.html.erb`; Hotwire Native
+screens retain the dark `layouts/app.html.erb` and their separate tab header.
+
 ### Public homepage (`courses#index`)
 
 The web root (`courses#index`, rendered for everyone except signed-in native
-users, who are redirected to `app_home_path`) is a self-contained warm-cream
+users, who are redirected to `app_home_path`) is a warm-cream
 marketing landing page imported from the Claude Design project "Langlets
-Homepage". It deliberately opts **out** of the app's light/dark theme: the whole
-page lives inside a `.lp` wrapper with a bespoke fixed palette and its own
+Homepage". It renders inside the primary `web` layout and deliberately opts
+**out** of the app's light/dark theme: the page body lives inside a `.lp`
+wrapper with a bespoke fixed palette and its own
 scoped `<style>` block (no `dark:` utilities, no theme toggle). Bricolage
-Grotesque (display) and Instrument Sans (body) load from Google Fonts in the
-page's `content_for :head`. The base anchor rule is zeroed with
+Grotesque (display) and Instrument Sans (body) load once from the layout. The
+base anchor rule is zeroed with
 `:where(.lp a)` so each component sets its own link colour without a
 specificity war.
 
@@ -409,9 +431,8 @@ the console after someone asks on Discord, not purchased. Do not reintroduce a
 pricing block here without being asked.
 
 Sections, all wired to real data:
-- **Nav** — brand, optional daily-vocabulary action, and auth-aware controls:
-  signed-out visitors get only *Sign in*; signed-in users get *My Langlets*
-  (the Gallery's `my_imports` filter), *Add a video*, and the account menu.
+- **Shared nav** — supplied by `layouts/web`; the homepage only provides its
+  optional daily-vocabulary state.
 - **Hero** — the lesson-building promise, supported-language list, and
   free-account explanation sit beside the static `public/product.png` product
   preview. All three lines remain visible at the mobile breakpoint.
@@ -527,7 +548,7 @@ The site is now open to search engines:
 
 - `public/robots.txt` is `User-agent: * / Allow: /`.
 - `app/views/layouts/_head.html.erb` no longer emits a blanket `noindex`
-  meta tag, so pages rendered through the `application`, `app`, and
+  meta tag, so pages rendered through the `application`, `web`, `app`, and
   `onboarding` layouts are indexable by default.
 - Two views (`review_lessons/show`, `lessons/finish`) still set their own
   `noindex, follow` tag. These are transient, session-specific screens (a
@@ -563,8 +584,9 @@ controllers still apply `Course#readable_by?`; a guest with the slug can read a
 course only when it belongs to a public or system Channel.
 
 The homepage no longer previews the catalog; `/gallery` remains the complete
-browsing surface for built Langlets. Homepage navigation points to "Try now",
-while authenticated navigation still exposes Gallery and Add Video elsewhere.
+browsing surface for built Langlets. The primary web layout exposes Library and
+Create to authenticated desktop users and keeps those destinations in the
+account menu on narrower screens.
 
 ### Public gallery (`gallery#index`)
 
@@ -578,9 +600,8 @@ Its YouTube-style filter bar remains a GET form and keeps filter state in the
 URL. Text input is debounced for 300 ms; content and language pills submit
 immediately. Both kinds of pills share one unlabeled, wrapping row and use the
 same rounded chip treatment as the homepage language filters. The page heading
-is "Start A Language Practice"; navigation is provided by the Langlets brand
-link without a separate back-home action. Signed-in navigation also exposes an
-"Add A Video" link to the shared Create flow. All interactive requests ask for Turbo Streams and replace only
+is "Start A Language Practice"; navigation comes from the shared primary web
+layout without a separate back-home action. All interactive requests ask for Turbo Streams and replace only
 the results/count/pagination region, while an ordinary GET remains the
 no-JavaScript fallback. `search` matches course/localized course names or
 playlist names/descriptions. Languages are multi-select and combine with OR.
@@ -2455,7 +2476,7 @@ Two more things to know before touching this:
 
 #### The app screens (`/app`)
 
-Home, mobile Library, Create/Add-a-video and the Pro screens live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, `/app/library`, and `/app/pro` are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. (There was a `/app/credits` screen here too; it existed to sell consumable credit packs and was deleted with them.) `App::ImportRequestsController` skips that presentation gate so authenticated browsers can use Create/Add Video. The web Library is `/gallery`, and the shared authenticated web menu links to Gallery and Create.
+Home, mobile Library, Create/Add-a-video and the Pro screens live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, `/app/library`, and `/app/pro` are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. (There was a `/app/credits` screen here too; it existed to sell consumable credit packs and was deleted with them.) `App::ImportRequestsController` skips that presentation gate so authenticated browsers can use Create/Add Video. For browser `new`/`resolve` requests it selects `layouts/web.html.erb`; native requests retain `layouts/app.html.erb`. The web Library is `/gallery`, and the shared primary web header links to Gallery and Create.
 
 **`/app/import_requests/new` is the Create entry point on both platforms, and also the Create tab's root** — there is no `#index` action or route; the bare `/app/import_requests` collection path only accepts `POST` (`#create`). Earlier the tab root was the bare path and `#index` redirected browsers to `/new`; that indirection was removed since nothing ever needed the bare path to resolve on its own. In the native app `/new` renders the Add-a-video form directly; there is no intermediate status list or Add New button. A browser hitting `/new` gets the responsive web variant of the same form. Import status lives in Library: `/app/library` on mobile and `/gallery` on web. The old Queue templates and polling controller remain in the tree but are no longer rendered by anything reachable.
 
@@ -2520,7 +2541,7 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
 - Course lesson sheets use `LessonViewController`, a `HotwireWebViewController` subclass selected by `SceneDelegate` for `/courses/:course/lessons/:lesson` and its activity URLs. It adds a native top-right X that dismisses the whole lesson sheet; this is deliberately a close action rather than back navigation between activities.
 - Review lessons get the same modal treatment as course lessons, and for the same reason: taking a review lesson is one continuous session that shouldn't expose the tab bar underneath. `ios_path_configuration.json` and `android_path_configuration.json` mark `/review_lessons.*` as a lesson modal, so the activities and finish page share one modal sheet with the native close X from the "Review words" tap through to completion. Reviews are prebuilt after vocabulary changes, so opening this route never passes through a waiting screen.
 - Create presentation is platform-specific only in styling. Both platforms hit `/app/import_requests/new`; the controller branches on `native_app?` to render the compact dark form for Hotwire Native versus the responsive two-column form for browsers, with no redirect between them. Both resolve and submit through the same controller and services.
-- Add Video is platform-specific at the view layer too. Hotwire Native keeps the compact pushed-screen form and result partials directly under `app/import_requests`; browsers use the responsive two-column page and result partials under `app/import_requests/web`. The browser page shares the public homepage's fixed warm-cream, ink, and coral palette plus its Bricolage Grotesque/Instrument Sans typography. Both variants resolve previews through the shared `add_video_result` Turbo Frame and the same controller/service code. The web approval form opts out of Turbo so its POST redirect replaces the whole document and returns through the Create entry point; native keeps the existing `_top` Turbo-frame submission handled by its navigator.
+- Add Video is platform-specific at the view layer too. Hotwire Native keeps the compact pushed-screen form and result partials directly under `app/import_requests`; browsers use the responsive two-column page and result partials under `app/import_requests/web`. The browser page uses the primary web layout and shares the public homepage's fixed warm-cream, ink, and coral palette plus its Bricolage Grotesque/Instrument Sans typography. Both variants resolve previews through the shared `add_video_result` Turbo Frame and the same controller/service code. The web approval form opts out of Turbo so its POST redirect replaces the whole document and returns through the Create entry point; native keeps the existing `_top` Turbo-frame submission handled by its navigator.
   The native form explicitly tells users that, instead of copying a link, they
   can share a YouTube or TikTok video directly to Langlets from the provider's
   share menu.
@@ -2556,8 +2577,9 @@ parameters, and search applies independently to both authorized course content
 and the current user's displayed requests. Gallery retains its existing Course,
 Playlist, language, and search filters; ImportRequest status is an additional
 single-select dimension. Its Turbo Stream result replacement redraws import and
-published cards together. The web Add Video header links Library to `/gallery`
-and Create to `/app/import_requests/new`.
+published cards together. The shared primary web header links Library to
+`/gallery` and Create to `/app/import_requests/new` on Home, Library, and web
+Add Video alike.
 
 Mobile Library additionally derives one language pill per learning language
 present in the complete listed `ChannelContentQuery` result for that user. It

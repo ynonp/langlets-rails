@@ -1,29 +1,6 @@
 <% content_for :title, t("app.import_requests.new.page_title") %>
-<% content_for :head do %>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<% end %>
 
 <div class="min-h-screen bg-[#FAF6EF] text-[#1E1B16] [font-family:'Instrument_Sans',ui-sans-serif,system-ui,sans-serif]">
-  <nav class="mx-auto flex w-full max-w-[1180px] flex-wrap items-center justify-between gap-6 px-5 py-5 sm:px-10"
-       aria-label="<%= t("app.web_menu.label") %>">
-    <%= link_to root_path, class: "flex items-baseline gap-2", aria: { label: t("courses.index.nav.home") } do %>
-      <span class="text-2xl font-extrabold tracking-tight [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">langlets</span>
-      <span class="-translate-y-0.5 inline-block h-2 w-2 rounded-full bg-[#C4451C]"></span>
-    <% end %>
-    <div class="flex flex-wrap items-center gap-5">
-      <%= link_to t("app.web_menu.library"), gallery_path,
-                  class: "text-sm font-bold text-[#1E1B16] hover:text-[#C4451C]" %>
-      <%= link_to t("app.web_menu.create"), new_app_import_request_path,
-                  "aria-current": "page",
-                  class: "text-sm font-bold text-[#C4451C]" %>
-      <%= render "shared/user_menu",
-                 avatar_type: :initial,
-                 menu_item_class: "block px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#FAF6EF]",
-                 dropdown_class: "absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden bg-[#FFFDF8] border border-[#DED4C2]",
-                 divider_class: "border-t border-[#DED4C2]" %>
-    </div>
-  </nav>
-
   <div data-testid="web-add-video"
        class="mx-auto grid w-full max-w-[1180px] gap-8 px-5 py-8 sm:px-10 sm:py-14 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14"
        data-controller="add-video"

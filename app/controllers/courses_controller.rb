@@ -1,6 +1,8 @@
 class CoursesController < ApplicationController
   include CourseReadable
 
+  layout :courses_layout
+
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
@@ -267,6 +269,10 @@ class CoursesController < ApplicationController
   end
 
   private
+
+  def courses_layout
+    action_name == "index" ? "web" : "application"
+  end
 
   def clear_lesson_progress!(course)
     lesson_ids = course.lessons.select(:id)

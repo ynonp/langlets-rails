@@ -1,4 +1,6 @@
 class GalleryController < ApplicationController
+  layout "web"
+
   PER_PAGE = 16
   CONTENT_TYPES = %w[playlists].freeze
   IMPORT_FILTERS = UserImportFiltering::IMPORT_FILTERS

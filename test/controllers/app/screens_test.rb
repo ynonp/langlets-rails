@@ -80,6 +80,8 @@ module App
       get new_app_import_request_path, headers: WEB
 
       assert_response :success
+      assert_select "body[data-layout='primary-web']"
+      assert_select "nav[data-testid='primary-web-header']", count: 1
       assert_select "[data-testid='web-add-video']"
       assert_select "[data-import-request-status]", count: 0
       assert_select "nav a[href=?][aria-current=page]", new_app_import_request_path, text: "Create"

@@ -7,15 +7,6 @@
   .gallery-page { --cream:#FAF6EF; --ink:#1E1B16; --red:#C4451C; --muted:#716A5D; min-height:100vh;
     background:var(--cream); color:var(--ink); font-family:'Instrument Sans',ui-sans-serif,system-ui,sans-serif; }
   .gallery-wrap { width:min(1180px,calc(100% - 40px)); margin:0 auto; padding:28px 0 72px; }
-  .gallery-nav { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:56px; }
-  .gallery-nav-actions { display:flex; align-items:center; gap:18px; }
-  .gallery-add-video { color:var(--ink); font-size:14px; font-weight:800; text-decoration:none; }
-  .gallery-add-video:hover { color:var(--red); }
-  .gallery-daily-vocab { display:inline-flex; align-items:center; gap:8px; border:0; border-radius:999px; background:#DFF1E8; padding:7px 14px;
-    color:#0F6E56; font:500 14px 'Instrument Sans',sans-serif; cursor:pointer; }
-  .gallery-daily-vocab:hover { background:#CFE9DC; }
-  .gallery-brand { color:var(--ink); font:800 26px 'Bricolage Grotesque',sans-serif; text-decoration:none; }
-  .gallery-brand::after { content:""; display:inline-block; width:8px; height:8px; margin-left:8px; border-radius:50%; background:var(--red); }
   .gallery-header { max-width:720px; margin-bottom:30px; }
   .gallery-header h1 { margin:0 0 10px; font:800 clamp(38px,6vw,60px)/1 'Bricolage Grotesque',sans-serif; letter-spacing:-.035em; }
   .gallery-header p { margin:0; color:var(--muted); font-size:17px; }
@@ -70,7 +61,6 @@
   }
   @media (max-width:520px) {
     .gallery-wrap { width:min(100% - 24px,1180px); padding-top:18px; }
-    .gallery-nav { margin-bottom:38px; }
     .gallery-pills { gap:6px; }
     .gallery-pill { min-height:34px; padding:0 12px; font-size:13px; }
     .gallery-grid { gap:10px; }
@@ -81,38 +71,7 @@
 </style>
 
 <div class="gallery-page">
-  <main class="gallery-wrap">
-    <nav class="gallery-nav">
-      <%= link_to "langlets", root_path, class: "gallery-brand", aria: { label: "Langlets home" } %>
-      <div class="gallery-nav-actions">
-        <% if @daily_vocab_language %>
-          <%= link_to review_lessons_path(language_code: @daily_vocab_language),
-                      class: "gallery-daily-vocab", data: { turbo: false, testid: "daily-vocab-nav" } do %>
-            <span><%= t("courses.index.nav.daily_vocab") %></span>
-            <% if @daily_vocab_streak.to_i.positive? %>
-              <span class="inline-flex items-center gap-1" aria-label="<%= t("courses.index.nav.day_streak", count: @daily_vocab_streak) %>">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C8 8.8 7 10.3 7 12.5a5 5 0 0 0 10 0c0-4.2-3-6.5-5-10.5z" fill="oklch(0.68 0.2 40)"/>
-                  <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
-                </svg>
-                <%= @daily_vocab_streak %>
-              </span>
-            <% end %>
-          <% end %>
-        <% end %>
-        <% if user_signed_in? %>
-          <%= link_to "Add A Video", new_app_import_request_path, class: "gallery-add-video" %>
-        <% end %>
-        <% if user_signed_in? %>
-          <%= render "shared/user_menu",
-                     avatar_type: :initial,
-                     menu_item_class: "block px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#FAF6EF]",
-                     dropdown_class: "absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden bg-[#FFFDF8] border border-[#DED4C2]",
-                     divider_class: "border-t border-[#DED4C2]" %>
-        <% end %>
-      </div>
-    </nav>
-
+  <div class="gallery-wrap">
     <header class="gallery-header">
       <h1>Start A Language Practice</h1>
       <p>Explore every course and playlist, or narrow the collection by language.</p>
@@ -163,5 +122,5 @@
 
     <%= render "results" %>
     </div>
-  </main>
+  </div>
 </div>

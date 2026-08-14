@@ -66,6 +66,10 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url
 
     assert_response :success
+    assert_select "body[data-layout='primary-web']"
+    assert_select "nav[data-testid='primary-web-header'][class*='flex-nowrap']", count: 1
+    assert_select "[data-testid='primary-web-actions'][class*='flex-nowrap']", count: 1
+    assert_select "[data-testid='primary-web-desktop-link'][class*='hidden'][class*='lg:inline-flex']", count: 2
     assert_select "[data-testid='daily-vocab-nav']", text: "Daily Vocab Practice"
     assert_select "[data-controller='profile-menu']", count: 1
     assert_select "a", text: "Profile"
@@ -269,9 +273,9 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href='#pricing']", count: 0
     assert_select "a[href=?]", new_user_registration_path(returnto: "/"), count: 0
     assert_select "form[action*=?]", "paypal.com", count: 0
-    assert_select ".lp-nav a", text: "Browse Langlets", count: 0
-    assert_select ".lp-nav a", text: "My Langlets", count: 0
-    assert_select ".lp-nav a[href=?]", new_user_session_path, text: "Sign in"
+    assert_select "[data-testid='primary-web-header'] a", text: "Browse Langlets", count: 0
+    assert_select "[data-testid='primary-web-header'] a", text: "Library", count: 0
+    assert_select "[data-testid='primary-web-header'] a[href=?]", new_user_session_path, text: "Sign in"
   end
 
   test "the homepage sells nothing to signed-in users either" do
@@ -282,8 +286,9 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "#pricing", count: 0
     assert_select "form[action*=?]", "paypal.com", count: 0
-    assert_select ".lp-nav a[href=?]", gallery_path(imports: "my_imports"), text: "My Langlets"
-    assert_select ".lp-nav a", text: "Browse Langlets", count: 0
+    assert_select "[data-testid='primary-web-header'] a[href=?]", gallery_path, text: "Library"
+    assert_select "[data-testid='primary-web-header'] a[href=?]", new_app_import_request_path, text: "Create"
+    assert_select "[data-testid='primary-web-header'] a", text: "Browse Langlets", count: 0
   end
 
   private

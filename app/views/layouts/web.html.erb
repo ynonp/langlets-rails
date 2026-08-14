@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="<%= current_translation_language&.iso_name || I18n.locale %>" dir="<%= current_translation_language&.rtl? ? 'rtl' : 'ltr' %>" data-theme="light">
+  <head>
+    <%= render "layouts/head" %>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="bg-[#FAF6EF] text-[#1E1B16]" data-layout="primary-web">
+    <main class="flex min-h-screen max-w-none flex-col overflow-visible"
+          data-controller="audio-cache"
+          data-action="click->audio-cache#handleClick:capture audio-cache:play->audio-cache#playEvent audio-cache:preload->audio-cache#preloadEvent audio-cache:stop->audio-cache#stop">
+      <%= render "shared/web_header" %>
+      <%= yield %>
+    </main>
+
+    <%= yield :structured_data %>
+    <% unless content_for?(:structured_data) %>
+      <%= render "shared/structured_data/website" %>
+    <% end %>
+
+    <% if params[:signed_out].present? %>
+      <div data-controller="bridge--sign-out" hidden></div>
+    <% end %>
+  </body>
+</html>

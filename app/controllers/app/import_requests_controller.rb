@@ -145,7 +145,7 @@ module App
     private
 
     def import_requests_layout
-      web_view? ? "application" : "app"
+      web_view? ? "web" : "app"
     end
 
     def web_view?

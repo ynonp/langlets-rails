@@ -43,7 +43,10 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     get gallery_url(lang: @language.iso_name)
 
     assert_response :success
-    assert_select "nav a[href='#{new_app_import_request_path}']", text: "Add A Video"
+    assert_select "body[data-layout='primary-web']"
+    assert_select "nav[data-testid='primary-web-header']", count: 1
+    assert_select "nav a[href='#{new_app_import_request_path}']", text: "Create"
+    assert_select "nav a[href=?][aria-current=page]", gallery_path, text: "Library"
     assert_select "[data-controller='profile-menu']", count: 1
     assert_select "a", text: "Profile"
   end
@@ -158,7 +161,7 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     get gallery_url(imports: "failed")
 
     assert_response :success
-    assert_select "nav a", text: "Add A Video", count: 0
+    assert_select "nav a", text: "Create", count: 0
     assert_select "input[name=imports]", count: 0
     assert_select "[data-import-request-status]", count: 0
   end

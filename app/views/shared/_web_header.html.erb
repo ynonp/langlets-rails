@@ -1,0 +1,51 @@
+<%
+  library_active = controller_path == "gallery"
+  create_active = controller_path == "app/import_requests"
+  desktop_link_class = "hidden h-10 items-center whitespace-nowrap text-sm font-bold hover:text-[#C4451C] lg:inline-flex"
+%>
+
+<nav data-testid="primary-web-header"
+     class="mx-auto flex h-[72px] w-full max-w-[1180px] flex-nowrap items-center justify-between gap-3 px-5 sm:h-20 sm:px-10 lg:gap-6"
+     aria-label="<%= t("app.web_menu.label") %>">
+  <%= link_to root_path, class: "flex shrink-0 items-baseline gap-2", aria: { label: t("courses.index.nav.home") } do %>
+    <span class="whitespace-nowrap text-2xl font-extrabold tracking-tight [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">langlets</span>
+    <span class="-translate-y-0.5 inline-block h-2 w-2 shrink-0 rounded-full bg-[#C4451C]"></span>
+  <% end %>
+
+  <div data-testid="primary-web-actions" class="flex min-w-0 flex-nowrap items-center justify-end gap-2 sm:gap-5">
+    <% if @daily_vocab_language %>
+      <%= link_to review_lessons_path(language_code: @daily_vocab_language),
+                  class: "inline-flex h-10 shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-[#DFF1E8] px-3 text-sm font-medium text-[#0F6E56] hover:bg-[#CFE9DC] sm:px-4",
+                  data: { turbo: false, testid: "daily-vocab-nav" },
+                  aria: { label: t("courses.index.nav.daily_vocab") } do %>
+        <svg class="h-[17px] w-[17px] shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C8 8.8 7 10.3 7 12.5a5 5 0 0 0 10 0c0-4.2-3-6.5-5-10.5z" fill="oklch(0.68 0.2 40)"/>
+          <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
+        </svg>
+        <span class="hidden lg:inline"><%= t("courses.index.nav.daily_vocab") %></span>
+        <% if @daily_vocab_streak.to_i.positive? %>
+          <span aria-label="<%= t("courses.index.nav.day_streak", count: @daily_vocab_streak) %>"><%= @daily_vocab_streak %></span>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to t("app.web_menu.library"), gallery_path,
+                  class: "#{desktop_link_class} #{library_active ? 'text-[#C4451C]' : 'text-[#1E1B16]'}",
+                  data: { testid: "primary-web-desktop-link" },
+                  aria: (library_active ? { current: "page" } : {}) %>
+      <%= link_to t("app.web_menu.create"), new_app_import_request_path,
+                  class: "#{desktop_link_class} #{create_active ? 'text-[#C4451C]' : 'text-[#1E1B16]'}",
+                  data: { testid: "primary-web-desktop-link" },
+                  aria: (create_active ? { current: "page" } : {}) %>
+      <%= render "shared/user_menu",
+                 avatar_type: :initial,
+                 menu_item_class: "block px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#FAF6EF]",
+                 dropdown_class: "absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden bg-[#FFFDF8] border border-[#DED4C2]",
+                 divider_class: "border-t border-[#DED4C2]" %>
+    <% else %>
+      <%= link_to t("courses.index.nav.sign_in"), new_user_session_path,
+                  class: "inline-flex h-10 shrink-0 items-center whitespace-nowrap text-sm font-bold text-[#1E1B16] hover:text-[#C4451C]" %>
+    <% end %>
+  </div>
+</nav>
