@@ -3100,8 +3100,11 @@ The native app avatar is a top-right initials dropdown linking to Notifications,
 Daily vocabulary invitations use `User#daily_vocab_review_available?`. The user
 must have a saved span whose phrase is in the current learning language, and
 must not have a `LessonUser` completion for a review lesson pinned to that
-language during `Time.zone.now.all_day`. Merely generating or starting a review
-does not dismiss the invitation. The final activity emits the shared
+language during `Time.zone.now.all_day`. When more than one language is due,
+`User#daily_vocab_review_language` chooses the practice language of the most
+recently saved or updated `PhraseTokenUser` (with its id as a deterministic
+tie-breaker), rather than choosing alphabetically. Merely generating or
+starting a review does not dismiss the invitation. The final activity emits the shared
 `activity:completed` browser event; `progress-tracker` submits the review
 lesson id and the server creates the `LessonUser` that dismisses the invitation.
 Activity controllers must use that shared event name rather than Stimulus's

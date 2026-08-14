@@ -372,7 +372,10 @@ class User < ApplicationRecord
   end
 
   def daily_vocab_review_language(preferred_code = nil)
-    candidates = languages_with_saved_words.order(:iso_name)
+    candidates = languages_with_saved_words
+      .distinct(false)
+      .group("languages.id")
+      .order(Arel.sql("MAX(phrase_token_users.updated_at) DESC, MAX(phrase_token_users.id) DESC"))
     if preferred_code.present?
       preferred = candidates.find_by(iso_name: preferred_code)
       return preferred if preferred && daily_vocab_review_available?(preferred.iso_name)

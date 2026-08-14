@@ -133,6 +133,34 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 0, tokens.count
   end
 
+  test "daily vocab review uses the language of the most recently saved token" do
+    @user.saved_phrase_tokens << @token_ar
+
+    travel 1.second do
+      @user.saved_phrase_tokens << @token_en
+    end
+
+    assert_equal @english, @user.daily_vocab_review_language
+  end
+
+  test "daily vocab review falls back to the most recently saved language still due today" do
+    @user.saved_phrase_tokens << @token_ar
+
+    travel 1.second do
+      @user.saved_phrase_tokens << @token_en
+    end
+
+    completed_review = Lesson.create!(
+      user: @user,
+      name: "Review Words (en)",
+      review_language: @english,
+      review_build_status: :finished
+    )
+    LessonUser.create!(user: @user, lesson: completed_review)
+
+    assert_equal @arabic, @user.daily_vocab_review_language
+  end
+
   test "pro! grants entitlement immediately, with no purchase behind it" do
     assert_not @user.pro?
 
