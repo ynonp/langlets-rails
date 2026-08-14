@@ -1,0 +1,16 @@
+<%
+  link_data = { action: "click->profile-menu#dismiss" }.merge(local_assigns.fetch(:data, {}))
+  link_class = local_assigns.fetch(:class_name)
+  badge = local_assigns[:badge]
+  link_class = "#{link_class} flex items-center justify-between gap-2" if badge.present?
+  link_options = { class: link_class, data: link_data }
+  link_options[:method] = local_assigns[:method] if local_assigns.key?(:method)
+%>
+<%= link_to path, **link_options do %>
+  <span><%= label %></span>
+  <% if badge.present? %>
+    <span class="min-w-[20px] px-1.5 py-0.5 rounded-full bg-red-500 text-white text-[10px] font-extrabold text-center">
+      <%= badge %>
+    </span>
+  <% end %>
+<% end %>

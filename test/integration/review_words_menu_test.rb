@@ -134,6 +134,14 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "📚 Review Words (#{@arabic.iso_name})"
     assert_select "a", text: "📚 Review Words (#{@english.iso_name})"
     assert_select "a", text: "📚 Review Words (#{@hebrew.iso_name})"
+
+    profile_link_class = css_select("a[href='#{profile_path}']").first["class"]
+    assert_select "a[href^='#{review_lessons_path}']" do |links|
+      links.each do |link|
+        assert_includes link["class"].split, "block"
+        assert_equal profile_link_class, link["class"]
+      end
+    end
   end
 
   test "menu shows language buttons alphabetically ordered by iso_name" do

@@ -3,7 +3,6 @@
   show_theme_toggle = local_assigns.fetch(:show_theme_toggle, false)
   show_xp_badge = local_assigns.fetch(:show_xp_badge, false)
   menu_item_class = local_assigns.fetch(:menu_item_class, "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70")
-  review_button_class = local_assigns.fetch(:review_button_class, "w-full text-left px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70")
   dropdown_class = local_assigns.fetch(:dropdown_class, "absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800")
   divider_class = local_assigns.fetch(:divider_class, "border-t border-gray-200 dark:border-gray-800")
   logout_data = local_assigns.fetch(:logout_data, { turbo_method: :delete })
@@ -51,42 +50,30 @@
       <div class="sm:hidden <%= divider_class %>"></div>
     <% end %>
     <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-      <%= link_to t("shared.menu.review_words", language: language.iso_name), review_lessons_path(language_code: language.iso_name),
-        class: review_button_class,
-        data: { turbo: false }
-      %>
+      <%= render "shared/menu_link",
+                 label: t("shared.menu.review_words", language: language.iso_name),
+                 path: review_lessons_path(language_code: language.iso_name),
+                 class_name: menu_item_class,
+                 data: { turbo: false } %>
     <% end %>
     <% if current_user.languages_with_saved_words.exists? %>
       <div class="<%= divider_class %>"></div>
     <% end %>
-    <%= link_to t("app.web_menu.library"), gallery_path,
-                class: menu_item_class,
-                data: { action: "click->profile-menu#dismiss" } %>
-    <%= link_to t("app.web_menu.create"), new_app_import_request_path,
-                class: menu_item_class,
-                data: { action: "click->profile-menu#dismiss" } %>
-    <%= link_to notifications_path,
-                class: "#{menu_item_class} flex items-center justify-between gap-2",
-                data: { action: "click->profile-menu#dismiss" } do %>
-      <span><%= t("shared.menu.notifications") %></span>
-      <% if unread_notifications_count.positive? %>
-        <span class="min-w-[20px] px-1.5 py-0.5 rounded-full bg-red-500 text-white text-[10px] font-extrabold text-center">
-          <%= unread_notifications_count > 9 ? "9+" : unread_notifications_count %>
-        </span>
-      <% end %>
-    <% end %>
-    <%= link_to t("shared.menu.profile"), profile_path,
-                class: menu_item_class,
-                data: { action: "click->profile-menu#dismiss" } %>
-    <%= link_to t("channels.invitations.title"), invitations_path,
-                class: "block px-4 py-3 text-sm font-semibold",
-                data: { action: "click->profile-menu#dismiss" } %>
-    <%= link_to t("shared.menu.connected_apps"), settings_connections_path, class: menu_item_class %>
-    <%= link_to t("shared.menu.logout"),
-      destroy_user_session_path(returnto: request.fullpath),
-      method: :delete,
-      data: logout_data,
-      class: menu_item_class
-    %>
+    <%= render "shared/menu_link", label: t("app.web_menu.library"), path: gallery_path, class_name: menu_item_class %>
+    <%= render "shared/menu_link", label: t("app.web_menu.create"), path: new_app_import_request_path, class_name: menu_item_class %>
+    <%= render "shared/menu_link",
+               label: t("shared.menu.notifications"),
+               path: notifications_path,
+               class_name: menu_item_class,
+               badge: (unread_notifications_count > 9 ? "9+" : unread_notifications_count if unread_notifications_count.positive?) %>
+    <%= render "shared/menu_link", label: t("shared.menu.profile"), path: profile_path, class_name: menu_item_class %>
+    <%= render "shared/menu_link", label: t("channels.invitations.title"), path: invitations_path, class_name: menu_item_class %>
+    <%= render "shared/menu_link", label: t("shared.menu.connected_apps"), path: settings_connections_path, class_name: menu_item_class %>
+    <%= render "shared/menu_link",
+               label: t("shared.menu.logout"),
+               path: destroy_user_session_path(returnto: request.fullpath),
+               class_name: menu_item_class,
+               method: :delete,
+               data: logout_data %>
   </div>
 </div>

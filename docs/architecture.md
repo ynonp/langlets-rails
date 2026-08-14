@@ -3087,6 +3087,10 @@ also closes the native Home header's `details` menu, keeping outside-click
 behavior consistent across both menu implementations. Profile links explicitly
 dismiss the menu before navigation; this prevents Turbo snapshots on web and
 retained tab webviews on iOS from restoring the menu in its open state.
+Every web entry, including each language-specific Review Words entry, renders
+through `shared/_menu_link.html.erb` with the host menu's block-level item class.
+This keeps multiple review languages vertically stacked and gives navigation,
+badges, dismissal, and logout links one consistent implementation.
 
 The native app avatar is a top-right initials dropdown linking to Notifications, Profile, Invitations and Logout, plus one language-specific "Practice Words" action for each language in which the user has saved vocabulary. It is part of the one shared header, so it appears on all three tab roots:
 - `app/views/app/shared/_header.html.erb` — the header: `title:` or the wordmark on the left, the avatar and its menu on the right. No credits pill (see the Create tab below for where the balance lives)
