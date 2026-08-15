@@ -165,6 +165,7 @@ he:
       tap_any_word: "הקישו על מילה כלשהי"
       karaoke: "קריוקי"
       translation: "תרגום"
+      copy_text: "העתקת טקסט"
       start_practice: "מתחילים לתרגל"
     read_translated_activity:
       before_you_watch: "לפני הצפייה"

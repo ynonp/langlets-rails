@@ -33,10 +33,10 @@
     data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
   <div class="contents">
-    <!-- Header: title + translation toggle -->
+    <!-- Header: title + translate/copy actions -->
     <div class="order-4 flex items-center justify-between px-5 pt-3 pb-2">
       <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400"><%= t(".tap_any_word") %></div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
         <% if params[:word_timing] %>
           <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
             <input type="checkbox" <%= "checked" if wv_prefs["karaoke"] %>
@@ -45,17 +45,31 @@
             <%= t(".karaoke") %>
           </label>
         <% end %>
-        <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer select-none">
+        <label class="relative inline-flex items-center justify-center w-9 h-9 rounded-full cursor-pointer text-gray-500 dark:text-gray-400 peer-checked:text-emerald-600 dark:peer-checked:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+               title="<%= t(".translation") %>">
           <span class="sr-only"><%= t(".translation") %></span>
-          <span class="<%= 'text-emerald-600 dark:text-emerald-400' unless wv_prefs["translation"] %>"><%= localized_language_name(params[:l1]) %></span>
-          <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full bg-gray-300 dark:bg-gray-600 transition-colors has-[:checked]:bg-emerald-500">
-            <input type="checkbox" class="peer sr-only" <%= "checked" if wv_prefs["translation"] %>
-              data-watch-video-activity-target="showTranslation"
-              data-action="change->watch-video-activity#toggleTranslation">
-            <span class="inline-block h-4 w-4 translate-x-0.5 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
-          </span>
-          <span class="<%= 'text-emerald-600 dark:text-emerald-400' if wv_prefs["translation"] %>"><%= localized_language_name(params[:l2]) %></span>
+          <input type="checkbox" class="peer sr-only" <%= "checked" if wv_prefs["translation"] %>
+            data-watch-video-activity-target="showTranslation"
+            data-action="change->watch-video-activity#toggleTranslation">
+          <svg class="pointer-events-none" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/>
+          </svg>
         </label>
+        <button type="button"
+                class="inline-flex items-center justify-center w-9 h-9 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                title="<%= t(".copy_text") %>"
+                data-action="click->watch-video-activity#copyText">
+          <span class="sr-only"><%= t(".copy_text") %></span>
+          <svg data-watch-video-activity-target="copyIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="11" height="11" rx="2"/>
+            <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>
+          </svg>
+          <svg data-watch-video-activity-target="copyCheckIcon" class="hidden text-emerald-600 dark:text-emerald-400" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </button>
       </div>
     </div>
 

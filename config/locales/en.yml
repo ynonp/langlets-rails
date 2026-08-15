@@ -187,6 +187,7 @@ en:
       tap_any_word: "Tap any word"
       karaoke: "Karaoke"
       translation: "Translation"
+      copy_text: "Copy text"
       start_practice: "Start practice"
     read_translated_activity:
       before_you_watch: "Before you watch"

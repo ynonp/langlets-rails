@@ -7,7 +7,7 @@ import { Controller } from "@hotwired/stimulus"
 const KARAOKE_HOLD_LIMIT = 1.5;
 
 export default class extends Controller {
-  static targets = ['subtitles', 'container', 'phrasesList', 'l1Text', 'l2Text', 'showTranslation', 'showKaraoke', 'startPracticeButton'];
+  static targets = ['subtitles', 'container', 'phrasesList', 'l1Text', 'l2Text', 'showTranslation', 'showKaraoke', 'startPracticeButton', 'copyIcon', 'copyCheckIcon'];
   static values = { wordTiming: Boolean, prefsUrl: String };
 
   initialize() {
@@ -155,6 +155,26 @@ export default class extends Controller {
     this.l1TextTargets.forEach(el => el.classList.toggle('hidden', showL2));
     this.l2TextTargets.forEach(el => el.classList.toggle('hidden', !showL2));
     this.persistPrefs();
+  }
+
+  // Copies whichever language is currently shown (L1 or L2) across all phrases.
+  copyText() {
+    const showL2 = this.showTranslationTarget.checked;
+    const targets = showL2 ? this.l2TextTargets : this.l1TextTargets;
+    const text = targets.map(el => el.textContent.trim()).filter(Boolean).join('\n');
+    if (!text) return;
+
+    navigator.clipboard.writeText(text).then(() => this.flashCopyIcon()).catch(() => {});
+  }
+
+  flashCopyIcon() {
+    this.copyIconTarget.classList.add('hidden');
+    this.copyCheckIconTarget.classList.remove('hidden');
+    clearTimeout(this.copyFeedbackTimeout);
+    this.copyFeedbackTimeout = setTimeout(() => {
+      this.copyIconTarget.classList.remove('hidden');
+      this.copyCheckIconTarget.classList.add('hidden');
+    }, 1500);
   }
 
   updateSubtitles(currentTime) {
