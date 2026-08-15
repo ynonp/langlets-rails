@@ -33,45 +33,10 @@
     data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
   <div class="contents">
-    <!-- Header: title + translate/copy actions -->
-    <div class="order-4 flex items-center justify-between px-5 pt-3 pb-2">
-      <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400"><%= t(".tap_any_word") %></div>
-      <div class="flex items-center gap-2">
-        <% if params[:word_timing] %>
-          <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
-            <input type="checkbox" <%= "checked" if wv_prefs["karaoke"] %>
-              data-watch-video-activity-target="showKaraoke"
-              data-action="change->watch-video-activity#toggleKaraoke">
-            <%= t(".karaoke") %>
-          </label>
-        <% end %>
-        <label class="relative inline-flex items-center justify-center w-9 h-9 rounded-full cursor-pointer text-gray-500 dark:text-gray-400 peer-checked:text-emerald-600 dark:peer-checked:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-               title="<%= t(".translation") %>">
-          <span class="sr-only"><%= t(".translation") %></span>
-          <input type="checkbox" class="peer sr-only" <%= "checked" if wv_prefs["translation"] %>
-            data-watch-video-activity-target="showTranslation"
-            data-action="change->watch-video-activity#toggleTranslation">
-          <svg class="pointer-events-none" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/>
-          </svg>
-        </label>
-        <button type="button"
-                class="inline-flex items-center justify-center w-9 h-9 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                title="<%= t(".copy_text") %>"
-                data-action="click->watch-video-activity#copyText">
-          <span class="sr-only"><%= t(".copy_text") %></span>
-          <svg data-watch-video-activity-target="copyIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="11" height="11" rx="2"/>
-            <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>
-          </svg>
-          <svg data-watch-video-activity-target="copyCheckIcon" class="hidden text-emerald-600 dark:text-emerald-400" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-        </button>
-      </div>
-    </div>
+    <%= render "shared/video_transcript_header",
+        word_timing: params[:word_timing],
+        wv_prefs: wv_prefs,
+        header_class: "order-4 flex items-center justify-between px-5 pt-3 pb-2" %>
 
     <% if @activity.text_header.present? %>
       <div class="order-4 px-5 pb-2">
@@ -83,41 +48,13 @@
     <% end %>
 
     <!-- Phrases breakdown -->
-    <div
-        data-controller="popover-translation"
-        data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_phrase_tokens.pluck(:id).to_json : '[]' %>"
-        data-popover-translation-saved-ids-url-value="<%= token_translation_users_path if current_user %>"
-        data-popover-translation-saved-token-classes-value="underline decoration-emerald-500 decoration-[2.5px] underline-offset-4"
-        id="phrases-container"
-        data-watch-video-activity-target="container"
-        data-action="click->popover-translation#showPopup click->watch-video-activity#handleTranslationClick scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup click@document->watch-video-activity#resumeAfterTranslation scroll@document->popover-translation#hidePopup"
-        class="order-4 flex-1 overflow-y-auto flex flex-col gap-4 px-5"
-        style="padding-bottom: calc(16px + env(safe-area-inset-bottom));"
-        >
-      <div id="phrases-list" data-watch-video-activity-target="phrasesList"
-           data-action="click->main-video-player#seekToTimestamp">
-        <% phrases.each do |phrase| %>
-          <div
-            data-watch-video-activity-target="subtitles"
-            data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
-            class="phrase block cursor-pointer rounded-2xl px-3.5 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 data-active:bg-emerald-100! dark:data-active:bg-emerald-900/40!"
-          >
-            <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' if wv_prefs["translation"] %>"
-                 data-watch-video-activity-target="l1Text"
-                 dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
-              <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 data-active:bg-emerald-500! data-active:text-white data-active:rounded-md" }) %>
-            </div>
-            <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' unless wv_prefs["translation"] %>"
-                 data-watch-video-activity-target="l2Text"
-                 dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
-              <%= phrase.text_l2 %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <!-- Translation Popup -->
-      <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden absolute z-40 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 border border-gray-200 dark:border-gray-700 rounded-2xl p-3 shadow-md min-w-[180px]", l1_rtl: l1_rtl } %>
-    </div>
+    <%= render "shared/video_transcript_phrases",
+        phrases: phrases,
+        l1_rtl: l1_rtl,
+        l2_rtl: l2_rtl,
+        wv_prefs: wv_prefs,
+        saved_ids_url: (token_translation_users_path if current_user),
+        container_class: "order-4 flex-1 overflow-y-auto flex flex-col gap-4 px-5" %>
 
     <!-- Start practice -->
     <div class="order-4 px-5 flex-shrink-0 pt-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: calc(20px + env(safe-area-inset-bottom));">

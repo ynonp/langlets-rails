@@ -46,6 +46,11 @@ he:
     de: "גרמנית"
     ar: "ערבית"
   shared:
+    video_transcript_panel:
+      tap_any_word: "הקישו על מילה כלשהי"
+      karaoke: "קריוקי"
+      translation: "תרגום"
+      copy_text: "העתקת טקסט"
     home: "דף הבית"
     sign_in_prompt: "התחברו עכשיו כדי לא לאבד את ההתקדמות שלכם"
     footer:
@@ -162,10 +167,6 @@ he:
     translation_popup:
       save: "שמירה"
     watch_video_activity:
-      tap_any_word: "הקישו על מילה כלשהי"
-      karaoke: "קריוקי"
-      translation: "תרגום"
-      copy_text: "העתקת טקסט"
       start_practice: "מתחילים לתרגל"
     read_translated_activity:
       before_you_watch: "לפני הצפייה"

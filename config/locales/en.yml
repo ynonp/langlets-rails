@@ -46,6 +46,11 @@ en:
     de: "German"
     ar: "Arabic"
   shared:
+    video_transcript_panel:
+      tap_any_word: "Tap any word"
+      karaoke: "Karaoke"
+      translation: "Translation"
+      copy_text: "Copy text"
     home: "Home"
     sign_in_prompt: "Sign in now to not lose your progress"
     footer:
@@ -184,10 +189,6 @@ en:
     translation_popup:
       save: "Save"
     watch_video_activity:
-      tap_any_word: "Tap any word"
-      karaoke: "Karaoke"
-      translation: "Translation"
-      copy_text: "Copy text"
       start_practice: "Start practice"
     read_translated_activity:
       before_you_watch: "Before you watch"
