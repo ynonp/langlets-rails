@@ -40,7 +40,12 @@ export default class extends Controller {
       const data = await response.json()
 
       if (data.shared) {
-        await navigator.clipboard.writeText(data.public_url).catch(() => {})
+        // Copying must never block showing the toast/flipping the label below:
+        // navigator.clipboard is undefined in some WebViews (notably the
+        // Hotwire Native shells), and accessing .writeText on it throws
+        // synchronously rather than rejecting, so it has to be isolated in its
+        // own try/catch rather than a chained .catch().
+        this.copyToClipboard(data.public_url)
         button.dataset.shared = "true"
         this.shareLabelTarget.textContent = t("course_menu.stop_sharing")
         this.showToast(t("course_menu.shared_message"))
@@ -52,6 +57,35 @@ export default class extends Controller {
     } catch (e) {
       console.error(e)
     }
+  }
+
+  // Tries the modern Clipboard API, then falls back to the legacy
+  // execCommand("copy") path, which needs no permission and works in WebViews
+  // that don't implement navigator.clipboard at all.
+  async copyToClipboard(text) {
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(text)
+        return
+      } catch (_e) {
+        // fall through to the legacy path below
+      }
+    }
+
+    const textarea = document.createElement("textarea")
+    textarea.value = text
+    textarea.setAttribute("readonly", "")
+    textarea.style.position = "fixed"
+    textarea.style.opacity = "0"
+    document.body.appendChild(textarea)
+    textarea.select()
+    textarea.setSelectionRange(0, text.length)
+    try {
+      document.execCommand("copy")
+    } catch (_e) {
+      // No copy mechanism available; the toast still confirms the share itself.
+    }
+    document.body.removeChild(textarea)
   }
 
   showToast(message) {

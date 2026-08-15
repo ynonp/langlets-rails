@@ -264,17 +264,39 @@ anywhere in the viewer's own feeds — only at the direct URL.
 `#share` returns `{ shared: true, public_url: }` as JSON; the "public URL" is
 simply `course_url(@course)`, the same URL the course page is already served
 from. The controller does the persistence and returns the URL; the Stimulus
-controller does the client-side work a full-page redirect could not:
-`navigator.clipboard.writeText` inside the same click handler (clipboard
-writes need a user-gesture context, so this cannot happen after a page
-reload), an in-page toast (`data-course-menu-target="toast"`) showing "Public
-URL copied to clipboard" / "This langlet is no longer shared", and flipping
-the menu item's own label — all without navigating away. Both toast strings
-and the two label strings are duplicated under the `js:` locale subtree
-(`course_menu.*`) alongside the server-rendered `courses.course_menu.*`
-originals, the same mirroring `notification_preference` already does for
-push-permission copy: the server renders the initial state, the client needs
-its own copy of the same strings to update it without a round trip.
+controller does the client-side work a full-page redirect could not: copying
+to the clipboard inside the same click handler (clipboard writes need a
+user-gesture context, so this cannot happen after a page reload), an in-page
+toast (`data-course-menu-target="toast"`) showing "Public URL copied to
+clipboard" / "This langlet is no longer shared", and flipping the menu item's
+own label — all without navigating away, and without ever using
+`window.confirm`/`alert`/`prompt`, none of which the Hotwire Native app
+supports. Both toast strings and the two label strings are duplicated under
+the `js:` locale subtree (`course_menu.*`) alongside the server-rendered
+`courses.course_menu.*` originals, the same mirroring `notification_preference`
+already does for push-permission copy: the server renders the initial state,
+the client needs its own copy of the same strings to update it without a
+round trip.
+
+Copying itself has to tolerate `navigator.clipboard` being `undefined`, which
+happens in some WebViews — accessing `.writeText` on it throws synchronously
+rather than rejecting a promise, so a chained `.catch()` does not save it and
+the throw was originally aborting the whole handler before it reached the
+toast. `copyToClipboard` in `course_menu_controller.js` isolates that call in
+its own `try/catch` and falls back to a hidden-textarea `execCommand("copy")`,
+which needs no permission and works in WebViews without the Clipboard API —
+so a clipboard failure can never suppress the toast, and the copy itself is
+more likely to actually succeed in the native apps.
+
+The toast is also fixed to the bottom of the viewport, and on native tab
+screens the course page still runs the regular web layout underneath the
+native `UITabBar` (see the `playlist-sheet-overlay` comment above) — a plain
+`bottom-*` utility places it directly behind that bar, where the class toggle
+still fires but nothing is visible. `course-menu-toast-offset` (in
+`application.tailwind.css`, next to `app-fab-offset` and
+`.playlist-sheet-overlay`) adds `var(--app-tab-bar-height)` under
+`[data-native-tabs]` so the toast clears the bar the same way the FAB and the
+playlist sheet already do.
 
 ### Full-course video playback
 
