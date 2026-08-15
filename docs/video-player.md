@@ -309,15 +309,22 @@ They differ in:
 
 ### Aspect ratio
 
-The watch-video activity always reserves `clamp(160px, 30vh, 280px)` for its
-sticky media area, regardless of provider. This makes the transcript height
-predictable on iOS in both orientations. Native video defaults to `object-cover`
-with its focal point biased upward; `loadedmetadata` marks landscape sources so
-they switch to `object-contain`. YouTube and TikTok iframes fill the same fixed
-box.
+Both the watch-video activity and the full player render the shared
+[`shared/_video_media_box`](../app/views/shared/_video_media_box.html.erb)
+partial, which always reserves `clamp(160px, 30vh, 280px)` for its sticky
+media area, regardless of provider. This makes the media height predictable
+on iOS in both orientations and caps how much of the screen a portrait
+(TikTok) video can claim — a bug fix, since the full player previously used a
+provider-shaped hero (a viewport-capped `9/16` box for TikTok, `aspect-video`
+for YouTube) that let portrait videos grow up to `55vh`. Native video
+defaults to `object-cover` with its focal point biased upward;
+`loadedmetadata` marks landscape sources so they switch to `object-contain`.
+YouTube and TikTok iframes fill the same fixed box.
 
-The full player and course preview remain provider-shaped: TikTok uses a
-viewport-capped `9/16` box and YouTube uses `aspect-video`.
+The course page preview ([`courses/show.html.erb`](../app/views/courses/show.html.erb),
+outside these two players) remains provider-shaped: it sets `aspect-ratio`
+from `video_aspect_ratio` (`9/16` for TikTok, `16/9` otherwise) and caps
+TikTok's width at `280px` so the box doesn't grow tall.
 
 ### When building new features
 
