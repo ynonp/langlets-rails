@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_13_190000) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_15_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -148,10 +148,12 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_13_190000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type"
+    t.boolean "share", default: false, null: false
     t.index ["slug"], name: "index_channels_on_slug", unique: true
     t.index ["type"], name: "index_channels_on_type"
     t.index ["user_id"], name: "idx_channels_one_default_per_user", unique: true, where: "\"default\""
     t.index ["user_id"], name: "idx_channels_one_pro_channel_per_user", unique: true, where: "((type)::text = 'ProChannel'::text)"
+    t.index ["user_id"], name: "idx_channels_one_share_per_user", unique: true, where: "(share = true)"
     t.index ["user_id"], name: "index_channels_on_user_id"
     t.index ["user_id"], name: "index_channels_on_user_id_where_default", unique: true, where: "(\"default\" = true)"
     t.index ["visibility", "created_at"], name: "index_channels_on_visibility_and_created_at"

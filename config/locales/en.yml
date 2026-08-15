@@ -46,6 +46,11 @@ en:
     de: "German"
     ar: "Arabic"
   shared:
+    video_transcript_panel:
+      tap_any_word: "Tap any word"
+      karaoke: "Karaoke"
+      translation: "Translation"
+      copy_text: "Copy text"
     home: "Home"
     sign_in_prompt: "Sign in now to not lose your progress"
     footer:
@@ -184,9 +189,6 @@ en:
     translation_popup:
       save: "Save"
     watch_video_activity:
-      tap_any_word: "Tap any word"
-      karaoke: "Karaoke"
-      translation: "Translation"
       start_practice: "Start practice"
     read_translated_activity:
       before_you_watch: "Before you watch"
@@ -530,6 +532,9 @@ en:
     course_menu:
       aria_label: "Course options"
       add_to_playlist: "Add To Playlist"
+      share_to_public_url: "Share to public URL"
+      copy_public_url: "Copy public URL"
+      stop_sharing: "Stop sharing"
       delete: "Delete"
       delete_title: "Delete course?"
       delete_message: "This will remove “%{name}” from your library and your progress on it. You can re-add the video later, but your progress won't come back."
@@ -641,6 +646,14 @@ en:
       stop: "🚫 Stop Practicing This Word"
       removed: "Word removed from your vocab. %{undo}"
       undo: "undo"
+    # Mirrors courses.course_menu.share_to_public_url/stop_sharing, which is
+    # what the server renders first — course_menu_controller.js needs its own
+    # copy to flip the label immediately after a fetch, without a reload.
+    course_menu:
+      share_to_public_url: "Share to public URL"
+      stop_sharing: "Stop sharing"
+      shared_message: "Public URL copied to clipboard"
+      unshared_message: "This langlet is no longer shared"
     course_paths:
       load_failed: "Could not load playlists."
       one_course: "1 course"

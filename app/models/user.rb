@@ -113,6 +113,31 @@ class User < ApplicationRecord
     default_channel
   end
 
+  # One public Channel per user, provisioned lazily the first time they share
+  # a course — mirrors provision_default_channel!. Its sole purpose is
+  # publishing a course to a link anyone can open, so it is always :public
+  # rather than following the default Channel's private visibility.
+  def share_channel
+    existing = channels.find_by(share: true, type: nil)
+    return existing if existing
+
+    channel = channels.create_or_find_by!(share: true, type: nil) do |channel|
+      channel.name = "Shared by #{email}"
+      channel.slug = "share-#{id}"
+      channel.visibility = :public
+    end
+    channel
+  rescue ActiveRecord::RecordNotUnique
+    channels.find_by!(share: true, type: nil)
+  end
+
+  # Whether this user has this course on their share Channel. Deliberately
+  # does not provision the Channel just to answer "no" for a user who has
+  # never shared anything.
+  def sharing?(course)
+    channels.find_by(share: true, type: nil)&.channel_items&.exists?(course_id: course.id) || false
+  end
+
   def self.from_omniauth(auth)
     user = where(email: auth.info.email).first_or_initialize do |new_user|
       new_user.email = auth.info.email

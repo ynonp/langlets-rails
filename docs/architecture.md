@@ -231,6 +231,79 @@ accept/decline controls only on the invitations list or expiring token page;
 acceptance redirects to the homepage, where the newly readable courses already
 appear.
 
+### Sharing a course to a public URL
+
+Every user also has one lazily-provisioned **share Channel** —
+`User#share_channel`, an ordinary (`type: nil`) Channel with `share: true` and
+`visibility: :public`, unique per user via a partial index on `channels.user_id
+WHERE share`, the same pattern `default` uses for the one private default
+Channel. It is created on first use rather than at signup, so an account that
+never shares anything never gets one. `User#sharing?(course)` answers whether
+a course is currently on that Channel without provisioning it, so rendering
+the course menu for a user who has never shared anything costs no extra row.
+
+The course page's "..." menu (`course-menu` Stimulus controller) shows **Share
+to public URL** for every course the viewer can already read — this is a
+sharing action available on any course, not only ones the viewer owns — and
+switches to **Stop sharing**, alongside a **Copy public URL** item, once
+`User#sharing?` is true for it. Copy public URL re-copies the same
+`course_url` without any server round trip or change to sharing state — it
+exists for a course shared on an earlier visit, whose link the viewer just
+wants again; both items are hidden together the moment Stop sharing is
+clicked. `CoursesController#share`/`#unshare` (`POST /courses/:id/share`,
+`POST /courses/:id/unshare`) create or destroy the `ChannelItem` directly
+through `channel.channel_items` rather than going through `Channel#publish!`:
+publishing into an ordinary Channel is priced as an import (see *Channels*
+above), and sharing an already-built course to a link is not an import, so it
+must never charge a credit. `#unshare` is `Channel#unpublish!`, unchanged.
+
+Because the share Channel is `visibility: :public`, the shared course becomes
+world-readable through the ordinary Channel-visibility rule
+(`Course#readable_by?` / `ChannelContentQuery.courses_visible_to`) the moment
+it is published there — no separate authorization path was added. It stays
+unlisted like any other public Channel (see *Channels* above): omitted from
+Home, Library, gallery, and the sitemap, and excluded from the owner's own
+`owned_listed_grant` since that scope deliberately excludes public visibility.
+Sharing a course the viewer does not own therefore does not make it appear
+anywhere in the viewer's own feeds — only at the direct URL.
+
+`#share` returns `{ shared: true, public_url: }` as JSON; the "public URL" is
+simply `course_url(@course)`, the same URL the course page is already served
+from. The controller does the persistence and returns the URL; the Stimulus
+controller does the client-side work a full-page redirect could not: copying
+to the clipboard inside the same click handler (clipboard writes need a
+user-gesture context, so this cannot happen after a page reload), an in-page
+toast (`data-course-menu-target="toast"`) showing "Public URL copied to
+clipboard" / "This langlet is no longer shared", and flipping the menu item's
+own label — all without navigating away, and without ever using
+`window.confirm`/`alert`/`prompt`, none of which the Hotwire Native app
+supports. Both toast strings and the two label strings are duplicated under
+the `js:` locale subtree (`course_menu.*`) alongside the server-rendered
+`courses.course_menu.*` originals, the same mirroring `notification_preference`
+already does for push-permission copy: the server renders the initial state,
+the client needs its own copy of the same strings to update it without a
+round trip.
+
+Copying itself has to tolerate `navigator.clipboard` being `undefined`, which
+happens in some WebViews — accessing `.writeText` on it throws synchronously
+rather than rejecting a promise, so a chained `.catch()` does not save it and
+the throw was originally aborting the whole handler before it reached the
+toast. `copyToClipboard` in `course_menu_controller.js` isolates that call in
+its own `try/catch` and falls back to a hidden-textarea `execCommand("copy")`,
+which needs no permission and works in WebViews without the Clipboard API —
+so a clipboard failure can never suppress the toast, and the copy itself is
+more likely to actually succeed in the native apps.
+
+The toast is also fixed to the bottom of the viewport, and on native tab
+screens the course page still runs the regular web layout underneath the
+native `UITabBar` (see the `playlist-sheet-overlay` comment above) — a plain
+`bottom-*` utility places it directly behind that bar, where the class toggle
+still fires but nothing is visible. `course-menu-toast-offset` (in
+`application.tailwind.css`, next to `app-fab-offset` and
+`.playlist-sheet-overlay`) adds `var(--app-tab-bar-height)` under
+`[data-native-tabs]` so the toast clears the bar the same way the FAB and the
+playlist sheet already do.
+
 ### Full-course video playback
 
 The full player preloads an interactive YouTube iframe with native controls. It
@@ -1283,7 +1356,7 @@ download is verified before it counts:
 
 #### Activity Types:
 - **ReadTranslatedActivity**: A static "before you watch" screen showing only the lesson's L2 (translated) phrase text, no L1/video/audio. Its sole purpose is priming comprehension before `WatchVideoActivity`. The instruction and phrases share one `min-h-0` overflow region; keeping them in the same flex item prevents WKWebView from collapsing a separate phrase scroller while leaving the surrounding native lesson chrome visible. It has a single "Next" button; a small Stimulus controller (`read_translated_activity_controller.js`) dispatches `activity:completed` when that button is clicked, which is caught by the ancestor `progress-tracker` controller and reported via `sendBeacon` to `/progress` exactly like every other activity type — there is no scoring, so completion is simply "reached and clicked Next." `CourseBuilder::BuildSong` inserts one at `order: 1`, immediately before `WatchVideoActivity`, in every lesson that gets a `WatchVideoActivity` (lesson 1, lessons 2-3, and lessons 4+) — never in review lessons, whose `WatchVideoActivity` (see below) needs no priming screen.
-- **WatchVideoActivity**: Video viewing with synchronized subtitles. The "Translation" control is a 2-state L1/L2 toggle switch, labeled with the lesson's actual language names (via `localized_language_name`) on either side of the pill. It defaults to L1 (clickable, tokenized words with the tap-to-translate popover); flipping it swaps every line to the plain, non-clickable L2 text — both use identical text size/weight/color classes since only one language is ever visible at a time. The preference persists per-user under `preferences["watch_video"]["translation"]` (`false` = L1, `true` = L2; see `User#watch_video_preferences`) and is shared with the near-identical layout in `full_player/show.html.erb`, both driven by `watch_video_activity_controller.js`'s `l1Text`/`l2Text` targets. In review lessons, `CourseBuilder::BuildSong#create_review_lesson_activities` opens with one at `order: 1` scoped to just the new ground since the last review: its phrases start at the previous review lesson's `end_timestamp` (or the course start, for the first review) and run through the current review lesson's `end_timestamp` (`Activity#video_params` derives the clip bounds from the first attached phrase and `lesson.end_timestamp`), so consecutive review lessons play back-to-back segments rather than replaying everything from the start each time.
+- **WatchVideoActivity**: Video viewing with synchronized subtitles. The "Translation" control is a 2-state L1/L2 toggle, now a single translate (globe) icon button rather than a labeled switch — it colors emerald when L2 is shown and stays gray for L1. A copy icon next to it copies the currently visible language's transcript (one phrase per line) to the clipboard, with a brief checkmark as feedback (`copyText`/`flashCopyIcon` in `watch_video_activity_controller.js`). The control defaults to L1 (clickable, tokenized words with the tap-to-translate popover); flipping it swaps every line to the plain, non-clickable L2 text — both use identical text size/weight/color classes since only one language is ever visible at a time. The preference persists per-user under `preferences["watch_video"]["translation"]` (`false` = L1, `true` = L2; see `User#watch_video_preferences`). This header and the transcript/translation-popup below it are extracted into shared partials — `shared/_video_transcript_header.html.erb` and `shared/_video_transcript_phrases.html.erb` — rendered by both `activities/_watch_video_activity.html.erb` and `full_player/show.html.erb` so the two views can't drift out of sync the way they previously did (see [Video Players](video-player.md) §1). Both driven by `watch_video_activity_controller.js`'s `l1Text`/`l2Text` targets. In review lessons, `CourseBuilder::BuildSong#create_review_lesson_activities` opens with one at `order: 1` scoped to just the new ground since the last review: its phrases start at the previous review lesson's `end_timestamp` (or the course start, for the first review) and run through the current review lesson's `end_timestamp` (`Activity#video_params` derives the clip bounds from the first attached phrase and `lesson.end_timestamp`), so consecutive review lessons play back-to-back segments rather than replaying everything from the start each time.
 - **FlashcardActivity**: Missing-word multiple-choice practice. It uses the standard compact question/progress header above a frameless exercise area, with a centered L1 sentence, an L2 gloss anchored below the blank, and a 2×2 grid of contrasting answer tiles.
 - **MatchPhrasesActivity**: Phrase-to-translation matching exercises. Each question uses a compact progress header, an audio-enabled L1 phrase card, an L1-to-L2 language direction label, and a vertical set of L2 answer options.
 - **WordOrderActivity**: Sentence-building practice whose answer row declares the

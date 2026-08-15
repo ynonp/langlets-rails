@@ -46,6 +46,11 @@ he:
     de: "גרמנית"
     ar: "ערבית"
   shared:
+    video_transcript_panel:
+      tap_any_word: "הקישו על מילה כלשהי"
+      karaoke: "קריוקי"
+      translation: "תרגום"
+      copy_text: "העתקת טקסט"
     home: "דף הבית"
     sign_in_prompt: "התחברו עכשיו כדי לא לאבד את ההתקדמות שלכם"
     footer:
@@ -162,9 +167,6 @@ he:
     translation_popup:
       save: "שמירה"
     watch_video_activity:
-      tap_any_word: "הקישו על מילה כלשהי"
-      karaoke: "קריוקי"
-      translation: "תרגום"
       start_practice: "מתחילים לתרגל"
     read_translated_activity:
       before_you_watch: "לפני הצפייה"
@@ -472,6 +474,9 @@ he:
     course_menu:
       aria_label: "אפשרויות קורס"
       add_to_playlist: "הוספה לפלייליסט"
+      share_to_public_url: "שיתוף בקישור ציבורי"
+      copy_public_url: "העתקת הקישור הציבורי"
+      stop_sharing: "הפסקת שיתוף"
       delete: "מחיקה"
       delete_title: "למחוק את הקורס?"
       delete_message: "פעולה זו תסיר את “%{name}” מהספרייה שלכם ותמחק את ההתקדמות שלכם בו. תוכלו להוסיף את הסרטון שוב בעתיד, אך ההתקדמות לא תחזור."
@@ -579,6 +584,11 @@ he:
       stop: "🚫 הפסקת תרגול המילה"
       removed: "המילה הוסרה מאוצר המילים שלכם. %{undo}"
       undo: "ביטול"
+    course_menu:
+      share_to_public_url: "שיתוף בקישור ציבורי"
+      stop_sharing: "הפסקת שיתוף"
+      shared_message: "הקישור הציבורי הועתק"
+      unshared_message: "השיתוף של הלנגלט הזה הופסק"
     course_paths:
       load_failed: "לא הצלחנו לטעון את הפלייליסטים."
       one_course: "קורס אחד"

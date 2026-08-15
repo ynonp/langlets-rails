@@ -108,6 +108,46 @@ class ChannelTest < ActiveSupport::TestCase
     assert_nothing_raised { @channel.unpublish!(course) }
   end
 
+  test "share_channel provisions one public channel per user, lazily and idempotently" do
+    assert_not @owner.channels.exists?(share: true)
+
+    channel = @owner.share_channel
+
+    assert channel.visibility_public?
+    assert_equal 1, @owner.channels.where(share: true).count
+    assert_equal channel, @owner.share_channel
+  end
+
+  test "sharing a course publishes it to the share channel without charging a credit" do
+    course = publishable_course
+    balance_before = @owner.reload.credit_balance
+
+    channel = @owner.share_channel
+    channel.channel_items.create_or_find_by!(course: course) { |item| item.published_at = Time.zone.now }
+
+    assert @owner.sharing?(course)
+    assert_equal balance_before, @owner.reload.credit_balance
+    assert course.readable_by?(nil), "a public channel item makes the course world-readable"
+  end
+
+  test "sharing? does not provision a share channel just to answer no" do
+    course = publishable_course
+
+    assert_not @owner.sharing?(course)
+    assert_not @owner.channels.exists?(share: true)
+  end
+
+  test "unpublishing from the share channel stops sharing without touching the course" do
+    course = publishable_course
+    channel = @owner.share_channel
+    channel.channel_items.create_or_find_by!(course: course) { |item| item.published_at = Time.zone.now }
+
+    channel.unpublish!(course)
+
+    assert_not @owner.sharing?(course)
+    assert course.reload.published?
+  end
+
   test "regular owners can switch private and shared but not public" do
     @channel.change_visibility!(:shared, actor: @owner)
     assert @channel.visibility_shared?

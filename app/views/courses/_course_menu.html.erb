@@ -1,4 +1,4 @@
-<%# Course page "..." dropdown, anchored to the button that opens it (not centered): add to playlist, or delete from the viewer's own library. %>
+<%# Course page "..." dropdown, anchored to the button that opens it (not centered): add to playlist, share a public link, or delete from the viewer's own library. %>
 <div data-course-menu-target="menuOverlay" class="hidden fixed inset-0 z-30" data-action="click->course-menu#closeMenu"></div>
 
 <div data-course-menu-target="menuPanel"
@@ -8,6 +8,25 @@
           class="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-left text-sm font-bold text-gray-900 dark:text-gray-50">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-gray-500 dark:text-gray-400"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
     <%= t(".add_to_playlist") %>
+  </button>
+  <button type="button" data-course-menu-target="copyUrlButton"
+          data-action="course-menu#copyPublicUrl"
+          class="<%= "hidden " unless shared %>w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-left text-sm font-bold text-gray-900 dark:text-gray-50">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-gray-500 dark:text-gray-400" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="8" y="8" width="10" height="10" rx="2"/>
+      <path d="M5 14H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"/>
+    </svg>
+    <%= t(".copy_public_url") %>
+  </button>
+  <button type="button" data-course-menu-target="shareButton"
+          data-action="course-menu#toggleShare"
+          data-share-path="<%= share_course_path(course) %>"
+          data-unshare-path="<%= unshare_course_path(course) %>"
+          data-public-url="<%= course_url(course) %>"
+          data-shared="<%= shared %>"
+          class="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-left text-sm font-bold text-gray-900 dark:text-gray-50">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-shrink-0 text-gray-500 dark:text-gray-400"><path d="M15 8a3 3 0 1 0-2.977-3.346M15 8a3 3 0 0 1-2.977-3.346M15 8l-6.03 3.481M8.97 4.654 15 8m-6.03 3.481a3 3 0 1 1-2.94-3.435m2.94 3.435a3 3 0 0 0-2.94-3.435m0 0L15 16m0 0a3 3 0 1 0 2.977 3.346M15 16a3 3 0 0 1 2.977 3.346" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-course-menu-target="shareLabel"><%= shared ? t(".stop_sharing") : t(".share_to_public_url") %></span>
   </button>
   <% if deletable %>
     <button type="button" data-action="course-menu#openDelete"
@@ -34,3 +53,7 @@
     <% end %>
   </div>
 <% end %>
+
+<div data-course-menu-target="toast"
+     class="hidden fixed course-menu-toast-offset inset-x-4 z-[110] mx-auto max-w-[420px] rounded-2xl bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-bold text-center px-4 py-3 shadow-2xl"
+     role="status" aria-live="polite"></div>

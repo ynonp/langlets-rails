@@ -381,3 +381,15 @@
 [data-native-tabs] .playlist-sheet {
   max-height: min(85dvh, calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 65px));
 }
+
+/* The course menu's toast (e.g. "Public URL copied to clipboard") is fixed to
+   the bottom of the same regular web view, so it owes the native UITabBar the
+   same clearance as app-fab-offset above — otherwise it renders underneath
+   the bar and is never seen, even though the action it confirms succeeded. */
+@utility course-menu-toast-offset {
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+[data-native-tabs] .course-menu-toast-offset {
+  bottom: calc(1.5rem + var(--app-tab-bar-height) + env(safe-area-inset-bottom, 0px));
+}

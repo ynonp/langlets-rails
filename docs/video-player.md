@@ -116,6 +116,23 @@ It plays the whole video as one big segment (`segment-start` → `segment-end`
 spanning the full course). The shared controller still observes native player
 state changes and emits the `video:*` events used by the transcript.
 
+> **Shared transcript UI.** The header controls (karaoke checkbox, translate
+> icon, copy icon) and the word-by-word transcript/translation-popup are the
+> same partials the watch-video activity uses (#2, below) —
+> [`shared/_video_transcript_header`](../app/views/shared/_video_transcript_header.html.erb)
+> and
+> [`shared/_video_transcript_phrases`](../app/views/shared/_video_transcript_phrases.html.erb).
+> They used to be copy-pasted per view, which let them drift (e.g. this page's
+> translate toggle went stale and its transcript container was missing the
+> `saved-ids-url`/`saved-token-classes` values and the translation-pause
+> bindings that #2 had). Change either partial and both players pick it up;
+> each caller only supplies its own wrapper classes (`header_class`,
+> `container_class`), an optional `leading` slot (this page's back-to-course
+> button), and the `word_timing`/`wv_prefs`/`phrases`/`l1_rtl`/`l2_rtl`/
+> `saved_ids_url` locals. The bottom CTA stays per-view since the two pages
+> want different actions (go to the first lesson here vs. this activity's
+> "Start practice").
+
 The course page opts the "Watch full video" link out of Turbo hover prefetch.
 Opening the route loads the complete phrase/token/translation/audio graph, so a
 pointer resting over that link must not trigger the work during an unrelated
@@ -160,9 +177,12 @@ under the `#main-player` container), but:
   popup is open closes it and resumes only when the popup initiated the pause.
 - When the segment finishes, the player pauses and rewinds to its start so the
   next press of YouTube's play control replays the lesson.
-- It shows the synchronized transcript, a translation toggle, and a
-  "Start practice" button that appears once the segment finishes
-  (`handleVideoEnd` reveals it and awards XP).
+- It shows the synchronized transcript, a translate icon (colored when
+  translation is on) and a copy icon that copies the currently shown
+  language's transcript to the clipboard — both from the shared header
+  partial described under #1 above — and a "Start practice" button that
+  appears once the segment finishes (`handleVideoEnd` reveals it and awards
+  XP).
 
 The player container is shown for this activity because the lesson layout
 renders `#main-player` visibly when `activity_params[:video_player]` is set.
@@ -309,15 +329,22 @@ They differ in:
 
 ### Aspect ratio
 
-The watch-video activity always reserves `clamp(160px, 30vh, 280px)` for its
-sticky media area, regardless of provider. This makes the transcript height
-predictable on iOS in both orientations. Native video defaults to `object-cover`
-with its focal point biased upward; `loadedmetadata` marks landscape sources so
-they switch to `object-contain`. YouTube and TikTok iframes fill the same fixed
-box.
+Both the watch-video activity and the full player render the shared
+[`shared/_video_media_box`](../app/views/shared/_video_media_box.html.erb)
+partial, which always reserves `clamp(160px, 30vh, 280px)` for its sticky
+media area, regardless of provider. This makes the media height predictable
+on iOS in both orientations and caps how much of the screen a portrait
+(TikTok) video can claim — a bug fix, since the full player previously used a
+provider-shaped hero (a viewport-capped `9/16` box for TikTok, `aspect-video`
+for YouTube) that let portrait videos grow up to `55vh`. Native video
+defaults to `object-cover` with its focal point biased upward;
+`loadedmetadata` marks landscape sources so they switch to `object-contain`.
+YouTube and TikTok iframes fill the same fixed box.
 
-The full player and course preview remain provider-shaped: TikTok uses a
-viewport-capped `9/16` box and YouTube uses `aspect-video`.
+The course page preview ([`courses/show.html.erb`](../app/views/courses/show.html.erb),
+outside these two players) remains provider-shaped: it sets `aspect-ratio`
+from `video_aspect_ratio` (`9/16` for TikTok, `16/9` otherwise) and caps
+TikTok's width at `280px` so the box doesn't grow tall.
 
 ### When building new features
 

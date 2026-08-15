@@ -32,10 +32,13 @@
     data-main-video-player-interactive-value="true"
     data-main-video-player-target="videoListener videoSegment"
     data-action="
+      video:play->main-video-player#seekToSegmentStartIfBefore
       video:play->watch-video-activity#handleVideoStart
       video:end->watch-video-activity#handleVideoEnd
       video:stop->watch-video-activity#handleVideoPause
       video:progress->watch-video-activity#progress
+      watch-video-activity:pause->main-video-player#stopPlayback
+      watch-video-activity:resume->main-video-player#resume
     "
     data-show-player="true"
     data-segment-start="<%= timestamp_to_seconds(@start_timestamp) %>"
@@ -44,78 +47,28 @@
     data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
   <!-- Video hero -->
-  <div class="relative flex-shrink-0 bg-gray-100 dark:bg-gray-900" id="main-player" data-main-video-player-target="playerContainer">
-    <%# TikTok is vertical; aspect-video would letterbox it into a stripe. %>
-    <div class="w-full relative mx-auto <%= @course.tiktok? ? 'aspect-[9/16] max-h-[55vh] max-w-[calc(55vh*9/16)]' : 'aspect-video' %>">
-      <div data-main-video-player-target="player"
-           class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
-    </div>
-  </div>
+  <%= render "shared/video_media_box", thumbnail_url: course_thumbnail_url(@course) %>
 
   <!-- Breakdown header -->
-  <div class="flex items-center justify-between px-5 pt-3 pb-1">
-    <div class="flex items-center gap-3">
-      <a href="<%= course_path(@course.slug) %>" class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300" aria-label="Back to course">
-        <svg width="8" height="14" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">Tap any word</div>
-    </div>
-    <div class="flex items-center gap-4">
-      <% if @word_timing %>
-        <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
-          <input type="checkbox" <%= "checked" if wv_prefs["karaoke"] %>
-            data-watch-video-activity-target="showKaraoke"
-            data-action="change->watch-video-activity#toggleKaraoke">
-          Karaoke
-        </label>
-      <% end %>
-      <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer select-none">
-        <span class="<%= 'text-emerald-600 dark:text-emerald-400' unless wv_prefs["translation"] %>"><%= localized_language_name(l1) %></span>
-        <span class="relative inline-flex h-5 w-9 shrink-0 items-center rounded-full bg-gray-300 dark:bg-gray-600 transition-colors has-[:checked]:bg-emerald-500">
-          <input type="checkbox" class="peer sr-only" <%= "checked" if wv_prefs["translation"] %>
-                 data-watch-video-activity-target="showTranslation"
-                 data-action="change->watch-video-activity#toggleTranslation">
-          <span class="inline-block h-4 w-4 translate-x-0.5 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
-        </span>
-        <span class="<%= 'text-emerald-600 dark:text-emerald-400' if wv_prefs["translation"] %>"><%= localized_language_name(l2) %></span>
-      </label>
-    </div>
-  </div>
+  <% back_button = capture do %>
+    <a href="<%= course_path(@course.slug) %>" class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300" aria-label="Back to course">
+      <svg width="8" height="14" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  <% end %>
+  <%= render "shared/video_transcript_header",
+      word_timing: @word_timing,
+      wv_prefs: wv_prefs,
+      leading: back_button,
+      header_class: "flex items-center justify-between px-5 pt-3 pb-1" %>
 
   <!-- Word-by-word breakdown -->
-  <div
-      data-controller="popover-translation"
-      data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_phrase_tokens.pluck(:id).to_json : '[]' %>"
-      id="phrases-container"
-      data-watch-video-activity-target="container"
-      data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
-      class="flex-1 overflow-y-auto flex flex-col gap-4 px-5 pb-2"
-  >
-    <div id="phrases-list" data-watch-video-activity-target="phrasesList"
-         data-action="click->main-video-player#seekToTimestamp">
-      <% @phrases.each do |phrase| %>
-        <div
-          data-watch-video-activity-target="subtitles"
-          data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
-          class="phrase block cursor-pointer rounded-2xl px-3.5 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 data-active:bg-emerald-100! dark:data-active:bg-emerald-900/40!"
-        >
-          <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' if wv_prefs["translation"] %>"
-               data-watch-video-activity-target="l1Text"
-               dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
-            <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 data-active:bg-emerald-500! data-active:text-white data-active:rounded-md" }) %>
-          </div>
-          <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' unless wv_prefs["translation"] %>"
-               data-watch-video-activity-target="l2Text"
-               dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
-            <%= phrase.text_l2 %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <!-- Translation popup -->
-    <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden absolute z-40 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 border border-gray-200 dark:border-gray-700 rounded-2xl p-3 shadow-md min-w-[180px]", l1_rtl: l1_rtl } %>
-  </div>
+  <%= render "shared/video_transcript_phrases",
+      phrases: @phrases,
+      l1_rtl: l1_rtl,
+      l2_rtl: l2_rtl,
+      wv_prefs: wv_prefs,
+      saved_ids_url: (token_translation_users_path if current_user),
+      container_class: "flex-1 overflow-y-auto flex flex-col gap-4 px-5" %>
 
   <!-- Bottom action bar -->
   <% if @first_lesson %>
