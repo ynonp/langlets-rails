@@ -98,17 +98,6 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "a.btn", text: /Review Words/, count: 0
   end
 
-  test "menu always links to Create even when the user has no credits" do
-    sign_in(@user)
-
-    get playlist_path(@menu_playlist)
-    assert_select "a[href=?]", new_app_import_request_path, text: "Create", count: 1
-
-    User.where(id: @user.id).update_all(credit_balance: 0)
-    get playlist_path(@menu_playlist)
-    assert_select "a[href=?]", new_app_import_request_path, text: "Create", count: 1
-  end
-
   test "menu shows single language when user has tokens from one language" do
     @user.saved_phrase_tokens << @token_en
 
@@ -246,6 +235,9 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "[data-controller='profile-menu'][data-action='click@document->profile-menu#close']" do
       assert_select "input[data-profile-menu-target='toggle']", count: 1
       assert_select "a[href=?][data-action='click->profile-menu#dismiss']", profile_path, count: 1
+      assert_select "a[href=?]", gallery_path, count: 0
+      assert_select "a[href=?]", new_app_import_request_path, count: 0
+      assert_select "a[href=?]", invitations_path, count: 0
     end
   end
 

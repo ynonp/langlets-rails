@@ -59,15 +59,12 @@
     <% if current_user.languages_with_saved_words.exists? %>
       <div class="<%= divider_class %>"></div>
     <% end %>
-    <%= render "shared/menu_link", label: t("app.web_menu.library"), path: gallery_path, class_name: menu_item_class %>
-    <%= render "shared/menu_link", label: t("app.web_menu.create"), path: new_app_import_request_path, class_name: menu_item_class %>
     <%= render "shared/menu_link",
                label: t("shared.menu.notifications"),
                path: notifications_path,
                class_name: menu_item_class,
                badge: (unread_notifications_count > 9 ? "9+" : unread_notifications_count if unread_notifications_count.positive?) %>
     <%= render "shared/menu_link", label: t("shared.menu.profile"), path: profile_path, class_name: menu_item_class %>
-    <%= render "shared/menu_link", label: t("channels.invitations.title"), path: invitations_path, class_name: menu_item_class %>
     <%= render "shared/menu_link", label: t("shared.menu.connected_apps"), path: settings_connections_path, class_name: menu_item_class %>
     <%= render "shared/menu_link",
                label: t("shared.menu.logout"),

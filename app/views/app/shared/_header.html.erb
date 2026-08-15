@@ -1,6 +1,6 @@
 <%# The header every app tab root renders. There is exactly one of these on
     purpose: a tab root has no back arrow and no native chrome of its own, so
-    the avatar is its only route to Notifications, Profile, Invitations and Sign
+    the avatar is its only route to Notifications, Profile and Sign
     out. Library and Create shipped without one because this markup used to live
     inline in the Home-only wordmark header, and both screens became dead ends.
     Rendering this partial is what makes that impossible to forget — a new tab
@@ -76,9 +76,6 @@
             <% end %>
           <% end %>
           <%= link_to t("shared.menu.profile"), profile_path,
-                      class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
-                      data: { action: "click->profile-menu#dismiss" } %>
-          <%= link_to t("channels.invitations.title"), invitations_path,
                       class: "block px-4 py-3 text-sm font-semibold text-app-text hover:bg-white/5",
                       data: { action: "click->profile-menu#dismiss" } %>
           <div class="border-t border-white/10"></div>

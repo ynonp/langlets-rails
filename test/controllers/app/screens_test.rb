@@ -489,6 +489,7 @@ module App
         assert_select "summary[aria-label='Open profile menu']", text: "S"
         assert_select "a[href=?][data-action='click->profile-menu#dismiss']", profile_path,
                       text: "Profile"
+        assert_select "a[href=?]", invitations_path, count: 0
         assert_select "a[href=?]", review_lessons_path(language_code: @spanish.iso_name),
                       text: "Practice Words (#{@spanish.iso_name})"
         assert_select "a[href=?][data-turbo-method='delete']",

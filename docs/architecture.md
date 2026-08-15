@@ -224,6 +224,8 @@ visibility. The invitation *acceptance* side is untouched: `ChannelInvitationsCo
 still serves `/invitations` (the authenticated pending-invitations list),
 `/channel_invitations/:token` (an emailed invitation link), and
 accept/decline, so existing pending invitations keep working end to end.
+The pending-invitations list is not linked from either profile menu while the
+feature remains unfinished.
 There is no Channel profile route. Invitees see Channel identity and
 accept/decline controls only on the invitations list or expiring token page;
 acceptance redirects to the homepage, where the newly readable courses already
@@ -2517,7 +2519,7 @@ This rule **cannot** be expressed in path configuration, and that is a structura
 
 The tab-root profile menu is an HTML `details` element managed by `profile_menu_controller.js`: a document-level click closes it when the tap lands outside the menu. Because each native tab retains its webview and HTML state, `AppTabBarController` also closes open profile menus in tabs moving to the background whenever the user switches tabs, including programmatic cross-tab routing.
 
-**Every tab root renders `app/views/app/shared/_header.html.erb`, and there is only one of these.** A tab root has no back arrow and no native chrome of its own, so the header's avatar is the only route from it to Notifications, Profile, Invitations and Sign out; a root without one is a dead end the user can leave only by switching tabs. Library and Create were exactly that until this partial became shared, because the menu was inline in a header only Home rendered. Rendering it is what makes the omission impossible to repeat — a new tab root gets the menu by existing.
+**Every tab root renders `app/views/app/shared/_header.html.erb`, and there is only one of these.** A tab root has no back arrow and no native chrome of its own, so the header's avatar is the only route from it to Notifications, Profile and Sign out; a root without one is a dead end the user can leave only by switching tabs. Library and Create were exactly that until this partial became shared, because the menu was inline in a header only Home rendered. Rendering it is what makes the omission impossible to repeat — a new tab root gets the menu by existing.
 
 Its optional `title:` local decides the left-hand side and nothing else. Pass a screen name and the header draws it as that page's `<h1>` (Library, Create); omit it and it falls back to the wordmark, which is what Home wants — Home has no title of its own, the brand *is* its title. Do not render both: `langlets.` above `Library` is two heavy rows naming a brand the user is already inside. The avatar lands in the same place either way. The menu is guarded on `current_user`, so the header is safe to drop into a title row on screens that can render without one.
 
@@ -3113,8 +3115,10 @@ Every web entry, including each language-specific Review Words entry, renders
 through `shared/_menu_link.html.erb` with the host menu's block-level item class.
 This keeps multiple review languages vertically stacked and gives navigation,
 badges, dismissal, and logout links one consistent implementation.
+Library and Create are top-level navigation and are not repeated in the web
+profile menu; Invitations remains hidden there while that feature is unfinished.
 
-The native app avatar is a top-right initials dropdown linking to Notifications, Profile, Invitations and Logout, plus one language-specific "Practice Words" action for each language in which the user has saved vocabulary. It is part of the one shared header, so it appears on all three tab roots:
+The native app avatar is a top-right initials dropdown linking to Notifications, Profile and Logout, plus one language-specific "Practice Words" action for each language in which the user has saved vocabulary. It is part of the one shared header, so it appears on all three tab roots:
 - `app/views/app/shared/_header.html.erb` — the header: `title:` or the wordmark on the left, the avatar and its menu on the right. No credits pill (see the Create tab below for where the balance lives)
 - `app/views/app/home/index.html.erb` — renders it with no `title:`, so Home gets the wordmark
 - `app/views/app/library/show.html.erb` and `app/views/app/import_requests/new.html.erb` — pass `title:`, so the header draws each screen's own name where Home draws the brand. Library keeps its description in a wrapper with the header so it holds its 4px gap under the title rather than the column's 16px
