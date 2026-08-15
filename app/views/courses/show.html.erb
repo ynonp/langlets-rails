@@ -82,6 +82,7 @@
             to their own default Channel, or to their Pro library if they
             imported it while subscribed. %>
         <% course_in_my_channel = user_signed_in? && current_user.owns_publication_of?(@course) %>
+        <% course_shared = user_signed_in? && current_user.sharing?(@course) %>
         <div class="relative bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-5 shadow-md"<%= raw(can_add_to_playlists ? " data-controller=\"course-paths course-menu\" data-course-paths-course-id-value=\"#{@course.slug}\"" : "") %>>
           <% if can_add_to_playlists %>
             <button type="button"
@@ -91,7 +92,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="12" r="2.2"/></svg>
             </button>
             <%= render "courses/add_to_paths_modal", course: @course %>
-            <%= render "courses/course_menu", course: @course, deletable: course_in_my_channel %>
+            <%= render "courses/course_menu", course: @course, deletable: course_in_my_channel, shared: course_shared %>
           <% end %>
           <div class="flex items-center gap-1.5 mb-2 pr-10">
             <% if @course.language %>

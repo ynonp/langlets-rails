@@ -474,6 +474,8 @@ he:
     course_menu:
       aria_label: "אפשרויות קורס"
       add_to_playlist: "הוספה לפלייליסט"
+      share_to_public_url: "שיתוף בקישור ציבורי"
+      stop_sharing: "הפסקת שיתוף"
       delete: "מחיקה"
       delete_title: "למחוק את הקורס?"
       delete_message: "פעולה זו תסיר את “%{name}” מהספרייה שלכם ותמחק את ההתקדמות שלכם בו. תוכלו להוסיף את הסרטון שוב בעתיד, אך ההתקדמות לא תחזור."
@@ -581,6 +583,11 @@ he:
       stop: "🚫 הפסקת תרגול המילה"
       removed: "המילה הוסרה מאוצר המילים שלכם. %{undo}"
       undo: "ביטול"
+    course_menu:
+      share_to_public_url: "שיתוף בקישור ציבורי"
+      stop_sharing: "הפסקת שיתוף"
+      shared_message: "הקישור הציבורי הועתק"
+      unshared_message: "השיתוף של הלנגלט הזה הופסק"
     course_paths:
       load_failed: "לא הצלחנו לטעון את הפלייליסטים."
       one_course: "קורס אחד"

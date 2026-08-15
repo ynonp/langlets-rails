@@ -18,6 +18,7 @@ class Channel < ApplicationRecord
   validates :name, :slug, presence: true
   validates :slug, uniqueness: true
   validates :default, uniqueness: { scope: :user_id }, if: :default?
+  validates :share, uniqueness: { scope: :user_id }, if: :share?
   validate :system_channel_belongs_to_admin
 
   # The platform's one curated, globally listed Channel. The partial unique

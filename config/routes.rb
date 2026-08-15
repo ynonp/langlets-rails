@@ -140,6 +140,8 @@ Rails.application.routes.draw do
     member do
       post :mark_done
       post :reset_progress
+      post :share
+      post :unshare
     end
     resources :playlists, only: [ :index, :create, :destroy ], controller: "course_playlists"
     resources :lessons, only: [ :show ] do

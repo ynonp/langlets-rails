@@ -185,6 +185,37 @@ class CoursesController < ApplicationController
     redirect_to course_path(@course.slug), notice: "Progress reset. You can start fresh!"
   end
 
+  # Publishes the course to the current user's share Channel — a dedicated
+  # public Channel, one per user (see User#share_channel) — so the course
+  # becomes readable by anyone holding the link, per Channel#readable_by? and
+  # Course#readable_by?. Deliberately bypasses Channel#publish!: sharing an
+  # already-built course is not an import, so it must not charge a credit.
+  def share
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    authenticate_user!
+    return unless authorize_course_read!(@course)
+
+    channel = current_user.share_channel
+    channel.channel_items.create_or_find_by!(course: @course) do |item|
+      item.published_at = Time.zone.now
+    end
+
+    render json: { shared: true, public_url: course_url(@course) }
+  end
+
+  # The inverse of #share: removes the course from the current user's share
+  # Channel. The course itself, and any other Channel publishing it, are
+  # untouched.
+  def unshare
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    authenticate_user!
+    return unless authorize_course_read!(@course)
+
+    current_user.share_channel.unpublish!(@course)
+
+    render json: { shared: false }
+  end
+
   # Removes the course from the current user's own library: unpublishes it from
   # the Channels that are theirs to publish to — their default Channel and, for
   # a subscriber, their Pro library — and clears their personal

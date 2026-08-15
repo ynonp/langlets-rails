@@ -229,6 +229,53 @@ accept/decline controls only on the invitations list or expiring token page;
 acceptance redirects to the homepage, where the newly readable courses already
 appear.
 
+### Sharing a course to a public URL
+
+Every user also has one lazily-provisioned **share Channel** —
+`User#share_channel`, an ordinary (`type: nil`) Channel with `share: true` and
+`visibility: :public`, unique per user via a partial index on `channels.user_id
+WHERE share`, the same pattern `default` uses for the one private default
+Channel. It is created on first use rather than at signup, so an account that
+never shares anything never gets one. `User#sharing?(course)` answers whether
+a course is currently on that Channel without provisioning it, so rendering
+the course menu for a user who has never shared anything costs no extra row.
+
+The course page's "..." menu (`course-menu` Stimulus controller) shows **Share
+to public URL** for every course the viewer can already read — this is a
+sharing action available on any course, not only ones the viewer owns — and
+switches to **Stop sharing** once `User#sharing?` is true for it.
+`CoursesController#share`/`#unshare` (`POST /courses/:id/share`,
+`POST /courses/:id/unshare`) create or destroy the `ChannelItem` directly
+through `channel.channel_items` rather than going through `Channel#publish!`:
+publishing into an ordinary Channel is priced as an import (see *Channels*
+above), and sharing an already-built course to a link is not an import, so it
+must never charge a credit. `#unshare` is `Channel#unpublish!`, unchanged.
+
+Because the share Channel is `visibility: :public`, the shared course becomes
+world-readable through the ordinary Channel-visibility rule
+(`Course#readable_by?` / `ChannelContentQuery.courses_visible_to`) the moment
+it is published there — no separate authorization path was added. It stays
+unlisted like any other public Channel (see *Channels* above): omitted from
+Home, Library, gallery, and the sitemap, and excluded from the owner's own
+`owned_listed_grant` since that scope deliberately excludes public visibility.
+Sharing a course the viewer does not own therefore does not make it appear
+anywhere in the viewer's own feeds — only at the direct URL.
+
+`#share` returns `{ shared: true, public_url: }` as JSON; the "public URL" is
+simply `course_url(@course)`, the same URL the course page is already served
+from. The controller does the persistence and returns the URL; the Stimulus
+controller does the client-side work a full-page redirect could not:
+`navigator.clipboard.writeText` inside the same click handler (clipboard
+writes need a user-gesture context, so this cannot happen after a page
+reload), an in-page toast (`data-course-menu-target="toast"`) showing "Public
+URL copied to clipboard" / "This langlet is no longer shared", and flipping
+the menu item's own label — all without navigating away. Both toast strings
+and the two label strings are duplicated under the `js:` locale subtree
+(`course_menu.*`) alongside the server-rendered `courses.course_menu.*`
+originals, the same mirroring `notification_preference` already does for
+push-permission copy: the server renders the initial state, the client needs
+its own copy of the same strings to update it without a round trip.
+
 ### Full-course video playback
 
 The full player preloads an interactive YouTube iframe with native controls. It
