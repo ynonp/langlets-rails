@@ -3,11 +3,12 @@ import { t } from "../utils/i18n"
 
 // The course page "..." action sheet: Add to Playlist (delegated to the
 // course-paths controller on the same element), Share to a public URL
-// (toggles to Stop sharing once shared), or Delete, which opens its own
-// confirmation sheet rather than window.confirm — unsupported in the Hotwire
-// Native app.
+// (toggles to Stop sharing once shared, alongside a Copy public URL item that
+// re-copies the same link without changing sharing state), or Delete, which
+// opens its own confirmation sheet rather than window.confirm — unsupported
+// in the Hotwire Native app.
 export default class extends Controller {
-  static targets = ["menuOverlay", "menuPanel", "deleteOverlay", "shareButton", "shareLabel", "toast"]
+  static targets = ["menuOverlay", "menuPanel", "deleteOverlay", "shareButton", "shareLabel", "copyUrlButton", "toast"]
 
   openMenu() {
     this.menuOverlayTarget.classList.remove("hidden")
@@ -48,15 +49,26 @@ export default class extends Controller {
         this.copyToClipboard(data.public_url)
         button.dataset.shared = "true"
         this.shareLabelTarget.textContent = t("course_menu.stop_sharing")
+        this.copyUrlButtonTarget.classList.remove("hidden")
         this.showToast(t("course_menu.shared_message"))
       } else {
         button.dataset.shared = "false"
         this.shareLabelTarget.textContent = t("course_menu.share_to_public_url")
+        this.copyUrlButtonTarget.classList.add("hidden")
         this.showToast(t("course_menu.unshared_message"))
       }
     } catch (e) {
       console.error(e)
     }
+  }
+
+  // Re-copies the already-shared course's public URL without touching sharing
+  // state — for a course shared earlier in a previous visit, whose link the
+  // user just wants again.
+  async copyPublicUrl() {
+    this.closeMenu()
+    await this.copyToClipboard(this.shareButtonTarget.dataset.publicUrl)
+    this.showToast(t("course_menu.shared_message"))
   }
 
   // Tries the modern Clipboard API, then falls back to the legacy

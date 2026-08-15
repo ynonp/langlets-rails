@@ -475,6 +475,7 @@ he:
       aria_label: "אפשרויות קורס"
       add_to_playlist: "הוספה לפלייליסט"
       share_to_public_url: "שיתוף בקישור ציבורי"
+      copy_public_url: "העתקת הקישור הציבורי"
       stop_sharing: "הפסקת שיתוף"
       delete: "מחיקה"
       delete_title: "למחוק את הקורס?"

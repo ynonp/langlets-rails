@@ -243,8 +243,12 @@ the course menu for a user who has never shared anything costs no extra row.
 The course page's "..." menu (`course-menu` Stimulus controller) shows **Share
 to public URL** for every course the viewer can already read — this is a
 sharing action available on any course, not only ones the viewer owns — and
-switches to **Stop sharing** once `User#sharing?` is true for it.
-`CoursesController#share`/`#unshare` (`POST /courses/:id/share`,
+switches to **Stop sharing**, alongside a **Copy public URL** item, once
+`User#sharing?` is true for it. Copy public URL re-copies the same
+`course_url` without any server round trip or change to sharing state — it
+exists for a course shared on an earlier visit, whose link the viewer just
+wants again; both items are hidden together the moment Stop sharing is
+clicked. `CoursesController#share`/`#unshare` (`POST /courses/:id/share`,
 `POST /courses/:id/unshare`) create or destroy the `ChannelItem` directly
 through `channel.channel_items` rather than going through `Channel#publish!`:
 publishing into an ordinary Channel is priced as an import (see *Channels*

@@ -533,6 +533,7 @@ en:
       aria_label: "Course options"
       add_to_playlist: "Add To Playlist"
       share_to_public_url: "Share to public URL"
+      copy_public_url: "Copy public URL"
       stop_sharing: "Stop sharing"
       delete: "Delete"
       delete_title: "Delete course?"
