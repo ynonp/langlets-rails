@@ -10,9 +10,10 @@ import { reportActivityProgress } from "../utils/activity_progress"
 // after a correct pair, mirroring the audio-to-translation activity: the
 // cell stays in place but is dimmed so the learner keeps a visual record
 // of the solved pairs. Once every pair on a page is matched, the page is
-// hidden and the next page is revealed. Tapping an L1 cell always plays
-// the L1 audio for that pair (whether it's tapped first, second, or used
-// to switch selection); tapping an L2 cell is silent.
+// hidden and the next page is revealed without selecting or playing any cell.
+// Tapping an L1 cell always plays the L1 audio for that pair (whether it's
+// tapped first, second, or used to switch selection); tapping an L2 cell is
+// silent.
 export default class extends Controller {
   static targets = ['page', 'progressText', 'completionMessage'];
   static values = {
@@ -209,11 +210,6 @@ export default class extends Controller {
     currentPage.classList.add('hidden');
     nextPage.classList.remove('hidden');
     this.currentPageIndex++;
-
-    // Play the L1 audio of the first pair on the new page so the user hears
-    // the next word to match.
-    const firstL1 = nextPage.querySelector('[data-column="l1"]');
-    if (firstL1) this.playTokenAudio(firstL1);
   }
 
   handleFailedMatch(element1, element2) {
