@@ -559,27 +559,67 @@ module App
       end
     end
 
-    test "all three tabs invite vocabulary review until today's language review is completed" do
-      phrase = create_translated_phrase!(medium: @medium, l1: @spanish, l2: @english,
-                              text_l1: "Hola", text_l2: "Hello", timestamp: "00:00:01")
-      token = create_translated_token!(phrase: phrase, l1_start_index: 0, l1_end_index: 3,
-                                       index_type: :character_index, translation: "Hello")
-      @user.saved_phrase_tokens << token
+    test "Home alone shows one review card per due language with distinct lesson token counts" do
+      spanish_tokens = [
+        [ "Hola", "Hello" ],
+        [ "Amigo", "Friend" ],
+        [ "Gracias", "Thanks" ]
+      ].each_with_index.map do |(word, translation), index|
+        phrase = create_translated_phrase!(
+          medium: @medium, l1: @spanish, l2: @english,
+          text_l1: word, text_l2: translation, timestamp: "00:00:0#{index + 1}"
+        )
+        create_translated_token!(
+          phrase: phrase, l1_start_index: 0, l1_end_index: word.length - 1,
+          index_type: :character_index, translation: translation
+        )
+      end
+      @user.saved_phrase_tokens.concat(spanish_tokens)
 
-      [app_home_path, app_library_path, new_app_import_request_path].each do |path|
+      arabic = languages(:arabic)
+      arabic_medium = Medium.create!(url: "https://www.youtube.com/watch?v=arabic12345", language: arabic)
+      arabic_phrase = create_translated_phrase!(
+        medium: arabic_medium, l1: arabic, l2: @english,
+        text_l1: "مرحبا", text_l2: "Hello", timestamp: "00:00:01"
+      )
+      arabic_token = create_translated_token!(
+        phrase: arabic_phrase, l1_start_index: 0, l1_end_index: 4,
+        index_type: :character_index, translation: "Hello"
+      )
+      @user.saved_phrase_tokens << arabic_token
+
+      spanish_review = ReviewLessonBuilder.new(@user, language_code: @spanish.iso_name).build!
+      arabic_review = ReviewLessonBuilder.new(@user, language_code: arabic.iso_name).build!
+
+      get app_home_path, headers: NATIVE
+      assert_response :success
+      assert_select "[data-testid='daily-vocab-review']", count: 1
+      assert_select "[data-testid='daily-vocab-banner']", count: 2
+      assert_select "a[href=?]", review_lessons_path(language_code: @spanish.iso_name), text: /Spanish.*3 words due/m
+      assert_select "a[href=?]", review_lessons_path(language_code: arabic.iso_name), text: /Arabic.*1 word due/m
+      assert_match "A few minutes today will help these words stick.", response.body
+
+      [ app_library_path, new_app_import_request_path ].each do |path|
         get path, headers: NATIVE
         assert_response :success
-        assert_select "[data-testid='daily-vocab-banner']", count: 1
+        assert_select "[data-testid='daily-vocab-review']", count: 0
       end
 
-      review = ReviewLessonBuilder.new(@user, language_code: @spanish.iso_name).build!
-      LessonUser.create!(user: @user, lesson: review)
+      LessonUser.create!(user: @user, lesson: spanish_review)
 
-      [app_home_path, app_library_path, new_app_import_request_path].each do |path|
-        get path, headers: NATIVE
-        assert_response :success
-        assert_select "[data-testid='daily-vocab-banner']", count: 0
+      get app_home_path, headers: NATIVE
+      assert_response :success
+      assert_select "[data-testid='daily-vocab-banner']", count: 1
+      assert_select "[data-testid='daily-vocab-review']" do
+        assert_select "a[href=?]", review_lessons_path(language_code: arabic.iso_name), text: /Arabic.*1 word due/m
+        assert_select "a[href=?]", review_lessons_path(language_code: @spanish.iso_name), count: 0
       end
+
+      LessonUser.create!(user: @user, lesson: arabic_review)
+
+      get app_home_path, headers: NATIVE
+      assert_response :success
+      assert_select "[data-testid='daily-vocab-review']", count: 0
     end
 
     test "the queue badge counts only active imports" do

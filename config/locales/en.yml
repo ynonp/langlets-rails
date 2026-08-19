@@ -246,7 +246,10 @@ en:
     home:
       index:
         daily_vocab:
-          title: "Your daily vocabulary review"
+          ready: "Daily vocabulary review"
+          words_due:
+            one: "1 word due"
+            other: "%{count} words due"
           body: "A few minutes today will help these words stick."
         your_playlists: "Your playlists"
         continue: "Continue"

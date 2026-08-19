@@ -9,7 +9,6 @@ module App
     before_action :authenticate_user!
     before_action :require_native_app
     before_action :set_queue_badge_count
-    before_action :set_daily_vocab_language
 
     private
 
@@ -40,8 +39,18 @@ module App
       @queue_badge_count = current_user.import_requests.active.count
     end
 
-    def set_daily_vocab_language
-      @daily_vocab_language = current_user.daily_vocab_review_language&.iso_name
+    def set_daily_vocab_reviews
+      lessons = current_user.daily_vocab_review_lessons
+      token_counts = ActivityPhraseToken.joins(:activity)
+        .where(activities: { lesson_id: lessons.map(&:id) })
+        .group("activities.lesson_id")
+        .distinct
+        .count(:phrase_token_id)
+
+      @daily_vocab_reviews = lessons.filter_map do |lesson|
+        token_count = token_counts.fetch(lesson.id, 0)
+        { lesson: lesson, token_count: token_count } if token_count.positive?
+      end
     end
 
     # Whether the app should put up the iOS notification prompt on this page load.

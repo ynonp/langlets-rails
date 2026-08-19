@@ -3221,8 +3221,15 @@ starting a review does not dismiss the invitation. The final activity emits the 
 lesson id and the server creates the `LessonUser` that dismisses the invitation.
 Activity controllers must use that shared event name rather than Stimulus's
 controller-prefixed `this.dispatch("completed")` event. `App::BaseController`
-resolves the invitation once for every native app request, and the shared card appears at the top of all
-three tab roots: Home, Library, and Create. The web homepage and gallery put a highlighted
+resolves every due prebuilt pending or started review for each native app
+Home request. The shared section appears only at the top of the Home tab;
+Library, Create, and other native app pages do not load or render it. Home
+renders one row per due language, ordered by English language name.
+Each row reports the number of distinct phrase tokens actually present across
+that review lesson's activities; a token reused by multiple activities counts
+once. Languages without an active lesson, lessons containing no tokens, and
+languages already completed today are omitted. The section-level heading and
+practice reminder render once for the whole group. The web homepage and gallery put a highlighted
 "Daily Vocab Practice" action first in their navigation and now both render the
 shared authenticated user menu. Web prefers the `?lang=` learning language; on
 an unfiltered URL it uses the first saved-vocabulary language that is still due

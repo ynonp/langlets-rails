@@ -409,6 +409,27 @@ class User < ApplicationRecord
     candidates.detect { |language| daily_vocab_review_available?(language.iso_name) }
   end
 
+  def daily_vocab_review_lessons
+    completed_language_ids = lesson_users.joins(:lesson)
+      .where(lesson_users: { created_at: Time.zone.now.all_day })
+      .where.not(lessons: { review_language_id: nil })
+      .distinct
+      .pluck("lessons.review_language_id")
+
+    active_reviews = lessons.review_lessons
+      .where(review_build_status: [ :started, :pending ])
+      .where.not(review_language_id: completed_language_ids)
+      .includes(:review_language)
+      .order(created_at: :desc)
+      .to_a
+
+    active_reviews
+      .group_by(&:review_language_id)
+      .values
+      .map { |reviews| reviews.find(&:review_started?) || reviews.first }
+      .sort_by { |lesson| lesson.review_language.english_name }
+  end
+
   def sync_local_xp(local_xp_data)
     return unless local_xp_data.is_a?(Hash) && local_xp_data["dailyXp"].present?
 

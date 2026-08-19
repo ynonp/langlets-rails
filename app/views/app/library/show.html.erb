@@ -10,8 +10,6 @@
     <%= render "app/shared/header", title: t(".title") %>
   </div>
 
-  <%= render "app/shared/daily_vocab_card" %>
-
   <%# The mockup draws this as static text; it needs to be a real field. %>
   <%= form_with url: app_library_path, method: :get, data: { turbo_frame: "library-results" } do |f| %>
     <%= f.hidden_field :filter, value: @filter if @filter.present? %>

@@ -2,6 +2,8 @@ module App
   # Screen 01. The user's unfinished courses (Enrollments — imported or added
   # from the Library). Home never recommends somebody else's content.
   class HomeController < BaseController
+    before_action :set_daily_vocab_reviews
+
     # Within this window a finished import still counts as "just imported" and
     # gets the hero card. Also how the push deep link lands: it routes to
     # /app?just_imported=<slug>.

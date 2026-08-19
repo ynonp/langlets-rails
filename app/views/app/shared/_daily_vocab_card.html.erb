@@ -1,14 +1,27 @@
-<% if @daily_vocab_language %>
-  <%= link_to review_lessons_path(language_code: @daily_vocab_language),
-                class: "w-full rounded-xl border border-white/10 bg-app-card p-3 text-left",
-                data: { testid: "daily-vocab-banner", turbo: false } do %>
-    <span class="flex items-center gap-2.5">
-      <span class="text-xl" aria-hidden="true">📚</span>
-      <span class="flex-1">
-        <span class="block text-[15px] font-bold text-app-text"><%= t("app.home.index.daily_vocab.title") %></span>
-        <span class="block text-[12px] text-app-text-2"><%= t("app.home.index.daily_vocab.body") %></span>
-      </span>
-      <span class="text-lg text-app-accent" aria-hidden="true">›</span>
-    </span>
-  <% end %>
+<% if @daily_vocab_reviews.any? %>
+  <section data-testid="daily-vocab-review" aria-labelledby="daily-vocab-heading">
+    <h2 id="daily-vocab-heading" class="mb-3 text-[18px] font-semibold text-app-text">
+      <%= t("app.home.index.daily_vocab.ready") %>
+    </h2>
+
+    <div class="flex flex-col gap-2">
+      <% @daily_vocab_reviews.each do |review| %>
+        <% lesson = review.fetch(:lesson) %>
+        <%= link_to review_lessons_path(language_code: lesson.review_language.iso_name),
+                    class: "app-hairline flex w-full items-center gap-3 rounded-xl bg-app-card px-4 py-3.5 text-left",
+                    data: { testid: "daily-vocab-banner", turbo: false } do %>
+          <%= app_icon "cards", class: "h-5 w-5 shrink-0 text-app-text-2" %>
+          <span class="min-w-0 flex-1">
+            <span class="block text-[15px] font-semibold text-app-text"><%= lesson.review_language.english_name %></span>
+            <span class="mt-0.5 block text-[13px] text-app-text-2">
+              <%= t("app.home.index.daily_vocab.words_due", count: review.fetch(:token_count)) %>
+            </span>
+          </span>
+          <%= app_icon "chevron", class: "h-[18px] w-[11px] shrink-0 text-app-text-3" %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <p class="mt-3 text-[13px] text-app-text-3"><%= t("app.home.index.daily_vocab.body") %></p>
+  </section>
 <% end %>
