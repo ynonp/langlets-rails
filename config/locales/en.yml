@@ -133,7 +133,7 @@ en:
       heading: "Account"
       type_free: "Free"
       type_pro: "Pro"
-      pro_description: "Unlimited imports · library synced"
+      pro_description: "Unlimited imports"
       upgrade_cta: "Upgrade to Pro for unlimited imports"
     xp:
       heading: "XP this week"
@@ -272,7 +272,7 @@ en:
         pro:
           title: "Langlets Pro"
           badge: "ACTIVE"
-          body: "Unlimited imports · library synced"
+          body: "Unlimited imports"
     pro:
       show:
         page_title: "Langlets Pro"
