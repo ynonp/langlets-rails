@@ -34,7 +34,6 @@ application.register("bridge--auth-bridge", Bridge__AuthBridgeController)
 import Bridge__GoogleAuthController from "./bridge/google_auth_controller"
 application.register("bridge--google-auth", Bridge__GoogleAuthController)
 
-
 import Bridge__NativeAudioFeedbackController from "./bridge/native_audio_feedback_controller"
 application.register("bridge--native-audio-feedback", Bridge__NativeAudioFeedbackController)
 
@@ -55,6 +54,9 @@ application.register("bridge--sign-out", Bridge__SignOutController)
 
 import Bridge__TabBadgeController from "./bridge/tab_badge_controller"
 application.register("bridge--tab-badge", Bridge__TabBadgeController)
+
+import Bridge__TabRefreshController from "./bridge/tab_refresh_controller"
+application.register("bridge--tab-refresh", Bridge__TabRefreshController)
 
 import Bridge__TabVisibilityController from "./bridge/tab_visibility_controller"
 application.register("bridge--tab-visibility", Bridge__TabVisibilityController)
@@ -88,7 +90,6 @@ application.register("homepage-filter", HomepageFilterController)
 
 import HomepageVideoPickerController from "./homepage_video_picker_controller"
 application.register("homepage-video-picker", HomepageVideoPickerController)
-
 
 import LessonNavigationController from "./lesson_navigation_controller"
 application.register("lesson-navigation", LessonNavigationController)

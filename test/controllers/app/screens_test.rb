@@ -104,6 +104,34 @@ module App
       assert_select "[style='width: 0%']"
     end
 
+    test "learning a Library course updates its card and refreshes Home through a Turbo Stream" do
+      @user.enrollments.find_by!(course: @course).destroy!
+
+      post app_enrollments_path(course_slug: @course.slug), headers: NATIVE.merge(
+        "Accept" => "text/vnd.turbo-stream.html"
+      )
+
+      assert_response :success
+      assert_equal "text/vnd.turbo-stream.html", response.media_type
+      assert @user.enrollments.exists?(course: @course, source: :library)
+      assert_select "turbo-stream[action='replace'][target=?]", dom_id(@course, :library_card) do
+        assert_select "template", text: /On your Home/
+      end
+      assert_select "turbo-stream[action='refresh_native_tab'][tab='home']", count: 1
+    end
+
+    test "a web browser cannot invoke the native cross-tab enrollment stream" do
+      @user.enrollments.find_by!(course: @course).destroy!
+
+      assert_no_difference -> { @user.enrollments.count } do
+        post app_enrollments_path(course_slug: @course.slug), headers: WEB.merge(
+          "Accept" => "text/vnd.turbo-stream.html"
+        )
+      end
+
+      assert_redirected_to root_path
+    end
+
     test "the Library hides import status pills with no matching requests" do
       get app_library_path, headers: NATIVE
 

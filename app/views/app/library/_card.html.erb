@@ -1,6 +1,7 @@
 <% compact = local_assigns.fetch(:compact, false) %>
 
-<div class="app-hairline bg-app-card <%= compact ? 'rounded-[14px]' : 'rounded-app-card' %> overflow-hidden flex flex-col">
+<div id="<%= dom_id(course, :library_card) %>"
+     class="app-hairline bg-app-card <%= compact ? 'rounded-[14px]' : 'rounded-app-card' %> overflow-hidden flex flex-col">
   <%= link_to course_path(course), data: { turbo_frame: "_top" } do %>
     <%= image_tag course_thumbnail_url(course),
                   alt: "", loading: "lazy",

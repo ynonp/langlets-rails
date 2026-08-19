@@ -87,6 +87,23 @@ final class AppTabBarController: UITabBarController {
         routeTabIfNeeded(at: index)
     }
 
+    /// Reload a tab immediately, including while its navigator is in the
+    /// background, after another tab changes state that it displays.
+    func refreshTab(named name: String) {
+        guard let index = Self.tabs.firstIndex(where: {
+            $0.title.caseInsensitiveCompare(name) == .orderedSame
+        }) else { return }
+
+        needsRoute[index] = false
+
+        let proposal = VisitProposal(
+            url: Self.url(for: Self.tabs[index]),
+            options: VisitOptions(action: .replace),
+            properties: ["presentation": "replace_root", "animated": false]
+        )
+        navigators[index].route(proposal)
+    }
+
 
     /// Land on Home with a freshly imported course as the hero — where a tapped
     /// "your course is ready" notification goes. HomeController reads

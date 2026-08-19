@@ -6,6 +6,7 @@ import com.ynonp.langlets.bridge.NotificationPreferenceComponent
 import com.ynonp.langlets.bridge.ProgressHapticComponent
 import com.ynonp.langlets.bridge.SignOutComponent
 import com.ynonp.langlets.bridge.TabBadgeComponent
+import com.ynonp.langlets.bridge.TabRefreshComponent
 import com.ynonp.langlets.bridge.TabVisibilityComponent
 import com.ynonp.langlets.bridge.WebAuthComponent
 import com.ynonp.langlets.features.LessonFragment
@@ -75,6 +76,7 @@ class LangletsApplication : Application() {
             BridgeComponentFactory("progress-haptic", ::ProgressHapticComponent),
             BridgeComponentFactory("sign-out", ::SignOutComponent),
             BridgeComponentFactory("tab-badge", ::TabBadgeComponent),
+            BridgeComponentFactory("tab-refresh", ::TabRefreshComponent),
             BridgeComponentFactory("tab-visibility", ::TabVisibilityComponent),
             BridgeComponentFactory("notification-preference", ::NotificationPreferenceComponent),
             BridgeComponentFactory("google-auth", ::GoogleAuthComponent),

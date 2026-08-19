@@ -1,0 +1,9 @@
+<%= turbo_stream.replace dom_id(@course, :library_card),
+                         partial: "app/library/card",
+                         locals: {
+                           course: @course,
+                           lessons_count: @course.lessons.count,
+                           enrolled: true
+                         } %>
+
+<turbo-stream action="refresh_native_tab" tab="home"></turbo-stream>

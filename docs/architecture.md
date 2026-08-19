@@ -1914,7 +1914,7 @@ settles as `imported` and the question no longer arises.
 - **Purpose**: "this course is on my Home". Unique on `(user_id, course_id)`.
 - **Why it exists**: enrollment could not be inferred. A created course is `courses.user_id`, a started course is implied by `lesson_users` — but the Library's "+ Learn this" adds a course to Home *before* any lesson is completed, so it needs a record of its own.
 - `source`: `imported` (this user asked for this course, and it was published into their own channel), `library` (added from the catalog with "+ Learn this", which enrolls without publishing and is free), `playlist`. Every `ImportRequest` now settles as `imported`: there is no free rider to tell apart, because riding along on somebody else's run still ends in a publication of your own.
-- `last_practiced_at` is Home's canonical "started" signal: "Keep it going" only includes enrollments where it is non-null, ordered newest first. Clearing it keeps the enrollment/library membership while returning the course to an un-started state.
+- `last_practiced_at` is Home's canonical "started" signal: "Keep it going" only includes enrollments where it is non-null, ordered newest first. Resetting a completed course to "not started" deletes the Enrollment altogether, removing it from every Home section while leaving Channel publication—and therefore Library availability—untouched. Starting a lesson again recreates the Enrollment through `LessonUser`'s completion callback.
 
 ### Notifications
 
@@ -2572,6 +2572,16 @@ with the sentence explaining that the Pro screen is native-only.
 
 The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and **Create** tab (the Create tab is `/app/import_requests/new`, drawn with the `plus.circle` SF Symbol). Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests/new` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. If you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
 
+Because those navigators retain separate documents, an ordinary Turbo Stream
+response cannot update a different tab. Cross-tab refreshes use the custom
+`refresh_native_tab` stream action with a `tab` attribute. The current webview
+dispatches that instruction through the `tab-refresh` bridge, and the iOS or
+Android shell immediately resets the named navigator in the background. The
+Library's `+ Learn this` response uses this mechanism for Home while also
+replacing its own Library card with the enrolled state; returning to Home is
+therefore both fresh and immediate, without Action Cable or deferred dirty
+state.
+
 Authentication (`/users/sign_in`, `/users/sign_up`, password recovery, and provider handoffs) is a default-context `replace_root` flow on both platforms, not a modal. A signed-out user has no meaningful underlying app screen to dismiss back to, so the native auth pages also omit the HTML close X. The tab bar starts hidden and is revealed only after the authenticated app layout reports through the tab-badge bridge. Entering an auth URL hides tabs immediately in the iOS proposal delegate or Android route handler, while the rendered application layout independently sends `bridge--tab-visibility visible=false`; that second assertion covers server redirects because native proposal handlers may only see the pre-redirect URL. Sign-out hides tabs through its bridge as well. Authentication changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
 
 Email/password registration does not return an unconfirmed user to the home or
@@ -3024,7 +3034,7 @@ The platform implements comprehensive progress tracking through dedicated join t
 - **Analytics Ready**: Data structure supports learning analytics and reporting
 
 #### Progress Data Applications
-- **Course completion/reset**: Mark Done creates the current user's missing `lesson_users` rows for every lesson, making the course complete and removing it from Continue. Clicking Done resets the course to not started by deleting that user's `lesson_users`, `activity_users`, and lesson-scoped `activity_logs`, then clearing the enrollment's `last_practiced_at`. The enrollment itself remains because it represents library membership, but the cleared started signal keeps the reset course out of Continue.
+- **Course completion/reset**: Mark Done creates the current user's missing `lesson_users` rows for every lesson, making the course complete and removing it from Continue. Clicking Done resets the course to not started by deleting that user's `lesson_users`, `activity_users`, lesson-scoped `activity_logs`, and Enrollment in one transaction. This removes the course from Home without unpublishing it from any Channel, so it remains available in Library and starting a lesson later enrolls the user again.
 - **Personalized Learning**: Adaptive content delivery based on completion history
 - **Performance Analytics**: User engagement and learning effectiveness metrics
 - **Achievement Systems**: Badges, streaks, and milestone recognition

@@ -15,3 +15,12 @@ window.Turbo.StreamActions.visit = function () {
   const action = this.dataset.visitAction || "advance"
   window.Turbo.visit(this.getAttribute("url"), { action })
 }
+
+// Native tabs retain independent webviews. A stream response in one tab can
+// ask the shell to refresh another by naming it with `tab="..."`.
+window.Turbo.StreamActions.refresh_native_tab = function () {
+  const tab = this.getAttribute("tab")
+  if (!tab) return
+
+  window.dispatchEvent(new CustomEvent("native-tab:refresh", { detail: { tab } }))
+}

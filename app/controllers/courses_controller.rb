@@ -180,8 +180,7 @@ class CoursesController < ApplicationController
 
     ApplicationRecord.transaction do
       clear_lesson_progress!(@course)
-      Enrollment.where(course: @course, user: current_user)
-                .update_all(last_practiced_at: nil, updated_at: Time.zone.now)
+      Enrollment.where(course: @course, user: current_user).destroy_all
     end
 
     redirect_to course_path(@course.slug), notice: "Progress reset. You can start fresh!"

@@ -41,6 +41,13 @@
            data-bridge--tab-badge-count-value="<%= @queue_badge_count.to_i %>"
            hidden></div>
 
+      <%# Custom Turbo Stream actions dispatch native-tab:refresh here. The
+          bridge forwards the named tab to the shell, which reloads that
+          navigator immediately even while it is in the background. %>
+      <div data-controller="bridge--tab-refresh"
+           data-action="native-tab:refresh@window->bridge--tab-refresh#refresh"
+           hidden></div>
+
       <%# Hands the APNs device token to the server: the native side has the
           token but no session, this side has the session but no token.
           `ask` gates the permission prompt — see App::BaseController#ask_for_push?.

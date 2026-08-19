@@ -184,6 +184,23 @@ class MainActivity : HotwireActivity() {
     }
 
     /**
+     * Reload a retained tab after another tab changes state it displays. An
+     * unvisited tab has no navigator yet and will fetch fresh content naturally
+     * when first selected.
+     */
+    fun refreshTab(tab: String) {
+        val configuration = tabs
+            .map { it.configuration }
+            .firstOrNull { it.name.equals(tab, ignoreCase = true) }
+            ?: return
+
+        delegate.findNavigatorHost(configuration.navigatorHostId)
+            ?.takeIf { it.isReady() }
+            ?.navigator
+            ?.reset()
+    }
+
+    /**
      * OAuth finished. Rails answers a native sign-in with a redirect to
      * `langlets://auth-success`, which the library's non-http route handler turns
      * into an Intent back into this Activity.

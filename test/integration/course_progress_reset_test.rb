@@ -50,7 +50,7 @@ class CourseProgressResetTest < ActionDispatch::IntegrationTest
     assert_select "[data-testid='keep-it-going'] a[href='#{course_path(@course)}']", count: 0
   end
 
-  test "resetting a done course removes all course activity and keeps it out of Continue Learning" do
+  test "resetting a done course removes all course activity and its Home enrollment" do
     other_user = User.create!(
       email: "other-course-progress@example.com",
       password: "password123",
@@ -76,7 +76,9 @@ class CourseProgressResetTest < ActionDispatch::IntegrationTest
     assert_not LessonUser.exists?(lesson: @lesson, user: @user)
     assert_not ActivityUser.exists?(activity: @activity, user: @user)
     assert_not ActivityLog.exists?(course_log.id)
-    assert_nil @enrollment.reload.last_practiced_at
+    assert_not Enrollment.exists?(@enrollment.id)
+    assert @user.default_channel.channel_items.exists?(course: @course),
+           "resetting progress must not unpublish the course from Library"
     assert LessonUser.exists?(other_lesson_progress.id)
     assert ActivityUser.exists?(other_activity_progress.id)
     assert ActivityLog.exists?(other_user_log.id)
@@ -87,6 +89,6 @@ class CourseProgressResetTest < ActionDispatch::IntegrationTest
     assert lesson_with_progress.not_started?
 
     get app_home_url, headers: NATIVE
-    assert_select "[data-testid='keep-it-going'] a[href='#{course_path(@course)}']", count: 0
+    assert_select "a[href='#{course_path(@course)}']", count: 0
   end
 end

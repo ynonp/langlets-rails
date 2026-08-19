@@ -13,7 +13,7 @@ import WebKit
 // the phone's own localhost is the phone. Plain http to a loopback address is
 // blocked by App Transport Security without NSAllowsLocalNetworking in
 // Info.plist, which is set for exactly this reason.
-let rootURL = URL(string: "https://langlets.app")!
+let rootURL = URL(string: "http://localhost:3000")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -89,6 +89,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             GoogleAuthComponent.self,
             AppleAuthComponent.self,
             TabBadgeComponent.self,
+            TabRefreshComponent.self,
             TabVisibilityComponent.self,
             PushComponent.self,
             NotificationPreferenceComponent.self,
@@ -138,6 +139,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self,
             selector: #selector(tabVisibilityDidChange(_:)),
             name: .tabVisibilityDidChange,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(nativeTabNeedsRefresh(_:)),
+            name: .nativeTabNeedsRefresh,
             object: nil
         )
 
@@ -257,6 +265,12 @@ extension SceneDelegate: NavigatorDelegate {
         guard let visible = notification.userInfo?["visible"] as? Bool else { return }
 
         tabBarController.setTabsVisible(visible)
+    }
+
+    @objc private func nativeTabNeedsRefresh(_ notification: Notification) {
+        guard let tab = notification.userInfo?["tab"] as? String else { return }
+
+        tabBarController.refreshTab(named: tab)
     }
 
     @objc private func userDidSignOut() {
