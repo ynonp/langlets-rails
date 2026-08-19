@@ -357,6 +357,7 @@ module App
       assert_response :success
       assert_select "h2", text: "Recommended for you"
       assert_select "a[href=?]", course_path(@course), text: "Despacito"
+      assert_select "p", text: "Spanish · 1 lesson"
       assert_select "[data-testid='no-langlets']", count: 0
     end
 

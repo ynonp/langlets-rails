@@ -16,7 +16,7 @@
                 class: "app-clamp-2 font-semibold leading-[1.25] #{compact ? 'text-[12px] min-h-[30px]' : 'text-[13px] min-h-[34px]'}" %>
 
     <p class="text-app-text-2 <%= compact ? 'text-[10px]' : 'text-[11px]' %>">
-      <% unless compact %><%= localized_language_name(course.language) %> · <% end %><%= t("courses.lesson_count", count: lessons_count) %>
+      <%= localized_language_name(course.language) %> · <%= t("courses.lesson_count", count: lessons_count) %>
     </p>
     <% if local_assigns.fetch(:show_enrollment_action, true) %>
       <div class="mt-auto pt-1">
