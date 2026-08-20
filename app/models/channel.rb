@@ -13,7 +13,7 @@ class Channel < ApplicationRecord
   SYSTEM_NAME = "Langlets".freeze
   SYSTEM_SLUG = "system".freeze
 
-  enum :visibility, { private: 0, shared: 1, public: 2, system: 3 }, prefix: true
+  enum :visibility, { private: 0, shared: 1, public: 2 }, prefix: true
 
   validates :name, :slug, presence: true
   validates :slug, uniqueness: true
@@ -22,14 +22,10 @@ class Channel < ApplicationRecord
   validate :system_channel_belongs_to_admin
 
   # The platform's one curated, globally listed Channel. The partial unique
-  # index on visibility makes this safe when two processes provision it at the
+  # index on STI type makes this safe when two processes provision it at the
   # same time; create_or_find_by! retries by finding the winning row.
   def self.system
-    find_by(visibility: :system) || create_or_find_by!(visibility: :system) do |channel|
-      channel.user = User.find_by!(email: User::ADMIN_EMAIL)
-      channel.name = SYSTEM_NAME
-      channel.slug = SYSTEM_SLUG
-    end
+    SystemChannel.instance
   end
 
   # Which Channels this user may read.
@@ -61,7 +57,7 @@ class Channel < ApplicationRecord
   end
 
   def self.system_grant
-    where(visibility: visibilities[:system])
+    where(type: SystemChannel.sti_name)
   end
 
   # Channels whose courses belong on Home and Library. Public is intentionally
@@ -98,13 +94,15 @@ class Channel < ApplicationRecord
     subscribed_grant(user).where.not(visibility: visibilities[:public])
   end
 
-  # Put a course in this channel — and take payment for it.
+  # Put a course in this channel — and take payment for it when applicable.
   #
   # Publishing is where a course becomes somebody's, so it is where the credit
-  # moves. `ProChannel` overrides `charge_for!` to nothing; that override *is*
-  # Langlets Pro. Everything else about pricing follows from those two facts:
+  # moves. `SystemChannel` and `ProChannel` each override `charge_for!` to
+  # nothing: platform curation and Pro imports are both free. Everything else
+  # about pricing follows from those facts:
   #
   #   publishing into a default Channel costs one credit
+  #   publishing into the system Channel costs nothing
   #   publishing into a Pro library costs nothing
   #
   # Deliberately here rather than in Imports::Create. There used to be four
@@ -150,13 +148,16 @@ class Channel < ApplicationRecord
     visibility_shared? && channel_subscriptions.exists?(user_id: actor.id)
   end
 
+  def visibility_system?
+    false
+  end
+
   def change_visibility!(new_visibility, actor:)
     target = new_visibility.to_s
+    raise UnauthorizedTransition, "the system Channel's visibility is fixed" if target == "system"
     raise ArgumentError, "invalid visibility" unless self.class.visibilities.key?(target)
     raise UnauthorizedTransition unless actor&.admin? || actor&.id == user_id
-    raise UnauthorizedTransition if !actor.admin? && (
-      visibility_public? || visibility_system? || %w[public system].include?(target)
-    )
+    raise UnauthorizedTransition if !actor.admin? && (visibility_public? || target == "public")
 
     transaction do
       lock!
@@ -204,8 +205,8 @@ class Channel < ApplicationRecord
     errors.add(:user, "must be the administrator for a system channel")
   end
 
-  # The price of one publication, charged to whoever owns the channel it lands
-  # in. Overridden — to nothing — by ProChannel.
+  # The price of one user publication, charged to whoever owns the channel it
+  # lands in. Overridden — to nothing — by SystemChannel and ProChannel.
   def charge_for!(course)
     Credits::Ledger.spend!(
       user: user,

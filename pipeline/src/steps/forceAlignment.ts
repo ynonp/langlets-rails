@@ -9,6 +9,8 @@ import { type AlignedWord, alignLyrics as alignWithElevenLabs } from "../alignme
 import { phrasesFromAlignedWords } from "../alignedWords.ts";
 import { fallbackWordTimestampsPrompt } from "../prompts/fallbackWordTimestamps.ts";
 import { secondsToTimestamp } from "../timestamps.ts";
+import { reconcileTimedTranscript } from "../reconcileTimedTranscript.ts";
+import { isYoutubeUrl } from "../videoUrl.ts";
 
 const MAX_AUDIO_RETRIES = 2;
 const MAX_ALIGN_RETRIES = 2;
@@ -36,10 +38,8 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
     let phrases: Phrase[];
     let videoLengthSeconds: number | null = null;
 
-    // TikTok arrives here already timed: extract_lyrics used ElevenLabs Scribe,
-    // which returns the transcript and its word timestamps together. There is
-    // nothing left to align, so skip the audio download and the alignment call
-    // rather than paying for both to rediscover timings we already hold.
+    // extract_lyrics normally arrives here with a complete, conservatively
+    // reconciled Scribe timing set. There is nothing left to align in that case.
     const sttWords = ctx.store.data.stt_words ?? [];
     if (sttWords.length > 0) {
       phrases = phrasesFromAlignedWords(sttWords);
@@ -75,47 +75,67 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
       phrases = phrasesFromElevenLabs(lines, alignment.words);
       videoLengthSeconds = audio.durationSeconds;
     } catch (elevenLabsError) {
-      // Gemini would happily timestamp the lines from the video URL and hide the
-      // fact that this host cannot verify a download — at the cost of every
-      // future import silently losing word-level timings. Fix the host instead.
-      if (isAudioVerificationUnavailable(elevenLabsError)) throw elevenLabsError;
-      console.warn(
-        `ForceAlignment falling back to Gemini word timestamps: ${message(elevenLabsError)}`,
-      );
-      const transcriptWords = wordsOf(lines);
-      const fallback = await withRetries(
-        async () => {
-          const result = await generateObject({
-            model: ctx.models.forceAlignmentFallback,
-            schema: fallbackOutputSchema,
-            system: fallbackWordTimestampsPrompt(ctx.clipLanguage),
-            messages: [{
-              role: "user",
-              content: [
-                {
-                  type: "text",
-                  text:
-                    `Timestamp these ${transcriptWords.length} words, grouped by source line:\n` +
-                    JSON.stringify(lines.map((line) => wordsOf([line]))),
-                },
-                { type: "file", data: new URL(ctx.youtubeurl), mediaType: "video/mp4" },
-              ],
-            }],
-            temperature: 0.1,
-          });
-          lastResponse = JSON.stringify(result.object);
-          return reconcileFallbackWords(lines, result.object.words);
-        },
-        {
-          maxRetries: MAX_GEMINI_RETRIES,
-          label: "ForceAlignment Gemini",
-          baseDelayMs: ctx.baseDelayMs,
-          onFailedAttempt: (_error, attempt) => attempts = attempt,
-        },
-      );
-      phrases = phrasesFromFallback(lines, fallback);
-      videoLengthSeconds = fallback.flatMap((line) => line.words)
-        .at(-1)?.timestamp?.end_seconds ?? null;
+      const scribeFallback = checkpointedScribeWords(ctx, lines);
+      const cannotVerifyAudio = isAudioVerificationUnavailable(elevenLabsError);
+      // Gemini URL ingestion supports YouTube, not arbitrary provider pages.
+      // A checkpointed Scribe result is also safer than hiding a broken local
+      // audio toolchain behind a line-only fallback.
+      if (!isYoutubeUrl(ctx.youtubeurl) || cannotVerifyAudio) {
+        if (scribeFallback.length === 0) throw elevenLabsError;
+        console.warn(
+          "ForceAlignment using checkpointed ElevenLabs timings without Gemini URL fallback",
+        );
+        phrases = phrasesFromAlignedWords(scribeFallback);
+        videoLengthSeconds = scribeFallback.at(-1)?.end ?? null;
+      } else {
+        console.warn(
+          `ForceAlignment falling back to Gemini word timestamps: ${message(elevenLabsError)}`,
+        );
+        try {
+          const transcriptWords = wordsOf(lines);
+          const fallback = await withRetries(
+            async () => {
+              const result = await generateObject({
+                model: ctx.models.forceAlignmentFallback,
+                schema: fallbackOutputSchema,
+                system: fallbackWordTimestampsPrompt(ctx.clipLanguage),
+                messages: [{
+                  role: "user",
+                  content: [
+                    {
+                      type: "text",
+                      text:
+                        `Timestamp these ${transcriptWords.length} words, grouped by source line:\n` +
+                        JSON.stringify(lines.map((line) => wordsOf([line]))),
+                    },
+                    { type: "file", data: new URL(ctx.youtubeurl), mediaType: "video/mp4" },
+                  ],
+                }],
+                temperature: 0.1,
+              });
+              lastResponse = JSON.stringify(result.object);
+              return reconcileFallbackWords(lines, result.object.words);
+            },
+            {
+              maxRetries: MAX_GEMINI_RETRIES,
+              label: "ForceAlignment Gemini",
+              baseDelayMs: ctx.baseDelayMs,
+              onFailedAttempt: (_error, attempt) => attempts = attempt,
+            },
+          );
+          phrases = phrasesFromFallback(lines, fallback);
+          videoLengthSeconds = fallback.flatMap((line) => line.words)
+            .at(-1)?.timestamp?.end_seconds ?? null;
+        } catch (geminiError) {
+          if (scribeFallback.length === 0) throw geminiError;
+          console.warn(
+            `ForceAlignment Gemini failed; using checkpointed ElevenLabs timings: ` +
+              message(geminiError),
+          );
+          phrases = phrasesFromAlignedWords(scribeFallback);
+          videoLengthSeconds = scribeFallback.at(-1)?.end ?? null;
+        }
+      }
     }
 
     await persist(ctx, phrases, videoLengthSeconds);
@@ -131,6 +151,11 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
   } finally {
     if (audioPath) await Deno.remove(audioPath).catch(() => {});
   }
+}
+
+function checkpointedScribeWords(ctx: PipelineContext, lines: string[]): AlignedWord[] {
+  const words = ctx.store.data.stt_candidates?.elevenlabs?.words ?? [];
+  return words.length === 0 ? [] : reconcileTimedTranscript(lines.join(" "), words).words;
 }
 
 async function persist(

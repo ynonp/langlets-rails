@@ -20,18 +20,35 @@ class ChannelTest < ActiveSupport::TestCase
     second = Channel.system
 
     assert_equal first, second
+    assert_instance_of SystemChannel, first
+    assert_equal "system", first.visibility
     assert first.visibility_system?
+    assert_not first.visibility_private?
     assert_equal @admin, first.user
     assert_equal Channel::SYSTEM_NAME, first.name
     assert_equal Channel::SYSTEM_SLUG, first.slug
-    assert_equal 1, Channel.where(visibility: :system).count
+    assert_equal 1, SystemChannel.count
   end
 
   test "a system channel must belong to the administrator" do
-    channel = Channel.new(user: @owner, name: "Wrong owner", slug: "wrong-system", visibility: :system)
+    channel = SystemChannel.new(user: @owner, name: "Wrong owner", slug: "wrong-system")
 
     assert_not channel.valid?
     assert_includes channel.errors[:user], "must be the administrator for a system channel"
+  end
+
+  test "an ordinary channel cannot use system visibility" do
+    assert_raises(Channel::UnauthorizedTransition) do
+      @channel.change_visibility!(:system, actor: @admin)
+    end
+  end
+
+  test "a system channel returns system visibility regardless of the stored column" do
+    channel = SystemChannel.new(user: @admin, name: "System", slug: "virtual-system", visibility: :public)
+
+    assert_equal "system", channel.visibility
+    assert channel.visibility_system?
+    assert_not channel.visibility_public?
   end
 
   # Publishing is the sale. Everything about import pricing follows from these
@@ -44,6 +61,19 @@ class ChannelTest < ActiveSupport::TestCase
     assert_equal User::SIGNUP_CREDITS - 1, @owner.reload.credit_balance
     assert_equal 1, @owner.credit_ledger_entries.import_spend.count
     assert_equal course, @owner.credit_ledger_entries.import_spend.sole.subject
+  end
+
+  test "publishing into the system channel is free" do
+    course = publishable_course
+    system_channel = Channel.system
+    User.where(id: @admin.id).update_all(credit_balance: 0)
+
+    3.times { system_channel.publish!(course) }
+
+    assert system_channel.channel_items.exists?(course: course)
+    assert_equal 1, system_channel.channel_items.where(course: course).count
+    assert_equal 0, @admin.reload.credit_balance
+    assert_equal 0, @admin.credit_ledger_entries.import_spend.count
   end
 
   test "publishing the same course again is free" do
@@ -162,17 +192,13 @@ class ChannelTest < ActiveSupport::TestCase
     assert @channel.visibility_public?
   end
 
-  test "only an admin can transition a channel to or from system" do
+  test "the system channel visibility is fixed" do
     assert_raises(Channel::UnauthorizedTransition) do
       @channel.change_visibility!(:system, actor: @owner)
     end
 
-    system_candidate = Channel.create!(user: @admin, name: "Candidate", slug: "system-candidate")
-    system_candidate.change_visibility!(:system, actor: @admin)
-    assert system_candidate.visibility_system?
-
     assert_raises(Channel::UnauthorizedTransition) do
-      system_candidate.change_visibility!(:private, actor: @owner)
+      Channel.system.change_visibility!(:private, actor: @admin)
     end
   end
 

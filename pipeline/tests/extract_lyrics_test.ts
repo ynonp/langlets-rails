@@ -1,5 +1,6 @@
 import { assert, assertEquals, assertFalse, assertRejects } from "@std/assert";
 import { extractLyrics, languageCodeForTranscription } from "../src/steps/extractLyrics.ts";
+import { forceAlignment } from "../src/steps/forceAlignment.ts";
 import {
   makeCtx,
   queuedModel,
@@ -11,10 +12,10 @@ import {
   transcriptFixture,
 } from "./helpers.ts";
 
-Deno.test("runs Supadata and downloaded-audio ElevenLabs then reconciles with Sol", async () => {
+Deno.test("reconciles conservatively while preserving ElevenLabs timings", async () => {
   const supadata = stubTranscribe([transcriptFixture(1, 2)]);
   const elevenlabs = stubSpeechToTextFile([speechFixture(1, 2)]);
-  const sol = queuedModel([{ transcript: "Corrected line one and line two" }]);
+  const sol = queuedModel([{ transcript: "Line one Line 2" }]);
   const { ctx, store } = makeCtx({
     transcribeVideo: supadata.transcribe,
     transcribeSpeechFile: elevenlabs.transcribe,
@@ -27,11 +28,70 @@ Deno.test("runs Supadata and downloaded-audio ElevenLabs then reconciles with So
   assertEquals(supadata.calls(), 1);
   assertEquals(elevenlabs.calls(), 1);
   assertEquals(sol.calls(), 1);
-  assertEquals(store.data.lyric_lines, ["Corrected line one and line two"]);
-  assertEquals(store.data.stt_words, []);
+  assertEquals(store.data.lyric_lines, ["Line one Line 2"]);
+  assertEquals(store.data.stt_words, [
+    { text: "Line", start: 0, end: 1 },
+    { text: "one", start: 2, end: 3 },
+    { text: "Line", start: 10, end: 11 },
+    { text: "2", start: 12, end: 13 },
+  ]);
   assertEquals(store.data.stt_candidates?.supadata?.text, "Line 1 Line 2");
   assertEquals(store.data.stt_candidates?.elevenlabs?.text, "Line 1 Line 2");
   assertFalse(store.data.extract_lyrics_in_progress);
+});
+
+Deno.test("falls back to complete ElevenLabs wording when Sol makes an unsafe rewrite", async () => {
+  const { ctx, store } = makeCtx({
+    transcribeVideo: stubTranscribe([transcriptFixture(1, 2)]).transcribe,
+    transcribeSpeechFile: stubSpeechToTextFile([speechFixture(1, 2)]).transcribe,
+    prepareAudio: stubAudioWith(13),
+    models: {
+      reconcileTranscripts: queuedModel([{
+        transcript: "Completely rewritten transcript without shared anchors",
+      }]).model,
+    },
+  });
+
+  await extractLyrics(ctx);
+
+  assertEquals(store.data.lyric_lines, ["Line 1 Line 2"]);
+  assertEquals(store.data.stt_words, speechFixture(1, 2).words);
+});
+
+Deno.test("TikTok dual-source reconciliation reaches phrases without realignment or Gemini", async () => {
+  let audioPreparations = 0;
+  let alignments = 0;
+  const gemini = queuedModel([]);
+  const { ctx, store } = makeCtx({
+    youtubeurl: TIKTOK_URL,
+    transcribeVideo: stubTranscribe([transcriptFixture(1, 2)]).transcribe,
+    transcribeSpeechFile: stubSpeechToTextFile([speechFixture(1, 2)]).transcribe,
+    prepareAudio: async () => {
+      audioPreparations++;
+      return { path: "/tmp/langlets-test-audio.m4a", durationSeconds: 13 };
+    },
+    alignLyrics: () => {
+      alignments++;
+      throw new Error("forced alignment must not run");
+    },
+    models: {
+      reconcileTranscripts: queuedModel([{ transcript: "Line one Line 2" }]).model,
+      forceAlignmentFallback: gemini.model,
+    },
+  });
+
+  await extractLyrics(ctx);
+  await forceAlignment(ctx);
+
+  assertEquals(audioPreparations, 1);
+  assertEquals(alignments, 0);
+  assertEquals(gemini.calls(), 0);
+  assertEquals(store.data.phrases?.[0].words.map((word) => word.text), [
+    "Line",
+    "one",
+    "Line",
+    "2",
+  ]);
 });
 
 Deno.test("uses Supadata alone and skips Sol when ElevenLabs fails", async () => {

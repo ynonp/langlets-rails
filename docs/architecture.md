@@ -101,12 +101,16 @@ remains historical creator data, while `ChannelItem` determines which identity
 contributed a Course. A unique partial index guarantees one default per owner,
 and `[channel_id, course_id]` makes publishing safe to retry.
 
-`Channel` is an **STI base class**. Its one subclass is `ProChannel`, a private
+`Channel` is an **STI base class** with two subclasses. `ProChannel` is a private
 Channel holding everything a Langlets Pro subscriber imports, whose defining
 property is that owning it is not enough to read it — see *Langlets Pro* below.
-Because it is a base class, **an unscoped `Channel.where(…)` sees ProChannel
-rows**: any query that means "ordinary channels" has to say `type: nil`, and the
-two that do (`Channel.owned_grant` and `Ability`'s `can :manage`) each say why.
+`SystemChannel` is the platform's singleton curated catalog. It returns
+`visibility == "system"` and the corresponding predicate from STI behavior,
+independently of the inherited visibility column, and makes publication free by
+overriding the same `charge_for!` hook as Pro. Because Channel is a base class,
+**an unscoped `Channel.where(…)` sees both subclass rows**: any query that
+means "ordinary channels" has to say `type: nil`, and the two that do
+(`Channel.owned_grant` and `Ability`'s `can :manage`) each say why.
 
 Visibility is `private`, `shared`, `public`, or `system`. Private content is readable only
 by its owner and administrators. Shared Channels are invite-only and become
@@ -114,11 +118,16 @@ readable only after an email-bound, expiring invitation is accepted and creates
 a `ChannelSubscription`. Public Channels are readable to guests and signed-in
 users who have the link, but are deliberately omitted from Home, Library,
 gallery, API enumeration, and the sitemap. The sole system Channel is the
-globally listed publishing source: `Channel.system` returns it or provisions it
-under `User::ADMIN_EMAIL`, and a partial unique index on `visibility = 3`
-enforces the singleton at the database layer. Moving a Channel to private transactionally revokes
-pending invitations and removes non-owner subscriptions. Only administrators
-may transition a Channel to or from public or system.
+globally listed publishing source: `Channel.system` returns or provisions the
+`SystemChannel` under `User::ADMIN_EMAIL`. A partial unique index on the
+`SystemChannel` STI type enforces the singleton; system grants likewise query by
+type rather than encoding the class as a magic visibility value. Publishing into
+it is free because it is platform curation, not a course purchase by the
+administrator; the exemption is the subclass's `charge_for!` override. Its
+reported visibility is fixed. Moving another
+Channel to private transactionally revokes pending invitations and removes
+non-owner subscriptions. Only administrators may transition ordinary Channels
+to or from public; no ordinary Channel can become the system Channel.
 
 `ChannelContentQuery` defines separate read and listing boundaries. Direct
 readability (`courses_visible_to`) uses public, system, subscribed, and owned
@@ -834,6 +843,9 @@ produce an unplayable course. A URL no provider claims passes through untouched.
 lookup for the title, and now takes the cover from that same response, storing it
 for non-derivable providers. The lookup stays best-effort — it runs after the
 pipeline has already done the expensive work, so a failure logs and continues.
+The job keeps `clip_language` and `translation_language` as separate variables:
+the former sets `Course#language`, while only the latter is passed to
+`CourseBuilder::BuildSong#call` to select `data["translations"][iso]`.
 Note this legacy path still leaves `youtube_video_id` NULL; `Course#video_id`
 falls back to parsing `main_media_url`, so playback works, but these courses are
 not covered by `idx_courses_published_video_language`.
@@ -936,10 +948,19 @@ Each successful raw result is immediately checkpointed under
 provider instead of repaying both. When both candidates exist, GPT-5.6 Sol reconciles the complete
 texts with structured output, reasoning effort `none`, and temperature 0. Neither source is treated
 as authoritative: the prompt asks Sol to preserve speech while resolving disagreement through
-context, grammar, and proper names. The reconciled transcript is aligned in the normal timing stage.
-When exactly one candidate succeeds, Sol is skipped. An ElevenLabs-only transcript reuses Scribe's
-timed words; a Supadata-only transcript proceeds through forced alignment. If Sol itself fails, the
-valid ElevenLabs transcript and timings are used rather than failing the import.
+context, grammar, and proper names.
+
+Scribe's word sequence is the timing backbone for that reconciliation. A word-sequence diff finds
+unchanged anchors; those words keep their exact Scribe timestamps while adopting harmless spelling
+or punctuation changes. A local replacement of at most four words on each side inherits the
+replaced Scribe span; equal-size replacements retain the timestamps word for word, while splits and
+merges divide the complete span by corrected-word length. Insertions, deletions, broad rewrites, and
+unanchored replacements are unsafe because they cannot be timed from the existing evidence, so that
+span retains Scribe's original wording and timestamps. The resulting transcript is therefore always
+complete and timed, and normally skips `force_alignment` entirely. When exactly one candidate
+succeeds, Sol is skipped. An ElevenLabs-only transcript likewise reuses Scribe's timed words; a
+Supadata-only transcript proceeds through forced alignment. If Sol itself fails, the valid
+ElevenLabs transcript and timings are used rather than failing the import.
 
 If both STT candidates fail, provider behavior diverges at the final fallback only. YouTube invokes
 the existing Gemini 2.5 Flash video transcription prompt. TikTok has no third route and fails
@@ -965,12 +986,19 @@ supported clip language: a language missing from it sends no `lang` at all, leav
 track to Supadata, which the step logs rather than passing off as verified. See
 [Adding a New Language](guides/adding-a-new-language.md).
 
-For reconciled and Supadata-only transcripts, the pipeline downloads the
-video audio and sends the resulting text to ElevenLabs forced alignment, which normally supplies
-the word-level timestamps used to materialize `phrases`. If any part of that path fails—including
-`yt-dlp`, the ElevenLabs API, or validation of its response—the pipeline sends the video URL and the
-whitespace-tokenized transcript **words** to Gemini 2.5 Flash using structured output, and Gemini
-returns every word in order, with start/end seconds optional for middle words. The fallback
+Supadata-only transcripts download the video audio and send the resulting text to ElevenLabs forced
+alignment, which normally supplies the word-level timestamps used to materialize `phrases`. Legacy
+or resumed records may also reach this step with a reconciled transcript but only a checkpointed
+Scribe candidate. If the primary alignment path fails, Gemini URL fallback is permitted **only for
+YouTube URLs**; a TikTok or other provider page is not media and must never be labelled and submitted
+as `video/mp4`. Non-YouTube records use the checkpointed Scribe timings immediately, retaining
+original wording for unsafe spans. YouTube tries Gemini first and also recovers to those checkpointed
+timings if Gemini fails. With no Scribe checkpoint, a non-YouTube alignment failure remains a step
+failure rather than sending an invalid request.
+
+The YouTube fallback sends the video URL and the whitespace-tokenized transcript **words** to Gemini
+2.5 Flash using structured output, and Gemini returns every word in order, with start/end seconds
+optional for middle words. The fallback
 reconciles those entries against the transcript instead of requiring Gemini to timestamp every
 token. When Gemini supplies a word start but omits its end, the fallback uses the next later
 timestamped word's start as that end; if there is no later start, it uses two seconds after the
@@ -1127,9 +1155,11 @@ defaulting to `http://localhost:3000`; the callback must point at a tunnel
 live only on the pipeline host; Rails no longer needs them at all.
 
 Supadata receives the video URL directly while the ElevenLabs candidate requires audio bytes, so
-the pipeline downloads them with `yt-dlp` during extraction. Reconciled and Supadata-only
-transcripts require another audio download for forced alignment; ElevenLabs-only transcripts reuse
-Scribe timings. Gemini receives a YouTube URL only when both STT paths fail. Every download enables
+the pipeline downloads them with `yt-dlp` during extraction. Reconciled and ElevenLabs-only
+transcripts reuse Scribe timings without another download; Supadata-only transcripts download audio
+for forced alignment. Gemini receives a YouTube URL only: during transcript extraction when both STT
+paths fail, or during timing when forced alignment fails and no usable Scribe timing set wins. Every
+download enables
 `--remote-components ejs:github`, allowing yt-dlp to fetch its external JavaScript challenge solver
 when the installed distribution does not bundle it. The host therefore needs outbound access to
 GitHub as well as a supported JavaScript runtime; the pipeline's Deno runtime satisfies the latter.
@@ -1475,13 +1505,16 @@ a currency.
 
 #### What a credit buys — one rule, one place
 
-**A credit buys a course in your channel.** Not a pipeline run, not an import
+**A credit buys a course in your personal channel.** Not a pipeline run, not an import
 request: a `ChannelItem`. So the charge lives in `Channel#publish!`, which is the
 only place a course becomes somebody's, and `ProChannel#charge_for!` overrides it
-to nothing — that override is the whole of "Pro imports are not metered".
+to nothing — that override is the whole of "Pro imports are not metered". The
+`SystemChannel#charge_for!` also overrides it to nothing: adding curated platform
+content is not an administrator purchase.
 
 ```
 publishing a course into a default Channel   → 1 credit
+publishing a course into the system Channel  → free
 publishing a course into a Pro library       → free
 ```
 

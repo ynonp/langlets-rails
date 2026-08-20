@@ -7,14 +7,14 @@ class ImportCourseJob < ApplicationJob
   def perform(create_song_progress_id, user_id, language_id, playlist_id = nil)
     progress = CreateSongProgress.find(create_song_progress_id)
     user = User.find(user_id)
-    language = Language.find(language_id)
+    translation_language = Language.find(language_id)
     playlist = playlist_id ? Playlist.find_by(id: playlist_id) : nil
 
     video = resolve_video(progress.youtubeurl)
     video_id = video&.video_id || extract_video_id(progress.youtubeurl)
     title = video&.title || VideoSource.video_id(progress.youtubeurl) || "Untitled Course"
 
-    language = Language.find_by(english_name: progress.clip_language)
+    clip_language = Language.find_by!(english_name: progress.clip_language)
 
     existing_course = Course.find_by(
       main_media_url: progress.youtubeurl,
@@ -25,7 +25,7 @@ class ImportCourseJob < ApplicationJob
       course = existing_course
       course.assign_attributes(
         name: title,
-        language: language,
+        language: clip_language,
         status: :processing,
         **cover_attributes(video)
       )
@@ -33,12 +33,12 @@ class ImportCourseJob < ApplicationJob
       course.save!
     else
       slug = generate_slug_with_video_id(title, video_id)
-      course = create_course_with_unique_slug(user: user, name: title, slug: slug, main_media_url: progress.youtubeurl, language: language, cover: cover_attributes(video))
+      course = create_course_with_unique_slug(user: user, name: title, slug: slug, main_media_url: progress.youtubeurl, language: clip_language, cover: cover_attributes(video))
     end
 
     Rails.logger.info "Starting ImportCourseJob for #{progress.youtubeurl}"
 
-    CourseBuilder::BuildSong.new(progress, course).call(language)
+    CourseBuilder::BuildSong.new(progress, course).call(translation_language)
 
     course.published!
 

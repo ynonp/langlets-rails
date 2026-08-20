@@ -193,8 +193,8 @@ Both current providers converge in `phrasesFromAlignedWords`
 
 | | YouTube | TikTok |
 |---|---|---|
-| `extract_lyrics` | Supadata native captions, Gemini fallback | ElevenLabs Scribe (`source_url`), falling back to Scribe on downloaded audio when the URL fetch is refused with a 400 |
-| `force_alignment` | audio download + ElevenLabs alignment, Gemini line fallback | reuses Scribe's timings — no download, no alignment |
+| `extract_lyrics` | Supadata + ElevenLabs Scribe, conservative reconciliation; Gemini transcription only if both fail | Supadata + ElevenLabs Scribe, conservative reconciliation; no Gemini URL fallback |
+| `force_alignment` | normally reuses reconciled Scribe timings; Supadata-only uses downloaded audio + ElevenLabs, then Gemini, then any checkpointed Scribe timings | normally reuses reconciled Scribe timings; Supadata-only can use downloaded audio + ElevenLabs, then any checkpointed Scribe timings; never sends the post URL to Gemini |
 
 If your provider's transcription returns timings (like Scribe), stash them under
 a dedicated `data` key and let `force_alignment` consume them. **Two steps, not
@@ -203,6 +203,10 @@ twice. Arbitrary keys pass through the callback untouched — there's no allowli
 
 Provider detection in the pipeline is by hostname (`isTiktokUrl`,
 `isYoutubeUrl`), independent of the Ruby side.
+
+Gemini's video-URL path is YouTube-specific. Never label an arbitrary provider
+page as `video/mp4`: if the new provider cannot supply timed words and forced
+alignment fails, upload actual media bytes to a supported API or fail the step.
 
 If your provider's transcription API can fetch the post URL itself, expect that
 to be refused sometimes and plan the audio-upload fallback — and expect the

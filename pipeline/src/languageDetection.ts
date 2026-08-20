@@ -7,7 +7,7 @@ import {
   transcribeFileWithElevenLabs,
   transcribeWithElevenLabs,
 } from "./speechToText.ts";
-import { isTiktokUrl, isYoutubeUrl } from "./steps/extractLyrics.ts";
+import { isTiktokUrl, isYoutubeUrl } from "./videoUrl.ts";
 
 export interface SupportedLanguage {
   iso_name: string;

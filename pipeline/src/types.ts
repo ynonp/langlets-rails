@@ -72,8 +72,8 @@ export interface ProgressData {
     supadata?: { text: string };
     elevenlabs?: { text: string; words: { text: string; start: number; end: number }[] };
   };
-  // Set only when the final transcript is exactly ElevenLabs' result. When Sol
-  // reconciles two transcripts the corrected text must be aligned again.
+  // Complete timed transcript. Sol corrections are conservatively mapped onto
+  // ElevenLabs spans; unsafe edits retain the original timed wording.
   stt_words?: { text: string; start: number; end: number }[];
   video_length_seconds?: number | null;
   // Untimestamped lesson hierarchy produced from aligned word-index ranges.

@@ -24,8 +24,9 @@ module ChannelPublishingHelpers
 
   # Publishes into the one globally listed Channel. The administrator must
   # already exist because Channel.system deliberately never invents an account.
+  # System publication is platform curation and does not spend a credit.
   def publish_system(course)
-    publish_covering_the_credit(Channel.system, course)
+    Channel.system.publish!(course)
     course
   end
 
@@ -33,6 +34,8 @@ module ChannelPublishingHelpers
   # balance is left exactly as it was found. Use this anywhere a test publishes
   # only so that something is readable.
   def publish_covering_the_credit(channel, course)
+    return channel.publish!(course) if channel.is_a?(SystemChannel) || channel.is_a?(ProChannel)
+
     User.where(id: channel.user_id).update_all([ "credit_balance = credit_balance + ?", Imports::Pricing::CREDIT_COST ])
     channel.publish!(course).tap { channel.user.reload }
   end

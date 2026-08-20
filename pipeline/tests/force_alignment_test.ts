@@ -407,3 +407,47 @@ Deno.test("speech-to-text phrases carry per-word timestamps and a video length",
   assertEquals(phrase.words[3].l1_end_index, 12);
   assertEquals(store.data.video_length_seconds, 13);
 });
+
+Deno.test("non-YouTube URLs never reach Gemini and recover from checkpointed Scribe timings", async () => {
+  const fallbackModel = queuedModel([]);
+  const source = speechFixture(1, 2);
+  const { ctx, store } = makeCtx({
+    youtubeurl: TIKTOK_URL,
+    data: {
+      lyric_lines: ["Line one Line 2"],
+      stt_candidates: { elevenlabs: { text: source.text, words: source.words } },
+    },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () => Promise.reject(new Error("TikTok audio unavailable")),
+  });
+
+  await forceAlignment(ctx);
+
+  assertEquals(fallbackModel.calls(), 0);
+  assertEquals(store.data.phrases?.[0].words.map((word) => word.text), [
+    "Line",
+    "one",
+    "Line",
+    "2",
+  ]);
+  assertFalse(store.data.force_alignment_in_progress);
+});
+
+Deno.test("YouTube uses checkpointed Scribe timings when Gemini also fails", async () => {
+  const fallbackModel = queuedModel(["not-json", "still-not-json"]);
+  const source = speechFixture(1, 1);
+  const { ctx, store } = makeCtx({
+    data: {
+      lyric_lines: ["Line one"],
+      stt_candidates: { elevenlabs: { text: source.text, words: source.words } },
+    },
+    models: { forceAlignmentFallback: fallbackModel.model },
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
+  });
+
+  await forceAlignment(ctx);
+
+  assertEquals(fallbackModel.calls(), 2);
+  assertEquals(store.data.phrases?.[0].words.map((word) => word.text), ["Line", "one"]);
+  assertFalse(store.data.force_alignment_in_progress);
+});

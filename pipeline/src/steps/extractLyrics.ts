@@ -14,6 +14,8 @@ import {
 import { type SpeechToTextResult, transcribeFileWithElevenLabs } from "../speechToText.ts";
 import { downloadYoutubeAudioToTemp, isAudioVerificationUnavailable } from "../audio.ts";
 import { cleanupTranscript } from "../cleanupTranscript.ts";
+import { reconcileTimedTranscript } from "../reconcileTimedTranscript.ts";
+import { isYoutubeUrl } from "../videoUrl.ts";
 
 const MAX_GEMINI_RETRIES = 2;
 const MAX_STT_RETRIES = 2;
@@ -58,7 +60,7 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
 
     if (supadata && elevenlabs) {
       try {
-        transcriptText = await withRetries(
+        const reconciledText = await withRetries(
           async () => {
             const result = await generateObject({
               model: ctx.models.reconcileTranscripts,
@@ -79,6 +81,15 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
             baseDelayMs: ctx.baseDelayMs,
           },
         );
+        const reconciliation = reconcileTimedTranscript(reconciledText, elevenlabs.words);
+        sttWords = reconciliation.words;
+        transcriptText = sttWords.map((word) => word.text).join(" ");
+        if (reconciliation.fallbackSpans > 0) {
+          console.warn(
+            `Transcript reconciliation retained ElevenLabs wording for ` +
+              `${reconciliation.fallbackSpans} unsafe span(s)`,
+          );
+        }
       } catch (error) {
         console.warn(`Transcript reconciliation failed; using ElevenLabs: ${message(error)}`);
         transcriptText = cleanupTranscript(elevenlabs.text);
@@ -193,34 +204,6 @@ export function parseLyricsLines(text: string): string[] {
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
-}
-
-export function isYoutubeUrl(value: string): boolean {
-  return hostnameOf(
-    value,
-    (hostname) =>
-      hostname === "youtube.com" || hostname.endsWith(".youtube.com") ||
-      hostname === "youtu.be",
-  );
-}
-
-// Covers the post form (www.tiktok.com/@user/video/123) and the share forms
-// (vt./vm.tiktok.com). Rails canonicalizes through oEmbed before the pipeline
-// is triggered, so in practice this sees the post form — but Scribe accepts
-// either, and the rake task can be handed a raw link.
-export function isTiktokUrl(value: string): boolean {
-  return hostnameOf(
-    value,
-    (hostname) => hostname === "tiktok.com" || hostname.endsWith(".tiktok.com"),
-  );
-}
-
-function hostnameOf(value: string, predicate: (hostname: string) => boolean): boolean {
-  try {
-    return predicate(new URL(value).hostname.toLowerCase().replace(/^www\./, ""));
-  } catch {
-    return false;
-  }
 }
 
 const LANGUAGE_TO_ISO: Record<string, string> = {

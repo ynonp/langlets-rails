@@ -47,6 +47,16 @@ class ImportCourseJobTest < ActiveJob::TestCase
     assert_nil course.thumbnail_url
   end
 
+  test "keeps the clip and translation languages distinct" do
+    built_in = nil
+    course = run_job(TIKTOK_URL, video_for(:tiktok)) do |translation_language|
+      built_in = translation_language
+    end
+
+    assert_equal languages(:spanish), course.language
+    assert_equal languages(:english), built_in
+  end
+
   private
 
   def video_for(provider)
@@ -65,11 +75,11 @@ class ImportCourseJobTest < ActiveJob::TestCase
     end
   end
 
-  def run_job(url, video)
-    VideoSource.stub(:fetch, ->(_url) { video }) { perform(url) }
+  def run_job(url, video, &on_build)
+    VideoSource.stub(:fetch, ->(_url) { video }) { perform(url, &on_build) }
   end
 
-  def perform(url)
+  def perform(url, &on_build)
     progress = CreateSongProgress.create!(
       youtubeurl: url, clip_language: "Spanish", data: {}
     )
@@ -77,7 +87,7 @@ class ImportCourseJobTest < ActiveJob::TestCase
     # BuildSong needs a fully populated pipeline blob; this job's provider
     # handling is what's under test, so the build is stubbed out.
     builder = Object.new
-    builder.define_singleton_method(:call) { |*| nil }
+    builder.define_singleton_method(:call) { |language| on_build&.call(language) }
 
     # Delivery is a job now (DeliverNotificationJob), so nothing is mailed
     # inline and there is no mailer left to stub out.
