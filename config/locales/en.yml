@@ -553,6 +553,17 @@ en:
       cancel: "Cancel"
       delete: "Delete"
   lessons:
+    finish:
+      page_title: "Lesson Complete - Langlets"
+      heading: "Lesson Complete!"
+      great_job: "Great Job!"
+      completed_message: "You've completed this lesson"
+      xp_earned: "+%{count} XP"
+      streak:
+        one: "Streak: %{count} day"
+        other: "Streak: %{count} days"
+      login_prompt: "Login / Signup to save your progress"
+      continue: "Continue"
     activity_navigation:
       back_to_course: "Back to Course"
       previous_lesson: "Previous Lesson"

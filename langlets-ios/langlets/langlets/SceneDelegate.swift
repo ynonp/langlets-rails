@@ -13,7 +13,7 @@ import WebKit
 // the phone's own localhost is the phone. Plain http to a loopback address is
 // blocked by App Transport Security without NSAllowsLocalNetworking in
 // Info.plist, which is set for exactly this reason.
-let rootURL = URL(string: "http://localhost:3000")!
+let rootURL = URL(string: "https://langlets.app")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -58,8 +58,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Course lessons and review lessons are modal flows. Give them an
         // explicit close control while keeping ordinary pages on Hotwire's
-        // default controller.
+        // default controller. Their finish pages use the web screen's single
+        // Continue action, so they omit the native navigation bar entirely.
         Hotwire.config.defaultViewController = { url in
+            if Self.isLessonFinishURL(url) {
+                return LessonFinishViewController(url: url)
+            }
             if Self.isLessonURL(url) {
                 return LessonViewController(url: url)
             }
@@ -191,6 +195,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         return first == "review_lessons"
+    }
+
+    private static func isLessonFinishURL(_ url: URL) -> Bool {
+        isLessonURL(url) && url.path.split(separator: "/").last == "finish"
     }
 
     // Handle deep links (OAuth callbacks via custom URL scheme)

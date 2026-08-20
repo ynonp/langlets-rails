@@ -492,6 +492,17 @@ he:
       cancel: "ביטול"
       delete: "מחיקה"
   lessons:
+    finish:
+      page_title: "השיעור הושלם - Langlets"
+      heading: "השיעור הושלם!"
+      great_job: "כל הכבוד!"
+      completed_message: "השלמתם את השיעור"
+      xp_earned: "+%{count} XP"
+      streak:
+        one: "רצף: יום אחד"
+        other: "רצף: %{count} ימים"
+      login_prompt: "התחברו או הירשמו כדי לשמור את ההתקדמות"
+      continue: "המשך"
     activity_navigation:
       back_to_course: "חזרה לקורס"
       previous_lesson: "השיעור הקודם"

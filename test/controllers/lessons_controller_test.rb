@@ -48,6 +48,13 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert @lesson.completed_by?(@user)
     assert_not ActivityUser.exists?(activity: @speech_activity, user: @user)
+    assert_select "title", text: I18n.t("lessons.finish.page_title")
+    assert_select "h1", text: I18n.t("lessons.finish.heading")
+    assert_select "h2", text: I18n.t("lessons.finish.great_job")
+    assert_select "p", text: I18n.t("lessons.finish.completed_message")
+    assert_select "span", text: I18n.t("lessons.finish.xp_earned", count: @speech_activity.xp_value)
+    assert_select "a", text: /Back to Course/, count: 0
+    assert_select "a[href='#{course_path(@course.slug)}']", text: I18n.t("lessons.finish.continue"), count: 1
   end
 
   test "finish is idempotent for an already completed lesson" do
