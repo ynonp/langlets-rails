@@ -17,6 +17,9 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert lesson.reload.review_started?
+    assert_select ".activity-stepnav a[href='#{root_path}']", count: 1
+    assert_select "[data-controller~='main-video-player'][data-action*='flashcard-activity:card-change->main-video-player#configureSegment']"
+    assert_select "#main-player.hidden[data-main-video-player-target='playerContainer']"
   end
 
   test "show builds and starts a review when an existing user has none ready" do

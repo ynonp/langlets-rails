@@ -35,6 +35,7 @@ export default class extends Controller {
 
     const card = this.cardsValue[this.index]
     this.preloadCorrectAudio(card)
+    this.configureVideo(card)
 
     const optionsHtml = card.options.map((opt, idx) => {
       return `
@@ -59,7 +60,7 @@ export default class extends Controller {
     )
 
     this.cardTarget.innerHTML = `
-      <div class="flex min-h-[180px] items-center justify-center py-8 text-center">
+      <div class="flex min-h-[125px] items-center justify-center py-4 text-center sm:min-h-[150px]">
         <div>
           <div dir="${phraseDir}" class="text-gray-900 dark:text-gray-50 font-medium text-2xl sm:text-[28px] leading-relaxed ${phraseAlignClass}">${displayedPhrase}</div>
         </div>
@@ -67,6 +68,20 @@ export default class extends Controller {
       <div class="grid grid-cols-2 gap-2.5">${optionsHtml}</div>
       ${this.isReviewLessonValue ? stopPracticingHtml(card.id) : ''}
     `
+  }
+
+  configureVideo(card) {
+    this.element.dataset.segmentStart = card.segment_start ?? ""
+    this.element.dataset.segmentEnd = card.segment_end ?? ""
+    this.dispatch("card-change", {
+      bubbles: true,
+      detail: {
+        videoId: card.video_id,
+        provider: card.video_provider,
+        segmentStart: card.segment_start,
+        segmentEnd: card.segment_end,
+      }
+    })
   }
 
   selectOption(e) {

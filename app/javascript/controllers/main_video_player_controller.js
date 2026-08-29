@@ -84,6 +84,10 @@ export default class extends Controller {
       this.playerContainerTarget.classList.remove('hidden');
       this.playerContainerTarget.classList.add('order-2');
 
+      // Review flashcards supply their source when their client-rendered card
+      // connects. Do not build an empty iframe while Turbo is inserting it.
+      if (!this.videoIdValue) return;
+
       // preloadPlayerValue/interactiveValue are baked into this element once,
       // from whichever activity the page happened to load on. A Turbo-Frame
       // navigation into a later activity that wants the player (e.g. from a
@@ -181,6 +185,42 @@ export default class extends Controller {
   async stopPlayback() {
     if (this.player) {
       this.player.pauseVideo();
+    }
+  }
+
+  async configureSegment(event) {
+    const { videoId, provider, segmentStart, segmentEnd } = event.detail;
+    const nextSegmentStart = Number(segmentStart);
+    const nextSegmentEnd = Number(segmentEnd);
+    if (!videoId || !Number.isFinite(nextSegmentStart) || !Number.isFinite(nextSegmentEnd) || nextSegmentEnd <= nextSegmentStart) {
+      this.stopPlaybackMonitoring();
+      if (this.player) await this.player.pauseVideo();
+      this.playerContainerTarget.classList.add('hidden');
+      return;
+    }
+
+    const sourceChanged = this.videoIdValue !== videoId || this.providerValue !== provider;
+    if (sourceChanged && this.player) {
+      this.stopPlaybackMonitoring();
+      await this.player.pauseVideo();
+      this.player.destroy();
+      this.player = null;
+      this.playerInitialized = false;
+      this.hasPlayed = false;
+      this.playerTarget.replaceChildren();
+    }
+
+    this.videoIdValue = videoId;
+    this.providerValue = provider || 'youtube';
+    this.segmentStart = nextSegmentStart;
+    this.segmentEnd = nextSegmentEnd;
+    this.playerContainerTarget.classList.remove('hidden');
+    this.playerContainerTarget.classList.add('order-2');
+    this.initializePlayer();
+
+    if (!sourceChanged && this.player && this.hasPlayed) {
+      await this.player.pauseVideo();
+      await this.player.seekTo(this.segmentStart);
     }
   }
 

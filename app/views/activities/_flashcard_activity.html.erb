@@ -7,11 +7,19 @@
 <% cards = prepare_flashcards_for_tokens(phrase_tokens, params[:unique_words]) %>
 <% l1_rtl = params[:l1_rtl] %>
 
-<div data-controller="flashcard-activity" data-flashcard-activity-cards-value="<%= cards.to_json %>" data-flashcard-activity-l1-rtl-value="<%= l1_rtl %>" data-flashcard-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>" class="flex-1 min-h-0 overflow-y-auto flex flex-col items-center bg-gray-50 dark:bg-gray-950">
-  <div data-flashcard-activity-target="activityContent" class="w-full max-w-[460px] p-4 sm:py-6">
+<div
+  data-controller="flashcard-activity"
+  data-flashcard-activity-cards-value="<%= cards.to_json %>"
+  data-flashcard-activity-l1-rtl-value="<%= l1_rtl %>"
+  data-flashcard-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>"
+  data-main-video-player-target="videoListener videoSegment"
+  data-show-player="true"
+  data-action="video:play->main-video-player#seekToSegmentStartIfBefore"
+  class="order-4 flex-1 min-h-0 overflow-y-auto flex flex-col items-center bg-gray-50 dark:bg-gray-950">
+  <div data-flashcard-activity-target="activityContent" class="w-full max-w-[460px] px-4 py-3 sm:py-5">
     <h2 class="sr-only"><%= @activity.text_header || t(".title") %></h2>
 
-    <div class="flex items-center justify-between gap-4 mb-5">
+    <div class="flex items-center justify-between gap-4 mb-2 sm:mb-4">
       <p data-flashcard-activity-target="progress" class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm"><%= t(".question_of", current: 1, total: cards.length) %></p>
     </div>
 
@@ -20,7 +28,7 @@
 
   </div>
 
-  <div data-flashcard-activity-target="completion" class="my-auto hidden w-full max-w-[460px] px-4 text-center" data-progress-tracker-target="completion">
+  <div data-flashcard-activity-target="completion" class="hidden w-full max-w-[460px] px-4 pt-4 text-center" data-progress-tracker-target="completion">
     <div class="rounded-2xl bg-white p-6 shadow-md dark:border dark:border-gray-800 dark:bg-gray-900">
       <h3 class="mb-4 text-xl font-bold text-emerald-600 dark:text-emerald-400"><%= t(".good_work") %></h3>
       <%= link_to_next_activity "Next", @next_activity_path, { class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" } %>

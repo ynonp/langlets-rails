@@ -260,14 +260,17 @@ module ActivitiesHelper
   def prepare_flashcards_for_tokens(token_translations, unique_song_words)
     token_translations = token_translations.to_a
     l1_texts = token_translations.map { |t| t.original_text }.uniq
+    phrases_by_medium = token_translations.map(&:phrase).group_by(&:medium_id).transform_values do |phrases|
+      phrases.first.medium.phrases.ordered_by_timestamp.includes(:phrase_tokens).to_a
+    end
 
     cards = token_translations.map do |t|
       l1_word = t.original_text
       l2_translation = t.translation
       audio_url = t.l1_audio_url
 
-      distractors_pool = l1_texts - [ l1_word ]
-      distractors = unique_song_words.reject { |w| w.downcase == l1_word.downcase }.sample(3)
+      distractors_pool = (Array(unique_song_words) + l1_texts).uniq
+      distractors = distractors_pool.reject { |w| w.downcase == l1_word.downcase }.sample(3)
       options = ([ l1_word ] + distractors).shuffle
 
       token_start = t.l1_start_index
@@ -281,13 +284,25 @@ module ActivitiesHelper
         blanked_text[token_start..token_end] = "________"
       end
 
+      phrase = t.phrase
+      medium_phrases = phrases_by_medium.fetch(phrase.medium_id)
+      phrase_index = medium_phrases.index { |candidate| candidate.id == phrase.id }
+      next_phrase = medium_phrases[phrase_index + 1] if phrase_index
+      phrase_start = phrase.timestamp_seconds
+      timed_phrase_end = phrase.phrase_tokens.filter_map(&:end_timestamp_seconds).max
+      phrase_end = next_phrase&.timestamp_seconds || timed_phrase_end || (phrase_start + 5 if phrase_start)
+
       {
         id: t.id,
         phrase_html: blanked_text,
         translation: l2_translation,
         correct: l1_word,
         options: options,
-        audio_url: audio_url
+        audio_url: audio_url,
+        video_id: phrase.medium.extract_video_id,
+        video_provider: phrase.medium.provider || VideoSource::DEFAULT_PROVIDER,
+        segment_start: phrase_start,
+        segment_end: phrase_end
       }
     end
 

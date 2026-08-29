@@ -1,11 +1,9 @@
 import HotwireNative
 import UIKit
 
-/// Adds an explicit modal dismissal affordance to course lesson and review
-/// lesson pages.
-/// Activity navigation stays inside the same sheet, so this button is
-/// intentionally a close action instead of a back action.
-final class LessonViewController: HotwireWebViewController {
+/// Presents a native navigation bar with an explicit control that dismisses
+/// the surrounding modal navigation controller.
+final class NativeModalCloseViewController: HotwireWebViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -22,15 +20,14 @@ final class LessonViewController: HotwireWebViewController {
             image: UIImage(systemName: "xmark"),
             primaryAction: closeAction
         )
-        closeButton.accessibilityLabel = "Close lesson"
+        closeButton.accessibilityLabel = "Close"
         navigationItem.rightBarButtonItem = closeButton
     }
 }
 
-/// The completion screen supplies its own title and Continue action. Hiding
-/// the modal navigation bar here avoids repeating both the page title and a
-/// second close action above the web content.
-final class LessonFinishViewController: HotwireWebViewController {
+/// Suppresses native navigation chrome for pages whose controls are rendered
+/// entirely by the web view.
+final class NavigationBarHiddenViewController: HotwireWebViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 

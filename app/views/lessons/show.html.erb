@@ -33,6 +33,7 @@
     data-main-video-player-hl-value="<%= @video_hl %>"
     data-main-video-player-preload-player-value="<%= activity_params[:preload_player] || false %>"
     data-main-video-player-interactive-value="<%= activity_params[:interactive_video_player] || false %>"
+    data-action="flashcard-activity:card-change->main-video-player#configureSegment"
 >
   <%= render "shared/video_media_box",
         thumbnail_url: course_thumbnail_url(@lesson.course),

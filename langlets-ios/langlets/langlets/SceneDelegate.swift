@@ -56,16 +56,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // invisible — you get a screen that works, just presented wrongly.
         Hotwire.config.pathConfiguration.matchQueryStrings = false
 
-        // Course lessons and review lessons are modal flows. Give them an
-        // explicit close control while keeping ordinary pages on Hotwire's
-        // default controller. Their finish pages use the web screen's single
-        // Continue action, so they omit the native navigation bar entirely.
+        // Course lessons and review lessons are modal flows. Course activity
+        // screens get a native close control. Review screens already render a
+        // web close control, and finish screens render a single Continue action,
+        // so both omit the native navigation bar entirely.
         Hotwire.config.defaultViewController = { url in
-            if Self.isLessonFinishURL(url) {
-                return LessonFinishViewController(url: url)
+            if Self.isReviewLessonURL(url) || Self.isLessonFinishURL(url) {
+                return NavigationBarHiddenViewController(url: url)
             }
-            if Self.isLessonURL(url) {
-                return LessonViewController(url: url)
+            if Self.isCourseLessonURL(url) {
+                return NativeModalCloseViewController(url: url)
             }
             return WebViewController(url: url)
         }
@@ -181,24 +181,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         PushNotifications.shared.clearAppIconBadge()
     }
 
-    /// Course lesson URLs (`/courses/:course/lessons/:lesson`, plus their
-    /// activity and finish variants) and review lesson URLs
-    /// (`/review_lessons`, including its activity query and finish variant) —
-    /// everything that path configuration presents as a modal
-    /// sheet and that should therefore get the native close X.
-    private static func isLessonURL(_ url: URL) -> Bool {
+    private static func isCourseLessonURL(_ url: URL) -> Bool {
         let components = url.path.split(separator: "/")
-        guard let first = components.first else { return false }
+        return components.first == "courses" &&
+            components.count >= 4 &&
+            components[2] == "lessons"
+    }
 
-        if first == "courses" {
-            return components.count >= 4 && components[2] == "lessons"
-        }
-
-        return first == "review_lessons"
+    private static func isReviewLessonURL(_ url: URL) -> Bool {
+        url.path.split(separator: "/").first == "review_lessons"
     }
 
     private static func isLessonFinishURL(_ url: URL) -> Bool {
-        isLessonURL(url) && url.path.split(separator: "/").last == "finish"
+        (isCourseLessonURL(url) || isReviewLessonURL(url)) &&
+            url.path.split(separator: "/").last == "finish"
     }
 
     // Handle deep links (OAuth callbacks via custom URL scheme)

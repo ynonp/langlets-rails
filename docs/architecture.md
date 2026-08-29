@@ -436,6 +436,18 @@ existed; only the redundant visual bar was removed. `_activity_progress_bar.html
 (the shared partial the find-answers activity used to render) was deleted as
 now-unused.
 
+Course and review lesson cloze flashcards show the current word in its original
+video context. Their shared responsive media box sits above the scrollable
+sentence and four-choice exercise, and the existing `main-video-player`
+controller constrains native playback to that card's phrase before pausing and
+rewinding. Course flashcards use the lesson medium. Because one review can draw saved words from several courses, each
+card supplies its own provider and video id and the player swaps adapters when
+the source changes. Flashcard playback preserves the source video's original
+audio and never changes the player's volume.
+When the final flashcard is answered, its completion card replaces the exercise
+at the top of the same post-video region instead of vertically centering in the
+remaining viewport, so the feedback stays visually attached to the video.
+
 ### Homepage language selection
 
 The public homepage still carries the optional `lang` query parameter through
@@ -2659,8 +2671,8 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
 - Native course thumbnails use the same `course_youtube_video_id` fallback as the web cards and request YouTube's `hqdefault` image. This matters for legacy courses whose `youtube_video_id` column is blank but whose `main_media_url` still contains a valid ID; using the column directly produces an empty `/vi//…` image URL.
 - **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.
 - Tabs use `presentation: replace_root`; the sheets use `context: modal, modal_style: medium`, which maps onto a real `UISheetPresentationController` detent with no Swift. The sheets are **full pages, not Turbo Frames** — a frame overlay inside the web view fights the native modal and you get two competing dismissal gestures.
-- Course lesson sheets use `LessonViewController`, a `HotwireWebViewController` subclass selected by `SceneDelegate` for `/courses/:course/lessons/:lesson` and its activity URLs. It adds a native top-right X that dismisses the whole lesson sheet; this is deliberately a close action rather than back navigation between activities. Finish URLs use `LessonFinishViewController` instead, hiding the native navigation bar because the web completion screen supplies its own localized `Lesson Complete!` heading and single `Continue` action back to the course. All finish-screen copy lives under `lessons.finish` in the locale files. The web heading has no close X, so completion exposes only one exit.
-- Review lessons get the same modal treatment as course lessons, and for the same reason: taking a review lesson is one continuous session that shouldn't expose the tab bar underneath. `ios_path_configuration.json` and `android_path_configuration.json` mark `/review_lessons.*` as a lesson modal, so the activities and finish page share one modal sheet; activities use the native close X, while the finish page switches to the single web Continue action. Reviews are prebuilt after vocabulary changes, so opening this route never passes through a waiting screen.
+- Course lesson sheets use `NativeModalCloseViewController`, a `HotwireWebViewController` subclass selected by `SceneDelegate` for `/courses/:course/lessons/:lesson` and its activity URLs. It adds a native top-right X that dismisses the whole lesson sheet; this is deliberately a close action rather than back navigation between activities. Finish URLs use `NavigationBarHiddenViewController` instead, hiding the native navigation bar because the web completion screen supplies its own localized `Lesson Complete!` heading and single `Continue` action back to the course. All finish-screen copy lives under `lessons.finish` in the locale files. The web heading has no close X, so completion exposes only one exit.
+- Review lessons get the same modal treatment as course lessons, and for the same reason: taking a review lesson is one continuous session that shouldn't expose the tab bar underneath. `ios_path_configuration.json` and `android_path_configuration.json` mark `/review_lessons.*` as a lesson modal, so the activities and finish page share one modal sheet. On iOS every review URL uses `NavigationBarHiddenViewController`, which hides the native navigation row because the review activity HTML already owns its close X; the finish page then switches to its single web Continue action. Reviews are prebuilt after vocabulary changes, so opening this route never passes through a waiting screen.
 - Create presentation is platform-specific only in styling. Both platforms hit `/app/import_requests/new`; the controller branches on `native_app?` to render the compact dark form for Hotwire Native versus the responsive two-column form for browsers, with no redirect between them. Both resolve and submit through the same controller and services.
 - Add Video is platform-specific at the view layer too. Hotwire Native keeps the compact pushed-screen form and result partials directly under `app/import_requests`; browsers use the responsive two-column page and result partials under `app/import_requests/web`. The browser page uses the primary web layout and shares the public homepage's fixed warm-cream, ink, and coral palette plus its Bricolage Grotesque/Instrument Sans typography. Both variants resolve previews through the shared `add_video_result` Turbo Frame and the same controller/service code. The web approval form opts out of Turbo so its POST redirect replaces the whole document and returns through the Create entry point; native keeps the existing `_top` Turbo-frame submission handled by its navigator.
   The native form explicitly tells users that, instead of copying a link, they
@@ -2792,7 +2804,7 @@ since it is an unauthenticated endpoint that redirects on a supplied parameter.
 #### Key Files
 - `langlets-ios/langlets/langlets/AppTabBarController.swift` — Native tabs, per-tab navigators, lazy loading and tab state retention
 - `langlets-ios/langlets/langlets/SceneDelegate.swift` — App entry point, bridge registration, and URL routing
-- `langlets-ios/langlets/langlets/LessonViewController.swift` — Native lesson-sheet close control
+- `langlets-ios/langlets/langlets/NavigationViewControllers.swift` — Reusable controllers for native modal-close and navigation-bar-hidden screens
 - `langlets-ios/langlets/langlets/Bridge/TabBadgeComponent.swift` — the signal that reveals the tab bar (no tab is badged any more; its `count` is vestigial)
 - `langlets-ios/langlets/langlets/Bridge/TabVisibilityComponent.swift` — Lets a layout hide the native tab bar (onboarding); paired with `app/javascript/controllers/bridge/tab_visibility_controller.js`
 - `langlets-ios/langlets/langlets/Auth/AuthBridgeComponent.swift` — Intercepts OAuth sign-in taps and triggers native auth flow

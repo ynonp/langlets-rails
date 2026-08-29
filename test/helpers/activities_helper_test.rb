@@ -54,4 +54,24 @@ class ActivitiesHelperTest < ActionView::TestCase
 
     assert_equal [ "nido", "olvido" ], similar_sounds_for_token(phrase, token)
   end
+
+  test "flashcards include source video and phrase timing" do
+    medium = Medium.create!(url: "https://www.youtube.com/watch?v=flashcard01", language: languages(:english))
+    phrase = Phrase.create!(medium:, l1: languages(:english), text_l1: "hello world", timestamp: "00:10.00")
+    Phrase.create!(medium:, l1: languages(:english), text_l1: "next phrase", timestamp: "00:13.50")
+    token = phrase.phrase_tokens.create!(
+      l1_start_index: 0,
+      l1_end_index: 0,
+      start_timestamp: "00:10.25",
+      end_timestamp: "00:10.80"
+    )
+    token.resolved_translation = TokenTranslation.new(translation: "greeting")
+
+    card = prepare_flashcards_for_tokens([ token ], [ "hello", "world", "next", "phrase" ]).first
+
+    assert_equal "flashcard01", card[:video_id]
+    assert_equal :youtube, card[:video_provider]
+    assert_equal 10.0, card[:segment_start]
+    assert_equal 13.5, card[:segment_end]
+  end
 end

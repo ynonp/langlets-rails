@@ -7,7 +7,7 @@ for a different use case. They share a common engine but differ in layout,
 visibility, and interaction.
 
 > **Important:** When you add or change a feature that touches video playback,
-> you must consider **all four** player types below. They all run through the
+> you must consider **all five** player layouts below. They all run through the
 > same `main-video-player` Stimulus controller, so a change to the controller
 > (or to the events it dispatches) can affect any of them. A change that "works"
 > in the full player may silently break the hidden audio player used by
@@ -40,7 +40,7 @@ activity partials, targets, actions and `video:*` events are identical for both
 and why splitting into `main-youtube-player` / `main-tiktok-video-player`
 identifiers was rejected: it would have forced every
 `data-main-video-player-*` attribute and every `main-video-player#action` in the
-four layouts to be rewritten or duplicated per provider.
+player layouts to be rewritten or duplicated per provider.
 
 Two TikTok differences are worth knowing before you debug playback:
 
@@ -73,16 +73,17 @@ The controller is responsible for:
 - Driving a progress bar / scrubber and handling seek-on-click.
 
 Everything else listed here is a **consumer** of this engine — a different DOM
-layout and a different set of listeners wired to the same controller. The four
+layout and a different set of listeners wired to the same controller. The five
 players differ in *how the iframe is shown* and *who listens to its events*,
 not in the underlying playback logic.
 
-The four configurations are:
+The five configurations are:
 
 1. Main (full) video player
 2. Watch-video activity (mini player)
 3. Hidden audio-only player (most activities)
 4. "Mini" layout player (e.g. order-phrases)
+5. Flashcard player (course and review lessons)
 
 ---
 
@@ -305,11 +306,22 @@ visuals in response to `video:play` / `video:stop`. The order-phrases activity
 embeds an even smaller variant — a single round speaker button on each phrase
 card that triggers `playSegment` for that phrase's timestamps.
 
+### Flashcard video
+
+The cloze flashcard in both course and review lessons is another visible use of the shared
+engine. It renders `shared/_video_media_box` above the exercise and sends the
+current card's provider, video id, and phrase bounds to `main-video-player`.
+Course flashcards use their lesson's medium;
+review cards can come from different courses,
+so changing cards may destroy the old adapter and initialize the card's
+original source. Native play is constrained to the phrase; the ordinary
+segment-end behavior pauses and rewinds it for replay.
+
 ---
 
 ## Common characteristics & differences
 
-All four players:
+All five player layouts:
 
 - Run through the **same `main-video-player` controller**, over whichever
   provider adapter the `provider` value selects.
@@ -326,10 +338,11 @@ They differ in:
 | Watch-video activity | Yes (hero) | `_watch_video_activity` | Watch a segment, then practice |
 | Hidden audio player | No (`hidden`) | `lessons/show` `#main-player` | Audio-only for practice activities |
 | Mini layout player | Yes (compact bar/button) | `_mini_video_player`, order-phrases | Inline replay control |
+| Flashcard | Yes (hero) | `lessons/show`, `review_lessons/show`, `_flashcard_activity` | Replay the cloze word's source phrase |
 
 ### Aspect ratio
 
-Both the watch-video activity and the full player render the shared
+The watch-video activity, full player, and flashcard render the shared
 [`shared/_video_media_box`](../app/views/shared/_video_media_box.html.erb)
 partial, which always reserves `clamp(160px, 30vh, 280px)` for its sticky
 media area, regardless of provider. This makes the media height predictable

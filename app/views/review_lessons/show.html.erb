@@ -10,11 +10,17 @@
     data-main-video-player-video-id-value=""
     data-main-video-player-hl-value=""
     data-main-video-player-preload-player-value="false"
+    data-main-video-player-interactive-value="true"
+    data-action="flashcard-activity:card-change->main-video-player#configureSegment"
 >
+  <%= render "shared/video_media_box", container_class: "hidden order-2" %>
+
   <turbo-frame
     id="activity"
     class="contents"
     data-action="
+    turbo:before-frame-render->main-video-player#handleBeforeRender
+    turbo:frame-render->main-video-player#handleFrameRender
     turbo:frame-render->activity-navigation#activityChange
     "
   >

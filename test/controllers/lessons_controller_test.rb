@@ -107,6 +107,39 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "flashcard shows the shared video player and configures its current phrase" do
+    phrase = create_translated_phrase!(
+      medium: @medium,
+      l1: languages(:english),
+      l2: languages(:english),
+      text_l1: "Choose the missing word",
+      text_l2: "Choose the missing word",
+      timestamp: "00:04.00"
+    )
+    token = create_translated_token!(
+      phrase:,
+      translation: "missing",
+      language: languages(:english),
+      l1_start_index: 2,
+      l1_end_index: 2,
+      start_timestamp: "00:04.50",
+      end_timestamp: "00:04.90"
+    )
+    activity = Activities::FlashcardActivity.create!(lesson: @lesson, order: 2, user: @user)
+    activity.phrase_tokens << token
+
+    get course_lesson_url(@course, @lesson, a: activity.order, lang: "en")
+
+    assert_response :success
+    assert_select "[data-controller~='main-video-player'][data-action*='flashcard-activity:card-change->main-video-player#configureSegment']"
+    assert_select "#main-player:not(.hidden)"
+    assert_select ".order-4[data-controller='flashcard-activity'][data-main-video-player-target~='videoSegment']" do |flashcard|
+      assert_includes flashcard.first["data-action"], "video:play->main-video-player#seekToSegmentStartIfBefore"
+      assert_select "[data-flashcard-activity-target='completion'].pt-4", count: 1
+      assert_select "[data-flashcard-activity-target='completion'].my-auto", count: 0
+    end
+  end
+
   test "native watch video renders saved vocabulary state" do
     phrase = create_translated_phrase!(
       medium: @medium,
