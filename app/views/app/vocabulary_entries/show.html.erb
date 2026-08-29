@@ -14,7 +14,7 @@
     <% end %>
 
     <p class="min-w-0 truncate text-[12px] uppercase tracking-[0.1em] text-app-text-3">
-      <%= [ localized_language_name(@entry.language), @entry.source ].compact_blank.join(" · ") %>
+      <%= [ localized_language_name(@entry.source_language), @entry.source ].compact_blank.join(" · ") %>
     </p>
 
     <span class="w-[38px] shrink-0"></span>

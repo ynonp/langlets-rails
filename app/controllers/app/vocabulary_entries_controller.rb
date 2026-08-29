@@ -18,7 +18,7 @@ module App
     def index
       @query = params[:q].to_s.strip
       @filter = params[:filter].presence
-      @entries = Vocabulary::Entry.wrap(saved_rows.to_a)
+      @entries = PhraseTokenUser.with_sources(saved_rows.to_a)
       @languages = filter_languages(@entries)
       @total_count = @entries.size
       @paused_count = @entries.count(&:paused?)
@@ -27,13 +27,13 @@ module App
     end
 
     def show
-      @entry = Vocabulary::Entry.new(@record, sources: Vocabulary::Entry.sources_for([ @record ]))
+      @entry = PhraseTokenUser.with_sources([ @record ]).first
     end
 
     def update
       if params.key?(:practicing)
         @record.update!(practicing: ActiveModel::Type::Boolean.new.cast(params[:practicing]))
-        @entry = Vocabulary::Entry.new(@record)
+        @entry = @record
 
         respond_to do |format|
           format.turbo_stream
@@ -55,7 +55,7 @@ module App
       # Only the user's link to the token is removed. The phrase and token stay,
       # which is what makes Undo a plain re-save rather than a resurrection —
       # and for a shared course word they were never this user's to delete.
-      word = Vocabulary::Entry.new(@record).word
+      word = @record.word
       token_id = @record.phrase_token_id
       language_id = @record.language_id
       @record.destroy!
@@ -87,18 +87,18 @@ module App
       @language = @language_choices.find { |row| row.iso_name == params[:language] } || @language_choices.first
       @sentence = params[:sentence].to_s
 
-      Vocabulary::CustomEntry.new(
+      PhraseTokenUser.create_custom!(
         user: current_user,
         sentence: @sentence,
         language: @language,
         token_range: token_range,
         translation: params[:translation]
-      ).call
+      )
 
       redirect_to vocabulary_index_path, notice: "“#{params[:word].presence || 'Word'}” added"
-    rescue Vocabulary::CustomEntry::Error => error
+    rescue PhraseTokenUser::InputError => error
       render_create_error(I18n.t!(error.code, scope: "app.vocabulary_entries.new.errors"))
-    rescue Vocabulary::CustomEntry::InvalidState, ActiveRecord::RecordInvalid
+    rescue PhraseTokenUser::InvalidInput, ActiveRecord::RecordInvalid
       render_create_error(I18n.t!("app.vocabulary_entries.new.errors.save_failed"))
     end
 
@@ -135,7 +135,7 @@ module App
       scoped = case @filter
       when nil then entries
       when PAUSED_FILTER then entries.select(&:paused?)
-      else entries.select { |entry| entry.language&.iso_name == @filter }
+      else entries.select { |entry| entry.source_language&.iso_name == @filter }
       end
       return scoped if @query.blank?
 
@@ -146,7 +146,7 @@ module App
     # Only languages the user actually has words in get a chip — a filter that
     # can only ever return nothing is noise.
     def filter_languages(entries)
-      entries.filter_map(&:language).uniq.sort_by { |language| language.english_name.to_s }
+      entries.filter_map(&:source_language).uniq.sort_by { |language| language.english_name.to_s }
     end
 
     def filter_available?

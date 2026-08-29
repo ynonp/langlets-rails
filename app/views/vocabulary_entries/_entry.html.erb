@@ -23,7 +23,7 @@
           <%= t("app.vocabulary_entries.paused") %>
         </span>
       <% end %>
-      <span class="uppercase tracking-[0.08em]"><%= localized_language_name(entry.language) %></span>
+      <span class="uppercase tracking-[0.08em]"><%= localized_language_name(entry.source_language) %></span>
       <% if entry.source.present? %>
         <span class="h-1 w-1 rounded-full bg-[#CFC2AB]"></span>
         <span class="normal-case tracking-normal"><%= entry.source %></span>

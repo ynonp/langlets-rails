@@ -7,7 +7,7 @@ import { Controller } from "@hotwired/stimulus"
 // they picked. A pick is a *range*, because plenty of vocabulary is more than
 // one word — "me souviens", "darse prisa", "No time left". The indexes it
 // reports are whitespace-token indexes into the sentence, and the server
-// re-splits the same way — see Vocabulary::CustomEntry, which also normalises
+// re-splits the same way — see PhraseTokenUser.create_custom!, which also normalises
 // the whitespace so the two sides agree on what "token 3" means.
 //
 // There are two ways to grow a pick, because one of them has to work on a
@@ -187,7 +187,7 @@ export default class extends Controller {
   }
 
   // The picked span with surrounding punctuation trimmed — "quick," saves as
-  // "quick". Kept in step with Vocabulary::CustomEntry, which trims the same
+  // "quick". Kept in step with PhraseTokenUser.create_custom!, which trims the same
   // way on the authoritative side.
   get pickedText() {
     const range = this.range

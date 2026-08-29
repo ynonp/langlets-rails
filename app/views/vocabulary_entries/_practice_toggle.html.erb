@@ -1,4 +1,4 @@
-<div id="<%= dom_id(entry.record, :practice) %>">
+<div id="<%= dom_id(entry, :practice) %>">
   <button type="submit" name="practicing" value="<%= !entry.practising? %>"
           data-testid="vocabulary-practice-toggle"
           aria-pressed="<%= entry.practising? %>"

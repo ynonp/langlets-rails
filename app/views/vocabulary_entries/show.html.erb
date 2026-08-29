@@ -14,7 +14,7 @@
     <div class="mt-6 grid w-full gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14">
       <section class="min-w-0">
         <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#C4451C]">
-          <%= [ localized_language_name(@entry.language), @entry.source ].compact_blank.join(" · ") %>
+          <%= [ localized_language_name(@entry.source_language), @entry.source ].compact_blank.join(" · ") %>
         </p>
         <h1 class="mt-2 text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"
             dir="auto"><%= @entry.word %></h1>

@@ -170,7 +170,7 @@ module App
            params: { phrase_token_id: token_id, language_id: @english.id }, headers: NATIVE
 
       assert_equal 1, @user.phrase_token_users.count
-      assert_equal "tiempo", Vocabulary::Entry.new(@user.phrase_token_users.first).word
+      assert_equal "tiempo", @user.phrase_token_users.first.word
     end
 
     # Every action scopes through current_user.phrase_token_users, so another
@@ -205,7 +205,7 @@ module App
       end
 
       assert_redirected_to "/app/vocabulary"
-      entry = Vocabulary::Entry.new(@user.phrase_token_users.order(:id).last)
+      entry = @user.phrase_token_users.order(:id).last
       assert_equal "izquierda", entry.word
       assert_equal "left", entry.translation
       assert_equal "No queda tiempo — rápido, gira a la izquierda", entry.context
@@ -220,7 +220,7 @@ module App
         token_start: 2, token_end: 3, translation: "to hurry up", word: "darse prisa"
       }
 
-      entry = Vocabulary::Entry.new(@user.phrase_token_users.order(:id).last)
+      entry = @user.phrase_token_users.order(:id).last
       assert_equal "darse prisa", entry.word
       assert_equal "hay que ", entry.before
       assert_equal "darse prisa", entry.mark
@@ -379,7 +379,7 @@ module App
       end
 
       assert_redirected_to "/vocabulary"
-      assert_equal "tiempo", Vocabulary::Entry.new(@user.phrase_token_users.last).word
+      assert_equal "tiempo", @user.phrase_token_users.last.word
     end
 
     test "a failed web add re-renders the web form rather than the native one" do

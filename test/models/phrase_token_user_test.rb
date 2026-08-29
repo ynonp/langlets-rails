@@ -1,11 +1,6 @@
 require "test_helper"
 
-module Vocabulary
-  # The word a user types in themselves. The interesting part is the span: the
-  # picker reports whitespace-token indexes, and this has to land them on the
-  # right characters of the stored phrase — including when the selection sweeps
-  # up punctuation or spans several words.
-  class CustomEntryTest < ActiveSupport::TestCase
+class PhraseTokenUserTest < ActiveSupport::TestCase
     setup do
       @user = User.create!(email: "custom@example.com", password: "password123", confirmed_at: Time.zone.now)
       @spanish = languages(:spanish)
@@ -13,14 +8,14 @@ module Vocabulary
     end
 
     def add(sentence:, range:, translation: "meaning", language: nil)
-      CustomEntry.new(user: @user, sentence: sentence, language: language || @spanish,
-                      token_range: range, translation: translation,
-                      translation_language: @english).call
+      PhraseTokenUser.create_custom!(user: @user, sentence: sentence, language: language || @spanish,
+                                     token_range: range, translation: translation,
+                                     translation_language: @english)
     end
 
     test "stores the picked word as a span inside the phrase" do
       saved = add(sentence: "no queda tiempo", range: 2..2)
-      entry = Entry.new(saved)
+      entry = saved
 
       assert_equal "tiempo", entry.word
       assert_equal "no queda tiempo", entry.context
@@ -31,7 +26,7 @@ module Vocabulary
     end
 
     test "a multi-word pick is kept as one span, not several entries" do
-      entry = Entry.new(add(sentence: "hay que darse prisa ahora", range: 2..3))
+      entry = add(sentence: "hay que darse prisa ahora", range: 2..3)
 
       assert_equal "darse prisa", entry.word
       assert_equal "hay que ", entry.before
@@ -40,7 +35,7 @@ module Vocabulary
     end
 
     test "punctuation the selection sweeps up is trimmed off the saved word" do
-      entry = Entry.new(add(sentence: "rápido, gira a la izquierda", range: 0..0))
+      entry = add(sentence: "rápido, gira a la izquierda", range: 0..0)
 
       assert_equal "rápido", entry.word
       assert_equal "rápido", entry.mark
@@ -48,15 +43,15 @@ module Vocabulary
     end
 
     test "runs of whitespace are normalised so the span still lands correctly" do
-      entry = Entry.new(add(sentence: "  no    queda\n tiempo  ", range: 2..2))
+      entry = add(sentence: "  no    queda\n tiempo  ", range: 2..2)
 
       assert_equal "no queda tiempo", entry.context
       assert_equal "tiempo", entry.word
     end
 
     test "the same word in two phrases stays two separate entries" do
-      first = Entry.new(add(sentence: "no queda tiempo", range: 2..2, translation: "time left"))
-      second = Entry.new(add(sentence: "hace buen tiempo", range: 2..2, translation: "weather"))
+      first = add(sentence: "no queda tiempo", range: 2..2, translation: "time left")
+      second = add(sentence: "hace buen tiempo", range: 2..2, translation: "weather")
 
       assert_equal 2, @user.phrase_token_users.count
       assert_equal "tiempo", first.word
@@ -66,7 +61,7 @@ module Vocabulary
     end
 
     test "custom words are labelled as the user's own, not as a course" do
-      entry = Entry.new(add(sentence: "no queda tiempo", range: 2..2))
+      entry = add(sentence: "no queda tiempo", range: 2..2)
 
       assert entry.custom?
       assert_equal "Added by you", entry.source
@@ -105,9 +100,9 @@ module Vocabulary
     end
 
     test "a blank phrase, a missing pick and a blank translation are each refused" do
-      sentence_error = assert_raises(CustomEntry::Error) { add(sentence: "   ", range: 0..0) }
-      selection_error = assert_raises(CustomEntry::Error) { add(sentence: "no queda tiempo", range: nil) }
-      translation_error = assert_raises(CustomEntry::Error) do
+      sentence_error = assert_raises(PhraseTokenUser::InputError) { add(sentence: "   ", range: 0..0) }
+      selection_error = assert_raises(PhraseTokenUser::InputError) { add(sentence: "no queda tiempo", range: nil) }
+      translation_error = assert_raises(PhraseTokenUser::InputError) do
         add(sentence: "no queda tiempo", range: 2..2, translation: " ")
       end
 
@@ -118,23 +113,22 @@ module Vocabulary
     end
 
     test "a pick that lands entirely on punctuation is refused" do
-      error = assert_raises(CustomEntry::Error) { add(sentence: "no queda — tiempo", range: 2..2) }
+      error = assert_raises(PhraseTokenUser::InputError) { add(sentence: "no queda — tiempo", range: 2..2) }
 
       assert_equal :selection_required, error.code
       assert_equal 0, @user.phrase_token_users.count
     end
 
     test "a pick past the end of the phrase is refused rather than saved wrong" do
-      assert_raises(CustomEntry::InvalidState) { add(sentence: "no queda tiempo", range: 9..9) }
+      assert_raises(PhraseTokenUser::InvalidInput) { add(sentence: "no queda tiempo", range: 9..9) }
       assert_equal 0, @user.phrase_token_users.count
     end
 
     test "missing language context is an internal failure, not a form error" do
-      assert_raises(CustomEntry::InvalidState) do
-        CustomEntry.new(user: @user, sentence: "no queda tiempo", language: nil,
-                        token_range: 2..2, translation: "time",
-                        translation_language: @english).call
+      assert_raises(PhraseTokenUser::InvalidInput) do
+        PhraseTokenUser.create_custom!(user: @user, sentence: "no queda tiempo", language: nil,
+                                       token_range: 2..2, translation: "time",
+                                       translation_language: @english)
       end
     end
-  end
 end
