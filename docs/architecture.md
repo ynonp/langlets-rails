@@ -1348,8 +1348,10 @@ download is verified before it counts:
     - `text_l1_content`/`text_l2_content`: Get default script content
     - `text_l1_for_script`/`text_l2_for_script`: Get content for specific script
     - `with_calculated_end_timestamps`: Calculate phrase durations
-- **Relationships**: 
-  - Belongs to Medium and two Languages
+- **Relationships**:
+  - Belongs either to a playable Medium or directly to the User who created a
+    custom vocabulary phrase; the database enforces exactly one source
+  - Belongs to its L1 Language
   - Belongs to two MultiScriptText objects (text_l1, text_l2)
   - One-to-many with PhraseTranslations and PhraseTokens
   - Many-to-many with Activities (through ActivityPhrase)
@@ -2518,6 +2520,7 @@ Language (1) ──→ (many) Phrase (as L1)
 Language (1) ──→ (many) Phrase (as L2)
 Language (1) ──→ (many) Course
 Medium (1) ──→ (many) Phrase
+User (1) ──→ (many) custom Phrase
 Phrase (many) ──→ (1) MultiScriptText (as text_l1)
 Phrase (many) ──→ (1) MultiScriptText (as text_l2)
 
@@ -2629,7 +2632,7 @@ Home, mobile Library, Vocabulary, Create/Add-a-video and the Pro screens live un
 
 **A saved word is a span inside a phrase, never a bare dictionary entry.** That is the one idea every screen here is built around, and it is why the list shows the phrase with the span highlighted rather than the word alone: it is the only thing that distinguishes two entries for the same word in different senses ("no time *left*" vs "turn *left* here"). It is also why the detail screen edits the translation and nothing else — the phrase and the span are the entry's identity, and changing them would quietly turn it into a different word.
 
-`Vocabulary::Entry` wraps a `PhraseTokenUser` and answers what the screens ask: the word, its translation, the phrase split into `before` / `mark` / `after`, the language, and the source. The split comes from the token's own character offsets (`PhraseToken#l1_start_character_index`), not from re-finding the word in the text, and returns the whole phrase unmarked if those offsets no longer fit — a phrase repaired after the save degrades to plain text instead of raising. `Entry.wrap` resolves every row's course name in one query rather than one per row; `custom?` rows are labelled "Added by you".
+`Vocabulary::Entry` wraps a `PhraseTokenUser` and answers what the screens ask: the word, its translation, the phrase split into `before` / `mark` / `after`, the language, and the source. The split comes from the token's own character offsets (`PhraseToken#l1_start_character_index`), not from re-finding the word in the text, and returns the whole phrase unmarked if those offsets no longer fit — a phrase repaired after the save degrades to plain text instead of raising. `Entry.wrap` resolves every row's course name in one query rather than one per row; phrases with direct user ownership are labelled "Added by you".
 
 Filtering, searching and the paused/unpaused split all happen in memory over the user's saved rows. This is deliberate: a personal vocabulary is small, the list is loaded in full anyway to count the summary line, and it keeps the language chips honest — only languages the user actually has words in get one, and "Not practising" only appears once something is paused. A filter that can only ever return nothing is noise. The chips and the search box drive a `vocabulary-results` Turbo Frame; **each row therefore has to carry `data-turbo-frame="_top"`**, or Turbo tries to load the whole detail screen into that frame and renders "Content missing".
 
@@ -2639,7 +2642,9 @@ A pick is a **range**, not a word, because plenty of vocabulary is more than one
 
 **The drag must never be bound to `pointerenter`.** For touch input the pointer is implicitly captured by whichever element received `pointerdown`, so every subsequent `pointermove` is delivered to *that* element and enter/leave never fire on the words the finger passes over. A `pointerenter` implementation therefore works perfectly with a mouse and silently does nothing on a phone, which is the surface that matters most here — it shipped that way once. The drag is hit-tested instead from a window-level `pointermove` via `document.elementFromPoint`, which is unaffected by pointer capture (capture retargets the event but leaves its coordinates alone). `pointerdown` only *arms* the drag and deliberately does not commit a pick, so that a plain tap still reaches the tap handler with the previous selection intact — that is what lets the second tap extend rather than replace. `test/javascript/vocabulary_picker_controller.test.mjs` covers the tap arithmetic, the touch-drag case, and guards the `pointerenter` binding. The service normalises the sentence's whitespace before storing it so that both sides agree on what "token 3" means, converts the token range to inclusive character offsets, and trims the punctuation a selection sweeps up ("quick," saves as "quick"). The span is stored as `character_index`, which sidesteps the `String#split` vs `String#tokenize` mismatch that word indexes would inherit.
 
-A custom word still needs a `Phrase`, and a `Phrase` needs a `Medium`. Rather than making either association optional, each user gets one synthetic medium per language — `langlets://custom-vocabulary/<user_id>` — holding nothing but their own typed phrases. It has no lessons, which is exactly how `Entry#source` knows to say "Added by you" instead of naming a course.
+A phrase has exactly one source. Imported and course phrases have a `medium_id` and no `user_id`; custom vocabulary phrases have a `user_id` and no `medium_id`. Both columns retain foreign keys, and the database check constraint `phrases_exactly_one_source` enforces the exclusive-or relationship. This keeps every `Medium` a real, playable media source while giving typed phrases direct ownership. `Phrase#custom?` and `Vocabulary::Entry#source` use that ownership to label them "Added by you".
+
+Review lessons can mix saved course tokens with custom tokens. Flashcards therefore attach video provider, video id, and segment timing only when the token's phrase has a medium; custom cards deliberately carry `nil` media fields and use their token audio alone. Course playback paths continue to obtain phrases through `lesson.medium.phrases`, so their playable-medium assumption remains intact.
 
 **Routes select Vocabulary's presentation.** `/app/vocabulary` resolves to the native controller, `app/views/app/vocabulary_entries/**`, and `layouts/app.html.erb`; `/vocabulary` resolves to the inheriting web controller, `app/views/vocabulary_entries/**`, and `layouts/web.html.erb`. No action checks `native_app?`, `native_preview?`, or a surface parameter. The web surface is entered from the primary header, which links Library · **Vocabulary** · Create; those header links are desktop-only, so Vocabulary also leads the avatar dropdown, which is how a phone browser reaches it at all.
 

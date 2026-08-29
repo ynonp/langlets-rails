@@ -3,27 +3,16 @@ module Vocabulary
   # tab's "Add a word" screen.
   #
   # A saved word is always a span inside a phrase — that is what lets "No time
-  # left" and "turn left here" be two entries for the same word — so a custom
-  # word needs a Phrase to live in, and a Phrase needs a Medium. Rather than
-  # making either association optional we give each user one synthetic medium
-  # per language, holding nothing but their own typed phrases. It has no
-  # lessons, which is exactly how the list knows to label these "Added by you".
+  # left" and "turn left here" be two entries for the same word. A custom
+  # phrase belongs directly to the user who typed it; imported/course phrases
+  # belong to a playable Medium instead.
   class CustomEntry
-    URL_PREFIX = "langlets://custom-vocabulary".freeze
-
     # A word boundary for trimming the punctuation a user's selection sweeps up:
     # picking "quick," should save "quick".
     LEADING_JUNK = /\A[^\p{L}\p{N}]+/u
     TRAILING_JUNK = /[^\p{L}\p{N}]+\z/u
 
     class Error < StandardError; end
-
-    def self.medium_url_for(user) = "#{URL_PREFIX}/#{user.id}"
-
-    # A medium whose phrases are one user's own typed vocabulary.
-    def self.custom_medium?(medium)
-      medium&.url.to_s.start_with?("#{URL_PREFIX}/")
-    end
 
     # sentence:    the phrase the word was met in, as typed
     # language:    the Language the phrase is in (what the user is learning)
@@ -42,7 +31,7 @@ module Vocabulary
       validate!
 
       PhraseTokenUser.transaction do
-        phrase = Phrase.create!(medium: medium, l1: @language, text_l1: @sentence)
+        phrase = Phrase.create!(user: @user, l1: @language, text_l1: @sentence)
         token = phrase.phrase_tokens.create!(
           l1_start_index: span.first,
           l1_end_index: span.last,
@@ -94,10 +83,6 @@ module Vocabulary
       return nil if leading + trailing >= picked.length
 
       [ start_offset + leading, end_offset - trailing ]
-    end
-
-    def medium
-      Medium.find_or_create_by!(url: self.class.medium_url_for(@user), language: @language)
     end
   end
 end

@@ -260,7 +260,7 @@ module ActivitiesHelper
   def prepare_flashcards_for_tokens(token_translations, unique_song_words)
     token_translations = token_translations.to_a
     l1_texts = token_translations.map { |t| t.original_text }.uniq
-    phrases_by_medium = token_translations.map(&:phrase).group_by(&:medium_id).transform_values do |phrases|
+    phrases_by_medium = token_translations.map(&:phrase).select(&:medium_id).group_by(&:medium_id).transform_values do |phrases|
       phrases.first.medium.phrases.ordered_by_timestamp.includes(:phrase_tokens).to_a
     end
 
@@ -285,7 +285,8 @@ module ActivitiesHelper
       end
 
       phrase = t.phrase
-      medium_phrases = phrases_by_medium.fetch(phrase.medium_id)
+      medium = phrase.medium
+      medium_phrases = medium ? phrases_by_medium.fetch(phrase.medium_id) : [ phrase ]
       phrase_index = medium_phrases.index { |candidate| candidate.id == phrase.id }
       next_phrase = medium_phrases[phrase_index + 1] if phrase_index
       phrase_start = phrase.timestamp_seconds
@@ -299,8 +300,8 @@ module ActivitiesHelper
         correct: l1_word,
         options: options,
         audio_url: audio_url,
-        video_id: phrase.medium.extract_video_id,
-        video_provider: phrase.medium.provider || VideoSource::DEFAULT_PROVIDER,
+        video_id: medium&.extract_video_id,
+        video_provider: medium ? (medium.provider || VideoSource::DEFAULT_PROVIDER) : nil,
         segment_start: phrase_start,
         segment_end: phrase_end
       }

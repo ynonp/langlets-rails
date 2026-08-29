@@ -73,6 +73,11 @@ class User < ApplicationRecord
   has_many :phrase_token_users, dependent: :destroy
   has_many :saved_phrase_tokens, through: :phrase_token_users, source: :phrase_token
 
+  # Phrases typed directly into the Vocabulary tab. Course phrases belong to a
+  # Medium instead, and the database guarantees that a Phrase has only one of
+  # these two sources.
+  has_many :custom_phrases, class_name: "Phrase", dependent: :destroy
+
   # Credits meter video imports. users.credit_balance is the authority; the ledger
   # is the append-only audit behind it. Always move credits via Credits::Ledger.
   #

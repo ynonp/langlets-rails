@@ -72,15 +72,28 @@ module Vocabulary
       assert_equal "Added by you", entry.source
     end
 
-    test "one synthetic medium per user and language holds every typed phrase" do
+    test "typed phrases belong directly to the user and do not create media" do
       add(sentence: "no queda tiempo", range: 2..2)
       add(sentence: "hace buen tiempo", range: 2..2)
 
-      media = @user.phrase_token_users.map { |row| row.phrase_token.phrase.medium }.uniq
-      assert_equal 1, media.size
-      assert_equal "langlets://custom-vocabulary/#{@user.id}", media.first.url
-      # It has no lessons, which is how the list knows these are not from a course.
-      assert_empty media.first.lessons
+      phrases = @user.phrase_token_users.map { |row| row.phrase_token.phrase }
+      assert_equal phrases.map(&:id).sort, @user.custom_phrases.pluck(:id).sort
+      assert phrases.all?(&:custom?)
+      assert phrases.all? { |phrase| phrase.user == @user }
+      assert phrases.none?(&:medium)
+      assert_not Medium.where("url LIKE ?", "langlets://custom-vocabulary/%").exists?
+    end
+
+    test "a phrase must belong to either a playable medium or a user, not both" do
+      medium = Medium.create!(url: "https://www.youtube.com/watch?v=customsource", language: @spanish)
+
+      neither = Phrase.new(l1: @spanish, text_l1: "no source")
+      both = Phrase.new(medium: medium, user: @user, l1: @spanish, text_l1: "two sources")
+
+      assert_not neither.valid?
+      assert_not both.valid?
+      assert_includes neither.errors[:base], "must belong to either a medium or a user, but not both"
+      assert_includes both.errors[:base], "must belong to either a medium or a user, but not both"
     end
 
     test "a custom word is practised, so it reaches the next review" do

@@ -74,4 +74,25 @@ class ActivitiesHelperTest < ActionView::TestCase
     assert_equal 10.0, card[:segment_start]
     assert_equal 13.5, card[:segment_end]
   end
+
+  test "custom vocabulary flashcards have no video source" do
+    user = User.create!(email: "custom-card@example.com", password: "password123", confirmed_at: Time.zone.now)
+    phrase = Phrase.create!(user: user, l1: languages(:english), text_l1: "hello world")
+    token = phrase.phrase_tokens.create!(
+      l1_start_index: 0,
+      l1_end_index: 4,
+      index_type: :character_index
+    )
+    token.resolved_translation = token.token_translations.create!(
+      language: languages(:spanish),
+      translation: "hola"
+    )
+
+    card = prepare_flashcards_for_tokens([ token ], [ "hello", "world" ]).first
+
+    assert_nil card[:video_id]
+    assert_nil card[:video_provider]
+    assert_nil card[:segment_start]
+    assert_nil card[:segment_end]
+  end
 end

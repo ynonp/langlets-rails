@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_29_120000) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_29_130000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -614,14 +614,17 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_29_120000) do
   end
 
   create_table "phrases", force: :cascade do |t|
-    t.bigint "medium_id", null: false
+    t.bigint "medium_id"
     t.bigint "l1_id", null: false
     t.string "timestamp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "text_l1"
+    t.bigint "user_id"
     t.index ["l1_id"], name: "index_phrases_on_l1_id"
     t.index ["medium_id"], name: "index_phrases_on_medium_id"
+    t.index ["user_id"], name: "index_phrases_on_user_id"
+    t.check_constraint "(medium_id IS NOT NULL) <> (user_id IS NOT NULL)", name: "phrases_exactly_one_source"
   end
 
   create_table "playlists", force: :cascade do |t|
@@ -785,6 +788,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_29_120000) do
   add_foreign_key "phrase_translations", "phrases"
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "media"
+  add_foreign_key "phrases", "users"
   add_foreign_key "playlists", "users"
   add_foreign_key "similar_sounds", "phrases"
   add_foreign_key "subscriptions", "users"

@@ -113,7 +113,7 @@ module App
 
     def saved_rows
       current_user.phrase_token_users
-        .includes(:language, phrase_token: [ :token_translations, { phrase: [ :l1, :medium ] } ])
+        .includes(:language, phrase_token: [ :token_translations, { phrase: [ :l1, :medium, :user ] } ])
         .order(created_at: :desc, id: :desc)
     end
 

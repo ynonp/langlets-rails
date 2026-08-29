@@ -59,7 +59,7 @@ module Vocabulary
       phrase.medium&.lessons&.first&.course&.name
     end
 
-    def custom? = CustomEntry.custom_medium?(phrase.medium)
+    def custom? = phrase.custom?
 
     # Everything the list's search box matches against.
     def searchable = [ word, translation, context ].compact.join(" ").downcase
