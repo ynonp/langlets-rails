@@ -260,17 +260,17 @@ module ActivitiesHelper
   def prepare_flashcards_for_tokens(token_translations, unique_song_words)
     token_translations = token_translations.to_a
     l1_texts = token_translations.map { |t| t.original_text }.uniq
-    phrases_by_medium = token_translations.map(&:phrase).select(&:medium_id).group_by(&:medium_id).transform_values do |phrases|
-      phrases.first.medium.phrases.ordered_by_timestamp.includes(:phrase_tokens).to_a
-    end
+    timing_phrases_by_medium = flashcard_timing_phrases_by_medium(token_translations)
 
     cards = token_translations.map do |t|
       l1_word = t.original_text
       l2_translation = t.translation
       audio_url = t.l1_audio_url
 
-      distractors_pool = (Array(unique_song_words) + l1_texts).uniq
-      distractors = distractors_pool.reject { |w| w.downcase == l1_word.downcase }.sample(3)
+      distractors = flashcard_distractors(
+        correct_word: l1_word,
+        candidate_words: Array(unique_song_words) + l1_texts
+      )
       options = ([ l1_word ] + distractors).shuffle
 
       token_start = t.l1_start_index
@@ -286,12 +286,7 @@ module ActivitiesHelper
 
       phrase = t.phrase
       medium = phrase.medium
-      medium_phrases = medium ? phrases_by_medium.fetch(phrase.medium_id) : [ phrase ]
-      phrase_index = medium_phrases.index { |candidate| candidate.id == phrase.id }
-      next_phrase = medium_phrases[phrase_index + 1] if phrase_index
-      phrase_start = phrase.timestamp_seconds
-      timed_phrase_end = phrase.phrase_tokens.filter_map(&:end_timestamp_seconds).max
-      phrase_end = next_phrase&.timestamp_seconds || timed_phrase_end || (phrase_start + 5 if phrase_start)
+      segment_start, segment_end = flashcard_video_segment(phrase, timing_phrases_by_medium)
 
       {
         id: t.id,
@@ -302,8 +297,8 @@ module ActivitiesHelper
         audio_url: audio_url,
         video_id: medium&.extract_video_id,
         video_provider: medium ? (medium.provider || VideoSource::DEFAULT_PROVIDER) : nil,
-        segment_start: phrase_start,
-        segment_end: phrase_end
+        segment_start: segment_start,
+        segment_end: segment_end
       }
     end
 
@@ -311,6 +306,34 @@ module ActivitiesHelper
   end
 
   private
+
+  def flashcard_distractors(correct_word:, candidate_words:)
+    candidate_words
+      .uniq
+      .reject { |word| word.downcase == correct_word.downcase }
+      .sample(3)
+  end
+
+  # Video timing needs the phrases surrounding each media-backed phrase. Custom
+  # phrases have no medium and are deliberately absent from this lookup.
+  def flashcard_timing_phrases_by_medium(tokens)
+    tokens.map(&:phrase).select(&:medium_id).group_by(&:medium_id).transform_values do |phrases|
+      phrases.first.medium.phrases.ordered_by_timestamp.includes(:phrase_tokens).to_a
+    end
+  end
+
+  def flashcard_video_segment(phrase, timing_phrases_by_medium)
+    return [ nil, nil ] unless phrase.medium_id
+
+    timing_phrases = timing_phrases_by_medium.fetch(phrase.medium_id)
+    phrase_index = timing_phrases.index { |candidate| candidate.id == phrase.id }
+    next_phrase = timing_phrases[phrase_index + 1] if phrase_index
+    segment_start = phrase.timestamp_seconds
+    token_end = phrase.phrase_tokens.filter_map(&:end_timestamp_seconds).max
+    segment_end = next_phrase&.timestamp_seconds || token_end || (segment_start + 5 if segment_start)
+
+    [ segment_start, segment_end ]
+  end
 
   def filter_overlapping_tokens(tokens)
     return tokens if tokens.empty? || tokens.length == 1

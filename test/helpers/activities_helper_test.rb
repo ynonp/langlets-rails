@@ -90,6 +90,7 @@ class ActivitiesHelperTest < ActionView::TestCase
 
     card = prepare_flashcards_for_tokens([ token ], [ "hello", "world" ]).first
 
+    assert_equal [ "hello", "world" ], card[:options].sort
     assert_nil card[:video_id]
     assert_nil card[:video_provider]
     assert_nil card[:segment_start]
