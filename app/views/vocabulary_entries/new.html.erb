@@ -1,0 +1,122 @@
+<% content_for :title, t("app.vocabulary_entries.new.title") %>
+
+<%# The web Add-a-word screen. Same one-page flow as the phone — type the
+    sentence, save it, pick the word out of it — with the explanation moved into
+    the aside, the way Add Video does it, so the form itself starts at the top. %>
+<div class="min-h-screen bg-[#FAF6EF] text-[#1E1B16] [font-family:'Instrument_Sans',ui-sans-serif,system-ui,sans-serif]">
+  <div class="mx-auto w-full max-w-[1180px] px-5 py-8 sm:px-10 sm:py-14">
+    <%= link_to vocabulary_entries_path,
+                class: "inline-flex items-center gap-2 text-sm font-bold text-[#55503F] hover:text-[#C4451C]" do %>
+      <span aria-hidden="true">←</span><%= t("app.vocabulary_entries.show.back") %>
+    <% end %>
+
+    <div class="mt-6 grid w-full gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14"
+         data-controller="vocabulary-picker"
+         data-vocabulary-picker-token-class-value="rounded-xl border border-[#CFC2AB] bg-[#FFFDF8] px-3.5 py-2.5 text-[17px] text-[#55503F] hover:border-[#C4451C]"
+         data-vocabulary-picker-token-active-class-value="rounded-xl border-2 border-[#C4451C] bg-[#F7E3DA] px-3.5 py-2.5 text-[17px] font-bold text-[#C4451C]">
+      <section class="min-w-0">
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#C4451C]"><%= t("app.vocabulary_entries.new.title") %></p>
+        <h1 class="mt-2 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">
+          <%= t("app.vocabulary_entries.new.lead") %>
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-[#55503F]"><%= t("app.vocabulary_entries.new.body") %></p>
+
+        <% if @error.present? %>
+          <p data-testid="vocabulary-add-error"
+             class="mt-6 rounded-2xl border border-[#D98B8B] bg-[#FFFDF8] px-4 py-3 text-sm font-semibold text-[#9E3410]">
+            <%= @error %>
+          </p>
+        <% end %>
+
+        <%= form_with url: vocabulary_entries_path, method: :post,
+                      data: { testid: "vocabulary-add-form" }, class: "mt-8" do |f| %>
+          <div class="rounded-2xl border border-[#DED4C2] bg-[#FFFDF8] p-6">
+            <div class="mb-3 flex items-center justify-between">
+              <h2 class="text-xs font-bold uppercase tracking-[0.12em] text-[#8A8170]"><%= t("app.vocabulary_entries.new.phrase") %></h2>
+              <button type="button" data-action="vocabulary-picker#editPhrase"
+                      data-vocabulary-picker-target="editButton"
+                      class="hidden text-sm font-bold text-[#C4451C] hover:underline"><%= t("app.vocabulary_entries.new.edit") %></button>
+            </div>
+
+            <%# Step one: the sentence, and what language it is in. %>
+            <div data-vocabulary-picker-target="composer">
+              <%= f.text_area :sentence, value: @sentence, rows: 3, dir: "auto",
+                              placeholder: t("app.vocabulary_entries.new.phrase_placeholder"),
+                              data: { vocabulary_picker_target: "sentence",
+                                      action: "input->vocabulary-picker#sentenceChanged" },
+                              class: "w-full resize-none border-0 border-b-2 border-[#E4DACA] bg-transparent pb-2 text-xl leading-snug text-[#1E1B16] outline-none transition focus:border-[#C4451C] placeholder:text-[#8A8170]" %>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <% @language_choices.each_with_index do |language, index| %>
+                  <label class="cursor-pointer">
+                    <%= f.radio_button :language, language.iso_name,
+                                       checked: (@language ? @language == language : index.zero?),
+                                       class: "peer sr-only" %>
+                    <span class="inline-flex min-h-[38px] items-center rounded-full border border-[#9B907D] px-[18px] text-sm font-semibold text-[#716A5D] peer-checked:border-[#1E1B16] peer-checked:bg-[#1E1B16] peer-checked:text-white">
+                      <%= localized_language_name(language) %>
+                    </span>
+                  </label>
+                <% end %>
+              </div>
+
+              <button type="button" data-action="vocabulary-picker#savePhrase"
+                      data-vocabulary-picker-target="savePhraseButton"
+                      disabled
+                      class="mt-5 inline-flex h-11 items-center rounded-full bg-[#E4DACA] px-6 text-sm font-bold text-[#8A8170] enabled:cursor-pointer enabled:bg-[#1E1B16] enabled:text-[#FAF6EF] enabled:hover:bg-[#C4451C]">
+                <%= t("app.vocabulary_entries.new.save_phrase") %>
+              </button>
+            </div>
+
+            <%# Step two: the saved phrase, one button per word. Click one, or
+                press and drag across several for a compound. %>
+            <div data-vocabulary-picker-target="picker" class="hidden">
+              <div data-vocabulary-picker-target="tokens" dir="auto"
+                   data-action="pointermove@window->vocabulary-picker#dragOver pointerup@window->vocabulary-picker#endDrag pointercancel@window->vocabulary-picker#endDrag"
+                   class="flex select-none flex-wrap gap-2 [touch-action:none]"></div>
+              <%# The one string that genuinely differs between the surfaces:
+                  a browser clicks where a phone taps. %>
+              <p data-vocabulary-picker-target="hint"
+                 data-empty-hint="<%= t("app.vocabulary_entries.web.new.pick_hint") %>"
+                 data-picked-hint="<%= t("app.vocabulary_entries.new.pick_hint_picked") %>"
+                 class="mt-4 text-sm text-[#716A5D]"><%= t("app.vocabulary_entries.web.new.pick_hint") %></p>
+            </div>
+          </div>
+
+          <%# Only appears once there is a pick — asking what a word means
+              before one has been chosen has nothing to name. %>
+          <div data-vocabulary-picker-target="translation"
+               class="mt-4 hidden rounded-2xl border border-[#DED4C2] bg-[#FFFDF8] p-6">
+            <%= f.label :translation,
+                        t("app.vocabulary_entries.new.translation_of",
+                          word: tag.span(data: { vocabulary_picker_target: "pickedWord" }, dir: "auto")).html_safe,
+                        class: "block text-xs font-bold uppercase tracking-[0.12em] text-[#8A8170]" %>
+            <%= f.text_field :translation, autocomplete: "off",
+                             placeholder: t("app.vocabulary_entries.new.translation_placeholder"),
+                             data: { vocabulary_picker_target: "translationField",
+                                     action: "input->vocabulary-picker#refresh" },
+                             class: "mt-3 w-full border-0 border-b-2 border-[#E4DACA] bg-transparent pb-2 text-2xl font-bold text-[#1E1B16] outline-none transition focus:border-[#C4451C] placeholder:font-normal placeholder:text-[#8A8170]" %>
+          </div>
+
+          <%= f.hidden_field :token_start, data: { vocabulary_picker_target: "tokenStart" } %>
+          <%= f.hidden_field :token_end, data: { vocabulary_picker_target: "tokenEnd" } %>
+          <%= f.hidden_field :word, data: { vocabulary_picker_target: "wordField" } %>
+
+          <%= f.submit t("app.vocabulary_entries.new.submit"),
+                       data: { vocabulary_picker_target: "submitButton" },
+                       disabled: true,
+                       class: "mt-6 inline-flex h-12 items-center rounded-full bg-[#E4DACA] px-7 text-sm font-bold text-[#8A8170] enabled:cursor-pointer enabled:bg-[#1E1B16] enabled:text-[#FAF6EF] enabled:hover:bg-[#C4451C]" %>
+        <% end %>
+      </section>
+
+      <aside class="h-fit rounded-[22px] bg-[#1E1B16] p-7 text-[#FAF6EF] shadow-[8px_8px_0_#EADFC9] lg:sticky lg:top-8">
+        <p class="text-lg font-bold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= t("app.vocabulary_entries.web.new.aside_title") %></p>
+        <ul class="mt-5 space-y-4 text-sm text-[#B5AC98]">
+          <li class="flex gap-3"><span class="font-bold text-[#C4451C]">1</span><span><%= t("app.vocabulary_entries.web.new.step_phrase") %></span></li>
+          <li class="flex gap-3"><span class="font-bold text-[#C4451C]">2</span><span><%= t("app.vocabulary_entries.web.new.step_pick") %></span></li>
+          <li class="flex gap-3"><span class="font-bold text-[#C4451C]">3</span><span><%= t("app.vocabulary_entries.web.new.step_translate") %></span></li>
+        </ul>
+        <p class="mt-7 border-t border-[#5A5245] pt-5 text-sm leading-relaxed text-[#B5AC98]"><%= t("app.vocabulary_entries.web.new.aside_note") %></p>
+      </aside>
+    </div>
+  </div>
+</div>

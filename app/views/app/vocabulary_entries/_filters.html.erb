@@ -1,0 +1,31 @@
+<%
+  active_class = "shrink-0 rounded-full px-5 py-2.5 text-[15px] font-semibold transition bg-app-text text-app-bg"
+  idle_class = "shrink-0 rounded-full px-5 py-2.5 text-[15px] font-semibold transition bg-app-chip text-app-text-dim"
+  chip = ->(current) { current ? active_class : idle_class }
+%>
+
+<nav aria-label="<%= t(".label") %>"
+     class="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+  <%= link_to t(".all"), app_vocabulary_entries_path(q: query.presence),
+              data: { turbo_frame: "vocabulary-results" },
+              aria: { current: ("page" if filter.nil?) },
+              class: chip.call(filter.nil?) %>
+
+  <% languages.each do |language| %>
+    <%= link_to localized_language_name(language),
+                app_vocabulary_entries_path(filter: language.iso_name, q: query.presence),
+                data: { turbo_frame: "vocabulary-results" },
+                aria: { current: ("page" if filter == language.iso_name) },
+                class: chip.call(filter == language.iso_name) %>
+  <% end %>
+
+  <%# Only offered once something is actually paused — a filter that can only
+      return nothing is noise. %>
+  <% if paused_count.positive? %>
+    <%= link_to t(".not_practising"),
+                app_vocabulary_entries_path(filter: App::VocabularyEntriesController::PAUSED_FILTER, q: query.presence),
+                data: { turbo_frame: "vocabulary-results" },
+                aria: { current: ("page" if filter == App::VocabularyEntriesController::PAUSED_FILTER) },
+                class: chip.call(filter == App::VocabularyEntriesController::PAUSED_FILTER) %>
+  <% end %>
+</nav>

@@ -1,0 +1,14 @@
+<%# Frame 01. The point of this screen is that vocabulary normally arrives on
+    its own — saving from a lesson is the main path, and typing one in is the
+    exception, so it is the only button here. %>
+<div data-testid="vocabulary-empty" class="mt-16 flex flex-col items-center px-1.5 text-center">
+  <div class="app-hairline mb-6 flex h-24 w-24 items-center justify-center rounded-[28px] bg-app-card">
+    <span class="block h-[30px] w-[38px] rounded-md border-2 border-app-accent"></span>
+  </div>
+
+  <h2 class="text-[26px] font-bold leading-tight tracking-[-0.5px] text-app-text"><%= t(".title") %></h2>
+  <p class="mt-3 max-w-[300px] text-[16px] leading-relaxed text-app-text-2"><%= t(".body") %></p>
+
+  <%= link_to t(".cta"), new_app_vocabulary_entry_path,
+              class: "mt-7 w-full rounded-app-field bg-app-accent px-4 py-[17px] text-[17px] font-bold text-app-on-accent" %>
+</div>

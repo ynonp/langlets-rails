@@ -1,0 +1,3 @@
+<%= turbo_stream.replace dom_id(@record, :practice),
+                         partial: "app/vocabulary_entries/practice_toggle",
+                         locals: { entry: @entry } %>

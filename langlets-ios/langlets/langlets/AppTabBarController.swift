@@ -2,7 +2,7 @@ import HotwireNative
 import UIKit
 import WebKit
 
-/// The native tab bar hosting the three app screens. Each tab owns its own
+/// The native tab bar hosting the four app screens. Each tab owns its own
 /// Navigator, so switching is instant and every tab keeps its webview — scroll
 /// position and page state survive.
 ///
@@ -22,6 +22,9 @@ final class AppTabBarController: UITabBarController {
     static let tabs: [Tab] = [
         Tab(title: "Home", path: "/app", image: "house", selectedImage: "house.fill"),
         Tab(title: "Library", path: "/app/library", image: "square.grid.2x2", selectedImage: "square.grid.2x2.fill"),
+        // Vocabulary sits third, next to Create rather than next to Home: it is
+        // where the words the other two tabs produce end up.
+        Tab(title: "Vocabulary", path: "/app/vocabulary", image: "text.book.closed", selectedImage: "text.book.closed.fill"),
         Tab(title: "Create", path: "/app/import_requests/new", image: "plus.circle", selectedImage: "plus.circle.fill")
     ]
 

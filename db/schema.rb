@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_20_090000) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_29_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -576,9 +576,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_20_090000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "language_id", null: false
+    t.boolean "practicing", default: true, null: false
     t.index ["language_id"], name: "index_phrase_token_users_on_language_id"
     t.index ["phrase_token_id"], name: "index_phrase_token_users_on_phrase_token_id"
     t.index ["user_id", "phrase_token_id"], name: "idx_token_translation_users_unique", unique: true
+    t.index ["user_id", "practicing"], name: "index_phrase_token_users_on_user_id_and_practicing"
     t.index ["user_id"], name: "index_phrase_token_users_on_user_id"
   end
 

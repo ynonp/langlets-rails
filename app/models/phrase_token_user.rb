@@ -7,6 +7,14 @@ class PhraseTokenUser < ApplicationRecord
 
   validates :phrase_token_id, uniqueness: { scope: :user_id }
 
+  # "Stop practising" keeps the word in the vocabulary list but takes it out of
+  # every review lesson. Anything that builds or offers a review filters on
+  # `practising`; anything that lists vocabulary does not.
+  scope :practising, -> { where(practicing: true) }
+  scope :paused, -> { where(practicing: false) }
+
+  def practising? = practicing?
+
   def token_translation
     phrase_token.token_translations.find { |row| row.language_id == language_id } ||
       phrase_token.token_translations.find_by(language_id: language_id)

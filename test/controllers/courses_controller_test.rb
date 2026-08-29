@@ -69,7 +69,8 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "body[data-layout='primary-web']"
     assert_select "nav[data-testid='primary-web-header'][class*='flex-nowrap']", count: 1
     assert_select "[data-testid='primary-web-actions'][class*='flex-nowrap']", count: 1
-    assert_select "[data-testid='primary-web-desktop-link'][class*='hidden'][class*='lg:inline-flex']", count: 2
+    # Library, Vocabulary, Create.
+    assert_select "[data-testid='primary-web-desktop-link'][class*='hidden'][class*='lg:inline-flex']", count: 3
     assert_select "[data-testid='daily-vocab-nav']", text: "Daily Vocab Practice"
     assert_select "[data-controller='profile-menu']", count: 1
     assert_select "a", text: "Profile"

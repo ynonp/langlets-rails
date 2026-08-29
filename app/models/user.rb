@@ -341,9 +341,12 @@ class User < ApplicationRecord
     Course.none
   end
 
+  # Languages this user still practises words in. Paused words are deliberately
+  # excluded: they stay listed in the Vocabulary tab but must not conjure a
+  # daily review for a language the user has retired.
   def languages_with_saved_words
     Language.joins(phrases_as_l1: { phrase_tokens: :phrase_token_users })
-      .where(phrase_token_users: { user_id: id })
+      .where(phrase_token_users: { user_id: id, practicing: true })
       .distinct
   end
 
@@ -387,7 +390,7 @@ class User < ApplicationRecord
   def daily_vocab_review_available?(language_code)
     language = Language.find_by(iso_name: language_code)
     return false unless language
-    return false unless phrase_token_users.joins(phrase_token: :phrase)
+    return false unless phrase_token_users.practising.joins(phrase_token: :phrase)
       .where(phrases: { l1_id: language.id }).exists?
 
     !lesson_users.joins(:lesson).where(

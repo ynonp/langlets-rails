@@ -186,4 +186,43 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
     assert_includes all_tokens_in_lesson, @token_en2
     assert_equal 2, all_tokens_in_lesson.count
   end
+
+  # "Stop practising" in the Vocabulary tab. The word stays saved — it is still
+  # listed and editable there — but it must not turn up in a review again.
+  test "a paused word is kept in the vocabulary but left out of the review" do
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_en2
+    @user.phrase_token_users.find_by(phrase_token: @token_en2).update!(practicing: false)
+
+    tokens = ReviewLessonBuilder.new(@user, language_code: @english.iso_name).fetch_tokens
+
+    assert_equal [ @token_en1 ], tokens
+    assert_equal 2, @user.phrase_token_users.count, "the paused word must stay saved"
+  end
+
+  test "resuming practice puts the word back into the review" do
+    @user.saved_phrase_tokens << @token_en1
+    saved = @user.phrase_token_users.find_by(phrase_token: @token_en1)
+    saved.update!(practicing: false)
+
+    assert_empty ReviewLessonBuilder.new(@user, language_code: @english.iso_name).fetch_tokens
+
+    saved.update!(practicing: true)
+
+    assert_equal [ @token_en1 ], ReviewLessonBuilder.new(@user, language_code: @english.iso_name).fetch_tokens
+  end
+
+  # The daily review offer reads the same flag, so a language whose words are
+  # all paused stops being offered rather than building an empty lesson.
+  test "a language with only paused words is no longer offered a daily review" do
+    @user.saved_phrase_tokens << @token_en1
+
+    assert_includes @user.languages_with_saved_words, @english
+    assert @user.daily_vocab_review_available?(@english.iso_name)
+
+    @user.phrase_token_users.find_by(phrase_token: @token_en1).update!(practicing: false)
+
+    assert_not_includes @user.reload.languages_with_saved_words, @english
+    assert_not @user.daily_vocab_review_available?(@english.iso_name)
+  end
 end

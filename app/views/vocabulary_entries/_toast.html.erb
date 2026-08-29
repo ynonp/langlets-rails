@@ -1,0 +1,23 @@
+<%# The same toast contract as the native surface: plain confirmations fade,
+    an Undo stays until the next navigation. %>
+<% if flash[:notice].present? %>
+  <% undo = flash[:undo] %>
+  <div data-controller="vocabulary-toast"
+       data-vocabulary-toast-timeout-value="<%= undo.present? ? 0 : 4000 %>"
+       data-testid="vocabulary-toast"
+       class="pointer-events-none fixed inset-x-5 bottom-6 z-40 flex justify-center">
+    <div class="pointer-events-auto flex items-center justify-between gap-5 rounded-full border border-[#DED4C2] bg-[#1E1B16] px-6 py-3.5 text-sm font-semibold text-[#FAF6EF] shadow-[0_8px_24px_rgba(30,27,22,.18)]">
+      <span><%= flash[:notice] %></span>
+
+      <% if undo.present? %>
+        <%= button_to t("app.vocabulary_entries.undo"),
+                      restore_vocabulary_entries_path,
+                      params: { phrase_token_id: undo["phrase_token_id"], language_id: undo["language_id"] },
+                      class: "shrink-0 text-sm font-bold text-[#F0A08A] hover:text-white" %>
+      <% else %>
+        <button type="button" data-action="vocabulary-toast#dismiss"
+                class="shrink-0 text-sm font-bold text-[#F0A08A] hover:text-white"><%= t("app.vocabulary_entries.dismiss") %></button>
+      <% end %>
+    </div>
+  </div>
+<% end %>

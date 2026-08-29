@@ -166,6 +166,15 @@ application.register("theme", ThemeController)
 import TokensChainActivityController from "./tokens_chain_activity_controller"
 application.register("tokens-chain-activity", TokensChainActivityController)
 
+import VocabularyConfirmController from "./vocabulary_confirm_controller"
+application.register("vocabulary-confirm", VocabularyConfirmController)
+
+import VocabularyPickerController from "./vocabulary_picker_controller"
+application.register("vocabulary-picker", VocabularyPickerController)
+
+import VocabularyToastController from "./vocabulary_toast_controller"
+application.register("vocabulary-toast", VocabularyToastController)
+
 import WatchVideoActivityController from "./watch_video_activity_controller"
 application.register("watch-video-activity", WatchVideoActivityController)
 

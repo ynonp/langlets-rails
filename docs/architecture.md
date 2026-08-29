@@ -479,9 +479,10 @@ authentication, and native app screens.
 
 ### Primary web layout and header
 
-The three primary browser surfaces — the homepage (`courses#index`), Library
-(`gallery#index`), and browser Add Video (`app/import_requests#new`) — render
-through `layouts/web.html.erb`. That layout owns the warm-cream document shell,
+The four primary browser surfaces — the homepage (`courses#index`), Library
+(`gallery#index`), Vocabulary (`vocabulary_entries#index`), and browser Add
+Video (`app/import_requests#new`) — render through `layouts/web.html.erb`. That
+layout owns the warm-cream document shell,
 shared Bricolage Grotesque/Instrument Sans font load, audio-cache wiring,
 structured data, sign-out bridge, and the single `shared/_web_header` partial.
 Page views must not add another brand/navigation row.
@@ -766,6 +767,14 @@ Content has one shared L1 skeleton and any number of sparse L2 translations:
   the span is saved; vocabulary and review resolve that exact translation even
   when the current subdomain is different. Saving the span again updates the
   language rather than creating a second entry.
+- `phrase_token_users.practicing` (boolean, default true) is the Vocabulary
+  tab's "stop practising". A paused row stays saved — still listed, searchable
+  and editable — but leaves every review. `PhraseTokenUser.practising` /
+  `.paused` are the scopes, and everything that *builds or offers* a review
+  filters on the flag (`ReviewLessonBuilder#fetch_tokens`,
+  `User#languages_with_saved_words`, `User#daily_vocab_review_available?`)
+  while everything that *lists* vocabulary does not. That split is the whole
+  point of the flag: pausing must not look like deleting.
 
 The import pipeline begins with automatic source-language detection. Add Video
 on web and native sends only the URL and translation language; source-language
@@ -2608,9 +2617,46 @@ Two more things to know before touching this:
 
 #### The app screens (`/app`)
 
-Home, mobile Library, Create/Add-a-video and the Pro screens live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, `/app/library`, and `/app/pro` are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. (There was a `/app/credits` screen here too; it existed to sell consumable credit packs and was deleted with them.) `App::ImportRequestsController` skips that presentation gate so authenticated browsers can use Create/Add Video. For browser `new`/`resolve` requests it selects `layouts/web.html.erb`; native requests retain `layouts/app.html.erb`. The web Library is `/gallery`, and the shared primary web header links to Gallery and Create.
+Home, mobile Library, Vocabulary, Create/Add-a-video and the Pro screens live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, `/app/library`, `/app/vocabulary` and `/app/pro` are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. (There was a `/app/credits` screen here too; it existed to sell consumable credit packs and was deleted with them.)
+
+**Create/Add Video shares one route with the web; Vocabulary does not.** Add Video skips the presentation gate and chooses its web template variant for browser requests. Vocabulary has route-owned presentation instead: `/app/vocabulary` is native and `/vocabulary` is web. The separate controller and view prefixes prevent a sticky native preview session or a spoofed user agent from changing which Vocabulary design a URL renders. The web Library remains `/gallery`, and the shared primary web header links to Gallery, Vocabulary and Create.
 
 **`/app/import_requests/new` is the Create entry point on both platforms, and also the Create tab's root** — there is no `#index` action or route; the bare `/app/import_requests` collection path only accepts `POST` (`#create`). Earlier the tab root was the bare path and `#index` redirected browsers to `/new`; that indirection was removed since nothing ever needed the bare path to resolve on its own. In the native app `/new` renders the Add-a-video form directly; there is no intermediate status list or Add New button. A browser hitting `/new` gets the responsive web variant of the same form. Import status lives in Library: `/app/library` on mobile and `/gallery` on web. The old Queue templates and polling controller remain in the tree but are no longer rendered by anything reachable.
+
+#### Vocabulary (`/app/vocabulary` native, `/vocabulary` web)
+
+`App::VocabularyEntriesController` owns the native route and the shared actions. The top-level `VocabularyEntriesController` inherits those actions for the browser route, overrides only the redirect destination, and gets its web layout and templates from its controller identity. Both are routed as `resources :vocabulary_entries, path: "vocabulary"`, under `/app` and at the top level respectively, so URLs stay singular while each surface gets unambiguous helpers. This is where every word the user has saved lands, across all the languages they are learning, plus the words they typed in themselves.
+
+**A saved word is a span inside a phrase, never a bare dictionary entry.** That is the one idea every screen here is built around, and it is why the list shows the phrase with the span highlighted rather than the word alone: it is the only thing that distinguishes two entries for the same word in different senses ("no time *left*" vs "turn *left* here"). It is also why the detail screen edits the translation and nothing else — the phrase and the span are the entry's identity, and changing them would quietly turn it into a different word.
+
+`Vocabulary::Entry` wraps a `PhraseTokenUser` and answers what the screens ask: the word, its translation, the phrase split into `before` / `mark` / `after`, the language, and the source. The split comes from the token's own character offsets (`PhraseToken#l1_start_character_index`), not from re-finding the word in the text, and returns the whole phrase unmarked if those offsets no longer fit — a phrase repaired after the save degrades to plain text instead of raising. `Entry.wrap` resolves every row's course name in one query rather than one per row; `custom?` rows are labelled "Added by you".
+
+Filtering, searching and the paused/unpaused split all happen in memory over the user's saved rows. This is deliberate: a personal vocabulary is small, the list is loaded in full anyway to count the summary line, and it keeps the language chips honest — only languages the user actually has words in get one, and "Not practising" only appears once something is paused. A filter that can only ever return nothing is noise. The chips and the search box drive a `vocabulary-results` Turbo Frame; **each row therefore has to carry `data-turbo-frame="_top"`**, or Turbo tries to load the whole detail screen into that frame and renders "Content missing".
+
+**Adding a custom word** (`Vocabulary::CustomEntry`) is one page, not a wizard: the sentence is typed and saved, and the word is then picked out of the saved phrase rather than typed again. `vocabulary_picker_controller.js` turns the sentence into tappable words and reports whitespace-token indexes.
+
+A pick is a **range**, not a word, because plenty of vocabulary is more than one word — "me souviens", "darse prisa". Two gestures grow it, and both are needed: tapping a word adjacent to the current pick extends it (tapping inside a compound collapses it back to one word, tapping further away starts over), and pressing and dragging across several words selects them in one go. Tapping is the discoverable path and the only one a keyboard can reach — the words are real `<button>`s, so Tab + Enter drives the same code — while dragging is the fast path with a mouse.
+
+**The drag must never be bound to `pointerenter`.** For touch input the pointer is implicitly captured by whichever element received `pointerdown`, so every subsequent `pointermove` is delivered to *that* element and enter/leave never fire on the words the finger passes over. A `pointerenter` implementation therefore works perfectly with a mouse and silently does nothing on a phone, which is the surface that matters most here — it shipped that way once. The drag is hit-tested instead from a window-level `pointermove` via `document.elementFromPoint`, which is unaffected by pointer capture (capture retargets the event but leaves its coordinates alone). `pointerdown` only *arms* the drag and deliberately does not commit a pick, so that a plain tap still reaches the tap handler with the previous selection intact — that is what lets the second tap extend rather than replace. `test/javascript/vocabulary_picker_controller.test.mjs` covers the tap arithmetic, the touch-drag case, and guards the `pointerenter` binding. The service normalises the sentence's whitespace before storing it so that both sides agree on what "token 3" means, converts the token range to inclusive character offsets, and trims the punctuation a selection sweeps up ("quick," saves as "quick"). The span is stored as `character_index`, which sidesteps the `String#split` vs `String#tokenize` mismatch that word indexes would inherit.
+
+A custom word still needs a `Phrase`, and a `Phrase` needs a `Medium`. Rather than making either association optional, each user gets one synthetic medium per language — `langlets://custom-vocabulary/<user_id>` — holding nothing but their own typed phrases. It has no lessons, which is exactly how `Entry#source` knows to say "Added by you" instead of naming a course.
+
+**Routes select Vocabulary's presentation.** `/app/vocabulary` resolves to the native controller, `app/views/app/vocabulary_entries/**`, and `layouts/app.html.erb`; `/vocabulary` resolves to the inheriting web controller, `app/views/vocabulary_entries/**`, and `layouts/web.html.erb`. No action checks `native_app?`, `native_preview?`, or a surface parameter. The web surface is entered from the primary header, which links Library · **Vocabulary** · Create; those header links are desktop-only, so Vocabulary also leads the avatar dropdown, which is how a phone browser reaches it at all.
+
+What actually changes between the surfaces is small and worth keeping small: the web list shows the context phrase in full where the phone truncates it to one line (a browser has the room, and that phrase is the first thing a narrow layout throws away), the detail screen moves the practice switch and the delete into an aside, the Add screen moves its explanation there, and the picker hint says "click" instead of "tap". Everything else — the copy, the filters, the toast contract, the delete confirmation — is the same strings and the same behaviour.
+
+The practice switch is server-rendered rather than client-managed. It is a named
+submit button inside the translation form whose value is the *next* practice
+state. `update` treats that parameter as a practice-only write (so text sitting
+unsaved in the translation field is not committed), and its Turbo Stream
+response replaces the surface-specific switch partial, including its hint and
+palette. Direct HTML PATCH requests retain the index redirect and notice. The
+separate native and web partials are intentional because `bg-app-accent` has no
+meaning on the web surface. The other load-bearing presentation boundary is
+`_highlight.html.erb`'s `mark_class`: it is the one partial both surfaces share
+outright.
+
+**Delete removes only the `phrase_token_users` row.** The phrase and token survive: for a word saved from a shared course they were never this user's to destroy, and keeping them is what makes Undo a plain re-save rather than a resurrection. The delete confirmation offers "stop practising instead" first, because most people reaching for Delete want a break from the word rather than to lose the phrase they met it in; the undo toast that follows passes `timeout 0` and stays until the next navigation, since a countdown the user cannot see is a bad thing to hang the only route back on.
 
 The web course UI exposes the shared Queue/Add Video flow through the user menu.
 Signed-in native users at the web root are redirected to `app_home_path`;
@@ -2627,7 +2673,7 @@ carried a **Buy More** PayPal form beside it until individual credits stopped
 being sold; there is now no checkout on the web at all, and the sidebar closes
 with the sentence explaining that the Pro screen is native-only.
 
-The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and **Create** tab (the Create tab is `/app/import_requests/new`, drawn with the `plus.circle` SF Symbol). Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests/new` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. If you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
+The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library, **Vocabulary** and **Create** tab (Vocabulary is `/app/vocabulary`, drawn with `text.book.closed`; the Create tab is `/app/import_requests/new`, drawn with the `plus.circle` SF Symbol). Android mirrors the same four tabs in `MainActivity` — adding one there also needs a `FragmentContainerView` in `activity_main.xml`, a `tab_*` string, and a `ic_tab_*` drawable. Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests/new` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. If you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
 
 Because those navigators retain separate documents, an ordinary Turbo Stream
 response cannot update a different tab. Cross-tab refreshes use the custom
@@ -2655,7 +2701,7 @@ omits the browser-only close control.
 
 The handoff also unwinds Create's own stack on the way out. A deduped import redirects straight to `course_path`; `openFromHome(_:leaving:)` prevents the spent form from remaining under the back arrow. An already-importing preview links to the Pending filter in Library instead of back to Create, because Create now contains only the form.
 
-This rule **cannot** be expressed in path configuration, and that is a structural property worth remembering rather than a limitation to work around: path configuration is a function of the URL alone, and `/courses/:id` is the same URL from all three tabs. `NavigatorDelegate.handle(proposal:from:)` is the only place the *source* of a visit is known, so any rule of the form "this destination behaves differently depending on where it was reached from" belongs there. The cross-tab root interception above uses the same lever.
+This rule **cannot** be expressed in path configuration, and that is a structural property worth remembering rather than a limitation to work around: path configuration is a function of the URL alone, and `/courses/:id` is the same URL from all four tabs. `NavigatorDelegate.handle(proposal:from:)` is the only place the *source* of a visit is known, so any rule of the form "this destination behaves differently depending on where it was reached from" belongs there. The cross-tab root interception above uses the same lever.
 
 The tab-root profile menu is an HTML `details` element managed by `profile_menu_controller.js`: a document-level click closes it when the tap lands outside the menu. Because each native tab retains its webview and HTML state, `AppTabBarController` also closes open profile menus in tabs moving to the background whenever the user switches tabs, including programmatic cross-tab routing.
 
@@ -2671,7 +2717,7 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
 - iOS: `Assets.xcassets/AppIcon.appiconset`, three flattened 1024px PNGs (light, dark, tinted).
 - Android: an adaptive icon in `res/mipmap-anydpi-v26/ic_launcher.xml` over three vector drawables — `ic_launcher_background` (the gradient, with stops anchored at 18,18 → 90,90 so the full ramp falls inside the 72dp a launcher actually shows), `ic_launcher_foreground` (the mark), and `ic_launcher_monochrome` (the same geometry, flat black, for themed icons — the launcher tints it from the wallpaper, so only its alpha survives). The two mark drawables carry `icon.svg`'s path data verbatim in its own 1024 viewport and reach this 108dp canvas through nested `<group>` transforms, so a change to the SVG can be pasted straight in. Android was a green wordmark period until this port.
 
-**There is no floating "+" on Home, Library or Create.** Creating a langlet is the Create tab's entire job, so its root is the form itself. Home has no paste box. `app/views/app/shared/_fab.html.erb` survives only for the Started-videos screen; do not reintroduce it on the three tab roots. The native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Library item. The native web views extend beneath `UITabBar`, so every scrolling app screen uses `app-scroll-pad` to reserve the full tab-bar height plus the bottom safe-area inset.
+**There is no floating "+" on Home, Library or Create.** Creating a langlet is the Create tab's entire job, so its root is the form itself. Home has no paste box. `app/views/app/shared/_fab.html.erb` survives only for the Started-videos screen; do not reintroduce it on the four tab roots. Vocabulary is the one exception and not a counter-example: its "+" is a fixed 46px button sharing the search row, not a floating action over the list, because adding a word there is a peer of finding one. The native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Library item. The native web views extend beneath `UITabBar`, so every scrolling app screen uses `app-scroll-pad` to reserve the full tab-bar height plus the bottom safe-area inset.
 
 - **Home is account-driven** (`App::HomeController#index`). It has no YouTube/TikTok paste control — that flow belongs to the Create tab — and it no longer recommends globally listed Library content. Home loads the user's readable, published Enrollments, calculates completion in grouped queries, and keeps only unfinished courses, whether started or not. The two most recently practiced unfinished courses remain under the muted **"Continue"** heading; up to four other unfinished account courses appear in the **"Recommended for you"** 2×2 grid. The optional just-imported hero and Continue rows are excluded from that grid to avoid duplicate cards. `Enrollment#last_practiced_at` determines only whether a course belongs in Continue, not whether it is eligible for recommendations. Personal playlists follow when present. The started-videos screen still uses non-null `last_practiced_at` as its canonical started signal and includes completed courses.
   Recommended cards reuse the compact Library card and retain its localized
@@ -2696,6 +2742,8 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
 - Screens are gated by `require_language_for_native_app` too: a signed-in native user with no `?lang=` is sent to `/onboarding/welcome` before any app screen is reachable.
 
 Deliberately **not** built from the mockup, because both would be controls that do nothing: the Library's category chips (nothing populates the taxonomy until the classifier lands) and the Add sheet's "Search YouTube" segment (needs the Data API).
+
+Vocabulary follows the Library pairing: `/app/vocabulary` is native and `/vocabulary` is web (see the Vocabulary section above). Its controllers share actions through inheritance, while route and controller identity own presentation.
 
 The two Library surfaces are `/app/library` for mobile and `/gallery` for web.
 They have separate controllers and presentation, but the same ImportRequest
@@ -2723,8 +2771,10 @@ and the current user's displayed requests. Gallery retains its existing Course,
 Playlist, language, and search filters; ImportRequest status is an additional
 single-select dimension. Its Turbo Stream result replacement redraws import and
 published cards together. The shared primary web header links Library to
-`/gallery` and Create to `/app/import_requests/new` on Home, Library, and web
-Add Video alike.
+`/gallery`, Vocabulary to `/vocabulary` and Create to
+`/app/import_requests/new` on Home, Library, Vocabulary and web Add Video alike.
+Those three links are `lg:`-only; the avatar dropdown beside them carries
+Vocabulary at every width.
 
 Mobile Library additionally derives one language pill per learning language
 present in the complete listed `ChannelContentQuery` result for that user. It
@@ -3261,13 +3311,14 @@ badges, dismissal, and logout links one consistent implementation.
 Library and Create are top-level navigation and are not repeated in the web
 profile menu; Invitations remains hidden there while that feature is unfinished.
 
-The native app avatar is a top-right initials dropdown linking to Notifications, Profile and Logout, plus one language-specific "Practice Words" action for each language in which the user has saved vocabulary. It is part of the one shared header, so it appears on all three tab roots:
+The native app avatar is a top-right initials dropdown linking to Notifications, Profile and Logout, plus one language-specific "Practice Words" action for each language in which the user is still practising vocabulary (paused-only languages drop out of that menu with `User#languages_with_saved_words`). It is part of the one shared header, so it appears on all four tab roots:
 - `app/views/app/shared/_header.html.erb` — the header: `title:` or the wordmark on the left, the avatar and its menu on the right. No credits pill (see the Create tab below for where the balance lives)
 - `app/views/app/home/index.html.erb` — renders it with no `title:`, so Home gets the wordmark
-- `app/views/app/library/show.html.erb` and `app/views/app/import_requests/new.html.erb` — pass `title:`, so the header draws each screen's own name where Home draws the brand. Library keeps its description in a wrapper with the header so it holds its 4px gap under the title rather than the column's 16px
+- `app/views/app/library/show.html.erb`, `app/views/app/vocabulary_entries/index.html.erb` and `app/views/app/import_requests/new.html.erb` — pass `title:`, so the header draws each screen's own name where Home draws the brand. Library keeps its description in a wrapper with the header so it holds its 4px gap under the title rather than the column's 16px
 
 Daily vocabulary invitations use `User#daily_vocab_review_available?`. The user
-must have a saved span whose phrase is in the current learning language, and
+must have a still-practised saved span whose phrase is in the current learning
+language — a language whose words have all been paused stops being offered — and
 must not have a `LessonUser` completion for a review lesson pinned to that
 language during `Time.zone.now.all_day`. When more than one language is due,
 `User#daily_vocab_review_language` chooses the practice language of the most

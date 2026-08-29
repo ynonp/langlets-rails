@@ -1,0 +1,24 @@
+<%# The undo toast behind a delete, and the confirmation behind every other
+    change. `flash[:undo]` carries the token the delete detached, so Undo is a
+    plain re-save rather than a resurrection. %>
+<% if flash[:notice].present? %>
+  <% undo = flash[:undo] %>
+  <div data-controller="vocabulary-toast"
+       data-vocabulary-toast-timeout-value="<%= undo.present? ? 0 : 4000 %>"
+       data-testid="vocabulary-toast"
+       class="pointer-events-none fixed inset-x-5 z-40 bottom-[calc(var(--app-tab-bar-height)+env(safe-area-inset-bottom)+16px)]">
+    <div class="pointer-events-auto flex items-center justify-between gap-3 rounded-app-field bg-app-credits px-[18px] py-3.5 text-[15px] font-semibold text-app-bg">
+      <span><%= flash[:notice] %></span>
+
+      <% if undo.present? %>
+        <%= button_to t("app.vocabulary_entries.undo"),
+                      restore_app_vocabulary_entries_path,
+                      params: { phrase_token_id: undo["phrase_token_id"], language_id: undo["language_id"] },
+                      class: "shrink-0 text-[15px] font-bold text-[#0d7a44]" %>
+      <% else %>
+        <button type="button" data-action="vocabulary-toast#dismiss"
+                class="shrink-0 text-[15px] font-bold text-[#0d7a44]"><%= t("app.vocabulary_entries.dismiss") %></button>
+      <% end %>
+    </div>
+  </div>
+<% end %>

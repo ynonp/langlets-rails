@@ -1,0 +1,95 @@
+<% content_for :title, @entry.word %>
+
+<%# The web detail screen. Same rule as the phone: the phrase and the span are
+    the entry's identity and are not editable, only what the span means here is.
+    The desktop split puts the editing in the main column and the two decisions
+    about the word's future — practise it, or lose it — in the aside. %>
+<div class="min-h-screen bg-[#FAF6EF] text-[#1E1B16] [font-family:'Instrument_Sans',ui-sans-serif,system-ui,sans-serif]">
+  <div class="mx-auto w-full max-w-[1180px] px-5 py-8 sm:px-10 sm:py-14">
+    <%= link_to vocabulary_entries_path,
+                class: "inline-flex items-center gap-2 text-sm font-bold text-[#55503F] hover:text-[#C4451C]" do %>
+      <span aria-hidden="true">←</span><%= t("app.vocabulary_entries.show.back") %>
+    <% end %>
+
+    <div class="mt-6 grid w-full gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14">
+      <section class="min-w-0">
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#C4451C]">
+          <%= [ localized_language_name(@entry.language), @entry.source ].compact_blank.join(" · ") %>
+        </p>
+        <h1 class="mt-2 text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"
+            dir="auto"><%= @entry.word %></h1>
+
+        <div class="mt-8 rounded-2xl border border-[#DED4C2] bg-[#FFFDF8] p-6">
+          <h2 class="text-xs font-bold uppercase tracking-[0.12em] text-[#8A8170]"><%= t("app.vocabulary_entries.show.context") %></h2>
+          <p class="mt-3 text-xl leading-relaxed text-[#55503F]" dir="auto">
+            <%= render "app/vocabulary_entries/highlight", entry: @entry,
+                       mark_class: "font-bold text-[#C4451C]" %>
+          </p>
+        </div>
+
+        <%= form_with url: vocabulary_entry_path(@entry.id), method: :patch,
+                      data: { testid: "vocabulary-detail-form" },
+                      class: "mt-4" do |f| %>
+          <div class="rounded-2xl border border-[#DED4C2] bg-[#FFFDF8] p-6">
+            <%= f.label :translation, t("app.vocabulary_entries.show.translation_of", word: @entry.word),
+                        class: "block text-xs font-bold uppercase tracking-[0.12em] text-[#8A8170]" %>
+            <%= f.text_field :translation, value: @entry.translation,
+                             placeholder: t("app.vocabulary_entries.show.translation_placeholder"),
+                             autocomplete: "off",
+                             class: "mt-3 w-full border-0 border-b-2 border-[#E4DACA] bg-transparent pb-2 text-2xl font-bold text-[#1E1B16] outline-none transition focus:border-[#C4451C] placeholder:font-normal placeholder:text-[#8A8170]" %>
+          </div>
+
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <%= f.submit t("app.vocabulary_entries.show.save"),
+                         class: "inline-flex h-12 cursor-pointer items-center rounded-full bg-[#1E1B16] px-7 text-sm font-bold text-[#FAF6EF] transition hover:bg-[#C4451C]" %>
+
+            <%# Rails persists the named button's next state and Turbo replaces
+                the complete switch, including the explanatory hint. %>
+            <%= render "practice_toggle", entry: @entry %>
+          </div>
+        <% end %>
+      </section>
+
+      <%# Outside the form above: a dialog nested in a form would put its
+          buttons inside it, and "Delete" would submit the edit. %>
+      <aside class="h-fit rounded-[22px] bg-[#1E1B16] p-7 text-[#FAF6EF] shadow-[8px_8px_0_#EADFC9] lg:sticky lg:top-8"
+             data-controller="vocabulary-confirm">
+        <p class="text-lg font-bold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= t("app.vocabulary_entries.web.show.aside_title") %></p>
+        <p class="mt-4 text-sm leading-relaxed text-[#B5AC98]"><%= t("app.vocabulary_entries.show.delete_body") %></p>
+
+        <button type="button" data-action="vocabulary-confirm#open"
+                data-testid="vocabulary-delete"
+                class="mt-6 inline-flex h-11 w-full items-center justify-center rounded-full border border-[#7A4034] px-5 text-sm font-bold text-[#F0A08A] transition hover:border-[#C4451C] hover:bg-[#C4451C] hover:text-white">
+          <%= t("app.vocabulary_entries.show.delete") %>
+        </button>
+
+        <%# m-auto is load-bearing: a modal <dialog> centres itself through its
+            auto margins, and Tailwind's preflight zeroes those. %>
+        <dialog data-vocabulary-confirm-target="dialog"
+                class="m-auto w-[calc(100vw-56px)] max-w-md rounded-2xl border border-[#DED4C2] bg-[#FFFDF8] p-7 text-[#1E1B16] backdrop:bg-[#1E1B16]/60">
+          <h2 class="text-xl font-extrabold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">
+            <%= t("app.vocabulary_entries.show.delete_title", word: @entry.word) %>
+          </h2>
+          <p class="mt-3 text-sm leading-relaxed text-[#55503F]"><%= t("app.vocabulary_entries.show.delete_body") %></p>
+
+          <%# The kinder option first: most people reaching for Delete want a
+              break from the word, not to lose the phrase they met it in. %>
+          <%= button_to t("app.vocabulary_entries.show.pause_instead"), vocabulary_entry_path(@entry.id),
+                        method: :patch, params: { practicing: "false" },
+                        form: { data: { turbo: false } },
+                        class: "mt-6 h-11 w-full rounded-full border border-[#CFC2AB] px-5 text-sm font-bold text-[#55503F] hover:border-[#1E1B16]" %>
+
+          <div class="mt-3 flex gap-3">
+            <button type="button" data-action="vocabulary-confirm#close"
+                    class="h-11 flex-1 rounded-full border border-[#CFC2AB] px-5 text-sm font-bold text-[#55503F] hover:border-[#1E1B16]">
+              <%= t("app.vocabulary_entries.show.cancel") %>
+            </button>
+            <%= button_to t("app.vocabulary_entries.show.delete_confirm"), vocabulary_entry_path(@entry.id),
+                          method: :delete, form_class: "flex-1",
+                          class: "h-11 w-full rounded-full bg-[#C4451C] px-5 text-sm font-bold text-white hover:bg-[#A33318]" %>
+          </div>
+        </dialog>
+      </aside>
+    </div>
+  </div>
+</div>
