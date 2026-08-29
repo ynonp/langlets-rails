@@ -442,7 +442,8 @@ sentence and four-choice exercise, and the existing `main-video-player`
 controller constrains native playback to that card's phrase before pausing and
 rewinding. Course flashcards use the lesson medium. Because one review can draw saved words from several courses, each
 card supplies its own provider and video id and the player swaps adapters when
-the source changes. Flashcard playback preserves the source video's original
+the source changes, awaiting teardown before the shared mount is reused so an
+outgoing provider cannot remove the replacement iframe. Flashcard playback preserves the source video's original
 audio and never changes the player's volume.
 When the final flashcard is answered, its completion card replaces the exercise
 at the top of the same post-video region instead of vertically centering in the

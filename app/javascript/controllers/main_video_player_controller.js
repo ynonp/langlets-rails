@@ -203,7 +203,7 @@ export default class extends Controller {
     if (sourceChanged && this.player) {
       this.stopPlaybackMonitoring();
       await this.player.pauseVideo();
-      this.player.destroy();
+      await this.player.destroy();
       this.player = null;
       this.playerInitialized = false;
       this.hasPlayed = false;

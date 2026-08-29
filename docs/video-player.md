@@ -314,7 +314,9 @@ current card's provider, video id, and phrase bounds to `main-video-player`.
 Course flashcards use their lesson's medium;
 review cards can come from different courses,
 so changing cards may destroy the old adapter and initialize the card's
-original source. Native play is constrained to the phrase; the ordinary
+original source. The controller waits for provider teardown to finish before
+reusing the player mount, preventing the outgoing iframe from removing its
+replacement. Native play is constrained to the phrase; the ordinary
 segment-end behavior pauses and rewinds it for replay.
 
 ---

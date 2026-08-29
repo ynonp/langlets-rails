@@ -12,7 +12,11 @@ describe("flashcard video", () => {
     assert.match(flashcard, /this\.dispatch\("card-change"/);
     assert.match(flashcard, /videoId: card\.video_id/);
     assert.match(player, /async configureSegment\(event\)/);
+    assert.match(player, /await this\.player\.destroy\(\)/);
     assert.match(player, /this\.videoIdValue = videoId/);
     assert.match(player, /await this\.player\.seekTo\(this\.segmentStart\)/);
+
+    const adapter = await source("../../app/javascript/players/youtube_adapter.js");
+    assert.match(adapter, /return this\.player\.destroy\(\)/);
   });
 });

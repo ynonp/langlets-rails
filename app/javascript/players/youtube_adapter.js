@@ -47,9 +47,7 @@ export default class YoutubeAdapter {
   }
 
   destroy() {
-    // Deferred by the caller: YT.Player.destroy() is synchronous and slow on
-    // mobile (video decoder teardown, postMessage bridge cleanup).
-    this.player.destroy();
+    return this.player.destroy();
   }
 }
 
