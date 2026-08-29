@@ -4,13 +4,14 @@ import { ProgressStore } from "../src/progress.ts";
 import type { PatchOp, Phrase, ProgressData } from "../src/types.ts";
 import type { ProgressSink } from "../src/types.ts";
 import type { PipelineContext } from "../src/context.ts";
+import { extractCompounds } from "../src/steps/extractCompounds.ts";
 import { addTokenTranslations } from "../src/steps/addTokenTranslations.ts";
 import { initTranslationPayload } from "../src/steps/finalizeTranslation.ts";
 import {
   addTokenTranslationsPrompt,
   legacyAddTokenTranslationsPrompt,
 } from "../src/prompts/addTokenTranslations.ts";
-import { capitalizeSentence, mergeMultiWordTokens } from "../src/learnerTokens.ts";
+import { capitalizeSentence } from "../src/learnerTokens.ts";
 
 const ROOSEVELT_LINES = [
   "the United States was at peace with that nation",
@@ -56,13 +57,28 @@ const variants = args.prompt === "both"
   ? [["legacy", legacyAddTokenTranslationsPrompt]] as const
   : [["current", addTokenTranslationsPrompt]] as const;
 
+const lines = args.sample === "roosevelt"
+  ? ROOSEVELT_LINES
+  : args.sample === "edge-cases"
+  ? EDGE_CASE_LINES
+  : [...ROOSEVELT_LINES, ...EDGE_CASE_LINES];
+const rawPhrases = phrasesFor(lines);
+const tokenizationStore = new ProgressStore(
+  { phrases: rawPhrases, lyric_lines: rawPhrases.map((phrase) => phrase.text_l1) },
+  new MemorySink(),
+);
+await extractCompounds({
+  store: tokenizationStore,
+  models: defaultModels(),
+  youtubeurl: "diagnostic://roosevelt",
+  clipLanguage: "English",
+  translationLanguage: { id: null, iso_name: "he", english_name: "Hebrew" },
+  baseDelayMs: 1,
+});
+const learnerPhrases = tokenizationStore.data.phrases!;
+
 for (const [name, prompt] of variants) {
-  const lines = args.sample === "roosevelt"
-    ? ROOSEVELT_LINES
-    : args.sample === "edge-cases"
-    ? EDGE_CASE_LINES
-    : [...ROOSEVELT_LINES, ...EDGE_CASE_LINES];
-  const phrases = phrasesFor(lines);
+  const phrases = structuredClone(learnerPhrases);
   const data: ProgressData = { phrases, lyric_lines: phrases.map((phrase) => phrase.text_l1) };
   const store = new ProgressStore(data, new MemorySink());
   const ctx: PipelineContext = {
@@ -78,7 +94,7 @@ for (const [name, prompt] of variants) {
 
   console.log(`\n=== ${name} prompt ===`);
   const translated = store.data.translations!.he.phrases;
-  phrases.forEach((phrase, phraseIndex) => {
+  store.data.phrases!.forEach((phrase, phraseIndex) => {
     console.log(phrase.text_l1);
     phrase.words.forEach((word, wordIndex) => {
       const gloss = translated[phraseIndex].words[wordIndex]?.replace(/\s*\[[a-z_]+\]\s*$/i, "");
@@ -91,10 +107,7 @@ for (const [name, prompt] of variants) {
 function phrasesFor(lines: string[]): Phrase[] {
   return lines.map((rawLine, index) => {
     const line = capitalizeSentence(rawLine);
-    const words = mergeMultiWordTokens(
-      line.split(/\s+/u).map((text) => ({ text })),
-      "English",
-    );
+    const words = line.split(/\s+/u).map((text) => ({ text }));
     return {
       id: `phrase_${index + 1}`,
       text_l1: words.map((word) => word.text).join(" "),

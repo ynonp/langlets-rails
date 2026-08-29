@@ -251,7 +251,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     )
   end
 
-  # Enough of a blob for complete_for?(English): all six neutral steps done and
+  # Enough of a blob for complete_for?(English): all seven neutral steps done and
   # the English payload finalized by the pipeline's finalize_translation step.
   def complete_data
     {

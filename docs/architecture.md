@@ -1027,15 +1027,27 @@ even a passing run would have yielded one untimed phrase.)
 
 **ElevenLabs' tokenization is not the pipeline's.** It splits and merges the text it is given as it
 likes — `don't` can come back as `don` + `'t`, a parenthetical can vanish, a script without word
-spaces is split per character. The transcript's whitespace tokens are the base vocabulary units,
-then `learnerTokens.ts` greedily merges language-specific dictionary entries before `add_lessons`
-plans semantic lines. The English dictionary currently contains only `The United States`. A merged
-entry is one clickable learner token and retains the first source word's start and the last source
-word's end. This merge must happen before line planning so the model's boundary counts and the
-materialized phrase word arrays use the same units. Apart from those explicit entries, the
-transcript's tokens are what `add_lessons`
-indexes into and what `add_token_translations` turns into one clickable word each, so a provider
-split would ship `'t` as a vocabulary item. `force_alignment` therefore takes from ElevenLabs only
+spaces is split per character. The transcript's whitespace tokens are the base units that
+`add_lessons` indexes while planning semantic lines. After those lines are materialized,
+`extract_compounds` sends their complete text to Gemini 3.5 Flash Lite and asks for the complete
+learner-token sequence as a JSON string array. Each source word normally remains one array item;
+adjacent words used as a compound noun, conventional title, fixed expression, phrasal verb, idiom,
+or multi-word proper name share one item. The prompt includes a worked example in the clip language
+(Arabic, English, French, German, Hebrew, Russian, or Spanish, with English as the fallback) so the
+model sees the relevant script and language-specific compound structure. Because the model returns
+every occurrence, the same text can remain separate in one context and merge in another.
+
+The response is accepted only when a deterministic cursor can reconstruct every source word exactly
+once and in order, with no spelling or punctuation change and no merged item crossing a semantic
+line. A merged word stored in `phrases[*].words` keeps the first component's start timestamp and
+character index and the last component's end timestamp and character index. The explicit
+`learner_tokenization_version` marker distinguishes a successful no-compound result from a step that
+never ran. Invalid output is retried once, then logged without creating a terminal `data.errors`
+entry and the unchanged whitespace tokens are retained, so this quality improvement cannot block an
+otherwise valid course. Existing/resumed blobs with translation
+payloads skip the step: those arrays already mirror their old word boundaries positionally and
+cannot safely be retokenized. `add_token_translations` subsequently turns each resulting learner
+token into one clickable vocabulary item. `force_alignment` therefore takes from ElevenLabs only
 what it alone can give — timings — exactly as the Gemini fallback already does, and keeps the
 transcript's tokens. Reconciliation runs over a stream of timed *characters* (each aligned word's
 span spread evenly across its own letters), so one transcript word drawing from several aligned words
@@ -1136,7 +1148,7 @@ run takes, and one process can have any number of imports in flight. See
 "Import lifecycle" below for what finishes them.
 
 There is no in-process fallback. `CreateSongProgress#create_data`,
-`#add_translation` and the six `CreateSong::*` step concerns were removed when
+`#add_translation` and the former `CreateSong::*` step concerns were removed when
 the pipeline became the only implementation — the model is now the store and
 the guard predicates, not the worker. `CreateSong::ProgressReporting` remains,
 because the percent is derived from `data`, which the pipeline fills in the
@@ -2313,7 +2325,7 @@ is built around that fact. Four pieces, each with one job:
 
 Completion is a **property of the blob, re-derived**, not an event to subscribe
 to. `CreateSongProgress#complete_for?(language)` is the question, and it has two
-halves: `pipeline_complete?` (all six steps done — cheap, pure digs into `data`)
+halves: `pipeline_complete?` (all seven steps done — cheap, pure digs into `data`)
 and `translation_finalized?(language)`. The second half matters because a record
 can be complete for Hebrew and still owe French; the pipeline fills **one
 language per run**.

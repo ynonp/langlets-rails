@@ -183,3 +183,23 @@ Deno.test("lesson guards mirror the Rails predicates", () => {
   assert(store.lessonsDone());
   assert(store.lessonsRated());
 });
+
+Deno.test("compound tokenization guard preserves translated legacy blobs", () => {
+  const sink = new MemorySink();
+  assertFalse(new ProgressStore({}, sink).compoundTokenizationDone());
+  assert(
+    new ProgressStore({ learner_tokenization_version: 1 }, sink).compoundTokenizationDone(),
+  );
+  assert(
+    new ProgressStore({
+      translations: {
+        he: {
+          language_id: 3,
+          language_name: "Hebrew",
+          phrases: [],
+          lessons: null,
+        },
+      },
+    }, sink).compoundTokenizationDone(),
+  );
+});

@@ -10,7 +10,7 @@ import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
 import { addLessonsPrompt } from "../prompts/addLessons.ts";
 import { withRetries } from "../retry.ts";
-import { capitalizeSentence, countLearnerTokens, mergeMultiWordTokens } from "../learnerTokens.ts";
+import { capitalizeSentence, countLearnerTokens } from "../learnerTokens.ts";
 
 // One initial call plus one retry.
 const MAX_RETRIES = 1;
@@ -67,10 +67,7 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
       };
     })
   );
-  // Dictionary expressions become learner tokens before the model chooses
-  // semantic line boundaries. Greedy matching prevents a longer expression
-  // from being split into smaller dictionary entries later.
-  const words = mergeMultiWordTokens(alignedWords, ctx.clipLanguage);
+  const words = alignedWords;
   if (words.length === 0) throw new Error("No aligned transcript words to segment");
   const userContent = words.map((word) => word.text).join(" ");
 

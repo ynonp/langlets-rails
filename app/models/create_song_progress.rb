@@ -41,7 +41,7 @@ class CreateSongProgress < ApplicationRecord
     language.present? && translation_payload(language).to_h["lessons"].present?
   end
 
-  # The language-neutral half: all six steps done for *some* language. Cheap
+  # The language-neutral half: all seven steps done for *some* language. Cheap
   # (every predicate is a dig into data already in memory), which is why the
   # callback controller gates on this before asking the costlier questions.
   def pipeline_complete? = current_step.nil?

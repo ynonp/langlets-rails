@@ -8,7 +8,8 @@ mutation is streamed back to a callback URL the trigger request provides.
 
 ## The workflow and how it parallelizes
 
-Semantic segmentation is the final required transcription stage; downstream work fans out after it:
+Semantic segmentation and contextual learner tokenization are the final required neutral stages;
+downstream work fans out after them:
 
 ```
 extract_lyrics                              (Supadata native + downloaded-audio ElevenLabs)
@@ -18,6 +19,8 @@ force_alignment                             (ElevenLabs alignment, Gemini timest
                                             (reuses timings for ElevenLabs-only transcripts)
      │
 add_lessons                                 (semantic lines + lesson hierarchy)
+     │
+extract_compounds                           (contextual compounds and fixed expressions)
      │
      ├── add_token_translations             (4 chunks in flight)
      ├── rate_lessons                       (lesson quality)
@@ -61,6 +64,21 @@ the model to modify the transcript. It atomically persists `lyric_lines`, `phras
 in the clip language for the seven configured languages, falling back to English for unknown
 languages.
 
+`extract_compounds` then receives the complete lesson text and returns the complete learner-token
+sequence as a JSON string array. A one-word item preserves a source word; an item containing spaces
+groups that specific occurrence into one learner token. This occurrence-level output lets identical
+text remain separate in one context and merge in another. The prompt selects a worked example in the
+clip language for Arabic, English, French, German, Hebrew, Russian, and Spanish, and falls back to
+English for other languages. Deterministic code walks the original phrase words in order and accepts
+the response only if every source word is reproduced exactly once, with unchanged spelling and
+punctuation, and no group crosses a lesson-line boundary. A merged token keeps the first word's start
+timestamp/index and the last word's end timestamp/index. The resulting arrays replace
+`data.phrases[*].words`, while `learner_tokenization_version` records completion even when no words
+were merged. After one retry, invalid output is logged and falls back to the original word arrays
+without writing the terminal `data.errors` collection. Blobs that already contain a translation
+payload are treated as legacy-complete because those translations positionally mirror their existing
+word arrays.
+
 Sentence translation follows the same pattern: it reads `lyric_lines` and persists
 `translation_lines.<iso>`, then copies those lines into the stable
 `translations.<iso>.phrases.<i>.text` payload slots. Its 1:1 line mapping is carried by explicit
@@ -72,13 +90,14 @@ chunk still in the prompt as context, so a one-word fragment is never translated
 source lines are filled in place and never requested. The step fails only when lines are still
 missing after the third attempt, and the failure names them.
 
-Token translation begins after semantic segmentation, alongside lesson rating and sentence
+Token translation begins after contextual learner tokenization, alongside lesson rating and sentence
 translation.
 
 The fan-out is safe because the branches write **disjoint keys** of `CreateSongProgress.data`:
 
-- semantic segmentation writes `lyric_lines`, `phrases`, `lesson_outline`, and `lessons` before the
-  fan-out; lesson rating then writes `lesson_ratings`;
+- semantic segmentation writes `lyric_lines`, `phrases`, `lesson_outline`, and `lessons`, then
+  compound extraction replaces only `phrases[*].words` and stamps `learner_tokenization_version`
+  before the fan-out; lesson rating then writes `lesson_ratings`;
 - early sentence translation writes `translation_lines.<iso>`, then the join writes
   `translations.<iso>.phrases.<i>.text`;
 - `add_token_translations` writes `translations.<iso>.phrases.<i>.words`.
@@ -107,7 +126,7 @@ one branch failing never discards another branch's completed — and already per
 | -------------------------- | ----------------------------------------------- | ------------------------------------------------------ |
 | extract_lyrics             | Dual STT + reconciliation / YouTube fallback    | Supadata + ElevenLabs + GPT-5.6 Sol / Gemini 2.5 Flash |
 | force_alignment            | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash                          |
-| add_lessons / rate_lessons | `gemini-3.5-flash-lite`                         | Google Generative AI                                   |
+| add_lessons / extract_compounds / rate_lessons | `gemini-3.5-flash-lite`              | Google Generative AI                                   |
 | translate                  | `deepseek-v4-pro:cloud`                         | Ollama cloud via `@ai-sdk/openai-compatible`           |
 | add_token_translations     | `deepseek-v4-pro:cloud`                         | Ollama cloud, 200-line chunks                          |
 
@@ -149,6 +168,8 @@ only what failed:
 
 - `extract_lyrics` keeps `extract_lyrics_in_progress` set until coverage is verified — an
   interrupted transcription reruns, a finished one is skipped.
+- `extract_compounds` stamps `learner_tokenization_version`; an existing translation payload also
+  satisfies its guard for compatibility with positional word translations from older runs.
 - `add_token_translations` saves per **chunk** (whole phrases); a rerun only requests phrases whose
   `words` are still incomplete.
 - `translate` / `add_lessons` / `rate_lessons` are atomic: done or rerun.

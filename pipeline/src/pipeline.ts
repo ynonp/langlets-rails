@@ -7,6 +7,8 @@
 //        │
 //   add_lessons                              (semantic lines + lesson hierarchy)
 //        │
+//   extract_compounds                        (contextual learner-token grouping)
+//        │
 //        ├── add_token_translations
 //        ├── rate_lessons
 //        └── translate
@@ -33,6 +35,7 @@ import { message } from "./retry.ts";
 import { extractLyrics } from "./steps/extractLyrics.ts";
 import { forceAlignment } from "./steps/forceAlignment.ts";
 import { addLessons, materializeLessons } from "./steps/addLessons.ts";
+import { extractCompounds } from "./steps/extractCompounds.ts";
 import { rateLessons } from "./steps/rateLessons.ts";
 import { translate } from "./steps/translate.ts";
 import { addTokenTranslations } from "./steps/addTokenTranslations.ts";
@@ -121,6 +124,13 @@ export async function runPipeline(
       failed.lessons = message(error);
       return result(store, failed);
     }
+  }
+
+  // Learner-token boundaries must be final before translation payloads create
+  // one positional translation slot per word. Old blobs that already have a
+  // translation payload are treated as legacy-complete by the guard.
+  if (!store.compoundTokenizationDone()) {
+    await extractCompounds(ctx);
   }
 
   const preparation: Record<string, () => Promise<void>> = {

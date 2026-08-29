@@ -58,6 +58,15 @@ export class ProgressStore {
     return present(this.data.lesson_outline);
   }
 
+  compoundTokenizationDone(): boolean {
+    if (this.data.learner_tokenization_version === 1) return true;
+
+    // Translation word arrays are positional mirrors of phrases[*].words.
+    // Blobs created before this step existed must retain their old tokenization
+    // or those already-persisted positions would silently point at new words.
+    return Object.keys(this.data.translations ?? {}).length > 0;
+  }
+
   lessonsRated(): boolean {
     return (this.data.lesson_ratings?.length ?? 0) > 0;
   }

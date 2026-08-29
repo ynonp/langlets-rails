@@ -33,6 +33,7 @@ function payload(data: TriggerPayload["data"] = {}): TriggerPayload {
 
 interface Mocks {
   lessons: ReturnType<typeof queuedModel>;
+  compounds: ReturnType<typeof queuedModel>;
   rate: ReturnType<typeof queuedModel>;
   translate: ReturnType<typeof queuedModel>;
   tokens: ReturnType<typeof queuedModel>;
@@ -43,6 +44,7 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
     lessons: queuedModel([{
       lessons: [{ title: "Lesson", lines: ["Line 1", "Line 2"] }],
     }]),
+    compounds: queuedModel([["Line", "1", "Line", "2"]]),
     rate: queuedModel([RATINGS]),
     translate: queuedModel(["1. שורה 1\n2. שורה 2"]),
     tokens: queuedModel([
@@ -58,6 +60,7 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
       reconcileTranscripts: unusedModel().model,
       forceAlignmentFallback: unusedModel().model,
       addLessons: mocks.lessons.model,
+      extractCompounds: mocks.compounds.model,
       rateLessons: mocks.rate.model,
       translate: mocks.translate.model,
       tokenTranslations: mocks.tokens.model,
@@ -94,6 +97,7 @@ Deno.test("a fresh dual-STT run reconciles and finalizes translation", async () 
   assertEquals(result.data.video_length_seconds, 13);
   assertEquals(result.data.lessons, "# Lesson\n00:00.00 Line 1\n00:10.00 Line 2");
   assertEquals(result.data.format_version, 2);
+  assertEquals(result.data.learner_tokenization_version, 1);
   assertEquals(result.data.translations!.he.phrases[0], {
     text: "שורה 1",
     words: ["ת1 [noun]", "ת2 [numeral]"],
@@ -138,6 +142,7 @@ Deno.test("rerunning saved data retries only the failed translation", async () =
 
   const second = happyMocks({
     lessons: unusedModel(),
+    compounds: unusedModel(),
     rate: unusedModel(),
     tokens: unusedModel(),
   });
@@ -185,7 +190,7 @@ Deno.test("an interrupted transcription reruns Supadata despite partial phrases"
   assertEquals(result.data.phrases!.length, 2);
 });
 
-Deno.test("without a translation language only lessons run after transcription", async () => {
+Deno.test("without a translation language the neutral lesson and compound steps still run", async () => {
   const { mocks, models } = happyMocks({ translate: unusedModel(), tokens: unusedModel() });
   const result = await runPipeline({ ...payload(), translation_language: null }, {
     models,
@@ -198,6 +203,8 @@ Deno.test("without a translation language only lessons run after transcription",
 
   assert(result.ok);
   assert(result.data.lessons);
+  assertEquals(result.data.learner_tokenization_version, 1);
+  assertEquals(mocks.compounds.calls(), 1);
   assertEquals(result.data.translations, undefined);
   assertEquals(mocks.translate.calls(), 0);
   assertEquals(mocks.tokens.calls(), 0);

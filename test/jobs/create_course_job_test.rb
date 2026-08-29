@@ -152,7 +152,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
   end
 
   # Enough of a blob for CreateSongProgress#complete_for?(English) to be true:
-  # all six neutral steps done and the language payload finalized.
+  # all seven neutral steps done and the language payload finalized.
   def complete_data
     {
       "phrases" => [ { "text_l1" => "hola", "timestamp" => "00:00.00", "words" => [ { "word" => "hola" } ] } ],

@@ -60,6 +60,9 @@ export interface PipelineError {
 
 export interface ProgressData {
   format_version?: number;
+  // Version of the contextual learner-token pass. Presence means the pass ran
+  // even when the model found no compounds and the word arrays stayed intact.
+  learner_tokenization_version?: number;
   phrases?: Phrase[];
   // Before lesson generation this contains one continuous aligned transcript.
   // Afterwards it contains the model-selected semantic comprehension lines.

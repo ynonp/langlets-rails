@@ -85,7 +85,7 @@ class ImportRequest < ApplicationRecord
     progress_percent
   end
 
-  # "Transcribing · step 1 of 6" for the Queue card. Read from the denormalised
+  # "Transcribing · step 1 of 7" for the Queue card. Read from the denormalised
   # column, never derived here: see the migration for why.
   #
   # Rows that predate the column, and ones whose pipeline hasn't reported a stage

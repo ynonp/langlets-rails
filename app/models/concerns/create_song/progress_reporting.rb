@@ -1,8 +1,8 @@
 module CreateSong
   # Turns the pipeline's state into a single 0-100 number for the Queue screen.
   #
-  # Derived from `data` rather than from the `step` column: create_data already
-  # guards each of its six steps on the contents of `data`, so a data-derived
+  # Derived from `data` rather than from the `step` column: the pipeline guards
+  # each of its seven steps on the contents of `data`, so a data-derived
   # percent stays honest across resumes and partial runs. A parallel counter would
   # be a second source of truth, and it would drift.
   module ProgressReporting
@@ -12,10 +12,11 @@ module CreateSong
     # multi-turn transcription of the whole video.
     STEP_WEIGHTS = {
       extract_lyrics: 45,
-      translate: 12,
-      add_token_translation: 20,
       add_lessons: 8,
+      extract_compounds: 3,
       rate_lessons: 5,
+      translate: 12,
+      add_token_translation: 17,
       add_similar_sound: 10
     }.freeze
 
@@ -24,10 +25,11 @@ module CreateSong
     # nothing to someone who just spent a credit.
     STEP_LABELS = {
       extract_lyrics: "Transcribing",
+      add_lessons: "Writing lessons",
+      extract_compounds: "Finding expressions",
+      rate_lessons: "Checking lessons",
       translate: "Translating",
       add_token_translation: "Building vocab cards",
-      add_lessons: "Writing lessons",
-      rate_lessons: "Checking lessons",
       add_similar_sound: "Finding sound-alikes"
     }.freeze
 
@@ -45,7 +47,7 @@ module CreateSong
       STEP_WEIGHTS.keys.find { |step| !step_done?(step) }
     end
 
-    # "Transcribing · step 1 of 6". Nil when there's nothing left to do; the
+    # "Transcribing · step 1 of 7". Nil when there's nothing left to do; the
     # caller decides what to show then, because "done" is the job's call.
     def current_step_label
       step = current_step
@@ -84,14 +86,18 @@ module CreateSong
 
       case step
       when :extract_lyrics        then progress_data["phrases"].present? && !progress_data["extract_lyrics_in_progress"]
+      when :add_lessons           then progress_data["lessons"].present?
+      when :extract_compounds
+        progress_data["learner_tokenization_version"].to_i >= 1 ||
+          progress_data["translations"].present? ||
+          progress_data.dig("phrases", 0, "words", 0, "translation").present?
+      when :rate_lessons          then lessons_rated?
       when :translate
         progress_data.dig("phrases", 0, "text_l2").present? ||
           progress_data["translations"].to_h.values.any? { |v| v.dig("phrases", 0, "text").present? }
       when :add_token_translation
         progress_data.dig("phrases", 0, "words", 0, "translation").present? ||
           progress_data["translations"].to_h.values.any? { |v| v.dig("phrases", 0, "words", 0).present? }
-      when :add_lessons           then progress_data["lessons"].present?
-      when :rate_lessons          then lessons_rated?
       when :add_similar_sound     then similar_sounds_complete?
       else false
       end

@@ -111,9 +111,19 @@ module CreateSong
     test "step_done? mirrors create_data's guards" do
       @progress.data = finished_data
 
-      %i[extract_lyrics translate add_token_translation add_lessons rate_lessons add_similar_sound].each do |step|
+      %i[extract_lyrics add_lessons extract_compounds rate_lessons translate add_token_translation add_similar_sound].each do |step|
         assert @progress.step_done?(step), "expected #{step} to be done"
       end
+    end
+
+    test "translated legacy data satisfies compound extraction without a version marker" do
+      @progress.data = {
+        "translations" => {
+          "en" => { "phrases" => [ { "words" => [ "chief of staff [noun]" ] } ] }
+        }
+      }
+
+      assert @progress.step_done?(:extract_compounds)
     end
 
     test "tolerates nil data" do
@@ -132,7 +142,10 @@ module CreateSong
         "phrases" => [ { "timestamp" => "00:00", "timestamp_end" => "00:20" } ]
       }
       transcribed = transcribing.merge("extract_lyrics_in_progress" => false)
-      translated  = transcribed.merge(
+      lessons = transcribed.merge("lessons" => [ { "title" => "Lesson 1" } ])
+      compounded = lessons.merge("learner_tokenization_version" => 1)
+      rated = compounded.merge("lesson_ratings" => [ 1 ])
+      translated  = rated.merge(
         "phrases" => [ { "timestamp" => "00:00", "timestamp_end" => "00:20",
                          "text_l1" => "hola", "text_l2" => "hello" } ]
       )
@@ -141,18 +154,17 @@ module CreateSong
                          "text_l1" => "hola", "text_l2" => "hello",
                          "words" => [ { "text" => "hola", "translation" => "hello" } ] } ]
       )
-      lessons  = tokenised.merge("lessons" => [ { "title" => "Lesson 1" } ])
-      rated    = lessons.merge("lesson_ratings" => [ 1 ])
-      sounded  = rated.merge("similar_sounds" => "hola [ola]")
+      sounded  = tokenised.merge("similar_sounds" => "hola [ola]")
 
       [
         [ "empty",        {} ],
         [ "transcribing", transcribing ],
         [ "transcribed",  transcribed ],
+        [ "lessons",      lessons ],
+        [ "compounded",   compounded ],
+        [ "rated",        rated ],
         [ "translated",   translated ],
         [ "tokenised",    tokenised ],
-        [ "lessons",      lessons ],
-        [ "rated",        rated ],
         [ "similar",      sounded ]
       ]
     end

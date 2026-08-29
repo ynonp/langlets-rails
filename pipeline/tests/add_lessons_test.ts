@@ -69,7 +69,7 @@ Deno.test("addLessons creates semantic phrases and both lesson representations",
   assertEquals(model.calls(), 1);
 });
 
-Deno.test("addLessons capitalizes line starts and greedily merges dictionary tokens", async () => {
+Deno.test("addLessons capitalizes line starts without changing learner token boundaries", async () => {
   const model = queuedModel([{
     lessons: [{ title: "Peace", lines: ["the United States was at peace"] }],
   }]);
@@ -96,15 +96,17 @@ Deno.test("addLessons capitalizes line starts and greedily merges dictionary tok
 
   assertEquals(store.data.lyric_lines, ["The United States was at peace"]);
   assertEquals(store.data.phrases![0].words.map((word) => word.text), [
-    "The United States",
+    "The",
+    "United",
+    "States",
     "was",
     "at",
     "peace",
   ]);
   assertEquals(store.data.phrases![0].words[0].timestamp, "00:01.00");
-  assertEquals(store.data.phrases![0].words[0].timestamp_end, "00:04.00");
+  assertEquals(store.data.phrases![0].words[0].timestamp_end, "00:02.00");
   assertEquals(store.data.phrases![0].words[0].l1_start_index, 0);
-  assertEquals(store.data.phrases![0].words[0].l1_end_index, 16);
+  assertEquals(store.data.phrases![0].words[0].l1_end_index, 2);
 });
 
 Deno.test("addLessons retries invalid structured output, then succeeds", async () => {

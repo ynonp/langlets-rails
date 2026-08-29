@@ -187,6 +187,7 @@ export function makeCtx(options: {
     reconcileTranscripts: unusedModel().model,
     forceAlignmentFallback: unusedModel().model,
     addLessons: unusedModel().model,
+    extractCompounds: unusedModel().model,
     rateLessons: unusedModel().model,
     translate: unusedModel().model,
     tokenTranslations: unusedModel().model,
