@@ -1,7 +1,5 @@
 module Activities
   class TokensChainActivity < Activity
-    include ActivityWithTokens
-
     def activity_params
       activity_phrase_tokens = phrase_tokens
         .includes(:localized_translation, phrase: [ :l1, :localized_translation ], l1_audio_attachment: :blob)
@@ -27,4 +25,3 @@ module Activities
     end
   end
 end
-

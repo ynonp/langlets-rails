@@ -1,9 +1,9 @@
 module Activities
   class WordOrderActivity < Activity
-    include ActivityWithTokens
+    include ActivityWithMediaPlayback
 
     def activity_params
-      phrases_data_for_activity = phrases_with_calculated_end_timestamps.map do |phrase|
+      phrases_data_for_activity = phrases_with_playback_boundaries.map do |phrase|
         {
           l2_text: phrase.text_l2,
           l1_text: phrase.text_l1,

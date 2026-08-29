@@ -1347,7 +1347,9 @@ download is verified before it counts:
   - **Helper Methods**:
     - `text_l1_content`/`text_l2_content`: Get default script content
     - `text_l1_for_script`/`text_l2_for_script`: Get content for specific script
-    - `with_calculated_end_timestamps`: Calculate phrase durations
+    - `Medium#phrases_with_playback_boundaries`: Construct selected media
+      phrases with playback end timestamps derived from the complete medium
+      timeline
 - **Relationships**:
   - Belongs either to a playable Medium or directly to the User who created a
     custom vocabulary phrase; the database enforces exactly one source
@@ -1418,6 +1420,17 @@ download is verified before it counts:
   - Belongs to Lesson and User
   - Many-to-many with Phrases (through ActivityPhrase)
   - Many-to-many with TokenTranslations (through ActivityTokenTranslation)
+
+Activities do not have a global single-medium invariant. Vocabulary activities
+such as flashcards and token chains may combine tokens whose phrases come from
+multiple media or from user-created vocabulary. Activities whose behavior
+requires synchronized playback instead include `ActivityWithMediaPlayback`.
+That concern constructs the activity's selected phrases through the lesson's
+`Medium`, so a missing medium or a foreign/custom phrase id fails explicitly.
+The medium calculates each selected phrase's end from its complete timeline;
+an unselected intervening phrase therefore still ends the preceding selected
+phrase. Ordinary phrase ordering and rendering preloads remain on `Activity`
+and are not modeled as a separate capability.
 
 #### Activity Types:
 - **ReadTranslatedActivity**: A static "before you watch" screen showing only the lesson's L2 (translated) phrase text, no L1/video/audio. Its sole purpose is priming comprehension before `WatchVideoActivity`. The instruction and phrases share one `min-h-0` overflow region; keeping them in the same flex item prevents WKWebView from collapsing a separate phrase scroller while leaving the surrounding native lesson chrome visible. It has a single "Next" button; a small Stimulus controller (`read_translated_activity_controller.js`) dispatches `activity:completed` when that button is clicked, which is caught by the ancestor `progress-tracker` controller and reported via `sendBeacon` to `/progress` exactly like every other activity type — there is no scoring, so completion is simply "reached and clicked Next." `CourseBuilder::BuildSong` inserts one at `order: 1`, immediately before `WatchVideoActivity`, in every lesson that gets a `WatchVideoActivity` (lesson 1, lessons 2-3, and lessons 4+) — never in review lessons, whose `WatchVideoActivity` (see below) needs no priming screen.

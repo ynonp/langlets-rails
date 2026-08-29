@@ -54,7 +54,10 @@ class Activity < ApplicationRecord
   end
 
   def ordered_phrases
-    @ordered_phrases ||= phrases.order(:timestamp).to_a
+    @ordered_phrases ||= phrases
+      .ordered_by_timestamp
+      .includes(:localized_translation, phrase_tokens: [ :localized_translation, { l1_audio_attachment: :blob } ])
+      .to_a
   end
 
   def video_params

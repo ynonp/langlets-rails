@@ -55,6 +55,38 @@ class MediumTest < ActiveSupport::TestCase
     Current.reset
   end
 
+  test "playback boundaries use the complete medium timeline" do
+    medium = Medium.create!(url: URL, language: @spanish)
+    first = Phrase.create!(medium:, l1: @spanish, text_l1: "uno", timestamp: "00:01")
+    Phrase.create!(medium:, l1: @spanish, text_l1: "dos", timestamp: "00:03")
+    last = Phrase.create!(medium:, l1: @spanish, text_l1: "tres", timestamp: "00:07")
+
+    selected = medium.phrases_with_playback_boundaries(phrase_ids: [ last.id, first.id ])
+
+    assert_equal [ first, last ], selected
+    assert_equal "00:03", selected.first.calculated_end_timestamp
+    assert_equal "00:12.00", selected.last.calculated_end_timestamp
+  end
+
+  test "playback boundaries reject phrases outside the medium" do
+    medium = Medium.create!(url: URL, language: @spanish)
+    other_medium = Medium.create!(url: "https://www.youtube.com/watch?v=boundaries2", language: @spanish)
+    foreign_phrase = Phrase.create!(medium: other_medium, l1: @spanish, text_l1: "otro", timestamp: "00:01")
+    user = User.create!(
+      email: "custom-playback-phrase@example.com",
+      password: "password123",
+      confirmed_at: Time.zone.now
+    )
+    custom_phrase = Phrase.create!(user:, l1: @spanish, text_l1: "personalizado")
+
+    assert_raises(ActiveRecord::RecordNotFound) do
+      medium.phrases_with_playback_boundaries(phrase_ids: [ foreign_phrase.id ])
+    end
+    assert_raises(ActiveRecord::RecordNotFound) do
+      medium.phrases_with_playback_boundaries(phrase_ids: [ custom_phrase.id ])
+    end
+  end
+
   test "destroying a medium destroys its lessons, phrases, and phrase resources" do
     user = User.create!(
       email: "medium-destroy@example.com",
