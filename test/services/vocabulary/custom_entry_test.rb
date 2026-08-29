@@ -105,20 +105,36 @@ module Vocabulary
     end
 
     test "a blank phrase, a missing pick and a blank translation are each refused" do
-      assert_raises(CustomEntry::Error) { add(sentence: "   ", range: 0..0) }
-      assert_raises(CustomEntry::Error) { add(sentence: "no queda tiempo", range: nil) }
-      assert_raises(CustomEntry::Error) { add(sentence: "no queda tiempo", range: 2..2, translation: " ") }
+      sentence_error = assert_raises(CustomEntry::Error) { add(sentence: "   ", range: 0..0) }
+      selection_error = assert_raises(CustomEntry::Error) { add(sentence: "no queda tiempo", range: nil) }
+      translation_error = assert_raises(CustomEntry::Error) do
+        add(sentence: "no queda tiempo", range: 2..2, translation: " ")
+      end
+
+      assert_equal :sentence_required, sentence_error.code
+      assert_equal :selection_required, selection_error.code
+      assert_equal :translation_required, translation_error.code
       assert_equal 0, @user.phrase_token_users.count
     end
 
     test "a pick that lands entirely on punctuation is refused" do
-      assert_raises(CustomEntry::Error) { add(sentence: "no queda — tiempo", range: 2..2) }
+      error = assert_raises(CustomEntry::Error) { add(sentence: "no queda — tiempo", range: 2..2) }
+
+      assert_equal :selection_required, error.code
       assert_equal 0, @user.phrase_token_users.count
     end
 
     test "a pick past the end of the phrase is refused rather than saved wrong" do
-      assert_raises(CustomEntry::Error) { add(sentence: "no queda tiempo", range: 9..9) }
+      assert_raises(CustomEntry::InvalidState) { add(sentence: "no queda tiempo", range: 9..9) }
       assert_equal 0, @user.phrase_token_users.count
+    end
+
+    test "missing language context is an internal failure, not a form error" do
+      assert_raises(CustomEntry::InvalidState) do
+        CustomEntry.new(user: @user, sentence: "no queda tiempo", language: nil,
+                        token_range: 2..2, translation: "time",
+                        translation_language: @english).call
+      end
     end
   end
 end

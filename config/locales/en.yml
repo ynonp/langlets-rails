@@ -317,6 +317,11 @@ en:
       new:
         title: "Add a word"
         cancel: "Cancel"
+        errors:
+          sentence_required: "Type the phrase you met the word in."
+          selection_required: "Pick the word you are learning."
+          translation_required: "Add what the word means here."
+          save_failed: "That word could not be saved."
         lead: "Vocabulary always lives in a phrase"
         body: "Type the sentence you met the word in, save it, then pick the word. That is how “No time left” and “turn left here” stay two separate entries."
         phrase: "Phrase"

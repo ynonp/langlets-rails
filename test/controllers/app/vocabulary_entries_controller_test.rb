@@ -237,7 +237,25 @@ module App
       end
 
       assert_response :unprocessable_entity
-      assert_select "[data-testid=vocabulary-add-error]"
+      assert_select "[data-testid=vocabulary-add-error]", text: I18n.t!(
+        "app.vocabulary_entries.new.errors.translation_required"
+      )
+    end
+
+    test "a malformed selection shows the generic localized save error" do
+      Current.translation_language = @english
+
+      assert_no_difference -> { PhraseTokenUser.count } do
+        post "/app/vocabulary", headers: NATIVE, params: {
+          sentence: "no queda tiempo", language: @spanish.iso_name,
+          token_start: 9, token_end: 9, translation: "time"
+        }
+      end
+
+      assert_response :unprocessable_entity
+      assert_select "[data-testid=vocabulary-add-error]", text: I18n.t!(
+        "app.vocabulary_entries.new.errors.save_failed"
+      )
     end
 
     test "the add screen renders" do

@@ -96,15 +96,21 @@ module App
       ).call
 
       redirect_to vocabulary_index_path, notice: "“#{params[:word].presence || 'Word'}” added"
-    rescue Vocabulary::CustomEntry::Error, ActiveRecord::RecordInvalid => error
-      @error = error.is_a?(Vocabulary::CustomEntry::Error) ? error.message : "That word could not be saved."
-      render :new, status: :unprocessable_entity
+    rescue Vocabulary::CustomEntry::Error => error
+      render_create_error(I18n.t!(error.code, scope: "app.vocabulary_entries.new.errors"))
+    rescue Vocabulary::CustomEntry::InvalidState, ActiveRecord::RecordInvalid
+      render_create_error(I18n.t!("app.vocabulary_entries.new.errors.save_failed"))
     end
 
     private
 
     def vocabulary_index_path
       app_vocabulary_entries_path
+    end
+
+    def render_create_error(message)
+      @error = message
+      render :new, status: :unprocessable_entity
     end
 
     def set_entry
