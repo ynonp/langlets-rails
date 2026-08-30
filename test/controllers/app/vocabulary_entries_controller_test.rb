@@ -286,6 +286,17 @@ module App
       assert_select "[data-native-tabs]", false
     end
 
+    test "the web entry contains long source titles and sentences inside the card" do
+      source = "عنوان عربي طويل جداً " * 12
+      sentence = "هذه جملة عربية طويلة تحتوي على كلمات كثيرة " * 8
+      save_word(text: sentence, span: [ 0, 2 ], translation: "this", source_name: source)
+
+      get "/vocabulary", headers: WEB
+
+      assert_select "[data-testid=vocabulary-entry-source][dir=auto][class*='truncate']", text: source.strip
+      assert_select "[data-testid=vocabulary-entry] p[dir=auto][class*='break-words']"
+    end
+
     test "the native app still gets the native templates" do
       save_word(text: "no queda tiempo", span: [ 9, 14 ], translation: "time")
 

@@ -13,9 +13,9 @@
       <p class="mt-1 text-[15px] text-[#55503F]"><%= entry.translation %></p>
     </div>
 
-    <div class="flex shrink-0 items-center gap-3 text-xs font-semibold text-[#8A8170]">
+    <div class="flex min-w-0 max-w-full items-center gap-3 overflow-hidden text-xs font-semibold text-[#8A8170]">
       <% if entry.paused? %>
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-[#EFE7D8] px-2.5 py-1 text-[#6B6152]">
+        <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#EFE7D8] px-2.5 py-1 text-[#6B6152]">
           <span class="flex gap-[2px]" aria-hidden="true">
             <span class="block h-[9px] w-[2.5px] bg-[#6B6152]"></span>
             <span class="block h-[9px] w-[2.5px] bg-[#6B6152]"></span>
@@ -23,15 +23,17 @@
           <%= t("app.vocabulary_entries.paused") %>
         </span>
       <% end %>
-      <span class="uppercase tracking-[0.08em]"><%= localized_language_name(entry.source_language) %></span>
+      <span class="shrink-0 uppercase tracking-[0.08em]"><%= localized_language_name(entry.source_language) %></span>
       <% if entry.source.present? %>
-        <span class="h-1 w-1 rounded-full bg-[#CFC2AB]"></span>
-        <span class="normal-case tracking-normal"><%= entry.source %></span>
+        <span class="h-1 w-1 shrink-0 rounded-full bg-[#CFC2AB]"></span>
+        <span data-testid="vocabulary-entry-source"
+              class="min-w-0 truncate normal-case tracking-normal"
+              dir="auto"><%= entry.source %></span>
       <% end %>
     </div>
   </div>
 
-  <p class="mt-3 text-[15px] italic leading-relaxed text-[#716A5D]" dir="auto">
+  <p class="mt-3 break-words text-[15px] italic leading-relaxed text-[#716A5D]" dir="auto">
     <%= highlighted_vocabulary_context(entry, quoted: true,
                                        mark_class: "font-bold not-italic text-[#C4451C]") %>
   </p>
