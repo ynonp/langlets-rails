@@ -1,0 +1,10 @@
+<%= turbo_stream.append "vocabulary-entries" do %>
+  <% @visible.each do |entry| %>
+    <%= render "entry", entry: entry %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.replace "vocabulary-load-more" do %>
+  <%= render "load_more", page: @page, has_more: @has_more,
+                          filter: @filter, query: @query %>
+<% end %>

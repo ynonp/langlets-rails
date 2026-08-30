@@ -2648,7 +2648,26 @@ Home, mobile Library, Vocabulary, Create/Add-a-video and the Pro screens live un
 
 `PhraseTokenUser` is the vocabulary entry model and directly answers what the screens ask: the word, its translation, the phrase split into `before` / `mark` / `after`, the source language, and the source. The split comes from the token's own character offsets (`PhraseToken#l1_start_character_index`), not from re-finding the word in the text, and returns the whole phrase unmarked if those offsets no longer fit — a phrase repaired after the save degrades to plain text instead of raising. `PhraseTokenUser.with_sources` resolves every row's course name in one query rather than one per row; phrases with direct user ownership are labelled "Added by you".
 
-Filtering, searching and the paused/unpaused split all happen in memory over the user's saved rows. This is deliberate: a personal vocabulary is small, the list is loaded in full anyway to count the summary line, and it keeps the language chips honest — only languages the user actually has words in get one, and "Not practising" only appears once something is paused. A filter that can only ever return nothing is noise. The chips and the search box drive a `vocabulary-results` Turbo Frame; **each row therefore has to carry `data-turbo-frame="_top"`**, or Turbo tries to load the whole detail screen into that frame and renders "Content missing".
+Vocabulary lists are paginated in the database, newest first, at 50 rows per
+page. The first page renders normally; when another page exists, an explicit
+**Load more** link requests a Turbo Stream that appends the next cards to
+`vocabulary-entries` and replaces the link with the following page (or an empty
+wrapper after the last page). This shared native response is consumed unchanged
+by both iOS and Android. A plain HTML request for a later page still renders a
+usable page, so the control does not make the list depend on JavaScript.
+
+Filtering and searching are applied to the Active Record scope *before* its
+limit and offset. Search matches the phrase text (which necessarily contains the
+saved span) and the translation pinned by the `phrase_token_users.language_id`;
+it therefore searches the entire vocabulary rather than only the 50 cards
+already visible. Summary and paused counts remain counts of the full vocabulary,
+and language chips come from a separate distinct-language query, so only
+languages the user actually has words in get one and "Not practising" only
+appears once something is paused. A filter that can only ever return nothing is
+noise. The chips and search box drive a `vocabulary-results` Turbo Frame, while
+Load more uses Turbo Streams; **each row therefore has to carry
+`data-turbo-frame="_top"`**, or Turbo tries to load the whole detail screen into
+that frame and renders "Content missing".
 
 **Adding a custom word** (`PhraseTokenUser.create_custom!`) is one page, not a wizard: the sentence is typed and saved, and the word is then picked out of the saved phrase rather than typed again. `vocabulary_picker_controller.js` turns the sentence into tappable words and reports whitespace-token indexes.
 

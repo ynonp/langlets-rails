@@ -285,6 +285,7 @@ en:
         search_placeholder: "Search words, translations, phrases"
         search_label: "Search your vocabulary"
         search_button: "Search"
+        load_more: "Load more"
         word_count:
           one: "1 word"
           other: "%{count} words"

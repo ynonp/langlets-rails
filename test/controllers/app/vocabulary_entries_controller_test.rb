@@ -83,6 +83,57 @@ module App
       assert_match "tiempo", response.body
     end
 
+    test "load more paginates the full search on web, iOS and Android" do
+      51.times do |index|
+        suffix = index.zero? ? " oldest-only-needle" : ""
+        save_word(text: "palabra #{index}#{suffix}", span: [ 0, 6 ], translation: "meaning #{index}")
+      end
+
+      get "/vocabulary", headers: WEB
+      assert_select "[data-testid=vocabulary-entry]", 50
+      assert_select "[data-testid=vocabulary-load-more]", 1 do |links|
+        assert_equal "/vocabulary?page=2", links.first["href"]
+      end
+
+      get "/vocabulary", params: { page: 2 },
+          headers: WEB.merge("Accept" => "text/vnd.turbo-stream.html")
+      assert_response :success
+      assert_select "turbo-stream[action=append][target=vocabulary-entries]" do
+        assert_select "[data-testid=vocabulary-entry]", 1
+      end
+      assert_select "turbo-stream[action=replace][target=vocabulary-load-more]"
+      assert_select "[data-testid=vocabulary-load-more]", false
+
+      get "/vocabulary", params: { page: 2 }, headers: WEB
+      assert_response :success
+      assert_select "[data-testid=vocabulary-entry]", 1
+      assert_select "[data-testid=vocabulary-load-more]", false
+
+      {
+        "iOS" => "LangletsNative/1.0 (iOS)",
+        "Android" => "LangletsNative/1.0 (Android)"
+      }.each do |platform, user_agent|
+        headers = { "User-Agent" => user_agent }
+        get "/app/vocabulary", headers: headers
+        assert_response :success, "#{platform} initial vocabulary page"
+        assert_select "[data-testid=vocabulary-entry]", 50
+        assert_select "[data-testid=vocabulary-load-more]", 1 do |links|
+          assert_equal "/app/vocabulary?page=2", links.first["href"]
+        end
+
+        get "/app/vocabulary", params: { page: 2 },
+            headers: headers.merge("Accept" => "text/vnd.turbo-stream.html")
+        assert_response :success, "#{platform} Load more response"
+        assert_select "turbo-stream[action=append][target=vocabulary-entries]" do
+          assert_select "[data-testid=vocabulary-entry]", 1
+        end
+      end
+
+      get "/app/vocabulary", params: { q: "oldest-only-needle" }, headers: NATIVE
+      assert_select "[data-testid=vocabulary-entry]", count: 1, text: /oldest-only-needle/
+      assert_select "[data-testid=vocabulary-load-more]", false
+    end
+
     test "the not-practising filter is offered only once something is paused" do
       save_word(text: "no queda tiempo", span: [ 9, 14 ], translation: "time")
 

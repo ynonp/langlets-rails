@@ -9,6 +9,7 @@ module App
   # second asks first and leaves an undo behind.
   class VocabularyEntriesController < BaseController
     PAUSED_FILTER = "paused".freeze
+    PER_PAGE = 50
 
     # The native Vocabulary tab. VocabularyEntriesController inherits these
     # actions for the web route; each controller's own route and view prefix
@@ -18,12 +19,20 @@ module App
     def index
       @query = params[:q].to_s.strip
       @filter = params[:filter].presence
-      @entries = PhraseTokenUser.with_sources(saved_rows.to_a)
-      @languages = filter_languages(@entries)
-      @total_count = @entries.size
-      @paused_count = @entries.count(&:paused?)
+      @page = [ params[:page].to_i, 1 ].max
+      @languages = filter_languages
+      @total_count = saved_rows.count
+      @paused_count = saved_rows.paused.count
       @filter = nil unless filter_available?
-      @visible = filtered(@entries)
+
+      rows = filtered_rows.limit(PER_PAGE + 1).offset((@page - 1) * PER_PAGE).to_a
+      @has_more = rows.size > PER_PAGE
+      @visible = PhraseTokenUser.with_sources(rows.first(PER_PAGE))
+
+      respond_to do |format|
+        format.html
+        format.turbo_stream
+      end
     end
 
     def show
@@ -131,22 +140,34 @@ module App
       Range.new(*[ first_index, last_index ].minmax)
     end
 
-    def filtered(entries)
-      scoped = case @filter
-      when nil then entries
-      when PAUSED_FILTER then entries.select(&:paused?)
-      else entries.select { |entry| entry.source_language&.iso_name == @filter }
+    def filtered_rows
+      scope = saved_rows.joins(phrase_token: :phrase)
+      scope = case @filter
+      when nil then scope
+      when PAUSED_FILTER then scope.paused
+      else scope.where(phrases: { l1_id: @languages.find { |language| language.iso_name == @filter }&.id })
       end
-      return scoped if @query.blank?
+      return scope if @query.blank?
 
-      needle = @query.downcase
-      scoped.select { |entry| entry.searchable.include?(needle) }
+      pattern = "%#{ActiveRecord::Base.sanitize_sql_like(@query)}%"
+      scope.where(<<~SQL.squish, pattern: pattern)
+        phrases.text_l1 ILIKE :pattern OR EXISTS (
+          SELECT 1
+          FROM token_translations
+          WHERE token_translations.phrase_token_id = phrase_tokens.id
+            AND token_translations.language_id = phrase_token_users.language_id
+            AND token_translations.translation ILIKE :pattern
+        )
+      SQL
     end
 
     # Only languages the user actually has words in get a chip — a filter that
     # can only ever return nothing is noise.
-    def filter_languages(entries)
-      entries.filter_map(&:source_language).uniq.sort_by { |language| language.english_name.to_s }
+    def filter_languages
+      ids = Phrase.joins(phrase_tokens: :phrase_token_users)
+        .where(phrase_token_users: { user_id: current_user.id })
+        .select(:l1_id)
+      Language.where(id: ids).order(:english_name).to_a
     end
 
     def filter_available?

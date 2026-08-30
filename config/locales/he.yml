@@ -347,6 +347,7 @@ he:
         search_placeholder: "חיפוש מילים, תרגומים, משפטים"
         search_label: "חיפוש באוצר המילים"
         search_button: "חיפוש"
+        load_more: "לטעון עוד"
         word_count:
           one: "מילה אחת"
           other: "%{count} מילים"

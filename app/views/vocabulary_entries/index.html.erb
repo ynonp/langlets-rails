@@ -62,11 +62,13 @@
               <p class="mt-2 text-sm text-[#716A5D]"><%= t("app.vocabulary_entries.index.no_matches_hint") %></p>
             </div>
           <% else %>
-            <div class="flex flex-col gap-3">
+            <div id="vocabulary-entries" class="flex flex-col gap-3">
               <% @visible.each do |entry| %>
                 <%= render "entry", entry: entry %>
               <% end %>
             </div>
+            <%= render "load_more", page: @page, has_more: @has_more,
+                                    filter: @filter, query: @query %>
           <% end %>
         </turbo-frame>
       </div>

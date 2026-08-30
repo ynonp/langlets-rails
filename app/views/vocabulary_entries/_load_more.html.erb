@@ -1,0 +1,9 @@
+<div id="vocabulary-load-more" class="mt-6 text-center">
+  <% if has_more %>
+    <%= link_to t("app.vocabulary_entries.index.load_more"),
+                vocabulary_entries_path(page: page + 1, filter: filter, q: query.presence),
+                class: "inline-flex min-h-12 items-center justify-center rounded-full border border-[#9B907D] px-7 text-sm font-bold text-[#1E1B16] transition hover:border-[#C4451C] hover:text-[#C4451C]",
+                data: { turbo_stream: true, testid: "vocabulary-load-more" },
+                aria: { controls: "vocabulary-entries" } %>
+  <% end %>
+</div>
