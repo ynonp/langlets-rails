@@ -29,10 +29,16 @@ class ProgressHapticComponent(
         val vibrator = vibrator(context) ?: return
         if (!vibrator.hasVibrator()) return
 
-        // EFFECT_TICK is the platform's own "something small succeeded" haptic;
-        // it respects the device's haptic strength setting, which a raw duration
-        // would override.
-        vibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_TICK))
+        val effect = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // EFFECT_TICK is the platform's own "something small succeeded"
+            // haptic and respects the device's haptic strength setting.
+            VibrationEffect.createPredefined(VibrationEffect.EFFECT_TICK)
+        } else {
+            // Android 9 is still supported, but predefined effects arrived in
+            // Android 10. Keep its fallback deliberately brief and lightweight.
+            VibrationEffect.createOneShot(10, VibrationEffect.DEFAULT_AMPLITUDE)
+        }
+        vibrator.vibrate(effect)
     }
 
     private fun vibrator(context: Context): Vibrator? {

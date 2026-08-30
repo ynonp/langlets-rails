@@ -2685,6 +2685,11 @@ Review lessons can mix saved course tokens with custom tokens. Flashcards theref
 
 What actually changes between the surfaces is small and worth keeping small: the web list shows the context phrase in full where the phone truncates it to one line (a browser has the room, and that phrase is the first thing a narrow layout throws away), the detail screen moves the practice switch and the delete into an aside, the Add screen moves its explanation there, and the picker hint says "click" instead of "tap". Everything else — the copy, the filters, the toast contract, the delete confirmation — is the same strings and the same behaviour.
 
+The native vocabulary detail route is a standard push inside its tab navigator,
+so the iOS and Android wrappers own its Back control. The native HTML detail
+template deliberately renders no second link back to `/app/vocabulary`; the web
+detail template keeps its own Back link because it has no native navigation bar.
+
 The practice switch is server-rendered rather than client-managed. It is a named
 submit button inside the translation form whose value is the *next* practice
 state. `update` treats that parameter as a practice-only write (so text sitting

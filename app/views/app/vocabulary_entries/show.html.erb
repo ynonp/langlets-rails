@@ -1,19 +1,10 @@
 <% content_for :title, "#{@entry.word} · langlets." %>
 
 <div class="app-scroll-pad px-5 pt-4 flex flex-col gap-3">
-  <div class="mb-1 flex items-center justify-between gap-3">
-    <%= link_to app_vocabulary_entries_path,
-                class: "flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-xl bg-app-card text-app-text-dim",
-                aria: { label: t(".back") } do %>
-      <%= app_icon "chevron", class: "h-[18px] w-[11px] rotate-180" %>
-    <% end %>
-
-    <p class="min-w-0 truncate text-[12px] uppercase tracking-[0.1em] text-app-text-3">
-      <%= [ localized_language_name(@entry.source_language), @entry.source ].compact_blank.join(" · ") %>
-    </p>
-
-    <span class="w-[38px] shrink-0"></span>
-  </div>
+  <%# This route is a native push, so the wrapper's navigation bar owns Back. %>
+  <p class="mb-1 truncate text-center text-[12px] uppercase tracking-[0.1em] text-app-text-3">
+    <%= [ localized_language_name(@entry.source_language), @entry.source ].compact_blank.join(" · ") %>
+  </p>
 
   <%= form_with url: app_vocabulary_entry_path(@entry.id), method: :patch,
                 data: { testid: "vocabulary-detail-form" },

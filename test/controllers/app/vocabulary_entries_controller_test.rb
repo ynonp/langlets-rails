@@ -400,6 +400,7 @@ module App
       assert_response :success
       assert_select "[data-testid=vocabulary-practice-toggle]"
       assert_select "[data-testid=vocabulary-delete]"
+      assert_select "a[href='/app/vocabulary']", false
       assert_select "dialog"
     end
 
