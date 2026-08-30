@@ -262,6 +262,7 @@ module App
       get "/app/vocabulary/new", headers: NATIVE
 
       assert_response :success
+      assert_select "title", text: I18n.t!("app.vocabulary_entries.new.page_title")
       assert_select "[data-testid=vocabulary-add-form]"
     end
 

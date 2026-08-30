@@ -22,8 +22,7 @@
         <div class="mt-8 rounded-2xl border border-[#DED4C2] bg-[#FFFDF8] p-6">
           <h2 class="text-xs font-bold uppercase tracking-[0.12em] text-[#8A8170]"><%= t("app.vocabulary_entries.show.context") %></h2>
           <p class="mt-3 text-xl leading-relaxed text-[#55503F]" dir="auto">
-            <%= render "app/vocabulary_entries/highlight", entry: @entry,
-                       mark_class: "font-bold text-[#C4451C]" %>
+            <%= highlighted_vocabulary_context(@entry, mark_class: "font-bold text-[#C4451C]") %>
           </p>
         </div>
 

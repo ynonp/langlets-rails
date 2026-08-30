@@ -10,8 +10,6 @@
   <% if @total_count.zero? %>
     <%= render "empty" %>
   <% else %>
-    <%# The search box and the "+" share a row: adding a word is a peer of
-        finding one, not a floating action over the list. %>
     <div class="flex items-center gap-2.5">
       <%= form_with url: app_vocabulary_entries_path, method: :get,
                     data: { turbo_frame: "vocabulary-results" },

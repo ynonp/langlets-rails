@@ -35,9 +35,6 @@
                   class: "#{desktop_link_class} #{library_active ? 'text-[#C4451C]' : 'text-[#1E1B16]'}",
                   data: { testid: "primary-web-desktop-link" },
                   aria: (library_active ? { current: "page" } : {}) %>
-      <%# Vocabulary sits between Library and Create for the same reason it is
-          the third native tab: it is where the words the other two produce end
-          up. Signed-in only — there is nothing to show a visitor. %>
       <%= link_to t("app.web_menu.vocabulary"), vocabulary_entries_path,
                   class: "#{desktop_link_class} #{vocabulary_active ? 'text-[#C4451C]' : 'text-[#1E1B16]'}",
                   data: { testid: "primary-web-desktop-link" },

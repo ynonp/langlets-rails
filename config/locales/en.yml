@@ -315,6 +315,7 @@ en:
         cancel: "Cancel"
         delete_confirm: "Delete"
       new:
+        page_title: "Add a word · langlets."
         title: "Add a word"
         cancel: "Cancel"
         errors:

@@ -19,8 +19,6 @@
                 class: chip.call(filter == language.iso_name) %>
   <% end %>
 
-  <%# Only offered once something is actually paused — a filter that can only
-      return nothing is noise. %>
   <% if paused_count.positive? %>
     <%= link_to t(".not_practising"),
                 app_vocabulary_entries_path(filter: App::VocabularyEntriesController::PAUSED_FILTER, q: query.presence),

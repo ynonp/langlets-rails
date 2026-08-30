@@ -1,8 +1,0 @@
-<%# The context phrase with the saved span picked out. Shared by the native and
-    web surfaces, which differ only in what "highlighted" looks like — so the
-    mark's colour comes in as `mark_class` rather than being hard-coded to one
-    palette. `quoted:` wraps it in curly quotes for a list row, where it reads
-    as a citation; a detail screen shows it unquoted as the thing being edited. %>
-<% quoted = local_assigns.fetch(:quoted, false) %>
-<% mark_class = local_assigns.fetch(:mark_class, "font-bold not-italic text-app-accent") %>
-<%= "“" if quoted %><%= entry.before %><span class="<%= mark_class %>"><%= entry.mark %></span><%= entry.after %><%= "”" if quoted %>

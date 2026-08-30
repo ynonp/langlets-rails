@@ -1,10 +1,5 @@
-<% content_for :title, "Add a word · langlets." %>
+<% content_for :title, t(".page_title") %>
 
-<%# Frames 04 and 05, and they are deliberately one page rather than a wizard.
-    The whole lesson this screen has to teach is that a saved word is a span
-    inside a phrase — so the phrase is typed first, and the word is picked out
-    of the saved phrase rather than typed again. Two screens would let someone
-    finish the first and forget why. %>
 <div class="app-scroll-pad flex min-h-dvh flex-col px-5 pt-4"
      data-controller="vocabulary-picker"
      data-vocabulary-picker-token-class-value="rounded-xl border border-white/10 bg-app-inset px-3.5 py-2.5 text-[17px] text-app-text-dim"
@@ -68,8 +63,6 @@
         </button>
       </div>
 
-      <%# Step two: the saved phrase, one button per word. Tap one, or press and
-          drag across several for a compound. %>
       <div data-vocabulary-picker-target="picker" class="hidden">
         <div data-vocabulary-picker-target="tokens" dir="auto"
              data-action="pointermove@window->vocabulary-picker#dragOver pointerup@window->vocabulary-picker#endDrag pointercancel@window->vocabulary-picker#endDrag"
@@ -83,14 +76,8 @@
       </div>
     </section>
 
-    <%# Only appears once there is a pick — asking what a word means before one
-        has been chosen has nothing to name. %>
     <section data-vocabulary-picker-target="translation"
              class="app-hairline mt-3 hidden rounded-[18px] bg-app-card px-[18px] py-4">
-      <%# The word is a live placeholder the picker fills in, so it goes in as
-          markup. The key is deliberately not `_html`: those escape their
-          interpolations, which is what turned this heading into visible tag
-          soup. The locale string itself carries no markup. %>
       <h3 class="mb-1.5 text-[12px] uppercase tracking-[0.1em] text-app-text-2">
         <%= t(".translation_of", word: tag.span(data: { vocabulary_picker_target: "pickedWord" }, dir: "auto")).html_safe %>
       </h3>

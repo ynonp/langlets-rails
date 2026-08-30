@@ -1,11 +1,3 @@
-<%# One saved word in the list. The phrase is shown with the saved span
-    highlighted rather than the word on its own: that highlight is the only
-    thing separating two entries for the same word in different senses.
-
-    turbo_frame "_top" because this row is rendered inside the results frame
-    that search and the filter chips drive. Without it Turbo tries to load the
-    detail screen into that frame, finds no matching frame there, and renders
-    "Content missing" instead of the word. %>
 <%= link_to app_vocabulary_entry_path(entry.id),
             class: "app-hairline block rounded-[20px] bg-app-card px-[18px] pt-[18px] pb-3.5 #{'opacity-55' if entry.paused?}",
             data: { testid: "vocabulary-entry", turbo_frame: "_top" } do %>
@@ -27,7 +19,7 @@
   </div>
 
   <p class="mt-2.5 truncate text-[13px] italic text-app-text-3">
-    <%= render "highlight", entry: entry, quoted: true %>
+    <%= highlighted_vocabulary_context(entry, quoted: true) %>
   </p>
 
   <div class="mt-2.5 flex items-center gap-2 text-[12px] text-app-text-3">

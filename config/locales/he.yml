@@ -377,6 +377,7 @@ he:
         cancel: "ביטול"
         delete_confirm: "מחיקה"
       new:
+        page_title: "הוספת מילה · langlets."
         title: "הוספת מילה"
         cancel: "ביטול"
         errors:

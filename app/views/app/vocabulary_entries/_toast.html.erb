@@ -1,6 +1,3 @@
-<%# The undo toast behind a delete, and the confirmation behind every other
-    change. `flash[:undo]` carries the token the delete detached, so Undo is a
-    plain re-save rather than a resurrection. %>
 <% if flash[:notice].present? %>
   <% undo = flash[:undo] %>
   <div data-controller="vocabulary-toast"

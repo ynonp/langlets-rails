@@ -49,9 +49,6 @@
     <% if show_theme_toggle || show_xp_badge %>
       <div class="sm:hidden <%= divider_class %>"></div>
     <% end %>
-    <%# Vocabulary leads the review actions: it is the place those words live,
-        and the header's own link to it is desktop-only, so this dropdown is how
-        a phone browser reaches it at all. %>
     <%= render "shared/menu_link",
                label: t("app.web_menu.vocabulary"),
                path: vocabulary_entries_path,
