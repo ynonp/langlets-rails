@@ -193,7 +193,7 @@ Both current providers converge in `phrasesFromAlignedWords`
 
 | | YouTube | TikTok |
 |---|---|---|
-| `extract_lyrics` | Supadata + ElevenLabs Scribe, conservative reconciliation; Gemini transcription only if both fail | Supadata + ElevenLabs Scribe, conservative reconciliation; no Gemini URL fallback |
+| `extract_lyrics` | verified yt-dlp preflight, then Supadata + ElevenLabs Scribe; Gemini 3.7 timed transcript when download or both STTs fail | Supadata + ElevenLabs Scribe, conservative reconciliation; no Gemini URL fallback |
 | `force_alignment` | normally reuses reconciled Scribe timings; Supadata-only uses downloaded audio + ElevenLabs, then Gemini, then any checkpointed Scribe timings | normally reuses reconciled Scribe timings; Supadata-only can use downloaded audio + ElevenLabs, then any checkpointed Scribe timings; never sends the post URL to Gemini |
 
 If your provider's transcription returns timings (like Scribe), stash them under

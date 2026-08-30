@@ -109,6 +109,44 @@ Deno.test("a fresh dual-STT run reconciles and finalizes translation", async () 
   assert(sink.ops.some((op) => op.path === "phrases"));
 });
 
+Deno.test("YouTube yt-dlp failure bypasses STT providers and force alignment", async () => {
+  const { models } = happyMocks();
+  const gemini = queuedModel([{
+    words: [
+      { word: "Line", start_seconds: 0, end_seconds: 1 },
+      { word: "1", start_seconds: 2, end_seconds: 3 },
+      { word: "Line", start_seconds: 10, end_seconds: 11 },
+      { word: "2", start_seconds: 12, end_seconds: 13 },
+    ],
+  }]);
+  const supadata = stubTranscribe([transcriptFixture(1, 2)]);
+  const elevenlabs = stubSpeechToTextFile([speechFixture(1, 2)]);
+  let alignments = 0;
+  models.extractLyrics = gemini.model;
+
+  const result = await runPipeline(payload(), {
+    models,
+    sink: new MemorySink(),
+    baseDelayMs: 0,
+    fuzzywordFor: noDictionary,
+    transcribeVideo: supadata.transcribe,
+    transcribeSpeechFile: elevenlabs.transcribe,
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
+    alignLyrics: () => {
+      alignments++;
+      throw new Error("force alignment must not run");
+    },
+  });
+
+  assert(result.ok, JSON.stringify(result.failed));
+  assertEquals(supadata.calls(), 0);
+  assertEquals(elevenlabs.calls(), 0);
+  assertEquals(alignments, 0);
+  assertEquals(gemini.calls(), 1);
+  assertEquals(result.data.transcription_source, "gemini");
+  assertFalse(result.data.force_alignment_in_progress);
+});
+
 Deno.test("failed native captions and Gemini fallback stop before downstream branches", async () => {
   const { mocks, models } = happyMocks();
   const transcriber = stubTranscribe([new Error("down"), new Error("down"), new Error("down")]);

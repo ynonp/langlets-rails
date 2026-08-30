@@ -956,7 +956,7 @@ words — by different routes, and converge in `phrasesFromAlignedWords`
 (`pipeline/src/alignedWords.ts`). Nothing downstream of `force_alignment` knows
 TikTok exists.
 
-Every fresh extraction attempts two independent STT sources concurrently for both providers:
+Every fresh extraction normally attempts two independent STT sources:
 
 - Supadata receives the original video URL with `mode=native`, `text=false`, and the preferred
   source-language code. The call has no application-level retry and supports both immediate and
@@ -964,6 +964,15 @@ Every fresh extraction attempts two independent STT sources concurrently for bot
 - The pipeline downloads verified audio with `yt-dlp` and uploads it to ElevenLabs Scribe
   (`scribe_v2`), which returns text plus per-word timestamps. Scribe `spacing` and `audio_event`
   entries are dropped and its text is rebuilt from the surviving speech words.
+
+For YouTube, the verified yt-dlp download is a preflight: Supadata is not queried until it succeeds.
+Once audio exists, Supadata and the ElevenLabs upload run concurrently as before. If all yt-dlp
+formats and configured network namespaces fail, neither Supadata nor ElevenLabs is queried. The
+pipeline instead sends the YouTube URL once to Gemini 3.7 Flash and requests the complete transcript
+with required start/end seconds for every word. That response is validated, converted directly to
+the provisional timed phrase, and marks both extraction and alignment complete. The normal
+`force_alignment` step is therefore skipped entirely. TikTok retains the concurrent Supadata and
+download path because it has no Gemini URL fallback.
 
 Each successful raw result is immediately checkpointed under
 `data["stt_candidates"]`, keyed by provider. This makes an interrupted run resume only the missing
@@ -984,9 +993,10 @@ succeeds, Sol is skipped. An ElevenLabs-only transcript likewise reuses Scribe's
 Supadata-only transcript proceeds through forced alignment. If Sol itself fails, the valid
 ElevenLabs transcript and timings are used rather than failing the import.
 
-If both STT candidates fail, provider behavior diverges at the final fallback only. YouTube invokes
-the existing Gemini 2.5 Flash video transcription prompt. TikTok has no third route and fails
-`extract_lyrics`. Both sources and the Gemini fallback pass through the shared transcript
+If both STT candidates fail after a successful YouTube download, provider behavior still diverges at
+the final fallback. YouTube invokes the same Gemini 3.7 Flash timed-transcript request and skips
+alignment; TikTok has no third route and fails `extract_lyrics`. Both STT sources and the Gemini
+fallback pass through the shared transcript
 cleanup before lines are saved: bracketed and parenthetical annotations such as `[Music]`,
 `[Applause]`, and `(footsteps)` are removed, as are the `♪` symbols YouTube wraps sung caption lines
 in — left in, those are whitespace tokens like any other and become
@@ -1188,11 +1198,14 @@ defaulting to `http://localhost:3000`; the callback must point at a tunnel
 `PIPELINE_HMAC_SECRET` remains secret configuration. Model-provider keys now
 live only on the pipeline host; Rails no longer needs them at all.
 
-Supadata receives the video URL directly while the ElevenLabs candidate requires audio bytes, so
-the pipeline downloads them with `yt-dlp` during extraction. Reconciled and ElevenLabs-only
+Supadata receives the video URL directly while the ElevenLabs candidate requires audio bytes. For
+YouTube the pipeline downloads those bytes with `yt-dlp` before starting either provider, allowing a
+download failure to go straight to one Gemini 3.7 Flash timed-transcript request without paying for
+Supadata or ElevenLabs. For TikTok the two paths remain concurrent. Reconciled and ElevenLabs-only
 transcripts reuse Scribe timings without another download; Supadata-only transcripts download audio
-for forced alignment. Gemini receives a YouTube URL only: during transcript extraction when both STT
-paths fail, or during timing when forced alignment fails and no usable Scribe timing set wins. Every
+for forced alignment. Gemini receives a YouTube URL only: during transcript extraction when the
+preflight download fails or both STT paths fail, or during timing when forced alignment fails and no
+usable Scribe timing set wins. Every
 download enables
 `--remote-components ejs:github`, allowing yt-dlp to fetch its external JavaScript challenge solver
 when the installed distribution does not bundle it. The host therefore needs outbound access to

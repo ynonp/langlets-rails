@@ -160,14 +160,14 @@ Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rai
 
 | Step | Model | Provider |
 |---|---|---|
-| `extract_lyrics` (transcript text) | Native captions + Scribe, reconciled by `gpt-5.6-sol`; YouTube double-failure fallback | Supadata + ElevenLabs + OpenAI; Gemini 2.5 Flash fallback |
+| `extract_lyrics` (transcript text + normal timing) | Native captions + Scribe, reconciled by `gpt-5.6-sol`; timed YouTube fallback | Supadata + ElevenLabs + OpenAI; Gemini 3.7 Flash fallback |
 | `force_alignment` (word timings) | Forced Alignment API | ElevenLabs |
 | `add_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `rate_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `add_token_translations` | `deepseek-v4-pro:cloud` (reasoning `none`, temperature 0, up to 200 token lines per chunk) | Ollama cloud |
 | `translate` (all target languages) | `deepseek-v4-pro:cloud` | Ollama cloud |
 
-`extract_lyrics` starts Supadata in `mode=native` and the verified audio-download + ElevenLabs Scribe path concurrently. Each successful raw result is checkpointed under `data.stt_candidates`. Two results are reconciled into one transcript by GPT-5.6 Sol at temperature 0; one result is used directly without an LLM call. If both fail, YouTube uses the existing Gemini 2.5 Flash video fallback and TikTok fails because it has no remaining transcription route. A Sol failure degrades to the valid ElevenLabs result. `force_alignment` aligns reconciled or Supadata-only text; an ElevenLabs-only result reuses Scribe's timings. The lesson model then partitions those exact timed words into a `lessons -> lines` hierarchy, choosing complete comprehension and translation units rather than trusting provider cue boundaries or performance pauses.
+For YouTube, `extract_lyrics` completes the verified yt-dlp audio download before it queries either STT provider. A download failure goes directly to Gemini 3.7 Flash for one structured transcript containing start/end seconds for every word; Supadata and ElevenLabs are not queried, and the returned timed phrase skips `force_alignment`. After a successful download, Supadata `mode=native` and the ElevenLabs Scribe upload run concurrently. Each successful raw result is checkpointed under `data.stt_candidates`. Two results are reconciled into one transcript by GPT-5.6 Sol at temperature 0; one result is used directly without an LLM call. If both fail, YouTube uses the same timed Gemini fallback and TikTok fails because it has no remaining transcription route. A Sol failure degrades to the valid ElevenLabs result. `force_alignment` aligns reconciled or Supadata-only text; an ElevenLabs-only result reuses Scribe's timings. The lesson model then partitions those exact timed words into a `lessons -> lines` hierarchy, choosing complete comprehension and translation units rather than trusting provider cue boundaries or performance pauses.
 
 Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through `@ai-sdk/openai-compatible`. To change a model, edit `defaultModels()` and restart the service on the pipeline host:
 

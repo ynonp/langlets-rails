@@ -12,8 +12,8 @@ Semantic segmentation and contextual learner tokenization are the final required
 downstream work fans out after them:
 
 ```
-extract_lyrics                              (Supadata native + downloaded-audio ElevenLabs)
-                                            (Sol reconciliation; YouTube Gemini fallback)
+extract_lyrics                              (YouTube: yt-dlp preflight, then Supadata + ElevenLabs)
+                                            (yt-dlp failure: timed Gemini transcript, skip alignment)
      │
 force_alignment                             (ElevenLabs alignment, Gemini timestamp fallback)
                                             (reuses timings for ElevenLabs-only transcripts)
@@ -33,13 +33,19 @@ materialize translations                    (join with semantic phrases)
 finalize_translation                        (payload metadata + lessons snapshot)
 ```
 
-`extract_lyrics` runs two independent paths concurrently for both providers: Supadata with
-`mode=native`, and a verified `yt-dlp` audio download uploaded to ElevenLabs Scribe (`scribe_v2`).
+For YouTube, `extract_lyrics` first completes a verified `yt-dlp` audio download. Only after that
+succeeds does it run two independent paths concurrently: Supadata with `mode=native`, and the
+downloaded audio uploaded to ElevenLabs Scribe (`scribe_v2`). If yt-dlp exhausts every format and
+network namespace, neither paid STT provider is queried. Gemini 3.7 Flash receives the YouTube URL
+and returns the complete transcript with required start/end seconds for every word. The step
+materializes timed phrases directly, so `force_alignment` is skipped. TikTok retains concurrent
+Supadata and download paths because Gemini cannot ingest its post URL.
+
 Each success is checkpointed under `data.stt_candidates`, so interrupted runs do not repay a
 provider that already finished. When both succeed, GPT-5.6 Sol reconciles their complete texts at
 temperature 0. When only one succeeds it is used directly and Sol is skipped. If both fail, YouTube
-uses the existing Gemini 2.5 Flash video transcription fallback; TikTok fails because no third
-transcription route exists. A Sol failure falls back to the valid ElevenLabs result.
+uses the same Gemini 3.7 Flash timed-transcript fallback and skips alignment; TikTok fails because no
+third transcription route exists. A Sol failure falls back to the valid ElevenLabs result.
 
 Scribe's `spacing` and `audio_event` entries (`[cantando]`, `[Applause]`) are dropped, and its text
 is rebuilt from surviving timed words. An ElevenLabs-only result can therefore reuse those timings
@@ -124,7 +130,7 @@ one branch failing never discards another branch's completed — and already per
 
 | Step                       | Model                                           | Provider                                               |
 | -------------------------- | ----------------------------------------------- | ------------------------------------------------------ |
-| extract_lyrics             | Dual STT + reconciliation / YouTube fallback    | Supadata + ElevenLabs + GPT-5.6 Sol / Gemini 2.5 Flash |
+| extract_lyrics             | Dual STT + reconciliation / timed YouTube fallback | Supadata + ElevenLabs + GPT-5.6 Sol / Gemini 3.7 Flash |
 | force_alignment            | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash                          |
 | add_lessons / extract_compounds / rate_lessons | `gemini-3.5-flash-lite`              | Google Generative AI                                   |
 | translate                  | `deepseek-v4-pro:cloud`                         | Ollama cloud via `@ai-sdk/openai-compatible`           |

@@ -134,23 +134,51 @@ Deno.test("uses ElevenLabs alone with its timings and skips Sol when Supadata fa
   assertEquals(sol.calls(), 0);
 });
 
-Deno.test("YouTube uses Gemini only after both STT paths fail", async () => {
-  const gemini = queuedModel(["First line\nSecond line"]);
+Deno.test("YouTube yt-dlp failure uses one timed Gemini transcript and skips both STT providers", async () => {
+  const supadata = stubTranscribe([transcriptFixture(1, 2)]);
+  const elevenlabs = stubSpeechToTextFile([speechFixture(1, 2)]);
+  const gemini = queuedModel([{
+    words: [
+      { word: "שלום", start_seconds: 1.25, end_seconds: 1.75 },
+      { word: "לכולם", start_seconds: 1.8, end_seconds: 2.5 },
+    ],
+  }]);
   const { ctx, store } = makeCtx({
-    transcribeVideo: stubTranscribe([new Error("captions unavailable")]).transcribe,
-    transcribeSpeechFile: stubSpeechToTextFile([
-      new Error("scribe down"),
-      new Error("scribe down"),
-      new Error("scribe down"),
-    ]).transcribe,
-    prepareAudio: stubAudioWith(13),
+    clipLanguage: "Hebrew",
+    transcribeVideo: supadata.transcribe,
+    transcribeSpeechFile: elevenlabs.transcribe,
+    prepareAudio: () => Promise.reject(new Error("yt-dlp failed")),
     models: { extractLyrics: gemini.model },
   });
 
   await extractLyrics(ctx);
 
+  assertEquals(supadata.calls(), 0);
+  assertEquals(elevenlabs.calls(), 0);
   assertEquals(gemini.calls(), 1);
-  assertEquals(store.data.lyric_lines, ["First line Second line"]);
+  assertEquals(store.data.lyric_lines, ["שלום לכולם"]);
+  assertEquals(store.data.transcription_source, "gemini");
+  assertEquals(store.data.phrases?.length, 1);
+  assertEquals(store.data.phrases?.[0].timestamp, "00:01.25");
+  assertEquals(store.data.phrases?.[0].timestamp_end, "00:02.50");
+  assertEquals(store.data.phrases?.[0].words, [
+    {
+      text: "שלום",
+      timestamp: "00:01.25",
+      timestamp_end: "00:01.75",
+      l1_start_index: 0,
+      l1_end_index: 3,
+    },
+    {
+      text: "לכולם",
+      timestamp: "00:01.80",
+      timestamp_end: "00:02.50",
+      l1_start_index: 5,
+      l1_end_index: 9,
+    },
+  ]);
+  assertFalse(store.data.extract_lyrics_in_progress);
+  assertFalse(store.data.force_alignment_in_progress);
 });
 
 Deno.test("TikTok fails when both STT paths fail and never calls Gemini", async () => {

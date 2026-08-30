@@ -1,8 +1,8 @@
-import { generateObject, generateText } from "ai";
+import { generateObject } from "ai";
 import { z } from "zod";
 import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
-import { extractLyricsPrompt } from "../prompts/extractLyrics.ts";
+import { geminiTimedTranscriptPrompt } from "../prompts/geminiTimedTranscript.ts";
 import { reconcileTranscriptsPrompt } from "../prompts/reconcileTranscripts.ts";
 import { message, withRetries } from "../retry.ts";
 import {
@@ -16,6 +16,8 @@ import { downloadYoutubeAudioToTemp, isAudioVerificationUnavailable } from "../a
 import { cleanupTranscript } from "../cleanupTranscript.ts";
 import { reconcileTimedTranscript } from "../reconcileTimedTranscript.ts";
 import { isYoutubeUrl } from "../videoUrl.ts";
+import { phrasesFromAlignedWords } from "../alignedWords.ts";
+import type { DownloadedAudio } from "../audio.ts";
 
 const MAX_GEMINI_RETRIES = 2;
 const MAX_STT_RETRIES = 2;
@@ -23,6 +25,13 @@ const MAX_AUDIO_RETRIES = 2;
 const MAX_RECONCILIATION_RETRIES = 1;
 
 const reconciliationSchema = z.object({ transcript: z.string().min(1) });
+const timedTranscriptSchema = z.object({
+  words: z.array(z.object({
+    word: z.string().min(1),
+    start_seconds: z.number().nonnegative(),
+    end_seconds: z.number().nonnegative(),
+  })).min(1),
+});
 
 export async function extractLyrics(ctx: PipelineContext): Promise<void> {
   const { store } = ctx;
@@ -37,20 +46,49 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
 
     const languageCode = languageCodeForTranscription(ctx.clipLanguage, ctx.clipLanguageIso);
 
-    const jobs: Promise<unknown>[] = [];
-    if (!store.data.stt_candidates?.supadata) {
-      jobs.push(captureSupadata(ctx, languageCode));
-    }
-    if (!store.data.stt_candidates?.elevenlabs) {
-      jobs.push(captureElevenLabs(ctx, languageCode, (attempt) => {
-        attempts = Math.max(attempts, attempt);
-      }));
-    }
-    const results = await Promise.allSettled(jobs);
-    for (const result of results) {
-      if (result.status === "rejected") {
-        console.warn(`STT candidate failed: ${message(result.reason)}`);
+    if (isYoutubeUrl(ctx.youtubeurl) && !store.data.stt_candidates?.elevenlabs) {
+      let audio: DownloadedAudio;
+      try {
+        audio = await prepareAudio(ctx);
+      } catch (error) {
+        if (isAudioVerificationUnavailable(error)) throw error;
+        console.warn(
+          `ExtractLyrics yt-dlp failed; using Gemini timed transcription: ${message(error)}`,
+        );
+        const words = await geminiTimedFallback(
+          ctx,
+          (text) => lastResponseText = text,
+          (attempt) => attempts = Math.max(attempts, attempt),
+        );
+        await persistTimedGeminiTranscript(ctx, words);
+        await clearErrors(ctx, "extract_lyrics");
+        await clearErrors(ctx, "force_alignment");
+        return;
       }
+
+      try {
+        const jobs: Promise<unknown>[] = [];
+        if (!store.data.stt_candidates?.supadata) {
+          jobs.push(captureSupadata(ctx, languageCode));
+        }
+        jobs.push(captureElevenLabsFromAudio(ctx, audio, languageCode, (attempt) => {
+          attempts = Math.max(attempts, attempt);
+        }));
+        await settleCandidates(jobs);
+      } finally {
+        await Deno.remove(audio.path).catch(() => {});
+      }
+    } else {
+      const jobs: Promise<unknown>[] = [];
+      if (!store.data.stt_candidates?.supadata) {
+        jobs.push(captureSupadata(ctx, languageCode));
+      }
+      if (!store.data.stt_candidates?.elevenlabs) {
+        jobs.push(captureElevenLabs(ctx, languageCode, (attempt) => {
+          attempts = Math.max(attempts, attempt);
+        }));
+      }
+      await settleCandidates(jobs);
     }
 
     const supadata = store.data.stt_candidates?.supadata;
@@ -101,9 +139,15 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
     } else if (supadata) {
       transcriptText = cleanupTranscript(supadata.text);
     } else if (isYoutubeUrl(ctx.youtubeurl)) {
-      transcriptText = await geminiFallback(ctx, (text) => lastResponseText = text, (attempt) => {
-        attempts = Math.max(attempts, attempt);
-      });
+      const words = await geminiTimedFallback(
+        ctx,
+        (text) => lastResponseText = text,
+        (attempt) => attempts = Math.max(attempts, attempt),
+      );
+      await persistTimedGeminiTranscript(ctx, words);
+      await clearErrors(ctx, "extract_lyrics");
+      await clearErrors(ctx, "force_alignment");
+      return;
     } else {
       throw new Error("Supadata and ElevenLabs transcription both failed");
     }
@@ -125,6 +169,15 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
   }
 }
 
+async function settleCandidates(jobs: Promise<unknown>[]): Promise<void> {
+  const results = await Promise.allSettled(jobs);
+  for (const result of results) {
+    if (result.status === "rejected") {
+      console.warn(`STT candidate failed: ${message(result.reason)}`);
+    }
+  }
+}
+
 async function captureSupadata(ctx: PipelineContext, languageCode: string | null): Promise<void> {
   const transcript = await (ctx.transcribeVideo ?? transcribeWithSupadata)(
     ctx.youtubeurl,
@@ -141,7 +194,16 @@ async function captureElevenLabs(
   languageCode: string | null,
   onAttempt: (attempt: number) => void,
 ): Promise<void> {
-  const audio = await withRetries(
+  const audio = await prepareAudio(ctx);
+  try {
+    await captureElevenLabsFromAudio(ctx, audio, languageCode, onAttempt);
+  } finally {
+    await Deno.remove(audio.path).catch(() => {});
+  }
+}
+
+function prepareAudio(ctx: PipelineContext): Promise<DownloadedAudio> {
+  return withRetries(
     () => (ctx.prepareAudio ?? downloadYoutubeAudioToTemp)(ctx.youtubeurl),
     {
       maxRetries: MAX_AUDIO_RETRIES,
@@ -150,45 +212,47 @@ async function captureElevenLabs(
       isFatal: isAudioVerificationUnavailable,
     },
   );
-  try {
-    const result = await withRetries(
-      () => (ctx.transcribeSpeechFile ?? transcribeFileWithElevenLabs)(audio.path, languageCode),
-      {
-        maxRetries: MAX_STT_RETRIES,
-        label: "ExtractLyrics ElevenLabs speech-to-text (uploaded audio)",
-        baseDelayMs: ctx.baseDelayMs,
-        onFailedAttempt: (_error, attempt) => onAttempt(attempt),
-      },
-    );
-    await ctx.store.set("stt_candidates.elevenlabs", {
-      text: result.text,
-      words: result.words,
-    });
-  } finally {
-    await Deno.remove(audio.path).catch(() => {});
-  }
 }
 
-async function geminiFallback(
+async function captureElevenLabsFromAudio(
+  ctx: PipelineContext,
+  audio: DownloadedAudio,
+  languageCode: string | null,
+  onAttempt: (attempt: number) => void,
+): Promise<void> {
+  const result = await withRetries(
+    () => (ctx.transcribeSpeechFile ?? transcribeFileWithElevenLabs)(audio.path, languageCode),
+    {
+      maxRetries: MAX_STT_RETRIES,
+      label: "ExtractLyrics ElevenLabs speech-to-text (uploaded audio)",
+      baseDelayMs: ctx.baseDelayMs,
+      onFailedAttempt: (_error, attempt) => onAttempt(attempt),
+    },
+  );
+  await ctx.store.set("stt_candidates.elevenlabs", {
+    text: result.text,
+    words: result.words,
+  });
+}
+
+async function geminiTimedFallback(
   ctx: PipelineContext,
   onResponse: (text: string) => void,
   onAttempt: (attempt: number) => void,
-): Promise<string> {
-  console.warn("ExtractLyrics falling back to Gemini after both STT providers failed");
+): Promise<SpeechToTextResult["words"]> {
+  console.warn("ExtractLyrics falling back to Gemini timed transcription");
   return await withRetries(async () => {
-    const { text } = await generateText({
+    const result = await generateObject({
       model: ctx.models.extractLyrics,
-      system: extractLyricsPrompt(ctx.clipLanguage),
+      schema: timedTranscriptSchema,
+      system: geminiTimedTranscriptPrompt(ctx.clipLanguage),
       messages: [{
         role: "user",
         content: [{ type: "file", data: new URL(ctx.youtubeurl), mediaType: "video/mp4" }],
       }],
-      temperature: 0,
     });
-    onResponse(text);
-    const cleaned = cleanupTranscript(parseLyricsLines(text).join(" "));
-    if (!cleaned) throw new Error("Gemini lyrics response contained no usable text");
-    return cleaned;
+    onResponse(JSON.stringify(result.object));
+    return validateTimedGeminiWords(result.object.words);
   }, {
     maxRetries: MAX_GEMINI_RETRIES,
     label: "ExtractLyrics Gemini",
@@ -197,13 +261,44 @@ async function geminiFallback(
   });
 }
 
-export function parseLyricsLines(text: string): string[] {
-  return text
-    .replace(/^```\w*\s*/m, "")
-    .replace(/```\s*$/m, "")
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter(Boolean);
+function validateTimedGeminiWords(
+  returned: z.infer<typeof timedTranscriptSchema>["words"],
+): SpeechToTextResult["words"] {
+  let previousStart = 0;
+  const words = returned.flatMap((entry, index) => {
+    const text = cleanupTranscript(entry.word.trim());
+    if (
+      !Number.isFinite(entry.start_seconds) || !Number.isFinite(entry.end_seconds) ||
+      entry.end_seconds < entry.start_seconds || entry.start_seconds < previousStart
+    ) {
+      throw new Error(`Gemini returned invalid timestamps for transcript word ${index + 1}`);
+    }
+    previousStart = entry.start_seconds;
+    if (!text) return [];
+    if (/\s/u.test(text)) {
+      throw new Error(`Gemini merged multiple transcript words in entry ${index + 1}`);
+    }
+    return [{ text, start: entry.start_seconds, end: entry.end_seconds }];
+  });
+  if (words.length === 0) throw new Error("Gemini returned no usable timed words");
+  return words;
+}
+
+async function persistTimedGeminiTranscript(
+  ctx: PipelineContext,
+  words: SpeechToTextResult["words"],
+): Promise<void> {
+  const phrases = phrasesFromAlignedWords(words);
+  if (phrases.length !== 1) throw new Error("Gemini returned no usable timed transcript");
+  await ctx.store.patch([
+    { op: "set", path: "lyric_lines", value: [phrases[0].text_l1] },
+    { op: "set", path: "stt_words", value: words },
+    { op: "set", path: "transcription_source", value: "gemini" },
+    { op: "set", path: "phrases", value: phrases },
+    { op: "set", path: "video_length_seconds", value: words.at(-1)!.end },
+    { op: "set", path: "extract_lyrics_in_progress", value: false },
+    { op: "set", path: "force_alignment_in_progress", value: false },
+  ]);
 }
 
 const LANGUAGE_TO_ISO: Record<string, string> = {

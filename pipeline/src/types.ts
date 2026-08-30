@@ -78,6 +78,7 @@ export interface ProgressData {
   // Complete timed transcript. Sol corrections are conservatively mapped onto
   // ElevenLabs spans; unsafe edits retain the original timed wording.
   stt_words?: { text: string; start: number; end: number }[];
+  transcription_source?: "gemini";
   video_length_seconds?: number | null;
   // Untimestamped lesson hierarchy produced from aligned word-index ranges.
   lesson_outline?: string;

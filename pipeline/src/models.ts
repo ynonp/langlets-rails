@@ -1,7 +1,7 @@
 // Model wiring. This list is the wiring below, not the Ruby concerns'
 // MODEL_PARAMS it started as — the lesson steps have since moved to Google:
 //   extract_lyrics          Supadata + ElevenLabs, reconciled by GPT-5.6 Sol
-//   extract fallback        Gemini 2.5 Flash when both STTs fail on YouTube
+//   extract fallback        Gemini 3.7 Flash timed transcript when YouTube audio download fails
 //   force_alignment fallback Gemini 2.5 Flash (line timestamps)
 //   add_lessons             gemini-3.5-flash-lite     (Google Generative AI)
 //   extract_compounds       gemini-3.5-flash-lite     (Google Generative AI)
@@ -59,8 +59,8 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
   return {
     detectLanguage: google("gemini-2.5-flash"),
     extractLyrics: llmLoggingEnabled(env)
-      ? withLlmLogging(google("gemini-2.5-flash"), "extract_lyrics", { logPrompt: true })
-      : google("gemini-2.5-flash"),
+      ? withLlmLogging(google("gemini-3.7-flash"), "extract_lyrics", { logPrompt: true })
+      : google("gemini-3.7-flash"),
     reconcileTranscripts: log(openai("gpt-5.6-sol"), "reconcile_transcripts"),
     forceAlignmentFallback: llmLoggingEnabled(env)
       ? withLlmLogging(google("gemini-2.5-flash"), "force_alignment_fallback", {
