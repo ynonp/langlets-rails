@@ -33,6 +33,16 @@ you (Don't *you* want me like I want you baby) | أنت [pronoun]
 want (Don't you *want* me like I want you baby) | تريد [verb]
 you (Don't you want me like I want *you* baby) | إياك [pronoun]
 baby (Don't you want me like I want you *baby*) | حبيبي [noun]`,
+  Greek: `Don't (*Don't* you want me like I want you baby) | Μη [auxiliary]
+you (Don't *you* want me like I want you baby) | εσύ [pronoun]
+want (Don't you *want* me like I want you baby) | θέλεις [verb]
+you (Don't you want me like I want *you* baby) | εσένα [pronoun]
+baby (Don't you want me like I want you *baby*) | μωρό [noun]`,
+  Swedish: `Don't (*Don't* you want me like I want you baby) | inte [auxiliary]
+you (Don't *you* want me like I want you baby) | du [pronoun]
+want (Don't you *want* me like I want you baby) | vill [verb]
+you (Don't you want me like I want *you* baby) | dig [pronoun]
+baby (Don't you want me like I want you *baby*) | älskling [noun]`,
 };
 
 export function addTokenTranslationsPrompt(

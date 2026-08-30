@@ -47,6 +47,18 @@ l_ar = Language.find_or_create_by!(iso_name: 'ar-JO') do |lang|
   lang.rtl = true
 end
 
+l_el = Language.find_or_create_by!(iso_name: 'el') do |lang|
+  lang.english_name = 'Greek'
+  lang.native_name = 'Ελληνικά'
+  lang.pronunciation_variant_name = 'el-GR'
+end
+
+l_sv = Language.find_or_create_by!(iso_name: 'sv') do |lang|
+  lang.english_name = 'Swedish'
+  lang.native_name = 'Svenska'
+  lang.pronunciation_variant_name = 'sv-SE'
+end
+
 admin = User.find_or_create_by(email: 'ynon@hey.com') do |user|
   user.password = '10203040'
   user.password_confirmation = '10203040'

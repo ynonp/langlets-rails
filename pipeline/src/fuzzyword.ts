@@ -35,9 +35,11 @@ const ENGLISH_NAMES: Record<string, string> = {
   english: "en",
   french: "fr",
   german: "de",
+  greek: "el",
   hebrew: "he",
   russian: "ru",
   spanish: "es",
+  swedish: "sv",
   arabic: "ar",
 };
 

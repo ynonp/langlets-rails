@@ -730,7 +730,7 @@ vertical layout without discarding the full label.
 Rails chooses the interface locale from `Current.translation_language`, which
 is resolved from the request subdomain. English and Hebrew catalogs live in
 `config/locales/en.yml` and `config/locales/he.yml`; Spanish, Arabic, German,
-and French currently fall back to English. The layouts expose the translation
+French, Greek, and Swedish currently fall back to English. The layouts expose the translation
 language through the document's `lang` and `dir` attributes, independently of
 the language of learning content. Production uses an Action Dispatch
 `tld_length` of 1 because `.app` is a single-label TLD; this makes
@@ -790,6 +790,13 @@ normal dedupe/credit/course transaction. A detection error is recorded on the
 provisional progress row, marks the visible request failed, and costs no
 credit.
 
+The language catalog supports English (`en`), Spanish (`es`), French (`fr`),
+German (`de`), Hebrew (`he`), Palestinian Arabic (`ar-JO`), Greek (`el`), and
+Swedish (`sv`) as both source and translation languages. Greek uses Azure
+locale `el-GR`; Swedish uses `sv-SE`. Supadata caption selection uses the base
+`el` and `sv` codes, while TikTok's ElevenLabs detection normalizes ISO-639-3
+`ell`/`gre` and `swe` back to those database records.
+
 YouTube detection is a dedicated Gemini 2.5 Flash video request constrained to
 the database language ISO codes. TikTok detection first downloads verified
 audio with yt-dlp and sends it to ElevenLabs Scribe without a language hint;
@@ -800,7 +807,7 @@ URL directly. Scribe's returned ISO-639 code selects the language. Its
 transcript and timed words seed `data["stt_candidates"]["elevenlabs"]`, so
 extraction reuses that paid result while still requesting the independent
 Supadata native candidate. Scribe v2's three-letter codes (`eng`, `spa`, `deu`,
-`fra`, `heb`, `ara`) and regional seeded codes (notably `ar-JO`) are normalized
+`fra`, `heb`, `ara`, `ell`/`gre`, `swe`) and regional seeded codes (notably `ar-JO`) are normalized
 to the database's base ISO language.
 
 After detection the import pipeline is split. `CreateSongProgress` is unique on
@@ -2471,8 +2478,10 @@ The platform integrates audio files using Active Storage attachments on two core
 - **Spanish**: `es-ES-ElviraNeural` 
 - **French**: `fr-FR-DeniseNeural`
 - **German**: `de-DE-KatjaNeural`
-- **Arabic**: `ar-JO-TaimNeural` (includes Palestinian Arabic fallback)
+- **Arabic**: `ar-LB-RamiNeural` (used for the Palestinian Arabic catalog entry)
 - **Hebrew**: `he-IL-AvriNeural`
+- **Greek**: `el-GR-AthinaNeural`
+- **Swedish**: `sv-SE-SofieNeural`
 
 ### Audio Generation Process
 1. **Text Input**: Phrase or token text in source language

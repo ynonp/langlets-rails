@@ -1,246 +1,156 @@
 # Adding a New Language
 
-This guide covers all the steps needed to add a new language to the Langlets platform. Use Italian as a running example; substitute values for your target language.
+This guide covers the current steps for adding a source and translation language to Langlets. It uses Italian as an example; substitute the target language's values.
 
----
+## Language Record
 
-## Overview
+Languages live in `languages`:
 
-Languages are stored in the `languages` table with these columns:
-
-| Column | Purpose | Example (Italian) |
+| Column | Purpose | Italian example |
 |---|---|---|
-| `iso_name` | Unique ISO code. Used in `?lang=` URL params and Azure TTS lookups. | `it` |
-| `english_name` | English display name. Used as a lookup key in the course creation pipeline (AI prompts, `Course#create_song!`, etc.). | `Italian` |
-| `native_name` | Native display name. Shown in the onboarding language picker and user menu. | `Italiano` |
-| `pronunciation_variant_name` | Locale tag for Azure text-to-speech. | `it-IT` |
-| `rtl` | Boolean — `true` for right-to-left scripts (Arabic, Hebrew), `false` otherwise. | `false` |
+| `iso_name` | Unique ISO-639-1 code used in URLs, translation keys, and speech lookups. A regional value is retained only where the catalog deliberately requires one (Arabic is `ar-JO`). | `it` |
+| `english_name` | Pipeline and application lookup name. | `Italian` |
+| `native_name` | Display name shown in language pickers. | `Italiano` |
+| `pronunciation_variant_name` | Azure Speech BCP-47 locale. | `it-IT` |
+| `rtl` | Right-to-left layout flag. | `false` |
 
-The language record is referenced in two distinct ways throughout the codebase:
+The application uses both `iso_name` and `english_name`, so both must remain stable.
 
-- **By `iso_name`** — URL-based filtering (`params[:lang]`), user saved-words lookup, Azure TTS voice selection.
-- **By `english_name`** — the course creation pipeline (`CreateSongProgress`, `Course#create_song!`, AI prompts).
+## Checklist
 
----
+### 1. Add a production data migration
 
-## Step-by-Step Checklist
-
-### 1. Data Migration (for production)
-
-Create a migration to insert the language into production. This ensures the record exists before any course referencing it is created.
-
-```bash
-bin/rails generate migration AddItalianLanguage
-```
+Use SQL rather than the application `Language` model so the migration remains runnable if that model later changes. Make it idempotent and repair an existing partial row with `ON CONFLICT`.
 
 ```ruby
-# db/migrate/YYYYMMDDHHMMSS_add_italian_language.rb
-class AddItalianLanguage < ActiveRecord::Migration[7.0]
+class AddItalianLanguage < ActiveRecord::Migration[8.0]
   def up
-    Language.find_or_create_by!(iso_name: "it") do |lang|
-      lang.english_name = "Italian"
-      lang.native_name  = "Italiano"
-      lang.pronunciation_variant_name = "it-IT"
-      # lang.rtl defaults to false — only set to true for RTL languages
-    end
+    execute <<~SQL.squish
+      INSERT INTO languages
+        (iso_name, english_name, native_name, pronunciation_variant_name, rtl, created_at, updated_at)
+      VALUES
+        ('it', 'Italian', 'Italiano', 'it-IT', FALSE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+      ON CONFLICT (iso_name) DO UPDATE SET
+        english_name = EXCLUDED.english_name,
+        native_name = EXCLUDED.native_name,
+        pronunciation_variant_name = EXCLUDED.pronunciation_variant_name,
+        rtl = EXCLUDED.rtl,
+        updated_at = CURRENT_TIMESTAMP
+    SQL
   end
 
   def down
-    Language.find_by(iso_name: "it")&.destroy
+    raise ActiveRecord::IrreversibleMigration,
+      "Italian may be referenced by production content and cannot be removed safely"
   end
 end
 ```
 
-Run the migration:
+Deleting a language after courses, translations, vocabulary, or reviews reference it is unsafe, so language-catalog migrations are intentionally irreversible.
 
-```bash
-bin/rails db:migrate
-```
+Run `bin/rails db:migrate` and `RAILS_ENV=test bin/rails db:migrate`.
 
-### 2. Add to Seeds (`db/seeds.rb`)
+### 2. Add the record to seeds
 
-Add a block so new development environments also get the language:
+Add an idempotent block to `db/seeds.rb` so fresh development databases include the language:
 
 ```ruby
-l_it = Language.find_or_create_by!(iso_name: "it") do |lang|
-  lang.english_name = "Italian"
-  lang.native_name  = "Italiano"
-  lang.pronunciation_variant_name = "it-IT"
+l_it = Language.find_or_create_by!(iso_name: "it") do |language|
+  language.english_name = "Italian"
+  language.native_name = "Italiano"
+  language.pronunciation_variant_name = "it-IT"
 end
 ```
 
-Run seeds:
+Set `rtl = true` only for a right-to-left language.
+
+### 3. Add transcription and detection codes
+
+The AI pipeline runs in Deno. The old Rails prompt partials under `app/views/prompts/` are not used by course creation.
+
+Required mappings:
+
+- Add the lowercased English name and ISO-639-1 code to `LANGUAGE_TO_ISO` in `pipeline/src/steps/extractLyrics.ts`. Supadata uses this code to request and validate the native caption track. This mapping is intentionally separate from the database because a database code can include a TTS region, while Supadata expects a base language.
+- Add the ISO-639-3 code returned by ElevenLabs Scribe to `SCRIBE_ISO_639_3_TO_1` in `pipeline/src/languageDetection.ts`. Include terminology and bibliographic aliases when both exist (Greek has `ell` and `gre`). Without this mapping, TikTok detection rejects an otherwise supported language.
+- Add the English name to `ENGLISH_NAMES` in `pipeline/src/fuzzyword.ts`. Similar-sound generation additionally requires a matching frequency dictionary in `pipeline/data` and `DICTIONARIES`. Without a dictionary, course creation succeeds but no substituted alternatives are produced for that language.
+
+YouTube detection needs no static entry: Rails sends every database language and Gemini must choose one of those ISO codes.
+
+### 4. Review pipeline prompt examples
+
+Examples are not required for the pipeline to run, but an example must never demonstrate the wrong output language:
+
+- `pipeline/src/prompts/addTokenTranslations.ts` selects examples by **translation language**. Unknown targets get no token example. Add a target-language example for better word-level translations.
+- `pipeline/src/prompts/translate.ts` uses an exact source/target example when available, then a Spanish-source example in the requested target language, and finally Spanish → English. Add a target-language fallback for every supported translation language.
+- `pipeline/src/prompts/addLessons.ts` and `pipeline/src/prompts/extractCompounds.ts` select examples by **source language** and safely fall back to English. Add both the language-code mapping and an example when the language needs script- or grammar-specific guidance.
+
+Add or extend the corresponding Deno tests under `pipeline/tests/` whenever a mapping or example changes.
+
+### 5. Add Azure text-to-speech support
+
+Update both mappings in `app/models/concerns/azure_text_to_speech.rb`:
+
+```ruby
+when "it", "it-it"
+  "it-IT-ElsaNeural" # get_voice
+
+when "it", "it-it"
+  "it-IT" # get_azure_language_code
+```
+
+Verify the locale and voice against Microsoft's current Azure Speech language-support table. Without explicit entries, speech falls back to US English.
+
+Add a focused Rails test for both the base ISO code and selected locale/voice.
+
+### 6. Add fixtures and verify automatic UI visibility
+
+Add the language to `test/fixtures/languages.yml`. A database language automatically appears in the admin course form and in database-driven language filters; no locale catalog is required. Interface copy falls back to English when `config/locales/<iso>.yml` does not exist.
+
+If adding pipeline fixture data, `clip_language` must exactly match `Language#english_name`. Translation payloads live under `data.translations`, keyed by `Language#iso_name`; the old top-level `translation_language` fixture field is vestigial.
+
+### 7. Verify
+
+Run at least:
 
 ```bash
-bin/rails db:seed
+bin/rails db:version
+RAILS_ENV=test bin/rails db:version
+bin/rails db:migrate
+RAILS_ENV=test bin/rails db:migrate
+bin/rails test test/models/language_test.rb
+cd pipeline && deno task test
 ```
 
-### 3. Token Translation Examples (AI Prompt Partials)
+Also check that the migrations created the exact records and that pipeline type-checking passes.
 
-The prompt in `app/views/prompts/add_token_translations.md.erb` dynamically includes language-pair-specific examples:
+## Runtime Flow
 
-```erb
-<%= render partial: "prompts/add_tokens_examples_#{clip_language.downcase}_#{translation_language.downcase}" %>
-```
+1. Detection chooses one of the database languages. YouTube returns the supplied ISO code; TikTok's Scribe ISO-639-3 result is normalized to the database code.
+2. Transcript extraction maps the English source-language name to the base code Supadata understands and rejects a returned caption track in a different language.
+3. Translation output is stored under `data["translations"][language.iso_name]`.
+4. `CourseBuilder::BuildSong` resolves the source by `english_name` and materializes the selected translation language.
+5. Phrase and token audio use the source language's Azure locale and voice.
 
-This means you need **one partial per language direction**. For Italian ↔ English, create both:
+## Current Languages
 
-- `app/views/prompts/_add_tokens_examples_italian_english.md.erb`
-- `app/views/prompts/_add_tokens_examples_english_italian.md.erb`
-
-#### What goes in these partials
-
-Each partial provides 2–3 example inputs and expected outputs that teach the LLM how to handle the language pair's particular challenges — contracted articles, clitic pronouns, word order, gender, etc. They follow the same format as the existing files:
-
-- `_add_tokens_examples_spanish_english.md.erb`
-- `_add_tokens_examples_french_english.md.erb`
-- `_add_tokens_examples_arabic_english.md.erb`
-- `_add_tokens_examples_hebrew_english.md.erb`
-- `_add_tokens_examples_hebrew_arabic.md.erb`
-- `_add_tokens_examples_english_hebrew.md.erb`
-
-Study these as templates. The format is:
-
-```
----
-## Example input 1:
-<source sentence 1> => <target sentence 1>
-<source sentence 2> => <target sentence 2>
-
-## Expected output 1:
-[word] rest of sentence => [translated word] rest of target
-...
-
-## Example input 2:
-...
-```
-
-#### If a partial is missing
-
-If the rendered partial doesn't exist, Rails will raise an `ActionView::MissingTemplate` error when `add_token_translation` runs during course creation. The course will get stuck in `processing` or `error` status.
-
-### 4. Azure Text-to-Speech (`app/models/concerns/azure_text_to_speech.rb`)
-
-Two `case` statements need entries for the new language's ISO code.
-
-#### `get_voice(language_iso)`
-
-Add a voice mapping. Find the appropriate Azure voice name from [Azure's voice list](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts):
-
-```ruby
-when "it"
-  "it-IT-ElsaNeural"
-```
-
-#### `get_azure_language_code(language_iso)`
-
-Add the Azure language code:
-
-```ruby
-when "it"
-  "it-IT"
-```
-
-Without these entries, the `SpeakActivity` and any other TTS-dependent feature will fall back to the default US English voice (`"en-US-AriaNeural"`), which will sound wrong for the new language.
-
-### 5. Verify Frontend Visibility
-
-Once the language record exists in the database, it automatically appears in:
-
-- **Create Course form** (`courses/new`) — queries `Language.all.order(:english_name)`
-
-No other view or controller changes are required.
-
-### 6. Transcription Language Code (`pipeline/src/steps/extractLyrics.ts`)
-
-Add the language to `LANGUAGE_TO_ISO`, keyed on the lowercased English name:
-
-```ts
-const LANGUAGE_TO_ISO: Record<string, string> = {
-  // ...
-  italian: "it",
-};
-```
-
-This is the code `extract_lyrics` asks Supadata for, and the one it validates the returned caption
-track against. **It is not read from the database**, deliberately: `Language#iso_name` is a TTS code
-(Arabic is `ar-JO`), and Supadata stocks caption tracks by plain language, not regional variant.
-
-Skipping this step does not fail loudly. The step sends no `lang` at all, Supadata answers with
-whichever caption track the video happens to carry, and there is no requested code to compare it
-against — so a Japanese subtitle track on an Italian song becomes the course's lyrics, and the first
-visible symptom is a forced-alignment failure two steps later. The step logs
-`ExtractLyrics has no transcription language code for <language>` when this happens; grep for it
-after adding a language.
-
-Also add the language to `pipeline/src/prompts/addTokenTranslations.ts`'s `examples` map if you want
-a language-matched worked example — unknown languages fall back to the English one.
-
-### 7. Test Fixtures (Optional)
-
-Test fixtures in `test/fixtures/create_song_progress/` reference languages by their `english_name` field. If you add test courses for the new language, ensure the JSON fixture's `clip_language` matches:
-
-```json
-{
-  "clip_language": "Italian"
-}
-```
-
-Older fixtures still carry a `translation_language` field from before
-`CreateSongProgress` dropped that column; it's vestigial now — the language(s)
-a fixture holds live under `data.translations`, keyed by ISO code.
-
----
-
-## How Languages Are Used at Runtime
-
-Understanding this flow helps when debugging issues after adding a language:
-
-### Course Creation Pipeline
-
-```
-User submits a video URL; the pipeline detects `it` and maps it to the seeded
-Language (`english_name: "Italian"`, `iso_name: "it"`). The request supplies
-only the translation language (`"English"`).
-        │
-        ▼
-CreateSongProgress record stored with english_name strings
-        │
-        ▼
-CreateCourseJob → CourseBuilder::BuildSong
-        │
-        ├── ExtractLyrics     → prompt gets clip_language as template local
-        ├── Translate         → prompt gets clip_language, translation_language
-        ├── AddTokenTranslation → prompt dynamically renders language-pair partial
-        ├── AddLessons        → prompt gets clip_language, translation_language
-        └── AddSimilarSound   → calls fuzzyword with iso_name (strips region suffix)
-        │
-        ▼
-Course.create_song!  → Language.find_by(english_name: ...)
-```
-
-## Quick Reference: Existing Languages
-
-`ISO` is `Language#iso_name`; `Transcription` is the separate `LANGUAGE_TO_ISO` entry the pipeline
-asks Supadata for. They differ wherever the TTS voice needs a regional variant.
-
-| ISO | English Name | Native Name | RTL | TTS Variant | Transcription |
-|---|---|---|---|---|---|
-| `en` | English | English | No | en-US | `en` |
-| `es` | Spanish | Español | No | es-ES | `es` |
-| `fr` | French | Français | No | fr-FR | `fr` |
-| `de` | German | Deutsch | No | de-DE | `de` |
-| `he` | Hebrew | עברית | Yes | he-IL | `he` |
-| `ar-JO` | Arabic | العربية الفلسطينية | Yes | ar-JO | `ar` |
-
----
+| ISO | English | Native | RTL | Azure locale | Transcription | Scribe detection |
+|---|---|---|---|---|---|---|
+| `en` | English | English | No | `en-US` | `en` | `eng` |
+| `es` | Spanish | Español | No | `es-ES` | `es` | `spa` |
+| `fr` | French | Français | No | `fr-FR` | `fr` | `fra`, `fre` |
+| `de` | German | Deutsch | No | `de-DE` | `de` | `deu` |
+| `he` | Hebrew | עברית | Yes | `he-IL` | `he` | `heb` |
+| `ar-JO` | Arabic | العربية الفلسطينية | Yes | `ar-JO` | `ar` | `ara` |
+| `el` | Greek | Ελληνικά | No | `el-GR` | `el` | `ell`, `gre` |
+| `sv` | Swedish | Svenska | No | `sv-SE` | `sv` | `swe` |
 
 ## Troubleshooting
 
-| Symptom | Likely Cause |
+| Symptom | Likely cause |
 |---|---|
-| Language doesn't appear in picker | Record not in DB — run migration + seeds |
-| Course creation stalls in `processing` | Missing `_add_tokens_examples_*.md.erb` partial for the language pair |
-| TTS speaks in English | Missing `get_voice` / `get_azure_language_code` entry in `azure_text_to_speech.rb` |
-| `ActionView::MissingTemplate` during course build | Prompt partial name doesn't match — check `clip_language.downcase` + `_` + `translation_language.downcase` |
-| Speech recognition / TTS sounds wrong | `pronunciation_variant_name` doesn't match an Azure-supported locale |
+| Language is absent from a picker | Migration or seeds have not created the record |
+| Supadata selects an unrelated caption track | Missing `LANGUAGE_TO_ISO` entry |
+| TikTok reports a supported detected language as unsupported | Missing Scribe ISO-639-3 normalization |
+| TTS uses an English voice | Missing Azure voice or locale mapping |
+| Sentence prompt demonstrates English for a non-English target | Missing target-language fallback in `translate.ts` |
+| Similar-sound activity has no substitutions | No frequency dictionary is configured for the source language |

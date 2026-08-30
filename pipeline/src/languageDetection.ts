@@ -76,10 +76,13 @@ const SCRIBE_ISO_639_3_TO_1: Record<string, string> = {
   ara: "ar",
   deu: "de",
   eng: "en",
+  ell: "el",
   fra: "fr",
   fre: "fr",
+  gre: "el",
   heb: "he",
   spa: "es",
+  swe: "sv",
 };
 
 export function resolveLanguage(value: string, supported: SupportedLanguage[]): SupportedLanguage {

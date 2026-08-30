@@ -32,3 +32,17 @@ arabic:
   native_name: 'العربية الفلسطينية'
   pronunciation_variant_name: 'ar-JO'
   rtl: true
+
+greek:
+  iso_name: 'el'
+  english_name: 'Greek'
+  native_name: 'Ελληνικά'
+  pronunciation_variant_name: 'el-GR'
+  rtl: false
+
+swedish:
+  iso_name: 'sv'
+  english_name: 'Swedish'
+  native_name: 'Svenska'
+  pronunciation_variant_name: 'sv-SE'
+  rtl: false

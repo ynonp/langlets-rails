@@ -36,6 +36,10 @@ module AzureTextToSpeech
         "de-DE-KatjaNeural"
       when "he", "he-il"
         "he-IL-AvriNeural"
+      when "el", "el-gr"
+        "el-GR-AthinaNeural"
+      when "sv", "sv-se"
+        "sv-SE-SofieNeural"
       else
         "en-US-AriaNeural" # Default to English if language not found
       end
@@ -58,6 +62,10 @@ module AzureTextToSpeech
         "de-DE"
       when "he", "he-il"
         "he-IL"
+      when "el", "el-gr"
+        "el-GR"
+      when "sv", "sv-se"
+        "sv-SE"
       else
         "en-US" # Default to US English
       end

@@ -24,6 +24,11 @@ Deno.test("token translation prompt selects its example by target language", () 
   assert(hebrewPrompt.includes(`## Expected Output:\n${examples.Hebrew}`));
 });
 
+Deno.test("token translation prompt has Greek and Swedish target examples", () => {
+  assert(addTokenTranslationsPrompt("English", "Greek").includes(examples.Greek));
+  assert(addTokenTranslationsPrompt("English", "Swedish").includes(examples.Swedish));
+});
+
 Deno.test("token translation prompt adds only the narrow scope guard to legacy", () => {
   const prompt = addTokenTranslationsPrompt("English", "Hebrew");
   const legacy = legacyAddTokenTranslationsPrompt("English", "Hebrew");

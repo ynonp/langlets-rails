@@ -37,6 +37,14 @@ const HEBREW = `כל כך שמח לשמוע את קולך, גם כשאני יש�
 סוף סוף נסעת כמו בחלומות שלך, מחפש מקום לחזור אליו
 ואני, לאט לאט, מאבד אותך`;
 
+const GREEK = `Με κάνει τόσο χαρούμενο να ακούω τη φωνή σου, ακόμα και στον ύπνο
+Επιτέλους, ταξίδευες όπως στα όνειρά σου, ψάχνοντας ένα μέρος για να επιστρέψεις
+Κι εγώ, σιγά σιγά, σε χάνω`;
+
+const SWEDISH = `Det gör mig så glad att höra din röst, även när jag sover
+Äntligen reste du som i dina drömmar och letade efter en plats att återvända till
+Och jag, långsamt, förlorar dig`;
+
 // Worked examples for the pairs we actually see in production. The exact
 // (clip, translation) pair matters far more than either language alone — a
 // model asked to translate Arabic into Hebrew and shown a Spanish->English
@@ -51,7 +59,9 @@ const examples: Record<string, Record<string, Example>> = {
   },
   Spanish: {
     English: { input: SPANISH, output: ENGLISH },
+    Greek: { input: SPANISH, output: GREEK },
     Hebrew: { input: SPANISH, output: HEBREW },
+    Swedish: { input: SPANISH, output: SWEDISH },
   },
   French: {
     English: { input: FRENCH, output: ENGLISH },
@@ -59,12 +69,12 @@ const examples: Record<string, Record<string, Example>> = {
   },
 };
 
-// Every pair we don't have a real example for falls back to whichever
-// Spanish example matches the target: Spanish->Hebrew for a Hebrew target,
-// Spanish->English for everything else (English or any other language).
+// Every pair without an exact example falls back to a Spanish-source example
+// in the requested target language when one exists. A wholly unconfigured
+// target retains the legacy Spanish->English fallback.
 function exampleFor(clipLanguage: string, translationLanguage: string): Example {
   return examples[clipLanguage]?.[translationLanguage] ??
-    (translationLanguage === "Hebrew" ? examples.Spanish.Hebrew : examples.Spanish.English);
+    examples.Spanish[translationLanguage] ?? examples.Spanish.English;
 }
 
 // `requestedLineNumbers` names the subset to translate on a repair pass: the

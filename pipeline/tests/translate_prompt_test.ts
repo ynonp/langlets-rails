@@ -48,6 +48,11 @@ Deno.test("translatePrompt falls back to Spanish->English for an unlisted pair t
   assertStringIncludes(prompt, "It makes me so happy to hear your voice");
 });
 
+Deno.test("translatePrompt keeps Greek and Swedish fallback examples in the target language", () => {
+  assertStringIncludes(translatePrompt("German", "Greek", 3), "Με κάνει τόσο χαρούμενο");
+  assertStringIncludes(translatePrompt("German", "Swedish", 3), "Det gör mig så glad");
+});
+
 Deno.test("translatePrompt falls back to Spanish->English for an unlisted pair targeting a third language", () => {
   const prompt = translatePrompt("German", "Italian", 3);
 

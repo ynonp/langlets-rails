@@ -241,6 +241,8 @@ Deno.test("falls back to ElevenLabs when Sol reconciliation fails", async () => 
 
 Deno.test("maps explicit and named clip languages to transcription codes", () => {
   assertEquals(languageCodeForTranscription("French"), "fr");
+  assertEquals(languageCodeForTranscription("Greek"), "el");
+  assertEquals(languageCodeForTranscription("Swedish"), "sv");
   assertEquals(languageCodeForTranscription("French", "fr-CA"), "fr-CA");
   assertEquals(languageCodeForTranscription("Unknown"), null);
 });

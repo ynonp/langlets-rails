@@ -9,6 +9,8 @@ const LANGUAGES = [
   { iso_name: "de", english_name: "German" },
   { iso_name: "fr", english_name: "French" },
   { iso_name: "he", english_name: "Hebrew" },
+  { iso_name: "el", english_name: "Greek" },
+  { iso_name: "sv", english_name: "Swedish" },
 ];
 
 Deno.test("YouTube language detection uses Gemini and resolves a seeded language", async () => {
@@ -94,10 +96,12 @@ Deno.test("TikTok falls back to ElevenLabs URL fetch when yt-dlp cannot produce 
 });
 
 Deno.test("Scribe ISO-639-3 codes map to the Langlets language catalog", () => {
-  const expected = ["eng", "spa", "ara", "deu", "fra", "heb"];
+  const expected = ["eng", "spa", "ara", "deu", "fra", "heb", "ell", "swe"];
   expected.forEach((code, index) =>
     assertEquals(resolveLanguage(code, LANGUAGES), LANGUAGES[index])
   );
+
+  assertEquals(resolveLanguage("gre", LANGUAGES), LANGUAGES[6]);
 
   assertThrows(
     () => resolveLanguage("ita", LANGUAGES),
