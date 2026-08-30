@@ -33,7 +33,7 @@ class ConfigurationsControllerTest < ActionDispatch::IntegrationTest
       get paths[:endpoint]
       rules = JSON.parse(response.body)["rules"]
 
-      tab_roots = ["^/app$", "^/app/library$", "^/app/import_requests/new$"]
+      tab_roots = [ "^/app$", "^/app/library$", "^/app/vocabulary$", "^/app/import_requests/new$" ]
       assert_not rules.any? { |rule|
         rule.dig("properties", "presentation") == "replace_root" &&
           (rule.fetch("patterns", []) & tab_roots).any?

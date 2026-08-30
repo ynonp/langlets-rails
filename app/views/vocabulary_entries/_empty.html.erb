@@ -1,0 +1,16 @@
+<div data-testid="vocabulary-empty"
+     class="mt-10 max-w-[860px] rounded-2xl border border-dashed border-[#CFC2AB] px-6 py-16 text-center">
+  <div class="mx-auto mb-7 flex h-24 w-24 items-center justify-center rounded-[28px] border border-[#DED4C2] bg-[#FFFDF8]">
+    <span class="block h-[30px] w-[38px] rounded-md border-2 border-[#C4451C]"></span>
+  </div>
+
+  <h2 class="text-2xl font-extrabold tracking-[-0.02em] [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">
+    <%= t("app.vocabulary_entries.empty.title") %>
+  </h2>
+  <p class="mx-auto mt-3 max-w-[420px] text-base leading-relaxed text-[#716A5D]">
+    <%= t("app.vocabulary_entries.empty.body") %>
+  </p>
+
+  <%= link_to t("app.vocabulary_entries.empty.cta"), new_vocabulary_entry_path,
+              class: "mt-8 inline-flex h-12 items-center rounded-full bg-[#1E1B16] px-7 text-sm font-bold text-[#FAF6EF] transition hover:bg-[#C4451C]" %>
+</div>

@@ -1,7 +1,5 @@
 module Activities
   class WatchVideoActivity < Activity
-    include ActivityWithTokens
-
     def activity_params
       lesson = self.lesson
       l1 = ordered_phrases.first.l1

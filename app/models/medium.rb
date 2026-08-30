@@ -8,6 +8,32 @@ class Medium < ApplicationRecord
 
   # One row per video and spoken language. Translations are attached below it.
 
+  # Constructs the selected phrases from this medium and assigns each one the
+  # end of its playback window. Boundaries come from the complete medium
+  # timeline, not just the selected phrases, so skipped phrases still delimit
+  # the preceding phrase. Association#find raises when an id belongs to a
+  # different medium (or to a custom phrase), rather than silently dropping it.
+  def phrases_with_playback_boundaries(phrase_ids:)
+    ids = Array(phrase_ids).compact.uniq
+    return [] if ids.empty?
+
+    selected_phrases = phrases
+      .includes(:localized_translation, phrase_tokens: [ :localized_translation, { l1_audio_attachment: :blob } ])
+      .find(ids)
+      .index_by(&:id)
+
+    timeline = phrases.ordered_by_timestamp.pluck(:id, :timestamp)
+    timeline.each_with_index.filter_map do |(phrase_id, _timestamp), index|
+      phrase = selected_phrases[phrase_id]
+      next unless phrase
+
+      next_timestamp = timeline[index + 1]&.second
+      phrase.calculated_end_timestamp = next_timestamp
+      phrase.calculated_end_timestamp ||= HasTimestamp.seconds_to_timestamp(phrase.timestamp_seconds + 5) if phrase.timestamp_seconds
+      phrase
+    end
+  end
+
   def self.youtube_thumbnail_url(video_id, quality = 'hqdefault')
     Youtube::Url.thumbnail_url(video_id, quality)
   end

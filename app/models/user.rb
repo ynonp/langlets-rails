@@ -73,6 +73,11 @@ class User < ApplicationRecord
   has_many :phrase_token_users, dependent: :destroy
   has_many :saved_phrase_tokens, through: :phrase_token_users, source: :phrase_token
 
+  # Phrases typed directly into the Vocabulary tab. Course phrases belong to a
+  # Medium instead, and the database guarantees that a Phrase has only one of
+  # these two sources.
+  has_many :custom_phrases, class_name: "Phrase", dependent: :destroy
+
   # Credits meter video imports. users.credit_balance is the authority; the ledger
   # is the append-only audit behind it. Always move credits via Credits::Ledger.
   #
@@ -341,9 +346,12 @@ class User < ApplicationRecord
     Course.none
   end
 
+  # Languages this user still practises words in. Paused words are deliberately
+  # excluded: they stay listed in the Vocabulary tab but must not conjure a
+  # daily review for a language the user has retired.
   def languages_with_saved_words
     Language.joins(phrases_as_l1: { phrase_tokens: :phrase_token_users })
-      .where(phrase_token_users: { user_id: id })
+      .where(phrase_token_users: { user_id: id, practicing: true })
       .distinct
   end
 
@@ -387,7 +395,7 @@ class User < ApplicationRecord
   def daily_vocab_review_available?(language_code)
     language = Language.find_by(iso_name: language_code)
     return false unless language
-    return false unless phrase_token_users.joins(phrase_token: :phrase)
+    return false unless phrase_token_users.practising.joins(phrase_token: :phrase)
       .where(phrases: { l1_id: language.id }).exists?
 
     !lesson_users.joins(:lesson).where(

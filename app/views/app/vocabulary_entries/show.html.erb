@@ -1,0 +1,72 @@
+<% content_for :title, "#{@entry.word} · langlets." %>
+
+<div class="app-scroll-pad px-5 pt-4 flex flex-col gap-3">
+  <div class="mb-1 flex items-center justify-between gap-3">
+    <%= link_to app_vocabulary_entries_path,
+                class: "flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-xl bg-app-card text-app-text-dim",
+                aria: { label: t(".back") } do %>
+      <%= app_icon "chevron", class: "h-[18px] w-[11px] rotate-180" %>
+    <% end %>
+
+    <p class="min-w-0 truncate text-[12px] uppercase tracking-[0.1em] text-app-text-3">
+      <%= [ localized_language_name(@entry.source_language), @entry.source ].compact_blank.join(" · ") %>
+    </p>
+
+    <span class="w-[38px] shrink-0"></span>
+  </div>
+
+  <%= form_with url: app_vocabulary_entry_path(@entry.id), method: :patch,
+                data: { testid: "vocabulary-detail-form" },
+                class: "flex flex-col gap-3" do |f| %>
+    <section class="app-hairline rounded-[18px] bg-app-card p-[18px]">
+      <h2 class="mb-2.5 text-[12px] uppercase tracking-[0.1em] text-app-text-2"><%= t(".context") %></h2>
+      <p class="text-[22px] leading-normal text-app-text-2" dir="auto">
+        <%= highlighted_vocabulary_context(@entry) %>
+      </p>
+    </section>
+
+    <section class="app-hairline rounded-[18px] bg-app-card px-[18px] py-4">
+      <h2 class="mb-1.5 text-[12px] uppercase tracking-[0.1em] text-app-text-2">
+        <%= t(".translation_of", word: @entry.word) %>
+      </h2>
+      <%= f.text_field :translation, value: @entry.translation,
+                       placeholder: t(".translation_placeholder"),
+                       autocomplete: "off",
+                       class: "w-full bg-transparent text-[24px] font-semibold text-app-text placeholder:text-app-text-3 outline-none" %>
+    </section>
+
+    <%= render "practice_toggle", entry: @entry %>
+
+    <%= f.submit t(".save"),
+                 class: "mt-1 w-full rounded-app-field bg-app-accent px-4 py-[17px] text-[17px] font-bold text-app-on-accent" %>
+  <% end %>
+
+  <div data-controller="vocabulary-confirm">
+    <button type="button" data-action="vocabulary-confirm#open"
+            data-testid="vocabulary-delete"
+            class="w-full rounded-app-field border border-[#3a2229] px-4 py-4 text-[16px] font-semibold text-[#ff8189]">
+      <%= t(".delete") %>
+    </button>
+
+    <dialog data-vocabulary-confirm-target="dialog"
+            class="m-auto w-[calc(100vw-56px)] max-w-sm rounded-3xl bg-app-sheet p-6 text-app-text backdrop:bg-black/70">
+      <h2 class="text-[20px] font-bold"><%= t(".delete_title", word: @entry.word) %></h2>
+      <p class="mt-2.5 text-[15px] leading-normal text-app-text-2"><%= t(".delete_body") %></p>
+
+      <%= button_to t(".pause_instead"), app_vocabulary_entry_path(@entry.id),
+                    method: :patch, params: { practicing: "false" },
+                    form: { data: { turbo: false } },
+                    class: "mt-[18px] w-full rounded-[14px] border border-white/10 px-4 py-3.5 text-[15px] font-semibold text-app-text-dim" %>
+
+      <div class="mt-2.5 flex gap-2.5">
+        <button type="button" data-action="vocabulary-confirm#close"
+                class="flex-1 rounded-[14px] bg-app-pill px-4 py-[15px] text-[16px] font-semibold text-app-text">
+          <%= t(".cancel") %>
+        </button>
+        <%= button_to t(".delete_confirm"), app_vocabulary_entry_path(@entry.id),
+                      method: :delete, form_class: "flex-1",
+                      class: "w-full rounded-[14px] bg-[#e5484d] px-4 py-[15px] text-[16px] font-bold text-white" %>
+      </div>
+    </dialog>
+  </div>
+</div>

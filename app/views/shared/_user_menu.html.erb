@@ -49,6 +49,10 @@
     <% if show_theme_toggle || show_xp_badge %>
       <div class="sm:hidden <%= divider_class %>"></div>
     <% end %>
+    <%= render "shared/menu_link",
+               label: t("app.web_menu.vocabulary"),
+               path: vocabulary_entries_path,
+               class_name: menu_item_class %>
     <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
       <%= render "shared/menu_link",
                  label: t("shared.menu.review_words", language: language.iso_name),
@@ -56,9 +60,7 @@
                  class_name: menu_item_class,
                  data: { turbo: false } %>
     <% end %>
-    <% if current_user.languages_with_saved_words.exists? %>
-      <div class="<%= divider_class %>"></div>
-    <% end %>
+    <div class="<%= divider_class %>"></div>
     <%= render "shared/menu_link",
                label: t("shared.menu.notifications"),
                path: notifications_path,

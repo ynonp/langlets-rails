@@ -272,7 +272,84 @@ en:
           title: "Upgrade to Pro to import more content"
           body: "You've used all %{count} free imports. Pro imports are unlimited."
           cta: "Upgrade to Pro"
-        pro:
+        # The Vocabulary tab. The recurring idea in this copy is that a saved word
+    # is a span inside a phrase, never a bare dictionary entry — every string
+    # that mentions a word mentions the phrase it lives in.
+    vocabulary_entries:
+      paused: "Paused"
+      undo: "Undo"
+      dismiss: "Dismiss"
+      index:
+        title: "Vocabulary"
+        add: "Add a word"
+        search_placeholder: "Search words, translations, phrases"
+        search_label: "Search your vocabulary"
+        search_button: "Search"
+        word_count:
+          one: "1 word"
+          other: "%{count} words"
+        summary: "%{words} · %{paused} not being practised"
+        no_matches: "No words match this filter"
+        no_matches_hint: "Paused words stay in your vocabulary but leave your daily reviews."
+      filters:
+        label: "Filter vocabulary"
+        all: "All"
+        not_practising: "Not practising"
+      empty:
+        title: "No saved words yet"
+        body: "Save words from your language activities — tap any word in a lesson and it lands here with its phrase and translation. Or add your own."
+        cta: "Add a custom word"
+      show:
+        back: "Back to vocabulary"
+        context: "Context phrase"
+        translation_of: "Translation of “%{word}” here"
+        translation_placeholder: "Meaning in this phrase"
+        practice: "Practice in reviews"
+        practice_on: "This word appears in your daily reviews."
+        practice_off: "Stopped — stays in your vocabulary, skipped in reviews."
+        save: "Save"
+        delete: "Delete from vocabulary"
+        delete_title: "Delete “%{word}”?"
+        delete_body: "This removes the word, its translation and its context phrase. If you only want a break from it, stop practising instead."
+        pause_instead: "Stop practising instead"
+        cancel: "Cancel"
+        delete_confirm: "Delete"
+      new:
+        page_title: "Add a word · langlets."
+        title: "Add a word"
+        cancel: "Cancel"
+        errors:
+          sentence_required: "Type the phrase you met the word in."
+          selection_required: "Pick the word you are learning."
+          translation_required: "Add what the word means here."
+          save_failed: "That word could not be saved."
+        lead: "Vocabulary always lives in a phrase"
+        body: "Type the sentence you met the word in, save it, then pick the word. That is how “No time left” and “turn left here” stay two separate entries."
+        phrase: "Phrase"
+        edit: "Edit"
+        phrase_placeholder: "No time left — quick, turn left here"
+        save_phrase: "Save phrase"
+        pick_hint: "Tap the word you are learning. If it is more than one word — “me souviens” — tap the next word too."
+        pick_hint_picked: "Tap the word before or after to add it. Tap inside the pick to go back to one word."
+        translation_of: "Translation of “%{word}”"
+        translation_placeholder: "Meaning in this phrase"
+        submit: "Save to vocabulary"
+      # The web surface. Same screens and the same argument; the extra keys are
+      # the ones a browser has room for and a phone does not.
+      web:
+        index:
+          eyebrow: "Your words"
+          lead: "Every word you have saved, in the phrase you met it in. Edit what one means here, pause the ones you want a break from, or add your own."
+        show:
+          aside_title: "Removing this word"
+        new:
+          aside_title: "How this works"
+          pick_hint: "Click the word you are learning. If it is more than one word — “me souviens” — click the next word too, or drag across them."
+          step_phrase: "Type the sentence you met the word in, and save it."
+          step_pick: "Click the word in that sentence. For a compound like “me souviens”, click the next word too, or drag across them."
+          step_translate: "Say what it means in this phrase, not in general."
+          aside_note: "Saving the phrase alongside the word is what lets the same word be two entries with two meanings."
+    pro:
           title: "Langlets Pro"
           badge: "ACTIVE"
           body: "Unlimited imports"
@@ -328,6 +405,7 @@ en:
     web_menu:
       label: "Main navigation"
       library: "Library"
+      vocabulary: "Vocabulary"
       create: "Create"
     # The native shell's own header menu. Separate from web_menu above because
     # it is a different menu with its own wording, on a screen the web never

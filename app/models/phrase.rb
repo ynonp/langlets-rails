@@ -1,8 +1,13 @@
 class Phrase < ApplicationRecord
+  attr_accessor :calculated_end_timestamp
+
   include AzureTextToSpeech
   include TokenTranslationBlockParser
   include WordTokenBuilder
-  belongs_to :medium
+  # A phrase has exactly one source: imported/course phrases belong to playable
+  # media, while vocabulary typed by a user belongs directly to that user.
+  belongs_to :medium, optional: true
+  belongs_to :user, optional: true
 
   belongs_to :l1, class_name: "Language"
   has_many :phrase_translations, dependent: :destroy, inverse_of: :phrase
@@ -15,6 +20,9 @@ class Phrase < ApplicationRecord
 
   # Validations
   validates :text_l1, presence: { message: "must be present" }
+  validate :has_exactly_one_source
+
+  def custom? = user_id.present?
   def text_l2 = localized_translation&.text
   def l2 = localized_translation&.language || Current.translation_language
 
@@ -87,26 +95,6 @@ class Phrase < ApplicationRecord
     end
   end
 
-  # Class method to add calculated_end_timestamp to each phrase based on the next phrase in the medium
-  def self.with_calculated_end_timestamps(phrase_collection, all_medium_phrases = nil)
-    phrase_collection.each do |phrase|
-      # Use provided medium phrases or fetch them
-      medium_phrases = all_medium_phrases || phrase.medium.phrases.ordered_by_timestamp.to_a
-
-      # Find the next phrase in the medium's phrase collection
-      current_phrase_index = medium_phrases.find_index { |p| p.id == phrase.id }
-      next_phrase = current_phrase_index ? medium_phrases[current_phrase_index + 1] : nil
-
-      # Calculate end timestamp using next phrase or default to +5 seconds
-      timestamp_end = next_phrase&.timestamp || to_string_timestamp(phrase.timestamp_seconds + 5)
-
-      # Add the calculated end timestamp as a singleton method
-      phrase.define_singleton_method(:calculated_end_timestamp) { timestamp_end }
-    end
-
-    phrase_collection
-  end
-
   scope :between_durations, ->(from, to) {
   where(
     "(split_part(timestamp, ':', 1)::float * 60 + split_part(timestamp, ':', 2)::float) BETWEEN ? AND ?",
@@ -127,6 +115,12 @@ class Phrase < ApplicationRecord
   end
 
   private
+
+  def has_exactly_one_source
+    return if [ medium, user ].compact.one?
+
+    errors.add(:base, "must belong to either a medium or a user, but not both")
+  end
 
   def uniform_token_index_type!(tokens)
     index_types = tokens.map(&:index_type).uniq

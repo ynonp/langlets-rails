@@ -64,13 +64,30 @@ Rails.application.routes.draw do
   get "/configurations/ios_v1", to: "configurations#ios_v1"
   get "/configurations/android_v1", to: "configurations#android_v1"
 
+  # The browser Vocabulary surface. It shares behavior with the native
+  # controller, but owns a distinct route so presentation follows the URL
+  # rather than the requesting user agent.
+  resources :vocabulary_entries, path: "vocabulary",
+            only: [ :index, :show, :new, :create, :update, :destroy ] do
+    collection do
+      post :restore
+    end
+  end
+
   # The langlets. app screens. Most are shown only inside the native shell;
-  # Queue and Add Video are also linked from the authenticated web UI.
+  # Add Video is also linked from the authenticated web UI.
   namespace :app do
     root to: "home#index", as: :home
     # controller: pinned — a singular `resource` would otherwise look for
     # App::LibrariesController.
     resource :library, only: [ :show ], controller: "library"
+    # The native Vocabulary tab. The browser counterpart is `/vocabulary`.
+    resources :vocabulary_entries, path: "vocabulary",
+              only: [ :index, :show, :new, :create, :update, :destroy ] do
+      collection do
+        post :restore
+      end
+    end
     resources :started_courses, only: [ :index ]
     resources :enrollments, only: [ :create ]
     resources :import_requests, only: [ :new, :create, :destroy ] do

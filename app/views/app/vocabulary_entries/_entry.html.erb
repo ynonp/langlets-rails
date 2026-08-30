@@ -1,0 +1,32 @@
+<%= link_to app_vocabulary_entry_path(entry.id),
+            class: "app-hairline block rounded-[20px] bg-app-card px-[18px] pt-[18px] pb-3.5 #{'opacity-55' if entry.paused?}",
+            data: { testid: "vocabulary-entry", turbo_frame: "_top" } do %>
+  <div class="flex items-start justify-between gap-3">
+    <div class="min-w-0">
+      <p class="text-[22px] font-bold tracking-[-0.22px] text-app-text"><%= entry.word %></p>
+      <p class="mt-0.5 text-[15px] text-app-text-dim"><%= entry.translation %></p>
+    </div>
+
+    <% if entry.paused? %>
+      <span class="flex shrink-0 items-center gap-1.5 text-[12px] font-semibold text-app-text-2">
+        <span class="flex gap-[2px]" aria-hidden="true">
+          <span class="block h-[11px] w-[3px] bg-app-text-2"></span>
+          <span class="block h-[11px] w-[3px] bg-app-text-2"></span>
+        </span>
+        <%= t("app.vocabulary_entries.paused") %>
+      </span>
+    <% end %>
+  </div>
+
+  <p class="mt-2.5 truncate text-[13px] italic text-app-text-3">
+    <%= highlighted_vocabulary_context(entry, quoted: true) %>
+  </p>
+
+  <div class="mt-2.5 flex items-center gap-2 text-[12px] text-app-text-3">
+    <span class="uppercase tracking-[0.08em]"><%= localized_language_name(entry.source_language) %></span>
+    <% if entry.source.present? %>
+      <span class="h-1 w-1 rounded-full bg-white/15"></span>
+      <span class="truncate"><%= entry.source %></span>
+    <% end %>
+  </div>
+<% end %>

@@ -12,6 +12,8 @@ module App
       "Home" => "/app",
       "Started videos" => "/app/started_courses",
       "Library" => "/app/library",
+      "Vocabulary" => "/app/vocabulary",
+      "Add vocabulary" => "/app/vocabulary/new",
       "Create" => "/app/import_requests/new"
     }.freeze
 
@@ -179,10 +181,21 @@ module App
       assert_select ".app-fab-offset", count: 0
     end
 
+    # Add Video is the only shared route; Vocabulary has a separate `/vocabulary`
+    # browser surface, so every Vocabulary route under `/app` stays native-only.
+    SHARED_WITH_WEB = [ "/app/import_requests/new" ].freeze
+
     test "other app screens remain native-only" do
-      (SCREENS.values - [ "/app/import_requests/new" ]).each do |path|
+      (SCREENS.values - SHARED_WITH_WEB).each do |path|
         get path, headers: WEB
         assert_redirected_to root_path, "#{path} should be web-gated"
+      end
+    end
+
+    test "a web browser can open Vocabulary and its add screen on web routes" do
+      [ "/vocabulary", "/vocabulary/new" ].each do |path|
+        get path, headers: WEB
+        assert_response :success, "#{path} returned #{response.status} to a browser"
       end
     end
 

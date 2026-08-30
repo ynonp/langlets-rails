@@ -32,7 +32,7 @@ import dev.hotwire.navigation.tabs.navigatorConfigurations
 import dev.hotwire.navigation.util.applyDefaultImeWindowInsets
 
 /**
- * The native shell: three bottom tabs, each owning its own NavigatorHost and
+ * The native shell: four bottom tabs, each owning its own NavigatorHost and
  * therefore its own web view and back stack, so switching tabs is instant and
  * every tab keeps its scroll position and page state.
  *
@@ -71,6 +71,17 @@ class MainActivity : HotwireActivity() {
                     name = "library",
                     navigatorHostId = R.id.library_navigator_host,
                     startLocation = Langlets.rootUrl + "/app/library"
+                )
+            ),
+            // Vocabulary sits third, next to Create rather than next to Home: it
+            // is where the words the other two tabs produce end up.
+            HotwireBottomTab(
+                title = getString(R.string.tab_vocabulary),
+                iconResId = R.drawable.ic_tab_vocabulary,
+                configuration = NavigatorConfiguration(
+                    name = "vocabulary",
+                    navigatorHostId = R.id.vocabulary_navigator_host,
+                    startLocation = Langlets.rootUrl + "/app/vocabulary"
                 )
             ),
             // The Create tab's root is the Add-a-video form itself, not a bare

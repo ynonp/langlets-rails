@@ -12,7 +12,9 @@ class ReviewLessonBuilder
   end
 
   def fetch_tokens
-    rows = @user.phrase_token_users
+    # Paused words ("stop practising" in the Vocabulary tab) stay in the user's
+    # vocabulary but never reach a review.
+    rows = @user.phrase_token_users.practising
       .includes(:language, phrase_token: [ :token_translations, { phrase: [ :l1, :phrase_translations ] }, { l1_audio_attachment: :blob } ])
     if @language_code
       return [] unless @language

@@ -1,0 +1,77 @@
+<% content_for :title, t("app.vocabulary_entries.index.title") %>
+
+<%# The web Vocabulary list. Same screen as the native tab and the same copy;
+    what changes is that a browser has room, so the context phrase is shown in
+    full instead of truncated to one line. That phrase is the reason a saved
+    word means anything, and it is the first thing a narrow layout throws away. %>
+<div class="min-h-screen bg-[#FAF6EF] text-[#1E1B16] [font-family:'Instrument_Sans',ui-sans-serif,system-ui,sans-serif]">
+  <div data-testid="web-vocabulary" class="mx-auto w-full max-w-[1180px] px-5 py-8 sm:px-10 sm:py-14">
+    <div class="flex flex-wrap items-end justify-between gap-5">
+      <div class="min-w-0">
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#C4451C]"><%= t("app.vocabulary_entries.web.index.eyebrow") %></p>
+        <h1 class="mt-2 text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">
+          <%= t("app.vocabulary_entries.index.title") %>
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-[#55503F]"><%= t("app.vocabulary_entries.web.index.lead") %></p>
+      </div>
+
+      <%= link_to new_vocabulary_entry_path,
+                  class: "inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-[#1E1B16] px-6 text-sm font-bold text-[#FAF6EF] transition hover:bg-[#C4451C]" do %>
+        <%= app_icon "plus", class: "h-4 w-4" %>
+        <%= t("app.vocabulary_entries.index.add") %>
+      <% end %>
+    </div>
+
+    <% if @total_count.zero? %>
+      <%= render "empty" %>
+    <% else %>
+      <div class="mt-10 max-w-[860px]">
+        <%= form_with url: vocabulary_entries_path, method: :get,
+                      data: { turbo_frame: "vocabulary-results" } do |f| %>
+          <%= f.hidden_field :filter, value: @filter if @filter.present? %>
+          <%# The label is associated by `for` rather than wrapping: a <label>
+              around the whole shell would swallow the submit button's text into
+              the field's accessible name ("Search your vocabulary Search"). %>
+          <%= f.label :q, t("app.vocabulary_entries.index.search_label"), class: "sr-only" %>
+          <div class="flex min-h-[50px] w-full overflow-hidden rounded-full border border-[#CFC5B3] bg-[#FFFDF8] shadow-[0_1px_2px_rgba(30,27,22,.08)] focus-within:border-[#766D5F] focus-within:ring-1 focus-within:ring-[#766D5F]">
+            <%= f.search_field :q, value: @query,
+                               placeholder: t("app.vocabulary_entries.index.search_placeholder"),
+                               autocomplete: "off",
+                               class: "min-w-0 flex-1 bg-transparent px-5 text-base font-medium text-[#1E1B16] outline-none placeholder:text-[#8A8170]" %>
+            <button type="submit" class="flex w-16 items-center justify-center border-0 border-l border-[#D8CEBD] bg-[#F2ECE1] text-[#1E1B16] hover:bg-[#EADFC9]"
+                    aria-label="<%= t("app.vocabulary_entries.index.search_button") %>">
+              <%= app_icon "search", class: "h-[21px] w-[21px]" %>
+            </button>
+          </div>
+        <% end %>
+
+        <turbo-frame id="vocabulary-results" class="block">
+          <%= render "filters",
+                     filter: @filter, query: @query,
+                     languages: @languages, paused_count: @paused_count %>
+
+          <p class="mb-5 text-sm text-[#716A5D]">
+            <%= t("app.vocabulary_entries.index.summary",
+                  words: t("app.vocabulary_entries.index.word_count", count: @total_count),
+                  paused: @paused_count) %>
+          </p>
+
+          <% if @visible.empty? %>
+            <div class="rounded-2xl border border-dashed border-[#CFC2AB] px-5 py-16 text-center">
+              <p class="text-lg font-bold"><%= t("app.vocabulary_entries.index.no_matches") %></p>
+              <p class="mt-2 text-sm text-[#716A5D]"><%= t("app.vocabulary_entries.index.no_matches_hint") %></p>
+            </div>
+          <% else %>
+            <div class="flex flex-col gap-3">
+              <% @visible.each do |entry| %>
+                <%= render "entry", entry: entry %>
+              <% end %>
+            </div>
+          <% end %>
+        </turbo-frame>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "toast" %>

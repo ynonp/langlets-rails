@@ -1,0 +1,29 @@
+<%
+  base = "inline-flex min-h-[38px] shrink-0 items-center rounded-full border px-[18px] text-sm font-semibold transition"
+  active_class = "#{base} border-[#1E1B16] bg-[#1E1B16] text-white"
+  idle_class = "#{base} border-[#9B907D] bg-transparent text-[#716A5D] hover:border-[#C4451C] hover:text-[#1E1B16]"
+  chip = ->(current) { current ? active_class : idle_class }
+%>
+
+<nav aria-label="<%= t("app.vocabulary_entries.filters.label") %>" class="my-6 flex flex-wrap gap-2">
+  <%= link_to t("app.vocabulary_entries.filters.all"), vocabulary_entries_path(q: query.presence),
+              data: { turbo_frame: "vocabulary-results" },
+              aria: { current: ("page" if filter.nil?) },
+              class: chip.call(filter.nil?) %>
+
+  <% languages.each do |language| %>
+    <%= link_to localized_language_name(language),
+                vocabulary_entries_path(filter: language.iso_name, q: query.presence),
+                data: { turbo_frame: "vocabulary-results" },
+                aria: { current: ("page" if filter == language.iso_name) },
+                class: chip.call(filter == language.iso_name) %>
+  <% end %>
+
+  <% if paused_count.positive? %>
+    <%= link_to t("app.vocabulary_entries.filters.not_practising"),
+                vocabulary_entries_path(filter: App::VocabularyEntriesController::PAUSED_FILTER, q: query.presence),
+                data: { turbo_frame: "vocabulary-results" },
+                aria: { current: ("page" if filter == App::VocabularyEntriesController::PAUSED_FILTER) },
+                class: chip.call(filter == App::VocabularyEntriesController::PAUSED_FILTER) %>
+  <% end %>
+</nav>
