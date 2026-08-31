@@ -83,7 +83,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "header.lp-hero" do
-      assert_select "a.lp-android-download[data-testid='android-app-download'][href=?][download][aria-label=?]",
+      assert_select "a.lp-android-download[data-testid='android-app-download'][href=?][download='langlets-1.0.apk'][aria-label=?]",
         Rails.configuration.x.mobile_apps.android_download_path,
         "Download the Langlets Android APK" do
         assert_select ".lp-android-kicker", text: "Download the"

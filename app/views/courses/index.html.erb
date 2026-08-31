@@ -152,7 +152,7 @@
       <%= link_to Rails.configuration.x.mobile_apps.android_download_path,
                   class: "lp-android-download",
                   aria: { label: t(".hero.android_download_label") },
-                  download: true,
+                  download: File.basename(Rails.configuration.x.mobile_apps.android_download_path),
                   data: { turbo: false, testid: "android-app-download" } do %>
         <svg class="lp-android-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path fill="currentColor" d="M17.6 9.48 19.44 6.3a.63.63 0 0 0-.23-.86.62.62 0 0 0-.85.23l-1.87 3.24A11.12 11.12 0 0 0 12 8c-1.62 0-3.14.32-4.49.91L5.64 5.67a.62.62 0 1 0-1.08.63L6.4 9.48C3.32 11.16 1.22 14.28 1 18h22c-.22-3.72-2.32-6.84-5.4-8.52ZM7 15.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
