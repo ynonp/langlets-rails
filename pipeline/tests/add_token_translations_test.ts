@@ -10,23 +10,29 @@ import {
 import { initTranslationPayload } from "../src/steps/finalizeTranslation.ts";
 import {
   addTokenTranslationsPrompt,
+  exampleInputs,
   examples,
   legacyAddTokenTranslationsPrompt,
 } from "../src/prompts/addTokenTranslations.ts";
 import { makeCtx, phrasesFixture, queuedModel } from "./helpers.ts";
 
-Deno.test("token translation prompt selects its example by target language", () => {
-  const frenchPrompt = addTokenTranslationsPrompt("Spanish", "French");
-  const hebrewPrompt = addTokenTranslationsPrompt("Spanish", "Hebrew");
+Deno.test("token translation prompt selects its example by clip language", () => {
+  const frenchPrompt = addTokenTranslationsPrompt("French", "English");
+  const hebrewPrompt = addTokenTranslationsPrompt("Hebrew", "English");
 
+  assert(frenchPrompt.includes(`## Example Input:\n${exampleInputs.French}`));
   assert(frenchPrompt.includes(`## Expected Output:\n${examples.French}`));
   assert(!frenchPrompt.includes(examples.Hebrew));
+  assert(hebrewPrompt.includes(`## Example Input:\n${exampleInputs.Hebrew}`));
   assert(hebrewPrompt.includes(`## Expected Output:\n${examples.Hebrew}`));
 });
 
-Deno.test("token translation prompt has Greek and Swedish target examples", () => {
-  assert(addTokenTranslationsPrompt("English", "Greek").includes(examples.Greek));
-  assert(addTokenTranslationsPrompt("English", "Swedish").includes(examples.Swedish));
+Deno.test("token translation prompt has source-to-English examples for every supported clip language", () => {
+  for (const language of ["Spanish", "French", "Arabic", "Greek", "German", "Swedish", "Hebrew"]) {
+    const prompt = addTokenTranslationsPrompt(language, "English");
+    assert(prompt.includes(`## Example Input:\n${exampleInputs[language]}`));
+    assert(prompt.includes(`## Expected Output:\n${examples[language]}`));
+  }
 });
 
 Deno.test("token translation prompt adds only the narrow scope guard to legacy", () => {
@@ -39,8 +45,15 @@ Deno.test("token translation prompt adds only the narrow scope guard to legacy",
   assert(prompt.includes("most natural Hebrew translation"));
 });
 
-Deno.test("token translation prompt omits examples for an unknown target language", () => {
-  const prompt = addTokenTranslationsPrompt("Spanish", "Italian");
+Deno.test("token translation prompt omits examples for an unknown clip language", () => {
+  const prompt = addTokenTranslationsPrompt("Italian", "English");
+
+  assert(!prompt.includes("## Example Input:"));
+  assert(!prompt.includes("## Expected Output:"));
+});
+
+Deno.test("token translation prompt omits English-output examples for another output language", () => {
+  const prompt = addTokenTranslationsPrompt("Spanish", "Hebrew");
 
   assert(!prompt.includes("## Example Input:"));
   assert(!prompt.includes("## Expected Output:"));

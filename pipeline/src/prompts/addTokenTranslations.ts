@@ -1,48 +1,79 @@
-const exampleInput = `Don't (*Don't* you want me like I want you baby) |
-you (Don't *you* want me like I want you baby) |
-want (Don't you *want* me like I want you baby) |
-you (Don't you want me like I want *you* baby) |
-baby (Don't you want me like I want you *baby*) |`;
+export const exampleInputs: Record<string, string> = {
+  Hebrew: `לא (אתה *לא* רוצה אותי כמו שאני רוצה אותך מותק) |
+אתה (*אתה* לא רוצה אותי כמו שאני רוצה אותך מותק) |
+רוצה (אתה לא *רוצה* אותי כמו שאני רוצה אותך מותק) |
+אותך (אתה לא רוצה אותי כמו שאני רוצה *אותך* מותק) |
+מותק (אתה לא רוצה אותי כמו שאני רוצה אותך *מותק*) |`,
+  French: `pas (Tu ne me veux *pas* comme je te veux bébé) |
+Tu (*Tu* ne me veux pas comme je te veux bébé) |
+veux (Tu ne me *veux* pas comme je te veux bébé) |
+te (Tu ne me veux pas comme je *te* veux bébé) |
+bébé (Tu ne me veux pas comme je te veux *bébé*) |`,
+  Spanish: `No (*No* me quieres como yo te quiero cariño) |
+quieres (No me *quieres* como yo te quiero cariño) |
+te (No me quieres como yo *te* quiero cariño) |
+quiero (No me quieres como yo te *quiero* cariño) |
+cariño (No me quieres como yo te quiero *cariño*) |`,
+  German: `Du (*Du* willst mich nicht so wie ich dich will Baby) |
+willst (Du *willst* mich nicht so wie ich dich will Baby) |
+nicht (Du willst mich *nicht* so wie ich dich will Baby) |
+dich (Du willst mich nicht so wie ich *dich* will Baby) |
+Baby (Du willst mich nicht so wie ich dich will *Baby*) |`,
+  Arabic: `أنت (*أنت* لا تريدني كما أريدك يا حبيبي) |
+لا (أنت *لا* تريدني كما أريدك يا حبيبي) |
+تريدني (أنت لا *تريدني* كما أريدك يا حبيبي) |
+أريدك (أنت لا تريدني كما *أريدك* يا حبيبي) |
+حبيبي (أنت لا تريدني كما أريدك يا *حبيبي*) |`,
+  Greek: `Δεν (*Δεν* με θέλεις όπως σε θέλω μωρό μου) |
+με (Δεν *με* θέλεις όπως σε θέλω μωρό μου) |
+θέλεις (Δεν με *θέλεις* όπως σε θέλω μωρό μου) |
+σε (Δεν με θέλεις όπως *σε* θέλω μωρό μου) |
+μωρό (Δεν με θέλεις όπως σε θέλω *μωρό* μου) |`,
+  Swedish: `Du (*Du* vill inte ha mig som jag vill ha dig älskling) |
+vill (Du *vill* inte ha mig som jag vill ha dig älskling) |
+inte (Du vill *inte* ha mig som jag vill ha dig älskling) |
+dig (Du vill inte ha mig som jag vill ha *dig* älskling) |
+älskling (Du vill inte ha mig som jag vill ha dig *älskling*) |`,
+};
 
-// The legacy prompt selected examples by target language. Production retains
-// that established behavior; the only new instruction is the narrow scope
-// guard in buildPrompt below.
+// Each worked example demonstrates the course's source language translated
+// into English, matching the direction used for English-language courses.
 export const examples: Record<string, string> = {
-  Hebrew: `Don't (*Don't* you want me like I want you baby) | לא [auxiliary]
-you (Don't *you* want me like I want you baby) | אתה [pronoun]
-want (Don't you *want* me like I want you baby) | רוצה [verb]
-you (Don't you want me like I want *you* baby) | אותך [pronoun]
-baby (Don't you want me like I want you *baby*) | מותק [noun]`,
-  French: `Don't (*Don't* you want me like I want you baby) | Ne [auxiliary]
-you (Don't *you* want me like I want you baby) | tu [pronoun]
-want (Don't you *want* me like I want you baby) | veux [verb]
-you (Don't you want me like I want *you* baby) | toi [pronoun]
-baby (Don't you want me like I want you *baby*) | bébé [noun]`,
-  Spanish: `Don't (*Don't* you want me like I want you baby) | No [auxiliary]
-you (Don't *you* want me like I want you baby) | tú [pronoun]
-want (Don't you *want* me like I want you baby) | quieres [verb]
-you (Don't you want me like I want *you* baby) | ti [pronoun]
-baby (Don't you want me like I want you *baby*) | amor [noun]`,
-  German: `Don't (*Don't* you want me like I want you baby) | Willst [auxiliary]
-you (Don't *you* want me like I want you baby) | du [pronoun]
-want (Don't you *want* me like I want you baby) | willst [verb]
-you (Don't you want me like I want *you* baby) | dich [pronoun]
-baby (Don't you want me like I want you *baby*) | Baby [noun]`,
-  Arabic: `Don't (*Don't* you want me like I want you baby) | لا [auxiliary]
-you (Don't *you* want me like I want you baby) | أنت [pronoun]
-want (Don't you *want* me like I want you baby) | تريد [verb]
-you (Don't you want me like I want *you* baby) | إياك [pronoun]
-baby (Don't you want me like I want you *baby*) | حبيبي [noun]`,
-  Greek: `Don't (*Don't* you want me like I want you baby) | Μη [auxiliary]
-you (Don't *you* want me like I want you baby) | εσύ [pronoun]
-want (Don't you *want* me like I want you baby) | θέλεις [verb]
-you (Don't you want me like I want *you* baby) | εσένα [pronoun]
-baby (Don't you want me like I want you *baby*) | μωρό [noun]`,
-  Swedish: `Don't (*Don't* you want me like I want you baby) | inte [auxiliary]
-you (Don't *you* want me like I want you baby) | du [pronoun]
-want (Don't you *want* me like I want you baby) | vill [verb]
-you (Don't you want me like I want *you* baby) | dig [pronoun]
-baby (Don't you want me like I want you *baby*) | älskling [noun]`,
+  Hebrew: `לא (אתה *לא* רוצה אותי כמו שאני רוצה אותך מותק) | not [adverb]
+אתה (*אתה* לא רוצה אותי כמו שאני רוצה אותך מותק) | you [pronoun]
+רוצה (אתה לא *רוצה* אותי כמו שאני רוצה אותך מותק) | want [verb]
+אותך (אתה לא רוצה אותי כמו שאני רוצה *אותך* מותק) | you [pronoun]
+מותק (אתה לא רוצה אותי כמו שאני רוצה אותך *מותק*) | baby [noun]`,
+  French: `pas (Tu ne me veux *pas* comme je te veux bébé) | not [adverb]
+Tu (*Tu* ne me veux pas comme je te veux bébé) | you [pronoun]
+veux (Tu ne me *veux* pas comme je te veux bébé) | want [verb]
+te (Tu ne me veux pas comme je *te* veux bébé) | you [pronoun]
+bébé (Tu ne me veux pas comme je te veux *bébé*) | baby [noun]`,
+  Spanish: `No (*No* me quieres como yo te quiero cariño) | not [adverb]
+quieres (No me *quieres* como yo te quiero cariño) | want [verb]
+te (No me quieres como yo *te* quiero cariño) | you [pronoun]
+quiero (No me quieres como yo te *quiero* cariño) | want [verb]
+cariño (No me quieres como yo te quiero *cariño*) | darling [noun]`,
+  German: `Du (*Du* willst mich nicht so wie ich dich will Baby) | you [pronoun]
+willst (Du *willst* mich nicht so wie ich dich will Baby) | want [verb]
+nicht (Du willst mich *nicht* so wie ich dich will Baby) | not [adverb]
+dich (Du willst mich nicht so wie ich *dich* will Baby) | you [pronoun]
+Baby (Du willst mich nicht so wie ich dich will *Baby*) | baby [noun]`,
+  Arabic: `أنت (*أنت* لا تريدني كما أريدك يا حبيبي) | you [pronoun]
+لا (أنت *لا* تريدني كما أريدك يا حبيبي) | not [particle]
+تريدني (أنت لا *تريدني* كما أريدك يا حبيبي) | want me [verb]
+أريدك (أنت لا تريدني كما *أريدك* يا حبيبي) | want you [verb]
+حبيبي (أنت لا تريدني كما أريدك يا *حبيبي*) | darling [noun]`,
+  Greek: `Δεν (*Δεν* με θέλεις όπως σε θέλω μωρό μου) | not [particle]
+με (Δεν *με* θέλεις όπως σε θέλω μωρό μου) | me [pronoun]
+θέλεις (Δεν με *θέλεις* όπως σε θέλω μωρό μου) | want [verb]
+σε (Δεν με θέλεις όπως *σε* θέλω μωρό μου) | you [pronoun]
+μωρό (Δεν με θέλεις όπως σε θέλω *μωρό* μου) | baby [noun]`,
+  Swedish: `Du (*Du* vill inte ha mig som jag vill ha dig älskling) | you [pronoun]
+vill (Du *vill* inte ha mig som jag vill ha dig älskling) | want to [auxiliary]
+inte (Du vill *inte* ha mig som jag vill ha dig älskling) | not [adverb]
+dig (Du vill inte ha mig som jag vill ha *dig* älskling) | you [pronoun]
+älskling (Du vill inte ha mig som jag vill ha dig *älskling*) | darling [noun]`,
 };
 
 export function addTokenTranslationsPrompt(
@@ -107,12 +138,12 @@ ${
   }. Output ONLY the translated lines — no preamble, no numbering, no markdown, no code fences.
 
 ${
-    examples[translationLanguage]
+    examples[clipLanguage] && translationLanguage === "English"
       ? `## Example Input:
-${exampleInput}
+${exampleInputs[clipLanguage]}
 
 ## Expected Output:
-${examples[translationLanguage]}
+${examples[clipLanguage]}
 `
       : ""
   }

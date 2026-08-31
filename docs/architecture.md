@@ -1158,9 +1158,12 @@ uses the complete ordered word text, preserving separate translations when conte
 chunks run through the existing four-worker pool against DeepSeek V4 Pro through Ollama with
 reasoning effort `none` and temperature 0. The local pool remains concurrent even when the Ollama
 endpoint serializes requests upstream. The
-token prompt retains the established contextual, natural-translation policy and target-language
-examples. One narrow guard says to translate only the marked token and not meaning contributed by
-adjacent words. A broader standalone-gloss/bound-morpheme policy was tested and rejected because it
+token prompt retains the established contextual, natural-translation policy. For English output it
+selects a worked example by the clip/source language; Spanish, French, Arabic, Greek, German,
+Swedish, and Hebrew examples all demonstrate that source language translated into English. For
+other output languages the prompt omits these English-specific examples rather than showing a
+contradictory translation direction. One narrow guard says to translate only the marked token and
+not meaning contributed by adjacent words. A broader standalone-gloss/bound-morpheme policy was tested and rejected because it
 degraded contextual inflection and produced incorrect dictionary-like glosses such as Hebrew
 `has → יש`. `deno task compare:roosevelt` runs the Roosevelt diagnostic block through the unmodified
 legacy prompt and the guarded production prompt and prints every learner token with its gloss;
