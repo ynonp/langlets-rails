@@ -148,18 +148,20 @@ class User < ApplicationRecord
       new_user.email = auth.info.email
       new_user.password = Devise.friendly_token[0, 20]
       # new_user.name = auth.info.name # if you have a name field
-      new_user.provider = auth.provider
-      new_user.uid = auth.uid
-      new_user.confirmed_at = Time.current
     end
 
-    # Update provider and uid for existing users logging in with different OAuth provider
-    if user.persisted? && (user.provider != auth.provider || user.uid != auth.uid)
-      user.update(provider: auth.provider, uid: auth.uid)
+    user.provider = auth.provider
+    user.uid = auth.uid
+
+    # A successful provider callback proves ownership of the supplied email, so
+    # OAuth users do not also need to complete Devise's email confirmation flow.
+    unless user.confirmed?
+      user.confirmed_at = Time.zone.now
+      user.confirmation_token = nil
+      user.confirmation_sent_at = nil
     end
 
-    # Save if new record
-    user.save if user.new_record?
+    user.save
 
     user
   end
