@@ -243,6 +243,10 @@ en:
       great_job: "Great job!"
       completed: "You've sorted all the phrases correctly."
   app:
+    mobile_apps:
+      prompt: "Take Langlets with you."
+      android: "Try the Android app"
+      iphone_coming_soon: "iPhone coming soon"
     home:
       index:
         daily_vocab:

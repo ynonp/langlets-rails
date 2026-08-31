@@ -76,6 +76,19 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "Profile"
   end
 
+  test "web layout advertises the Android download and reserves the iPhone link" do
+    get root_url
+
+    assert_response :success
+    assert_select "[data-testid='mobile-app-subheader']", count: 1 do
+      assert_select "a[data-testid='android-app-download'][href=?][download]",
+        Rails.configuration.x.mobile_apps.android_download_path,
+        text: "Try the Android app"
+      assert_select "[data-testid='iphone-app-placeholder'][aria-disabled='true']",
+        text: "iPhone coming soon"
+    end
+  end
+
   test "show preloads localized lesson names" do
     queries = capture_selects { get course_url(@course) }
 

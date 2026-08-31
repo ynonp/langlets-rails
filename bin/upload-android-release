@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+release_config="$repo_root/config/android_release.properties"
+apk_path="${1:-$repo_root/langlets-android/app/build/outputs/apk/release/app-release.apk}"
+
+if [[ ! -f "$apk_path" ]]; then
+  echo "Release APK not found: $apk_path" >&2
+  echo "Build it first with: cd langlets-android && ./gradlew assembleRelease" >&2
+  exit 1
+fi
+
+property() {
+  local key="$1"
+  awk -F= -v key="$key" '$1 == key { print substr($0, index($0, "=") + 1); exit }' "$release_config"
+}
+
+version_name="$(property version_name)"
+if [[ -z "$version_name" || ! "$version_name" =~ ^[0-9A-Za-z][0-9A-Za-z._-]*$ ]]; then
+  echo "Invalid version_name in $release_config" >&2
+  exit 1
+fi
+
+deploy_host="${LANGLETS_DEPLOY_HOST:-$(ruby -rerb -ryaml -e '
+  config = YAML.safe_load(ERB.new(File.read(ARGV.fetch(0))).result, aliases: true)
+  web = config.fetch("servers").fetch("web")
+  hosts = web.is_a?(Hash) ? web.fetch("hosts") : web
+  puts Array(hosts).first
+' "$repo_root/config/deploy.yml")}"
+deploy_user="${LANGLETS_DEPLOY_USER:-root}"
+deploy_target="$deploy_user@$deploy_host"
+filename="langlets-$version_name.apk"
+remote_directory="/srv/langlets-downloads/android"
+remote_path="$remote_directory/$filename"
+remote_temporary_path="/tmp/langlets-android-$version_name-upload-$$.apk"
+
+apksigner_path="${ANDROID_APKSIGNER:-}"
+android_sdk_root="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-}}"
+if [[ -z "$apksigner_path" ]] && command -v apksigner >/dev/null 2>&1; then
+  apksigner_path="$(command -v apksigner)"
+elif [[ -z "$apksigner_path" && -n "$android_sdk_root" ]]; then
+  apksigner_path="$(find "$android_sdk_root/build-tools" -type f -name apksigner 2>/dev/null | sort | tail -1)"
+fi
+if [[ -n "$apksigner_path" ]]; then
+  "$apksigner_path" verify "$apk_path"
+else
+  echo "Warning: apksigner not found; uploading without local signature verification." >&2
+fi
+
+echo "Uploading $apk_path to $deploy_target:$remote_path"
+ssh "$deploy_target" install -d -m 0755 "$remote_directory"
+scp "$apk_path" "$deploy_target:$remote_temporary_path"
+ssh "$deploy_target" chmod 0644 "$remote_temporary_path"
+ssh "$deploy_target" mv "$remote_temporary_path" "$remote_path"
+
+local_checksum="$(shasum -a 256 "$apk_path" | awk '{ print $1 }')"
+remote_checksum="$(ssh "$deploy_target" sha256sum "$remote_path" | awk '{ print $1 }')"
+
+if [[ "$local_checksum" != "$remote_checksum" ]]; then
+  echo "Checksum mismatch after upload" >&2
+  exit 1
+fi
+
+echo "Uploaded and verified: https://langlets.app/downloads/android/$filename"
+echo "SHA-256: $local_checksum"

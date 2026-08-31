@@ -1,0 +1,13 @@
+<aside data-testid="mobile-app-subheader"
+       class="border-y border-[#DED4C2] bg-[#FFFDF8] px-5 py-2 text-center text-sm text-[#55503F] sm:px-10">
+  <span><%= t("app.mobile_apps.prompt") %></span>
+  <%= link_to t("app.mobile_apps.android"),
+              Rails.configuration.x.mobile_apps.android_download_path,
+              class: "ms-1 font-bold text-[#C4451C] hover:text-[#9E3410] hover:underline",
+              download: true,
+              data: { turbo: false, testid: "android-app-download" } %>
+  <span aria-hidden="true" class="mx-2 text-[#B5AC98]">·</span>
+  <span aria-disabled="true" class="text-[#8A8170]" data-testid="iphone-app-placeholder">
+    <%= t("app.mobile_apps.iphone_coming_soon") %>
+  </span>
+</aside>

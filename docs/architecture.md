@@ -40,6 +40,18 @@ The application, Solid Cache, Solid Queue, and Solid Cable share the
 legacy production database source during migration. Active Storage remains on
 S3, so application containers do not need a persistent file volume.
 
+Public Android releases are the exception to that storage rule. The host keeps
+signed, immutable APKs in `/srv/langlets-downloads/android`, and Kamal mounts
+`/srv/langlets-downloads` read-only at `/rails/public/downloads` in application
+containers. Kamal Proxy forwards download requests to the web container, where
+Thruster serves the static file without a Rails controller. The web layout's
+mobile-app subheader links to the versioned APK and reserves a disabled iPhone
+position for the future App Store link. `config/android_release.properties` is
+the shared version source for Gradle, the web URL, and
+`bin/upload-android-release`; that script verifies the APK signature when the
+Android build tools are available, uploads atomically over SSH, and compares
+the local and remote SHA-256 checksums.
+
 The single-server deployment deliberately uses one Puma worker, one Solid Queue
 worker process, and one three-thread job worker. The host has swap to absorb
 short memory spikes, but sustained workload growth should be handled by

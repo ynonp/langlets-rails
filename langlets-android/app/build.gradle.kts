@@ -20,6 +20,13 @@ val keystoreProperties = Properties().apply {
 }
 val hasReleaseSigning = keystoreProperties.containsKey("STORE_FILE")
 
+// One release manifest also drives the public website's immutable APK URL and
+// the VPS upload script, preventing those three version references from
+// drifting apart.
+val releaseProperties = Properties().apply {
+    rootProject.file("../config/android_release.properties").inputStream().use { load(it) }
+}
+
 android {
     namespace = "com.ynonp.langlets"
     compileSdk = 36
@@ -29,8 +36,8 @@ android {
         // Hotwire Native Android requires 28+. Nothing here needs to go lower.
         minSdk = 28
         targetSdk = 36
-        versionCode = 2
-        versionName = "1.0"
+        versionCode = releaseProperties.getProperty("version_code").toInt()
+        versionName = releaseProperties.getProperty("version_name")
     }
 
     signingConfigs {

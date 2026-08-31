@@ -221,6 +221,10 @@ he:
       great_job: "כל הכבוד!"
       completed: "סידרתם נכון את כל המשפטים."
   app:
+    mobile_apps:
+      prompt: "קחו את Langlets איתכם."
+      android: "נסו את האפליקציה לאנדרואיד"
+      iphone_coming_soon: "בקרוב באייפון"
     home:
       index:
         daily_vocab:
