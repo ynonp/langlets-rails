@@ -65,7 +65,16 @@
   .lp-h1 { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:52px; line-height:1.02;
     letter-spacing:-0.03em; margin:0 0 16px; text-wrap:balance; }
   .lp-supported { font-size:18px; line-height:1.45; color:var(--ink); font-weight:700; margin:0 0 12px; }
-  .lp-lead { font-size:17px; line-height:1.55; color:var(--muted); margin:0 0 28px; max-width:520px; text-wrap:pretty; }
+  .lp-lead { font-size:17px; line-height:1.55; color:var(--muted); margin:0 0 24px; max-width:520px; text-wrap:pretty; }
+  .lp-android-download { display:inline-flex; align-items:center; gap:14px; min-width:250px; padding:11px 18px;
+    border:2px solid #26343A; border-radius:12px; background:#26343A; color:#FFF; box-sizing:border-box;
+    transition:transform 150ms ease, background-color 150ms ease, border-color 150ms ease; }
+  .lp-android-download:hover { background:#172329; border-color:#172329; color:#FFF; transform:translateY(-1px); }
+  .lp-android-download:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  .lp-android-icon { width:38px; height:38px; flex:none; color:#A4C639; }
+  .lp-android-label { display:flex; flex-direction:column; align-items:flex-start; line-height:1; }
+  .lp-android-kicker { margin-bottom:5px; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+  .lp-android-name { font-family:'Bricolage Grotesque', sans-serif; font-size:24px; font-weight:700; letter-spacing:-.02em; }
   .lp-paste { display:flex; gap:10px; background:var(--card); border:2px solid var(--ink); border-radius:16px;
     padding:8px; max-width:540px; }
   .lp-paste input { flex:1; border:none; outline:none; background:transparent; font-family:'Instrument Sans', sans-serif;
@@ -140,6 +149,19 @@
       <h1 class="lp-h1"><%= t(".hero.heading") %></h1>
       <p class="lp-supported"><%= t(".hero.supported_languages") %></p>
       <p class="lp-lead"><%= t(".hero.lead") %></p>
+      <%= link_to Rails.configuration.x.mobile_apps.android_download_path,
+                  class: "lp-android-download",
+                  aria: { label: t(".hero.android_download_label") },
+                  download: true,
+                  data: { turbo: false, testid: "android-app-download" } do %>
+        <svg class="lp-android-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M17.6 9.48 19.44 6.3a.63.63 0 0 0-.23-.86.62.62 0 0 0-.85.23l-1.87 3.24A11.12 11.12 0 0 0 12 8c-1.62 0-3.14.32-4.49.91L5.64 5.67a.62.62 0 1 0-1.08.63L6.4 9.48C3.32 11.16 1.22 14.28 1 18h22c-.22-3.72-2.32-6.84-5.4-8.52ZM7 15.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+        </svg>
+        <span class="lp-android-label">
+          <span class="lp-android-kicker"><%= t(".hero.android_download_kicker") %></span>
+          <span class="lp-android-name"><%= t(".hero.android_download_name") %></span>
+        </span>
+      <% end %>
     </div>
 
     <div class="lp-product-frame">

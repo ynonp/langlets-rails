@@ -221,10 +221,6 @@ he:
       great_job: "כל הכבוד!"
       completed: "סידרתם נכון את כל המשפטים."
   app:
-    mobile_apps:
-      prompt: "קחו את Langlets איתכם."
-      android: "נסו את האפליקציה לאנדרואיד"
-      iphone_coming_soon: "בקרוב באייפון"
     home:
       index:
         daily_vocab:
@@ -490,6 +486,9 @@ he:
         heading: "הפכו סרטון לשיעור."
         supported_languages: "שפות נתמכות: ספרדית, צרפתית, עברית, ערבית"
         lead: "נדרש חשבון חינמי — בניית שיעור דורשת עיבוד אמיתי, והלנגלטים שלכם נשמרים בספרייה."
+        android_download_kicker: "הורידו את"
+        android_download_name: "אפליקציית Android"
+        android_download_label: "הורדת קובץ ה־APK של Langlets ל־Android"
         product_alt: "תמלול, תרגום ותרגילי אוצר מילים מסונכרנים לסרטון ב־Langlets"
       library:
         heading: "מתחילים מיד"

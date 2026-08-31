@@ -76,19 +76,22 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "Profile"
   end
 
-  test "web layout advertises the Android download and reserves the iPhone link" do
+  test "homepage hero offers the Android APK download" do
     assert_equal "application/vnd.android.package-archive", Rack::Mime.mime_type(".apk")
 
     get root_url
 
     assert_response :success
-    assert_select "[data-testid='mobile-app-subheader']", count: 1 do
-      assert_select "a[data-testid='android-app-download'][href=?][download]",
+    assert_select "header.lp-hero" do
+      assert_select "a.lp-android-download[data-testid='android-app-download'][href=?][download][aria-label=?]",
         Rails.configuration.x.mobile_apps.android_download_path,
-        text: "Try the Android app"
-      assert_select "[data-testid='iphone-app-placeholder'][aria-disabled='true']",
-        text: "iPhone coming soon"
+        "Download the Langlets Android APK" do
+        assert_select ".lp-android-kicker", text: "Download the"
+        assert_select ".lp-android-name", text: "Android app"
+      end
     end
+    assert_select "[data-testid='mobile-app-subheader']", count: 0
+    assert_select "[data-testid='iphone-app-placeholder']", count: 0
   end
 
   test "show preloads localized lesson names" do

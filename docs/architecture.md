@@ -44,10 +44,10 @@ Public Android releases are the exception to that storage rule. The host keeps
 signed, immutable APKs in `/srv/langlets-downloads/android`, and Kamal mounts
 `/srv/langlets-downloads` read-only at `/rails/public/downloads` in application
 containers. Kamal Proxy forwards download requests to the web container, where
-Thruster serves the static file without a Rails controller. The web layout's
-mobile-app subheader links to the versioned APK and reserves a disabled iPhone
-position for the future App Store link. `config/android_release.properties` is
-the shared version source for Gradle, the web URL, and
+Thruster serves the static file without a Rails controller. The public homepage
+hero links to the versioned APK with a store-style Android download badge;
+other web pages do not carry a global app-download strip.
+`config/android_release.properties` is the shared version source for Gradle, the web URL, and
 `bin/upload-android-release`; that script verifies the APK signature when the
 Android build tools are available, uploads atomically over SSH, and compares
 the local and remote SHA-256 checksums. Rails registers the standard
@@ -545,9 +545,9 @@ pricing block here without being asked.
 Sections, all wired to real data:
 - **Shared nav** — supplied by `layouts/web`; the homepage only provides its
   optional daily-vocabulary state.
-- **Hero** — the lesson-building promise, supported-language list, and
-  free-account explanation sit beside the static `public/product.png` product
-  preview. All three lines remain visible at the mobile breakpoint.
+- **Hero** — the lesson-building promise, supported-language list, free-account
+  explanation, and direct Android APK download badge sit beside the static
+  `public/product.png` product preview. All remain visible at the mobile breakpoint.
 - **"Try now"** — the dark section starts directly with a URL field for any
   YouTube or TikTok link and a fresh random sample of up to eight examples from
   `config/homepage_videos.yml` on every page load.
