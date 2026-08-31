@@ -77,6 +77,8 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "web layout advertises the Android download and reserves the iPhone link" do
+    assert_equal "application/vnd.android.package-archive", Rack::Mime.mime_type(".apk")
+
     get root_url
 
     assert_response :success

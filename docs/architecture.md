@@ -50,7 +50,9 @@ position for the future App Store link. `config/android_release.properties` is
 the shared version source for Gradle, the web URL, and
 `bin/upload-android-release`; that script verifies the APK signature when the
 Android build tools are available, uploads atomically over SSH, and compares
-the local and remote SHA-256 checksums.
+the local and remote SHA-256 checksums. Rails registers the standard
+`application/vnd.android.package-archive` media type so static responses are
+identified as APKs rather than generic text files.
 
 The single-server deployment deliberately uses one Puma worker, one Solid Queue
 worker process, and one three-thread job worker. The host has swap to absorb

@@ -8,3 +8,5 @@ android_version = release_properties.fetch("version_name")
 Rails.application.config.x.mobile_apps = ActiveSupport::OrderedOptions.new
 Rails.application.config.x.mobile_apps.android_download_path = "/downloads/android/langlets-#{android_version}.apk"
 Rails.application.config.x.mobile_apps.iphone_download_url = nil
+
+Rack::Mime::MIME_TYPES[".apk"] = "application/vnd.android.package-archive"
