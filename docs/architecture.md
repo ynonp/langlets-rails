@@ -2760,6 +2760,17 @@ with the sentence explaining that the Pro screen is native-only.
 
 The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library, **Vocabulary** and **Create** tab (Vocabulary is `/app/vocabulary`, drawn with `text.book.closed`; the Create tab is `/app/import_requests/new`, drawn with the `plus.circle` SF Symbol). Android mirrors the same four tabs in `MainActivity` — adding one there also needs a `FragmentContainerView` in `activity_main.xml`, a `tab_*` string, and a `ic_tab_*` drawable. Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. `SceneDelegate.handle(proposal:from:)` intercepts exactly one path — `/`, which clears the source navigator and returns to the Home tab. It does **not** intercept the other tab roots: a link to `/app/library` or `/app/import_requests/new` from inside another tab is accepted and pushed onto that tab's stack, with a back arrow, while the tab itself keeps its own separate webview. If you ever need a real tab switch from a link, it has to be added to this method. **The tab bar's selected-item colour is not set in Swift.** No `tintColor` is assigned anywhere; the tab bar inherits the window tint, which comes from the asset catalog's `AccentColor.colorset` via `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` in `project.pbxproj`. That colorset is the app's green `#1DC77C` — the same value as `--color-app-accent` in `application.tailwind.css`, kept in sync by hand, so change both together. It was coral (`#F43E36`) until the tab bar was brought in line with the web accent. Because it is the *global* accent it also tints nav-bar buttons and system controls, which is the point: one accent across native chrome and web content. Note `Assets.xcassets/Colors/Brand*.colorset` (`BrandAccent`, `BrandAccentLight`, `BrandText`, `BrandBackground`, `BrandBackgroundSecondary`) are referenced by nothing in the project and still hold the old coral palette — dead assets, not a second source of truth. The dark app background is a third, separate hard-coded value: `appBackgroundColor` in `SceneDelegate.swift`.
 
+Android's exported `MainActivity` also accepts `ACTION_SEND` with `text/plain`,
+which is the payload shape used by the YouTube and TikTok share sheets. It
+extracts the first URL whose host is YouTube, `youtu.be`, or TikTok (including
+their subdomains), selects the lazily loaded Create tab, and resets that
+navigator to `/app/import_requests/new?url=...`. The shared Add Video page then
+prefills and resolves the URL through the normal server-owned preview flow, so
+availability, duplicates, language selection, Pro state, and credit approval
+remain identical to a pasted link. The intent payload is cleared after handling
+because `MainActivity` is `singleTask`; this prevents an Activity recreation
+from replaying an already-consumed share.
+
 Because those navigators retain separate documents, an ordinary Turbo Stream
 response cannot update a different tab. Cross-tab refreshes use the custom
 `refresh_native_tab` stream action with a `tab` attribute. The current webview

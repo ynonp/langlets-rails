@@ -29,6 +29,7 @@ module App
       assert_response :success
       assert_select "input[data-add-video-target=input]"
       assert_select "[data-add-video-target=clipboardChip]", count: 0
+      assert_match "share a YouTube or TikTok video directly", response.body
     end
 
     test "the form and pipeline submission are available to web browsers" do

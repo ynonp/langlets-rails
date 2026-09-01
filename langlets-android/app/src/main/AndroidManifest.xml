@@ -33,6 +33,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+            <!-- YouTube and TikTok share their video links as plain text. The
+                 Activity validates the URL host before opening Add Video. -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
             <!-- OAuth callback. Rails redirects native sign-ins to
                  langlets://auth-success (see Users::OmniauthCallbacksController). -->
             <intent-filter>

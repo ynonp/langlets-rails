@@ -30,6 +30,7 @@ import dev.hotwire.navigation.tabs.HotwireBottomNavigationController
 import dev.hotwire.navigation.tabs.HotwireBottomTab
 import dev.hotwire.navigation.tabs.navigatorConfigurations
 import dev.hotwire.navigation.util.applyDefaultImeWindowInsets
+import java.net.URLEncoder
 
 /**
  * The native shell: four bottom tabs, each owning its own NavigatorHost and
@@ -121,12 +122,61 @@ class MainActivity : HotwireActivity() {
 
         initializeBottomTabs()
         handleDeepLink(intent)
+        handleShareIntent(intent)
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
         handleDeepLink(intent)
+        handleShareIntent(intent)
+    }
+
+    /**
+     * Opens a YouTube or TikTok share in the Create tab's existing Add Video
+     * flow. Provider apps put a URL in EXTRA_TEXT, sometimes surrounded by a
+     * title or invitation; [SharedVideoLink] finds and validates that URL.
+     *
+     * The Create navigator may not exist yet because tabs load lazily. Select it
+     * first, then retry briefly until its host is ready before resetting it to a
+     * clean Add Video stack with the shared URL prefilled.
+     */
+    private fun handleShareIntent(intent: Intent?) {
+        if (intent?.action != Intent.ACTION_SEND || intent.type != "text/plain") return
+
+        val videoUrl = SharedVideoLink.firstSupportedUrl(intent.getCharSequenceExtra(Intent.EXTRA_TEXT))
+        consumeShareIntent(intent)
+        if (videoUrl == null) return
+
+        val encodedUrl = URLEncoder.encode(videoUrl, Charsets.UTF_8.name())
+        val location = "${Langlets.rootUrl}/app/import_requests/new?url=$encodedUrl"
+
+        bottomNavigationController.selectTab(CREATE_TAB_INDEX)
+        routeSharedVideoWhenReady(location)
+    }
+
+    private fun consumeShareIntent(intent: Intent) {
+        // MainActivity is singleTask. Clear the payload so recreation cannot
+        // replay a share and discard whatever the user did afterwards.
+        intent.action = null
+        intent.removeExtra(Intent.EXTRA_TEXT)
+    }
+
+    private fun routeSharedVideoWhenReady(location: String, attempt: Int = 0) {
+        val hostId = tabs[CREATE_TAB_INDEX].configuration.navigatorHostId
+        val host = delegate.findNavigatorHost(hostId)
+
+        if (host?.isReady() == true) {
+            host.navigator.reset { host.navigator.route(location) }
+            return
+        }
+
+        if (attempt < SHARE_NAVIGATION_MAX_ATTEMPTS) {
+            findViewById<View>(R.id.root).postDelayed(
+                { routeSharedVideoWhenReady(location, attempt + 1) },
+                SHARE_NAVIGATION_RETRY_MILLIS
+            )
+        }
     }
 
     private fun initializeBottomTabs() {
@@ -501,8 +551,11 @@ class MainActivity : HotwireActivity() {
 
     companion object {
         const val HOME_TAB_INDEX = 0
+        const val CREATE_TAB_INDEX = 3
 
         private const val TAG = "MainActivity"
+        private const val SHARE_NAVIGATION_MAX_ATTEMPTS = 40
+        private const val SHARE_NAVIGATION_RETRY_MILLIS = 50L
 
         /**
          * How long to wait for the handoff request before giving up and
