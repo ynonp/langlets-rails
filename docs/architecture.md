@@ -45,8 +45,9 @@ signed, immutable APKs in `/srv/langlets-downloads/android`, and Kamal mounts
 `/srv/langlets-downloads` read-only at `/rails/public/downloads` in application
 containers. Kamal Proxy forwards download requests to the web container, where
 Thruster serves the static file without a Rails controller. The public homepage
-hero links to the versioned APK with a store-style Android download badge;
-other web pages do not carry a global app-download strip.
+hero links to the versioned APK with a store-style Android download badge and
+to the iPhone beta in TestFlight with a matching badge; other web pages do not
+carry a global app-download strip.
 `config/android_release.properties` is the shared version source for Gradle, the web URL, and
 `bin/upload-android-release`; that script verifies the APK signature when the
 Android build tools are available, uploads atomically over SSH, and compares

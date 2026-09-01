@@ -555,6 +555,9 @@ en:
         android_download_kicker: "Download the"
         android_download_name: "Android app"
         android_download_label: "Download the Langlets Android APK"
+        iphone_download_kicker: "Download the"
+        iphone_download_name: "iPhone app"
+        iphone_download_label: "Download the Langlets iPhone app with TestFlight"
         product_alt: "Langlets synchronized video transcript, translation, and vocabulary exercises"
       library:
         heading: "Jump right in"

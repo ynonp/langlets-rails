@@ -76,7 +76,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "Profile"
   end
 
-  test "homepage hero offers the Android APK download" do
+  test "homepage hero offers Android and iPhone app downloads" do
     assert_equal "application/vnd.android.package-archive", Rack::Mime.mime_type(".apk")
 
     get root_url
@@ -88,6 +88,14 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
         "Download the Langlets Android APK" do
         assert_select ".lp-android-kicker", text: "Download the"
         assert_select ".lp-android-name", text: "Android app"
+      end
+      assert_select ".lp-app-downloads" do
+        assert_select "a.lp-iphone-download[data-testid='iphone-app-download'][href=?][aria-label=?]",
+          Rails.configuration.x.mobile_apps.iphone_download_url,
+          "Download the Langlets iPhone app with TestFlight" do
+          assert_select ".lp-app-download-kicker", text: "Download the"
+          assert_select ".lp-app-download-name", text: "iPhone app"
+        end
       end
     end
     assert_select "[data-testid='mobile-app-subheader']", count: 0

@@ -489,6 +489,9 @@ he:
         android_download_kicker: "הורידו את"
         android_download_name: "אפליקציית Android"
         android_download_label: "הורדת קובץ ה־APK של Langlets ל־Android"
+        iphone_download_kicker: "הורידו את"
+        iphone_download_name: "אפליקציית iPhone"
+        iphone_download_label: "הורדת אפליקציית Langlets ל־iPhone דרך TestFlight"
         product_alt: "תמלול, תרגום ותרגילי אוצר מילים מסונכרנים לסרטון ב־Langlets"
       library:
         heading: "מתחילים מיד"
