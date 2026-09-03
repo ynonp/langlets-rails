@@ -3,7 +3,7 @@
   show_theme_toggle = local_assigns.fetch(:show_theme_toggle, false)
   show_xp_badge = local_assigns.fetch(:show_xp_badge, false)
   menu_item_class = local_assigns.fetch(:menu_item_class, "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70")
-  dropdown_class = local_assigns.fetch(:dropdown_class, "absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800")
+  dropdown_class = local_assigns.fetch(:dropdown_class, "absolute end-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-start")
   divider_class = local_assigns.fetch(:divider_class, "border-t border-gray-200 dark:border-gray-800")
   logout_data = local_assigns.fetch(:logout_data, { turbo_method: :delete })
   display_name = local_assigns.fetch(:display_name) { current_user.email.to_s.split("@").first.split(/[._-]/).first.capitalize }

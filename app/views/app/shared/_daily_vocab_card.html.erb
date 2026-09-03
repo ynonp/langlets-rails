@@ -8,11 +8,11 @@
       <% @daily_vocab_reviews.each do |review| %>
         <% lesson = review.fetch(:lesson) %>
         <%= link_to review_lessons_path(language_code: lesson.review_language.iso_name),
-                    class: "app-hairline flex w-full items-center gap-3 rounded-xl bg-app-card px-4 py-3.5 text-left",
+                    class: "app-hairline flex w-full items-center gap-3 rounded-xl bg-app-card px-4 py-3.5 text-start",
                     data: { testid: "daily-vocab-banner", turbo: false } do %>
           <%= app_icon "cards", class: "h-5 w-5 shrink-0 text-app-text-2" %>
           <span class="min-w-0 flex-1">
-            <span class="block text-[15px] font-semibold text-app-text"><%= lesson.review_language.english_name %></span>
+            <span class="block text-[15px] font-semibold text-app-text"><%= localized_language_name(lesson.review_language) %></span>
             <span class="mt-0.5 block text-[13px] text-app-text-2">
               <%= t("app.home.index.daily_vocab.words_due", count: review.fetch(:token_count)) %>
             </span>

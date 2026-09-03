@@ -122,6 +122,7 @@ Rails.application.routes.draw do
   get "try", to: "try#show", as: :try
   get "profile", to: "profile#show", as: :profile
   patch "profile/notifications", to: "profile#update_notifications", as: :profile_notifications
+  patch "profile/native_language", to: "profile#update_native_language", as: :profile_native_language
 
   # The notification list, shared by web and the native shell. `read_all` is
   # also the "user entered the app" event the iOS shell reports on every launch
@@ -159,6 +160,7 @@ Rails.application.routes.draw do
       post :reset_progress
       post :share
       post :unshare
+      post :translate
     end
     resources :playlists, only: [ :index, :create, :destroy ], controller: "course_playlists"
     resources :lessons, only: [ :show ] do

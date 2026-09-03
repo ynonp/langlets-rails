@@ -112,6 +112,9 @@ application.register("mini-player", MiniPlayerController)
 import MultiselectController from "./multiselect_controller"
 application.register("multiselect", MultiselectController)
 
+import NativeLanguageController from "./native_language_controller"
+application.register("native-language", NativeLanguageController)
+
 import NotificationsReaderController from "./notifications_reader_controller"
 application.register("notifications-reader", NotificationsReaderController)
 

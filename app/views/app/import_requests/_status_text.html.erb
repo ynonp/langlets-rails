@@ -11,7 +11,7 @@
 <div id="queue-status-text" class="contents">
   <% if active_count.positive? %>
     <p class="text-app-text-2 text-sm mt-1">
-      <%= pluralize(active_count, "import") %> in progress — we'll ping you when they're ready.
+      <%= t("app.import_requests.status.in_progress", count: active_count) %>
     </p>
   <% end %>
 </div>

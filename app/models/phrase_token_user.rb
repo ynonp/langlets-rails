@@ -161,7 +161,13 @@ class PhraseTokenUser < ApplicationRecord
   end
 
   def pin_available_language
-    self.language ||= Current.translation_language || phrase_token&.token_translations&.first&.language
+    return if language.present? || phrase_token.nil?
+
+    translations = phrase_token.token_translations.includes(:language).to_a
+    preferred = translations.find do |translation|
+      translation.language_id == Current.translation_language_id
+    end
+    self.language = (preferred || translations.first)&.language
   end
 
   def refresh_review_lesson

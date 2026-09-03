@@ -15,10 +15,11 @@ class ChannelContentQuery
     Course.where(id: ChannelItem.where(channel_id: channels.select(:id)).select(:course_id))
   end
 
-  def initialize(user:, language: nil, translation_language: Current.translation_language)
+  def initialize(user:, language: nil, translation_language: Current.translation_language, include_untranslated: false)
     @user = user
     @language = language
     @translation_language = translation_language
+    @include_untranslated = include_untranslated
   end
 
   def items
@@ -31,8 +32,9 @@ class ChannelContentQuery
     scope = ChannelItem
       .joins(:channel, :course)
       .merge(channels)
-      .merge(Course.published.ready_in(@translation_language))
+      .merge(Course.published)
       .includes(course: [ :language, { course_translations: :language } ])
+    scope = scope.merge(Course.ready_in(@translation_language)) unless @include_untranslated
     scope = scope.where(courses: { language_id: @language.id }) if @language
 
     # When the same course is published in multiple listed channels (e.g. the

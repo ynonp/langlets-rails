@@ -127,6 +127,13 @@ en:
   # The account page. `channels.profile.*` covers the channel card at the top;
   # everything below it lives here.
   profile:
+    native_language:
+      heading: "Native language"
+      description: "Langlets uses this language for the app and for translations when you share a video."
+      label: "Native language"
+      save: "Change language"
+      updated: "Native language changed."
+      invalid: "Choose a supported language."
     # Native only — Pro is an iOS in-app purchase, so this card (and its
     # upgrade button) never renders on the web profile page.
     account:
@@ -243,6 +250,13 @@ en:
       great_job: "Great job!"
       completed: "You've sorted all the phrases correctly."
   app:
+    common:
+      credit_count:
+        one: "1 credit"
+        other: "%{count} credits"
+      credits_left:
+        one: "1 credit left"
+        other: "%{count} credits left"
     home:
       index:
         daily_vocab:
@@ -251,10 +265,19 @@ en:
             one: "1 word due"
             other: "%{count} words due"
           body: "A few minutes today will help these words stick."
+        see_all: "See all"
+        lesson_progress: "Lesson %{current} of %{total}"
         your_playlists: "Your playlists"
         continue: "Continue"
         recommendations: "Recommended for you"
         no_langlets: "No langlets yet. Share any video in Spanish, French, Hebrew, Arabic or German to langlets to turn it into a language practice."
+      hero:
+        just_imported: "JUST IMPORTED"
+        start_course: "Start Course"
+      playlist_row:
+        song_count:
+          one: "1 song"
+          other: "%{count} songs"
       # The Pro row, directly under the header. Keyed to the partial that renders
       # it (_pro_card), not to index — these lived under `index` while the
       # partial looked them up lazily, so every string resolved to nothing and
@@ -272,7 +295,11 @@ en:
           title: "Upgrade to Pro to import more content"
           body: "You've used all %{count} free imports. Pro imports are unlimited."
           cta: "Upgrade to Pro"
-        # The Vocabulary tab. The recurring idea in this copy is that a saved word
+        pro:
+          title: "Langlets Pro"
+          badge: "ACTIVE"
+          body: "Unlimited imports"
+    # The Vocabulary tab. The recurring idea in this copy is that a saved word
     # is a span inside a phrase, never a bare dictionary entry — every string
     # that mentions a word mentions the phrase it lives in.
     vocabulary_entries:
@@ -351,10 +378,6 @@ en:
           step_translate: "Say what it means in this phrase, not in general."
           aside_note: "Saving the phrase alongside the word is what lets the same word be two entries with two meanings."
     pro:
-          title: "Langlets Pro"
-          badge: "ACTIVE"
-          body: "Unlimited imports"
-    pro:
       show:
         page_title: "Langlets Pro"
         close: "Close"
@@ -385,6 +408,9 @@ en:
         cta: "Start importing"
         manage: "Manage or cancel anytime in Settings."
     library:
+      card:
+        on_home: "On your Home"
+        learn: "+ Learn this"
       filters:
         label: "Filter library"
         all: "All"
@@ -398,11 +424,22 @@ en:
         queued: "Queued — up next"
         failed_detail: "Import failed — credit refunded"
       show:
+        page_title: "Library · langlets."
         title: "Library"
         eyebrow: "Learn from any video"
         description: "Every video the community has turned into lessons."
         search: "Search titles, channels, or video links"
         empty: "No library items match this filter."
+        no_matches: "Nothing matches “%{query}” yet."
+        empty_language: "The Library is empty for this language."
+        import_video: "Import a video"
+    started_courses:
+      index:
+        page_title: "Started videos · langlets."
+        title: "Started videos"
+        description: "All the videos you’ve started, most recent first."
+        empty: "You haven’t started a video yet."
+        browse_library: "Browse the Library"
     web_menu:
       label: "Main navigation"
       library: "Library"
@@ -415,6 +452,28 @@ en:
       open: "Open profile menu"
       review_words: "Practice Words (%{language})"
     import_requests:
+      status:
+        queued: "Queued — up next"
+        ready: "Ready"
+        failed_insufficient_credits: "Import failed — insufficient credits"
+        failed_no_credit: "Import failed — no credit used"
+        cancelled: "Cancelled"
+        cancel: "Cancel this import"
+        delete: "Delete this import"
+        detecting: "Detecting language…"
+        importing: "Importing · %{percent}%"
+        in_progress:
+          one: "1 import in progress — we'll ping you when it's ready."
+          other: "%{count} imports in progress — we'll ping you when they're ready."
+        footer_note: "Imports take a few minutes. Feel free to close the app — we'll send a push when each one is ready."
+        steps:
+          extract_lyrics: "Transcribing · step %{position} of %{total}"
+          add_lessons: "Writing lessons · step %{position} of %{total}"
+          extract_compounds: "Finding expressions · step %{position} of %{total}"
+          rate_lessons: "Checking lessons · step %{position} of %{total}"
+          translate: "Translating · step %{position} of %{total}"
+          add_token_translation: "Building vocab cards · step %{position} of %{total}"
+          add_similar_sound: "Finding sound-alikes · step %{position} of %{total}"
       index:
         # `title` and `empty` are the browser wording; the `native_*` keys are
         # the Hotwire Native "Create" tab, which the web queue does not share.
@@ -438,6 +497,8 @@ en:
         page_title: "Add a video"
         title: "Add a video"
         credits_subtitle: "%{credits} — each import uses 1."
+        clear: "Clear"
+        cost_and_balance: "%{cost} · %{balance}"
         # Pro replaces every price on this screen. Quoting a balance to somebody
         # whose meter no longer runs invites them to worry about it.
         pro_subtitle: "Langlets Pro — import as much as you like."
@@ -520,6 +581,12 @@ en:
       log_in: "Log in"
   courses:
     sign_in_to_view: "Sign in to view this Langlet."
+    translation:
+      offer: "This course was created in %{existing_language}, but your interface is now %{interface_language}. Want it in %{interface_language} too?"
+      action: "Yes, translate it!"
+      sign_in: "Yes — sign in to continue"
+      pending: "Great choice — the %{language} version is on its way!"
+      requested: "Great choice — your translation is on its way!"
     index:
       continue_learning: "Continue Learning"
       browse: "Browse"

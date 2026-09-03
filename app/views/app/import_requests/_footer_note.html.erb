@@ -1,7 +1,7 @@
 <div id="queue-footer-note" class="contents">
   <% if active_count.positive? %>
     <p class="text-center text-app-text-3 text-[13px] leading-relaxed px-4 py-2">
-      Imports take a few minutes. Feel free to close the app — we'll send a push when each one is ready.
+      <%= t("app.import_requests.status.footer_note") %>
     </p>
   <% end %>
 </div>

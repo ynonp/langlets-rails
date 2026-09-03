@@ -22,7 +22,16 @@ class ReviewLessonBuilder
     end
 
     rows.map do |saved|
-      saved.phrase_token.tap { |token| token.resolved_translation = saved.token_translation }
+      saved.phrase_token.tap do |token|
+        # The preferred request language wins when this token has it. The
+        # language pinned when the word was saved is the first fallback, and
+        # PhraseToken itself covers the rare case where that row disappeared
+        # but another translation remains.
+        preferred = token.token_translations.find do |translation|
+          translation.language_id == Current.translation_language_id
+        end
+        token.resolved_translation = preferred || saved.token_translation
+      end
     end
   end
 

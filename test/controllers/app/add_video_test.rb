@@ -9,6 +9,7 @@ module App
     include Devise::Test::IntegrationHelpers
 
     NATIVE = { "User-Agent" => "LangletsNative" }.freeze
+    ANDROID = { "User-Agent" => "LangletsNative/1.0 (Android);" }.freeze
     VIDEO_ID = "kJQP7kiw5Fk".freeze
     CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 
@@ -167,9 +168,9 @@ module App
       assert_no_match(/Approve/, response.body)
     end
 
-    test "the Hebrew site offers to add Hebrew when only English is ready" do
+    test "the native Hebrew preference offers to add Hebrew when only English is ready" do
       publish_privately(publish_course!, owner: @user)
-      host! "he.example.com"
+      @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
 
       stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
 
@@ -177,6 +178,22 @@ module App
       assert_select "form[action=?] input[type=submit]", app_import_requests_path
       assert_select "input[name=translation_language][value=?]", @hebrew.english_name
       assert_no_match(/Already in your library\./, response.body)
+    end
+
+    test "an Android share import uses the persisted native language" do
+      @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
+
+      # MainActivity's ACTION_SEND handler opens the Add Video route with only
+      # the shared URL. The resulting form may still contain an old hidden
+      # language field, but the server preference is authoritative.
+      stub_video do
+        post app_import_requests_path,
+             params: { url: CANONICAL, translation_language: "English" },
+             headers: ANDROID
+      end
+
+      assert_redirected_to gallery_path(imports: "pending")
+      assert_equal "Hebrew", @user.import_requests.sole.translation_language
     end
 
     test "a video already importing offers the Library instead of a second charge" do

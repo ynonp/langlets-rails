@@ -133,7 +133,6 @@ final class ShareViewController: UIViewController {
         request.timeoutInterval = 8
         request.httpBody = try? JSONSerialization.data(withJSONObject: [
             "url": sharedURL.absoluteString,
-            "translation_language": "English",
             "client_token": clientToken
         ])
 

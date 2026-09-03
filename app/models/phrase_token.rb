@@ -24,9 +24,17 @@ class PhraseToken < ApplicationRecord
 
   attr_accessor :resolved_translation
 
-  def translation = resolved_translation&.translation || localized_translation&.translation
-  def l2_start_index = resolved_translation&.l2_start_index || localized_translation&.l2_start_index
-  def l2_end_index = resolved_translation&.l2_end_index || localized_translation&.l2_end_index
+  # Prefer the request's language, then an explicitly pinned translation (used
+  # while building reviews), and finally any translation this older saved word
+  # already has. A native-language change must not turn an English-only saved
+  # word into a nil/"null" exercise prompt.
+  def effective_translation
+    localized_translation || resolved_translation || available_translation
+  end
+
+  def translation = effective_translation&.translation
+  def l2_start_index = effective_translation&.l2_start_index
+  def l2_end_index = effective_translation&.l2_end_index
 
   def karaoke? = start_timestamp.present?
 
@@ -51,6 +59,10 @@ class PhraseToken < ApplicationRecord
   after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   private
+
+  def available_translation
+    token_translations.loaded? ? token_translations.first : token_translations.order(:id).first
+  end
 
   def validate_l1_indexes
     return if phrase&.text_l1.blank?
@@ -80,5 +92,4 @@ class PhraseToken < ApplicationRecord
   def generate_l1_audio
     GenerateTokenAudioJob.perform_later(id) unless Rails.env.development?
   end
-
 end

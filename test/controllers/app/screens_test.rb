@@ -30,7 +30,6 @@ module App
       Lesson.create!(course: @course, medium: @medium, user: @user, slug: "l1", name: "L1", order: 0)
       Enrollment.create!(user: @user, course: @course, source: :imported, last_practiced_at: 1.hour.ago)
       sign_in @user
-
     end
 
     # Screen fixtures represent content already contributed to the signed-in
@@ -104,6 +103,42 @@ module App
       assert_select "a", text: "Failed", count: 0
       assert_select "[data-import-request-status=queued]", text: /Native Library Import/
       assert_select "[style='width: 0%']"
+    end
+
+    test "native language changes keep English-fallback courses in Home and Library" do
+      @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
+
+      get app_home_path, headers: NATIVE
+      assert_response :success
+      assert_match "Despacito", response.body
+
+      get app_library_path, headers: NATIVE
+      assert_response :success
+      assert_select "a[href=?]", course_path(@course), text: "Despacito"
+    end
+
+    test "Hebrew native Home localizes instructional copy and keeps its menu on screen" do
+      @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
+      phrase = create_translated_phrase!(
+        medium: @medium, l1: @spanish, l2: @english,
+        text_l1: "Hola", text_l2: "Hello", timestamp: "00:00:01"
+      )
+      token = create_translated_token!(
+        phrase: phrase, l1_start_index: 0, l1_end_index: 3,
+        index_type: :character_index, translation: "Hello"
+      )
+      @user.saved_phrase_tokens << token
+      ReviewLessonBuilder.new(@user, language_code: @spanish.iso_name).build!
+
+      get app_home_path, headers: NATIVE
+
+      assert_response :success
+      assert_select "html[lang=he][dir=rtl]"
+      assert_select "[data-testid=app-profile-menu] > div.end-0.text-start", count: 1
+      assert_select "[data-testid=app-profile-menu] > div.right-0", count: 0
+      assert_select "[data-testid=daily-vocab-review]", text: /החזרה היומית על אוצר המילים/
+      assert_select "[data-testid=daily-vocab-banner]", text: /מילה אחת לחזרה/
+      assert_no_match(/Daily vocabulary review|word due/, response.body)
     end
 
     test "learning a Library course updates its card and refreshes Home through a Turbo Stream" do
@@ -532,7 +567,7 @@ module App
         assert_select "a[href=?][data-action='click->profile-menu#dismiss']", profile_path,
                       text: "Profile"
         assert_select "a[href=?]", invitations_path, count: 0
-        assert_select "a[href=?]", review_lessons_path(language_code: @spanish.iso_name),
+        assert_select "a.block.w-full.text-start[href=?]", review_lessons_path(language_code: @spanish.iso_name),
                       text: "Practice Words (#{@spanish.iso_name})"
         assert_select "a[href=?][data-turbo-method='delete']",
                       destroy_user_session_path(returnto: app_home_path), text: "Logout"

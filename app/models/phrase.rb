@@ -23,8 +23,15 @@ class Phrase < ApplicationRecord
   validate :has_exactly_one_source
 
   def custom? = user_id.present?
-  def text_l2 = localized_translation&.text
-  def l2 = localized_translation&.language || Current.translation_language
+  # Existing vocabulary and courses may predate the current translation
+  # language. Prefer that language when present, but keep the content usable by
+  # falling back to an available translation when it is not.
+  def effective_translation
+    localized_translation || available_translation
+  end
+
+  def text_l2 = effective_translation&.text
+  def l2 = effective_translation&.language || Current.translation_language
 
   has_timestamp [ :timestamp ]
 
@@ -115,6 +122,10 @@ class Phrase < ApplicationRecord
   end
 
   private
+
+  def available_translation
+    phrase_translations.loaded? ? phrase_translations.first : phrase_translations.order(:id).first
+  end
 
   def has_exactly_one_source
     return if [ medium, user ].compact.one?

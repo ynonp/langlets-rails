@@ -112,6 +112,13 @@ he:
       footer_link: "עמוד הפרופיל"
       footer_text: "אפשר לבחור איך ההתראות יגיעו אליכם — אימייל, פוש, שניהם או אף אחד — בעמוד הפרופיל:"
   profile:
+    native_language:
+      heading: "שפת אם"
+      description: "Langlets משתמשת בשפה הזו לממשק האפליקציה ולתרגומים כשמשתפים סרטון."
+      label: "שפת אם"
+      save: "שינוי שפה"
+      updated: "שפת האם שונתה."
+      invalid: "יש לבחור שפה נתמכת."
     account:
       heading: "החשבון שלי"
       type_free: "חינמי"
@@ -221,15 +228,34 @@ he:
       great_job: "כל הכבוד!"
       completed: "סידרתם נכון את כל המשפטים."
   app:
+    common:
+      credit_count:
+        one: "נקודת זכות אחת"
+        other: "%{count} נקודות זכות"
+      credits_left:
+        one: "נותרה נקודת זכות אחת"
+        other: "נותרו %{count} נקודות זכות"
     home:
       index:
         daily_vocab:
-          title: "החזרה היומית על אוצר המילים"
+          ready: "החזרה היומית על אוצר המילים"
+          words_due:
+            one: "מילה אחת לחזרה"
+            other: "%{count} מילים לחזרה"
           body: "כמה דקות היום יעזרו למילים להישאר בזיכרון."
+        see_all: "הצגת הכול"
+        lesson_progress: "שיעור %{current} מתוך %{total}"
         your_playlists: "הפלייליסטים שלכם"
         continue: "המשך"
         recommendations: "מומלץ בשבילכם"
         no_langlets: "אין עדיין langlets. שתפו עם langlets כל סרטון בספרדית, צרפתית, עברית, ערבית או גרמנית כדי להפוך אותו לתרגול שפה."
+      hero:
+        just_imported: "יובא עכשיו"
+        start_course: "התחלת הקורס"
+      playlist_row:
+        song_count:
+          one: "שיר אחד"
+          other: "%{count} שירים"
       # Keyed to the partial (_pro_card) that renders it, matching en.yml.
       pro_card:
         upsell:
@@ -266,6 +292,9 @@ he:
         cta: "מתחילים לייבא"
         manage: "אפשר לנהל או לבטל בכל רגע בהגדרות."
     library:
+      card:
+        on_home: "בדף הבית שלכם"
+        learn: "+ ללמוד את זה"
       filters:
         label: "סינון הספרייה"
         all: "הכול"
@@ -279,11 +308,22 @@ he:
         queued: "בתור — הבא בתור"
         failed_detail: "הייבוא נכשל — נקודת הזכות הוחזרה"
       show:
+        page_title: "ספרייה · langlets."
         title: "ספרייה"
         eyebrow: "לומדים מכל סרטון"
         description: "כל הסרטונים שהקהילה הפכה לשיעורים."
         search: "חיפוש לפי כותרת, ערוץ או קישור"
         empty: "אין פריטים שמתאימים לסינון."
+        no_matches: "עדיין אין התאמות ל״%{query}״."
+        empty_language: "הספרייה ריקה בשפה הזו."
+        import_video: "ייבוא סרטון"
+    started_courses:
+      index:
+        page_title: "סרטונים שהתחלתם · langlets."
+        title: "סרטונים שהתחלתם"
+        description: "כל הסרטונים שהתחלתם, מהחדש לישן."
+        empty: "עדיין לא התחלתם סרטון."
+        browse_library: "מעבר לספרייה"
     web_menu:
       label: "ניווט ראשי"
       library: "ספרייה"
@@ -293,6 +333,28 @@ he:
       open: "פתיחת תפריט הפרופיל"
       review_words: "תרגול מילים (%{language})"
     import_requests:
+      status:
+        queued: "בתור — הבא בתור"
+        ready: "מוכן"
+        failed_insufficient_credits: "הייבוא נכשל — אין מספיק נקודות זכות"
+        failed_no_credit: "הייבוא נכשל — לא נוצלה נקודת זכות"
+        cancelled: "בוטל"
+        cancel: "ביטול הייבוא"
+        delete: "מחיקת הייבוא"
+        detecting: "זיהוי השפה…"
+        importing: "ייבוא · %{percent}%"
+        in_progress:
+          one: "ייבוא אחד מתבצע — נעדכן אתכם כשהוא יהיה מוכן."
+          other: "%{count} ייבואים מתבצעים — נעדכן אתכם כשהם יהיו מוכנים."
+        footer_note: "הייבוא נמשך כמה דקות. אפשר לסגור את האפליקציה — נשלח התראת פוש כשכל פריט יהיה מוכן."
+        steps:
+          extract_lyrics: "תמלול · שלב %{position} מתוך %{total}"
+          add_lessons: "כתיבת שיעורים · שלב %{position} מתוך %{total}"
+          extract_compounds: "איתור ביטויים · שלב %{position} מתוך %{total}"
+          rate_lessons: "בדיקת שיעורים · שלב %{position} מתוך %{total}"
+          translate: "תרגום · שלב %{position} מתוך %{total}"
+          add_token_translation: "בניית כרטיסי אוצר מילים · שלב %{position} מתוך %{total}"
+          add_similar_sound: "איתור מילים דומות בצליל · שלב %{position} מתוך %{total}"
       index:
         title: "תור"
         empty: "עדיין אין כאן כלום."
@@ -309,6 +371,8 @@ he:
         page_title: "הוספת סרטון"
         title: "הוספת סרטון"
         credits_subtitle: "%{credits} — כל ייבוא עולה נקודת זכות אחת."
+        clear: "ניקוי"
+        cost_and_balance: "%{cost} · %{balance}"
         pro_subtitle: "Langlets Pro — ייבאו כמה שתרצו."
         pro_balance_label: "המסלול שלכם"
         pro_balance: "Langlets Pro — בלי הגבלה"
@@ -454,6 +518,12 @@ he:
       log_in: "התחברות"
   courses:
     sign_in_to_view: "התחברו כדי לצפות בלנגלט הזה."
+    translation:
+      offer: "הקורס הזה נוצר ב%{existing_language}, אבל שפת הממשק שלכם עכשיו %{interface_language}. רוצים אותו גם ב%{interface_language}?"
+      action: "כן, תרגמו אותו!"
+      sign_in: "כן — התחברו כדי להמשיך"
+      pending: "אחלה בחירה — הגרסה ב%{language} בדרך!"
+      requested: "אחלה בחירה — התרגום שלכם בדרך!"
     index:
       continue_learning: "המשך למידה"
       browse: "עיון בקורסים"

@@ -63,6 +63,31 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     assert_equal 2, @user.reload.credit_balance, "publishing into their channel is where it is paid for"
   end
 
+  test "a course-page translation request is finalized without publishing or charging" do
+    @request.destroy!
+    @course.update!(status: :published, create_song_progress: @progress)
+    @course.course_translations.find_by!(language: @english).destroy!
+    translation = @course.course_translations.create!(
+      language: languages(:hebrew), name: @course.name, status: :pending
+    )
+    data = complete_data
+    data["translations"] = { "he" => data.fetch("translations").fetch("en") }
+    @progress.update!(data: data)
+    credits = @user.credit_balance
+    channel_items = ChannelItem.where(course: @course).count
+
+    builder = Object.new
+    builder.define_singleton_method(:add_translation) { |language| translation.update!(status: :ready) }
+    CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
+      Imports::Finalizer.call(@progress)
+    end
+
+    assert translation.reload.ready?
+    assert_equal credits, @user.reload.credit_balance
+    assert_equal channel_items, ChannelItem.where(course: @course).count
+    assert @course.reload.published?
+  end
+
   # Riding along shares the pipeline run, not the purchase: the rider's own copy
   # is published into their own channel and charged to them there.
   test "every rider on a shared import is enrolled and charged when it publishes" do

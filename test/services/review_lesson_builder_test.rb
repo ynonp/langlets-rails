@@ -187,6 +187,34 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
     assert_equal 2, all_tokens_in_lesson.count
   end
 
+  test "review activities fall back to the saved translation after the preferred language changes" do
+    @user.phrase_token_users.create!(phrase_token: @token_ar1, language: @english)
+
+    Current.set(translation_language: @hebrew) do
+      lesson = ReviewLessonBuilder.new(@user, language_code: @arabic.iso_name).build!
+      activity = lesson.activities.find_by!(type: "Activities::WriteMissingWordActivity")
+      params = activity.reload.activity_params
+
+      assert_equal "Hi", params.fetch(:cards).first.fetch(:translation)
+      assert_equal @english, params.fetch(:l2)
+    end
+  end
+
+  test "review activities prefer the current language when that translation is available" do
+    @user.phrase_token_users.create!(phrase_token: @token_ar1, language: @english)
+    @phrase_ar.phrase_translations.create!(language: @hebrew, text: "שלום עולם")
+    @token_ar1.token_translations.create!(language: @hebrew, translation: "שלום")
+
+    Current.set(translation_language: @hebrew) do
+      lesson = ReviewLessonBuilder.new(@user, language_code: @arabic.iso_name).build!
+      activity = lesson.activities.find_by!(type: "Activities::WriteMissingWordActivity")
+      params = activity.reload.activity_params
+
+      assert_equal "שלום", params.fetch(:cards).first.fetch(:translation)
+      assert_equal @hebrew, params.fetch(:l2)
+    end
+  end
+
   # "Stop practising" in the Vocabulary tab. The word stays saved — it is still
   # listed and editable there — but it must not turn up in a review again.
   test "a paused word is kept in the vocabulary but left out of the review" do

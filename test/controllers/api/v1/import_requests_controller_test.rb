@@ -153,13 +153,33 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 3, @user.reload.credit_balance
   end
 
-  test "requires url and translation language" do
-    [ :url, :translation_language ].each do |missing|
-      post api_v1_import_requests_url, params: import_params.except(missing), headers: auth_headers(@token)
+  test "requires only a url and gets translation language from the user" do
+    post api_v1_import_requests_url, params: import_params.except(:url), headers: auth_headers(@token)
+    assert_response :unprocessable_entity
+    assert_equal "missing_parameter", response.parsed_body["error"]
 
-      assert_response :unprocessable_entity
-      assert_equal "missing_parameter", response.parsed_body["error"], "expected #{missing} to be required"
+    @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
+    stub_video do
+      post api_v1_import_requests_url,
+        params: import_params.except(:translation_language),
+        headers: auth_headers(@token)
     end
+
+    assert_response :created
+    request = ImportRequest.find(response.parsed_body.fetch("id"))
+    assert_equal "Hebrew", request.translation_language
+  end
+
+  test "ignores a client-supplied translation language" do
+    @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
+
+    stub_video do
+      post api_v1_import_requests_url,
+        params: import_params(translation_language: "English"),
+        headers: auth_headers(@token)
+    end
+
+    assert_equal "Hebrew", ImportRequest.find(response.parsed_body.fetch("id")).translation_language
   end
 
   test "lists the user's queue" do

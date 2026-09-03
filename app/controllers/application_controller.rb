@@ -13,9 +13,13 @@ class ApplicationController < ActionController::Base
   end
 
   def set_translation_language
-    code = request.subdomains.first.presence || "en"
-    Current.translation_language = Language.find_by(iso_name: code) ||
-      Language.find_by(english_name: "English") || Language.first
+    Current.translation_language = if native_app? && current_user
+      current_user.native_language
+    else
+      code = request.subdomains.first.presence || "en"
+      Language.find_by(iso_name: code) ||
+        Language.find_by(english_name: "English") || Language.first
+    end
 
     locale = Current.translation_language&.iso_name&.to_sym
     I18n.locale = I18n.available_locales.include?(locale) ? locale : :en
@@ -52,15 +56,10 @@ class ApplicationController < ActionController::Base
 
   # Returns true only for the Hotwire Native Android app.
   #
-  # This is for content that is *false* on one platform rather than merely
-  # styled differently — currently just Add Video's "share to Langlets from the
-  # provider's share menu" hint, which describes the iOS share extension.
-  # Android has no counterpart, so the sentence would send users looking for a
-  # feature that isn't there.
-  #
-  # Presentation differences do not belong here: both shells render the same
-  # native views, and a rule keyed on the platform is a rule the other platform
-  # silently stops getting.
+  # Keep this for behavior that is genuinely platform-specific rather than for
+  # presentation differences. Both shells render the same native views, and
+  # both support importing from a provider's share menu (through different
+  # native implementations).
   helper_method :android_app?
   def android_app?
     native_app? && request.user_agent&.include?("(Android)")
@@ -93,31 +92,24 @@ class ApplicationController < ActionController::Base
     return if controller_name == "onboarding" && action_name.in?([ "welcome", "video", "language" ])
     return if controller_name == "try" && action_name == "show"
     return if controller_name == "health"
-    return if request.path.in?(["/home/privacy", "/home/terms", "/up"])
+    return if request.path.in?([ "/home/privacy", "/home/terms", "/up" ])
 
     redirect_to new_user_session_path(returnto: request.fullpath)
   end
 
   # Redirect to returnto param after successful sign in
   def after_sign_in_path_for(resource)
-    path = pending_import_path || if params[:returnto].present?
-      params[:returnto]
-    elsif request.env['omniauth.origin']
-      request.env['omniauth.origin']
-    else
-      root_path
-    end
+    pending = pending_import_path
+    return pending if pending
+    return params[:returnto] if params[:returnto].present?
+    return request.env["omniauth.origin"] if request.env["omniauth.origin"]
 
-    path
+    root_path
   end
 
   # Redirect to returnto param after successful sign up
   def after_sign_up_path_for(resource)
-    pending_import_path || if params[:returnto].present?
-      params[:returnto]
-    else
-      root_path
-    end
+    pending_import_path || params[:returnto].presence || root_path
   end
 
   # Redirect after sign out — both the sign-out button (sessions#destroy) and
@@ -188,5 +180,4 @@ class ApplicationController < ActionController::Base
     evaluation_signup.claim!(user)
     cookies.delete(GuestImportRequestsController::EVALUATION_SIGNUP_COOKIE)
   end
-
 end

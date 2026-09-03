@@ -18,7 +18,6 @@ module App
       @courses = @items.map(&:course)
       @lesson_counts = Lesson.where(course_id: @courses.map(&:id)).group(:course_id).count
       @enrolled_course_ids = current_user.enrollments.where(course_id: @courses.map(&:id)).pluck(:course_id).to_set
-
     end
 
     private
@@ -48,7 +47,10 @@ module App
     end
 
     def published_scope
-      ChannelContentQuery.new(user: current_user).items
+      # A native-language change must not make the user's existing Library
+      # disappear. Cards use Course#localized_name, whose stored base name is
+      # the existing English fallback when the selected translation is absent.
+      ChannelContentQuery.new(user: current_user, include_untranslated: true).items
     end
 
     def visible_languages

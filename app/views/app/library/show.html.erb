@@ -1,4 +1,4 @@
-<% content_for :title, "Library · langlets." %>
+<% content_for :title, t(".page_title") %>
 
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4">
   <%# Passing a title makes the shared header draw "Library" where Home draws the
@@ -17,7 +17,7 @@
     <label class="app-hairline bg-app-card rounded-app-field flex items-center gap-2.5 py-3 px-3.5">
       <%= app_icon "search", class: "w-[18px] h-[18px] text-app-text-3 shrink-0" %>
       <%= f.search_field :q, value: @query,
-                         placeholder: "Search titles, channels, songs…",
+                         placeholder: t(".search"),
                          class: "w-full bg-transparent text-[15px] text-app-text placeholder:text-app-text-3 outline-none",
                          autocomplete: "off" %>
     </label>
@@ -39,12 +39,12 @@
       <div class="app-hairline bg-app-card rounded-app-card px-5 py-10 text-center">
         <p class="text-app-text-2 text-sm">
           <% if @query.present? %>
-            Nothing matches “<%= @query %>” yet.
+            <%= t(".no_matches", query: @query) %>
           <% else %>
-            The Library is empty for this language.
+            <%= t(".empty_language") %>
           <% end %>
         </p>
-        <%= link_to "Import a video", new_app_import_request_path,
+        <%= link_to t(".import_video"), new_app_import_request_path,
                     data: { turbo_frame: "_top" },
                     class: "inline-block mt-3 text-app-accent text-[13px] font-bold" %>
       </div>

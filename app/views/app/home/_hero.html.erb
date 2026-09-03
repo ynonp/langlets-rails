@@ -5,9 +5,9 @@
                   alt: "", loading: "lazy",
                   class: "w-full h-[174px] object-cover bg-app-inset" %>
 
-    <span class="pointer-events-none absolute top-3 left-3 bg-app-accent text-app-on-accent-sm
+    <span class="pointer-events-none absolute top-3 start-3 bg-app-accent text-app-on-accent-sm
                  text-[11px] font-extrabold tracking-[0.08em] rounded-full py-1 px-2.5">
-      JUST IMPORTED
+      <%= t("app.home.hero.just_imported") %>
     </span>
   </div>
 
@@ -17,7 +17,7 @@
       <p class="text-app-text-2 text-xs mt-1"><%= app_course_meta(course, lessons_count: lessons_count) %></p>
     </div>
 
-    <%= link_to "Start Course", course_path(course),
+    <%= link_to t("app.home.hero.start_course"), course_path(course),
                 class: "block text-center bg-app-accent text-app-on-accent rounded-full py-3 text-[15px] font-bold" %>
   </div>
 </div>

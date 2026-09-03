@@ -17,7 +17,7 @@
 
   <div class="flex-1 min-w-0">
     <p class="text-sm font-semibold truncate"><%= playlist.name %></p>
-    <p class="text-app-text-2 text-xs mt-1"><%= pluralize(published_courses.size, "song") %></p>
+    <p class="text-app-text-2 text-xs mt-1"><%= t("app.home.playlist_row.song_count", count: published_courses.size) %></p>
   </div>
 
   <%= app_icon "chevron", class: "w-2 h-3 text-app-text-2 shrink-0" %>

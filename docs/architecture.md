@@ -477,17 +477,41 @@ press **Build my langlet** to reach `/try`. The
 `homepage-filter` controller and `homepage_subhead` helper remain in the tree
 for older surfaces but the homepage no longer mounts or reads them.
 
-### No user target language
+### Native language preference
 
-Langlets does not store a target language on the user. Users access content they
-created or content made available through their channels, and each course owns
-its source language. Translation language remains request-scoped through the
-subdomain and `Current.translation_language`; it is independent of the course's
+The native Profile page offers English and Hebrew and stores the user's native
+language as the `preferences["native_language"]` ISO code; an unset, invalid,
+unsupported, or removed value falls back to English. The save action is disabled
+until the selection differs from the stored value. Its successful submission is
+a full document navigation (not a Turbo visit), because Turbo preserves the
+existing document element and would otherwise leave `lang` and `dir` stale until
+a manual refresh. Native requests use that preference for
+`Current.translation_language`, so it drives both Rails I18n and localized
+course associations. Browser requests remain request-scoped through the
+subdomain and ignore the preference. Each course still owns its independent
 source language.
 
-The public homepage may still carry an optional `lang` query parameter for its
-client-side acquisition filters. Rails does not persist or propagate that value,
-and native onboarding and profile screens do not ask for a target language.
+Native Home, Library, Started Videos, and Create/Queue interface copy is resolved
+through the request locale, including counts and in-progress pipeline labels.
+RTL menus and floating controls use logical start/end positioning so Hebrew does
+not push the profile menu beyond the viewport.
+
+Vocabulary reviews keep their neutral phrase/token associations when the native
+language changes. Phrase and token accessors prefer a translation in the current
+request language, but fall back to an existing translation when that language is
+not available. Consequently older English-only saved vocabulary remains usable,
+while newly available Hebrew translations take precedence automatically; review
+activities never serialize a missing translation as `null` merely because the
+interface language changed. Saving a word follows the same rule: its preference
+is pinned only when that token actually has a translation in the preferred
+language, otherwise the saved row is pinned to an available translation.
+
+Changing the native language does not remove existing Home or Library content.
+Home already lists the user's readable enrollments without an L2 readiness
+filter, and the native Library explicitly includes untranslated courses; their
+stored base names remain the English card fallback until the selected L2 is
+available. The public homepage's optional `lang` query parameter remains an
+independent client-side acquisition filter and is not persisted.
 
 The former global **Free while in beta** banner has been removed. Layouts do not
 inject a notice above page content, including on acquisition, course, lesson,
@@ -742,12 +766,14 @@ vertical layout without discarding the full label.
 
 ### Interface localization
 
-Rails chooses the interface locale from `Current.translation_language`, which
-is resolved from the request subdomain. English and Hebrew catalogs live in
-`config/locales/en.yml` and `config/locales/he.yml`; Spanish, Arabic, German,
-French, Greek, and Swedish currently fall back to English. The layouts expose the translation
-language through the document's `lang` and `dir` attributes, independently of
-the language of learning content. Production uses an Action Dispatch
+Rails chooses the interface locale from `Current.translation_language`. Native
+requests resolve it from the signed-in user's persisted native-language
+preference; browser requests resolve it from the request subdomain. English and
+Hebrew catalogs live in `config/locales/en.yml` and `config/locales/he.yml`;
+Spanish, Arabic, German, French, Greek, and Swedish currently fall back to
+English. The layouts expose the translation language through the document's
+`lang` and `dir` attributes, independently of the language of learning content.
+Production uses an Action Dispatch
 `tld_length` of 1 because `.app` is a single-label TLD; this makes
 `he.langlets.app` resolve `he` as its subdomain.
 
@@ -773,10 +799,11 @@ Content has one shared L1 skeleton and any number of sparse L2 translations:
 - `courses` is unique per published `(youtube_video_id, language_id)`.
   `course_translations` carries per-L2 name and readiness; `lesson_translations`
   carries localized lesson names.
-- `Current.translation_language` is set from the request subdomain (`he` on
-  `he.langlets.app`, English on the main domain). Phrase, token, course, and
-  lesson localized associations use this request context. The existing `lang`
-  parameter remains the independent L1/library filter.
+- `Current.translation_language` is set from the user preference in the native
+  shell and from the request subdomain on the web (`he` on `he.langlets.app`,
+  English on the main domain). Phrase, token, course, and lesson localized
+  associations use this request context. The existing `lang` parameter remains
+  the independent L1/library filter.
 - Sessions use a parent-domain cookie (`domain: :all`, `tld_length: 2`) so login
   is shared across localized subdomains.
 - Saved vocabulary uses `phrase_token_users`. Each row pins `language_id` when
@@ -829,9 +856,25 @@ After detection the import pipeline is split. `CreateSongProgress` is unique on
 `(youtubeurl, clip_language)` when `clip_language IS NOT NULL`; NULL provisional
 rows are deliberately outside that partial unique index. Neutral transcription/timing/segmentation work
 runs once, while `add_translation(language)` stores language-keyed output under
-`data["translations"]`. A translation-only import costs one credit and attaches
-phrase, token, lesson, and course translations without deleting lessons,
-activities, progress, or vocabulary.
+`data["translations"]`. A translation-only *import* still follows ordinary
+publication pricing. The separate course-page translation action is free: it
+creates a pending `CourseTranslation` but no `ImportRequest`, Enrollment, or
+ChannelItem, and therefore never reaches `Channel#publish!`. In both cases the
+translation attaches phrase, token, lesson, and course translations without
+deleting lessons, activities, progress, or vocabulary.
+
+A course show page whose active language lacks a ready translation displays a
+top banner (including when the mismatch came from a native preference change or
+a web language subdomain). The banner is a friendly offer that names both the
+existing course language and the current interface language, with a simple
+affirmative translation action; it deliberately avoids warning/error styling
+and implementation or pricing explanations. A signed-in reader can request that
+L2; pending work is shown as an upbeat in-progress confirmation.
+`CourseTranslations::Request` reuses or reconstructs
+the course's `CreateSongProgress` and starts `AddCourseTranslationJob`.
+`Imports::Finalizer` recognizes pending course translations with no active
+ImportRequest and attaches them directly under the course lock. The Course
+stays published throughout, and no publication or credit ledger entry occurs.
 
 The `data` blob is versioned (`CreateSongProgress::DataFormat`,
 `data["format_version"]`). Version 1 carried a single language inline
@@ -2088,10 +2131,10 @@ renamed away), logs it, and degrades that one row to
 `notifications.unavailable` so a single bad template cannot cost the reader the
 other ninety-nine rows on the page.
 
-**Locale.** Only the `/notifications` page renders in the reader's language
-today, because `I18n.locale` is set per request from the subdomain
-(`ApplicationController#set_translation_language`) and there is no persisted
-per-user locale. The mailer and the APNs payload render inside
+**Locale.** The `/notifications` page renders in the active request language:
+the native-language preference in the app or the subdomain on the web. The
+persisted native preference is not yet passed to notification delivery. The
+mailer and the APNs payload render inside
 `DeliverNotificationJob`, which has no request, so they get
 `I18n.default_locale` — English. `#title(locale:)` / `#body(locale:)` take the
 locale explicitly, so giving those two the recipient's own language is a matter
@@ -2216,7 +2259,7 @@ the mechanism an ordinary multi-language import uses. The method returns the
 first (primary) request — the one that actually enqueued `CreateCourseJob`.
 
 #### **Imports::Create** (`app/services/imports/create.rb`)
-The single import service for the Add sheet, the share extension and the API. It decides **what has to happen** and deliberately does not decide what it costs — `Channel#publish!` charges for the publication every path ends in (see *What a credit buys*). Order is deliberate: **the video is checked before anything is committed**, so a private or deleted video costs nothing and leaves nothing behind (`Youtube::Oembed` doubles as the availability check). The interactive Add sheet omits `clip_language` and gets the provisional background-detection path. The API detects first and supplies `clip_language`, preserving its synchronous response contract for share-extension callers. Six outcomes:
+The single import service for the Add sheet, the share extension and the API. It decides **what has to happen** and deliberately does not decide what it costs — `Channel#publish!` charges for the publication every path ends in (see *What a credit buys*). Order is deliberate: **the video is checked before anything is committed**, so a private or deleted video costs nothing and leaves nothing behind (`Youtube::Oembed` doubles as the availability check). Both the interactive Add sheet and the share-extension API omit `clip_language` and get the provisional background-detection path. Six outcomes:
 - `:created` — queued the pipeline (or, with no source language, a detecting request and `DetectImportLanguageJob`). Charged when it publishes.
 - `:adopted` — **somebody else already built it**. There is no pipeline to run, so the course is published into this user's channel on the spot and charged there; the request is written straight to `ready`. This is the case the old `:deduped` handled for free, and getting it free was the inconsistency this design removes.
 - `:deduped` — already in **this user's own** channel and ready. Nothing to publish, so nothing to charge; enrolls if the enrollment had been removed.
@@ -2310,8 +2353,22 @@ YouTube or TikTok link, and immediately submits it to
 `POST /api/v1/import_requests`. It has no language menus, confirmation button,
 or success screen: after the API accepts the idempotent request it calls
 `completeRequest`. Errors remain visible so authentication, credit, or network
-problems are actionable. The translation language is English on this main-host
-API; the source language is always detected by the pipeline.
+problems are actionable. The payload contains no translation language: the API
+reads the authenticated user's native-language preference and falls back to
+English. The source language is always detected by the pipeline.
+
+#### Android Share Intent
+
+Android registers `MainActivity` for plain-text `ACTION_SEND` intents. It
+extracts the first supported YouTube or TikTok URL, selects the Create tab, and
+resets that tab to `/app/import_requests/new?url=…`. Unlike the iOS extension it
+does not call the bearer-authenticated API or send an import payload itself; it
+enters the ordinary authenticated Add Video preview and confirmation flow. The
+URL is the only value supplied by Kotlin. Both the preview and the eventual
+create action resolve the translation language from the signed-in user's native
+language preference, ignoring any stale client-supplied language field, so a
+share made after changing that preference imports into the newly selected
+language.
 
 **The endpoint queues; it does not detect.** `Api::V1::ImportRequestsController#create`
 used to run `CreateSongProgress.detect_language` inline so the response could
@@ -2967,8 +3024,8 @@ since it is an unauthenticated endpoint that redirects on a supplied parameter.
 - `langlets-ios/langlets/langlets/Bridge/TabVisibilityComponent.swift` — Lets a layout hide the native tab bar (onboarding); paired with `app/javascript/controllers/bridge/tab_visibility_controller.js`
 - `langlets-ios/langlets/langlets/Auth/AuthBridgeComponent.swift` — Intercepts OAuth sign-in taps and triggers native auth flow
 - `langlets-ios/langlets/langlets/Auth/AuthService.swift` — Manages `ASWebAuthenticationSession` for OAuth
-- `langlets-ios/langlets/LangletsShare/ShareViewController.swift` — Share sheet URL extraction, language confirmation and import API submission
-- `langlets-ios/langlets/LangletsShare/ShareStore.swift` — Shared Keychain token and App Group language preferences
+- `langlets-ios/langlets/LangletsShare/ShareViewController.swift` — Share sheet URL extraction and import API submission
+- `langlets-ios/langlets/LangletsShare/ShareStore.swift` — Shared Keychain token and cached language catalog
 - `langlets-ios/langlets/langlets/Bridge/NativeTokenComponent.swift` — Receives the session-bootstrapped import token and language catalog
 - `app/controllers/app/native_tokens_controller.rb` — Authenticated, CSRF-protected native token bootstrap
 - `app/controllers/users/omniauth_callbacks_controller.rb` — Handles OAuth callbacks and redirects to `langlets://auth-success` for native app; also both ends of the Android handoff

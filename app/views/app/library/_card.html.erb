@@ -21,12 +21,12 @@
     <% if local_assigns.fetch(:show_enrollment_action, true) %>
       <div class="mt-auto pt-1">
       <% if enrolled %>
-        <span class="text-app-text-3 text-xs font-bold">On your Home</span>
+        <span class="text-app-text-3 text-xs font-bold"><%= t("app.library.card.on_home") %></span>
       <% else %>
         <%# Free: the content is already imported, so there's no AI work to bill. %>
         <%= button_to app_enrollments_path(course_slug: course.slug),
                       class: "text-app-accent text-xs font-bold" do %>
-          + Learn this
+          <%= t("app.library.card.learn") %>
         <% end %>
       <% end %>
       </div>

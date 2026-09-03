@@ -33,15 +33,57 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", root_path, text: "Continue Learning"
   end
 
-  test "native profile has no target language control" do
+  test "native profile offers and persists a native language" do
     sign_in_as @user
 
     get profile_path, headers: { "User-Agent" => "LangletsNative" }
 
     assert_response :success
-    assert_select "[data-controller=?]", "bridge--language-selection", count: 0
-    assert_select "[data-controller=?]", "language-select", count: 0
+    assert_select "form[action=?][data-controller=native-language][data-turbo=false]", profile_native_language_path
+    assert_select "select[name=?]", "user[native_language]"
+    assert_select "option[value=en][selected=selected]"
+    assert_select "option[value=he]"
+    assert_select "option", count: 2
+    assert_select "input[type=submit][disabled=disabled]"
     assert_select "body[data-native-tabs] .profile-safe-area", count: 1
+
+    patch profile_native_language_path,
+      params: { user: { native_language: "he" } },
+      headers: { "User-Agent" => "LangletsNative" }
+
+    assert_redirected_to profile_path
+    assert_equal "he", @user.reload.preferences["native_language"]
+  end
+
+  test "native profile rejects languages outside English and Hebrew" do
+    sign_in_as @user
+
+    patch profile_native_language_path,
+      params: { user: { native_language: "fr" } },
+      headers: { "User-Agent" => "LangletsNative" }
+
+    assert_redirected_to profile_path
+    assert_equal "Choose a supported language.", flash[:alert]
+    assert_nil @user.reload.preferences["native_language"]
+  end
+
+  test "native profile uses the persisted language for all UI" do
+    @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
+    sign_in_as @user
+
+    get profile_path, headers: { "User-Agent" => "LangletsNative" }
+
+    assert_response :success
+    assert_select "h1", text: I18n.t("shared.menu.profile", locale: :he)
+    assert_select "html[lang=he][dir=rtl]"
+  end
+
+  test "web profile does not offer the native language setting" do
+    sign_in_as @user
+
+    get profile_path
+
+    assert_select "form[action=?]", profile_native_language_path, count: 0
   end
 
   test "web profile does not show the account card" do

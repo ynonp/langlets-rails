@@ -1,15 +1,15 @@
-<% content_for :title, "Started videos · langlets." %>
+<% content_for :title, t(".page_title") %>
 
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4">
   <div>
-    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]">Started videos</h1>
-    <p class="text-app-text-2 text-sm mt-1">All the videos you’ve started, most recent first.</p>
+    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".title") %></h1>
+    <p class="text-app-text-2 text-sm mt-1"><%= t(".description") %></p>
   </div>
 
   <% if @enrollments.empty? %>
     <div class="app-hairline bg-app-card rounded-app-card px-5 py-10 text-center">
-      <p class="text-app-text-2 text-sm">You haven’t started a video yet.</p>
-      <%= link_to "Browse the Library", app_library_path,
+      <p class="text-app-text-2 text-sm"><%= t(".empty") %></p>
+      <%= link_to t(".browse_library"), app_library_path,
                   class: "inline-block mt-3 text-app-accent text-[13px] font-bold" %>
     </div>
   <% else %>

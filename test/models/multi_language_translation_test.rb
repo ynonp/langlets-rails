@@ -43,6 +43,21 @@ class MultiLanguageTranslationTest < ActiveSupport::TestCase
     assert_equal 1, user.phrase_token_users.where(phrase_token: @token).count
   end
 
+  test "saving a span falls back when the preferred translation is unavailable" do
+    user = User.create!(email: "fallback-pin@example.com", password: "password123", confirmed_at: Time.zone.now)
+    english_only = @phrase.phrase_tokens.create!(
+      l1_start_index: 0, l1_end_index: 4, index_type: :character_index
+    )
+    english_only.token_translations.create!(language: @english, translation: "sky")
+
+    Current.set(translation_language: languages(:arabic)) do
+      saved = user.phrase_token_users.create!(phrase_token: english_only)
+
+      assert_equal @english, saved.language
+      assert_equal "sky", saved.translation
+    end
+  end
+
   test "activities store the neutral span once" do
     user = User.create!(email: "span-activity@example.com", password: "password123", confirmed_at: Time.zone.now)
     course = Course.create!(name: "Course", slug: "multi-course", main_media_url: @medium.url, language: @spanish, user: user)

@@ -75,6 +75,33 @@
           <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md px-4 py-3 text-red-600 dark:text-red-400"><%= alert %></div>
         <% end %>
 
+        <% if @translation_needed %>
+          <div class="rounded-2xl border border-emerald-200 dark:border-emerald-800 bg-gradient-to-br from-emerald-50 to-cyan-50 dark:from-emerald-950/50 dark:to-cyan-950/30 px-4 py-4"
+               data-testid="course-translation-banner">
+            <div class="flex items-start gap-3">
+              <span class="text-xl leading-none" aria-hidden="true">✨</span>
+              <p class="text-sm font-bold leading-relaxed text-gray-800 dark:text-gray-100">
+                <% if @requested_translation&.pending? %>
+                  <%= t("courses.translation.pending", language: localized_language_name(Current.translation_language)) %>
+                <% else %>
+                  <%= t("courses.translation.offer",
+                        existing_language: localized_language_name(@existing_translation_language),
+                        interface_language: localized_language_name(Current.translation_language)) %>
+                <% end %>
+              </p>
+            </div>
+            <% unless @requested_translation&.pending? %>
+              <% if user_signed_in? %>
+                <%= button_to t("courses.translation.action"), translate_course_path(@course),
+                      class: "mt-3 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-extrabold" %>
+              <% else %>
+                <%= link_to t("courses.translation.sign_in"), new_user_session_path(returnto: request.fullpath),
+                      class: "mt-3 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-extrabold" %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+
         <!-- Hero: title + video -->
         <%# Any signed-in user can add a course to their own playlists; admins manage the system playlists here too. %>
         <% can_add_to_playlists = user_signed_in? %>

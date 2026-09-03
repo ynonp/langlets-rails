@@ -83,8 +83,9 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "header.lp-hero" do
-      assert_select "a.lp-android-download[data-testid='android-app-download'][href=?][download='langlets-1.0.apk'][aria-label=?]",
+      assert_select "a.lp-android-download[data-testid='android-app-download'][href=?][download=?][aria-label=?]",
         Rails.configuration.x.mobile_apps.android_download_path,
+        File.basename(Rails.configuration.x.mobile_apps.android_download_path),
         "Download the Langlets Android APK" do
         assert_select ".lp-android-kicker", text: "Download the"
         assert_select ".lp-android-name", text: "Android app"
@@ -125,6 +126,41 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "h1.truncate[title=?]", @course.name, text: @course.name
+  end
+
+  test "a different language subdomain offers a missing course translation" do
+    @course.update!(status: :published)
+    host! "he.langlets.app"
+
+    get course_path(@course)
+
+    assert_response :success
+    assert_select "[data-testid=course-translation-banner][class*='from-emerald'][class*='to-cyan']",
+      text: /\u05d4\u05e7\u05d5\u05e8\u05e1 \u05d4\u05d6\u05d4 \u05e0\u05d5\u05e6\u05e8 \u05d1\u05d0\u05e0\u05d2\u05dc\u05d9\u05ea.*\u05e9\u05e4\u05ea \u05d4\u05de\u05de\u05e9\u05e7.*\u05e2\u05d1\u05e8\u05d9\u05ea.*\u05e8\u05d5\u05e6\u05d9\u05dd \u05d0\u05d5\u05ea\u05d5 \u05d2\u05dd \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea/m
+    assert_select "[data-testid=course-translation-banner][class*='amber']", count: 0
+    assert_select "a[href*=?]", new_user_session_path, text: "כן — התחברו כדי להמשיך"
+  end
+
+  test "requesting a missing translation neither republishes nor spends a credit" do
+    @course.update!(status: :published)
+    sign_in @user
+    host! "he.langlets.app"
+    channel_items = ChannelItem.where(course: @course).count
+    credits = @user.credit_balance
+
+    get course_path(@course)
+    assert_select "form[action=?] button", translate_course_path(@course), text: "כן, תרגמו אותו!"
+
+    assert_enqueued_with(job: AddCourseTranslationJob) do
+      post translate_course_path(@course)
+    end
+
+    assert_redirected_to course_path(@course)
+    assert @course.reload.published?
+    assert_equal channel_items, ChannelItem.where(course: @course).count
+    assert_equal credits, @user.reload.credit_balance
+    assert @course.course_translations.find_by!(language: languages(:hebrew)).pending?
+    assert_empty @user.import_requests.where(course: @course, translation_language: "Hebrew")
   end
 
   test "homepage shows only configured Try now videos" do

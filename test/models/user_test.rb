@@ -70,6 +70,31 @@ class UserTest < ActiveSupport::TestCase
     )
   end
 
+  test "native language defaults to English and is stored in preferences" do
+    assert_equal @english, @user.native_language
+
+    @user.native_language = @hebrew
+    @user.save!
+
+    assert_equal "he", @user.reload.preferences["native_language"]
+    assert_equal @hebrew, @user.native_language
+  end
+
+  test "an invalid stored native language falls back to English" do
+    @user.update!(preferences: @user.preferences.merge("native_language" => "xx"))
+
+    assert_equal @english, @user.native_language
+  end
+
+  test "a known but unsupported native language falls back to English" do
+    @user.update!(preferences: @user.preferences.merge("native_language" => "fr"))
+
+    assert_equal @english, @user.native_language
+
+    @user.native_language = "fr"
+    assert_equal "en", @user.preferences["native_language"]
+  end
+
   test "languages_with_saved_words returns empty array when no saved words" do
     assert_equal [], @user.languages_with_saved_words
   end

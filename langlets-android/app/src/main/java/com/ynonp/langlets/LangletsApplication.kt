@@ -99,10 +99,9 @@ class LangletsApplication : Application() {
         // "LangletsNative" is the stable marker ApplicationController#native_app?
         // looks for, and it is deliberately the same string iOS sends — every
         // native client routes to the shared /app content. "(Android)" is the
-        // narrower marker for the handful of places where the two platforms
-        // genuinely differ (ApplicationController#android_app?): today, the copy
-        // that points users at the iOS share extension. Do not repurpose it for
-        // routing.
+        // narrower marker available for places where the two platforms genuinely
+        // differ (ApplicationController#android_app?). Do not repurpose it for
+        // routing; Android's share intent uses the common Add Video web flow.
         Hotwire.config.applicationUserAgentPrefix = "${Langlets.USER_AGENT_PREFIX}/1.0 (Android);"
         Hotwire.config.webViewDebuggingEnabled = BuildConfig.DEBUG
         Hotwire.config.logger.logLevel = if (BuildConfig.DEBUG) {

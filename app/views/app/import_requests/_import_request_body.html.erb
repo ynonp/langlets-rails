@@ -21,13 +21,13 @@
 
     <% when "queued" %>
       <div class="flex items-center justify-between gap-2">
-        <p class="text-app-text-3 text-xs">Queued — up next</p>
+        <p class="text-app-text-3 text-xs"><%= t("app.import_requests.status.queued") %></p>
       </div>
 
     <% when "ready" %>
       <div class="flex items-center gap-1.5">
         <%= app_icon "check_circle", class: "w-3.5 h-3.5 text-app-accent" %>
-        <span class="text-app-accent text-xs font-semibold">Ready</span>
+        <span class="text-app-accent text-xs font-semibold"><%= t("app.import_requests.status.ready") %></span>
       </div>
 
     <% when "failed" %>
@@ -36,12 +36,12 @@
         <%# Two different failures needing two different next moves: one is ours
             to fix, the other is theirs. %>
         <span class="text-red-400 text-xs font-semibold">
-          <%= import_request.insufficient_credits? ? "Import failed — insufficient credits" : "Import failed — no credit used" %>
+          <%= import_request.insufficient_credits? ? t("app.import_requests.status.failed_insufficient_credits") : t("app.import_requests.status.failed_no_credit") %>
         </span>
       </div>
 
     <% when "canceled" %>
-      <p class="text-app-text-3 text-xs">Cancelled</p>
+      <p class="text-app-text-3 text-xs"><%= t("app.import_requests.status.cancelled") %></p>
     <% end %>
   </div>
 
@@ -67,7 +67,7 @@
     <%= button_to app_import_request_path(import_request), method: :delete,
                   data: { action: "click->swipe-to-delete#remove" },
                   class: "shrink-0 w-8 h-8 rounded-full bg-app-pill text-app-text-2 flex items-center justify-center",
-                  aria: { label: "Cancel this import" } do %>
+                  aria: { label: t("app.import_requests.status.cancel") } do %>
       <%= app_icon "close", class: "w-3.5 h-3.5" %>
     <% end %>
   <% end %>

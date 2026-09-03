@@ -6,7 +6,7 @@
     it has to clear UITabBar as well as the home indicator and that's a rule the
     stylesheet can express per-context. %>
 <%= link_to new_app_import_request_path,
-            class: "app-fab-shadow app-fab-offset fixed right-5 z-30 w-11 h-11 rounded-full bg-app-accent text-app-on-accent-sm flex items-center justify-center",
-            aria: { label: "Add a video" } do %>
+            class: "app-fab-shadow app-fab-offset fixed end-5 z-30 w-11 h-11 rounded-full bg-app-accent text-app-on-accent-sm flex items-center justify-center",
+            aria: { label: t("app.import_requests.new.title") } do %>
   <%= app_icon "plus", class: "w-5 h-5" %>
 <% end %>

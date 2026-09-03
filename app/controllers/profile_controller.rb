@@ -10,6 +10,21 @@ class ProfileController < ApplicationController
     @streak = ActivityLog.streak_info_for_user(current_user)
   end
 
+  def update_native_language
+    language = Language.where(iso_name: User::NATIVE_LANGUAGE_CODES)
+      .find_by(iso_name: params.dig(:user, :native_language))
+    if language.nil?
+      redirect_to profile_path, alert: t("profile.native_language.invalid")
+      return
+    end
+
+    current_user.native_language = language
+    current_user.save!
+
+    redirect_to profile_path,
+      notice: I18n.t("profile.native_language.updated", locale: language.iso_name)
+  end
+
   # The set of channels to deliver over — any of email and push, including
   # neither. Applies to the notification subsystem only — Devise mail and
   # Channel invitations are answers to something the user just did and are not

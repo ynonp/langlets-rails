@@ -23,12 +23,46 @@ module Imports
     def call
       @progress.reload
 
+      finalize_requested_course_translations
       pending_requests.each { |import_request| settle(import_request) }
     end
 
     private
 
     attr_reader :progress
+
+    # Course-page translation requests deliberately have no ImportRequest: an
+    # ImportRequest ends by publishing into a user's Channel and charging for
+    # that publication. Pending CourseTranslation rows are their durable work
+    # marker instead. Finalize them from the same callback-driven path, adding
+    # only localized rows to the already-published course skeleton.
+    def finalize_requested_course_translations
+      CourseTranslation.pending
+        .joins(:course)
+        .where(courses: { create_song_progress_id: progress.id })
+        .includes(:language, :course)
+        .find_each do |translation|
+          # Ordinary imports are settled below; only the course-page path lacks
+          # an ImportRequest and needs this direct finalization branch.
+          next if ImportRequest.active.exists?(
+            course_id: translation.course_id,
+            translation_language: translation.language.english_name
+          )
+
+          if progress.blocking_error(since: translation.updated_at)
+            translation.error!
+            next
+          end
+          next unless progress.complete_for?(translation.language)
+
+          translation.course.with_lock do
+            translation.course.reload
+            unless translation.course.translation_ready?(translation.language)
+              CourseBuilder::BuildSong.new(progress, translation.course).add_translation(translation.language)
+            end
+          end
+        end
+    end
 
     # Usually one, but several users can ride on a single import (see
     # Imports::Create#join!), and they can be waiting on different languages.

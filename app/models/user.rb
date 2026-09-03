@@ -182,6 +182,27 @@ class User < ApplicationRecord
     self.preferences = (preferences || {}).merge("theme" => value)
   end
 
+  # The native shell has no language subdomain, so it stores the user's native
+  # (UI and translation) language here. Browser requests continue to choose the
+  # language from their subdomain. Invalid or removed values safely fall back to
+  # English so old app versions and hand-edited preference blobs cannot leave a
+  # request without a translation language.
+  NATIVE_LANGUAGE_CODES = %w[en he].freeze
+
+  def native_language
+    stored = (preferences || {})["native_language"]
+    language = Language.find_by(iso_name: stored) if NATIVE_LANGUAGE_CODES.include?(stored)
+    language ||
+      Language.find_by(english_name: "English") ||
+      Language.first
+  end
+
+  def native_language=(language)
+    code = language.respond_to?(:iso_name) ? language.iso_name : language.to_s
+    code = "en" unless NATIVE_LANGUAGE_CODES.include?(code)
+    self.preferences = (preferences || {}).merge("native_language" => code)
+  end
+
   # Watch-video activity toggles, stored under preferences["watch_video"].
   # "translation" is a 2-state L1/L2 language toggle for the lyrics: false (the
   # default) shows L1, true shows L2.

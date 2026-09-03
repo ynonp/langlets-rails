@@ -92,9 +92,17 @@ class ImportRequest < ApplicationRecord
   # yet, fall back to the percentage the card showed before — less informative,
   # but still true, and better than a card that says only "Importing".
   def stage_label
-    return "Detecting language…" if detecting?
+    return I18n.t("app.import_requests.status.detecting") if detecting?
 
-    pipeline_step.presence || "Importing · #{display_percent}%"
+    if pipeline_step.present?
+      label, position, total = pipeline_step.match(/\A(.+) · step (\d+) of (\d+)\z/)&.captures
+      step = CreateSong::ProgressReporting::STEP_LABELS.key(label)
+      return I18n.t("app.import_requests.status.steps.#{step}", position: position, total: total) if step
+
+      return pipeline_step
+    end
+
+    I18n.t("app.import_requests.status.importing", percent: display_percent)
   end
 
   # Restart a failed import. Console/operator tool: the Queue deliberately

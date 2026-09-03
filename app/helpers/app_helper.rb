@@ -12,11 +12,11 @@ module AppHelper
   # "Spanish → English · 11 lessons"
   def app_course_meta(course, lessons_count: nil)
     count = lessons_count || course.lessons.size
-    pair = [ course.language&.english_name, course.translation_language&.english_name ].compact
+    pair = [ course.language, course.translation_language ].compact.map { |language| localized_language_name(language) }
 
     parts = []
     parts << pair.join(" → ") if pair.any?
-    parts << pluralize(count, "lesson")
+    parts << t("courses.lesson_count", count: count)
     parts.join(" · ")
   end
 
@@ -28,7 +28,7 @@ module AppHelper
   end
 
   def app_credits_label(balance)
-    "#{balance} #{'credit'.pluralize(balance)} left"
+    t("app.common.credits_left", count: balance)
   end
 
   # What the Approve button says. Three prices, and the button must never name
@@ -41,6 +41,6 @@ module AppHelper
   def app_approve_label(preview:, pro:)
     return t("app.import_requests.new.approve_pro") if pro
 
-    t("app.import_requests.new.approve", cost: pluralize(preview.cost, "credit"))
+    t("app.import_requests.new.approve", cost: t("app.common.credit_count", count: preview.cost))
   end
 end

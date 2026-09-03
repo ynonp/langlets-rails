@@ -16,7 +16,6 @@ module Api
 
       def create
         return render_missing(:url) if params[:url].blank?
-        return render_missing(:translation_language) if params[:translation_language].blank?
 
         if params[:client_token].present? &&
            (existing = current_resource_owner.import_requests.find_by(client_token: params[:client_token]))
@@ -37,7 +36,7 @@ module Api
         result = Imports::Create.call(
           user: current_resource_owner,
           url: params[:url],
-          translation_language: params[:translation_language],
+          translation_language: current_resource_owner.native_language.english_name,
           client_token: params[:client_token]
         )
 

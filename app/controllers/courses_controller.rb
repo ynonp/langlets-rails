@@ -133,6 +133,16 @@ class CoursesController < ApplicationController
       return render :waiting
     end
 
+    @requested_translation = @course.course_translations.find_by(language: Current.translation_language)
+    @existing_translation_language = @course.course_translations.ready
+      .includes(:language)
+      .order(:id)
+      .first&.language || Language.find_by(english_name: "English")
+    legacy_english_translation = Current.translation_language&.english_name == "English" &&
+      !@course.course_translations.exists?
+    @translation_needed = @course.language_id != Current.translation_language_id &&
+      !@requested_translation&.ready? && !legacy_english_translation
+
     response.headers["Turbo-Visit"] = "reload"
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
 
@@ -153,6 +163,17 @@ class CoursesController < ApplicationController
       @daily_xp = 0
       @streak_info = { count: 0, completed_today: false, status: :no_streak }
     end
+  end
+
+  def translate
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    authenticate_user!
+    return unless authorize_course_read!(@course)
+
+    CourseTranslations::Request.call(course: @course, language: Current.translation_language)
+    redirect_to course_path(@course), notice: t("courses.translation.requested")
+  rescue ArgumentError => error
+    redirect_to course_path(@course), alert: error.message
   end
 
   def new
