@@ -70,6 +70,12 @@ env(titlebar-area-y, 40px);
 env(viewport-segment-width 0 0, 40%);
 ```
 
+## Production Deploys
+1. Do not run `bin/kamal deploy` locally — this devbox only has podman, and podman's `buildx` lacks the `--builder` flag Kamal's build step relies on, so it fails immediately.
+2. Production deploys run via GitHub Actions instead: `.github/workflows/deploy.yml` is a manual `workflow_dispatch` job that checks out a branch/commit, configures production credentials and SSH, and runs `bundle exec kamal deploy` on the runner.
+3. Trigger it with `gh workflow run deploy.yml --ref <branch-or-sha>` (defaults to `main` if `--ref` is omitted). Track it with `gh run list --workflow=deploy.yml` / `gh run watch <run-id>`.
+4. Deploys are serialized (`concurrency: production-deploy`, `cancel-in-progress: false`), so a second dispatch queues behind one already running rather than racing it.
+
 ## Native App Tabs
 1. Every time we change paths in the app also check the links on the native (iOS + Android) apps tabs.
    - iOS tab URLs are defined in `langlets-ios/langlets/langlets/AppTabBarController.swift` (the `tabs` array).
