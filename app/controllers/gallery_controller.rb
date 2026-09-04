@@ -159,7 +159,11 @@ class GalleryController < ApplicationController
     end
   end
 
+  # Not filtered by translation readiness in the current subdomain's language:
+  # a course published only in another language must not disappear from its
+  # owner's own web Library, matching the native app (see
+  # App::LibraryController#published_scope, which passes include_untranslated).
   def gallery_visible_courses
-    ChannelContentQuery.courses_listed_to(current_user).published.ready_in(Current.translation_language)
+    ChannelContentQuery.courses_listed_to(current_user).published
   end
 end

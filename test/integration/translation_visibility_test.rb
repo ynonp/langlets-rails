@@ -2,8 +2,11 @@ require "test_helper"
 
 # Courses only show on a subdomain whose language they have a ready translation
 # for. Courses that predate translations (no course_translations rows) show
-# everywhere. This gate applies both to the homepage "Jump right in" grid and
-# to the course list on a playlist page.
+# everywhere. This gate applies to the homepage "Jump right in" grid and to the
+# course list on a playlist page. The web Library/Gallery (`/gallery`) is
+# deliberately exempt, matching the native app: an owner's own course must not
+# disappear from their Library just because the browser is on a different
+# subdomain than the course's ready translation.
 class TranslationVisibilityTest < ActionDispatch::IntegrationTest
   def setup
     @user = User.create!(
@@ -68,11 +71,11 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
 
   teardown { Current.reset }
 
-  test "the gallery grid hides courses not translated to the subdomain language" do
+  test "the gallery grid shows courses regardless of the subdomain language" do
     get gallery_path
     assert_response :success
     assert_select ".gallery-card", text: /Untranslated Course/
-    assert_select ".gallery-card", text: /Hebrew Only Course/, count: 0
+    assert_select ".gallery-card", text: /Hebrew Only Course/
   end
 
   test "the gallery grid shows Hebrew-translated content on the Hebrew subdomain" do

@@ -166,6 +166,16 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-import-request-status]", count: 0
   end
 
+  test "shows a course that is only translated into a language other than the request's" do
+    course = create_course("Hebrew Only Course", @language)
+    CourseTranslation.create!(course: course, language: @other_language, name: "Cours seulement en français", status: :ready)
+
+    get gallery_url
+
+    assert_response :success
+    assert_select ".gallery-card h2", text: course.name
+  end
+
   test "a public-only course is absent from the gallery" do
     course = create_course("Unlisted Public Course", @language, listed: false)
 

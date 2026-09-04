@@ -731,7 +731,14 @@ account menu on narrower screens.
 rather than `Course.published` alone: signed-out viewers see the system Channel,
 while signed-in viewers additionally see subscribed and owned non-public Channels. Content
 outside that viewer-specific set does not leak into filters, counts, playlists,
-or cards. Courses and playlists share
+or cards. Unlike the homepage grid and playlist course lists, the gallery does
+**not** gate on `Course.ready_in` (translation readiness for the current
+subdomain's language) — matching the native app's Library
+(`App::LibraryController#published_scope`, which passes
+`include_untranslated: true`). A course published only in another language
+must not disappear from its owner's own web Library just because they're
+browsing a different subdomain; cards fall back to `Course#localized_name`'s
+untranslated base name when there's no ready translation to show. Courses and playlists share
 one reverse-chronological, 16-item page rather than appearing in separate tabs.
 Its YouTube-style filter bar remains a GET form and keeps filter state in the
 URL. Text input is debounced for 300 ms; content and language pills submit
