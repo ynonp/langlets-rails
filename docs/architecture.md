@@ -1278,9 +1278,25 @@ download enables
 `--remote-components ejs:github`, allowing yt-dlp to fetch its external JavaScript challenge solver
 when the installed distribution does not bundle it. The host therefore needs outbound access to
 GitHub as well as a supported JavaScript runtime; the pipeline's Deno runtime satisfies the latter.
+Production does not rely on that network fetch alone: a dedicated uv environment at
+`/home/ynon/.local/share/langlets-ytdlp` supplies the pinned yt-dlp build plus `yt-dlp-ejs` and
+`curl-cffi`. TikTok can answer ordinary HTTP clients with only its small challenge shell;
+`curl-cffi` gives yt-dlp a supported browser-impersonation request handler and `yt-dlp-ejs` solves
+the returned JavaScript challenge locally. A systemd drop-in prepends that environment's `bin`
+directory to the pipeline service's `PATH` without replacing the host Python installation.
 `YTDLP_NETWORK_NAMESPACE` may route only that subprocess, including its EJS download, through a
 configured Linux network namespace. The Deno service needs write access for the temporary file and
 run permission for `yt-dlp`, `ip`, `ffprobe` and `ffmpeg`.
+
+The production namespace pool uses four persistent Surfshark WireGuard connections: `cy-nic-wg`,
+`gr-ath-wg`, `no-osl-wg`, and `co-bog-wg`. Their private configurations live only in
+`/etc/wireguard/surfshark-<location>.conf` with mode 0600. The reproducible, non-secret pieces live
+under `pipeline/ops`: `surfshark-wg-netns` creates each WireGuard interface in the host namespace
+so its encrypted UDP socket retains the host route, then moves its cleartext interface into an
+otherwise isolated namespace with only the VPN default route; `surfshark-wg-netns@.service` keeps
+that kernel interface active and recreates it at boot. The `langlets-pipeline-vpn.conf` drop-in
+orders the pipeline after all four namespace units. No veth pair, NAT, or host IP forwarding is
+required, and a lost tunnel fails closed because the media process has no non-WireGuard interface.
 
 **A download that "succeeds" is not necessarily audio** (`pipeline/src/audio.ts`).
 TikTok serves silent HEVC renditions (`bytevc1` / `media-video-hvc1`) that yt-dlp
@@ -1303,14 +1319,9 @@ download is verified before it counts:
 - Only when all five are exhausted does the download fail, with every spec's
   reason in the message.
 - **If `ffprobe`/`ffmpeg` cannot be run at all** (not installed, or not in
-  `--allow-run`), verification is skipped rather than failing the download —
-  deployments without ffmpeg keep the pre-verification behavior instead of
-  losing every import. `runProbe` swallows *every* spawn failure to guarantee
-  that, and deliberately does not enumerate error classes: the first version
-  caught `Deno.errors.PermissionDenied`, which Deno 2 never throws (it throws
-  `NotCapable`), and a systemd unit whose `--allow-run` list predated ffprobe
-  failed every TikTok import instead of quietly skipping the check. The unit
-  needs `--allow-run=yt-dlp,ip,ffprobe,ffmpeg`.
+  `--allow-run`), the download fails before yt-dlp runs. Accepting unverified
+  bytes would reintroduce the silent-audio failure this check prevents. The
+  systemd unit therefore needs `--allow-run=yt-dlp,ip,ffprobe,ffmpeg`.
 
 ### Domain Models
 

@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ACTION="${1:?expected up or down}"
+LOCATION="${2:?expected a Surfshark location such as gr-ath}"
+
+if [[ ! "$LOCATION" =~ ^[a-z]{2}-[a-z]{3}$ ]]; then
+  echo "Invalid Surfshark location: $LOCATION" >&2
+  exit 1
+fi
+
+NAMESPACE="${LOCATION}-wg"
+INTERFACE="wg-${LOCATION}"
+CONFIG="/etc/wireguard/surfshark-${LOCATION}.conf"
+NETNS_DIRECTORY="/etc/netns/${NAMESPACE}"
+
+namespace_exists() {
+  ip netns list | awk '{ print $1 }' | grep -Fqx "$NAMESPACE"
+}
+
+# `wg setconf` accepts WireGuard directives but not wg-quick's Address, DNS,
+# routing, or hook keys. Do this directly instead of `wg-quick strip`: the
+# protected Surfshark filenames are intentionally descriptive and longer than
+# Linux's 15-character interface-name limit, which wg-quick rejects.
+wireguard_configuration() {
+  awk '
+    /^[[:space:]]*(Address|DNS|MTU|Table|PreUp|PostUp|PreDown|PostDown|SaveConfig)[[:space:]]*=/ {
+      next
+    }
+    { print }
+  ' "$CONFIG"
+}
+
+down() {
+  if namespace_exists; then
+    ip netns delete "$NAMESPACE"
+  fi
+
+  # Covers a failed start that created the interface but did not move it.
+  ip link delete "$INTERFACE" 2>/dev/null || true
+
+  rm -f "${NETNS_DIRECTORY}/resolv.conf"
+  rmdir "$NETNS_DIRECTORY" 2>/dev/null || true
+}
+
+up() {
+  if [[ ! -r "$CONFIG" ]]; then
+    echo "Missing WireGuard configuration: $CONFIG" >&2
+    exit 1
+  fi
+
+  # Make startup idempotent after an interrupted systemd invocation.
+  down
+  trap down ERR
+
+  ip netns add "$NAMESPACE"
+  ip netns exec "$NAMESPACE" ip link set lo up
+
+  install -d -m 0755 "$NETNS_DIRECTORY"
+  printf '%s\n' \
+    'nameserver 162.252.172.57' \
+    'nameserver 149.154.159.92' \
+    >"${NETNS_DIRECTORY}/resolv.conf"
+
+  # WireGuard remembers the namespace in which the interface was created for
+  # its encrypted UDP socket. Create/configure it on the host, then move the
+  # cleartext side into the isolated namespace. This avoids a veth pair, NAT,
+  # and host IP forwarding, and gives the namespace fail-closed routing.
+  ip link add "$INTERFACE" type wireguard
+  wg setconf "$INTERFACE" <(wireguard_configuration)
+  ip link set "$INTERFACE" netns "$NAMESPACE"
+
+  address_line="$({
+    awk -F= '
+      /^Address[[:space:]]*=/ {
+        gsub(/[[:space:]]/, "", $2)
+        print $2
+        exit
+      }
+    ' "$CONFIG"
+  })"
+
+  if [[ -z "$address_line" ]]; then
+    echo "No Address entry in $CONFIG" >&2
+    return 1
+  fi
+
+  has_ipv4=false
+  has_ipv6=false
+  IFS=',' read -ra addresses <<<"$address_line"
+  for address in "${addresses[@]}"; do
+    if [[ "$address" == *:* ]]; then
+      ip -n "$NAMESPACE" -6 address add "$address" dev "$INTERFACE"
+      has_ipv6=true
+    else
+      ip -n "$NAMESPACE" -4 address add "$address" dev "$INTERFACE"
+      has_ipv4=true
+    fi
+  done
+
+  ip -n "$NAMESPACE" link set "$INTERFACE" mtu 1420 up
+  if [[ "$has_ipv4" == true ]]; then
+    ip -n "$NAMESPACE" -4 route replace default dev "$INTERFACE"
+  fi
+  if [[ "$has_ipv6" == true ]]; then
+    ip -n "$NAMESPACE" -6 route replace default dev "$INTERFACE"
+  fi
+
+  trap - ERR
+}
+
+case "$ACTION" in
+  up) up ;;
+  down) down ;;
+  *)
+    echo "Expected up or down, got: $ACTION" >&2
+    exit 1
+    ;;
+esac

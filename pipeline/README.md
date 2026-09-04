@@ -262,7 +262,7 @@ network namespace. Leave it unset for direct execution. The command enables
 GitHub; yt-dlp uses the pipeline's Deno runtime to execute the downloaded YouTube challenge solver.
 
 `YTDLP_NETWORK_NAMESPACE` also accepts a comma-separated list (`YTDLP_NETWORK_NAMESPACE=vpn1,vpn2,vpn3`)
-to round-robin across several standing OpenVPN tunnels — useful because a tunnel tends to work fine
+to round-robin across several standing VPN tunnels — useful because a tunnel tends to work fine
 until the day it doesn't. The namespace that most recently produced a usable download is tried
 first; on failure the ladder falls through the rest of the list (retrying the full format ladder
 under each one) before giving up. That preference is persisted to `YTDLP_VPN_STATE_FILE` (default
@@ -271,12 +271,21 @@ so this is not a per-download file read. If the file names a namespace no longer
 `YTDLP_NETWORK_NAMESPACE`, it's ignored and the configured list order is used instead — the env var
 always wins. See `src/vpnNamespace.ts`.
 
+Production uses the WireGuard namespaces `cy-nic-wg`, `gr-ath-wg`, `no-osl-wg`, and `co-bog-wg`.
+The root-owned namespace manager, systemd template, and pipeline startup drop-in are in `ops/`;
+Surfshark configurations contain private keys and remain outside the repository under
+`/etc/wireguard`. The pipeline's systemd `PATH` also prefers the dedicated uv environment
+`/home/ynon/.local/share/langlets-ytdlp`, which includes `curl-cffi` browser impersonation and the
+local `yt-dlp-ejs` challenge solver. Without those optional dependencies TikTok may return a tiny
+challenge page on every otherwise healthy VPN exit, making an application-runtime failure look like
+an IP-reputation failure.
+
 `ffprobe` and `ffmpeg` must be on `PATH`. Audio downloads are verified with them, because TikTok
 serves silent HEVC renditions that yt-dlp reports as a successful download
 ([yt-dlp#15642](https://github.com/yt-dlp/yt-dlp/issues/15642)); a file with no audio stream or a
 mean volume at or below -70 dB is discarded and the next of five format specs is tried
-(`src/audio.ts`). Without ffmpeg the verification is skipped rather than failing the download, and
-the silent-audio downloads come back.
+(`src/audio.ts`). Missing or non-runnable verifiers fail the download before yt-dlp runs; production
+grants Deno `--allow-run=yt-dlp,ip,ffprobe,ffmpeg`.
 
 ## Layout
 
