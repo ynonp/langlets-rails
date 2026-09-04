@@ -8,10 +8,10 @@ image: ynonp-kamal-2/langlets
 # Deploy to these servers.
 servers:
   web:
-    - 159.223.167.158
+    - langlets.app
   job:
     hosts:
-      - 159.223.167.158
+      - langlets.app
     cmd: bin/jobs
 
 # Release APKs live outside the application image so they survive deploys.
@@ -81,7 +81,7 @@ builder:
 accessories:
   db:
     image: postgres:17
-    host: 159.223.167.158
+    host: langlets.app
     env:
       clear:
         POSTGRES_DB: langlets_production
