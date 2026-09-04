@@ -17,10 +17,16 @@
 
   <% if @total_pages > 1 %>
     <nav class="gallery-pagination" aria-label="Pagination">
-      <% ([1, @page - 1, @page, @page + 1, @total_pages].select { |page| page.between?(1, @total_pages) }.uniq.sort).each do |page| %>
+      <% pages = [1, @page - 1, @page, @page + 1, @total_pages].select { |page| page.between?(1, @total_pages) }.uniq.sort %>
+      <% previous_page = nil %>
+      <% pages.each do |page| %>
+        <% if previous_page && page - previous_page > 1 %>
+          <span class="gallery-page-ellipsis" aria-hidden="true">&hellip;</span>
+        <% end %>
         <%= link_to page, gallery_path(search: @search.presence, imports: @import_filter, types: @selected_types, languages: @selected_languages.map(&:iso_name), page: page),
               class: "gallery-page-link", aria: (page == @page ? { current: "page" } : {}),
               data: { turbo_stream: true } %>
+        <% previous_page = page %>
       <% end %>
     </nav>
   <% end %>

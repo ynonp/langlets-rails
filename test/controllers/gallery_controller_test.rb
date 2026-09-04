@@ -267,6 +267,33 @@ class GalleryControllerTest < ActionDispatch::IntegrationTest
     assert_select ".gallery-pagination"
   end
 
+  test "orders entries by most recently created first" do
+    older = create_course("Older Course", @language)
+    older.update!(created_at: 2.days.ago)
+    newer = create_course("Newer Course", @language)
+    newer.update!(created_at: 1.hour.ago)
+
+    get gallery_url
+
+    assert_response :success
+    titles = css_select(".gallery-card h2").map(&:text)
+    assert_operator titles.index(newer.name), :<, titles.index(older.name)
+  end
+
+  test "shows an ellipsis between non-contiguous page links" do
+    65.times { |index| create_course("Ellipsis Course #{index}", @language) }
+
+    get gallery_url
+
+    assert_response :success
+    assert_select ".gallery-pagination .gallery-page-link", text: "1"
+    assert_select ".gallery-pagination .gallery-page-link", text: "2"
+    assert_select ".gallery-pagination .gallery-page-link", text: "5"
+    assert_select ".gallery-pagination .gallery-page-link", text: "3", count: 0
+    assert_select ".gallery-pagination .gallery-page-link", text: "4", count: 0
+    assert_select ".gallery-pagination .gallery-page-ellipsis", count: 1
+  end
+
   test "preloads card data without per-card selects" do
     8.times { |index| create_course("Query Course #{index}", @language) }
     4.times do |index|

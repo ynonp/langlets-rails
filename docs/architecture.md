@@ -759,6 +759,11 @@ to two lines with an overflow ellipsis and a reserved two-line title area,
 matching the homepage and native library cards so unusually long provider
 titles cannot misalign a grid.
 
+The pagination nav shows a sparse window of page links — first page, current
+page ± 1, and last page, deduped and sorted — rather than every page number,
+so it stays compact when there are many pages. A non-breaking gap between two
+non-adjacent links (e.g. page 2 and page 5) renders as an `…` separator.
+
 The course detail hero keeps its course name to one line with an overflow
 ellipsis. The complete localized name remains in the heading's `title`
 attribute, preventing long provider-supplied titles from changing the hero's
