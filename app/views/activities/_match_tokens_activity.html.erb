@@ -7,7 +7,7 @@
   params[:end_timestamp] - End timestamp for the video segment
   current_script - Script object for current script (passed as local)
 
-  This activity shows a 2x4 grid where users match tokens to their translations:
+  This activity shows a 2x5 grid where users match tokens to their translations:
   1. Left column shows words in L1, right column shows translations in L2
   2. The pairs are built as a list, sliced into pages of max_tokens_in_page
      pairs, then each page's pairs are split into an L1 list and an L2 list
@@ -19,7 +19,7 @@
   6. Tapping an L1 cell plays the L1 audio for that pair; L2 cells are silent
   7. Progress bar + counter show completion status
   8. When all tokens on a page are matched, the page is hidden and the next
-     page (up to max_tokens_in_page pairs = 8 cells per page) is revealed
+     page (up to max_tokens_in_page pairs = 10 cells per page) is revealed
      without playing audio until the user taps an L1 cell
   9. When all tokens are matched, shows completion message
  %>
@@ -31,15 +31,15 @@
   l2 = params[:l2]
   total_tokens = tokens.length
 
-  # Same page-sizing convention as tokens-chain-activity: at most 4 pairs per
-  # page so the L1/L2 columns stay readable (4 boxes per column).
-  max_tokens_in_page = 4
+  # Same page-sizing convention as tokens-chain-activity: at most 5 pairs per
+  # page so the L1/L2 columns stay readable (5 boxes per column).
+  max_tokens_in_page = 5
   # Spread the pairs across pages as evenly as possible.
   #   page_count   = ceil(total / max_tokens_in_page)  (fewest pages allowed)
   #   page_size    = ceil(total / page_count)          (so each page holds as
   #                                                    many pairs as it can)
-  # With max=4 and 5 total pairs that gives page_count=2, page_size=3, and the
-  # activity renders as 3+2 instead of an awkward 4+1.
+  # With max=5 and 8 total pairs that gives page_count=2, page_size=4, and the
+  # activity renders as 4+4 instead of an awkward 5+3.
   page_count = (total_tokens.to_f / max_tokens_in_page).ceil
   page_count = 1 if page_count < 1
   page_size = (total_tokens.to_f / page_count).ceil
@@ -51,7 +51,7 @@
   # Shared cell styling. The state variants mirror audio-to-translation: a
   # gentle emerald outline while selected, and a dimmed "done" look once
   # matched (kept in place instead of hiding/replacing).
-  cell_base = "group relative flex items-center min-h-[96px] overflow-hidden px-4 py-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+  cell_base = "group relative flex items-center min-h-[80px] overflow-hidden px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
   cell_state = "data-[state=selected]:border-emerald-400 data-[state=selected]:ring-2 data-[state=selected]:ring-emerald-500/25 data-[state=selected]:bg-emerald-50/70 dark:data-[state=selected]:bg-emerald-900/40 data-[state=matched]:border-emerald-500 data-[state=matched]:bg-emerald-50 dark:data-[state=matched]:bg-emerald-900/40 data-[state=matched]:opacity-[0.6] data-[state=matched]:cursor-default data-[state=matched]:pointer-events-none data-[state=matched]:grayscale"
   check_classes = "hidden group-data-[state=matched]:block shrink-0 text-base font-bold leading-none text-emerald-600 dark:text-emerald-300"
 %>
@@ -101,7 +101,7 @@
           data-action="touchstart->match-tokens-activity#handleTouchStart:!passive touchend->match-tokens-activity#handleTouchEnd:!passive">
 
           <!-- L1 column: header + L1 list -->
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3.5">
             <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l1.english_name %> Words</div>
             <% l1_list.each do |token| %>
               <div
@@ -119,7 +119,7 @@
           </div>
 
           <!-- L2 column: header + L2 list -->
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3.5">
             <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l2.english_name %> Translations</div>
             <% l2_list.each do |token| %>
               <div
