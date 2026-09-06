@@ -173,6 +173,48 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-match-activity-target='completionMessage'] a", text: "הבא"
   end
 
+  test "Hebrew ordering activities and token chain localize their controls and counter" do
+    phrase = create_translated_phrase!(
+      medium: @medium,
+      l1: languages(:english),
+      l2: languages(:hebrew),
+      text_l1: "Build sentence",
+      text_l2: "בנו משפט",
+      timestamp: "00:04.00"
+    )
+    token = create_translated_token!(
+      phrase:,
+      translation: "בנו",
+      language: languages(:hebrew),
+      l1_start_index: 0,
+      l1_end_index: 4,
+      index_type: :character_index
+    )
+    sort_activity = Activities::SortPhrasesActivity.create!(lesson: @lesson, order: 2, user: @user)
+    word_order_activity = Activities::WordOrderActivity.create!(lesson: @lesson, order: 3, user: @user)
+    tokens_chain_activity = Activities::TokensChainActivity.create!(lesson: @lesson, order: 4, user: @user)
+    sort_activity.phrases << phrase
+    word_order_activity.phrases << phrase
+    tokens_chain_activity.phrase_tokens << token
+    host! "he.langlets.app"
+
+    get course_lesson_path(@course, @lesson, a: sort_activity.order)
+
+    assert_response :success
+    assert_select "#check-order", text: "בדיקת הסדר"
+    assert_select "#result-message", text: "הסדר עדיין לא נכון. נסו להזיז שוב את השורות."
+
+    get course_lesson_path(@course, @lesson, a: word_order_activity.order)
+
+    assert_response :success
+    assert_select "[data-word-order-activity-target='continueButton']", text: /בדיקה/
+
+    get course_lesson_path(@course, @lesson, a: tokens_chain_activity.order)
+
+    assert_response :success
+    assert_select "[data-tokens-chain-activity-target='progressText']", text: "0 / 1 הותאמו"
+  end
+
   test "native watch video renders saved vocabulary state" do
     phrase = create_translated_phrase!(
       medium: @medium,

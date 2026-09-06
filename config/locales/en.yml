@@ -185,14 +185,17 @@ en:
       translation: "%{language} Translation"
     find_answer_activity:
       good_work: "Good Work!"
+      next: "Next"
     flashcard_activity:
       title: "Flashcards"
       question_of: "Question %{current} of %{total}"
       good_work: "Good Work!"
+      next: "Next"
     write_missing_word_activity:
       title: "Write the Missing Word"
       question_of: "Question %{current} of %{total}"
       great_work: "Great Work!"
+      next: "Next"
     translation_popup:
       save: "Save"
     watch_video_activity:
@@ -206,26 +209,34 @@ en:
       instruction: "Click on the words in the original text that match the highlighted words"
       good_work: "Good Work!"
       completed: "You've matched all the words correctly."
+      next: "Next"
     listen_activity:
       instruction: "Listen and click on the missing word"
       start_video: "Press Play on the video to start"
       great_job: "Great job!"
       completed: "You've completed all the listening exercises."
+      next: "Next"
     match_tokens_activity:
       instruction: "Match Words to Their Translations"
       great_job: "Great job!"
       completed: "You've matched all the words correctly."
       matched: "%{current} / %{total} matched"
+      next: "Next"
+      words: "%{language} Words"
+      translations: "%{language} Translations"
     tokens_chain_activity:
       instruction: "Tap the translation of the highlighted word"
       great_job: "Great job!"
       completed: "You've matched all the tokens correctly."
+      next: "Next"
+      matched: "%{current} / %{total} matched"
     word_order_activity:
       build_sentence: "Build the sentence"
       instruction: "Translate this sentence"
       question_of: "Question %{current} of %{total}"
       tap_to_listen: "Tap to listen"
       tap_words: "Tap words to add them in order"
+      check: "Check"
       great_job: "Great job!"
       completed: "You've completed all the phrases."
       next: "Next"
@@ -244,12 +255,16 @@ en:
       accuracy: "Accuracy"
       fluency: "Fluency"
       completeness: "Completeness"
+      next: "Next"
     sort_phrases_activity:
       instruction: "Put the lines in the order you hear them"
       subinstruction: "Play the song, then drag each line up or down to match the order in the recording."
       hint: "Listening is the hint — the lines appear in order in the song."
+      check_order: "Check order"
+      incorrect: "Not quite right. Try moving the lines again."
       great_job: "Great job!"
       completed: "You've sorted all the phrases correctly."
+      next: "Next"
   app:
     common:
       credit_count:

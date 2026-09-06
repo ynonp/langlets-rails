@@ -38,7 +38,7 @@
     <div class="mb-6">
       <div class="flex items-center gap-3 sm:gap-4">
         <p data-tokens-chain-activity-target="progressText" class="shrink-0 text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300">
-          0 / <%= total_tokens %> matched
+          <%= t(".matched", current: 0, total: total_tokens) %>
         </p>
       </div>
       <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-4"><%= t(".instruction") %></p>
@@ -53,7 +53,7 @@
           <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
           <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
         </div>
-        <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
+        <%= link_to_next_activity(t(".next"), @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
       <!-- Vocabulary grid, one page per chunk of tokens -->

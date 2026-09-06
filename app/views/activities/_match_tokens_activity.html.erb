@@ -82,7 +82,7 @@
           <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
           <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
         </div>
-        <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
+        <%= link_to_next_activity(t(".next"), @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
       <!-- Pages: each page holds up to max_tokens_in_page pairs. We split each
@@ -102,7 +102,7 @@
 
           <!-- L1 column: header + L1 list -->
           <div class="flex flex-col gap-3.5">
-            <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l1.english_name %> Words</div>
+            <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= t(".words", language: l1.native_name) %></div>
             <% l1_list.each do |token| %>
               <div
                 class="<%= cell_base %> justify-center text-center <%= cell_state %>"
@@ -120,7 +120,7 @@
 
           <!-- L2 column: header + L2 list -->
           <div class="flex flex-col gap-3.5">
-            <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l2.english_name %> Translations</div>
+            <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= t(".translations", language: l2.native_name) %></div>
             <% l2_list.each do |token| %>
               <div
                 class="<%= cell_base %> justify-center text-center <%= cell_state %>"

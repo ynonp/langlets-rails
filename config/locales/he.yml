@@ -163,14 +163,17 @@ he:
       translation: "תרגום ל%{language}"
     find_answer_activity:
       good_work: "עבודה מצוינת!"
+      next: "הבא"
     flashcard_activity:
       title: "כרטיסיות"
       question_of: "שאלה %{current} מתוך %{total}"
       good_work: "עבודה מצוינת!"
+      next: "הבא"
     write_missing_word_activity:
       title: "כתבו את המילה החסרה"
       question_of: "שאלה %{current} מתוך %{total}"
       great_work: "עבודה מצוינת!"
+      next: "הבא"
     translation_popup:
       save: "שמירה"
     watch_video_activity:
@@ -184,26 +187,34 @@ he:
       instruction: "הקישו על המילים בטקסט המקורי שמתאימות למילים המודגשות"
       good_work: "עבודה מצוינת!"
       completed: "התאמתם נכון את כל המילים."
+      next: "הבא"
     listen_activity:
       instruction: "האזינו והקישו על המילה החסרה"
       start_video: "לחצו על Play בסרטון כדי להתחיל"
       great_job: "כל הכבוד!"
       completed: "השלמתם את כל תרגילי ההאזנה."
+      next: "הבא"
     match_tokens_activity:
       instruction: "התאימו מילים לתרגומים שלהן"
       great_job: "כל הכבוד!"
       completed: "התאמתם נכון את כל המילים."
       matched: "%{current} / %{total} הותאמו"
+      next: "הבא"
+      words: "מילים ב%{language}"
+      translations: "תרגומים ל%{language}"
     tokens_chain_activity:
       instruction: "הקישו על התרגום של המילה המודגשת"
       great_job: "כל הכבוד!"
       completed: "התאמתם נכון את כל המילים."
+      next: "הבא"
+      matched: "%{current} / %{total} הותאמו"
     word_order_activity:
       build_sentence: "בנו את המשפט"
       instruction: "תרגמו את המשפט הזה"
       question_of: "שאלה %{current} מתוך %{total}"
       tap_to_listen: "הקישו להאזנה"
       tap_words: "הקישו על המילים לפי הסדר"
+      check: "בדיקה"
       great_job: "כל הכבוד!"
       completed: "השלמתם את כל המשפטים."
       next: "הבא"
@@ -222,12 +233,16 @@ he:
       accuracy: "דיוק"
       fluency: "שטף"
       completeness: "שלמות"
+      next: "הבא"
     sort_phrases_activity:
       instruction: "סדרו את השורות לפי הסדר שבו הן נשמעות"
       subinstruction: "השמיעו את השיר וגררו כל שורה למעלה או למטה בהתאם לסדר בהקלטה."
       hint: "ההאזנה היא הרמז — השורות מופיעות לפי הסדר בשיר."
+      check_order: "בדיקת הסדר"
+      incorrect: "הסדר עדיין לא נכון. נסו להזיז שוב את השורות."
       great_job: "כל הכבוד!"
       completed: "סידרתם נכון את כל המשפטים."
+      next: "הבא"
   app:
     common:
       credit_count:

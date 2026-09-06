@@ -63,7 +63,7 @@
           data-action="click->sort-phrases-activity#checkOrder"
           data-sort-phrases-activity-target="checkButton"
           class="inline-flex h-11 items-center justify-center rounded-xl bg-emerald-500 px-6 font-bold text-white transition hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 active:scale-[0.98]">
-          Check order
+          <%= t(".check_order") %>
         </button>
 
         <div
@@ -71,7 +71,7 @@
           data-sort-phrases-activity-target="resultMessage"
           class="hidden text-sm font-medium text-red-600 dark:text-red-400"
           role="status">
-          Not quite right. Try moving the lines again.
+          <%= t(".incorrect") %>
         </div>
       </div>
 
@@ -87,6 +87,6 @@
       <h3 class="font-bold text-emerald-900 dark:text-emerald-100"><%= t(".great_job") %></h3>
       <p class="mt-1 text-sm text-emerald-700 dark:text-emerald-300"><%= t(".completed") %></p>
     </div>
-    <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex h-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500 px-6 font-bold text-white transition hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500") %>
+    <%= link_to_next_activity(t(".next"), @next_activity_path, class: "inline-flex h-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500 px-6 font-bold text-white transition hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500") %>
   </div>
 </div>
