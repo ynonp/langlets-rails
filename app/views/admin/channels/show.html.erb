@@ -1,0 +1,11 @@
+<%= link_to "← Channels", admin_channels_path %>
+<h1><%= @channel.name %></h1>
+<p class="admin-muted"><%= @channel.user.email %> · <%= @channel.type.presence || "Channel" %> · <%= @channel.visibility.humanize %> · <%= @channel.slug %></p>
+<h2>Published content</h2>
+<div class="admin-table-wrap"><table><thead><tr><th>Course</th><th>Language</th><th>Course status</th><th>Published to channel</th><th>Pipeline</th></tr></thead><tbody>
+<% @items.each do |item| %><% course = item.course %><tr>
+<td><%= link_to course.name.presence || course.slug, course_path(course) %><small>#<%= course.id %> · <%= course.main_media_url %></small></td>
+<td><%= course.language&.english_name || "—" %></td><td><%= admin_status(course.status) %></td><td><%= admin_time(item.published_at) %></td>
+<td><%= link_to "Record ##{course.create_song_progress_id}", admin_pipeline_record_path(course.create_song_progress_id) if course.create_song_progress_id %></td>
+</tr><% end %><% if @items.empty? %><tr><td colspan="5" class="admin-empty">No content has been published to this channel.</td></tr><% end %></tbody></table></div>
+<%= render "admin/shared/pagination" %>

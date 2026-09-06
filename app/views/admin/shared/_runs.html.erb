@@ -1,0 +1,16 @@
+<div class="admin-table-wrap"><table>
+  <thead><tr><th>Request / content</th><th>User</th><th>Languages</th><th>Status / stage</th><th>Failure reason</th><th>Attempt started</th></tr></thead>
+  <tbody>
+    <% runs.each do |run| %>
+      <tr>
+        <td><%= link_to "##{run.id} · #{run.course&.name.presence || run.youtube_video_id}", admin_pipeline_run_path(run) %><small><%= run.youtube_url %></small></td>
+        <td><%= link_to run.user.email, admin_users_path(q: run.user.email) %></td>
+        <td><%= run.clip_language.presence || "Detecting" %> → <%= run.translation_language %></td>
+        <td><%= admin_status(run.status) %><small><%= run.pipeline_step %><%= " · #{run.display_percent}%" if run.importing? %></small></td>
+        <td class="admin-error"><%= truncate(run.failure_reason, length: 200).presence || "—" %></td>
+        <td><%= admin_time(run.created_at) %></td>
+      </tr>
+    <% end %>
+    <% if runs.empty? %><tr><td colspan="6" class="admin-empty">No pipeline requests found.</td></tr><% end %>
+  </tbody>
+</table></div>

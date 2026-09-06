@@ -1,0 +1,8 @@
+<%= form_with url: request.path, method: :get, class: "admin-filters" do |form| %>
+  <div><%= form.label :q, local_assigns.fetch(:label, "Search") %><%= form.search_field :q, value: @query, placeholder: local_assigns[:placeholder] %></div>
+  <% if local_assigns[:statuses] %>
+    <div><%= form.label :status %><%= form.select :status, ImportRequest.statuses.keys.map { |status| [status.humanize, status] }, selected: @status, include_blank: "All statuses" %></div>
+  <% end %>
+  <%= form.submit "Filter", class: "admin-button" %>
+  <%= link_to "Clear", request.path %>
+<% end %>

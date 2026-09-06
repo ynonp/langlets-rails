@@ -31,6 +31,9 @@
     <% end %>
   </label>
   <div class="<%= dropdown_class %>">
+    <% if current_user.admin? %>
+      <%= render "shared/menu_link", label: "Admin panel", path: admin_root_path, class_name: menu_item_class %>
+    <% end %>
     <% if show_theme_toggle %>
       <div class="sm:hidden px-4 py-3" data-testid="header-theme-mobile-menu">
         <%= render "shared/theme_toggle" %>

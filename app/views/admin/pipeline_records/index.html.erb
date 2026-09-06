@@ -1,0 +1,7 @@
+<p class="admin-eyebrow">PROCESSING</p><h1>Shared pipeline records</h1>
+<p class="admin-muted">Every saved pipeline, including console-created records without an import request. Each record holds reusable results for one video and source language.</p>
+<%= render "admin/shared/search", label: "Video URL", placeholder: "Search by source URL" %>
+<div class="admin-table-wrap"><table><thead><tr><th>Pipeline</th><th>Source language</th><th>Created</th><th>Last callback / update</th></tr></thead><tbody>
+<% @records.each do |record| %><tr><td><%= link_to "Record ##{record.id}", admin_pipeline_record_path(record) %><small><%= record.youtubeurl %></small></td><td><%= record.clip_language %></td><td><%= admin_time(record.created_at) %></td><td><%= admin_time(record.updated_at) %></td></tr><% end %>
+<% if @records.empty? %><tr><td colspan="4" class="admin-empty">No pipeline records found.</td></tr><% end %></tbody></table></div>
+<%= render "admin/shared/pagination" %>

@@ -1,0 +1,21 @@
+<%= link_to "← Pipeline runs", admin_pipeline_runs_path %>
+<h1>Import #<%= @run.id %></h1>
+<div class="admin-section-heading"><h2><%= @run.course&.name.presence || @run.youtube_video_id %></h2><%= admin_status(@run.status) %></div>
+<dl class="admin-details">
+<dt>Requested by</dt><dd><%= @run.user.email %></dd>
+<dt>Source URL</dt><dd><%= @run.youtube_url %></dd>
+<dt>Languages</dt><dd><%= @run.clip_language.presence || "Unknown" %> → <%= @run.translation_language %></dd>
+<dt>Stage</dt><dd><%= @run.pipeline_step.presence || "—" %> · <%= @run.display_percent %>%</dd>
+<dt>Attempt started</dt><dd><%= admin_time(@run.created_at) %></dd>
+<dt>Last updated</dt><dd><%= admin_time(@run.updated_at) %></dd>
+<dt>Course</dt><dd><% if @run.course %><%= link_to @run.course.name.presence || @run.course.slug, course_path(@run.course) %> · <%= admin_status(@run.course.status) %><% else %>No course attached<% end %></dd>
+<dt>Shared pipeline</dt><dd><% if @run.create_song_progress_id %><%= link_to "Record ##{@run.create_song_progress_id}", admin_pipeline_record_path(@run.create_song_progress_id) %><% else %>No pipeline record attached<% end %></dd>
+</dl>
+<h2>Failure reason</h2><pre class="admin-error-panel"><%= @run.failure_reason.presence || "No failure reason recorded." %></pre>
+<% if @run.failed? %>
+  <% if @run.course_id && @run.create_song_progress_id %>
+    <div class="admin-retry"><h2>Resume this import</h2><p>After fixing the cause, retry to resume from saved pipeline data. This resets the request deadline and reuses completed steps. A matching active run will be shared.</p>
+    <%= button_to "Retry failed pipeline", retry_admin_pipeline_run_path(@run), class: "admin-button" %></div>
+  <% else %><p class="admin-flash">This request cannot be resumed because its course or pipeline record is missing. A new import is needed.</p><% end %>
+<% end %>
+<%= render "admin/shared/errors", record: @run.create_song_progress if @run.create_song_progress %>

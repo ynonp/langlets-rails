@@ -1,0 +1,6 @@
+<h2>Reported pipeline errors</h2>
+<p class="admin-muted">Saved callback errors may belong to earlier attempts. The request status and failure reason above describe the current attempt.</p>
+<% if record.pipeline_errors.empty? %><p class="admin-empty">No callback errors recorded.</p><% end %>
+<% record.pipeline_errors.each do |error| %>
+  <pre class="admin-error-panel"><%= JSON.pretty_generate(error) %></pre>
+<% end %>

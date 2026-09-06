@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    root "dashboard#index"
+    resources :users, only: [ :index ] do
+      post :grant_pro, on: :member
+    end
+    resources :channels, only: [ :index, :show ]
+    resources :pipeline_runs, only: [ :index, :show ] do
+      post :retry, on: :member
+    end
+    resources :pipeline_records, only: [ :index, :show ]
+  end
+
   # OAuth 2.1 provider for AI agents (MCP clients, CLI). Token management UI
   # lives at settings/connections instead of Doorkeeper's authorized_applications.
   use_doorkeeper do

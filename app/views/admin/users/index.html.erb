@@ -1,0 +1,14 @@
+<p class="admin-eyebrow">ACCESS</p><h1>Users</h1>
+<p class="admin-muted">Grant Pro access for unlimited imports. Manual grants last 100 years, matching the existing console grant.</p>
+<%= render "admin/shared/search", label: "Email", placeholder: "Search users by email" %>
+<div class="admin-table-wrap"><table>
+<thead><tr><th>User</th><th>Access</th><th>Credits</th><th>Joined</th><th>Action</th></tr></thead>
+<tbody><% @users.each do |user| %><tr>
+<td><strong><%= user.email %></strong><small>#<%= user.id %><%= " · Administrator" if user.admin? %></small></td>
+<td><%= admin_status(@pro_user_ids.include?(user.id) ? "pro" : "free") %></td>
+<td><%= user.credit_balance %></td><td><%= admin_time(user.created_at) %></td>
+<td><% unless @pro_user_ids.include?(user.id) %><%= button_to "Grant Pro", grant_pro_admin_user_path(user), class: "admin-button" %><% else %><span class="admin-muted">Pro active</span><% end %></td>
+</tr><% end %>
+<% if @users.empty? %><tr><td colspan="5" class="admin-empty">No users found.</td></tr><% end %>
+</tbody></table></div>
+<%= render "admin/shared/pagination" %>

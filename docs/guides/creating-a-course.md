@@ -39,6 +39,21 @@ The pipeline is driven by two records:
 
 ---
 
+## Admin monitoring and recovery
+
+Sign in as the administrator and open `/admin` (also linked from the user menu).
+**Pipeline runs** lists every import request with status filters and search by
+requester email, video URL, or failure reason. Open a failed request to inspect
+its full failure reason and saved callback errors, then use **Retry failed
+pipeline** after fixing the cause. The retry resumes saved steps and resets the
+request deadline through `ImportRequest#retry!`. It does not charge upfront.
+Requests missing a course or pipeline record need a new import.
+
+**Pipeline records** includes saved pipelines created from the console, even when
+no request is attached. These standalone records still use console recovery.
+The panel shows the current request attempt and saved pipeline data, not a
+separate historical log of every execution.
+
 ## Programmatic Creation (Rails Console)
 
 Use this when you need to create a course without the UI, retry a failed course, or debug the pipeline.

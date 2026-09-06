@@ -1,0 +1,11 @@
+<p class="admin-eyebrow">OPERATIONS</p>
+<h1>Platform overview</h1>
+<p class="admin-muted">Manage access, inspect published content, and resolve failed imports.</p>
+<div class="admin-stats">
+  <%= link_to admin_users_path do %><strong><%= number_with_delimiter(@users_count) %></strong><span>Users</span><% end %>
+  <%= link_to admin_channels_path do %><strong><%= number_with_delimiter(@channels_count) %></strong><span>Channels</span><% end %>
+  <%= link_to admin_pipeline_runs_path(status: :failed) do %><strong class="admin-error"><%= @statuses.fetch("failed", 0) %></strong><span>Failed requests</span><% end %>
+  <%= link_to admin_pipeline_runs_path do %><strong><%= %w[queued importing detecting].sum { |s| @statuses.fetch(s, 0) } %></strong><span>Active requests</span><% end %>
+</div>
+<div class="admin-section-heading"><h2>Recent failures</h2><%= link_to "View all failures →", admin_pipeline_runs_path(status: :failed) %></div>
+<%= render "admin/shared/runs", runs: @failures %>

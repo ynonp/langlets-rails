@@ -1,0 +1,11 @@
+<p class="admin-eyebrow">CONTENT</p><h1>Channels</h1>
+<p class="admin-muted">All publishing identities, including private, shared, public, Pro, and system channels.</p>
+<%= render "admin/shared/search", label: "Channel or owner", placeholder: "Name, slug, or owner email" %>
+<div class="admin-table-wrap"><table><thead><tr><th>Channel</th><th>Owner</th><th>Type / visibility</th><th>Publications</th><th>Created</th></tr></thead>
+<tbody><% @channels.each do |channel| %><tr>
+<td><%= link_to channel.name, admin_channel_path(channel.id) %><small><%= channel.slug %> · #<%= channel.id %></small></td>
+<td><%= link_to channel.user.email, admin_users_path(q: channel.user.email) %></td>
+<td><%= channel.type.presence || (channel.default? ? "Default channel" : "Channel") %><small><%= channel.visibility.humanize %></small></td>
+<td><%= @item_counts.fetch(channel.id, 0) %></td><td><%= admin_time(channel.created_at) %></td>
+</tr><% end %><% if @channels.empty? %><tr><td colspan="5" class="admin-empty">No channels found.</td></tr><% end %></tbody></table></div>
+<%= render "admin/shared/pagination" %>

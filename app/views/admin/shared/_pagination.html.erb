@@ -1,0 +1,7 @@
+<div class="admin-pagination">
+  <span><%= number_with_delimiter(@total) %> records · Page <%= @page %> of <%= @pages %></span>
+  <div>
+    <%= link_to "← Previous", url_for(request.query_parameters.merge(page: @page - 1)) if @page > 1 %>
+    <%= link_to "Next →", url_for(request.query_parameters.merge(page: @page + 1)) if @page < @pages %>
+  </div>
+</div>

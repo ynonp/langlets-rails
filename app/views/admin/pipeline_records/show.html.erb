@@ -1,0 +1,12 @@
+<%= link_to "← Pipeline records", admin_pipeline_records_path %>
+<h1>Pipeline record #<%= @record.id %></h1>
+<p class="admin-muted"><%= @record.youtubeurl %> · <%= @record.clip_language %></p>
+<p>Next incomplete step: <strong><%= @record.current_step_label.presence || "Core steps complete" %></strong></p>
+<p class="admin-muted">This is saved progress, not a live worker status. Request statuses below track completion for each requested translation.</p>
+<%= render "admin/shared/errors", record: @record %>
+<h2>Related courses</h2>
+<% @courses.each do |course| %><p><%= link_to course.name.presence || course.slug, course_path(course) %> · <%= admin_status(course.status) %></p><% end %>
+<h2>Import requests</h2>
+<p class="admin-muted">Open a failed request to retry through its course and translation lifecycle. Records without a request require console recovery.</p>
+<%= render "admin/shared/runs", runs: @runs %>
+<%= render "admin/shared/pagination" %>

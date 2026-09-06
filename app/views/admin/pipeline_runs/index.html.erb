@@ -1,0 +1,5 @@
+<p class="admin-eyebrow">PROCESSING</p><h1>Pipeline runs</h1>
+<p class="admin-muted">All import requests and their current attempts. Requests can share a pipeline; retries update the existing request rather than create an attempt history.</p>
+<%= render "admin/shared/search", label: "User, video, or failure", placeholder: "Email, source URL, or error", statuses: true %>
+<%= render "admin/shared/runs", runs: @runs %>
+<%= render "admin/shared/pagination" %>

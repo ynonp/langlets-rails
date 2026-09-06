@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Langlets Admin</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <%= link_to "Langlets / Admin", admin_root_path, class: "admin-brand" %>
+    <%= link_to "Back to Langlets ↗", root_path %>
+  </header>
+  <div class="admin-shell">
+    <nav class="admin-nav" aria-label="Admin navigation">
+      <% [["Overview", admin_root_path, "dashboard"], ["Users", admin_users_path, "users"], ["Channels", admin_channels_path, "channels"], ["Pipeline runs", admin_pipeline_runs_path, "pipeline_runs"], ["Pipeline records", admin_pipeline_records_path, "pipeline_records"]].each do |label, path, controller| %>
+        <%= link_to label, path, aria: { current: ("page" if controller_name == controller) } %>
+      <% end %>
+      <p class="admin-muted">Signed in as<br><%= current_user.email %></p>
+    </nav>
+    <main class="admin-main" id="main">
+      <% flash.each do |kind, message| %>
+        <div class="admin-flash <%= kind == "alert" ? "danger" : "success" %>" role="<%= kind == "alert" ? "alert" : "status" %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </main>
+  </div>
+</body>
+</html>

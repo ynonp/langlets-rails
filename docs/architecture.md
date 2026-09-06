@@ -70,6 +70,46 @@ takes to drain.
 
 ## Core Architecture
 
+### Admin operations panel
+
+`/admin` is an English-language operations area using Rails views and a dedicated,
+responsive stylesheet/layout with native safe-area spacing. The shared user menu
+links to it only for administrators. Every controller inherits
+`Admin::BaseController`, which requires Devise authentication and `User#admin?`
+(the existing `User::ADMIN_EMAIL` rule); signed-in non-admins receive 403 on
+both reads and mutations. Admin pages omit analytics scripts and send noindex
+markup. The new namespace uses the existing default native routing rule; iOS
+and Android tab URLs and their bundled path configurations remain unchanged.
+
+The overview counts users, all Channel STI types, active requests, and failures.
+Users can be searched by email and granted Pro through a POST action that locks
+the account and calls `User#pro!` only if no current entitlement exists. This
+uses the existing 100-year manual subscription grant, preserving credit balances
+and avoiding duplicate grants on repeated clicks. No Apple subscription state
+is edited.
+
+Channels can be searched by name, slug, or owner email. Channel details enumerate
+`ChannelItem` directly, including private, Pro, and system publications, without
+learner visibility, language, or translation-readiness filters. Each publication
+links to the course and its shared pipeline record when available.
+
+Pipeline runs enumerate all `ImportRequest` rows with status and search filters,
+requester, languages, progress, attempt start/update times, and technical failure
+reasons. Detail pages also display escaped callback errors from the associated
+`CreateSongProgress`. Shared pipeline records have a separate listing that includes
+console-created records without requests; list queries omit the large JSONB data
+column. All main listings and channel/request details paginate in groups of 30.
+
+A failed request can be retried by POST through `ImportRequest#retry!`, preserving
+its existing handling of course state, translation-only recovery, active siblings,
+timeouts, cached completed steps, and publication charges. The action locks the
+shared pipeline record and reloads/locks the request to serialize repeated admin
+submissions. Invalid retries display the model's actionable rejection. Requests
+missing their course or pipeline require a new import; standalone pipeline records
+without requests still require console recovery. These screens expose current
+attempt state, not an execution audit log: the existing retry method resets
+`created_at`, and callback errors can survive from earlier attempts.
+
 ### Console transcript correction
 
 Production transcript repairs are exposed as transactional model methods for
@@ -1804,7 +1844,7 @@ and it is deliberately *not* "a big pile of credits":
   changes nothing about signup. Since credits stopped being sold, those 3 are
   also the *only* credits a free account will ever have.
 - **Pro is not sold anywhere any more.** `User#pro!` is the only way an
-  account becomes Pro: a console-only method, called by hand after someone
+  account becomes Pro: a method called by the admin panel or console after someone
   reaches out on the Discord the `/app/pro` screen now links to (see *The Pro
   screens* below and *Apple subscriptions* for the dormant purchase machinery
   it replaced). It writes a `Subscription` row exactly like a real Apple
@@ -2017,7 +2057,7 @@ purchases" action wired to the `bridge--apple-purchase` Stimulus controller and
 StoreKit. All of that UI is gone: `/app/pro` now explains that Pro is free to
 ask for and links out to the Langlets Discord
 (`App::ProController::DISCORD_INVITE_URL`) so someone can introduce themselves
-and get it granted by console (`User#pro!`, see *Langlets Pro* above). The
+and get it granted through the admin panel or console (`User#pro!`, see *Langlets Pro* above). The
 `pro_plan_controller` Stimulus controller was deleted outright — it existed
 only for the plan cards. `bridge--apple-purchase` (the JS controller and the
 native Swift/Kotlin bridge component behind it) was deliberately **left in
@@ -2243,7 +2283,7 @@ Two users importing the same video deliberately share one pipeline and one cours
 - `clip_language` and `translation_language` must differ. `Imports::Create` rejects the pair before charging, and the `ImportRequest` model enforces the invariant for console and other direct writes as well.
 - `progress_percent` is **written forward** by `CreateSongProgress#sync_import_requests_progress`, never computed on read — `data` is a multi-megabyte jsonb blob and the Queue polls.
 
-**`ImportRequest#retry!`** is the operator's way back from a failed import — console only, never called automatically, and not exposed in the Queue. It raises `ImportRequest::NotRetryable` unless the request is `failed`, still has its course and `CreateSongProgress`, and isn't shadowed by another active request for the same tuple (which `idx_import_requests_active_dedupe` would reject anyway). It then, in one transaction:
+**`ImportRequest#retry!`** is the operator's way back from a failed import — available in the admin panel and console, never called automatically, and not exposed in the learner Queue. It raises `ImportRequest::NotRetryable` unless the request is `failed`, still has its course and `CreateSongProgress`, and isn't shadowed by another active request for the same tuple (which `idx_import_requests_active_dedupe` would reject anyway). It then, in one transaction:
 
 | Move | Why it can't be skipped |
 |---|---|

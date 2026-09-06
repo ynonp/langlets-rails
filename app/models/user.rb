@@ -291,8 +291,8 @@ class User < ApplicationRecord
     subscriptions.entitling.order(expires_at: :desc).first
   end
 
-  # Grants Langlets Pro by hand from the console — the only way an account
-  # becomes Pro now that nothing is sold. Writes the same kind of row a real
+  # Grants Langlets Pro by hand from the admin panel or console. An account
+  # becomes Pro through this method now that nothing is sold. Writes the same kind of row a real
   # Apple purchase would (a Subscription `subscriptions.entitling` sees), so
   # `pro?` and everything built on it (the Pro library, unmetered imports)
   # need no separate branch for a console grant. `product_id` deliberately
