@@ -213,6 +213,7 @@ he:
       tap_to_check: "הקישו על תשובה כדי לבדוק אותה"
       great_job: "כל הכבוד!"
       completed: "השלמתם את כל המשפטים."
+      next: "הבא"
     speak_activity:
       instruction: "הקישו על המיקרופון ואמרו את המשפטים ב%{language}"
       good_work: "עבודה מצוינת!"

@@ -140,6 +140,39 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "Hebrew lesson navigation and match activity use RTL progress and localized copy" do
+    phrase = create_translated_phrase!(
+      medium: @medium,
+      l1: languages(:english),
+      l2: languages(:hebrew),
+      text_l1: "Choose the Hebrew meaning",
+      text_l2: "בחרו במשמעות בעברית",
+      timestamp: "00:04.00"
+    )
+    activity = Activities::MatchPhrasesActivity.create!(
+      lesson: @lesson,
+      order: 2,
+      user: @user
+    )
+    activity.phrases << phrase
+    host! "he.langlets.app"
+
+    get course_lesson_path(@course, @lesson, a: activity.order)
+
+    assert_response :success
+    assert_select "html[lang='he'][dir='rtl']"
+    assert_select "[data-progress-target='fill']" do |fills|
+      assert_includes fills.first["class"], "start-0"
+    end
+    assert_select "[data-progress-target='dot']" do |dots|
+      assert_includes dots.first["class"], "start-0"
+      assert_nil dots.first["style"]
+    end
+    assert_select "[data-match-activity-target='progressText']",
+                  text: "הקשיבו, ואז בחרו את המשמעות בעברית"
+    assert_select "[data-match-activity-target='completionMessage'] a", text: "הבא"
+  end
+
   test "native watch video renders saved vocabulary state" do
     phrase = create_translated_phrase!(
       medium: @medium,

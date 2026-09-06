@@ -31,7 +31,7 @@
 
     <div class="flex items-center justify-between gap-4 mb-5">
       <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
-        <span data-match-activity-target="progressText"><%= t(".listen_choose_meaning", language: params[:l2].english_name) %></span>
+        <span data-match-activity-target="progressText"><%= t(".listen_choose_meaning", language: localized_language_name(params[:l2])) %></span>
       </p>
     </div>
     
@@ -139,7 +139,7 @@
         <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
         <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
       </div>
-      <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
+      <%= link_to_next_activity(t(".next"), @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
     </div>
   </div>
 </div>

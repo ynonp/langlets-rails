@@ -44,10 +44,10 @@
               are here" that still reads at 0% or 100% fill and doesn't rely
               on color alone. %>
           <div class="relative h-3 flex items-center">
-            <div class="w-full h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-              <div data-progress-target="fill" class="h-full w-0 rounded-full bg-emerald-500 transition-all duration-300"></div>
+            <div class="relative w-full h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div data-progress-target="fill" class="absolute inset-y-0 start-0 w-0 rounded-full bg-emerald-500 transition-all duration-300"></div>
             </div>
-            <div data-progress-target="dot" class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-emerald-50 dark:ring-gray-950 transition-all duration-300" style="left: 0%;"></div>
+            <div data-progress-target="dot" class="absolute top-1/2 start-0 -translate-y-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-emerald-50 dark:ring-gray-950 transition-all duration-300"></div>
           </div>
         <% else %>
           <div class="h-2 rounded-full <%= status == "done" ? "bg-emerald-500" : "bg-gray-200 dark:bg-gray-700" %>"></div>

@@ -416,7 +416,9 @@ an inner fill div (`data-progress-target="fill"`) plus a leading dot
 percentage as the fill but lives outside the fill track's `overflow-hidden`
 box (a sibling inside a shared `relative` wrapper), so it's never clipped and
 stays visible as a "you are here" playhead even at 0% or 100% — height and
-shape carry that meaning, not color alone. Those two elements are the only
+shape carry that meaning, not color alone. Both are anchored and moved from
+logical inline-start, so progress runs left-to-right in LTR interfaces and
+right-to-left in RTL interfaces. Those two elements are the only
 thing JavaScript ever touches — segments never change on their own between
 full-frame reloads, since navigating to a different activity re-renders the
 whole nav bar from the server with a fresh "current" segment.

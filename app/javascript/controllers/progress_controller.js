@@ -31,6 +31,6 @@ export default class extends Controller {
   paint(percent) {
     this.fillTarget.style.width = `${percent}%`
     this.fillTarget.closest('[role="progressbar"]')?.setAttribute('aria-valuenow', Math.round(percent))
-    if (this.hasDotTarget) this.dotTarget.style.left = `${percent}%`
+    if (this.hasDotTarget) this.dotTarget.style.insetInlineStart = `${percent}%`
   }
 }

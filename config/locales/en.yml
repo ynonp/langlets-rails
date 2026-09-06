@@ -235,6 +235,7 @@ en:
       tap_to_check: "Tap an answer to check it"
       great_job: "Great job!"
       completed: "You've completed all the phrases."
+      next: "Next"
     speak_activity:
       instruction: "Click on the microphone and say the phrases in %{language}"
       good_work: "Good Work!"
