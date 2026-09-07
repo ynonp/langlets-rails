@@ -33,6 +33,12 @@ If you intentionally need to edit `config/database.yml` in a Copilot session:
 ## App Setup
 Your environment has a full Rails environment installed.
 Start the development server with: `./bin/dev`.
+The Langlets development server is exposed to the user at `http://devbox:3947`.
+Use this host and port when sharing links to pages on the dev box.
+Mailpit runs continuously as `mailpit.service`. Its inbox is available at
+`http://devbox:8025` over the private Tailscale network, and it accepts SMTP on
+every network interface at port `1025`. Do not start a second Mailpit process
+from `./bin/dev`.
 After the app starts you can login to the admin page with development credentials:
    - Username: ynon@hey.com
    - Password: 10203040

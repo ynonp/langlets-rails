@@ -1,0 +1,19 @@
+[Unit]
+Description=Mailpit development SMTP inbox
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+StateDirectory=mailpit
+ExecStart=/usr/local/bin/mailpit --smtp 0.0.0.0:1025 --listen 100.64.79.44:8025 --database /var/lib/mailpit/messages.db --disable-version-check
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
