@@ -1,0 +1,19 @@
+<h1>Marketing prospects</h1>
+<p>Share an accessible course URL with <code>?utm_source=your-campaign</code> to start a marketing visit.</p>
+<p><%= @prospect_count %> prospects · <%= @activated_count %> activated</p>
+<div class="admin-table-wrap"><table>
+  <thead><tr><th>Email</th><th>Source</th><th>Langlet</th><th>Signed up</th><th>Activated</th></tr></thead>
+  <tbody>
+    <% @prospects.each do |prospect| %>
+      <tr>
+        <td><%= link_to prospect.email, admin_users_path(q: prospect.email) %></td>
+        <td><%= prospect.utm_source.presence || "—" %></td>
+        <td><%= prospect.course&.name || "—" %></td>
+        <td><%= admin_time(prospect.created_at) %></td>
+        <td><%= admin_time(prospect.activated_at) %></td>
+      </tr>
+    <% end %>
+    <% if @prospects.empty? %><tr><td colspan="5" class="admin-empty">No prospects yet.</td></tr><% end %>
+  </tbody>
+</table></div>
+<%= render "admin/shared/pagination" %>

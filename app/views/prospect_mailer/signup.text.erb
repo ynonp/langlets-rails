@@ -1,0 +1,7 @@
+Wow! Someone signed up.
+
+<%= @prospect.email %> requested free Langlets Pro.
+Source: <%= @prospect.utm_source %>
+Langlet: <%= @prospect.course&.name %>
+Lesson: <%= @prospect.lesson&.name %>
+Signed up at: <%= @prospect.created_at %>

@@ -220,6 +220,110 @@ own Channel so the same course never appears twice in a feed. Course cards do
 not expose Channel names or link to Channel profiles. Reading Channel content
 never creates an Enrollment; enrollment remains personal learning state.
 
+### Marketing attribution and free Pro onboarding
+
+Marketing follows the visitor independently of Channel access policies.
+`ApplicationController` captures a nonblank string `utm_source` from URL query
+parameters into `session[:utm_source]`, trimming whitespace and limiting it to
+255 characters to bound the encrypted Rails session cookie. A later tagged
+visit replaces the source; missing, blank, or structured parameters leave it
+unchanged. Attribution lasts until successful prospect submission (or the Rails session ends) and follows navigation across
+courses, including visits to courses from the user's own Library. It is not
+persisted on the User or Enrollment, and separate browser sessions are independent.
+
+Share an already accessible course using `/courses/:slug?utm_source=newsletter`.
+The marker grants no access: Channel policies still authorize each course and
+lesson. There is no MarketingChannel class or special marketing publication.
+The single reversible `CreateMarketingProspects` migration creates prospects
+with a nullable `utm_source` string and course, lesson, and user references.
+It enforces case-insensitive email uniqueness and does not modify Channels.
+Admin → Prospects lists signup/activation counts and paginated prospects with
+their recorded source; Channels no longer has marketing publishing controls.
+
+The three prospect controllers separate operations from public onboarding:
+- `Admin::ProspectsController#index` is the authenticated, admin-only reporting
+  page: signup/activation counts and a paginated list of captured prospects.
+- `ProspectsController#create` captures the lesson visitor's email and attribution
+  and queues invitation/notification emails; it does not create a User.
+- `ProspectSetupsController#show/create` displays and redeems the emailed setup
+  token, creating an account when needed and granting Pro through `Prospect#activate!`.
+
+
+Every lesson finish during an attributed session renders `lessons/marketing_finish`
+after the ordinary completion/XP accounting. Untagged sessions use the ordinary
+finish page, even for courses previously used in a campaign. The page
+explains that AI created the lesson, invites the learner to create lessons from
+YouTube/TikTok videos with free Pro, and provides a next-lesson/course link.
+Current Pro users see a Create action. Ordinary course finish pages retain their
+existing behavior. English and Hebrew copy lives in `marketing.en.yml` and
+`marketing.he.yml`; the responsive marketing layout supports RTL, safe-area
+insets, no-JavaScript forms, and noindex. Styling uses Tailwind utilities directly
+in the ERB templates and the shared application stylesheet. Finish and account setup pages inherit
+`current_theme`, including the default dark theme for guests, and use the lesson
+palette: gray backgrounds and cards, muted supporting text, and emerald actions.
+An explicitly selected light theme remains supported. Setup pages exclude third-party scripts
+and set no-store and strict-origin headers to protect their email bearer token.
+The marketing layout also uses `strict-origin` in its referrer meta tag: this
+sends only the origin, never the setup token, while preserving the Origin header
+Rails needs for CSRF checks on native browser form submissions. `no-referrer`
+must not be used here; browsers then send `Origin: null` and Rails rejects both
+the email-capture and password-setup POSTs even with a valid authenticity token.
+
+`POST /courses/:course_id/lessons/:lesson_id/prospects` verifies course access,
+lesson membership and session attribution before storing a Prospect.
+Emails are normalized and protected by a unique `lower(email)` database index.
+First-submission attribution records the session UTM source, course, lesson and locale; duplicate
+submissions retain it. Prospect rows track activation, the eventual account,
+and each email delivery separately. Foreign keys nullify deleted courses, lessons and
+accounts so deleting a course/user does not fail or erase acquisition history.
+The endpoint rate-limits submissions per IP to ten per hour using Rails' cache
+store and retains CSRF protection. The key explicitly uses `request.remote_ip`:
+sessions sharing an IP share the limit, while different IPs have independent
+limits. All create attempts count, including invalid submissions. The same successful response is used for new
+and existing emails; invalid emails receive an inline error after redirect.
+After persisting/finding the prospect and queuing delivery, the controller deletes
+`session[:utm_source]`, making `marketing_visit?` false immediately. Persisted
+Prospect attribution is retained. A one-request `flash[:prospect_submitted]`
+shows the email confirmation on the redirected finish page without restoring
+marketing mode; subsequent finishes use the ordinary page. Invalid/rejected
+submissions retain the source so the visitor can retry. A later tagged URL starts
+a new attributed visit.
+
+`DeliverProspectEmailsJob` sends a localized invitation with the account email,
+free Pro offer and a setup link, plus a signup notification to `User::ADMIN_EMAIL`.
+The HTML invitation uses a responsive, RTL-aware email layout with a branded card,
+highlighted account address and prominent emerald setup action; its plain-text
+alternative contains the same content and direct URL.
+Each delivery has its own locked transaction and timestamp, so retries after an
+admin-mail failure do not resend a successful invitation. Delivery failures retry
+up to five times. Repeated submissions can resend invitations after one day;
+the admin notification is sent once. As with any SMTP delivery, a process crash
+after the provider accepts mail but before the timestamp commits can duplicate
+that email. An exhausted job can be retried with
+`DeliverProspectEmailsJob.perform_later(prospect.id)`.
+
+The invitation uses `Prospect#generate_token_for(:setup)`, valid for seven days
+and invalidated by `activated_at`. GET `/marketing/setup?token=…` only displays
+setup; POST redeems it under a row lock. Merely submitting an address creates no
+User and grants no entitlement. This keeps unverified visitors from reserving
+someone else's login. A new recipient chooses and confirms a password, then
+receives a confirmed User, its normal signup credits/default channel, and free
+Pro in one transaction. The email link supplies proof of email ownership.
+An existing account retains its password, confirmation state and OAuth identity;
+the link upgrades it without signing the browser into that account. Both paths
+redirect to the normal sign-in screen after activation. `User#pro!` supplies the
+existing 100-year manual grant only when no live entitlement exists; active paid
+subscriptions are left intact. Concurrent/replayed activation cannot double-grant.
+Expired links can be renewed by returning to the lesson finish form; already
+activated prospects receive a sign-in link on later eligible email submissions.
+
+The new setup path uses the native default routing rule, and lesson finishes
+continue to match the existing lesson rules. Both iOS and Android tab URLs were
+checked; they remain `/app`, `/app/library`, `/app/vocabulary`, and
+`/app/import_requests/new`. No native routing configuration or bundled fallback
+changes are required. Guest lesson browsing remains a browser experience;
+the native app's existing authentication gate still applies to course lessons.
+
 ### Course readability
 
 Channel visibility governs **reading** a Course independently from listing it.
@@ -1868,8 +1972,9 @@ and it is deliberately *not* "a big pile of credits":
   changes nothing about signup. Since credits stopped being sold, those 3 are
   also the *only* credits a free account will ever have.
 - **Pro is not sold anywhere any more.** `User#pro!` is the only way an
-  account becomes Pro: a method called by the admin panel or console after someone
-  reaches out on the Discord the `/app/pro` screen now links to (see *The Pro
+  account becomes Pro: a method called by the marketing email setup flow, or by
+  the admin panel or console after someone reaches out on the Discord the
+  `/app/pro` screen now links to (see *The Pro
   screens* below and *Apple subscriptions* for the dormant purchase machinery
   it replaced). It writes a `Subscription` row exactly like a real Apple
   purchase would — `product_id: "console_grant"`, `status: :active`, a

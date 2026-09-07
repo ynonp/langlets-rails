@@ -1,0 +1,25 @@
+<section class="text-start" aria-labelledby="marketing-title">
+  <p class="my-[1em] text-xs font-[750] tracking-[.06em] uppercase text-emerald-600 dark:text-emerald-400"><span class="me-1.5 inline-grid size-[25px] place-items-center rounded-full bg-emerald-100 dark:bg-emerald-900" aria-hidden="true">✓</span> <%= t("marketing.lesson_done") %> · <%= t("marketing.xp", count: @lesson_xp) %></p>
+  <h1 class="my-5 text-[clamp(32px,7vw,52px)] font-extrabold leading-[1.1] tracking-[-1.5px]" id="marketing-title"><%= t("marketing.reveal") %></h1>
+  <p class="my-[1em] text-lg text-gray-600 dark:text-gray-400"><%= t("marketing.description") %></p>
+  <div class="flex flex-wrap items-center gap-3 pt-3 pb-6 text-[13px] font-[650]" aria-hidden="true"><span class="rounded-[9px] border border-gray-300 bg-white px-3 py-[7px] dark:border-gray-700 dark:bg-gray-900">YouTube / TikTok</span><span>+</span><span class="rounded-[9px] border border-gray-300 bg-white px-3 py-[7px] dark:border-gray-700 dark:bg-gray-900">AI</span><span>=</span><span class="rounded-[9px] border border-gray-300 bg-white px-3 py-[7px] dark:border-gray-700 dark:bg-gray-900">Langlet ✦</span></div>
+  <div class="rounded-[22px] border border-gray-300 bg-white p-[clamp(22px,5vw,36px)] shadow-[0_10px_35px_#19342808] dark:border-gray-700 dark:bg-gray-900">
+    <p class="my-[1em] text-xs font-[750] tracking-[.06em] uppercase text-emerald-600 dark:text-emerald-400"><%= t("marketing.invitation") %></p>
+    <h2 class="my-2.5 text-[26px] leading-[1.2] tracking-[-.6px]"><%= t("marketing.offer") %></h2>
+    <p class="mt-2"><%= t("marketing.offer_description") %></p>
+    <% if current_user&.pro? %>
+      <p class="mt-2"><%= t("marketing.already_pro") %></p>
+      <%= link_to t("marketing.create"), new_app_import_request_path, class: "block w-full cursor-pointer rounded-[10px] border-0 bg-emerald-500 px-[18px] py-[15px] text-center font-[750] leading-normal text-white no-underline hover:bg-emerald-600" %>
+    <% elsif flash[:prospect_submitted] %>
+      <p class="mt-2 rounded-xl border border-emerald-600 bg-emerald-100 p-4 [overflow-wrap:anywhere] dark:border-emerald-400 dark:bg-emerald-900" role="status"><%= t("marketing.email_next") %></p>
+    <% else %>
+      <%= form_with url: course_lesson_prospects_path(@course, @lesson), scope: :prospect, data: { turbo: false }, class: "grid gap-2.5 mt-6" do |form| %>
+        <%= form.label :email, t("marketing.email"), class: "text-sm font-[650]" %>
+        <%= form.email_field :email, value: current_user&.email, class: "w-full rounded-[10px] border border-gray-300 bg-gray-50 px-4 py-[13px] text-gray-900 placeholder:text-gray-600 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder:text-gray-400", required: true, maxlength: 254, autocomplete: "email", placeholder: "you@example.com", dir: "ltr" %>
+        <%= form.submit t("marketing.cta"), class: "block w-full cursor-pointer rounded-[10px] border-0 bg-emerald-500 px-[18px] py-[15px] text-center font-[750] leading-normal text-white no-underline hover:bg-emerald-600" %>
+      <% end %>
+      <p class="mt-2 mb-0 text-xs text-gray-600 dark:text-gray-400"><%= t("marketing.privacy") %> <%= link_to t("marketing.privacy_link"), home_privacy_path, class: "underline" %></p>
+    <% end %>
+  </div>
+  <%= link_to t("marketing.keep_learning"), @continue_path, class: "block p-6 text-center text-sm underline", data: { turbo_action: "replace" } %>
+</section>

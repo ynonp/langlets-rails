@@ -1,0 +1,49 @@
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; background-color: #f3f4f6;">
+  <tr>
+    <td align="center" style="padding: 40px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; max-width: 560px;">
+        <tr>
+          <td style="padding: 0 4px 20px; color: #111827; font-family: Arial, Helvetica, sans-serif; font-size: 22px; font-weight: 700; line-height: 1;">
+            langlets<span style="color: #10b981;">.</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding: 40px; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; font-family: Arial, Helvetica, sans-serif;">
+            <h1 style="margin: 0 0 20px; color: #111827; font-size: 30px; font-weight: 700; line-height: 1.2;">
+              <%= t("marketing.offer") %>
+            </h1>
+
+            <p style="margin: 0 0 24px; color: #4b5563; font-size: 16px; line-height: 1.6;">
+              <%= t("marketing.email_intro") %>
+            </p>
+
+            <p style="margin: 0 0 28px; padding: 14px 16px; background-color: #f0fdf4; border-radius: 8px; color: #111827; font-size: 16px; line-height: 1.5;">
+              <%= t("marketing.account_email", email: @prospect.email) %>
+            </p>
+
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background-color: #059669; border-radius: 8px;">
+                  <%= link_to t(@prospect.activated_at? ? "marketing.sign_in" : "marketing.email_link"),
+                              @setup_url,
+                              style: "display: inline-block; padding: 14px 22px; color: #ffffff; font-size: 16px; font-weight: 700; line-height: 1.2; text-decoration: none;" %>
+                </td>
+              </tr>
+            </table>
+
+            <p style="margin: 28px 0 0; color: #6b7280; font-size: 14px; line-height: 1.6;">
+              <%= t(@prospect.activated_at? ? "marketing.existing_account" : "marketing.email_expiry") %>
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding: 20px 8px 0; color: #6b7280; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1.5; text-align: center;">
+            <%= t("marketing.email_ignore") %>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

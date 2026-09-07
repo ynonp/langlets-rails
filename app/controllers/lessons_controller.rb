@@ -14,10 +14,10 @@ class LessonsController < ApplicationController
               languages.rtl as rtl_language,
               lessons.*")
       .find_by!(slug: params[:id])
-    
+
     video_url = @lesson.media_url
     @activities = @lesson.activities.order(order: :asc).load
-    @activity = @activities.find {|a| a.order == params[:a].to_i } || @activities.first
+    @activity = @activities.find { |a| a.order == params[:a].to_i } || @activities.first
     @current_url = course_lesson_path(@course, @lesson, a: @activity.order)
     @videoid = VideoSource.video_id(video_url)
     @video_provider = VideoSource.provider(video_url) || VideoSource::DEFAULT_PROVIDER
@@ -35,7 +35,7 @@ class LessonsController < ApplicationController
     # Previous and next lesson navigation
     @prev_lesson = @course.lessons.where("lessons.order < ?", @lesson.order).order(order: :desc).first
     @next_lesson = @course.lessons.where("lessons.order > ?", @lesson.order).order(order: :asc).first
-    
+
     @next_activity_path = if next_activity.present?
       course_lesson_path(@course, @lesson, a: next_activity.order)
     else
@@ -69,7 +69,7 @@ class LessonsController < ApplicationController
 
     # Calculate XP earned in this lesson
     @lesson_xp = @lesson.activities.sum(&:xp_value)
-    
+
     # Get user stats from ActivityLog (only for authenticated users)
     if current_user
       LessonUser.find_or_create_by!(lesson: @lesson, user: current_user)
@@ -82,10 +82,11 @@ class LessonsController < ApplicationController
     end
 
     @course_path = course_path(@course.slug)
-    
+
     # Find next lesson
     @next_lesson = @course.lessons.where("lessons.order > ?", @lesson.order).order(:order).first
-    
+
     @continue_path = @next_lesson.present? ? course_lesson_path(@course, @next_lesson) : @course_path
+    render :marketing_finish, layout: "marketing" if marketing_visit? || flash[:prospect_submitted]
   end
 end

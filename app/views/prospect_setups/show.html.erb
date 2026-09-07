@@ -1,0 +1,18 @@
+<section class="text-start">
+  <p class="my-[1em] text-xs font-[750] tracking-[.06em] uppercase text-emerald-600 dark:text-emerald-400"><%= t("marketing.early_access") %></p>
+  <h1 class="my-5 text-[clamp(32px,7vw,52px)] font-extrabold leading-[1.1] tracking-[-1.5px]"><%= t("marketing.setup_title") %></h1>
+  <p class="my-[1em] text-lg text-gray-600 dark:text-gray-400"><%= t("marketing.account_email", email: @prospect.email) %></p>
+  <% if @errors.present? %><div class="my-[1em] rounded-xl border border-emerald-600 bg-emerald-100 p-4 [overflow-wrap:anywhere] dark:border-emerald-400 dark:bg-emerald-900" role="alert"><%= safe_join(@errors, tag.br) %></div><% end %>
+  <%= form_with url: marketing_setup_path, data: { turbo: false }, class: "grid gap-2.5 mt-6" do |form| %>
+    <%= hidden_field_tag :token, params[:token] %>
+    <% if @account %>
+      <p class="mt-2"><%= t("marketing.existing_account") %></p>
+    <% else %>
+      <%= form.label :password, t("marketing.password"), class: "text-sm font-[650]" %>
+      <%= form.password_field :password, class: "w-full rounded-[10px] border border-gray-300 bg-gray-50 px-4 py-[13px] text-gray-900 placeholder:text-gray-600 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder:text-gray-400", required: true, minlength: Devise.password_length.min, autocomplete: "new-password" %>
+      <%= form.label :password_confirmation, t("marketing.password_confirmation"), class: "text-sm font-[650]" %>
+      <%= form.password_field :password_confirmation, class: "w-full rounded-[10px] border border-gray-300 bg-gray-50 px-4 py-[13px] text-gray-900 placeholder:text-gray-600 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder:text-gray-400", required: true, autocomplete: "new-password" %>
+    <% end %>
+    <%= form.submit t("marketing.activate"), class: "block w-full cursor-pointer rounded-[10px] border-0 bg-emerald-500 px-[18px] py-[15px] text-center font-[750] leading-normal text-white no-underline hover:bg-emerald-600" %>
+  <% end %>
+</section>

@@ -15,7 +15,7 @@
   </header>
   <div class="admin-shell">
     <nav class="admin-nav" aria-label="Admin navigation">
-      <% [["Overview", admin_root_path, "dashboard"], ["Users", admin_users_path, "users"], ["Channels", admin_channels_path, "channels"], ["Pipeline runs", admin_pipeline_runs_path, "pipeline_runs"], ["Pipeline records", admin_pipeline_records_path, "pipeline_records"]].each do |label, path, controller| %>
+      <% [["Overview", admin_root_path, "dashboard"], ["Users", admin_users_path, "users"], ["Channels", admin_channels_path, "channels"], ["Prospects", admin_prospects_path, "prospects"], ["Pipeline runs", admin_pipeline_runs_path, "pipeline_runs"], ["Pipeline records", admin_pipeline_records_path, "pipeline_records"]].each do |label, path, controller| %>
         <%= link_to label, path, aria: { current: ("page" if controller_name == controller) } %>
       <% end %>
       <p class="admin-muted">Signed in as<br><%= current_user.email %></p>

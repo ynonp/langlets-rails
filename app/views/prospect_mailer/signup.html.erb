@@ -1,0 +1,5 @@
+<h1>Wow! Someone signed up.</h1>
+<p><%= @prospect.email %> requested free Langlets Pro.</p>
+<p>Source: <%= @prospect.utm_source %></p>
+<p>Langlet: <%= @prospect.course&.name %> · Lesson: <%= @prospect.lesson&.name %></p>
+<p>Signed up at: <%= @prospect.created_at %></p>

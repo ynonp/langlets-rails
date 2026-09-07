@@ -2,10 +2,25 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   # allow_browser versions: :modern
 
+  before_action :capture_utm_source
   before_action :set_translation_language
   before_action :require_authentication_for_native_app
 
   protected
+
+  def marketing_visit?
+    session[:utm_source].present?
+  end
+
+  # Attribution follows the visitor across pages; untagged visits retain it.
+  # Bound user input because Rails stores this session in an encrypted cookie.
+  def capture_utm_source
+    source = request.query_parameters[:utm_source]
+    return unless source.is_a?(String)
+
+    source = source.strip
+    session[:utm_source] = source.first(255) if source.present?
+  end
 
   helper_method :current_translation_language
   def current_translation_language

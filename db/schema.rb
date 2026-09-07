@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_08_30_120001) do
+ActiveRecord::Schema[8.0].define(version: 2026_09_06_230000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -645,6 +645,24 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_30_120001) do
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
+  create_table "prospects", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "locale", default: "en", null: false
+    t.string "utm_source"
+    t.bigint "course_id"
+    t.bigint "lesson_id"
+    t.bigint "user_id"
+    t.datetime "activated_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "admin_notified_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index "lower((email)::text)", name: "index_prospects_on_lower_email", unique: true
+    t.index ["course_id"], name: "index_prospects_on_course_id"
+    t.index ["lesson_id"], name: "index_prospects_on_lesson_id"
+    t.index ["user_id"], name: "index_prospects_on_user_id"
+  end
+
   create_table "similar_sounds", force: :cascade do |t|
     t.integer "start_word_index", null: false
     t.integer "end_word_index", null: false
@@ -790,6 +808,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_30_120001) do
   add_foreign_key "phrases", "media"
   add_foreign_key "phrases", "users"
   add_foreign_key "playlists", "users"
+  add_foreign_key "prospects", "courses", on_delete: :nullify
+  add_foreign_key "prospects", "lessons", on_delete: :nullify
+  add_foreign_key "prospects", "users", on_delete: :nullify
   add_foreign_key "similar_sounds", "phrases"
   add_foreign_key "subscriptions", "users"
   add_foreign_key "token_translations", "languages"

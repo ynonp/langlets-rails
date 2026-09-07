@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       post :grant_pro, on: :member
     end
     resources :channels, only: [ :index, :show ]
+    resources :prospects, only: :index
     resources :pipeline_runs, only: [ :index, :show ] do
       post :retry, on: :member
     end
@@ -161,6 +162,8 @@ Rails.application.routes.draw do
   post "channel_invitations/decline/:token", to: "channel_invitations#decline",
     as: :decline_channel_invitation_token
   resources :channel_subscriptions, only: :destroy
+  get "marketing/setup", to: "prospect_setups#show", as: :marketing_setup
+  post "marketing/setup", to: "prospect_setups#create"
   resources :guest_import_requests, only: :create
   root "courses#index"
   get "gallery", to: "gallery#index", as: :gallery
@@ -175,6 +178,7 @@ Rails.application.routes.draw do
       post :translate
     end
     resources :playlists, only: [ :index, :create, :destroy ], controller: "course_playlists"
+    post "lessons/:lesson_id/prospects", to: "prospects#create", as: :lesson_prospects
     resources :lessons, only: [ :show ] do
       member do
         get :finish

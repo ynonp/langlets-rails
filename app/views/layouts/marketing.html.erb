@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="scheme-light dark:scheme-dark" lang="<%= I18n.locale %>" dir="<%= I18n.locale == :he ? 'rtl' : 'ltr' %>" data-theme="<%= current_theme %>">
+<head>
+  <title><%= t("marketing.title") %> · Langlets</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="strict-origin">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+<body class="m-0 min-h-dvh bg-emerald-50 text-base leading-[1.65] text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-50 [&_:focus-visible]:outline-3 [&_:focus-visible]:outline-offset-3 [&_:focus-visible]:outline-emerald-600 dark:[&_:focus-visible]:outline-emerald-400">
+  <header class="mx-auto flex max-w-[1020px] items-center justify-between gap-4 pt-6 pr-[max(24px,env(safe-area-inset-right))] pb-4 pl-[max(24px,env(safe-area-inset-left))]"><%= link_to "langlets.", root_path, class: "text-[27px] font-[850] tracking-[-1.5px] no-underline" %><span class="rounded-full border border-gray-300 px-3 py-1 text-xs dark:border-gray-700"><%= t("marketing.early_access") %></span></header>
+  <main class="mx-auto mt-6 max-w-[650px] pr-[max(20px,env(safe-area-inset-right))] pb-[max(40px,env(safe-area-inset-bottom))] pl-[max(20px,env(safe-area-inset-left))]">
+    <% flash.to_hash.slice("notice", "alert").each do |kind, message| %>
+      <p class="my-[1em] rounded-xl border border-emerald-600 bg-emerald-100 p-4 [overflow-wrap:anywhere] dark:border-emerald-400 dark:bg-emerald-900" role="<%= kind == 'alert' ? 'alert' : 'status' %>"><%= message %></p>
+    <% end %>
+    <%= yield %>
+  </main>
+</body>
+</html>

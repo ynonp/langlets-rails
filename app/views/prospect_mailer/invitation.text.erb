@@ -1,0 +1,9 @@
+<%= t("marketing.offer") %>
+
+<%= t("marketing.email_intro") %>
+<%= t("marketing.account_email", email: @prospect.email) %>
+
+<%= t(@prospect.activated_at? ? "marketing.sign_in" : "marketing.email_link") %>: <%= @setup_url %>
+
+<%= t(@prospect.activated_at? ? "marketing.existing_account" : "marketing.email_expiry") %>
+<%= t("marketing.email_ignore") %>

@@ -1,0 +1,47 @@
+---
+en:
+  marketing:
+    title: Your next langlet starts here
+    early_access: Early access
+    lesson_done: Lesson complete
+    xp: "+%{count} XP"
+    reveal: You just learned with a lesson made by AI.
+    description: That lesson was created automatically from a video. We’re building
+      Langlets so anyone can turn YouTube and TikTok videos into language lessons
+      — including you.
+    invitation: Help shape what comes next
+    offer: Make your own. Get Pro for free.
+    offer_description: Choose a video you love. Let AI turn it into a language lesson.
+      Join our early users and get free Langlets Pro access.
+    already_pro: You already have Pro. Your next lesson is one video away.
+    create: Create a langlet
+    email: Your email address
+    cta: Send me free Pro access
+    privacy: We’ll email your account setup link. No payment details needed.
+    privacy_link: Privacy policy
+    keep_learning: Keep learning
+    check_email: You’re on the list! Check your email for your free Pro access link.
+    email_next: Open the link in your email to finish setting up your account. You
+      can keep learning while it arrives.
+    invalid_email: Please enter a valid email address.
+    rate_limit: Too many requests. Please try again later.
+    setup_title: Your ideas. Your videos. Your lessons.
+    account_email: 'Your account: %{email}'
+    existing_account: You already have an account. Activate free Pro, then sign in
+      with your usual login. Your password stays the same.
+    password: Choose a password (at least 6 characters)
+    password_confirmation: Confirm your password
+    activate: Activate my free Pro access
+    activated: Your free Pro access is ready! Sign in to create your first langlet.
+    retry: Your account was just created. Please try activating again.
+    expired_title: This link has expired or was already used.
+    expired: Already set up your account? Sign in below. Otherwise, return to the
+      lesson finish page and enter your email again for a fresh link.
+    sign_in: Sign in
+    email_subject: Your free Langlets Pro access is waiting
+    email_intro: The lesson you tried was made by AI. Now you can create your own
+      from YouTube and TikTok videos, with free Langlets Pro.
+    email_link: Set up your free Pro account
+    email_expiry: This private link is valid for seven days. Choose your password
+      on the setup page. If you already have an account, keep using your usual login.
+    email_ignore: If you didn’t request this, you can ignore this email.
