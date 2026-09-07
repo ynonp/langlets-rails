@@ -122,6 +122,10 @@
   /* The offset shadow is drawn to the right, which reads as "behind" only in
      LTR. Mirror it on the Hebrew subdomain. */
   [dir="rtl"] .lp-product-frame { box-shadow:-6px 6px 0 var(--shadow); }
+  [dir="rtl"] .lp-app-downloads { flex-wrap:nowrap; }
+  [dir="rtl"] .lp-app-download { flex:1 1 0; min-width:0; gap:10px; padding-inline:14px; }
+  [dir="rtl"] .lp-app-download-label { min-width:0; }
+  [dir="rtl"] .lp-app-download-name { font-size:21px; }
 
   /* Footer */
   .lp-footer { border-top:1px solid #E4DCCC; padding:28px 40px; margin-top:auto; }
@@ -138,6 +142,9 @@
     .lp-footer { padding:24px 20px; }
   }
   @media (max-width:560px) {
+    [dir="rtl"] .lp-app-download { gap:6px; padding-inline:8px; }
+    [dir="rtl"] .lp-app-download-icon { width:28px; height:28px; }
+    [dir="rtl"] .lp-app-download-name { font-size:16px; }
     .lp-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
     .lp-card-body { padding:11px 12px 13px; gap:6px; }
     .lp-card-title { font-size:13px; }

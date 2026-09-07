@@ -737,8 +737,10 @@ Sections, all wired to real data:
 - **Shared nav** — supplied by `layouts/web`; the homepage only provides its
   optional daily-vocabulary state.
 - **Hero** — the lesson-building promise, supported-language list, free-account
-  explanation, and direct Android APK download badge sit beside the static
+  explanation, and direct Android APK and iPhone TestFlight download badges sit beside the static
   `public/product.png` product preview. All remain visible at the mobile breakpoint.
+  On the Hebrew site, the Android and iPhone download badges share one row and
+  use compact sizing on narrow screens so the longer localized labels still fit.
 - **"Try now"** — the dark section starts directly with a URL field for any
   YouTube or TikTok link and a fresh random sample of up to eight examples from
   `config/homepage_videos.yml` on every page load.

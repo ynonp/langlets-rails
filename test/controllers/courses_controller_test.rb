@@ -103,6 +103,17 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-testid='iphone-app-placeholder']", count: 0
   end
 
+  test "Hebrew homepage keeps both app downloads on one row" do
+    host! "he.langlets.app"
+
+    get root_path
+
+    assert_response :success
+    assert_select "html[dir='rtl']"
+    assert_includes response.body, '[dir="rtl"] .lp-app-downloads { flex-wrap:nowrap; }'
+    assert_select ".lp-app-downloads > .lp-app-download", count: 2
+  end
+
   test "show preloads localized lesson names" do
     queries = capture_selects { get course_url(@course) }
 
