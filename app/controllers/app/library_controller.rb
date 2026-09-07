@@ -73,7 +73,7 @@ module App
     end
 
     def search(scope)
-      return scope.order(created_at: :desc) if @query.blank?
+      return newest_courses_first(scope) if @query.blank?
 
       # The spec says search also takes a pasted link, which is how someone
       # checks whether a video is already in the Library before spending a credit.
@@ -83,6 +83,10 @@ module App
 
       pattern = "%#{sanitize_sql_like(@query)}%"
       scope.where("courses.name ILIKE :pattern OR channels.name ILIKE :pattern", pattern: pattern)
+    end
+
+    def newest_courses_first(scope)
+      scope.reorder("courses.created_at DESC", "channel_items.id DESC")
     end
 
     def search_import_requests(scope)

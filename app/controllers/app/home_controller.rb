@@ -1,6 +1,6 @@
 module App
   # Screen 01. The user's unfinished courses (Enrollments — imported or added
-  # from the Library). Home never recommends somebody else's content.
+  # from the Library), followed by a four-item preview of the visible Library.
   class HomeController < BaseController
     before_action :set_daily_vocab_reviews
 
@@ -16,17 +16,27 @@ module App
                                .order(updated_at: :desc)
                                .to_a
 
+      @latest_import_items = ChannelContentQuery
+        .new(user: current_user, include_untranslated: true)
+        .items
+        .reorder("courses.created_at DESC", "channel_items.id DESC")
+        .limit(4)
+        .to_a
+      latest_import_courses = @latest_import_items.map(&:course)
+      @latest_import_enrolled_course_ids = current_user.enrollments
+                                                       .where(course_id: latest_import_courses.map(&:id))
+                                                       .pluck(:course_id)
+                                                       .to_set
+
       candidates = candidate_enrollments
-      @lesson_counts = lesson_counts_for(candidates.map(&:course) + [ @hero_course ].compact)
+      @lesson_counts = lesson_counts_for(candidates.map(&:course) + latest_import_courses + [ @hero_course ].compact)
       @completed_counts = completed_counts_for(candidates.map(&:course_id))
 
       unfinished = candidates.reject { |enrollment| finished?(enrollment) }
 
-      # "Continue" remains for started work. Recommendations can draw from any
-      # other unfinished course, including courses that have never been opened.
+      # "Continue" remains for started work. The separate Latest imports shelf
+      # comes from Library, so it does not depend on Enrollment state.
       @enrollments = unfinished.select(&:last_practiced_at?).first(2)
-      shown_ids = @enrollments.map(&:course_id)
-      @recommendation_enrollments = unfinished.reject { |enrollment| shown_ids.include?(enrollment.course_id) }.first(4)
       @has_unfinished_courses = @hero_course.present? || unfinished.any?
     end
 

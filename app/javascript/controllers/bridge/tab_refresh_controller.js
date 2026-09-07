@@ -8,4 +8,15 @@ export default class extends BridgeComponent {
   refresh({ detail: { tab } }) {
     if (tab) this.send("refresh", { tab })
   }
+
+  // A normal tab-root link would push the destination into the current tab's
+  // navigator. Native shells select the retained destination tab instead;
+  // browsers keep the link's ordinary href fallback.
+  select(event) {
+    if (!this.enabled) return
+
+    event.preventDefault()
+    const tab = event.params.tab
+    if (tab) this.send("select", { tab })
+  }
 }

@@ -39,16 +39,25 @@
     </div>
   <% end %>
 
-  <%# 3. Up to four unfinished courses already in this account. %>
-  <% if @recommendation_enrollments.any? %>
-    <div class="flex flex-col gap-2.5">
-      <h2 class="text-[18px] font-bold"><%= t(".recommendations") %></h2>
+  <%# 3. The newest four courses from the same visible catalog as Library. %>
+  <% if @latest_import_items.any? %>
+    <div data-testid="latest-imports" class="flex flex-col gap-2.5">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-[18px] font-bold"><%= t(".latest_imports") %></h2>
+        <%= link_to t(".view_all"), app_library_path,
+                    data: {
+                      controller: "bridge--tab-refresh",
+                      action: "click->bridge--tab-refresh#select",
+                      "bridge--tab-refresh-tab-param": "library"
+                    },
+                    class: "text-app-text-2 text-[13px] font-semibold" %>
+      </div>
 
       <div class="grid grid-cols-2 gap-2.5">
-        <% @recommendation_enrollments.each do |enrollment| %>
-          <%= render "app/library/card", course: enrollment.course,
-                     lessons_count: @lesson_counts[enrollment.course_id].to_i,
-                     enrolled: true, show_enrollment_action: false,
+        <% @latest_import_items.each do |item| %>
+          <%= render "app/library/card", course: item.course,
+                     lessons_count: @lesson_counts[item.course_id].to_i,
+                     enrolled: @latest_import_enrolled_course_ids.include?(item.course_id),
                      compact: true %>
         <% end %>
       </div>

@@ -261,6 +261,11 @@ class MainActivity : HotwireActivity() {
             ?.reset()
     }
 
+    fun selectTab(tab: String) {
+        val index = tabs.indexOfFirst { it.configuration.name.equals(tab, ignoreCase = true) }
+        if (index >= 0) bottomNavigationController.selectTab(index)
+    }
+
     /**
      * OAuth finished. Rails answers a native sign-in with a redirect to
      * `langlets://auth-success`, which the library's non-http route handler turns

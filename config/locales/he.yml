@@ -263,7 +263,8 @@ he:
         lesson_progress: "שיעור %{current} מתוך %{total}"
         your_playlists: "הפלייליסטים שלכם"
         continue: "המשך"
-        recommendations: "מומלץ בשבילכם"
+        latest_imports: "Latest imports"
+        view_all: "View all"
         no_langlets: "אין עדיין langlets. שתפו עם langlets כל סרטון בספרדית, צרפתית, עברית, ערבית או גרמנית כדי להפוך אותו לתרגול שפה."
       hero:
         just_imported: "יובא עכשיו"

@@ -105,6 +105,23 @@ module App
       assert_select "[style='width: 0%']"
     end
 
+    test "native Library shows published items by course creation time, newest first" do
+      @course.update_column(:created_at, 3.days.ago)
+      newer = create_translated_course!(
+        name: "Newest Course", slug: "newest-course",
+        main_media_url: "https://www.youtube.com/watch?v=newestaaaaa",
+        youtube_video_id: "newestaaaaa", language: @spanish,
+        translation_language: @english, user: @user, status: :published
+      )
+      newer.update_column(:created_at, 1.day.ago)
+
+      get app_library_path, headers: NATIVE
+
+      assert_response :success
+      results = css_select("turbo-frame#library-results").first.to_html
+      assert_match(/Newest Course.*Despacito/m, results)
+    end
+
     test "native language changes keep English-fallback courses in Home and Library" do
       @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
 
@@ -383,7 +400,7 @@ module App
       assert_select "a[href=?]", course_path(older_course), text: /Older Course/
     end
 
-    test "Home with an empty account shows only the no-langlets message" do
+    test "Home with no enrollments still previews the latest Library imports" do
       Enrollment.delete_all
 
       get "/app", headers: NATIVE
@@ -392,52 +409,52 @@ module App
       assert_select "[data-testid='no-langlets']", text: /No langlets yet\. Share any video in Spanish, French, Hebrew, Arabic or German/
       assert_select "form[action^='/app/import_requests/new']", count: 0
       assert_select "input[name='url']", count: 0
-      assert_no_match "Despacito", response.body
-      assert_select "h2", text: "Recommended for you", count: 0
+      assert_select "[data-testid='latest-imports']" do
+        assert_select "h2", text: "Latest imports"
+        assert_select "a[href=?]", course_path(@course), text: "Despacito"
+      end
       assert_no_match(/<h2[^>]*>Continue<\/h2>/, response.body)
     end
 
-    test "Home recommends an unfinished not-started course from the account" do
-      @user.enrollments.find_by!(course: @course).update!(last_practiced_at: nil)
-
-      get "/app", headers: NATIVE
-
-      assert_response :success
-      assert_select "h2", text: "Recommended for you"
-      assert_select "a[href=?]", course_path(@course), text: "Despacito"
-      assert_select "p", text: "Spanish · 1 lesson"
-      assert_select "[data-testid='no-langlets']", count: 0
-    end
-
-    test "Home can recommend a started unfinished course not already shown in Continue" do
-      2.times do |index|
-        course = create_translated_course!(name: "Started #{index}", slug: "started-#{index}",
-                     main_media_url: "https://www.youtube.com/watch?v=started#{index}aaaa",
-                     youtube_video_id: "started#{index}aaaa", language: @spanish,
-                     translation_language: @english, user: @user, status: :published)
-        Lesson.create!(course: course, user: @user, name: "Lesson", slug: "started-lesson-#{index}", order: 0)
-        Enrollment.create!(user: @user, course: course, source: :imported,
-                           last_practiced_at: index.minutes.ago)
+    test "Home shows the four newest Library imports and View all selects the Library tab" do
+      @course.update_column(:created_at, 10.days.ago)
+      courses = 5.times.map do |index|
+        course = create_translated_course!(
+          name: "Import #{index}", slug: "import-#{index}",
+          main_media_url: "https://www.youtube.com/watch?v=import#{index}aaaaa",
+          youtube_video_id: "import#{index}aaaaa", language: @spanish,
+          translation_language: @english, user: @user, status: :published
+        )
+        course.update_column(:created_at, (5 - index).days.ago)
+        course
       end
 
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_select "[data-testid='keep-it-going'] a[href^='/courses/']", count: 2
-      assert_select "h2", text: "Recommended for you"
-      assert_select "a[href=?]", course_path(@course), text: "Despacito"
+      assert_select "[data-testid='latest-imports']" do
+        assert_select "h2", text: "Latest imports"
+        assert_select "a[href=?][data-controller='bridge--tab-refresh'][data-action='click->bridge--tab-refresh#select'][data-bridge--tab-refresh-tab-param='library']",
+                      app_library_path, text: "View all"
+        courses.last(4).each do |course|
+          assert_select "a[href=?]", course_path(course), text: course.name
+        end
+        assert_select "a[href=?]", course_path(courses.first), count: 0
+        assert_select "a[href=?]", course_path(@course), count: 0
+        assert_match(/Import 4.*Import 3.*Import 2.*Import 1/m, css_select("[data-testid='latest-imports']").first.to_html)
+      end
     end
 
-    test "Home excludes unenrolled library courses from recommendations" do
-      create_translated_course!(name: "Bailando", slug: "bailando-x", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
+    test "Home includes unenrolled Library courses in Latest imports" do
+      course = create_translated_course!(name: "Bailando", slug: "bailando-x", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
                      youtube_video_id: "bailandoaaa", language: @spanish,
                      translation_language: @english, user: @user, status: :published)
 
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_match "Continue", response.body
-      assert_no_match "Bailando", response.body
+      assert_select "[data-testid='latest-imports'] a[href=?]", course_path(course), text: "Bailando"
+      assert_select "form[action=?]", app_enrollments_path(course_slug: course.slug), text: /Learn this/
     end
 
     test "Home shows the empty message when every account course is finished" do
@@ -447,7 +464,8 @@ module App
 
       assert_response :success
       assert_select "[data-testid='no-langlets']"
-      assert_select "a[href=?]", course_path(@course), count: 0
+      assert_select "[data-testid='keep-it-going'] a[href=?]", course_path(@course), count: 0
+      assert_select "[data-testid='latest-imports'] a[href=?]", course_path(@course), text: "Despacito"
     end
 
     test "public courses stay out of Library but appear on Home after enrollment" do

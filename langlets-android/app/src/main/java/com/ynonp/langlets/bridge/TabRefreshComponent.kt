@@ -5,17 +5,19 @@ import dev.hotwire.core.bridge.Message
 import dev.hotwire.navigation.destinations.HotwireDestination
 import kotlinx.serialization.Serializable
 
-/** Reloads a retained tab after another tab changes state it displays. */
+/** Reloads or selects a retained tab at another webview's request. */
 class TabRefreshComponent(
     name: String,
     delegate: BridgeDelegate<HotwireDestination>
 ) : LangletsBridgeComponent(name, delegate) {
 
     override fun onReceive(message: Message) {
-        if (message.event != "refresh") return
         val data = message.data<MessageData>() ?: return
 
-        activity?.refreshTab(data.tab)
+        when (message.event) {
+            "refresh" -> activity?.refreshTab(data.tab)
+            "select" -> activity?.selectTab(data.tab)
+        }
     }
 
     @Serializable

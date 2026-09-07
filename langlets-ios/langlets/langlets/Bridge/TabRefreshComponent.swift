@@ -1,7 +1,7 @@
 import Foundation
 import HotwireNative
 
-/// Reloads a retained tab after another webview changes state it displays.
+/// Reloads or selects a retained tab at another webview's request.
 /// The tab bar controller owns the navigators, so bridge pages communicate with
 /// it through NotificationCenter just like the other tab-level components.
 @MainActor
@@ -9,14 +9,24 @@ final class TabRefreshComponent: BridgeComponent {
     nonisolated override class var name: String { "tab-refresh" }
 
     override func onReceive(message: Message) {
-        guard message.event == "refresh",
-              let data: MessageData = message.data() else { return }
+        guard let data: MessageData = message.data() else { return }
 
-        NotificationCenter.default.post(
-            name: .nativeTabNeedsRefresh,
-            object: nil,
-            userInfo: ["tab": data.tab]
-        )
+        switch message.event {
+        case "refresh":
+            NotificationCenter.default.post(
+                name: .nativeTabNeedsRefresh,
+                object: nil,
+                userInfo: ["tab": data.tab]
+            )
+        case "select":
+            NotificationCenter.default.post(
+                name: .nativeTabNeedsSelection,
+                object: nil,
+                userInfo: ["tab": data.tab]
+            )
+        default:
+            return
+        }
     }
 }
 
@@ -28,4 +38,5 @@ private extension TabRefreshComponent {
 
 extension Notification.Name {
     static let nativeTabNeedsRefresh = Notification.Name("nativeTabNeedsRefresh")
+    static let nativeTabNeedsSelection = Notification.Name("nativeTabNeedsSelection")
 }

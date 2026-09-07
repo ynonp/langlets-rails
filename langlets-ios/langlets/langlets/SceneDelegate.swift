@@ -152,6 +152,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             name: .nativeTabNeedsRefresh,
             object: nil
         )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(nativeTabNeedsSelection(_:)),
+            name: .nativeTabNeedsSelection,
+            object: nil
+        )
 
         NotificationCenter.default.addObserver(
             self,
@@ -275,6 +281,12 @@ extension SceneDelegate: NavigatorDelegate {
         guard let tab = notification.userInfo?["tab"] as? String else { return }
 
         tabBarController.refreshTab(named: tab)
+    }
+
+    @objc private func nativeTabNeedsSelection(_ notification: Notification) {
+        guard let tab = notification.userInfo?["tab"] as? String else { return }
+
+        tabBarController.selectTab(named: tab)
     }
 
     @objc private func userDidSignOut() {

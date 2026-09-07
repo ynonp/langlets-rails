@@ -285,7 +285,8 @@ en:
         lesson_progress: "Lesson %{current} of %{total}"
         your_playlists: "Your playlists"
         continue: "Continue"
-        recommendations: "Recommended for you"
+        latest_imports: "Latest imports"
+        view_all: "View all"
         no_langlets: "No langlets yet. Share any video in Spanish, French, Hebrew, Arabic or German to langlets to turn it into a language practice."
       hero:
         just_imported: "JUST IMPORTED"

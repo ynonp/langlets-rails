@@ -90,6 +90,14 @@ final class AppTabBarController: UITabBarController {
         routeTabIfNeeded(at: index)
     }
 
+    func selectTab(named name: String) {
+        guard let index = Self.tabs.firstIndex(where: {
+            $0.title.caseInsensitiveCompare(name) == .orderedSame
+        }) else { return }
+
+        selectTab(at: index)
+    }
+
     /// Reload a tab immediately, including while its navigator is in the
     /// background, after another tab changes state that it displays.
     func refreshTab(named name: String) {

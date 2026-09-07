@@ -89,6 +89,7 @@ class CourseProgressResetTest < ActionDispatch::IntegrationTest
     assert lesson_with_progress.not_started?
 
     get app_home_url, headers: NATIVE
-    assert_select "a[href='#{course_path(@course)}']", count: 0
+    assert_select "[data-testid='keep-it-going'] a[href='#{course_path(@course)}']", count: 0
+    assert_select "[data-testid='latest-imports'] a[href='#{course_path(@course)}']"
   end
 end
