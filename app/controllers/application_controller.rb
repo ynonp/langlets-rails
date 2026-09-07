@@ -40,6 +40,17 @@ class ApplicationController < ActionController::Base
     I18n.locale = I18n.available_locales.include?(locale) ? locale : :en
   end
 
+  # OmniAuth's explicit origin serves two purposes: it returns the learner to
+  # the page that opened authentication, and it preserves the language host
+  # while the provider callback runs on canonical langlets.app.
+  helper_method :social_auth_origin_url
+  def social_auth_origin_url
+    path = params[:returnto].to_s
+    path = root_path unless path.start_with?("/") && !path.start_with?("//")
+
+    "#{request.base_url}#{path}"
+  end
+
   # The active color theme for this request. Logged-in users read it from their
   # stored preferences; everyone falls back to a cookie, then the default theme.
   helper_method :current_theme

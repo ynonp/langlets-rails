@@ -3,6 +3,7 @@
 
   <%= button_to user_apple_omniauth_authorize_path,
     method: :post,
+    params: { origin: social_auth_origin_url },
     form: { class: "w-full col-span-2", data: { turbo: false, controller: "bridge--apple-auth bridge--web-auth", action: "submit->bridge--apple-auth#authorize submit->bridge--web-auth#startOAuth", bridge__web_auth_provider_value: "apple" } },
     class: "w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-bold text-sm tracking-wide cursor-pointer shadow-md hover:bg-gray-100 dark:hover:bg-gray-800" do %>
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -13,6 +14,7 @@
 
   <%= button_to user_google_oauth2_omniauth_authorize_path,
     method: :post,
+    params: { origin: social_auth_origin_url },
     form: { class: "w-full", data: { turbo: false, controller: "bridge--google-auth", action: "submit->bridge--google-auth#authorize" } },
     class: "w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-bold text-sm tracking-wide cursor-pointer shadow-md hover:bg-gray-100 dark:hover:bg-gray-800" do %>
     <svg class="w-5 h-5" viewBox="0 0 24 24">
@@ -26,6 +28,7 @@
 
   <%= button_to user_github_omniauth_authorize_path,
     method: :post,
+    params: { origin: social_auth_origin_url },
     form: { class: "w-full", data: { turbo: false, controller: "bridge--auth-bridge bridge--web-auth", action: "submit->bridge--auth-bridge#startOAuth submit->bridge--web-auth#startOAuth", bridge__auth_bridge_provider_value: "github", bridge__web_auth_provider_value: "github" } },
     class: "w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-bold text-sm tracking-wide cursor-pointer shadow-md hover:bg-gray-100 dark:hover:bg-gray-800" do %>
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

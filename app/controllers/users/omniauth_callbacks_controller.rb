@@ -27,6 +27,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # NativeAuthHandoff::TTL.
   HANDOFF_WINDOW = 30.minutes
 
+  WEB_LANGUAGE_BY_HOST = {
+    "langlets.app" => "en",
+    "he.langlets.app" => "he"
+  }.freeze
+
   # What the handoff endpoint answers with. Nobody reads it: the caller is a
   # throwaway web view that exists to receive Set-Cookie and report that the
   # page loaded. A document rather than an empty body so that it definitely
@@ -37,12 +42,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
+      apply_web_origin_language(@user)
       unless user_signed_in? && current_user == @user
         sign_in(@user, event: :authentication)
         remember_me(@user)
       end
       set_flash_message(:notice, :success, kind: "Google") if is_navigational_format?
-      redirect_to after_sign_in_path_for(@user), allow_other_host: native_app?
+      redirect_to after_sign_in_path_for(@user), allow_other_host: native_app? || web_oauth_origin.present?
     else
       session["devise.google_data"] = request.env["omniauth.auth"].except(:extra)
       redirect_to new_user_registration_url
@@ -53,12 +59,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
+      apply_web_origin_language(@user)
       unless user_signed_in? && current_user == @user
         sign_in(@user, event: :authentication)
         remember_me(@user)
       end
       set_flash_message(:notice, :success, kind: "GitHub") if is_navigational_format?
-      redirect_to after_sign_in_path_for(@user), allow_other_host: native_app?
+      redirect_to after_sign_in_path_for(@user), allow_other_host: native_app? || web_oauth_origin.present?
     else
       Rails.logger.info request.env["omniauth.auth"]
       Rails.logger.warn "User not persisted: #{@user.errors.full_messages.join(', ')}"
@@ -71,12 +78,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
+      apply_web_origin_language(@user)
       unless user_signed_in? && current_user == @user
         sign_in(@user, event: :authentication)
         remember_me(@user)
       end
       set_flash_message(:notice, :success, kind: "Apple") if is_navigational_format?
-      redirect_to after_sign_in_path_for(@user), allow_other_host: native_app?
+      redirect_to after_sign_in_path_for(@user), allow_other_host: native_app? || web_oauth_origin.present?
     else
       Rails.logger.warn "User not persisted: #{@user.errors.full_messages.join(', ')}"
       session["devise.apple_data"] = request.env["omniauth.auth"].except(:extra)
@@ -370,8 +378,28 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if native_app?
       users_auth_native_success_path
     else
-      super
+      web_oauth_origin&.to_s || super
     end
+  end
+
+  def apply_web_origin_language(user)
+    code = WEB_LANGUAGE_BY_HOST[web_oauth_origin&.host&.downcase]
+    return if code.nil? || user.preferences["native_language"] == code
+
+    user.native_language = code
+    user.save!
+  end
+
+  def web_oauth_origin
+    return @web_oauth_origin if defined?(@web_oauth_origin)
+
+    uri = URI.parse(request.env["omniauth.origin"].to_s)
+    @web_oauth_origin = if uri.scheme == "https" && uri.port == 443 &&
+      uri.userinfo.nil? && WEB_LANGUAGE_BY_HOST.key?(uri.host&.downcase)
+      uri
+    end
+  rescue URI::InvalidURIError
+    @web_oauth_origin = nil
   end
 
   # Whether this request belongs to one of the native shells.

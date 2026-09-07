@@ -24,7 +24,7 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
     get root_path
 
     assert_select "[data-testid=beta-notice]", count: 0
-    assert_select ".lp-hero h1", text: "Turn any video to a language practice"
+    assert_select ".lp-hero h1", text: "Turn any video into a language lesson"
     assert_select ".lp-hero .lp-supported", text: "Supported languages: Spanish, French, Hebrew, Arabic"
     assert_select ".lp-hero .lp-lead", text: /Free account required/
     assert_select "#try h2", count: 0

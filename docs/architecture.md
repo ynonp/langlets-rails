@@ -176,14 +176,14 @@ remains historical creator data, while `ChannelItem` determines which identity
 contributed a Course. A unique partial index guarantees one default per owner,
 and `[channel_id, course_id]` makes publishing safe to retry.
 
-`Channel` is an **STI base class** with two subclasses. `ProChannel` is a private
+`Channel` is an **STI base class** with three subclasses. `ProChannel` is a private
 Channel holding everything a Langlets Pro subscriber imports, whose defining
 property is that owning it is not enough to read it — see *Langlets Pro* below.
 `SystemChannel` is the platform's singleton curated catalog. It returns
 `visibility == "system"` and the corresponding predicate from STI behavior,
 independently of the inherited visibility column, and makes publication free by
 overriding the same `charge_for!` hook as Pro. Because Channel is a base class,
-**an unscoped `Channel.where(…)` sees both subclass rows**: any query that
+**an unscoped `Channel.where(…)` sees all subclass rows**: any query that
 means "ordinary channels" has to say `type: nil`, and the two that do
 (`Channel.owned_grant` and `Ability`'s `can :manage`) each say why.
 
@@ -673,6 +673,18 @@ is pinned only when that token actually has a translation in the preferred
 language, otherwise the saved row is pinned to an available translation.
 
 Changing the native language does not remove existing Home or Library content.
+
+Web social authentication also initializes this preference from the acquisition
+host. OmniAuth request phases may begin on `he.langlets.app`, but all production
+providers use the single registered `https://langlets.app/users/auth/.../callback`
+origin. The cross-subdomain session cookie carries OmniAuth state and an explicit,
+validated return URL through that canonical callback. A successful callback
+accepts only the known `langlets.app` and `he.langlets.app` origins, stores `en`
+or `he` respectively in `preferences["native_language"]`, and redirects to the
+original host and requested path. This makes a Hebrew web signup open the native
+apps in Hebrew without exposing an open redirect. Local development OAuth keeps
+using the request's own host.
+
 Home already lists the user's readable enrollments without an L2 readiness
 filter, and the native Library explicitly includes untranslated courses; their
 stored base names remain the English card fallback until the selected L2 is
