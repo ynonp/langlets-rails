@@ -1,3 +1,4 @@
 web: env RUBY_DEBUG_OPEN=true bin/rails server
 js: npm run build:watch
 css: npm run build:css:watch
+mail: bin/mailpit

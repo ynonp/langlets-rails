@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+set -eu
+
+cd "$(dirname "$0")/.."
+
+# Install a verified, pinned release locally; no system packages or root needed.
+version=1.31.1
+install_dir="$PWD/tmp/mailpit/$version"
+if [ ! -x "$install_dir/mailpit" ]; then
+  case "$(uname -s)-$(uname -m)" in
+    Linux-x86_64) platform=linux-amd64; checksum=87d2652abd7c17dc99029147ff62ac671afdf7fd76630f7faf5b14125211c709 ;;
+    Linux-aarch64) platform=linux-arm64; checksum=be6a1f9dcf0ac0d7157ee777eac2b5351352b367bcae3c0a0f4854da60546884 ;;
+    Darwin-x86_64) platform=darwin-amd64; checksum=fdb79c830121eba42d6ed051d7837a50bc8fe9e527db6ae44f974ce835ce5eab ;;
+    Darwin-arm64) platform=darwin-arm64; checksum=71c10f33f36c78a2864c4df906f11736b092a80ad1371742bd4e90e65d778e1b ;;
+    *) echo "Unsupported Mailpit platform: $(uname -s)-$(uname -m)" >&2; exit 1 ;;
+  esac
+  mkdir -p "$install_dir"
+  download_dir=$(mktemp -d "$install_dir/download.XXXXXX")
+  trap 'rm -rf "$download_dir"' EXIT HUP INT TERM
+  echo "Downloading Mailpit v$version ($platform)..."
+  curl --fail --location --connect-timeout 10 --max-time 120 \
+    "https://github.com/axllent/mailpit/releases/download/v$version/mailpit-$platform.tar.gz" \
+    --output "$download_dir/mailpit.tar.gz"
+  actual_checksum=$(shasum -a 256 "$download_dir/mailpit.tar.gz" | cut -d ' ' -f 1)
+  if [ "$actual_checksum" != "$checksum" ]; then
+    echo "Mailpit download checksum mismatch" >&2
+    exit 1
+  fi
+  tar -xzf "$download_dir/mailpit.tar.gz" -C "$download_dir" mailpit
+  chmod +x "$download_dir/mailpit"
+  mv "$download_dir/mailpit" "$install_dir/mailpit"
+  rm -rf "$download_dir"
+  trap - EXIT HUP INT TERM
+fi
+
+exec "$install_dir/mailpit" \
+  --smtp 127.0.0.1:1025 \
+  --listen 127.0.0.1:8025 \
+  --database "$PWD/tmp/mailpit/messages.db" "$@"

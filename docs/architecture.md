@@ -13,6 +13,30 @@
 - **Background Jobs**: Solid Queue
 - **Package Management**: Bun (JavaScript), Bundler (Ruby)
 
+## Development email testing
+
+`./bin/dev` starts Mailpit alongside Rails and the asset watchers. All development
+Action Mailer deliveries go to its local SMTP listener at `127.0.0.1:1025`, with
+no authentication or TLS. Existing mailers render their normal templates and
+retain their recipients; Mailpit captures every address into one local inbox
+without delivering to the internet. Use addresses such as `learner@example.test`
+for signup and invitation testing. Development raises delivery errors when the
+local inbox is unavailable.
+
+Open **http://localhost:8025** to view HTML, plain text, headers and links.
+The HTTP API at `/api/v1/messages` supports automated receipt checks. When Rails
+runs separately (for example, `bin/rails server` or `bin/rails runner`), start
+`./bin/mailpit` in another terminal. Restart an existing Rails server to pick up
+the SMTP configuration. Both listeners bind to loopback; when accessing the
+remote devbox, forward port 8025 through SSH or the editor's port forwarding.
+
+`bin/mailpit` downloads Mailpit v1.31.1 on first run for Linux/macOS on amd64/arm64,
+verifies its SHA-256 checksum, and caches the binary under `tmp/mailpit/`.
+It requires curl, shasum and tar for that first installation. Messages persist
+in the ignored `tmp/mailpit/messages.db` across restarts and can be deleted in
+the inbox UI. Test environment mail continues to use Rails' `:test` delivery
+method; production continues to use authenticated Mailgun SMTP.
+
 ## Production deployment
 
 Production is deployed with Kamal to `langlets.app` and `he.langlets.app`. Kamal Proxy terminates
