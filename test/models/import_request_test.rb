@@ -7,6 +7,16 @@ require "test_helper"
 # `queued` while the course is still `error`, or while a stale pipeline failure
 # sits in the shared record, looks retried and isn't.
 class ImportRequestTest < ActiveJob::TestCase
+  test "duration rejection exposes its actionable message without pipeline diagnostics" do
+    @request.update!(status: :failed, failure_reason: "pipeline http://pipeline:8000 returned 422: Video duration limit: Please choose a video that is 20 minutes or shorter.")
+    assert_equal "Please choose a video that is 20 minutes or shorter.", @request.duration_failure_message
+    @request.failure_reason = "technical error"
+    assert_nil @request.duration_failure_message
+    @request.status = :ready
+    @request.failure_reason = "Video duration limit: stale error"
+    assert_nil @request.duration_failure_message
+  end
+
   VIDEO_ID = "retryVid001".freeze
   CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 

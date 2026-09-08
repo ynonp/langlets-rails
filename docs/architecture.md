@@ -1024,6 +1024,25 @@ normal dedupe/credit/course transaction. A detection error is recorded on the
 provisional progress row, marks the visible request failed, and costs no
 credit.
 
+New video processing has a 20-minute duration limit (`MAX_VIDEO_MINUTES` in
+`pipeline/src/videoDuration.ts`). The pipeline checks Supadata's `/metadata`
+`media.duration` in seconds before language detection, including TikTok audio
+downloads, and again before extraction in `/run` so explicit-language imports
+and retries receive the same check. Exactly 20 minutes is accepted. Metadata
+requests time out after 15 seconds; missing keys, lookup failures, or missing
+or invalid durations log a warning and **proceed unchecked**. A known duration
+above the limit rejects the entire video before transcription or translation;
+no clipping occurs. Detection failures use the existing failed-request flow;
+run failures persist a `video_duration` callback error for settlement. A
+successful retry clears that step's stale errors. Existing completed
+transcriptions skip this check when resuming or adding translations.
+
+Duration rejection messages carry a `Video duration limit: ` prefix so
+`ImportRequest#duration_failure_message` can expose the actionable text without
+pipeline connection diagnostics. Web/native queue cards, Library import
+cards, and gallery import cards show the message. Rejected imports do not reach publication and use no
+user credit. No database or route changes are required.
+
 The language catalog supports English (`en`), Spanish (`es`), French (`fr`),
 German (`de`), Hebrew (`he`), Palestinian Arabic (`ar-JO`), Greek (`el`),
 Swedish (`sv`), and Chinese (`zh`, native name `中文`) as both source and

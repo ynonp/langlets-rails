@@ -60,6 +60,13 @@ class ImportRequest < ApplicationRecord
     detecting? || queued? || importing?
   end
 
+  # Only expose the duration check's actionable message, never arbitrary pipeline diagnostics.
+  def duration_failure_message
+    return unless failed?
+
+    failure_reason.to_s.split("Video duration limit: ", 2).second
+  end
+
   # Whether this failed for want of credits rather than for a technical reason.
   # The Queue's ordinary failure copy promises that a human is reviewing the
   # import, which is true of a pipeline error and false of this one — nobody is

@@ -24,6 +24,25 @@ module App
       get "/app?lang=es", headers: NATIVE
     end
 
+    test "web and native import cards show duration rejection without internal diagnostics" do
+      message = "Please choose a video that is 20 minutes or shorter."
+      @user.import_requests.create!(
+        youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
+        translation_language: "English", status: :failed,
+        failure_reason: "pipeline http://internal:8000 returned 422: Video duration limit: #{message}"
+      )
+
+      get gallery_path(imports: "failed"), headers: { "User-Agent" => "Mozilla/5.0" }
+      assert_response :success
+      assert_includes response.body, message
+      assert_not_includes response.body, "http://internal:8000"
+
+      get "/app/library", params: { filter: "failed" }, headers: NATIVE
+      assert_response :success
+      assert_includes response.body, message
+      assert_not_includes response.body, "http://internal:8000"
+    end
+
     test "the sheet opens on the empty state, with the guidance line and no card" do
       get "/app/import_requests/new", headers: NATIVE
 

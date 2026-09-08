@@ -6,6 +6,13 @@ This guide covers how to create a new language-learning course from a YouTube vi
 
 ## Overview
 
+New imports accept videos up to 20 minutes long. Before language detection and
+new transcription work, the pipeline checks Supadata duration metadata and
+rejects known longer videos with a request to choose a shorter one. If the
+length cannot be determined, importing proceeds unchecked. The limit lives in
+`pipeline/src/videoDuration.ts`; existing completed transcriptions can still
+be reused and translated.
+
 Creating a course runs an AI pipeline that:
 
 1. **Extracts lyrics** — transcribes/syncs timestamped phrases from the YouTube video

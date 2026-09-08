@@ -86,6 +86,7 @@ Deno.test("a fresh dual-STT run reconciles and finalizes translation", async () 
     models,
     sink,
     baseDelayMs: 0,
+    validateDuration: async () => {},
     fuzzywordFor: noDictionary,
     transcribeVideo: transcriber.transcribe,
     transcribeSpeechFile: speech.transcribe,
@@ -128,6 +129,7 @@ Deno.test("YouTube yt-dlp failure bypasses STT providers and force alignment", a
     models,
     sink: new MemorySink(),
     baseDelayMs: 0,
+    validateDuration: async () => {},
     fuzzywordFor: noDictionary,
     transcribeVideo: supadata.transcribe,
     transcribeSpeechFile: elevenlabs.transcribe,
@@ -154,6 +156,7 @@ Deno.test("failed native captions and Gemini fallback stop before downstream bra
     models,
     sink: new MemorySink(),
     baseDelayMs: 0,
+    validateDuration: async () => {},
     fuzzywordFor: noDictionary,
     transcribeVideo: transcriber.transcribe,
   });
@@ -172,6 +175,7 @@ Deno.test("rerunning saved data retries only the failed translation", async () =
     models: first.models,
     sink: new MemorySink(),
     baseDelayMs: 0,
+    validateDuration: async () => {},
     fuzzywordFor: noDictionary,
     transcribeVideo: stubTranscribe([transcriptFixture(1, 2)]).transcribe,
     ...timingOptions(),
@@ -189,6 +193,9 @@ Deno.test("rerunning saved data retries only the failed translation", async () =
     models: second.models,
     sink: new MemorySink(),
     baseDelayMs: 0,
+    validateDuration: () => {
+      throw new Error("completed transcription must skip metadata");
+    },
     fuzzywordFor: noDictionary,
     transcribeVideo: transcriber.transcribe,
   });
@@ -217,6 +224,7 @@ Deno.test("an interrupted transcription reruns Supadata despite partial phrases"
       models,
       sink: new MemorySink(),
       baseDelayMs: 0,
+      validateDuration: async () => {},
       fuzzywordFor: noDictionary,
       transcribeVideo: transcriber.transcribe,
       ...timingOptions(),
@@ -234,6 +242,7 @@ Deno.test("without a translation language the neutral lesson and compound steps 
     models,
     sink: new MemorySink(),
     baseDelayMs: 0,
+    validateDuration: async () => {},
     fuzzywordFor: noDictionary,
     transcribeVideo: stubTranscribe([transcriptFixture(1, 2)]).transcribe,
     ...timingOptions(),
@@ -246,4 +255,25 @@ Deno.test("without a translation language the neutral lesson and compound steps 
   assertEquals(result.data.translations, undefined);
   assertEquals(mocks.translate.calls(), 0);
   assertEquals(mocks.tokens.calls(), 0);
+});
+
+Deno.test("duration rejection records a callback error before transcription", async () => {
+  const { mocks, models } = happyMocks();
+  let downloaded = false;
+  const result = await runPipeline(payload(), {
+    models,
+    sink: new MemorySink(),
+    validateDuration: async () => {
+      throw new Error("Video duration limit: too long");
+    },
+    prepareAudio: () => {
+      downloaded = true;
+      throw new Error("must not download");
+    },
+  });
+  assertFalse(result.ok);
+  assertEquals(result.failed.video_duration, "Video duration limit: too long");
+  assertEquals(result.data.errors?.[0].step, "video_duration");
+  assertEquals(downloaded, false);
+  assertEquals(mocks.lessons.calls(), 0);
 });

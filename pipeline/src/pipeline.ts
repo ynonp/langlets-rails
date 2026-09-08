@@ -30,7 +30,8 @@ import type { LanguageRef, ProgressData, ProgressSink, TriggerPayload } from "./
 import { ProgressStore } from "./progress.ts";
 import type { ModelRegistry } from "./models.ts";
 import type { PipelineContext } from "./context.ts";
-import { dataSummary } from "./context.ts";
+import { clearErrors, dataSummary, recordError } from "./context.ts";
+import { validateVideoDuration } from "./videoDuration.ts";
 import { message } from "./retry.ts";
 import { extractLyrics } from "./steps/extractLyrics.ts";
 import { forceAlignment } from "./steps/forceAlignment.ts";
@@ -49,6 +50,7 @@ import type { Fuzzyword } from "./fuzzyword.ts";
 
 export interface RunOptions {
   models: ModelRegistry;
+  validateDuration?: typeof validateVideoDuration;
   sink: ProgressSink;
   baseDelayMs?: number;
   // Test injection points for the similar-sound step.
@@ -97,6 +99,14 @@ export async function runPipeline(
   // Collect both STT candidates. A single success is usable directly; two are
   // reconciled by Sol; only a YouTube double failure falls back to Gemini.
   if (!store.extractLyricsDone()) {
+    try {
+      await (options.validateDuration ?? validateVideoDuration)(ctx.youtubeurl);
+      await clearErrors(ctx, "video_duration");
+    } catch (error) {
+      await recordError(ctx, "video_duration", error);
+      failed.video_duration = message(error);
+      return result(store, failed);
+    }
     try {
       await extractLyrics(ctx);
     } catch (error) {

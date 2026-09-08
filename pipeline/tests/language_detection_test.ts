@@ -1,4 +1,4 @@
-import { assertEquals, assertThrows } from "@std/assert";
+import { assertEquals, assertRejects, assertThrows } from "@std/assert";
 import { detectLanguage, resolveLanguage } from "../src/languageDetection.ts";
 import { queuedModel, STUB_AUDIO_PATH } from "./helpers.ts";
 
@@ -21,7 +21,7 @@ Deno.test("YouTube language detection uses Gemini and resolves a seeded language
       youtubeurl: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
       supported_languages: LANGUAGES,
     },
-    { model: gemini.model },
+    { model: gemini.model, validateDuration: async () => {} },
   );
 
   assertEquals(result.language, LANGUAGES[1]);
@@ -37,6 +37,7 @@ Deno.test("TikTok downloads audio and reuses ElevenLabs detected transcript", as
     },
     {
       model: queuedModel([]).model,
+      validateDuration: async () => {},
       prepareAudio: () => Promise.resolve({ path: STUB_AUDIO_PATH, durationSeconds: 3 }),
       transcribeFile: (_path, languageCode) => {
         assertEquals(languageCode, null);
@@ -70,6 +71,7 @@ Deno.test("TikTok falls back to ElevenLabs URL fetch when yt-dlp cannot produce 
     },
     {
       model: queuedModel([]).model,
+      validateDuration: async () => {},
       prepareAudio: () => Promise.reject(new Error("all formats failed")),
       transcribeUrl: (url, languageCode) => {
         fetchedUrl = url;
@@ -111,4 +113,34 @@ Deno.test("Scribe ISO-639-3 codes map to the Langlets language catalog", () => {
     Error,
     "detected unsupported language",
   );
+});
+
+Deno.test("duration rejection happens before language detection or audio download", async () => {
+  for (
+    const youtubeurl of [
+      "https://www.youtube.com/watch?v=test123",
+      "https://www.tiktok.com/@scout/video/6718335390845095173",
+    ]
+  ) {
+    const model = queuedModel([]);
+    let downloaded = false;
+    await assertRejects(
+      () =>
+        detectLanguage({ youtubeurl, supported_languages: LANGUAGES }, {
+          model: model.model,
+          validateDuration: async (url) => {
+            assertEquals(url, youtubeurl);
+            throw new Error("Video duration limit: too long");
+          },
+          prepareAudio: () => {
+            downloaded = true;
+            throw new Error("must not download");
+          },
+        }),
+      Error,
+      "Video duration limit:",
+    );
+    assertEquals(model.calls(), 0);
+    assertEquals(downloaded, false);
+  }
 });

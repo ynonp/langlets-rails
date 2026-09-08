@@ -8,6 +8,7 @@ import {
   transcribeWithElevenLabs,
 } from "./speechToText.ts";
 import { isTiktokUrl, isYoutubeUrl } from "./videoUrl.ts";
+import { validateVideoDuration } from "./videoDuration.ts";
 
 export interface SupportedLanguage {
   iso_name: string;
@@ -26,6 +27,7 @@ export interface DetectionResult {
 
 export interface DetectionOptions {
   model: LanguageModel;
+  validateDuration?: typeof validateVideoDuration;
   prepareAudio?: typeof downloadYoutubeAudioToTemp;
   transcribeFile?: typeof transcribeFileWithElevenLabs;
   transcribeUrl?: typeof transcribeWithElevenLabs;
@@ -38,6 +40,8 @@ export async function detectLanguage(
   if (payload.supported_languages.length === 0) {
     throw new Error("no supported languages were supplied");
   }
+
+  await (options.validateDuration ?? validateVideoDuration)(payload.youtubeurl);
 
   if (isYoutubeUrl(payload.youtubeurl)) {
     const allowed = payload.supported_languages.map((language) => language.iso_name).join(", ");

@@ -31,6 +31,9 @@
       </div>
 
     <% when "failed" %>
+      <% if import_request.duration_failure_message.present? %>
+        <p class="mt-2 text-sm text-red-500"><%= import_request.duration_failure_message %></p>
+      <% end %>
       <div class="flex items-center gap-1.5">
         <%= app_icon "warning", class: "w-3.5 h-3.5 text-red-400" %>
         <%# Two different failures needing two different next moves: one is ours
