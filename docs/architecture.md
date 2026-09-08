@@ -1371,7 +1371,7 @@ rate, because song rhythm (held notes, repeats, pauses, instrumental gaps) defea
 Provider cue boundaries and performance pauses are not semantic lyric lines: either can split a
 translation unit in the middle (for example `que / más quisiera`). `force_alignment` therefore sends
 ElevenLabs one continuous transcript and initially stores its flat timed word stream as one
-provisional phrase. The lesson model then owns a two-level `lessons -> lines` partition. Its input is
+provisional phrase. Gemini 3.8 Flash then owns a two-level `lessons -> lines` partition. Its input is
 the complete continuous transcript; its structured output is a `lessons` array whose entries contain
 a title and an array of exact transcript line strings. It is instructed to make each line
 independently comprehensible and translatable, with line length as a preference rather than a hard
@@ -1382,6 +1382,12 @@ middle. This deterministic fallback preserves every aligned word and its timesta
 selects a language-matched worked example for English, Spanish, French,
 German, Hebrew, Russian, or Arabic; each demonstrates turning one continuous paragraph into ten
 semantic lines across two lessons. Unknown languages use the English example.
+
+The lesson prompt explicitly preserves stutters, false starts, repeated occurrences, punctuation
+tokens, and the supplied token spacing. It includes Chinese examples prohibiting removal of
+`人 ，` from `人 ， 人 山 人 海` and joining `那 些` into `那些`, and asks the model to check the
+complete ordered token sequence before returning. This addresses observed copying failures;
+the existing token-count validator and single retry still guard model output.
 
 The model does not calculate word indexes. Application code treats its returned
 lines only as word-count boundaries and requires them to cover the complete

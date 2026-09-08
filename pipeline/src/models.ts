@@ -3,7 +3,7 @@
 //   extract_lyrics          Supadata + ElevenLabs, reconciled by GPT-5.6 Sol
 //   extract fallback        Gemini 3.7 Flash timed transcript when YouTube audio download fails
 //   force_alignment fallback Gemini 2.5 Flash (line timestamps)
-//   add_lessons             gemini-3.5-flash-lite     (Google Generative AI)
+//   add_lessons             gemini-3.8-flash          (Google Generative AI)
 //   extract_compounds       gemini-3.5-flash-lite     (Google Generative AI)
 //   rate_lessons            gemini-3.5-flash-lite     (Google Generative AI)
 //   add_token_translations  deepseek-v4-pro:cloud     (Ollama cloud)
@@ -67,7 +67,7 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
         logPrompt: true,
       })
       : google("gemini-2.5-flash"),
-    addLessons: log(google("gemini-3.5-flash-lite"), "add_lessons"),
+    addLessons: log(google("gemini-3.8-flash"), "add_lessons"),
     extractCompounds: log(google("gemini-3.5-flash-lite"), "extract_compounds"),
     rateLessons: log(google("gemini-3.5-flash-lite"), "rate_lessons"),
     // No translateOverrides today. Hebrew used to override to nemotron-3-super,

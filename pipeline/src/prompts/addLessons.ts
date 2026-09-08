@@ -18,6 +18,11 @@ Reformat the transcript so it is easy for a language student to study. Divide th
 ### 1. Text Integrity
 - Keep every word exactly as written, exactly once, in strict chronological order.
 - You may only insert lesson titles and line breaks. Never repeat, omit, correct, or rewrite transcript text.
+- Preserve every occurrence of repeated words, stutters, false starts, fillers, and apparent transcription mistakes. Do not clean up speech, even when a repetition sounds redundant or ungrammatical.
+- Preserve punctuation exactly, including punctuation that appears as a separate space-delimited token. Do not remove, add, or move it.
+- Preserve the supplied token spacing: never join adjacent tokens or split a token. You may replace an existing space between tokens with a line break, but may not introduce a boundary inside a token.
+- For example, keep "人 ， 人 山 人 海" exactly as supplied; never shorten it to "人 山 人 海". Keep "那 些" as "那 些", not "那些". These rules apply to every language.
+- Before returning, join all lesson lines in order and compare them with the input: every space-delimited token, including punctuation and repeated occurrences, must be present exactly once per original occurrence and in its original order. Lesson titles are not part of this comparison. A token-count mismatch rejects the entire lesson plan.
 
 ### 2. Line Splitting
 - A line must be a complete comprehension and translation unit. 

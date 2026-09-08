@@ -61,7 +61,7 @@ order with optional structured start/end timestamps. The first and last word of 
 require timestamps so phrase timing survives; untimed middle words remain untimed. The pipeline
 preserves the original text and keeps every word token for downstream translation.
 
-Lesson generation receives the continuous aligned transcript and returns lesson titles and semantic
+Lesson generation uses Gemini 3.8 Flash, receives the continuous aligned transcript, and returns lesson titles and semantic
 line breaks. The pipeline uses the returned word counts only as boundaries, derives internal word
 ranges, and reconstructs exact text and phrase timestamps from aligned words or Gemini-timestamped
 source-line bounds. This makes each line a semantic comprehension/translation unit without allowing
@@ -69,6 +69,10 @@ the model to modify the transcript. It atomically persists `lyric_lines`, `phras
 `lesson_outline`, and timestamped `lessons`. The prompt uses a ten-line, two-lesson worked example
 in the clip language for the seven configured languages, falling back to English for unknown
 languages.
+
+Its prompt explicitly forbids cleaning up repetitions, stutters, or punctuation and changing token
+spacing, with examples from a failed Chinese import. The complete transcript token count must still
+match; a failed attempt receives validation feedback and is retried once.
 
 `extract_compounds` then receives the complete lesson text and returns the complete learner-token
 sequence as a JSON string array. A one-word item preserves a source word; an item containing spaces
@@ -132,7 +136,8 @@ one branch failing never discards another branch's completed — and already per
 | -------------------------- | ----------------------------------------------- | ------------------------------------------------------ |
 | extract_lyrics             | Dual STT + reconciliation / timed YouTube fallback | Supadata + ElevenLabs + GPT-5.6 Sol / Gemini 3.7 Flash |
 | force_alignment            | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash                          |
-| add_lessons / extract_compounds / rate_lessons | `gemini-3.5-flash-lite`              | Google Generative AI                                   |
+| add_lessons                | `gemini-3.8-flash`                                | Google Generative AI                                   |
+| extract_compounds / rate_lessons | `gemini-3.5-flash-lite`                       | Google Generative AI                                   |
 | translate                  | `deepseek-v4-pro:cloud`                         | Ollama cloud via `@ai-sdk/openai-compatible`           |
 | add_token_translations     | `deepseek-v4-pro:cloud`                         | Ollama cloud, 200-line chunks                          |
 

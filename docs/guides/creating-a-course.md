@@ -177,7 +177,7 @@ Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rai
 |---|---|---|
 | `extract_lyrics` (transcript text + normal timing) | Native captions + Scribe, reconciled by `gpt-5.6-sol`; timed YouTube fallback | Supadata + ElevenLabs + OpenAI; Gemini 3.7 Flash fallback |
 | `force_alignment` (word timings) | Forced Alignment API | ElevenLabs |
-| `add_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
+| `add_lessons` | `gemini-3.8-flash` | Google Generative AI |
 | `rate_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `add_token_translations` | `deepseek-v4-pro:cloud` (reasoning `none`, temperature 0, up to 200 token lines per chunk) | Ollama cloud |
 | `translate` (all target languages) | `deepseek-v4-pro:cloud` | Ollama cloud |
