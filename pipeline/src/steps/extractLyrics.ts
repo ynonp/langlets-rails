@@ -302,6 +302,7 @@ async function persistTimedGeminiTranscript(
 }
 
 const LANGUAGE_TO_ISO: Record<string, string> = {
+  chinese: "zh",
   english: "en",
   french: "fr",
   german: "de",

@@ -7,7 +7,7 @@
 
 import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
-import { dictionaryFor, type Fuzzyword, langCodeFor } from "../fuzzyword.ts";
+import { dictionaryFor, type SoundDictionary, langCodeFor } from "../fuzzyword.ts";
 
 export const MIN_WORD_LENGTH = 3;
 
@@ -19,7 +19,9 @@ export async function addSimilarSound(ctx: PipelineContext): Promise<void> {
 
     const results: string[] = [];
     for (const phrase of ctx.store.data.phrases ?? []) {
-      const line = buildSimilarSoundLine(dictionary, phrase.text_l1, random);
+      const line = code === "zh"
+        ? buildChineseSimilarSoundLine(dictionary, phrase.text_l1, random)
+        : buildSimilarSoundLine(dictionary, phrase.text_l1, random);
       if (line !== null) results.push(line);
     }
 
@@ -36,7 +38,7 @@ export async function addSimilarSound(ctx: PipelineContext): Promise<void> {
 // the unchanged phrase when the dictionary offers no alternative — same
 // behavior as the Ruby step.
 export function buildSimilarSoundLine(
-  dictionary: Fuzzyword | null,
+  dictionary: SoundDictionary | null,
   phrase: string,
   random: () => number,
 ): string | null {
@@ -76,4 +78,24 @@ function stripTrailingPunctuation(word: string): string {
 function splitTrailingPunctuation(word: string): [string, string] {
   const match = word.match(/^(.+?)(\p{P}+)$/u);
   return match ? [match[1], match[2]] : [word, ""];
+}
+
+// Keep Rails' word-index boundaries and one output line for every Chinese phrase.
+// Timed pipeline words are space-separated; an unsegmented run with no dictionary
+// reading is left intact. Re-segmenting it here would invalidate Rails indexes.
+export function buildChineseSimilarSoundLine(
+  dictionary: SoundDictionary | null,
+  phrase: string,
+  random: () => number,
+): string {
+  if (!dictionary) return phrase;
+  const candidates = [...phrase.matchAll(/['\p{L}][\p{L}\p{M}]*(?:'[\p{L}\p{M}]+)*/gu)]
+    .filter((match) => /^\p{Script=Han}{1,4}$/u.test(match[0]))
+    .map((match) => ({ match, alternatives: dictionary.lookup(match[0]) }))
+    .filter(({ alternatives }) => alternatives.length > 0);
+  if (candidates.length === 0) return phrase;
+  const { match, alternatives } = candidates[Math.floor(random() * candidates.length)];
+  const replacement = alternatives[Math.floor(random() * alternatives.length)];
+  return phrase.slice(0, match.index) + `[${replacement}]` +
+    phrase.slice(match.index + match[0].length);
 }

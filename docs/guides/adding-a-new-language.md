@@ -80,7 +80,7 @@ YouTube detection needs no static entry: Rails sends every database language and
 
 Examples are not required for the pipeline to run, but an example must never demonstrate the wrong output language:
 
-- `pipeline/src/prompts/addTokenTranslations.ts` selects examples by **translation language**. Unknown targets get no token example. Add a target-language example for better word-level translations.
+- `pipeline/src/prompts/addTokenTranslations.ts` selects **source-language** examples for English targets. Chinese targets have an English → Chinese example; other targets omit examples. Always match the example output to the requested translation language.
 - `pipeline/src/prompts/translate.ts` uses an exact source/target example when available, then a Spanish-source example in the requested target language, and finally Spanish → English. Add a target-language fallback for every supported translation language.
 - `pipeline/src/prompts/addLessons.ts` and `pipeline/src/prompts/extractCompounds.ts` select examples by **source language** and safely fall back to English. Add both the language-code mapping and an example when the language needs script- or grammar-specific guidance.
 
@@ -143,6 +143,7 @@ Also check that the migrations created the exact records and that pipeline type-
 | `ar-JO` | Arabic | العربية الفلسطينية | Yes | `ar-JO` | `ar` | `ara` |
 | `el` | Greek | Ελληνικά | No | `el-GR` | `el` | `ell`, `gre` |
 | `sv` | Swedish | Svenska | No | `sv-SE` | `sv` | `swe` |
+| `zh` | Chinese | 中文 | No | `zh-CN` | `zh` | `zho`, `chi` |
 
 ## Troubleshooting
 
@@ -154,3 +155,14 @@ Also check that the migrations created the exact records and that pipeline type-
 | TTS uses an English voice | Missing Azure voice or locale mapping |
 | Sentence prompt demonstrates English for a non-English target | Missing target-language fallback in `translate.ts` |
 | Similar-sound activity has no substitutions | No frequency dictionary is configured for the source language |
+
+Chinese defaults to Mandarin speech using `zh-CN-XiaoxiaoNeural`, verified against
+[Microsoft's voice catalog](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support).
+Chinese examples use Simplified characters, while source-processing prompts preserve
+both Simplified and Traditional input. The timed transcription example demonstrates
+multi-character words; compound extraction can merge existing timed tokens but
+cannot split them. Chinese similar-sound activities use a bundled frequency and
+pinyin dictionary with pronunciation matching and support for short words; see
+[Chinese dictionary sources and rebuilding](../../pipeline/data/CHINESE.md).
+The matching step preserves existing word boundaries and skips words with no
+usable reading or audible alternative.

@@ -16,6 +16,8 @@ Deno.test("translatePrompt uses the exact pair's example when one exists", () =>
 
 Deno.test("translatePrompt covers every configured language pair", () => {
   const pairs: Array<[string, string]> = [
+    ["Chinese", "English"],
+    ["Chinese", "Hebrew"],
     ["Arabic", "Hebrew"],
     ["Arabic", "English"],
     ["Spanish", "English"],
@@ -83,4 +85,10 @@ Deno.test("translatePrompt asks a repair pass for only the numbers it names", ()
   assertStringIncludes(prompt, "Output exactly 2 lines");
   assertStringIncludes(prompt, "input line numbers, in this order: 46, 59");
   assertStringIncludes(prompt, "context only");
+});
+
+Deno.test("Chinese translation fallback preserves numbered Chinese output", () => {
+  const prompt = translatePrompt("German", "Chinese", 3);
+  assertStringIncludes(prompt, "1. 听到你的声音让我很开心");
+  assertStringIncludes(prompt, "3. 而我，正慢慢地失去你");
 });

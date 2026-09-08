@@ -25,6 +25,7 @@ Reformat the transcript so it is easy for a language student to study. Divide th
 - NEVER split an article from its noun, a preposition from its object, an auxiliary from its verb, or a fixed expression.
 - Aim for roughly 3–12 words. Concise lines are preferred, but semantic completeness is more important than length.
 - No line may exceed 20 words.
+- For Chinese, keep multi-character words, numeral-classifier-noun groups, and fixed expressions together. Preserve the supplied script (Simplified or Traditional), punctuation, and word spacing; do not add pinyin.
 
 ### 3. Lesson Grouping
 - Aim for 4–8 lines per lesson. Group lines by topic, scene, or lyrical idea.
@@ -48,6 +49,7 @@ export function exampleFor(language: string): LessonExample {
 }
 
 const LANGUAGE_CODES: Record<string, string> = {
+  chinese: "zh",
   english: "en",
   french: "fr",
   german: "de",
@@ -76,6 +78,25 @@ function lessonExample(
 }
 
 const EXAMPLES: Record<string, LessonExample> = {
+  zh: lessonExample(
+    "今天早上，我走出家门。 街上的商店刚刚开门。 我买了一杯热茶。 然后沿着小路走到河边。 河边有几个人在跑步。 下午，我去看望朋友。 我们一起做了一顿饭。 吃完饭，我们聊了很久。 天黑的时候，我坐车回家。 这真是美好的一天。",
+    "清晨的散步",
+    [
+      "今天早上，我走出家门。",
+      "街上的商店刚刚开门。",
+      "我买了一杯热茶。",
+      "然后沿着小路走到河边。",
+      "河边有几个人在跑步。",
+    ],
+    "和朋友相聚",
+    [
+      "下午，我去看望朋友。",
+      "我们一起做了一顿饭。",
+      "吃完饭，我们聊了很久。",
+      "天黑的时候，我坐车回家。",
+      "这真是美好的一天。",
+    ],
+  ),
   en: lessonExample(
     "We were good, we were gold. Kind of dream that can't be sold. We were right until we weren't. Built a home and watched it burn. I didn't want to leave you. I didn't want to lie. Started to cry in the kitchen. Then I remembered who I was. I can buy myself flowers. I can love me better than you can.",
     "The Golden Dream",

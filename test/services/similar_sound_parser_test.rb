@@ -1,6 +1,17 @@
 require 'test_helper'
 
 class SimilarSoundParserTest < ActiveSupport::TestCase
+  test "Chinese substitutions preserve phrase alignment and word indexes" do
+    phrases = [Phrase.new(text_l1: "好。"), Phrase.new(text_l1: "我 买 茶。")]
+    SimilarSoundParser.new(phrases, "好。\n我 [卖] 茶。").call
+
+    assert_empty phrases.first.similar_sounds
+    substitution = phrases.last.similar_sounds.first
+    assert_equal 1, substitution.start_word_index
+    assert_equal 1, substitution.end_word_index
+    assert_equal "卖", substitution.replacement_text
+  end
+
   test "redemption song" do
     llm_response = <<~END
 Output:

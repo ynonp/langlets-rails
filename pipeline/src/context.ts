@@ -5,7 +5,7 @@
 import type { LanguageRef, PipelineError, ProgressData } from "./types.ts";
 import type { ProgressStore } from "./progress.ts";
 import type { ModelRegistry } from "./models.ts";
-import type { Fuzzyword } from "./fuzzyword.ts";
+import type { SoundDictionary } from "./fuzzyword.ts";
 import type { TranscriptResult } from "./supadata.ts";
 import type { SpeechToTextResult } from "./speechToText.ts";
 import type { DownloadedAudio } from "./audio.ts";
@@ -23,7 +23,7 @@ export interface PipelineContext {
   baseDelayMs: number;
   // Injection points for the similar-sound step (tests swap in a tiny
   // dictionary and a fixed RNG).
-  fuzzywordFor?: (code: string) => Promise<Fuzzyword | null>;
+  fuzzywordFor?: (code: string) => Promise<SoundDictionary | null>;
   random?: () => number;
   // Injection point for Supadata native captions (tests avoid network calls).
   transcribeVideo?: (videoUrl: string, languageCode: string | null) => Promise<TranscriptResult>;

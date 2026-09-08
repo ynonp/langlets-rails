@@ -27,6 +27,10 @@ description whose meaning is simply the sum of its words.
 Decide each occurrence from its complete context. The same written words may be joined in one
 occurrence and left separate in another. Never join words across an input line break. Do not omit,
 repeat, reorder, respell, or normalize input words. Preserve exact capitalization and punctuation.
+For Chinese, the input spaces delimit the existing timed tokens. Keep multi-character words
+intact and merge adjacent tokens only for an established lexical unit. Preserve spaces inside
+merged items and the supplied Simplified or Traditional characters; do not add pinyin or split
+an existing timed token into individual characters.
 Output only the JSON array.
 
 Example input:
@@ -43,6 +47,7 @@ export function exampleFor(language: string): CompoundExample {
 }
 
 const LANGUAGE_CODES: Record<string, string> = {
+  chinese: "zh",
   english: "en",
   french: "fr",
   german: "de",
@@ -55,6 +60,10 @@ const LANGUAGE_CODES: Record<string, string> = {
 };
 
 const EXAMPLES: Record<string, CompoundExample> = {
+  zh: {
+    input: "他 在 北京 大学 学习。\n我 买 了 三 杯 热 茶。",
+    output: ["他", "在", "北京 大学", "学习。", "我", "买", "了", "三", "杯", "热", "茶。"],
+  },
   en: {
     input: "The chief of staff ate a hot dog beside a hot dog.",
     output: ["The", "chief of staff", "ate", "a", "hot dog", "beside", "a", "hot", "dog."],

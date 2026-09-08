@@ -46,3 +46,10 @@ swedish:
   native_name: 'Svenska'
   pronunciation_variant_name: 'sv-SE'
   rtl: false
+
+chinese:
+  iso_name: 'zh'
+  english_name: 'Chinese'
+  native_name: '中文'
+  pronunciation_variant_name: 'zh-CN'
+  rtl: false

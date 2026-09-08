@@ -8,6 +8,10 @@ Return one output entry for every word, in the order heard. For every entry retu
 - start_seconds: when that word starts being spoken or sung
 - end_seconds: when that word stops being spoken or sung
 
+For Chinese, each entry is a meaningful word, which may contain multiple characters: for
+我喜欢音乐, return 我, 喜欢, 音乐 as three timed entries. Do not return the whole sentence
+as one word or split every character. Use Chinese characters, not pinyin.
+
 Transcribe the whole video from start to end. Include every repetition in full. For interviews,
 include every speaker. The main content is in ${clipLanguage}; omit intros, outros, or passages in
 other languages. Do not translate, summarize, correct, split, merge, add, or reorder words. Omit

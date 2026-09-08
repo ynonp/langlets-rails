@@ -1025,11 +1025,31 @@ provisional progress row, marks the visible request failed, and costs no
 credit.
 
 The language catalog supports English (`en`), Spanish (`es`), French (`fr`),
-German (`de`), Hebrew (`he`), Palestinian Arabic (`ar-JO`), Greek (`el`), and
-Swedish (`sv`) as both source and translation languages. Greek uses Azure
+German (`de`), Hebrew (`he`), Palestinian Arabic (`ar-JO`), Greek (`el`),
+Swedish (`sv`), and Chinese (`zh`, native name `中文`) as both source and
+translation languages. Greek uses Azure
 locale `el-GR`; Swedish uses `sv-SE`. Supadata caption selection uses the base
 `el` and `sv` codes, while TikTok's ElevenLabs detection normalizes ISO-639-3
-`ell`/`gre` and `swe` back to those database records.
+`ell`/`gre` and `swe` back to those database records. Chinese uses Supadata
+`zh`, Scribe aliases `zho`/`chi`, and Mandarin Azure locale `zh-CN` with
+`zh-CN-XiaoxiaoNeural`. Chinese pipeline examples cover timed multi-character
+words, lesson grouping, compounds, and sentence/token translation in both
+directions with English. Sentence translation also has Chinese → Hebrew and
+a Chinese-target fallback. Source text retains its Simplified or Traditional
+characters; Chinese translation examples use Simplified Chinese.
+Compound extraction preserves existing timed tokens and their spacing. Chinese
+similar-sound substitutions use a bundled 14,876-entry frequency/pronunciation
+dictionary built from pinned FrequencyWords/OpenSubtitles and mozillazg pinyin
+sources. The Chinese lookup compares equal-length pinyin syllable sequences,
+allows one syllable to change by one spelling edit and/or tone, excludes exact
+homophones and ambiguous readings, and ranks alternatives by distance then
+frequency. It supports short Chinese words and preserves text spacing,
+punctuation, existing word boundaries, and one output line per phrase for the
+Rails `SimilarSoundParser`. Words without candidates pass through unchanged;
+unsegmented sentences are not split at this stage. Other languages retain their
+existing spelling-distance lookup. Greek and Swedish still have no dictionary.
+See [Chinese dictionary sources and rebuild instructions](../pipeline/data/CHINESE.md)
+for licensing, filtering, and limitations. Interface copy falls back to English.
 
 YouTube detection is a dedicated Gemini 2.5 Flash video request constrained to
 the database language ISO codes. TikTok detection first downloads verified
@@ -2763,6 +2783,7 @@ The platform integrates audio files using Active Storage attachments on two core
 - **Hebrew**: `he-IL-AvriNeural`
 - **Greek**: `el-GR-AthinaNeural`
 - **Swedish**: `sv-SE-SofieNeural`
+- **Chinese (Mandarin)**: `zh-CN-XiaoxiaoNeural`
 
 ### Audio Generation Process
 1. **Text Input**: Phrase or token text in source language

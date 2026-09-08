@@ -2,6 +2,7 @@ import { assertEquals, assertFalse, assertStringIncludes } from "@std/assert";
 import { addLessonsPrompt, exampleFor } from "../src/prompts/addLessons.ts";
 
 const LANGUAGES = [
+  ["Chinese", "zh"],
   ["English", "en"],
   ["Spanish", "es"],
   ["French", "fr"],

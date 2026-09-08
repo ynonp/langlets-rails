@@ -28,7 +28,7 @@ Deno.test("token translation prompt selects its example by clip language", () =>
 });
 
 Deno.test("token translation prompt has source-to-English examples for every supported clip language", () => {
-  for (const language of ["Spanish", "French", "Arabic", "Greek", "German", "Swedish", "Hebrew"]) {
+  for (const language of ["Chinese", "Spanish", "French", "Arabic", "Greek", "German", "Swedish", "Hebrew"]) {
     const prompt = addTokenTranslationsPrompt(language, "English");
     assert(prompt.includes(`## Example Input:\n${exampleInputs[language]}`));
     assert(prompt.includes(`## Expected Output:\n${examples[language]}`));
@@ -330,4 +330,10 @@ Deno.test("a failed chunk records its input lines and the raw LLM response", asy
     "encore (Salut *encore*) |",
   ]);
   assertEquals(error.agent_response, "a | x");
+});
+
+Deno.test("Chinese target token example contains Chinese glosses and source POS", () => {
+  const prompt = addTokenTranslationsPrompt("English", "Chinese");
+  assert(prompt.includes("music (I like listening to *music*.) | 音乐 [noun]"));
+  assert(!prompt.includes("| music [noun]"));
 });

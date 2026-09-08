@@ -12,6 +12,12 @@
 // Distance is OSA (optimal string alignment: Levenshtein + adjacent
 // transposition counted as one edit), matching symspell_rs's default.
 
+import { ChineseSounds } from "./chineseSounds.ts";
+
+export interface SoundDictionary {
+  lookup(word: string): string[];
+}
+
 const MAX_EDIT_DISTANCE = 2;
 const MAX_RESULTS = 3;
 
@@ -25,6 +31,7 @@ const DICTIONARIES: Record<string, string> = {
   ru: "ru-100k.txt",
   es: "es-100k.txt",
   ar: "ar-50k.txt",
+  zh: "zh-pronunciation.json",
 };
 
 // clip_language arrives as an English name (the Rails Language.english_name);
@@ -32,6 +39,7 @@ const DICTIONARIES: Record<string, string> = {
 // map the supported names statically, and the trigger payload can override
 // with an explicit clip_language_iso for anything else.
 const ENGLISH_NAMES: Record<string, string> = {
+  chinese: "zh",
   english: "en",
   french: "fr",
   german: "de",
@@ -106,9 +114,9 @@ export class Fuzzyword {
 
 // One dictionary per language, loaded once per isolate. The promise is cached
 // (not the result) so concurrent first lookups share a single load.
-const cache = new Map<string, Promise<Fuzzyword | null>>();
+const cache = new Map<string, Promise<SoundDictionary | null>>();
 
-export function dictionaryFor(code: string): Promise<Fuzzyword | null> {
+export function dictionaryFor(code: string): Promise<SoundDictionary | null> {
   let loading = cache.get(code);
   if (!loading) {
     loading = loadDictionary(code);
@@ -117,13 +125,15 @@ export function dictionaryFor(code: string): Promise<Fuzzyword | null> {
   return loading;
 }
 
-async function loadDictionary(code: string): Promise<Fuzzyword | null> {
+async function loadDictionary(code: string): Promise<SoundDictionary | null> {
   const file = DICTIONARIES[code];
   if (!file) return null;
 
   try {
     const text = await Deno.readTextFile(new URL(`../data/${file}`, import.meta.url));
-    return Fuzzyword.fromText(text);
+    return code === "zh"
+      ? new ChineseSounds(JSON.parse(text).entries)
+      : Fuzzyword.fromText(text);
   } catch (error) {
     console.warn(`fuzzyword: failed to load ${file}: ${error}`);
     return null;

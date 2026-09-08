@@ -1,4 +1,8 @@
 export const exampleInputs: Record<string, string> = {
+  Chinese: `我 (*我*喜欢听音乐。) |
+喜欢 (我*喜欢*听音乐。) |
+听 (我喜欢*听*音乐。) |
+音乐 (我喜欢听*音乐*。) |`,
   Hebrew: `לא (אתה *לא* רוצה אותי כמו שאני רוצה אותך מותק) |
 אתה (*אתה* לא רוצה אותי כמו שאני רוצה אותך מותק) |
 רוצה (אתה לא *רוצה* אותי כמו שאני רוצה אותך מותק) |
@@ -39,6 +43,10 @@ dig (Du vill inte ha mig som jag vill ha *dig* älskling) |
 // Each worked example demonstrates the course's source language translated
 // into English, matching the direction used for English-language courses.
 export const examples: Record<string, string> = {
+  Chinese: `我 (*我*喜欢听音乐。) | I [pronoun]
+喜欢 (我*喜欢*听音乐。) | like [verb]
+听 (我喜欢*听*音乐。) | listen to [verb]
+音乐 (我喜欢听*音乐*。) | music [noun]`,
   Hebrew: `לא (אתה *לא* רוצה אותי כמו שאני רוצה אותך מותק) | not [adverb]
 אתה (*אתה* לא רוצה אותי כמו שאני רוצה אותך מותק) | you [pronoun]
 רוצה (אתה לא *רוצה* אותי כמו שאני רוצה אותך מותק) | want [verb]
@@ -144,6 +152,17 @@ ${exampleInputs[clipLanguage]}
 
 ## Expected Output:
 ${examples[clipLanguage]}
+`
+      : translationLanguage === "Chinese"
+      ? `## Example Input (English source):
+I (*I* like listening to music.) |
+like (I *like* listening to music.) |
+music (I like listening to *music*.) |
+
+## Expected Output (Chinese translation):
+I (*I* like listening to music.) | 我 [pronoun]
+like (I *like* listening to music.) | 喜欢 [verb]
+music (I like listening to *music*.) | 音乐 [noun]
 `
       : ""
   }

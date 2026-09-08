@@ -74,6 +74,8 @@ export async function detectLanguage(
 // database uses ISO-639-1 (and may carry a regional suffix such as ar-JO).
 const SCRIBE_ISO_639_3_TO_1: Record<string, string> = {
   ara: "ar",
+  zho: "zh",
+  chi: "zh",
   deu: "de",
   eng: "en",
   ell: "el",

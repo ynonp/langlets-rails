@@ -1,5 +1,5 @@
 import { assert, assertEquals } from "@std/assert";
-import { dictionaryFor, Fuzzyword, langCodeFor, osaDistance } from "../src/fuzzyword.ts";
+import { dictionaryFor, Fuzzyword, isoCodeFor, langCodeFor, osaDistance } from "../src/fuzzyword.ts";
 
 Deno.test("osaDistance counts substitutions, insertions, deletions and transpositions", () => {
   assertEquals(osaDistance("house", "house", 2), 0);
@@ -76,4 +76,9 @@ Deno.test("real French dictionary lookup returns close, frequent neighbours", as
   for (const alt of alternatives) {
     assert(osaDistance("maison", alt, 2) <= 2, `${alt} is not within edit distance 2`);
   }
+});
+
+Deno.test("Chinese resolves its ISO code and pronunciation dictionary", () => {
+  assertEquals(isoCodeFor("Chinese"), "zh");
+  assertEquals(langCodeFor("Chinese"), "zh");
 });

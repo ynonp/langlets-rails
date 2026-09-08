@@ -59,6 +59,12 @@ l_sv = Language.find_or_create_by!(iso_name: 'sv') do |lang|
   lang.pronunciation_variant_name = 'sv-SE'
 end
 
+l_zh = Language.find_or_create_by!(iso_name: 'zh') do |lang|
+  lang.english_name = 'Chinese'
+  lang.native_name = '中文'
+  lang.pronunciation_variant_name = 'zh-CN'
+end
+
 admin = User.find_or_create_by(email: 'ynon@hey.com') do |user|
   user.password = '10203040'
   user.password_confirmation = '10203040'

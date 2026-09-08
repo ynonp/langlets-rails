@@ -45,6 +45,10 @@ const SWEDISH = `Det gör mig så glad att höra din röst, även när jag sover
 Äntligen reste du som i dina drömmar och letade efter en plats att återvända till
 Och jag, långsamt, förlorar dig`;
 
+const CHINESE = `听到你的声音让我很开心，哪怕是在睡梦中
+终于，你像梦中那样旅行，寻找一个可以回去的地方
+而我，正慢慢地失去你`;
+
 // Worked examples for the pairs we actually see in production. The exact
 // (clip, translation) pair matters far more than either language alone — a
 // model asked to translate Arabic into Hebrew and shown a Spanish->English
@@ -53,6 +57,10 @@ Och jag, långsamt, förlorar dig`;
 // as its own "Hebrew" translation while the word-level step (whose examples
 // already keyed off the real target language) got Hebrew right.
 const examples: Record<string, Record<string, Example>> = {
+  Chinese: {
+    English: { input: CHINESE, output: ENGLISH },
+    Hebrew: { input: CHINESE, output: HEBREW },
+  },
   Arabic: {
     Hebrew: { input: ARABIC, output: HEBREW },
     English: { input: ARABIC, output: ENGLISH },
@@ -60,6 +68,7 @@ const examples: Record<string, Record<string, Example>> = {
   Spanish: {
     English: { input: SPANISH, output: ENGLISH },
     Greek: { input: SPANISH, output: GREEK },
+    Chinese: { input: SPANISH, output: CHINESE },
     Hebrew: { input: SPANISH, output: HEBREW },
     Swedish: { input: SPANISH, output: SWEDISH },
   },

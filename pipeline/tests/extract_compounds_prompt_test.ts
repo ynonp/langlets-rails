@@ -12,3 +12,10 @@ Deno.test("compound examples accept names and ISO codes and fall back to English
   assertEquals(exampleFor("ar"), exampleFor("Arabic"));
   assertEquals(exampleFor("Klingon"), exampleFor("English"));
 });
+
+Deno.test("Chinese compounds preserve the complete timed-token input", () => {
+  const example = exampleFor("Chinese");
+  assertEquals(exampleFor("zh-CN"), example);
+  assertEquals(example.output.join(" "), example.input.replaceAll("\n", " "));
+  assertStringIncludes(extractCompoundsPrompt("Chinese"), '"北京 大学"');
+});
