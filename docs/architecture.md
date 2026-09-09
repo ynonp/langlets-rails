@@ -1070,7 +1070,7 @@ existing spelling-distance lookup. Greek and Swedish still have no dictionary.
 See [Chinese dictionary sources and rebuild instructions](../pipeline/data/CHINESE.md)
 for licensing, filtering, and limitations. Interface copy falls back to English.
 
-YouTube detection is a dedicated Gemini 2.5 Flash video request constrained to
+YouTube detection is a dedicated Gemini 3.7 Flash video request constrained to
 the database language ISO codes. TikTok detection first downloads verified
 audio with yt-dlp and sends it to ElevenLabs Scribe without a language hint;
 this is the cheaper path and rejects silent/audio-less renditions before they
