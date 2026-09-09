@@ -3,6 +3,9 @@
   <% if local_assigns[:statuses] %>
     <div><%= form.label :status %><%= form.select :status, ImportRequest.statuses.keys.map { |status| [status.humanize, status] }, selected: @status, include_blank: "All statuses" %></div>
   <% end %>
+  <% if local_assigns[:origins] %>
+    <div><%= form.label :origin %><%= form.select :origin, [["Real user requests", "user"], ["Guest placeholders", "guest"]], { selected: @origin, include_blank: "All origins" } %></div>
+  <% end %>
   <%= form.submit "Filter", class: "admin-button" %>
   <%= link_to "Clear", request.path %>
 <% end %>

@@ -2,7 +2,7 @@
 <h1>Import #<%= @run.id %></h1>
 <div class="admin-section-heading"><h2><%= @run.course&.name.presence || @run.youtube_video_id %></h2><%= admin_status(@run.status) %></div>
 <dl class="admin-details">
-<dt>Requested by</dt><dd><%= @run.user.email %></dd>
+<dt>Requested by</dt><dd><%= @run.user.email %><% if @run.guest_started? %> · <span class="admin-badge neutral">Guest</span> placeholder for a logged-out visitor<% end %></dd>
 <dt>Source URL</dt><dd><%= @run.youtube_url %></dd>
 <dt>Languages</dt><dd><%= @run.clip_language.presence || "Unknown" %> → <%= @run.translation_language %></dd>
 <dt>Stage</dt><dd><%= @run.pipeline_step.presence || "—" %> · <%= @run.display_percent %>%</dd>

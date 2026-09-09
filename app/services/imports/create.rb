@@ -242,7 +242,11 @@ module Imports
     # importer bought: this course, published into their own channel, which
     # Imports::Settlement does for each of them when the run lands.
     def join!(course, video)
-      Pricing.ensure_affordable!(user, cost: cost_for(course), excluding: existing_request&.id)
+      # Nothing is published or charged for a guest placeholder, so nothing is
+      # affordable or unaffordable about it — matching #create_and_queue! and
+      # #create_detection_request!. Pricing here would let the admin's own
+      # balance turn a visitor away from the front door.
+      Pricing.ensure_affordable!(user, cost: cost_for(course), excluding: existing_request&.id) unless guest_started
 
       persist_request!(
         youtube_url: video.canonical_url,
@@ -295,8 +299,7 @@ module Imports
           course: course,
           create_song_progress: course.create_song_progress || existing_request&.create_song_progress,
           status: :ready,
-          progress_percent: 100,
-          guest_started: true
+          progress_percent: 100
         )
         Settlement.complete!(import_request, notify: false)
         return Result.new(status: :adopted, course: course, import_request: import_request, cost: 0)
@@ -379,7 +382,12 @@ module Imports
         # any work is queued, rather than inside the pipeline.
         progress.assert_current_data_format!
 
-        course = if guest_started && existing_request&.course&.language_id.nil?
+        # Only a detection promotion has a provisional course to adopt. The
+        # safe-navigation chain reads as "no language yet" but is also true when
+        # there is no request and no course at all — which is every guest import
+        # of a video whose clip_language we already know (config/homepage_videos.yml),
+        # since those skip detection and arrive here with existing_request nil.
+        course = if guest_started && existing_request&.course && existing_request.course.language_id.nil?
           existing_request.course.tap { |provisional| provisional.update!(language: clip_language_record) }
         else
           build_course!(video)
@@ -469,7 +477,7 @@ module Imports
     # working, not a hole in it — the credit bought the course, and a course that
     # gains a language is still the one course they bought.
     def create_translation!(course, video)
-      Pricing.ensure_affordable!(user, cost: cost_for(course), excluding: existing_request&.id)
+      Pricing.ensure_affordable!(user, cost: cost_for(course), excluding: existing_request&.id) unless guest_started
 
       import_request = nil
       ActiveRecord::Base.transaction do
@@ -501,7 +509,17 @@ module Imports
       Result.new(status: :created, import_request: import_request, course: course, cost: cost_for(course))
     end
 
+    # `guest_started` is written here rather than by each caller because every
+    # branch that creates a request can be reached from the guest flow
+    # (GuestImportRequestsController imports as the admin on a visitor's behalf),
+    # and a guest row that loses the flag stops being a placeholder: Settlement
+    # publishes it into the admin's channel, charges a credit for it, and mails
+    # the admin "your course is ready". Forgetting it in one branch is exactly
+    # how that happened for videos in config/homepage_videos.yml, whose known
+    # clip_language skips detection and lands straight in #create_and_queue!.
     def persist_request!(**attributes)
+      attributes = attributes.reverse_merge(guest_started: guest_started)
+
       if existing_request
         existing_request.update!(attributes)
         existing_request

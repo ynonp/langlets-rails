@@ -87,6 +87,32 @@ class Imports::SettlementNotificationsTest < ActiveSupport::TestCase
     assert_equal 0, @user.notifications.count
   end
 
+  # The admin-owned placeholder GuestImportRequestsController creates for a
+  # logged-out visitor. Nobody is waiting on it — the visitor has a request of
+  # their own — so it must not reach the admin as a user-facing notification.
+  # The operational email still goes out: the import really did fail.
+  test "a guest placeholder failing is reported to operations but told to nobody" do
+    placeholder = @request
+    placeholder.update!(guest_started: true)
+
+    assert_enqueued_email_with ImportFailureMailer, :failed, args: [ placeholder ] do
+      Imports::Settlement.fail!(placeholder, "Word translation count mismatch")
+    end
+
+    assert placeholder.reload.failed?
+    assert_equal 0, @user.notifications.count
+  end
+
+  test "a guest placeholder completing is told to nobody" do
+    placeholder = @request
+    placeholder.update!(guest_started: true)
+
+    Imports::Settlement.complete!(placeholder)
+
+    assert placeholder.reload.ready?
+    assert_equal 0, @user.notifications.count
+  end
+
   private
 
   def create_request(user: @user)

@@ -2,6 +2,7 @@ require "test_helper"
 
 class GuestImportFlowTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
+  include ActionMailer::TestHelper
 
   VIDEO_ID = "kJQP7kiw5Fk".freeze
   SHARED_URL = "https://youtu.be/#{VIDEO_ID}?si=homepage".freeze
@@ -89,6 +90,99 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
     assert claim.ready?
     assert_equal published, claim.course
     assert learner.default_channel.channel_items.exists?(course: published)
+  end
+
+  # A configured example carries its clip_language, so the guest import skips
+  # detection and goes straight to Imports::Create#create_and_queue! — the branch
+  # that used to drop `guest_started` and turn the admin's placeholder into a
+  # real import: published into the admin's channel, charged for, and mailed to
+  # them as "your course is ready".
+  test "a configured example with no course yet stays a silent guest placeholder" do
+    configured = HomepageVideos.all.first
+    video_id = VideoSource.video_id(configured.url)
+    video = VideoSource::Video.new(
+      provider: :youtube,
+      video_id: video_id,
+      title: configured.title,
+      author_name: "Example author",
+      thumbnail_url: VideoSource.derived_thumbnail_url(configured.url),
+      canonical_url: configured.url
+    )
+
+    assert_no_enqueued_jobs only: DetectImportLanguageJob do
+      assert_enqueued_with(job: CreateCourseJob) do
+        VideoSource.stub(:fetch, video) do
+          post guest_import_requests_path, params: { url: configured.url }
+        end
+      end
+    end
+
+    source = @admin.import_requests.find_by!(youtube_video_id: video_id)
+    assert source.guest_started?, "the admin placeholder must be flagged as guest-started"
+    assert source.queued?
+    assert_equal configured.clip_language, source.clip_language
+
+    # Settling it must publish nothing, charge nothing and say nothing: the
+    # visitor it stands in for is told through their own claimed request.
+    assert_no_enqueued_emails do
+      Imports::Settlement.complete!(source.reload)
+    end
+
+    assert source.reload.ready?
+    assert_equal 0, @admin.notifications.count
+    assert_not @admin.default_channel.channel_items.exists?(course: source.course)
+    assert_empty @admin.import_requests.where(guest_started: false)
+  end
+
+  # The path the live bug actually took: the configured example is already
+  # published, but not in the language this visitor reads, so Imports::Create
+  # goes to #create_translation! — which also dropped `guest_started`, leaving
+  # the admin with a charged, published, "your course is ready" import of a video
+  # they never asked for, once per visitor.
+  test "a configured example needing a new translation stays a silent guest placeholder" do
+    configured = HomepageVideos.all.first
+    clip_language = Language.find_by!(english_name: configured.clip_language)
+    video_id = VideoSource.video_id(configured.url)
+    video = VideoSource::Video.new(
+      provider: :youtube,
+      video_id: video_id,
+      title: configured.title,
+      author_name: "Example author",
+      thumbnail_url: VideoSource.derived_thumbnail_url(configured.url),
+      canonical_url: configured.url
+    )
+    published = Course.create!(
+      name: configured.title,
+      slug: "configured-other-language",
+      main_media_url: configured.url,
+      youtube_video_id: video_id,
+      language: clip_language,
+      user: @admin,
+      status: :published
+    )
+    # Ready in Hebrew, but this visitor is reading English.
+    published.course_translations.create!(language: languages(:hebrew), name: configured.title, status: :ready)
+    balance_before = @admin.reload.credit_balance
+
+    assert_enqueued_with(job: AddCourseTranslationJob) do
+      VideoSource.stub(:fetch, video) do
+        post guest_import_requests_path, params: { url: configured.url }
+      end
+    end
+
+    source = @admin.import_requests.find_by!(youtube_video_id: video_id)
+    assert source.guest_started?, "the admin placeholder must be flagged as guest-started"
+    assert source.queued?
+    assert_equal published, source.course
+    assert_equal balance_before, @admin.reload.credit_balance
+
+    assert_no_enqueued_emails do
+      Imports::Settlement.complete!(source.reload)
+    end
+
+    assert_equal 0, @admin.notifications.count
+    assert_equal balance_before, @admin.reload.credit_balance
+    assert_not @admin.default_channel.channel_items.exists?(course: published)
   end
 
   test "try page shows a large preview and both authentication choices" do

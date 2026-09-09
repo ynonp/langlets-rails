@@ -67,6 +67,43 @@ class AdminPanelTest < ActionDispatch::IntegrationTest
     assert_select "a[href='#{admin_channel_path(@user.default_channel.id)}']"
   end
 
+  # Every guest import shows up twice on this screen — the admin-owned
+  # placeholder GuestImportRequestsController creates for the logged-out visitor,
+  # and the visitor's own request once they sign up. Telling them apart is the
+  # difference between reading this list and misreading it.
+  test "guest placeholders are badged and can be filtered out of the runs list" do
+    sign_in @admin
+    placeholder = ImportRequest.create!(
+      user: @admin, course: @course, create_song_progress: @progress,
+      youtube_url: @progress.youtubeurl, youtube_video_id: "adminVid002",
+      clip_language: "Spanish", translation_language: "English",
+      status: :ready, guest_started: true
+    )
+
+    get admin_pipeline_runs_path
+    assert_select "a[href='#{admin_pipeline_run_path(placeholder)}']"
+    assert_select "a[href='#{admin_pipeline_run_path(@run)}']"
+    assert_select "td .admin-badge", text: "Guest", count: 1
+
+    get admin_pipeline_runs_path(origin: "user")
+    assert_select "a[href='#{admin_pipeline_run_path(placeholder)}']", count: 0
+    assert_select "a[href='#{admin_pipeline_run_path(@run)}']"
+    assert_select "td .admin-badge", text: "Guest", count: 0
+
+    get admin_pipeline_runs_path(origin: "guest")
+    assert_select "a[href='#{admin_pipeline_run_path(placeholder)}']"
+    assert_select "a[href='#{admin_pipeline_run_path(@run)}']", count: 0
+
+    # An unknown value must not silently filter anything out.
+    get admin_pipeline_runs_path(origin: "'; DROP TABLE import_requests; --")
+    assert_response :success
+    assert_select "a[href='#{admin_pipeline_run_path(@run)}']"
+    assert_select "a[href='#{admin_pipeline_run_path(placeholder)}']"
+
+    get admin_pipeline_run_path(placeholder)
+    assert_select ".admin-badge", text: "Guest"
+  end
+
   test "retry resumes once and rejects a repeated submission" do
     sign_in @admin
     assert_enqueued_with(job: CreateCourseJob, args: [ @progress.id, @course.id, languages(:english).id ]) do

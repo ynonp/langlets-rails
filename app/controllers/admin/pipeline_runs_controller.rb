@@ -5,6 +5,12 @@ module Admin
       scope = ImportRequest.includes(:user, :course).order(created_at: :desc, id: :desc)
       @status = params[:status].to_s
       scope = scope.where(status: @status) if ImportRequest.statuses.key?(@status)
+      # Guest placeholders are the admin-owned rows GuestImportRequestsController
+      # creates for logged-out visitors, so every guest import shows up twice here
+      # — once as the placeholder, once as the visitor's own request once they
+      # sign up. Filtering them out is what makes this list a list of real users.
+      @origin = params[:origin].to_s
+      scope = scope.where(guest_started: @origin == "guest") if %w[user guest].include?(@origin)
       scope = scope.joins(:user).where("users.email ILIKE ? OR import_requests.youtube_url ILIKE ? OR import_requests.failure_reason ILIKE ?", term, term, term) if @query.present?
       @runs = paginate(scope)
     end

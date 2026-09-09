@@ -4,7 +4,7 @@
     <% runs.each do |run| %>
       <tr>
         <td><%= link_to "##{run.id} · #{run.course&.name.presence || run.youtube_video_id}", admin_pipeline_run_path(run) %><small><%= run.youtube_url %></small></td>
-        <td><%= link_to run.user.email, admin_users_path(q: run.user.email) %></td>
+        <td><%= link_to run.user.email, admin_users_path(q: run.user.email) %><% if run.guest_started? %><small><span class="admin-badge neutral">Guest</span></small><% end %></td>
         <td><%= run.clip_language.presence || "Detecting" %> → <%= run.translation_language %></td>
         <td><%= admin_status(run.status) %><small><%= run.pipeline_step %><%= " · #{run.display_percent}%" if run.importing? %></small></td>
         <td class="admin-error"><%= truncate(run.failure_reason, length: 200).presence || "—" %></td>

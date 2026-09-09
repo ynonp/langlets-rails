@@ -113,9 +113,14 @@ Channels can be searched by name, slug, or owner email. Channel details enumerat
 learner visibility, language, or translation-readiness filters. Each publication
 links to the course and its shared pipeline record when available.
 
-Pipeline runs enumerate all `ImportRequest` rows with status and search filters,
-requester, languages, progress, attempt start/update times, and technical failure
-reasons. Detail pages also display escaped callback errors from the associated
+Pipeline runs enumerate all `ImportRequest` rows with status, origin and search
+filters, requester, languages, progress, attempt start/update times, and technical
+failure reasons. Every guest import appears twice here — once as the admin-owned
+`guest_started` placeholder and once as the visitor's own claimed request — so
+placeholder rows carry a **Guest** badge and the origin filter (`?origin=user`
+/ `?origin=guest`, ignored for any other value) narrows the list to real user
+requests. Without that, the list reads as though the admin account is starting
+an import alongside every user. Detail pages also display escaped callback errors from the associated
 `CreateSongProgress`. Shared pipeline records have a separate listing that includes
 console-created records without requests; list queries omit the large JSONB data
 column. All main listings and channel/request details paginate in groups of 30.
@@ -801,9 +806,23 @@ last phrase) and unique words from Unicode word spans in the source dialogue;
 an arbitrary video with only oEmbed metadata simply omits the line.
 
 That POST starts work immediately under `User::ADMIN_EMAIL`. The resulting
-`ImportRequest` is marked `guest_started`. A configured homepage/native example
-passes its known clip language, skips detection, and adopts its published Course
-immediately. The legacy-course lookup falls back to canonical `main_media_url`
+`ImportRequest` is marked `guest_started`. That flag is the whole difference
+between a placeholder and a real import, so `Imports::Create#persist_request!`
+writes it centrally rather than leaving each branch to remember: a guest row
+that loses it is published into the admin's channel, charged a credit, and
+mailed to the admin as "your course is ready" — once per visitor. For the same
+reason `guest_started` suppresses pricing in every branch that creates a
+request, and `Imports::Settlement` skips both the ready and the failed
+notification for it (the `ImportFailureMailer` operational mail still goes out;
+a guest import that fails really did fail). Nobody is waiting on the
+placeholder — the visitor is told through their own claimed request.
+
+A configured homepage/native example passes its known clip language and skips
+detection, which means it lands in `#adopt!`, `#create_translation!` or
+`#create_and_queue!` rather than the detection path — all four branches must
+carry the flag. It adopts its published Course immediately when that Course is
+already ready in the visitor's translation language, and otherwise queues a
+translation run against it. The legacy-course lookup falls back to canonical `main_media_url`
 when an older Course has no `youtube_video_id`; arbitrary pasted URLs still
 create an admin-owned provisional Course before asynchronous detection. The controller then
 creates one `EvaluationSignup` per visitor. It snapshots the canonical URL,

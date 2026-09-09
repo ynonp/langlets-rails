@@ -87,12 +87,18 @@ module Imports
       # notification is here and not in each of them. It goes to the user who
       # asked, not to the course's creator: on a joined import those are
       # different people, and only one of them is waiting.
-      Notifications.deliver(
-        user: import_request.user,
-        kind: :course_failed,
-        course: import_request.course,
-        title: import_request.title
-      )
+      #
+      # Nobody is waiting on a guest placeholder. Its `user` is the admin, who
+      # never asked for it — the visitor it stands in for has their own request
+      # (GuestImports::Claim) and gets told there. Same reasoning as complete!.
+      unless import_request.guest_started?
+        Notifications.deliver(
+          user: import_request.user,
+          kind: :course_failed,
+          course: import_request.course,
+          title: import_request.title
+        )
+      end
 
       # This is import operations policy, not user notification policy. It is
       # deliberately independent of the requester's email preference and the
