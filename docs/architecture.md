@@ -1043,24 +1043,43 @@ normal dedupe/credit/course transaction. A detection error is recorded on the
 provisional progress row, marks the visible request failed, and costs no
 credit.
 
-New video processing has a 20-minute duration limit (`MAX_VIDEO_MINUTES` in
-`pipeline/src/videoDuration.ts`). The pipeline checks Supadata's `/metadata`
-`media.duration` in seconds before language detection, including TikTok audio
-downloads, and again before extraction in `/run` so explicit-language imports
-and retries receive the same check. Exactly 20 minutes is accepted. Metadata
+New video processing has a 20-minute duration limit. Before rendering `/try`, an Add Video preview,
+or creating any import record, `Imports::VideoPreflight` combines the provider's oEmbed availability
+check with a Rails-owned Supadata `/metadata` request. Rails owns the user-facing preflight limit and reads
+the Supadata key from `SUPADATA_KEY`, its legacy/standard `SUPADATA_API_KEY` alias, or the Rails
+credential `supadata_key`. Successful
+duration responses are cached for 15 minutes so the preview-to-confirmation path does not repeat
+that network request; failed lookups are not cached, allowing the create request or a later attempt
+to retry. The current top-level `duration` response and the older
+`media.duration` shape
+are both accepted. A known long video is rejected inline or returned to the homepage with localized
+copy that states the 20-minute limit; no request, Course, guest evaluation signup, or credit
+reservation is created. The API returns `video_too_long` with the same explanation.
+
+The pipeline retains its own 20-minute guard (`MAX_VIDEO_MINUTES` in `pipeline/src/videoDuration.ts`) before language detection, including TikTok audio
+downloads, and again before extraction in `/run`, so direct calls, explicit-language imports, races,
+and retries receive defense in depth. Exactly 20 minutes is accepted. Metadata
 requests time out after 15 seconds; missing keys, lookup failures, or missing
-or invalid durations log a warning and **proceed unchecked**. A known duration
+or invalid durations log a warning and **proceed unchecked** to preserve availability, with the later pipeline guards providing another chance to
+discover the duration. A known duration
 above the limit rejects the entire video before transcription or translation;
 no clipping occurs. Detection failures use the existing failed-request flow;
 run failures persist a `video_duration` callback error for settlement. A
 successful retry clears that step's stale errors. Existing completed
-transcriptions skip this check when resuming or adding translations.
+transcriptions skip the pipeline guard when resuming or adding translations.
+Once Rails has created a provisional detection request, its background promotion does not repeat the
+Supadata preflight; it refreshes provider metadata and relies on the pipeline guard instead.
 
 Duration rejection messages carry a `Video duration limit: ` prefix so
 `ImportRequest#duration_failure_message` can expose the actionable text without
 pipeline connection diagnostics. Web/native queue cards, Library import
 cards, and gallery import cards show the message. Rejected imports do not reach publication and use no
-user credit. No database or route changes are required.
+user credit. No database or Rails route changes are required.
+
+The public `web` layout renders notice and alert flashes immediately below its header. Consequently
+an unavailable/private/deleted/age- or region-restricted URL submitted on the homepage no longer
+appears to reload silently: `/try` redirects back with a visible, localized explanation. Add Video
+continues to show the same error inline in its result frame.
 
 The language catalog supports English (`en`), Spanish (`es`), French (`fr`),
 German (`de`), Hebrew (`he`), Palestinian Arabic (`ar-JO`), Greek (`el`),
@@ -2491,7 +2510,8 @@ A user's request to turn a video into a course. There are three distinct things 
 | `Course` | the **shared output** — one per video+L1 | `(youtube_video_id, language_id)` |
 | `ImportRequest` | the **per-user intent** | `(user_id, youtube_video_id, clip_language, translation_language)` while active |
 
-> **One `CreateSongProgress` → many language-keyed translations and `ImportRequest`s → one shared `Course`.**
+> **One `CreateSongProgress` → many language-keyed translations and `ImportRequest`s → one shared
+> `Course`.**
 
 Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry) can't live on either of the shared records — and why being told about it is per-user too: a `Notification` belongs to the requester, not to the course.
 
@@ -2558,7 +2578,13 @@ database connection, so this fast job explicitly waits for the import transactio
 to commit before it can load the provisional request.
 
 Successful Add Video submissions redirect to `/gallery?imports=pending`, where
-the provisional request is immediately visible as “Detecting language…”.
+the provisional request is immediately visible as “Detecting language…”. The public homepage flow
+uses `/try` as its single review/approval screen. For a signed-in user, **Create this Langlet** posts
+the canonical URL directly to `App::ImportRequestsController#create`; it does not route through the
+authenticated Add Video preview and ask for a second approval. For a guest, the same decision starts
+the existing admin-owned evaluation placeholder and authentication flow, which claims the import for
+the new or returning account. Thus homepage creation takes two user actions (submit the URL, then
+approve the `/try` preview), while the Create tab retains its own preview-and-approve flow.
 
 Users are **not** enrolled at import time: the course is `pending` and has no lessons, so Home would show something unopenable. `Imports::Finalizer` enrolls everyone attached once it publishes.
 
@@ -3010,9 +3036,14 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 1. `.file(...)` — the copy bundled at `langlets-ios/langlets/langlets/Configuration/path_configuration.json`. Offline fallback and first-launch seed.
 2. `.server(...)` — `GET /configurations/ios_v1.json`, served by `ConfigurationsController` from `config/hotwire/ios_path_configuration.json`. **This one wins at runtime**, so routing rules can change with a Rails deploy instead of an App Store release.
 
-> **Rule order is the opposite of what it looks like.** Hotwire Native merges the properties of *every* rule whose pattern matches, with **later rules winning** (`PathConfiguration#properties`: `properties.merge(rule.properties) { _, new in new }`), and patterns are unanchored regexes so `.*` matches everything. The catch-all therefore belongs **first**, as the baseline that later, more specific rules override.
+> **Rule order is the opposite of what it looks like.** Hotwire Native merges the properties of
+> *every* rule whose pattern matches, with **later rules winning** (`PathConfiguration#properties`: `properties.merge(rule.properties) { _, new in new }`), and patterns are unanchored regexes so
+> `.*` matches everything. The catch-all therefore belongs **first**, as the baseline that later,
+> more specific rules override.
 >
-> It used to sit last, which silently defeated every modal rule in the file — lessons and `/new` were presenting as plain pushes no matter what they asked for. Fixed in Phase 3; keep the most specific rules at the bottom.
+> It used to sit last, which silently defeated every modal rule in the file — lessons and `/new`
+> were presenting as plain pushes no matter what they asked for. Fixed in Phase 3; keep the most
+> specific rules at the bottom.
 
 Two more things to know before touching this:
 - `ConfigurationsController` inherits `ActionController::API`, *not* `ApplicationController`. Under `ApplicationController`, `require_authentication_for_native_app` would answer a signed-out native request with a redirect to the sign-in page and the app would parse that HTML as path configuration.
@@ -3380,6 +3411,12 @@ iOS stores the account locale in the existing app group so its share extension
 uses the same language. Native close controls use the account locale; startup
 resources fall back to the device locale until the account is known. Spanish iOS
 permission text is bundled in `InfoPlist.strings`. No native routing rules change.
+
+The manual `.github/workflows/mobile-builds.yml` workflow builds an unsigned Android release APK and
+an iOS simulator app (including the share extension). Store distribution still needs the existing
+signing credentials and release version bumps; see [Mobile builds](guides/mobile-builds.md). The
+Linux devbox can build Android but cannot run Xcode. Public APK version metadata is updated only
+when a signed release is ready, since it also drives the website download link.
 
 - **Multi-Script Text System**: Support for multiple writing systems per language
 - **Script Variants**: Store text in different scripts (Latin, Arabic, Cyrillic, etc.)

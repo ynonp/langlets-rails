@@ -19,7 +19,10 @@ export async function validateVideoDuration(
       signal: AbortSignal.timeout(15_000),
     });
     if (!response.ok) throw new Error(`Metadata request failed (${response.status})`);
-    duration = (await response.json())?.media?.duration;
+    const metadata = await response.json();
+    // Supadata's unified endpoint currently returns duration at the top level;
+    // older responses nested it below media. Accept both during the transition.
+    duration = metadata?.duration ?? metadata?.media?.duration;
     if (typeof duration !== "number" || !Number.isFinite(duration) || duration <= 0) {
       throw new Error("Missing or invalid duration");
     }

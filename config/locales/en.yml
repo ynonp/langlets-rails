@@ -4,6 +4,7 @@ en:
       invalid_link: "That doesn't look like a video link. Paste a YouTube or TikTok link."
       invalid_link_with_id: "That doesn't look like a video link. Paste a YouTube or TikTok link, or a YouTube video ID."
       unavailable: "We couldn't read that video. It may be private, age-restricted, deleted, region-blocked, or otherwise unavailable. Please try a different link."
+      too_long: "That video is too long. Langlets can convert videos up to %{count} minutes. Please choose a shorter video."
   channels:
     actions:
       save: "Save"

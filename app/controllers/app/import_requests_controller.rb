@@ -57,6 +57,10 @@ module App
       @mode = :error
       @error = I18n.t("imports.errors.unavailable")
       render "app/import_requests/web/resolve" if web_view?
+    rescue Imports::VideoPreflight::TooLong => error
+      @mode = :error
+      @error = I18n.t("imports.errors.too_long", count: error.maximum_minutes)
+      render "app/import_requests/web/resolve" if web_view?
     rescue Imports::UnsupportedLanguage
       @mode = :error
       @error = "We don't teach that language yet."
@@ -79,6 +83,9 @@ module App
     rescue VideoSource::UnavailableVideo
       redirect_to new_app_import_request_path(url: params[:url]),
                   alert: I18n.t("imports.errors.unavailable")
+    rescue Imports::VideoPreflight::TooLong => error
+      redirect_to new_app_import_request_path(url: params[:url]),
+                  alert: I18n.t("imports.errors.too_long", count: error.maximum_minutes)
     rescue Imports::UnsupportedLanguage
       redirect_to new_app_import_request_path(url: params[:url]),
                   alert: "We don't teach that language yet."
@@ -138,6 +145,9 @@ module App
       redirect_to_result(result)
     rescue Credits::InsufficientCredits
       redirect_to_out_of_credits(failed.youtube_url)
+    rescue Imports::VideoPreflight::TooLong => error
+      redirect_to new_app_import_request_path,
+                  alert: I18n.t("imports.errors.too_long", count: error.maximum_minutes)
     rescue VideoSource::UnavailableVideo, Imports::UnsupportedLanguage
       redirect_to new_app_import_request_path, alert: "That video still can't be imported."
     end

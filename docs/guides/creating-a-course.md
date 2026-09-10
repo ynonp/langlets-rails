@@ -6,12 +6,21 @@ This guide covers how to create a new language-learning course from a YouTube vi
 
 ## Overview
 
-New imports accept videos up to 20 minutes long. Before language detection and
-new transcription work, the pipeline checks Supadata duration metadata and
-rejects known longer videos with a request to choose a shorter one. If the
-length cannot be determined, importing proceeds unchecked. The limit lives in
-`pipeline/src/videoDuration.ts`; existing completed transcriptions can still
+New imports accept videos up to 20 minutes long. The homepage `/try` flow and
+the authenticated Add Video preview ask Supadata for duration metadata directly
+from Rails before an import or guest signup record is created, and immediately
+explain when a known video is too long. Import creation checks again (normally
+from a 15-minute cache), while the pipeline retains its own guard for direct
+requests and races. If the length cannot be determined, importing proceeds
+unchecked. Rails reads `SUPADATA_KEY`, `SUPADATA_API_KEY`, or `supadata_key` in its credentials;
+existing completed transcriptions can still
 be reused and translated.
+
+From the public homepage, submitting a URL opens `/try`, which is the one confirmation screen. A
+signed-in user's **Create this Langlet** button starts the import directly; a guest's choice starts the
+evaluation import and then asks them to sign up or log in so it can be claimed. The homepage flow does
+not send either user through a second Add Video approval. Imports started from the authenticated
+Create tab still use that screen's own preview and approval.
 
 Creating a course runs an AI pipeline that:
 

@@ -27,8 +27,10 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
 
     assert_enqueued_with(job: CreateCourseJob) do
       CreateSongProgress.stub(:detect_language, [ @spanish, detected_data ]) do
-        Youtube::Oembed.stub(:fetch, @video) do
-          DetectImportLanguageJob.perform_now(request.id)
+        Imports::VideoPreflight.stub(:call, ->(*) { flunk "promotion must not repeat duration preflight" }) do
+          Youtube::Oembed.stub(:fetch, @video) do
+            DetectImportLanguageJob.perform_now(request.id)
+          end
         end
       end
     end

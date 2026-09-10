@@ -83,7 +83,15 @@ module Imports
       # and we find that out before anything else happens. For a TikTok share
       # link this is additionally what resolves vt.tiktok.com/... into a post id —
       # nothing downstream can work without it.
-      video = VideoSource.fetch(url)
+      # A detection job promoting an existing request already passed duration
+      # preflight before that row was written. Refresh provider metadata there
+      # without adding another synchronous duration dependency; the pipeline
+      # retains its own duration guard.
+      video = if existing_request
+        VideoSource.fetch(url)
+      else
+        VideoPreflight.call(url).video
+      end
       return create_detection_request!(video) if clip_language.blank?
 
       validate_languages!

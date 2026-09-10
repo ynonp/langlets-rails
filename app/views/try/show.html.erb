@@ -43,8 +43,12 @@
 
     <div class="mt-5 flex flex-col sm:flex-row sm:items-center gap-4">
       <% if user_signed_in? %>
-        <%= link_to t("try.show.create"), new_app_import_request_path(url: @video.canonical_url),
-                    class: "flex-1 rounded-full bg-app-accent text-app-on-accent text-center py-4 text-lg font-bold" %>
+        <%# This preview is the user's approval. Submit the already-reviewed
+            video directly instead of asking them to approve it again on Add Video. %>
+        <%= form_with url: app_import_requests_path, method: :post, data: { turbo: false }, class: "flex-1" do %>
+          <%= hidden_field_tag :url, @video.canonical_url %>
+          <button class="w-full rounded-full bg-app-accent text-app-on-accent py-4 text-lg font-bold"><%= t("try.show.create") %></button>
+        <% end %>
       <% else %>
         <%= form_with url: guest_import_requests_path, method: :post, data: { turbo: false }, class: "flex-1" do %>
           <%= hidden_field_tag :url, @video.canonical_url %>

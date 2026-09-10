@@ -46,7 +46,7 @@ module Imports
     def call
       validate_languages! if clip_language.present?
 
-      video = VideoSource.fetch(url)
+      video = VideoPreflight.call(url).video
 
       # Detection is the first paid pipeline action, never preview work. Before
       # it runs we can still recognize a request for this same video already in

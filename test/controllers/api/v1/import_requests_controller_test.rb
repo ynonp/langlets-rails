@@ -91,7 +91,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 3, response.parsed_body["credits_left"], "nothing published yet"
 
     request = ImportRequest.find(response.parsed_body.fetch("id"))
-    stub_video { perform_enqueued_jobs }
+    stub_video { perform_enqueued_jobs only: DetectImportLanguageJob }
 
     assert_equal "ready", request.reload.status
     assert_equal course, request.course
@@ -109,7 +109,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_response :created
 
     request = ImportRequest.find(response.parsed_body.fetch("id"))
-    stub_video { perform_enqueued_jobs }
+    stub_video { perform_enqueued_jobs only: DetectImportLanguageJob }
 
     assert_equal "ready", request.reload.status
     assert_equal 3, @user.reload.credit_balance, "nothing left to publish"
@@ -135,6 +135,19 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 3, @user.reload.credit_balance
   end
 
+  test "returns 422 for a long video before creating an import" do
+    Youtube::Oembed.stub(:fetch, ->(_url) { oembed_video }) do
+      Imports::VideoPreflight.stub(:fetch_duration, 1_201) do
+        post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token)
+      end
+    end
+
+    assert_response :unprocessable_entity
+    assert_equal "video_too_long", response.parsed_body["error"]
+    assert_match "up to 20 minutes", response.parsed_body["error_description"]
+    assert_equal 0, @user.import_requests.count
+  end
+
   # Detection no longer happens inside the request, so a video we can't place
   # can't be reported as a status code. It becomes a failed card in the Queue —
   # and still costs nothing, because nothing was ever published.
@@ -146,7 +159,9 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
     request = ImportRequest.find(response.parsed_body.fetch("id"))
     CreateSongProgress.stub(:detect_language, ->(**) { raise PipelineClient::Error, "unsupported" }) do
-      assert_raises(PipelineClient::Error) { perform_enqueued_jobs }
+      assert_raises(PipelineClient::Error) do
+        perform_enqueued_jobs only: DetectImportLanguageJob
+      end
     end
 
     assert_equal "failed", request.reload.status

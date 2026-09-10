@@ -149,6 +149,18 @@ module App
       assert_no_match(/Approve/, response.body)
     end
 
+    test "a long video shows the limit inline and offers no import" do
+      stub_video do
+        Imports::VideoPreflight.stub(:fetch_duration, 1_201) do
+          get resolve_path(q: CANONICAL), headers: NATIVE
+        end
+      end
+
+      assert_response :success
+      assert_match "up to 20 minutes", response.body
+      assert_no_match(/Approve/, response.body)
+    end
+
     test "resolving charges nothing" do
       stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
 

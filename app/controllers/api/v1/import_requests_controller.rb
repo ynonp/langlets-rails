@@ -54,6 +54,12 @@ module Api
         render status: :unprocessable_entity,
                json: { error: "unavailable_video",
                        error_description: I18n.t("imports.errors.unavailable") }
+      rescue Imports::VideoPreflight::TooLong => error
+        render status: :unprocessable_entity,
+               json: {
+                 error: "video_too_long",
+                 error_description: I18n.t("imports.errors.too_long", count: error.maximum_minutes)
+               }
       rescue Imports::UnsupportedLanguage => e
         render status: :unprocessable_entity,
                json: { error: "unsupported_language", error_description: e.message }

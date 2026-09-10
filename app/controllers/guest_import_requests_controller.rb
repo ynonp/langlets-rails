@@ -11,10 +11,16 @@ class GuestImportRequestsController < ApplicationController
                          alert: I18n.t("imports.errors.invalid_link"))
     end
 
+    # `/try` already performed this check before rendering the signup buttons,
+    # but the POST is public and must remain safe when called directly. Use the
+    # resolved provider id here too, which also dedupes TikTok short links.
+    preflight = Imports::VideoPreflight.call(video_url)
+    video_url = preflight.video.canonical_url
+
     admin = User.find_by!(email: User::ADMIN_EMAIL)
     translation_language = Current.translation_language.english_name
     clip_language = HomepageVideos.find_by_url(video_url)&.clip_language
-    source_video_id = VideoSource.video_id(video_url)
+    source_video_id = preflight.video.video_id
     source = if source_video_id.present?
       admin.import_requests
            .where(guest_started: true, youtube_video_id: source_video_id, translation_language: translation_language)
@@ -46,6 +52,8 @@ class GuestImportRequestsController < ApplicationController
     redirect_to params[:authentication] == "login" ? new_user_session_path : new_user_registration_path
   rescue VideoSource::UnavailableVideo
     redirect_to root_path, alert: I18n.t("imports.errors.unavailable")
+  rescue Imports::VideoPreflight::TooLong => error
+    redirect_to root_path, alert: I18n.t("imports.errors.too_long", count: error.maximum_minutes)
   end
 
   private

@@ -11,6 +11,11 @@ The system is in production. Use Rails and React best practices when implementin
 
 We use `docs/architecture.md` to reflect the state of the platform and for future coding agents so after every feature also update this file.
 
+## Deploy
+- Use `kamal deploy` to deploy the app to production
+- pipeline runs on its own server you have access `ynon@pipeline.langlets.app`
+- deploy production pipeline requires: ssh to the server, cd langlets-rails, sudo git pull, sudo systemctl start langlets-pipeline, sudo systemctl stop langlets-pipeline
+
 ## DB Setup
 Your environment has a full Rails environment installed with a postgres database.
 There are 2 databases described in `config/database.yml`, one for development and the other for tests.

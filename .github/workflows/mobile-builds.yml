@@ -1,0 +1,49 @@
+name: Mobile builds
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build Android and test
+        working-directory: langlets-android
+        run: ./gradlew :app:assembleRelease :app:testDebugUnitTest --console=plain
+      - uses: actions/upload-artifact@v4
+        with:
+          name: langlets-android-unsigned
+          path: langlets-android/app/build/outputs/apk/release/*.apk
+          if-no-files-found: error
+
+  ios:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build iOS simulator app and share extension
+        run: >-
+          xcodebuild
+          -project langlets-ios/langlets/langlets.xcodeproj
+          -scheme langlets
+          -configuration Debug
+          -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath build/ios
+          CODE_SIGNING_ALLOWED=NO
+          build
+      - name: Package simulator build
+        run: ditto -c -k --sequesterRsrc --keepParent build/ios/Build/Products/Debug-iphonesimulator/langlets.app build/langlets-ios-simulator.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: langlets-ios-simulator
+          path: build/langlets-ios-simulator.zip
+          if-no-files-found: error

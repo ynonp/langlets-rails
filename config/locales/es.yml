@@ -9,6 +9,8 @@ es:
       unavailable: No pudimos acceder a ese vídeo. Puede ser privado, tener restricciones
         de edad o región, haberse eliminado o no estar disponible. Prueba con otro
         enlace.
+      too_long: Ese vídeo es demasiado largo. Langlets puede convertir vídeos de hasta
+        %{count} minutos. Elige uno más corto.
   channels:
     actions:
       save: Guardar

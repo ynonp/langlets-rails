@@ -13,6 +13,11 @@ function metadata(duration: unknown): typeof fetch {
   };
 }
 
+Deno.test("reads the current top-level duration response", async () => {
+  const fetch: typeof globalThis.fetch = async () => Response.json({ duration: 123 });
+  await validateVideoDuration(VIDEO, { apiKey: "test-key", fetch });
+});
+
 Deno.test("accepts short videos and the exact duration limit", async () => {
   for (const duration of [1, MAX_VIDEO_SECONDS - 1, MAX_VIDEO_SECONDS]) {
     await validateVideoDuration(VIDEO, { apiKey: "test-key", fetch: metadata(duration) });
