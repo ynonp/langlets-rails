@@ -64,6 +64,7 @@ const examples: Record<string, Record<string, Example>> = {
   Arabic: {
     Hebrew: { input: ARABIC, output: HEBREW },
     English: { input: ARABIC, output: ENGLISH },
+    Spanish: { input: ARABIC, output: SPANISH },
   },
   Spanish: {
     English: { input: SPANISH, output: ENGLISH },
@@ -78,12 +79,26 @@ const examples: Record<string, Record<string, Example>> = {
   },
 };
 
-// Every pair without an exact example falls back to a Spanish-source example
-// in the requested target language when one exists. A wholly unconfigured
-// target retains the legacy Spanish->English fallback.
-function exampleFor(clipLanguage: string, translationLanguage: string): Example {
+// Every pair without an exact example falls back to an example whose output
+// is in the requested target language. Spanish uses Arabic input because a
+// Spanish->Spanish example would demonstrate copying rather than translation.
+// If a target has no safe example, omit the example instead of showing output
+// in the wrong language and inviting the model to follow it.
+const targetExamples: Record<string, Example> = {
+  English: { input: SPANISH, output: ENGLISH },
+  Spanish: { input: ARABIC, output: SPANISH },
+  Greek: { input: SPANISH, output: GREEK },
+  Chinese: { input: SPANISH, output: CHINESE },
+  Hebrew: { input: SPANISH, output: HEBREW },
+  Swedish: { input: SPANISH, output: SWEDISH },
+};
+
+function exampleFor(
+  clipLanguage: string,
+  translationLanguage: string,
+): Example | undefined {
   return examples[clipLanguage]?.[translationLanguage] ??
-    examples.Spanish[translationLanguage] ?? examples.Spanish.English;
+    targetExamples[translationLanguage];
 }
 
 // `requestedLineNumbers` names the subset to translate on a repair pass: the
@@ -102,6 +117,18 @@ export function translatePrompt(
     }. Every other input line is context only: read it, but do not translate it.`
     : `Output exactly ${expectedLineCount} lines, one for each numbered input line, in the same order.`;
 
+  const exampleSection = example
+    ? `
+## Example input
+
+${numberedExample(example.input)}
+
+## Example output
+
+${numberedExample(example.output)}
+`
+    : "";
+
   return `Translate these ${clipLanguage} subtitles into ${translationLanguage}.
 
 Translate the text as a whole, the way a professional subtitler would: idiomatic ${translationLanguage} in the word order the language actually uses. Keep the register and the ambiguity of the original — don't make implied or slang meanings more explicit than the source is.
@@ -113,14 +140,7 @@ ${scope}
 Never merge two input lines into one output line and never split one input line across two. A line that is only a fragment — a single word, a bare conjunction, a repetition of the line before it — still gets its own numbered output line, translated as the fragment it is. Read the whole passage before you start, so that word choice and word order come from the full text and not from the fragment.
 
 Reply with the numbered translation only — no commentary, no blank lines, nothing outside the numbered lines.
-
-## Example input
-
-${numberedExample(example.input)}
-
-## Example output
-
-${numberedExample(example.output)}
+${exampleSection}
 
 ## Input`;
 }

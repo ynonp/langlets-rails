@@ -81,7 +81,8 @@ YouTube detection needs no static entry: Rails sends every database language and
 Examples are not required for the pipeline to run, but an example must never demonstrate the wrong output language:
 
 - `pipeline/src/prompts/addTokenTranslations.ts` selects **source-language** examples for English targets. Chinese targets have an English → Chinese example; other targets omit examples. Always match the example output to the requested translation language.
-- `pipeline/src/prompts/translate.ts` uses an exact source/target example when available, then a Spanish-source example in the requested target language, and finally Spanish → English. Add a target-language fallback for every supported translation language.
+- `pipeline/src/prompts/translate.ts` uses an exact source/target example when available, then an example whose output is in the requested target language. If neither exists, it omits the example;
+  it must never fall back to output in a different language. Add a safe target-language fallback for every supported translation language.
 - `pipeline/src/prompts/addLessons.ts` and `pipeline/src/prompts/extractCompounds.ts` select examples by **source language** and safely fall back to English. Add both the language-code mapping and an example when the language needs script- or grammar-specific guidance.
 
 Add or extend the corresponding Deno tests under `pipeline/tests/` whenever a mapping or example changes.

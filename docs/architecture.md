@@ -1457,8 +1457,13 @@ missing, with the full chunk still in the prompt as context so a one-word fragme
 translated in isolation. Blank source lines are filled in place and never requested. A response
 that fails the echo guard is discarded whole rather than banked, since echo means the task was
 misunderstood rather than half-answered; the assembled result is echo-checked once more before it
-is persisted. The step fails only when lines are still missing after the third attempt, and the
-error names the missing line numbers — the reason for numbering in the first place. A bare count
+is persisted. Spanish targets also reject a substantial English-language marker signal before a
+response is banked, closing the case where a fluent English response satisfied numbering and echo
+checks despite Spanish being requested. Worked examples prefer an exact source/target pair, then a
+safe target-language fallback; targets without a matching example omit the example entirely rather
+than demonstrate output in the wrong language. The step fails only when lines are still missing
+after the third attempt, and the error names the missing line numbers — the reason for numbering in
+the first place. A bare count
 check could say only "82 != 84": on a transcript with a long run of one-word fragment lines
 (`وكل.` / `كل.` / `اللي.`) the model merges neighbours into the one natural clause they make
 together, and an unnumbered response gives no way to tell which lines were merged or to ask for

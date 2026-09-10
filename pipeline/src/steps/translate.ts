@@ -41,6 +41,73 @@ export const MAX_ATTEMPTS = 3;
 export const MAX_ECHO_RATIO = 0.3;
 export const MIN_ECHO_SAMPLE = 8;
 
+// Sentence translation is currently the only pipeline step where a fluent
+// response in the wrong target language can satisfy every structural check.
+// Keep this deliberately conservative: it only rejects a substantial English
+// signal when Spanish was requested, the production failure mode this guards.
+const MIN_LANGUAGE_SAMPLE_WORDS = 20;
+const MIN_ENGLISH_MARKERS = 6;
+const ENGLISH_MARKERS = new Set([
+  "after",
+  "against",
+  "and",
+  "are",
+  "but",
+  "could",
+  "from",
+  "government",
+  "have",
+  "into",
+  "more",
+  "people",
+  "person",
+  "that",
+  "the",
+  "their",
+  "there",
+  "these",
+  "they",
+  "this",
+  "very",
+  "was",
+  "were",
+  "what",
+  "where",
+  "which",
+  "who",
+  "with",
+  "would",
+  "you",
+  "your",
+]);
+const SPANISH_MARKERS = new Set([
+  "aunque",
+  "como",
+  "contra",
+  "cuando",
+  "del",
+  "después",
+  "donde",
+  "dónde",
+  "esta",
+  "este",
+  "gobierno",
+  "hay",
+  "las",
+  "los",
+  "más",
+  "muy",
+  "para",
+  "pero",
+  "personas",
+  "por",
+  "que",
+  "qué",
+  "quién",
+  "son",
+  "una",
+]);
+
 // A source line and the 1-based number the model sees it under. Numbering is
 // global across chunks, so a line number identifies a line in the whole
 // transcript and chunk boundaries never renumber anything.
@@ -84,6 +151,7 @@ export async function translate(ctx: PipelineContext): Promise<void> {
   // the source language. Judge the assembled result once more.
   try {
     assertLinesNotEchoed(originalLyrics, translationLines);
+    assertTargetLanguage(language.english_name, translationLines);
   } catch (error) {
     await recordError(ctx, "translate", error, { input_lines: originalLyrics });
     throw error;
@@ -153,6 +221,7 @@ async function translateChunk(
         [...returned.keys()].map((number) => sourceTextOf(chunk, number)),
         [...returned.values()],
       );
+      assertTargetLanguage(targetLanguage, [...returned.values()]);
       for (const [number, translation] of returned) translated.set(number, translation);
     } catch (error) {
       lastError = error;
@@ -241,6 +310,24 @@ export function assertLinesNotEchoed(sourceLines: string[], translatedLines: str
 
   throw new Error(
     `Translated lines echo the source language: ${echoed}/${counted} lines came back unchanged`,
+  );
+}
+
+export function assertTargetLanguage(targetLanguage: string, translatedLines: string[]): void {
+  if (targetLanguage !== "Spanish") return;
+
+  const words = translatedLines.join(" ").toLocaleLowerCase("es").match(/\p{L}+/gu) ?? [];
+  if (words.length < MIN_LANGUAGE_SAMPLE_WORDS) return;
+
+  const english = words.filter((word) => ENGLISH_MARKERS.has(word)).length;
+  const spanish = words.filter((word) => SPANISH_MARKERS.has(word)).length;
+  if (english < MIN_ENGLISH_MARKERS || english < Math.max(MIN_ENGLISH_MARKERS, spanish * 2)) {
+    return;
+  }
+
+  throw new Error(
+    `Translation appears to be English instead of Spanish: ` +
+      `${english} English markers vs ${spanish} Spanish markers`,
   );
 }
 

@@ -14,12 +14,21 @@ Deno.test("translatePrompt uses the exact pair's example when one exists", () =>
   assertStringIncludes(prompt, "כל כך שמח לשמוע את קולך, גם כשאני ישן");
 });
 
+Deno.test("translatePrompt uses an Arabic-to-Spanish example for Arabic-to-Spanish", () => {
+  const prompt = translatePrompt("Arabic", "Spanish", 3);
+
+  assertStringIncludes(prompt, "أنا سعيد جدًا لسماع صوتك، حتى وأنا نائم");
+  assertStringIncludes(prompt, "Me alegra tanto oír tu voz, aunque dormido");
+  assertEquals(prompt.includes("It makes me so happy to hear your voice"), false);
+});
+
 Deno.test("translatePrompt covers every configured language pair", () => {
   const pairs: Array<[string, string]> = [
     ["Chinese", "English"],
     ["Chinese", "Hebrew"],
     ["Arabic", "Hebrew"],
     ["Arabic", "English"],
+    ["Arabic", "Spanish"],
     ["Spanish", "English"],
     ["Spanish", "Hebrew"],
     ["French", "English"],
@@ -55,11 +64,19 @@ Deno.test("translatePrompt keeps Greek and Swedish fallback examples in the targ
   assertStringIncludes(translatePrompt("German", "Swedish", 3), "Det gör mig så glad");
 });
 
-Deno.test("translatePrompt falls back to Spanish->English for an unlisted pair targeting a third language", () => {
+Deno.test("translatePrompt uses Arabic-to-Spanish as the Spanish target fallback", () => {
+  const prompt = translatePrompt("German", "Spanish", 3);
+
+  assertStringIncludes(prompt, "أنا سعيد جدًا لسماع صوتك، حتى وأنا نائم");
+  assertStringIncludes(prompt, "Me alegra tanto oír tu voz, aunque dormido");
+  assertEquals(prompt.includes("It makes me so happy to hear your voice"), false);
+});
+
+Deno.test("translatePrompt omits the example for an unconfigured target language", () => {
   const prompt = translatePrompt("German", "Italian", 3);
 
-  assertStringIncludes(prompt, "Me alegra tanto oír tu voz");
-  assertStringIncludes(prompt, "It makes me so happy to hear your voice");
+  assertEquals(prompt.includes("## Example input"), false);
+  assertEquals(prompt.includes("It makes me so happy to hear your voice"), false);
 });
 
 Deno.test("translatePrompt threads clip/translation language names and line count into the instructions", () => {

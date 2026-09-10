@@ -100,6 +100,12 @@ chunk still in the prompt as context, so a one-word fragment is never translated
 source lines are filled in place and never requested. The step fails only when lines are still
 missing after the third attempt, and the failure names them.
 
+Worked examples are selected by exact source/target pair and then by target language; when no safe
+target-language example exists, the prompt omits the example instead of demonstrating the wrong
+output language. Spanish responses additionally reject a strong English-language marker signal
+before any sentence lines are saved, so a structurally valid English batch is retried rather than
+published as Spanish.
+
 Token translation begins after contextual learner tokenization, alongside lesson rating and sentence
 translation.
 

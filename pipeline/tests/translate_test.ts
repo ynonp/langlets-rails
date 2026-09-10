@@ -1,6 +1,7 @@
 import { assertEquals, assertRejects, assertStringIncludes } from "@std/assert";
 import {
   assertLinesNotEchoed,
+  assertTargetLanguage,
   buildChunks,
   LINES_PER_CHUNK,
   parseNumberedLines,
@@ -340,6 +341,49 @@ Deno.test("assertLinesNotEchoed ignores a clip too short to judge", () => {
   const lines = ["Bonjour", "Salut", "Merci"];
 
   assertLinesNotEchoed(lines, lines);
+});
+
+Deno.test("translate rejects an English sentence batch when Spanish was requested", async () => {
+  const source = Array.from({ length: 8 }, (_, index) => `سطر عربي ${index + 1}`);
+  const english = [
+    "What is the first thing that happened after the election?",
+    "The government was there with the people.",
+    "And what would you do after that?",
+    "This is where they were waiting.",
+    "The person who was with you answered.",
+    "But there are more people outside.",
+    "Which government would have done this?",
+    "They were there with your friends.",
+  ].map((line, index) => `${index + 1}. ${line}`).join("\n");
+  const model = queuedModel([english, english, english]);
+  const { ctx, store } = makeCtx({
+    data: { lyric_lines: source },
+    models: { translate: model.model },
+    translationLanguage: { id: 4, iso_name: "es", english_name: "Spanish" },
+  });
+
+  await assertRejects(
+    () => translate(ctx),
+    Error,
+    "Translation appears to be English instead of Spanish",
+  );
+
+  assertEquals(model.calls(), 3);
+  assertEquals(store.data.translation_lines, undefined);
+  assertEquals(store.data.errors?.[0].step, "translate");
+});
+
+Deno.test("assertTargetLanguage accepts a Spanish sentence batch", () => {
+  assertTargetLanguage("Spanish", [
+    "¿Qué es lo primero que pasó después de las elecciones?",
+    "El gobierno estaba allí con la gente.",
+    "¿Y qué harías después de eso?",
+    "Aquí es donde estaban esperando.",
+    "La persona que estaba contigo respondió.",
+    "Pero hay más personas afuera.",
+    "¿Qué gobierno habría hecho esto?",
+    "Estaban allí con tus amigos.",
+  ]);
 });
 
 Deno.test("translate is a no-op without a target language", async () => {
