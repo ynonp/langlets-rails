@@ -115,14 +115,14 @@
 
     <div data-word-order-activity-target="feedbackMessage" class="hidden"></div>
 
-    <div data-word-order-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden flex flex-col sm:flex-row items-center justify-between bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-5 shadow-md mt-6 gap-4">
-      <div>
-        <h3 class="text-lg font-extrabold text-center sm:text-left"><%= t(".great_job") %></h3>
-        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 text-center sm:text-left"><%= t(".completed") %></p>
-      </div>
-      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors"><%= t(".next") %></a>
-    </div>
   </div>
+
+  <%= render "activities/completion_message",
+        controller: "word-order-activity",
+        target: "completionMessage",
+        title: t(".great_job"),
+        message: t(".completed"),
+        next_label: t(".next") %>
 </div>
 
 <style>

@@ -58,6 +58,7 @@ class ActivitiesHelperTest < ActionView::TestCase
   test "flashcards include source video and phrase timing" do
     medium = Medium.create!(url: "https://www.youtube.com/watch?v=flashcard01", language: languages(:english))
     phrase = Phrase.create!(medium:, l1: languages(:english), text_l1: "hello world", timestamp: "00:10.00")
+    phrase.phrase_translations.create!(language: languages(:spanish), text: "hola mundo")
     Phrase.create!(medium:, l1: languages(:english), text_l1: "next phrase", timestamp: "00:13.50")
     token = phrase.phrase_tokens.create!(
       l1_start_index: 0,
@@ -73,6 +74,7 @@ class ActivitiesHelperTest < ActionView::TestCase
     assert_equal :youtube, card[:video_provider]
     assert_equal 10.0, card[:segment_start]
     assert_equal 13.5, card[:segment_end]
+    assert_equal "hola mundo", card[:phrase_l2]
   end
 
   test "custom vocabulary flashcards have no video source" do

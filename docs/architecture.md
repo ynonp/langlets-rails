@@ -3730,11 +3730,20 @@ Users can save individual word/token translations they encounter during lessons 
   - WriteMissingWordActivity (always, up to 10)
 - TokensChainActivity uses a frameless exercise layout with an inline matched-word count and progress bar. Each correct translation becomes the next highlighted L1 prompt, while previously found translations are visually muted. Course-built chains contain 4–15 unique word pairs from one content-word category (`noun`, `verb`, `adjective`, or `adverb`); proper nouns and function words are excluded. If no category supplies at least four pairs, the builder omits the activity.
 - MatchTokensActivity uses the same frameless header (inline `0 / X matched` counter + progress bar + small instruction line) and a 2-column grid. Pairs are built as one list, shuffled, and sliced into pages whose size is `ceil(total / ceil(total / max_tokens_in_page))` so the pairs spread as evenly as possible across pages while keeping every page at or below `max_tokens_in_page` (5) pairs. With 8 pairs and `max=5` this gives 4+4 instead of 5+3. Each page's pairs are then split into an L1 list and an L2 list and shuffled independently; the L1 list is rendered in the left column and the L2 list in the right column, so the L1 and L2 cells of the same pair are guaranteed not to be in the same row (cells still match each other via the shared `data-token-id`). Both columns share the same center-aligned cell styling (matching `justify-center text-center` on the box, `text-center` on the word span; cells are `min-h-[80px]` with a uniform `gap-3.5` between boxes and rows so a full 5-pair page stays evenly spaced) so a row reads as a balanced pair regardless of which language is LTR or RTL. Tapping an L1 cell always plays the L1 audio for that pair (first tap, second tap, or switch); tapping an L2 cell is silent. Correct pairs flash green, then stay in place dimmed (lower opacity + grayscale + emerald ✓) instead of being hidden or replaced, mirroring the AudioToTranslation pattern. The next page is revealed only once every pair on the current page is matched, and the transition stays silent until the learner taps an L1 cell.
-- SortPhrasesActivity, FindAnswerActivity, and FlashcardActivity replace their
-  scrollable exercise content with the completion card. The card is a sibling of
-  the exercise content and uses the activity's flex space to remain vertically
-  centered instead of appearing below the completed exercise.
-- Course-built FlashcardActivity sets contain up to five unique content-word pairs drawn from the relevant current/review phrases. Nouns and verbs are selected before adjectives and adverbs, no phrase contributes more than two cards, function words are excluded, and the final card order is shuffled.
+- Interactive activities share one Duolingo-style completion bar. It is
+  absolutely anchored to the bottom edge of the lesson viewport, spans the
+  lesson's full width, accounts for the native safe-area inset, and keeps the
+  Next action full width. Activities connected directly through
+  `activity_phrases` also show every completed phrase as an ordered L1/L2 pair;
+  token-backed vocabulary drills remain compact. A bounded inner scroll region
+  prevents a long phrase set from pushing the action off screen.
+- `MatchPhrasesActivity` uses the same bottom bar after each correct answer but
+  does not repeat L1/L2 there because both are already visible in the exercise.
+  Correct answers no longer show the small inline “Correct” feedback or
+  auto-advance: intermediate Next clicks reveal the following phrase, while the
+  final Next follows the normal activity navigation link. Incorrect-answer
+  feedback remains inline and retryable.
+- Course-built FlashcardActivity sets contain up to five unique content-word pairs drawn from the relevant current/review phrases. Nouns and verbs are selected before adjectives and adverbs, no phrase contributes more than two cards, function words are excluded, and the final card order is shuffled. A correct card leaves the L1 question visible and opens the bottom success bar with only the full-context L2 phrase translation; the card advances only when the learner taps Next, and the final Next follows normal activity navigation.
 
 ### New Controllers
 

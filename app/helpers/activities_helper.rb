@@ -291,6 +291,7 @@ module ActivitiesHelper
       {
         id: t.id,
         phrase_html: blanked_text,
+        phrase_l2: phrase.text_l2,
         translation: l2_translation,
         correct: l1_word,
         options: options,

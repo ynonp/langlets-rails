@@ -1,11 +1,12 @@
 <%# Expects params[:cards] - array of flashcard objects
-    Each card: { id, phrase_html, translation, correct, options, audio_url }
+    Each card: { id, phrase_html, phrase_l2, translation, correct, options, audio_url }
 %>
 
 <%# Expects params[:phrase_tokens] and prepares cards on the client side %>
 <% phrase_tokens = params[:phrase_tokens] || [] %>
 <% cards = prepare_flashcards_for_tokens(phrase_tokens, params[:unique_words]) %>
-<% l1_rtl = params[:l1_rtl] %>
+<% l1_rtl = params[:l1]&.rtl %>
+<% l2_rtl = params[:l2]&.rtl %>
 
 <div
   data-controller="flashcard-activity"
@@ -28,12 +29,14 @@
 
   </div>
 
-  <div data-flashcard-activity-target="completion" class="hidden w-full max-w-[460px] px-4 pt-4 text-center" data-progress-tracker-target="completion">
-    <div class="rounded-2xl bg-white p-6 shadow-md dark:border dark:border-gray-800 dark:bg-gray-900">
-      <h3 class="mb-4 text-xl font-bold text-emerald-600 dark:text-emerald-400"><%= t(".good_work") %></h3>
-      <%= link_to_next_activity t(".next"), @next_activity_path, { class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" } %>
-    </div>
-  </div>
+  <%= render "activities/completion_message",
+        controller: "flashcard-activity",
+        target: "completion",
+        title: t(".good_work"),
+        next_label: t(".next"),
+        phrases: [],
+        dynamic_translation: { rtl: l2_rtl },
+        next_action: "click->flashcard-activity#continue" %>
 </div>
 
 <style>

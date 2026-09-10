@@ -52,8 +52,9 @@ export default class extends Controller {
 
     // Mark the selected option
     if (isCorrect) {
-      // Play correct sound
-      this.element.dispatchEvent(new CustomEvent('audio:correct', { bubbles: true }));
+      const isFinalPhrase = this.currentPhraseValue === this.totalPhrasesValue - 1;
+
+      this.element.dispatchEvent(new CustomEvent(isFinalPhrase ? 'audio:complete' : 'audio:correct', { bubbles: true }));
 
       // Disable all options for this phrase to prevent multiple selections
       phraseContainer.querySelectorAll('.optionButton').forEach(button => {
@@ -62,12 +63,12 @@ export default class extends Controller {
       option.classList.add('correct-answer');
       option.querySelector('[data-role="correct-icon"]').classList.remove('hidden');
       this.incrementScore();
-      this.showFeedback(feedbackEl, t("match.correct"), "bg-green-600");
-        // Wait a moment before moving to the next phrase
-      setTimeout(() => {
-        this.moveToNextPhrase();
-        this.element.dispatchEvent(new CustomEvent('stop-audio'));
-      }, 1500);
+      this.showPhraseCompletion();
+      reportActivityProgress(this.element, (this.currentPhraseValue + 1) / this.totalPhrasesValue);
+
+      if (isFinalPhrase) {
+        this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }));
+      }
     } else {
       // Play incorrect sound
       this.element.dispatchEvent(new CustomEvent('audio:incorrect', { bubbles: true }));
@@ -81,6 +82,24 @@ export default class extends Controller {
         feedbackEl.classList.add('hidden');
       }, 1500);
     }
+  }
+
+  showPhraseCompletion() {
+    this.completionMessageTarget.classList.remove('hidden');
+    animate(this.completionMessageTarget,
+      { opacity: [0, 1], y: [20, 0] },
+      { duration: 0.25, easing: 'easeOut' }
+    );
+  }
+
+  continue(event) {
+    const isFinalPhrase = this.currentPhraseValue === this.totalPhrasesValue - 1;
+    if (isFinalPhrase) return;
+
+    event.preventDefault();
+    this.completionMessageTarget.classList.add('hidden');
+    this.moveToNextPhrase();
+    this.element.dispatchEvent(new CustomEvent('stop-audio'));
   }
 
   showFeedback(feedbackEl, message, bgClass) {
@@ -112,9 +131,6 @@ export default class extends Controller {
     // Move to next phrase
     this.currentPhraseValue += 1;
 
-    // Update progress for the question now being displayed
-    this.updateProgress();
-    
     // If we still have phrases, show the next one
     if (this.currentPhraseValue < this.totalPhrasesValue) {
       const nextContainer = this.phraseContainerTargets.find(
@@ -127,25 +143,9 @@ export default class extends Controller {
         this.preloadPhraseAudio(this.currentPhraseValue + 1);
         this.preloadPhraseAudio(this.currentPhraseValue);
       }
-    } else {
-      // Play completion sound
-      this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }));
-      
-      // Show completion message
-      this.completionMessageTarget.classList.remove('hidden');
-      animate(this.completionMessageTarget, 
-        { opacity: [0, 1], scale: [0.8, 1] }, 
-        { duration: 0.3, easing: 'easeOut' }
-      );
-      this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
     }
   }
   
-  updateProgress() {
-    const currentQuestion = Math.min(this.currentPhraseValue + 1, this.totalPhrasesValue);
-    reportActivityProgress(this.element, currentQuestion / this.totalPhrasesValue);
-  }
-
   // Award XP by calling the progress tracker controller
   awardXp(amount) {
     // Find the progress tracker controller on the gamification bar

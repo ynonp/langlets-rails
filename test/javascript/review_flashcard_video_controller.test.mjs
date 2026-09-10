@@ -19,4 +19,19 @@ describe("flashcard video", () => {
     const adapter = await source("../../app/javascript/players/youtube_adapter.js");
     assert.match(adapter, /return this\.player\.destroy\(\)/);
   });
+
+  test("correct cards pause on the full-context L2 success message until Next", async () => {
+    const flashcard = await source("../../app/javascript/controllers/flashcard_activity_controller.js");
+    const correctBranch = flashcard.slice(
+      flashcard.indexOf("if (selected.textContent.trim() === card.correct)"),
+      flashcard.indexOf("} else {", flashcard.indexOf("if (selected.textContent.trim() === card.correct)"))
+    );
+
+    assert.match(correctBranch, /this\.showCardCompletion\(card\)/);
+    assert.doesNotMatch(correctBranch, /setTimeout/);
+    assert.match(flashcard, /completionTranslationTarget\.textContent = card\.phrase_l2/);
+    assert.match(flashcard, /continue\(event\)/);
+    assert.match(flashcard, /event\.preventDefault\(\)/);
+    assert.match(flashcard, /this\.nextCard\(\)/);
+  });
 });

@@ -228,6 +228,7 @@ he:
       listen_choose_meaning: "הקשיבו, ואז בחרו את המשמעות ב%{language}"
       tap_to_check: "הקישו על תשובה כדי לבדוק אותה"
       great_job: "כל הכבוד!"
+      phrase_completed: "השלמתם את המשפט. עברו עליו והמשיכו."
       completed: "השלמתם את כל המשפטים."
       next: "הבא"
     speak_activity:

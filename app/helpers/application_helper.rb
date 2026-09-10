@@ -27,7 +27,8 @@ module ApplicationHelper
   def link_to_next_activity(text, path, opts)
     route = Rails.application.routes.recognize_path(path)
     if route[:action] == "finish"
-      link_to text, path, {**opts, data: {:"turbo-frame" => "_top", :"turbo-action" => "replace"}}
+      data = opts[:data].to_h.merge("turbo-frame": "_top", "turbo-action": "replace")
+      link_to text, path, opts.merge(data: data)
     else
       link_to text, path, opts
     end

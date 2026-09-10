@@ -44,7 +44,7 @@
       %>
       <div 
         data-match-activity-target="phraseContainer"
-        data-index="<%= index %>"        
+        data-index="<%= index %>"
         class="phraseContainer flex-1 flex flex-col <%= index == 0 ? '' : 'hidden' %>">
 
         <!-- Original phrase (Spanish) -->
@@ -85,7 +85,7 @@
           <%= t(".tap_to_check") %>
         </div>
 
-        <!-- Feedback message (Correct / Incorrect) — appears above the options -->
+        <!-- Incorrect feedback appears above the options; correct answers use the bottom completion bar. -->
         <div data-match-activity-target="feedbackMessage" class="hidden mb-3 p-3 rounded-lg text-center text-lg sm:text-xl font-semibold"></div>
 
         <!-- Options section for this phrase -->
@@ -134,14 +134,16 @@
       </div>
     <% end %>
 
-    <div data-match-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden mt-8 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
-        <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
-      </div>
-      <%= link_to_next_activity(t(".next"), @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
-    </div>
   </div>
+
+  <%= render "activities/completion_message",
+        controller: "match-activity",
+        target: "completionMessage",
+        title: t(".great_job"),
+        message: t(".phrase_completed"),
+        next_label: t(".next"),
+        phrases: [],
+        next_action: "click->match-activity#continue" %>
 </div>
 
 <style>

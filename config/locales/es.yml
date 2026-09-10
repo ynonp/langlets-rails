@@ -248,6 +248,7 @@ es:
       listen_choose_meaning: Escucha y elige el significado en %{language}
       tap_to_check: Toca una respuesta para comprobarla
       great_job: "¡Muy bien!"
+      phrase_completed: Frase completada. Revísala y continúa.
       completed: Has completado todas las frases.
       next: Siguiente
     speak_activity:

@@ -135,8 +135,20 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     assert_select "#main-player:not(.hidden)"
     assert_select ".order-4[data-controller='flashcard-activity'][data-main-video-player-target~='videoSegment']" do |flashcard|
       assert_includes flashcard.first["data-action"], "video:play->main-video-player#seekToSegmentStartIfBefore"
-      assert_select "[data-flashcard-activity-target='completion'].pt-4", count: 1
-      assert_select "[data-flashcard-activity-target='completion'].my-auto", count: 0
+      cards = JSON.parse(flashcard.first["data-flashcard-activity-cards-value"])
+      assert_equal "Choose the missing word", cards.first.fetch("phrase_l2")
+      assert_select "[data-flashcard-activity-target='completion'][data-testid='activity-completion']" do |completion|
+        classes = completion.first["class"]
+        assert_includes classes, "absolute"
+        assert_includes classes, "inset-x-0"
+        assert_includes classes, "bottom-0"
+        assert_includes classes, "w-full"
+        assert_includes classes, "rounded-t-3xl"
+        assert_select "[data-testid='activity-completion-phrases']", count: 0
+        assert_select "[data-testid='activity-completion-translation']" do
+          assert_select "[data-flashcard-activity-target='completionTranslation']:empty"
+        end
+      end
     end
   end
 
@@ -171,6 +183,11 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-match-activity-target='progressText']",
                   text: "הקשיבו, ואז בחרו את המשמעות בעברית"
     assert_select "[data-match-activity-target='completionMessage'] a", text: "הבא"
+    assert_select "[data-match-activity-target='completionMessage'][data-testid='activity-completion']" do
+      assert_select "p", text: "השלמתם את המשפט. עברו עליו והמשיכו."
+      assert_select "[data-testid='activity-completion-phrases']", count: 0
+      assert_select "[data-testid='activity-completion-translation']", count: 0
+    end
   end
 
   test "Hebrew ordering activities and token chain localize their controls and counter" do

@@ -76,15 +76,6 @@
 
     <div id="match-tokens" class="flex flex-col gap-4">
 
-      <!-- Completion message -->
-      <div data-match-tokens-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
-          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
-        </div>
-        <%= link_to_next_activity(t(".next"), @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
-      </div>
-
       <!-- Pages: each page holds up to max_tokens_in_page pairs. We split each
            page's pair list into an L1 list and an L2 list and render the two
            columns independently. This keeps every L1 cell in the left column
@@ -140,4 +131,11 @@
 
     </div>
   </div>
+
+  <%= render "activities/completion_message",
+        controller: "match-tokens-activity",
+        target: "completionMessage",
+        title: t(".great_job"),
+        message: t(".completed"),
+        next_label: t(".next") %>
 </div>

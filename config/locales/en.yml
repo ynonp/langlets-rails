@@ -250,6 +250,7 @@ en:
       listen_choose_meaning: "Listen, then choose the %{language} meaning"
       tap_to_check: "Tap an answer to check it"
       great_job: "Great job!"
+      phrase_completed: "Phrase complete. Review it, then continue."
       completed: "You've completed all the phrases."
       next: "Next"
     speak_activity:

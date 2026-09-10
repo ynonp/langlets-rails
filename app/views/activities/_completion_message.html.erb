@@ -1,0 +1,53 @@
+<%
+  phrases = local_assigns.fetch(:phrases, @completion_phrases || [])
+  message = local_assigns[:message]
+  dynamic_translation = local_assigns[:dynamic_translation]
+  completion_data = {
+    "#{controller}-target": target,
+    "progress-tracker-target": "completion",
+    testid: "activity-completion"
+  }
+%>
+
+<%= tag.div id: local_assigns[:id],
+            class: "hidden absolute inset-x-0 bottom-0 z-40 w-full rounded-t-3xl border-t border-emerald-300 bg-emerald-50 shadow-[0_-10px_30px_rgba(0,0,0,0.12)] dark:border-emerald-800 dark:bg-emerald-950",
+            style: "padding-bottom: env(safe-area-inset-bottom);",
+            role: "status",
+            aria: { live: "polite" },
+            data: completion_data do %>
+  <div class="mx-auto flex w-full max-w-[640px] flex-col gap-4 px-5 py-4">
+    <div class="flex items-center gap-3">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xl font-black text-white" aria-hidden="true">✓</div>
+      <div class="min-w-0">
+        <h3 class="text-lg font-extrabold text-emerald-900 dark:text-emerald-100"><%= title %></h3>
+        <% if message.present? %>
+          <p class="text-sm font-semibold text-emerald-700 dark:text-emerald-300"><%= message %></p>
+        <% end %>
+      </div>
+    </div>
+
+    <% if dynamic_translation %>
+      <div class="rounded-xl bg-white/70 p-3 dark:bg-gray-950/40" data-testid="activity-completion-translation">
+        <p class="text-base font-semibold leading-relaxed text-gray-700 dark:text-gray-200"
+           dir="<%= dynamic_translation[:rtl] ? 'rtl' : 'ltr' %>"
+           data-<%= controller %>-target="completionTranslation"></p>
+      </div>
+    <% elsif phrases.present? %>
+      <div class="max-h-[min(34dvh,15rem)] space-y-3 overflow-y-auto overscroll-contain rounded-xl bg-white/70 p-3 dark:bg-gray-950/40" data-testid="activity-completion-phrases">
+        <% phrases.each do |phrase| %>
+          <div class="grid grid-cols-1 gap-1 border-b border-emerald-200 pb-3 last:border-0 last:pb-0 dark:border-emerald-900 sm:grid-cols-2 sm:gap-4">
+            <p class="text-sm font-bold leading-snug text-gray-900 dark:text-gray-50" dir="<%= phrase.l1&.rtl? ? 'rtl' : 'ltr' %>" data-testid="activity-completion-l1"><%= phrase.text_l1 %></p>
+            <p class="text-sm leading-snug text-gray-600 dark:text-gray-300" dir="<%= phrase.l2&.rtl? ? 'rtl' : 'ltr' %>" data-testid="activity-completion-l2"><%= phrase.text_l2 %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= link_to_next_activity(
+          next_label,
+          @next_activity_path,
+          class: "inline-flex h-14 w-full items-center justify-center rounded-2xl bg-emerald-500 px-6 font-extrabold text-white transition-colors hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600",
+          data: ({ action: local_assigns[:next_action] } if local_assigns[:next_action])
+        ) %>
+  </div>
+<% end %>

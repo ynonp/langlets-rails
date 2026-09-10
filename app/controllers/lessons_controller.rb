@@ -45,6 +45,15 @@ class LessonsController < ApplicationController
 
     @is_last_activity = next_activity.blank?
 
+    # Direct phrase-backed exercises review both the learning-language text and
+    # its localized translation in the completion bar. Vocabulary exercises
+    # connect through phrase tokens instead and intentionally stay compact.
+    @completion_phrases = if @activity.activity_phrases.exists?
+      @activity.ordered_phrases
+    else
+      []
+    end
+
     # Allow the browser to cache the activity frame so JS can prefetch the next
     # activity (see activity_navigation_controller.js) for an instant "Next" tap.
     # Scoped to Turbo-Frame requests only: full-page loads stay uncached.

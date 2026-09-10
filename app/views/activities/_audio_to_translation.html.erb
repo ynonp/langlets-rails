@@ -55,15 +55,6 @@
 
     <div id="audio-to-translation" class="flex flex-col gap-4">
 
-      <!-- Completion message -->
-      <div data-audio-to-translation-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
-          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
-        </div>
-        <%= link_to_next_activity(t(".next"), @next_activity_path, class: "w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors") %>
-      </div>
-
       <!-- Grid container: audio cards (left) + translations (right) -->
       <div class="grid grid-cols-2 gap-x-4 gap-y-3.5" data-audio-to-translation-activity-target="grid">
 
@@ -107,4 +98,11 @@
 
     </div>
   </div>
+
+  <%= render "activities/completion_message",
+        controller: "audio-to-translation-activity",
+        target: "completionMessage",
+        title: t(".great_job"),
+        message: t(".completed"),
+        next_label: t(".next") %>
 </div>

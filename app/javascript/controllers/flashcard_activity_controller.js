@@ -4,7 +4,7 @@ import { t } from "../utils/i18n"
 import { reportActivityProgress } from "../utils/activity_progress"
 
 export default class extends Controller {
-  static targets = ["activityContent", "card", "completion", "progress"]
+  static targets = ["activityContent", "card", "completion", "completionTranslation", "progress"]
   static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean }
 
   connect() {
@@ -96,7 +96,12 @@ export default class extends Controller {
       this.awardXp(2)
       this.playCardAudio(card)
       this.revealCorrectAnswer(card.correct)
-      setTimeout(() => this.nextCard(), 1400)
+      this.showCardCompletion(card)
+
+      if (this.index === this.cardsValue.length - 1) {
+        this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }))
+        this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
+      }
     } else {
       selected.classList.add('bg-red-500/10', 'border-red-500', 'text-red-600', 'dark:text-red-300')
       setTimeout(() => buttons.forEach(btn => btn.disabled = false), 800)
@@ -110,6 +115,20 @@ export default class extends Controller {
     answerSlot.textContent = answer
     answerSlot.classList.remove('text-transparent', 'border-gray-500', 'dark:border-gray-400')
     answerSlot.classList.add('text-emerald-600', 'dark:text-emerald-300', 'border-transparent', 'flashcard-answer-reveal')
+  }
+
+  showCardCompletion(card) {
+    this.completionTranslationTarget.textContent = card.phrase_l2 ?? ""
+    this.completionTarget.classList.remove('hidden')
+  }
+
+  continue(event) {
+    const isFinalCard = this.index === this.cardsValue.length - 1
+    if (isFinalCard) return
+
+    event.preventDefault()
+    this.completionTarget.classList.add('hidden')
+    this.nextCard()
   }
 
   preloadCorrectAudio(card) {
@@ -139,6 +158,7 @@ export default class extends Controller {
 
   showCompletion() {
     this.activityContentTarget.classList.add('hidden')
+    this.completionTranslationTarget.textContent = ""
     this.completionTarget.classList.remove('hidden')
     this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }))
     this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
