@@ -43,7 +43,8 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_select "select[name=?]", "user[native_language]"
     assert_select "option[value=en][selected=selected]"
     assert_select "option[value=he]"
-    assert_select "option", count: 2
+    assert_select "option[value=es]"
+    assert_select "option", count: 3
     assert_select "input[type=submit][disabled=disabled]"
     assert_select "body[data-native-tabs] .profile-safe-area", count: 1
 
@@ -55,7 +56,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_equal "he", @user.reload.preferences["native_language"]
   end
 
-  test "native profile rejects languages outside English and Hebrew" do
+  test "native profile rejects languages outside English, Hebrew and Spanish" do
     sign_in_as @user
 
     patch profile_native_language_path,

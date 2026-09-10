@@ -19,7 +19,7 @@ class TranslationLanguageContextTest < ActiveSupport::TestCase
   end
 
   test "configured locales without a catalog fall back to English" do
-    I18n.with_locale(:es) do
+    I18n.with_locale(:fr) do
       assert_equal "Correct! Well done!", I18n.t("js.word_order.correct")
     end
   end

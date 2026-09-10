@@ -8,7 +8,7 @@ class GuestImportRequestsController < ApplicationController
 
     if video_url.blank?
       return redirect_to(native_app? ? onboarding_video_path : root_path,
-                         alert: "That doesn't look like a video link. Paste a YouTube or TikTok link.")
+                         alert: I18n.t("imports.errors.invalid_link"))
     end
 
     admin = User.find_by!(email: User::ADMIN_EMAIL)
@@ -45,7 +45,7 @@ class GuestImportRequestsController < ApplicationController
 
     redirect_to params[:authentication] == "login" ? new_user_session_path : new_user_registration_path
   rescue VideoSource::UnavailableVideo
-    redirect_to try_path(url: raw_url), alert: "That video is unavailable. Try another one."
+    redirect_to root_path, alert: I18n.t("imports.errors.unavailable")
   end
 
   private

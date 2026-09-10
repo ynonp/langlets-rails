@@ -3,9 +3,9 @@
     <img src="<%= course_thumbnail_url(entry) %>"
          alt="<%= entry.localized_name %>" class="gallery-card-image">
     <div class="gallery-card-body">
-      <span class="gallery-card-kind">Course</span>
+      <span class="gallery-card-kind"><%= t("supplemental.course") %></span>
       <h2 class="app-clamp-2"><%= entry.localized_name %></h2>
-      <p><%= localized_language_name(entry.language) %> · <%= pluralize(entry.lessons_count, "lesson") %></p>
+      <p><%= localized_language_name(entry.language) %> · <%= t("courses.lesson_count", count: entry.lessons_count) %></p>
     </div>
   <% end %>
 <% else %>
@@ -16,9 +16,9 @@
       <div class="gallery-card-image gallery-card-placeholder"></div>
     <% end %>
     <div class="gallery-card-body">
-      <span class="gallery-card-kind gallery-card-kind-playlist">Playlist</span>
+      <span class="gallery-card-kind gallery-card-kind-playlist"><%= t("supplemental.playlist") %></span>
       <h2><%= entry.name %></h2>
-      <p><%= pluralize(entry.visible_clip_count, "Langlet") %></p>
+      <p><%= t("supplemental.langlet_count", count: entry.visible_clip_count) %></p>
     </div>
   <% end %>
 <% end %>

@@ -2,9 +2,7 @@
 <resources>
     <string name="app_name">langlets</string>
 
-    <!-- Tab titles. These are English-only on purpose: the iOS tab bar hard-codes
-         the same three words, and the Hebrew build is a separate host
-         (he.langlets.app), not a locale switch inside one app. -->
+    <!-- Startup titles; authenticated pages update these from the account locale. -->
     <string name="tab_home">Home</string>
     <string name="tab_library">Library</string>
     <string name="tab_vocabulary">Vocabulary</string>

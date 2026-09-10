@@ -1,5 +1,5 @@
 module SeoHelper
-  CANONICAL_HOSTS = %w[langlets.app he.langlets.app].freeze
+  CANONICAL_HOSTS = %w[langlets.app he.langlets.app es.langlets.app].freeze
 
   DEFAULT_DESCRIPTION = "Learn languages through interactive video clips. " \
     "Practice listening, speaking, and comprehension with songs, TV shows, " \
@@ -16,7 +16,7 @@ module SeoHelper
     tags << tag.meta(property: "og:title", content: title)
     tags << tag.meta(property: "og:description", content: description)
     tags << tag.meta(property: "og:site_name", content: "Langlets")
-    tags << tag.meta(property: "og:locale", content: "en_US")
+    tags << tag.meta(property: "og:locale", content: { en: "en_US", he: "he_IL", es: "es_ES" }.fetch(I18n.locale, "en_US"))
 
     if image_url.present?
       tags << tag.meta(property: "og:image", content: image_url)
@@ -39,21 +39,16 @@ module SeoHelper
       return course.description
     end
 
-    lang = course.language
-    language_name = lang&.english_name || "a new language"
-    lesson_count = course.lessons.size
-
-    "Learn #{language_name} through \"#{course.name}\" — an interactive video course " \
-    "with #{ActionController::Base.helpers.pluralize(lesson_count, 'lesson')}. " \
-    "Practice listening, speaking, and comprehension with AI-powered activities on Langlets."
+    language_name = course.language ? localized_language_name(course.language) : t("seo.new_language")
+    t("seo.course_description", language: language_name, name: course.localized_name,
+      lessons: t("courses.lesson_count", count: course.lessons.size))
   end
 
   def playlist_description(playlist)
     return playlist.description if playlist.description.present?
 
-    course_count = playlist.courses.published.count
-    "A curated playlist with #{ActionController::Base.helpers.pluralize(course_count, 'interactive video course')}. " \
-    "Master \"#{playlist.name}\" step by step on Langlets."
+    t("seo.playlist_description", name: playlist.name,
+      courses: t("seo.interactive_courses", count: playlist.courses.published.count))
   end
 
   # Name predates TikTok. Returns whichever provider's id the URL carries, and —

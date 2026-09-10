@@ -5,7 +5,7 @@ class Prospect < ApplicationRecord
 
   normalizes :email, with: ->(email) { email.strip.downcase }
   validates :email, presence: true, length: { maximum: 254 }, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :locale, inclusion: { in: %w[en he] }
+  validates :locale, inclusion: { in: User::NATIVE_LANGUAGE_CODES }
 
   generates_token_for :setup, expires_in: 7.days do
     activated_at

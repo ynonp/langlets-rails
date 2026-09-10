@@ -166,3 +166,50 @@ pinyin dictionary with pronunciation matching and support for short words; see
 [Chinese dictionary sources and rebuilding](../../pipeline/data/CHINESE.md).
 The matching step preserves existing word boundaries and skips words with no
 usable reading or audible alternative.
+
+## Adding an interface/native language
+
+Learning languages and interface languages are separate lists. Spanish already
+has a language record, speech support and pipeline mappings; enabling it as a
+native language needs no database migration.
+
+English (`en`), Hebrew (`he`) and Spanish (`es`) are supported native languages
+in `User::NATIVE_LANGUAGE_CODES`. Web requests select the language from the
+host (`langlets.app`, `he.langlets.app`, `es.langlets.app`). Signed-in native
+requests use the account's `preferences["native_language"]` on every host.
+The native profile picker saves this preference. Password signup stores the
+request language before sending confirmation; web OAuth preserves the original
+language host and stores its language after the canonical callback.
+
+When adding another interface language:
+
+1. Add it to `User::NATIVE_LANGUAGE_CODES` and `config.i18n.available_locales`.
+   Prospect locale validation shares the native-language list.
+2. Translate all application, Devise, Doorkeeper and marketing keys, including
+   plural forms and interpolation names. Supply Rails date, time, validation
+   and number translations. `test/integration/spanish_locale_test.rb` checks
+   Spanish coverage directly from YAML, so English fallbacks cannot hide gaps.
+3. Translate any localized full-page templates, including privacy and terms.
+   Spanish uses `privacy.es.html.erb` and `terms.es.html.erb`; keep their content
+   synchronized when the source documents change. Operations/admin pages remain
+   the intentionally English operations area.
+4. Add the host to Kamal's `proxy.hosts`, `SeoHelper::CANONICAL_HOSTS`, the
+   OmniAuth canonical-callback allowlist and `WEB_LANGUAGE_BY_HOST`. Add a DNS
+   A record pointing to the production server **before deploying**; otherwise
+   automatic TLS provisioning can fail. Do not add OAuth provider callbacks for
+   each language: callbacks remain on canonical `langlets.app`.
+5. Add native string resources: Android `values-<locale>/strings.xml`, iOS
+   `<locale>.lproj/Localizable.strings` (main app and share extension), and
+   translated iOS privacy permission descriptions. Add the locale to Xcode's
+   `knownRegions`. The optional tab-badge payload contains localized tab titles
+   and the account locale; old clients ignore these fields and new clients
+   tolerate old pages without them. Both the app layout and native profile emit
+   it. iOS remembers the locale in its app group for share-extension messages.
+6. Check all four native tab paths and both bundled path configurations. This
+   language addition changes labels only; paths and bundle IDs stay the same.
+7. Run locale/profile/OAuth/email tests, then build both native targets using
+   the [mobile build guide](mobile-builds.md).
+
+Notification email and push use the recipient's native language. Devise account
+email does too. In production, mail links use the matching language host;
+marketing invitation mail uses the prospect's locale.

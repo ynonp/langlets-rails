@@ -1,3 +1,5 @@
+<%= render "shared/native_tab_titles" if native_app? %>
+
 <% content_for :head do %>
   <title><%= t("channels.profile.page_title") %></title>
 <% end %>

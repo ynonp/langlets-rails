@@ -3,6 +3,7 @@ package com.ynonp.langlets.features
 import android.os.Bundle
 import android.view.View
 import com.ynonp.langlets.R
+import com.ynonp.langlets.Langlets
 import dev.hotwire.core.turbo.visit.VisitAction
 import dev.hotwire.core.turbo.visit.VisitOptions
 import dev.hotwire.navigation.destinations.HotwireDestinationDeepLink
@@ -36,7 +37,7 @@ class LessonFragment : WebFragment() {
 
         toolbarForNavigation()?.apply {
             setNavigationIcon(R.drawable.ic_close)
-            setNavigationContentDescription(R.string.close_lesson)
+            setNavigationContentDescription(Langlets.localizedString(requireContext(), R.string.close_lesson))
             setNavigationOnClickListener { closeLesson() }
         }
     }

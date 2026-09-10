@@ -206,6 +206,12 @@ class MainActivity : HotwireActivity() {
      * layout hides it, because choosing a learning language is mandatory and
      * every tab behind it just redirects back into the flow.
      */
+    fun updateTabTitles(titles: List<String>) {
+        val menu = findViewById<BottomNavigationView>(R.id.bottom_nav).menu
+        if (titles.size != menu.size()) return
+        titles.forEachIndexed { index, title -> menu.getItem(index).title = title }
+    }
+
     fun setTabsVisible(visible: Boolean) {
         bottomNavigationController.visibility = if (visible) {
             HotwireBottomNavigationController.Visibility.DEFAULT

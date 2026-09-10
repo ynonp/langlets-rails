@@ -187,7 +187,7 @@ class User < ApplicationRecord
   # language from their subdomain. Invalid or removed values safely fall back to
   # English so old app versions and hand-edited preference blobs cannot leave a
   # request without a translation language.
-  NATIVE_LANGUAGE_CODES = %w[en he].freeze
+  NATIVE_LANGUAGE_CODES = %w[en he es].freeze
 
   def native_language
     stored = (preferences || {})["native_language"]
@@ -195,6 +195,10 @@ class User < ApplicationRecord
     language ||
       Language.find_by(english_name: "English") ||
       Language.first
+  end
+
+  def send_devise_notification(notification, *args)
+    I18n.with_locale(native_language.iso_name) { super }
   end
 
   def native_language=(language)

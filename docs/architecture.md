@@ -251,8 +251,8 @@ finish page, even for courses previously used in a campaign. The page
 explains that AI created the lesson, invites the learner to create lessons from
 YouTube/TikTok videos with free Pro, and provides a next-lesson/course link.
 Current Pro users see a Create action. Ordinary course finish pages retain their
-existing behavior. English and Hebrew copy lives in `marketing.en.yml` and
-`marketing.he.yml`; the responsive marketing layout supports RTL, safe-area
+existing behavior. English, Hebrew and Spanish copy lives in `marketing.en.yml`,
+`marketing.he.yml` and `marketing.es.yml`; the responsive marketing layout supports RTL, safe-area
 insets, no-JavaScript forms, and noindex. Styling uses Tailwind utilities directly
 in the ERB templates and the shared application stylesheet. Finish and account setup pages inherit
 `current_theme`, including the default dark theme for guests, and use the lesson
@@ -645,7 +645,7 @@ for older surfaces but the homepage no longer mounts or reads them.
 
 ### Native language preference
 
-The native Profile page offers English and Hebrew and stores the user's native
+The native Profile page offers English, Hebrew and Spanish and stores the user's native
 language as the `preferences["native_language"]` ISO code; an unset, invalid,
 unsupported, or removed value falls back to English. The save action is disabled
 until the selection differs from the stored value. Its successful submission is
@@ -666,7 +666,7 @@ Vocabulary reviews keep their neutral phrase/token associations when the native
 language changes. Phrase and token accessors prefer a translation in the current
 request language, but fall back to an existing translation when that language is
 not available. Consequently older English-only saved vocabulary remains usable,
-while newly available Hebrew translations take precedence automatically; review
+while newly available translations in the selected native language take precedence automatically; review
 activities never serialize a missing translation as `null` merely because the
 interface language changed. Saving a word follows the same rule: its preference
 is pinned only when that token actually has a translation in the preferred
@@ -3326,6 +3326,37 @@ since it is an unauthenticated endpoint that redirects on a supplied parameter.
 - **Q&A Exercises**: Comprehension testing with audio support
 
 ### Multilingual Support
+
+Interface/native languages are English, Hebrew and Spanish. `User::NATIVE_LANGUAGE_CODES`
+is the account preference allowlist, independent of the larger learning-language
+catalog. Web hosts select English on `langlets.app`, Hebrew on `he.langlets.app`,
+and Spanish on `es.langlets.app`; signed-in native requests use the persisted
+`native_language` preference. Spanish already has a language row and pipeline/TTS
+support, so this interface addition needs no data migration. Spanish catalogs
+cover the app, web, activities, marketing, Devise, Doorkeeper, notifications and
+Rails date/number/validation text; localized legal templates cover privacy and
+terms. Admin remains an English operations area. A catalog parity test checks
+English keys and interpolation contracts without allowing fallback to hide gaps.
+
+Signup stores the request's language before confirmation mail is sent. Web social
+sign-in returns through the existing canonical provider callback, validates the
+language-host origin, and stores the origin language on the account. Spanish is
+included in the OAuth and SEO host allowlists and the Kamal TLS host list. The
+Spanish DNS record must resolve to the production server before deploying that
+proxy configuration. Devise and notification mail use the account language;
+marketing mail uses the prospect locale. Production email links use that language's
+host, and push alerts explicitly render in the recipient's native language.
+
+Both native apps remain single multilingual builds with their existing bundle
+IDs and four tab URLs. App pages and the native profile send optional `titles`
+and `locale` fields alongside the legacy tab-badge count. New clients update tab
+labels immediately, including after a profile language change; older clients
+ignore the extra fields. New clients also accept legacy messages without them.
+iOS stores the account locale in the existing app group so its share extension
+uses the same language. Native close controls use the account locale; startup
+resources fall back to the device locale until the account is known. Spanish iOS
+permission text is bundled in `InfoPlist.strings`. No native routing rules change.
+
 - **Multi-Script Text System**: Support for multiple writing systems per language
 - **Script Variants**: Store text in different scripts (Latin, Arabic, Cyrillic, etc.)
 - **RTL Languages**: Right-to-left text rendering

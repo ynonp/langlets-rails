@@ -37,7 +37,8 @@ module Push
     # the iOS app already reads to land on Home with the new course as its hero.
     def payload
       {
-        alert: { title: @notification.title, body: @notification.body },
+        alert: { title: @notification.title(locale: @user.native_language.iso_name),
+                 body: @notification.body(locale: @user.native_language.iso_name) },
         sound: "default",
         badge: badge,
         custom_payload: {

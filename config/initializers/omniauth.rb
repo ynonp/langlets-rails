@@ -11,7 +11,7 @@ OmniAuth.config.allowed_request_methods = [ :post, :get ]
 OmniAuth.config.full_host = lambda do |env|
   request = Rack::Request.new(env)
 
-  if %w[langlets.app he.langlets.app].include?(request.host.downcase)
+  if %w[langlets.app he.langlets.app es.langlets.app].include?(request.host.downcase)
     "https://langlets.app"
   else
     request.base_url

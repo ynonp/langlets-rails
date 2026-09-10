@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_home">Inicio</string>
+    <string name="tab_library">Biblioteca</string>
+    <string name="tab_vocabulary">Vocabulario</string>
+    <string name="tab_create">Crear</string>
+    <string name="close_lesson">Cerrar lección</string>
+</resources>

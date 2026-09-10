@@ -3,6 +3,8 @@ package com.ynonp.langlets.bridge
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
 import dev.hotwire.navigation.destinations.HotwireDestination
+import kotlinx.serialization.Serializable
+import com.ynonp.langlets.Langlets
 
 /**
  * The app screens' "this page is the authenticated app layout" signal, which is
@@ -22,9 +24,16 @@ class TabBadgeComponent(
     delegate: BridgeDelegate<HotwireDestination>
 ) : LangletsBridgeComponent(name, delegate) {
 
+    @Serializable
+    data class MessageData(val titles: List<String>? = null, val locale: String? = null)
+
     override fun onReceive(message: Message) {
         if (message.event != "badgeChanged") return
 
+        message.data<MessageData>()?.let { data ->
+            if (data.locale in listOf("en", "he", "es")) Langlets.interfaceLocale = data.locale
+            data.titles?.let { activity?.updateTabTitles(it) }
+        }
         activity?.setTabsVisible(true)
     }
 }

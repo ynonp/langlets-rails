@@ -1,0 +1,880 @@
+---
+es:
+  imports:
+    errors:
+      invalid_link: Eso no parece un enlace de vídeo. Pega un enlace de YouTube o
+        TikTok.
+      invalid_link_with_id: Eso no parece un enlace de vídeo. Pega un enlace de YouTube
+        o TikTok, o un ID de vídeo de YouTube.
+      unavailable: No pudimos acceder a ese vídeo. Puede ser privado, tener restricciones
+        de edad o región, haberse eliminado o no estar disponible. Prueba con otro
+        enlace.
+  channels:
+    actions:
+      save: Guardar
+      accept: Aceptar
+      decline: Rechazar
+    profile:
+      page_title: Perfil - Langlets
+    show:
+      by: Por %{owner}
+      invited: Te han invitado a este canal compartido. Acepta para ver sus cursos.
+    invitations:
+      title: Invitaciones
+      sent: Invitaciones enviadas.
+      invalid: Comprueba las direcciones de correo electrónico e inténtalo de nuevo.
+      accepted: Invitación aceptada.
+      declined: Invitación rechazada.
+      revoked: Invitación revocada.
+      resent: Invitación reenviada.
+      empty: No tienes invitaciones pendientes.
+    members:
+      removed: Miembro eliminado.
+    mailer:
+      invite:
+        subject: Te han invitado a %{channel}
+        greeting: 'Hola:'
+        body: "%{inviter} te ha invitado a unirte al canal compartido %{channel} en
+          Langlets."
+        accept: Aceptar invitación
+        expires: Esta invitación caduca en %{days} días.
+  subhead:
+    default: Aprende idiomas con YouTube
+    ar: Aprende árabe con YouTube
+    de: Aprende alemán con YouTube
+    en: Aprende inglés con YouTube
+    es: Aprende español con YouTube
+    fr: Aprende francés con YouTube
+    he: Aprende hebreo con YouTube
+  layouts:
+    head:
+      title: Langlets - Aprende idiomas con vídeos interactivos
+  languages:
+    ar-JO: Árabe
+    el: Griego
+    sv: Sueco
+    zh: Chino
+    en: Inglés
+    he: Hebreo
+    fr: Francés
+    es: Español
+    de: Alemán
+    ar: Árabe
+  shared:
+    video_transcript_panel:
+      tap_any_word: Toca cualquier palabra
+      karaoke: Karaoke
+      translation: Traducción
+      copy_text: Copiar texto
+    home: Inicio
+    sign_in_prompt: Inicia sesión para no perder tu progreso
+    footer:
+      copyright: "© %{year} Langlets. Todos los derechos reservados."
+      privacy_policy: Política de privacidad
+      terms_of_service: Condiciones del servicio
+    theme_toggle:
+      label: Cambiar entre el tema claro y el oscuro
+      title: Cambiar tema
+    menu:
+      avatar_alt: Avatar
+      daily_xp: "%{count} XP"
+      learning_language: 'Idioma de aprendizaje: %{language}'
+      select: Seleccionar
+      review_words: "\U0001F4DA Repasar palabras (%{language})"
+      queue: Cola
+      profile: Perfil
+      notifications: Notificaciones
+      connected_apps: Aplicaciones conectadas
+      logout: Cerrar sesión
+  notifications:
+    title: Notificaciones
+    new: Nueva
+    open: Abrir
+    mark_read: Marcar como leída
+    mark_all_read: Marcar todas como leídas
+    time_ago: Hace %{time}
+    unread_badge: "%{count} notificaciones sin leer"
+    settings_link: Cambia cómo recibes las notificaciones
+    kinds:
+      default_video_title: Tu vídeo
+      course_ready:
+        title: "¡«%{video_title}» está listo!"
+        body:
+          one: "«%{video_title}» se ha convertido en %{count} lección. Toca para empezar
+            a practicar."
+          other: "«%{video_title}» se ha convertido en %{count} lecciones. Toca para
+            empezar a practicar."
+      course_failed:
+        title: No se pudo crear el curso
+        body: No pudimos importar «%{video_title}». No se ha cobrado ningún crédito.
+          Lo estamos revisando y te avisaremos cuando esté listo.
+      pro_activated:
+        title: Ya tienes una suscripción Pro
+        body: Langlets Pro está activo. Importa todo lo que quieras; todos los cursos
+          que añadas están incluidos.
+    unavailable: Esta notificación ya no está disponible.
+    empty:
+      title: Todavía no hay nada
+      body: Te avisaremos aquí cuando un curso esté listo.
+    preferences:
+      heading: Notificaciones
+      description: Cómo te avisamos cuando un curso está listo.
+      label: Enviar notificaciones por
+      email: Correo electrónico
+      push: Notificaciones push
+      updated: Preferencias de notificaciones guardadas.
+    mailer:
+      open: Abrir Langlets
+      footer_html: Elige cómo recibir notificaciones —por correo, push, ambos o ninguno—
+        en tu %{link}.
+      footer_link: página de perfil
+      footer_text: 'Elige cómo recibir notificaciones —por correo, push, ambos o ninguno—
+        en tu página de perfil:'
+  profile:
+    native_language:
+      heading: Idioma nativo
+      description: Langlets usa este idioma en la aplicación y en las traducciones
+        cuando compartes un vídeo.
+      label: Idioma nativo
+      save: Cambiar idioma
+      updated: Idioma nativo cambiado.
+      invalid: Elige un idioma compatible.
+    account:
+      heading: Cuenta
+      type_free: Gratis
+      type_pro: Pro
+      pro_description: Importaciones ilimitadas
+      upgrade_cta: Pásate a Pro para importar sin límites
+    xp:
+      heading: XP de esta semana
+      all_time: "%{count} XP en total"
+      streak:
+        one: Racha de %{count} día
+        other: Racha de %{count} días
+      streak_pending:
+        one: Racha de %{count} día — hoy aún no has completado una lección
+        other: Racha de %{count} días — hoy aún no has completado una lección
+      no_streak: Completa una lección para empezar una racha.
+      day_xp: "%{day}: %{xp} XP"
+    push:
+      heading: Notificaciones push en este dispositivo
+      description: Recibe un aviso cuando los elementos de tu cola estén listos.
+      enable: Activar notificaciones
+      switch_label: Avisos de elementos listos en la cola
+    theme:
+      heading: Tema
+      description: 'Tema actual: %{theme}. Toca para cambiar entre claro y oscuro.'
+      light: claro
+      dark: oscuro
+    continue: Seguir aprendiendo
+    delete:
+      heading: Eliminar mi cuenta
+      description: 'Esto elimina permanentemente tu cuenta y todo lo asociado a ella:
+        tus palabras guardadas, progreso, XP, racha y los cursos que hayas creado.
+        No se puede deshacer.'
+      button: Eliminar cuenta
+      confirm: "¿Quieres eliminar permanentemente tu cuenta, todas tus palabras guardadas
+        y tu progreso? No se puede deshacer."
+  activities:
+    audio_to_translation:
+      matched: "%{current} / %{total} emparejados"
+      instruction: Reproduce cada frase y toca su traducción
+      great_job: "¡Muy bien!"
+      completed: Has emparejado todas las frases correctamente.
+      next: Siguiente
+      audio: Audio en %{language}
+      translation: Traducción al %{language}
+    find_answer_activity:
+      good_work: "¡Buen trabajo!"
+      next: Siguiente
+    flashcard_activity:
+      title: Tarjetas de vocabulario
+      question_of: Pregunta %{current} de %{total}
+      good_work: "¡Buen trabajo!"
+      next: Siguiente
+    write_missing_word_activity:
+      title: Escribe la palabra que falta
+      question_of: Pregunta %{current} de %{total}
+      great_work: "¡Excelente trabajo!"
+      next: Siguiente
+    translation_popup:
+      save: Guardar
+    watch_video_activity:
+      start_practice: Empezar a practicar
+    read_translated_activity:
+      before_you_watch: Antes de ver el vídeo
+      instruction: Lee primero la traducción. Saber de qué trata hará que el vídeo
+        sea mucho más fácil de seguir.
+      next: Siguiente
+      next_hint: 'A continuación: mira el vídeo y toca cualquier palabra que no conozcas.'
+    language_alignment_activity:
+      instruction: Selecciona las palabras del texto original que correspondan a las
+        palabras resaltadas
+      good_work: "¡Buen trabajo!"
+      completed: Has emparejado todas las palabras correctamente.
+      next: Siguiente
+    listen_activity:
+      instruction: Escucha y selecciona la palabra que falta
+      start_video: Pulsa reproducir en el vídeo para empezar
+      great_job: "¡Muy bien!"
+      completed: Has completado todos los ejercicios de comprensión auditiva.
+      next: Siguiente
+    match_tokens_activity:
+      instruction: Empareja las palabras con sus traducciones
+      great_job: "¡Muy bien!"
+      completed: Has emparejado todas las palabras correctamente.
+      matched: "%{current} / %{total} emparejados"
+      next: Siguiente
+      words: Palabras en %{language}
+      translations: Traducciones al %{language}
+    tokens_chain_activity:
+      instruction: Toca la traducción de la palabra resaltada
+      great_job: "¡Muy bien!"
+      completed: Has emparejado todos los términos correctamente.
+      next: Siguiente
+      matched: "%{current} / %{total} emparejados"
+    word_order_activity:
+      build_sentence: Forma la frase
+      instruction: Traduce esta frase
+      question_of: Pregunta %{current} de %{total}
+      tap_to_listen: Toca para escuchar
+      tap_words: Toca las palabras para añadirlas en orden
+      check: Comprobar
+      great_job: "¡Muy bien!"
+      completed: Has completado todas las frases.
+      next: Siguiente
+    match_phrases_activity:
+      instruction: Selecciona la traducción
+      listen_choose_meaning: Escucha y elige el significado en %{language}
+      tap_to_check: Toca una respuesta para comprobarla
+      great_job: "¡Muy bien!"
+      completed: Has completado todas las frases.
+      next: Siguiente
+    speak_activity:
+      instruction: Pulsa el micrófono y di las frases en %{language}
+      good_work: "¡Buen trabajo!"
+      completed: Has completado este ejercicio de pronunciación.
+      your_pronunciation: 'Tu pronunciación:'
+      accuracy: Precisión
+      fluency: Fluidez
+      completeness: Integridad
+      next: Siguiente
+    sort_phrases_activity:
+      instruction: Coloca las líneas en el orden en que las escuchas
+      subinstruction: Reproduce la canción y arrastra cada línea hacia arriba o abajo
+        para que coincida con el orden de la grabación.
+      hint: 'La pista está en escuchar: las líneas aparecen en orden en la canción.'
+      check_order: Comprobar orden
+      incorrect: No es del todo correcto. Prueba a mover las líneas de nuevo.
+      great_job: "¡Muy bien!"
+      completed: Has ordenado todas las frases correctamente.
+      next: Siguiente
+  app:
+    common:
+      credit_count:
+        one: 1 crédito
+        other: "%{count} créditos"
+      credits_left:
+        one: Queda 1 crédito
+        other: Quedan %{count} créditos
+    home:
+      index:
+        daily_vocab:
+          ready: Repaso diario de vocabulario
+          words_due:
+            one: 1 palabra pendiente
+            other: "%{count} palabras pendientes"
+          body: Unos minutos hoy te ayudarán a recordar estas palabras.
+        see_all: Ver todo
+        lesson_progress: Lección %{current} de %{total}
+        your_playlists: Tus listas de reproducción
+        continue: Continuar
+        latest_imports: Últimas importaciones
+        view_all: Ver todos
+        no_langlets: Aún no tienes langlets. Comparte cualquier vídeo en español,
+          francés, hebreo, árabe o alemán con Langlets para convertirlo en una práctica
+          de idiomas.
+      hero:
+        just_imported: RECIÉN IMPORTADO
+        start_course: Empezar curso
+      playlist_row:
+        song_count:
+          one: 1 canción
+          other: "%{count} canciones"
+      pro_card:
+        upsell:
+          title: Pásate a Pro para importar más contenido
+          body: Has usado las %{count} importaciones gratuitas. Con Pro, las importaciones
+            son ilimitadas.
+          cta: Pasarme a Pro
+        pro:
+          title: Langlets Pro
+          badge: ACTIVO
+          body: Importaciones ilimitadas
+    vocabulary_entries:
+      paused: En pausa
+      undo: Deshacer
+      dismiss: Descartar
+      index:
+        title: Vocabulario
+        add: Añadir una palabra
+        search_placeholder: Buscar palabras, traducciones o frases
+        search_label: Buscar en tu vocabulario
+        search_button: Buscar
+        load_more: Cargar más
+        word_count:
+          one: 1 palabra
+          other: "%{count} palabras"
+        summary: "%{words} · %{paused} sin practicar"
+        no_matches: Ninguna palabra coincide con este filtro
+        no_matches_hint: Las palabras en pausa siguen en tu vocabulario, pero no aparecen
+          en los repasos diarios.
+      filters:
+        label: Filtrar vocabulario
+        all: Todos
+        not_practising: Sin practicar
+      empty:
+        title: Aún no hay palabras guardadas
+        body: 'Guarda palabras de tus actividades: toca cualquier palabra de una lección
+          y aparecerá aquí con su frase y traducción. También puedes añadir las tuyas.'
+        cta: Añadir una palabra propia
+      show:
+        back: Volver al vocabulario
+        context: Frase de contexto
+        translation_of: Traducción de «%{word}» en este contexto
+        translation_placeholder: Significado en esta frase
+        practice: Practicar en los repasos
+        practice_on: Esta palabra aparece en tus repasos diarios.
+        practice_off: 'En pausa: sigue en tu vocabulario, pero se omite en los repasos.'
+        save: Guardar
+        delete: Eliminar del vocabulario
+        delete_title: "¿Eliminar «%{word}»?"
+        delete_body: Esto elimina la palabra, su traducción y su frase de contexto.
+          Si solo quieres descansar de ella, puedes dejar de practicarla.
+        pause_instead: Dejar de practicar
+        cancel: Cancelar
+        delete_confirm: Eliminar
+      new:
+        page_title: Añadir una palabra · langlets.
+        title: Añadir una palabra
+        cancel: Cancelar
+        errors:
+          sentence_required: Escribe la frase en la que encontraste la palabra.
+          selection_required: Selecciona la palabra que estás aprendiendo.
+          translation_required: Añade el significado de la palabra en este contexto.
+          save_failed: No se pudo guardar esa palabra.
+        lead: El vocabulario siempre tiene un contexto
+        body: Escribe la frase en la que encontraste la palabra, guárdala y selecciona
+          la palabra. Así, «No time left» y «turn left here» se conservan como dos
+          entradas distintas.
+        phrase: Frase
+        edit: Editar
+        phrase_placeholder: No time left — quick, turn left here
+        save_phrase: Guardar frase
+        pick_hint: Toca la palabra que estás aprendiendo. Si es una expresión de varias
+          palabras, como «me souviens», toca también la siguiente.
+        pick_hint_picked: Toca la palabra anterior o siguiente para añadirla. Toca
+          dentro de la selección para volver a una sola palabra.
+        translation_of: Traducción de «%{word}»
+        translation_placeholder: Significado en esta frase
+        submit: Guardar en el vocabulario
+      web:
+        index:
+          eyebrow: Tus palabras
+          lead: Todas las palabras que has guardado, con la frase en la que las encontraste.
+            Edita su significado en ese contexto, pausa las que quieras dejar de repasar
+            o añade las tuyas.
+        show:
+          aside_title: Eliminar esta palabra
+        new:
+          aside_title: Cómo funciona
+          pick_hint: Haz clic en la palabra que estás aprendiendo. Si es una expresión
+            de varias palabras, como «me souviens», haz clic también en la siguiente
+            o arrastra sobre ellas.
+          step_phrase: Escribe la frase en la que encontraste la palabra y guárdala.
+          step_pick: Haz clic en la palabra dentro de esa frase. Para una expresión
+            como «me souviens», haz clic también en la siguiente palabra o arrastra
+            sobre ellas.
+          step_translate: Escribe lo que significa en esta frase, no en general.
+          aside_note: Guardar la frase junto a la palabra permite que una misma palabra
+            tenga dos entradas con dos significados.
+    pro:
+      show:
+        page_title: Langlets Pro
+        close: Cerrar
+        title: Aprende sin límites
+        lead: Has usado %{used} de tus %{count} importaciones gratuitas. Pásate al
+          plan ilimitado antes de agotarlas.
+        lead_all_used: Has usado tus %{count} importaciones gratuitas. Sigue convirtiendo
+          tus vídeos favoritos en lecciones.
+        benefits:
+          imports:
+            title: Importaciones de vídeos ilimitadas
+            body: Cualquier vídeo de YouTube o TikTok, cuando quieras.
+          library:
+            title: Toda tu biblioteca en la nube
+            body: Cada lección que crees se mantiene sincronizada y lista.
+        discord:
+          title: Consigue Pro gratis
+          body: Únete a nuestro Discord, preséntate y activaremos Pro en tu cuenta
+            manualmente.
+          cta: Unirme a Discord
+          note: Pro incluye acceso en la nube a las lecciones que creas. Todo lo que
+            hayas importado con créditos y todas tus palabras guardadas seguirán siendo
+            tuyos en cualquier caso.
+      success:
+        page_title: "¡Ya tienes Pro!"
+        title: "¡Ya tienes Pro!"
+        body: Las importaciones ilimitadas están activas y cada lección que crees
+          se mantendrá sincronizada en tu biblioteca en la nube.
+        cta: Empezar a importar
+        manage: Gestiona o cancela cuando quieras en Ajustes.
+    library:
+      card:
+        on_home: En tu inicio
+        learn: "+ Aprender esto"
+      filters:
+        label: Filtrar biblioteca
+        all: Todos
+        pending: Pendientes
+        failed: Fallidas
+        my_imports: Mis importaciones
+        playlists: Listas de reproducción
+      import_card:
+        creating: Creando
+        failed: Fallidas
+        queued: En cola — próximamente
+        failed_detail: Importación fallida — crédito reembolsado
+      show:
+        page_title: Biblioteca · langlets.
+        title: Biblioteca
+        eyebrow: Aprende con cualquier vídeo
+        description: Todos los vídeos que la comunidad ha convertido en lecciones.
+        search: Buscar títulos, canales o enlaces de vídeos
+        empty: Ningún elemento de la biblioteca coincide con este filtro.
+        no_matches: Todavía no hay resultados para «%{query}».
+        empty_language: La biblioteca está vacía para este idioma.
+        import_video: Importar un vídeo
+    started_courses:
+      index:
+        page_title: Vídeos empezados · langlets.
+        title: Vídeos empezados
+        description: Todos los vídeos que has empezado, del más reciente al más antiguo.
+        empty: Aún no has empezado ningún vídeo.
+        browse_library: Explorar la biblioteca
+    web_menu:
+      label: Navegación principal
+      library: Biblioteca
+      vocabulary: Vocabulario
+      create: Crear
+    menu:
+      open: Abrir menú de perfil
+      review_words: Practicar palabras (%{language})
+    import_requests:
+      status:
+        queued: En cola — próximamente
+        ready: Listo
+        failed_insufficient_credits: Importación fallida — créditos insuficientes
+        failed_no_credit: Importación fallida — no se ha usado ningún crédito
+        cancelled: Cancelada
+        cancel: Cancelar esta importación
+        delete: Eliminar esta importación
+        detecting: Detectando idioma…
+        importing: Importando · %{percent}%
+        in_progress:
+          one: 1 importación en curso — te avisaremos cuando esté lista.
+          other: "%{count} importaciones en curso — te avisaremos cuando estén listas."
+        footer_note: 'Las importaciones tardan unos minutos. Puedes cerrar la aplicación:
+          te enviaremos una notificación cuando cada una esté lista.'
+        steps:
+          extract_lyrics: Transcribiendo · paso %{position} de %{total}
+          add_lessons: Escribiendo lecciones · paso %{position} de %{total}
+          extract_compounds: Buscando expresiones · paso %{position} de %{total}
+          rate_lessons: Revisando lecciones · paso %{position} de %{total}
+          translate: Traduciendo · paso %{position} de %{total}
+          add_token_translation: Creando tarjetas de vocabulario · paso %{position}
+            de %{total}
+          add_similar_sound: Buscando palabras de sonido parecido · paso %{position}
+            de %{total}
+      index:
+        title: Cola
+        empty: Aquí todavía no hay nada.
+        native_title: Crear
+        intro: Crea langlets compartiendo un vídeo de YouTube o TikTok con la aplicación,
+          o toca «Añadir nuevo» abajo. Crear cada langlet tarda unos 3 minutos y cuesta
+          1 crédito.
+        credits_remaining: 'Créditos restantes: %{credits}'
+        credits_add: Toca para ver Langlets Pro
+        created_heading: Mis langlets creados
+        native_empty: Aún no has creado ningún langlet
+        add_new: Añadir nuevo
+        failed_help_label: Por qué ha fallado esta importación
+        failed_help: Nuestro creador automático de langlets ha tenido problemas al
+          importar este vídeo. Nuestro equipo está revisando lo ocurrido y te avisaremos
+          cuando termine la importación.
+      new:
+        page_title: Añadir un vídeo
+        title: Añadir un vídeo
+        credits_subtitle: "%{credits} — cada importación usa 1."
+        clear: Borrar
+        cost_and_balance: "%{cost} · %{balance}"
+        pro_subtitle: Langlets Pro — importa todo lo que quieras.
+        pro_balance_label: Tu plan
+        pro_balance: Langlets Pro — ilimitado
+        included_with_pro: Incluido con Pro
+        approve_pro: Aprobar · incluido con Pro
+        paused: Importaste este contenido con Langlets Pro. Sigue en tu biblioteca,
+          en pausa hasta que tu suscripción vuelva a estar activa.
+        paused_cta: Reactivar Pro
+        paused_web_hint: Reactiva Pro en la aplicación Langlets de tu iPhone para
+          volver a abrirlo.
+        paused_notice: Está en tu biblioteca Pro en pausa.
+        added_notice_charged: Añadido a tu biblioteca — se ha usado %{cost} crédito.
+        added_notice_pro: Añadido a tu biblioteca — incluido con Pro.
+        already_yours_notice: Ya está en tu biblioteca.
+        share_hint: También puedes compartir un vídeo de YouTube o TikTok directamente
+          con Langlets desde su menú Compartir.
+        video_language: Idioma del vídeo
+        paste_placeholder: Pega un enlace de YouTube o TikTok
+        url_hint: Compatible con enlaces de youtube.com y youtu.be, publicaciones
+          y enlaces compartidos de tiktok.com, o un ID de vídeo de YouTube
+        link_recognized: Enlace reconocido
+        get_started: Pega un enlace de YouTube o TikTok para empezar.
+        imports_as_lesson: 'Se importa como una lección: transcripción, traducciones
+          y tarjetas de vocabulario.'
+        approve: Aprobar · usar %{cost}
+        get_pro: Conseguir Langlets Pro
+        out_of_credits_web_hint: Has usado tus importaciones gratuitas. Suscríbete
+          a Langlets Pro en la aplicación Langlets de tu iPhone para seguir importando.
+        already_in_library: Ya está en tu biblioteca.
+        open_lesson: Abrir lección
+        already_importing: Ya se está importando.
+        view_in_queue: Ver en la cola
+        view_in_create: Ver en Crear
+        view_in_library: Ver en la biblioteca
+  onboarding:
+    welcome:
+      eyebrow: Te damos la bienvenida a Langlets
+      title: Convierte cualquier vídeo de YouTube o TikTok en una lección de idiomas
+      body_1: Aprende con el contenido que ya te gusta.
+      body_2: Nuestra IA transcribe y traduce cualquier vídeo y crea ejercicios de
+        vocabulario a partir de él.
+      body_3: Pega un enlace o empieza con un curso de nuestra biblioteca.
+      start: Empezar ahora
+    video:
+      eyebrow: Paso 2 de 2
+      title: Elige tu primer vídeo
+      lead: Selecciona un vídeo para convertirlo en tu primera lección de idiomas
+        o pega cualquier enlace de YouTube o TikTok.
+      url_placeholder: Pega un enlace de vídeo
+      url_label: Enlace del vídeo
+      submit: Crear mi langlet
+      examples: Elegir un ejemplo
+  try:
+    show:
+      page_title: 'Listo para crear: %{name}'
+      eyebrow: Tu primer Langlet
+      title: 'Listo para crear: %{name}'
+      lead: Langlets creará una lección guiada con las palabras y frases reales de
+        este vídeo.
+      info_line: "%{language} · %{duration} · %{lines} líneas de diálogo · ~%{words}
+        palabras únicas"
+      account:
+        label: 'Así de claro:'
+        ownership: 'Tus Langlets son tuyos: quedan guardados, puedes repasarlos y
+          contienen tu vocabulario.'
+        processing: Cada Langlet se genera y guarda en nuestros servidores, por eso
+          pedimos que crees una cuenta antes de crear uno.
+        no_card: No necesitas tarjeta.
+      benefits:
+        transcript:
+          title: Entiende cada línea
+          body: Sigue una transcripción sincronizada con traducciones claras.
+        vocabulary:
+          title: Aprende palabras útiles
+          body: Descubre el significado de las palabras y amplía tu vocabulario en
+            contexto.
+        practice:
+          title: Practica lo que has escuchado
+          body: Las actividades breves de escucha, expresión oral y memoria te ayudan
+            a recordarlo.
+      signup: Regístrate para crear
+      create: Crear este Langlet
+      have_account: "¿Ya tienes una cuenta?"
+      log_in: Iniciar sesión
+  courses:
+    sign_in_to_view: Inicia sesión para ver este Langlet.
+    translation:
+      offer: Este curso se creó en %{existing_language}, pero tu interfaz ahora está
+        en %{interface_language}. ¿Lo quieres también en %{interface_language}?
+      action: "¡Sí, traducirlo!"
+      sign_in: Sí — inicia sesión para continuar
+      pending: "¡Buena elección! La versión en %{language} está en camino."
+      requested: "¡Buena elección! Tu traducción está en camino."
+    index:
+      continue_learning: Seguir aprendiendo
+      browse: Explorar
+      next_for_you: Lo siguiente para ti
+      sign_up: Registrarse
+      description_html: Comprende contenido original en %{english}, %{hebrew}, %{french},
+        %{spanish} y %{arabic}. Cada curso desglosa frases bilingües con traducciones
+        palabra por palabra, marcas de tiempo y actividades creadas con IA para mejorar
+        tu comprensión auditiva, expresión oral y comprensión mediante la repetición
+        espaciada.
+      languages:
+        english: Inglés
+        hebrew: Hebreo
+        french: Francés
+        spanish: Español
+        arabic: Árabe
+      tabs:
+        courses: Cursos
+        standalone_clips: Clips independientes
+      meta:
+        title: Practica el idioma que aprendes con tus vídeos favoritos
+        description: Convierte cualquier vídeo en contenido comprensible o practica
+          con nuestra colección de Langlets. Entiende cada palabra, guarda vocabulario
+          para practicar con repetición espaciada y disfruta de series, música, contenido
+          auténtico y mucho más.
+      nav:
+        home: Inicio de Langlets
+        daily_vocab: Práctica diaria de vocabulario
+        day_streak:
+          one: Racha de %{count} día
+          other: Racha de %{count} día
+        my_langlets: Mis Langlets
+        add_video: Añadir un vídeo
+        sign_out: Cerrar sesión
+        sign_in: Iniciar sesión
+      hero:
+        heading: Convierte cualquier vídeo en una lección de idiomas
+        supported_languages: 'Idiomas disponibles: español, francés, hebreo y árabe'
+        lead: 'Necesitas una cuenta gratuita: crear una lección requiere procesamiento
+          y tus Langlets se guardan en tu biblioteca.'
+        android_download_kicker: Descarga la
+        android_download_name: aplicación para Android
+        android_download_label: Descargar el APK de Langlets para Android
+        iphone_download_kicker: Descarga la
+        iphone_download_name: aplicación para iPhone
+        iphone_download_label: Descargar la aplicación Langlets para iPhone con TestFlight
+        product_alt: Transcripción sincronizada, traducción y ejercicios de vocabulario
+          de Langlets
+      library:
+        heading: Empieza directamente
+        subhead: Elige cualquier Langlet creado recientemente y empieza a practicar
+          al instante.
+        all: Todos
+        empty: 'Aún no hay Langlets: pega un vídeo abajo para crear el primero.'
+        browse_all: Explorar todos los Langlets
+      try_now:
+        paste_prompt: Pega cualquier enlace de YouTube o TikTok para crear una lección
+        url_placeholder: Pega un enlace de YouTube o TikTok
+        url_label: Enlace del vídeo
+        submit: Crear mi langlet
+        or_choose: "¿No tienes un enlace a mano? Estos son vídeos de ejemplo: elige
+          uno y crearemos una lección a partir de él."
+      footer:
+        tagline: "© %{year} Langlets · practica idiomas con contenido auténtico"
+    show:
+      lessons: Lecciones
+      done: "%{current}/%{total} completadas"
+      sign_up: Registrarse
+      watch_full_video: Ver vídeo completo
+      intro: 'Elige cualquier lección para empezar. Cada una desglosa una línea de
+        la canción. Consejo: practica una lección al día para aprovechar la repetición
+        espaciada.'
+    waiting:
+      page_title: Se está creando %{title}
+      eyebrow: Creando tu primer Langlet
+      body: Tu vídeo ya está en tu cuenta. Esta página abrirá la lección automáticamente
+        cuando esté lista.
+      failed_eyebrow: No pudimos crear este Langlet
+      failed_body: El vídeo sigue guardado en tu cuenta. Prueba con otro mientras
+        revisamos lo ocurrido.
+    lesson_count:
+      one: 1 lección
+      other: "%{count} lecciones"
+    card:
+      completed: Completado
+      review: Repasar
+      continue_learning: Seguir aprendiendo
+      start_course: Empezar curso
+      untitled: Curso sin título
+    lesson_row:
+      completed: Completado
+      in_progress: En curso
+      lesson_number: Lección %{number}
+      review: Repasar
+      start_lesson: Empezar lección
+    course_card:
+      progress: Progreso
+    course_card_grid:
+      progress: Progreso
+    playlists_grid:
+      start_path: Empezar itinerario
+      empty: Todavía no hay cursos disponibles.
+      clip_count:
+        one: 1 clip
+        other: "%{count} clips"
+    add_to_paths_modal:
+      cancel: Cancelar
+      title: Añadir a una lista de reproducción
+      new_playlist: Nueva lista de reproducción
+      playlist_name: Nombre de la lista
+      loading: Cargando…
+      empty: No se han encontrado listas de reproducción.
+    course_menu:
+      aria_label: Opciones del curso
+      add_to_playlist: Añadir a una lista de reproducción
+      share_to_public_url: Compartir con una URL pública
+      copy_public_url: Copiar URL pública
+      stop_sharing: Dejar de compartir
+      delete: Eliminar
+      delete_title: "¿Eliminar curso?"
+      delete_message: Esto eliminará «%{name}» de tu biblioteca y borrará tu progreso
+        en él. Podrás volver a añadir el vídeo, pero no recuperarás tu progreso.
+      cancel: Cancelar
+  playlists:
+    show:
+      sign_up: Registrarse
+      log_in: Iniciar sesión
+      search_placeholder: Buscar cursos...
+      loading_courses: Cargando cursos...
+      delete_title: "¿Eliminar lista de reproducción?"
+      delete_message: Esto eliminará permanentemente «%{name}». Los cursos no se eliminarán.
+      cancel: Cancelar
+      delete: Eliminar
+  lessons:
+    finish:
+      page_title: Lección completada - Langlets
+      heading: "¡Lección completada!"
+      great_job: "¡Muy bien!"
+      completed_message: Has completado esta lección
+      xp_earned: "+%{count} XP"
+      streak:
+        one: 'Racha: %{count} día'
+        other: 'Racha: %{count} días'
+      login_prompt: Inicia sesión o regístrate para guardar tu progreso
+      continue: Continuar
+    activity_navigation:
+      back_to_course: Volver al curso
+      previous_lesson: Lección anterior
+      next_lesson: Lección siguiente
+      activity: Actividad %{number}
+      lesson_progress: Progreso de la lección
+      skip_lesson: Saltar lección
+  devise:
+    sessions:
+      new:
+        sign_up: REGISTRARSE
+        title: Iniciar sesión
+        email_placeholder: Correo electrónico o nombre de usuario
+        password_placeholder: Contraseña
+        forgot: "¿LA OLVIDASTE?"
+        submit: INICIAR SESIÓN
+        or: O
+        agree_html: Al iniciar sesión en Langlets, aceptas nuestras %{terms_link}
+          y nuestra %{privacy_link}
+        terms: Condiciones
+        privacy: Política de privacidad
+    registrations:
+      new:
+        log_in: INICIAR SESIÓN
+        title: Registrarse
+        email_placeholder: Correo electrónico
+        password_placeholder: Contraseña (%{count} caracteres como mínimo)
+        confirm_password: Confirmar contraseña
+        submit: REGISTRARSE
+        or: O
+        agree_html: Al registrarte en Langlets, aceptas nuestras %{terms_link} y nuestra
+          %{privacy_link}
+        terms: Condiciones
+        privacy: Política de privacidad
+      check_email:
+        title: Revisa tu correo
+        instructions: Te hemos enviado un enlace de confirmación. Abre el correo y
+          pulsa el enlace para continuar.
+        spam_hint: Puede tardar unos minutos en llegar. Revisa la carpeta de correo
+          no deseado si no lo ves.
+        not_received: "¿No has recibido el correo?"
+        resend: Volver a enviarlo
+    passwords:
+      new:
+        sign_in: INICIAR SESIÓN
+        title: Restablecer contraseña
+        subtitle: Introduce tu correo para recibir instrucciones
+        email_placeholder: Dirección de correo electrónico
+        submit: ENVIAR INSTRUCCIONES
+        remember: "¿Recuerdas tu contraseña?"
+        sign_in_link: Iniciar sesión
+        agree_html: Al usar Langlets, aceptas nuestras %{terms_link} y nuestra %{privacy_link}
+        terms: Condiciones
+        privacy: Política de privacidad
+  js:
+    notification_preference:
+      enable: Activar notificaciones
+      open_settings: Abrir ajustes
+      enabled: Las notificaciones están activadas.
+      disabled: Las notificaciones están desactivadas en este dispositivo.
+      denied: Las notificaciones están desactivadas en los ajustes del dispositivo.
+      prompt: Activa las notificaciones para saber cuándo están listos los elementos
+        de tu cola.
+    word_order:
+      correct: "¡Correcto! ¡Bien hecho!"
+      incorrect: No es del todo correcto. ¡Inténtalo de nuevo!
+      question_of: Pregunta %{current} de %{total}
+      completed_of: Completadas %{current} de %{total}
+    match:
+      correct: "¡Correcto!"
+      incorrect: Incorrecto
+    write_missing_word:
+      question_of: Pregunta %{current} de %{total}
+      check: Comprobar
+      correct: "✓ ¡Correcto! «%{answer}»"
+      wrong_try_again: "✗ Incorrecto — ¡inténtalo de nuevo!"
+      answer_is: "✗ La respuesta es «%{answer}». ¡Intenta recordarla!"
+      continue: Continuar →
+    flashcard:
+      question_of: Pregunta %{current} de %{total}
+    speak:
+      assessment_failed: No se pudo evaluar la pronunciación. Inténtalo de nuevo.
+      great_pronunciation: "✓ ¡Muy buena pronunciación!"
+      keep_practicing: "¡Buen esfuerzo! Sigue practicando."
+    audio_to_translation:
+      matched: "%{current} / %{total} emparejados"
+    tokens_chain:
+      matched: "%{current} / %{total} emparejados"
+    match_tokens:
+      matched: "%{current} / %{total} emparejados"
+    popover_translation:
+      save: Guardar
+      saved: Guardado
+    stop_practicing:
+      stop: "\U0001F6AB Dejar de practicar esta palabra"
+      removed: Palabra eliminada de tu vocabulario. %{undo}
+      undo: deshacer
+    course_menu:
+      share_to_public_url: Compartir con una URL pública
+      stop_sharing: Dejar de compartir
+      shared_message: URL pública copiada al portapapeles
+      unshared_message: Este langlet ya no se comparte
+    course_paths:
+      load_failed: No se pudieron cargar las listas de reproducción.
+      one_course: 1 curso
+      many_courses: "%{count} cursos"
+      enter_name: Introduce un nombre para la lista.
+      create_failed: No se pudo crear la lista de reproducción. Inténtalo de nuevo.
+    playlist_courses:
+      load_failed: Error al cargar los cursos. Inténtalo de nuevo.
+    progress_tracker:
+      xp: "%{xp} XP"
+    bridge:
+      apple:
+        could_not_authenticate: No se pudo iniciar sesión con Apple. Prueba de otra
+          forma.
+        authentication_failed: Error al iniciar sesión con Apple. Prueba de otra forma.
+      google:
+        could_not_authenticate: No se pudo iniciar sesión con Google. Prueba de otra
+          forma.
+        authentication_failed: Error al iniciar sesión con Google. Prueba de otra
+          forma.

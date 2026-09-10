@@ -30,12 +30,7 @@ class Notification < ApplicationRecord
   scope :unread, -> { where(read_at: nil) }
   scope :recent, -> { order(created_at: :desc) }
 
-  # The copy, in the reader's language. `locale:` is explicit so the caller
-  # decides: the notifications page passes the request's locale implicitly,
-  # while the mailer and the push payload render in a job with no request and
-  # so get I18n.default_locale. Giving those two the recipient's own language
-  # needs a persisted per-user locale, which does not exist yet — when it does,
-  # this is the seam it plugs into and nothing else has to move.
+  # Pages use the request locale; mail and push use the recipient’s native language.
   def title(locale: I18n.locale) = render(:title, locale)
   def body(locale: I18n.locale) = render(:body, locale)
 

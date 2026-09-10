@@ -20,7 +20,7 @@ final class NativeModalCloseViewController: HotwireWebViewController {
             image: UIImage(systemName: "xmark"),
             primaryAction: closeAction
         )
-        closeButton.accessibilityLabel = "Close"
+        closeButton.accessibilityLabel = localizedAppString("Close", comment: "Close lesson")
         navigationItem.rightBarButtonItem = closeButton
     }
 }

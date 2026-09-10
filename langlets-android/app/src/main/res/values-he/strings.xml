@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_home">בית</string>
+    <string name="tab_library">ספרייה</string>
+    <string name="tab_vocabulary">אוצר מילים</string>
+    <string name="tab_create">יצירה</string>
+    <string name="close_lesson">סגירת שיעור</string>
+</resources>

@@ -9,6 +9,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  # Store the signup language before Devise sends its confirmation email.
+  def build_resource(hash = {})
+    super
+    resource.native_language = Current.translation_language if Current.translation_language
+  end
+
   # GET /users/sign_up/check_email
   def check_email
   end

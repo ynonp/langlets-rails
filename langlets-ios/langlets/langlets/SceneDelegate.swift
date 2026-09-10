@@ -268,6 +268,9 @@ extension SceneDelegate: NavigatorDelegate {
         // because this bridge exists only in the authenticated app layout, so
         // receipt is the native shell's confirmation that tabs are safe to
         // reveal.
+        if let titles = notification.userInfo?["titles"] as? [String] {
+            tabBarController.updateTabTitles(titles)
+        }
         tabBarController.setTabsVisible(true)
     }
 

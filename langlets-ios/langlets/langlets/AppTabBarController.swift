@@ -20,13 +20,20 @@ final class AppTabBarController: UITabBarController {
     }
 
     static let tabs: [Tab] = [
-        Tab(title: "Home", path: "/app", image: "house", selectedImage: "house.fill"),
-        Tab(title: "Library", path: "/app/library", image: "square.grid.2x2", selectedImage: "square.grid.2x2.fill"),
+        Tab(title: localizedAppString("Home", comment: "Tab title"), path: "/app", image: "house", selectedImage: "house.fill"),
+        Tab(title: localizedAppString("Library", comment: "Tab title"), path: "/app/library", image: "square.grid.2x2", selectedImage: "square.grid.2x2.fill"),
         // Vocabulary sits third, next to Create rather than next to Home: it is
         // where the words the other two tabs produce end up.
-        Tab(title: "Vocabulary", path: "/app/vocabulary", image: "text.book.closed", selectedImage: "text.book.closed.fill"),
-        Tab(title: "Create", path: "/app/import_requests/new", image: "plus.circle", selectedImage: "plus.circle.fill")
+        Tab(title: localizedAppString("Vocabulary", comment: "Tab title"), path: "/app/vocabulary", image: "text.book.closed", selectedImage: "text.book.closed.fill"),
+        Tab(title: localizedAppString("Create", comment: "Tab title"), path: "/app/import_requests/new", image: "plus.circle", selectedImage: "plus.circle.fill")
     ]
+
+    func updateTabTitles(_ titles: [String]) {
+        guard titles.count == Self.tabs.count else { return }
+        for (controller, title) in zip(viewControllers ?? [], titles) {
+            controller.tabBarItem.title = title
+        }
+    }
 
     static let homeTabIndex = 0
 

@@ -7,9 +7,10 @@ class NotificationMailer < ApplicationMailer
   def notify(notification)
     @notification = notification
     @user = notification.user
-    @action_url = action_url(notification)
-
-    mail(to: @user.email, subject: notification.title)
+    I18n.with_locale(@user.native_language.iso_name) do
+      @action_url = action_url(notification)
+      mail(to: @user.email, subject: notification.title)
+    end
   end
 
   private

@@ -1,6 +1,9 @@
 package com.ynonp.langlets
 
 import android.graphics.Color
+import android.content.Context
+import android.content.res.Configuration
+import java.util.Locale
 import java.net.URI
 
 /**
@@ -20,6 +23,16 @@ import java.net.URI
  * is what res/xml/network_security_config.xml exists to permit.
  */
 object Langlets {
+    var interfaceLocale: String? = null
+
+    fun localizedString(context: Context, resource: Int): String {
+        val locale = interfaceLocale ?: return context.getString(resource)
+        val configuration = Configuration(context.resources.configuration).apply {
+            setLocale(Locale.forLanguageTag(locale))
+        }
+        return context.createConfigurationContext(configuration).getString(resource)
+    }
+
     val rootUrl: String = if (BuildConfig.DEBUG) {
         "http://10.0.2.2:3000"
     } else {

@@ -37,9 +37,7 @@
       <div data-controller="notifications-reader"
            data-notifications-reader-endpoint-value="<%= read_all_notifications_path %>"
            hidden></div>
-      <div data-controller="bridge--tab-badge"
-           data-bridge--tab-badge-count-value="<%= @queue_badge_count.to_i %>"
-           hidden></div>
+      <%= render "shared/native_tab_titles" %>
 
       <%# Custom Turbo Stream actions dispatch native-tab:refresh here. The
           bridge forwards the named tab to the shell, which reloads that

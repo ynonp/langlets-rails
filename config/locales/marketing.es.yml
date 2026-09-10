@@ -1,0 +1,38 @@
+es:
+  marketing:
+    title: Tu próximo langlet empieza aquí
+    early_access: Acceso anticipado
+    lesson_done: Lección completada
+    xp: "+%{count} XP"
+    reveal: Acabas de aprender con una lección creada por IA.
+    description: Esa lección se creó automáticamente a partir de un vídeo. Estamos desarrollando Langlets para que cualquiera pueda convertir vídeos de YouTube y TikTok en lecciones de idiomas, tú también.
+    invitation: Ayúdanos a decidir los próximos pasos
+    offer: Crea tus propias lecciones. Consigue Pro gratis.
+    offer_description: Elige un vídeo que te guste. Deja que la IA lo convierta en una lección de idiomas. Únete a nuestros primeros usuarios y consigue acceso gratuito a Langlets Pro.
+    already_pro: Ya tienes Pro. Solo necesitas un vídeo para tu próxima lección.
+    create: Crear un langlet
+    email: Tu dirección de correo electrónico
+    cta: Enviadme acceso gratuito a Pro
+    privacy: Te enviaremos un enlace para configurar tu cuenta. No necesitas datos de pago.
+    privacy_link: Política de privacidad
+    keep_learning: Seguir aprendiendo
+    check_email: ¡Ya estás en la lista! Revisa tu correo para encontrar el enlace de acceso gratuito a Pro.
+    email_next: Abre el enlace del correo para terminar de configurar tu cuenta. Puedes seguir aprendiendo mientras llega.
+    invalid_email: Introduce una dirección de correo electrónico válida.
+    rate_limit: Demasiadas solicitudes. Inténtalo de nuevo más tarde.
+    setup_title: Tus ideas. Tus vídeos. Tus lecciones.
+    account_email: 'Tu cuenta: %{email}'
+    existing_account: Ya tienes una cuenta. Activa Pro gratis e inicia sesión como siempre. Tu contraseña no cambia.
+    password: Elige una contraseña (al menos 6 caracteres)
+    password_confirmation: Confirma tu contraseña
+    activate: Activar mi acceso gratuito a Pro
+    activated: ¡Tu acceso gratuito a Pro está listo! Inicia sesión para crear tu primer langlet.
+    retry: Tu cuenta acaba de crearse. Intenta activarla de nuevo.
+    expired_title: Este enlace ha caducado o ya se ha utilizado.
+    expired: ¿Ya has configurado tu cuenta? Inicia sesión abajo. Si no, vuelve a la página de finalización de la lección e introduce tu correo para recibir un enlace nuevo.
+    sign_in: Iniciar sesión
+    email_subject: Tu acceso gratuito a Langlets Pro te está esperando
+    email_intro: La lección que probaste se creó con IA. Ahora puedes crear las tuyas a partir de vídeos de YouTube y TikTok con Langlets Pro gratis.
+    email_link: Configurar tu cuenta Pro gratuita
+    email_expiry: Este enlace privado es válido durante siete días. Elige tu contraseña en la página de configuración. Si ya tienes una cuenta, sigue iniciando sesión como siempre.
+    email_ignore: Si no has solicitado esto, puedes ignorar este correo.

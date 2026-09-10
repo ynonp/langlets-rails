@@ -50,9 +50,10 @@ module Api
                json: { error: "insufficient_credits",
                        error_description: "You're out of free imports. Open Langlets to subscribe to Pro.",
                        credits_left: 0 }
-      rescue VideoSource::UnavailableVideo => e
+      rescue VideoSource::UnavailableVideo
         render status: :unprocessable_entity,
-               json: { error: "unavailable_video", error_description: e.message }
+               json: { error: "unavailable_video",
+                       error_description: I18n.t("imports.errors.unavailable") }
       rescue Imports::UnsupportedLanguage => e
         render status: :unprocessable_entity,
                json: { error: "unsupported_language", error_description: e.message }

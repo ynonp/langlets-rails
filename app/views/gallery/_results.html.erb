@@ -1,22 +1,22 @@
 <div id="gallery-results">
   <% if @search.present? %>
     <div class="gallery-summary">
-      <span><%= pluralize(@total_count, "result") %></span>
-      <button type="button" class="gallery-clear" data-action="gallery-filters#clearSearch">Clear Search</button>
+      <span><%= t("supplemental.result_count", count: @total_count) %></span>
+      <button type="button" class="gallery-clear" data-action="gallery-filters#clearSearch"><%= t("supplemental.clear_search") %></button>
     </div>
   <% end %>
 
   <% if @entries.any? || @import_requests.any? %>
-    <section class="gallery-grid" aria-label="Gallery results">
+    <section class="gallery-grid" aria-label="<%= t("supplemental.gallery_results") %>">
       <%= render partial: "import_request_card", collection: @import_requests, as: :import_request %>
       <%= render partial: "card", collection: @entries, as: :entry %>
     </section>
   <% else %>
-    <div class="gallery-empty">No Langlets match those filters.</div>
+    <div class="gallery-empty"><%= t("supplemental.gallery_empty") %></div>
   <% end %>
 
   <% if @total_pages > 1 %>
-    <nav class="gallery-pagination" aria-label="Pagination">
+    <nav class="gallery-pagination" aria-label="<%= t("supplemental.pagination") %>">
       <% pages = [1, @page - 1, @page, @page + 1, @total_pages].select { |page| page.between?(1, @total_pages) }.uniq.sort %>
       <% previous_page = nil %>
       <% pages.each do |page| %>

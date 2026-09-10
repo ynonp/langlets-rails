@@ -18,14 +18,14 @@ module Settings
       token = Doorkeeper::AccessToken.find_by!(id: params[:id], resource_owner_id: current_user.id)
       token.revoke
 
-      redirect_to settings_connections_path, notice: "Token revoked."
+      redirect_to settings_connections_path, notice: t("supplemental.token_revoked")
     end
 
     def revoke_application
       application = Doorkeeper::Application.find(params[:application_id])
       Doorkeeper::Application.revoke_tokens_and_grants_for(application.id, current_user)
 
-      redirect_to settings_connections_path, notice: "#{application.name} disconnected."
+      redirect_to settings_connections_path, notice: t("supplemental.app_disconnected", name: application.name)
     end
   end
 end

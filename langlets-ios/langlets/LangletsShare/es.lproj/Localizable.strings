@@ -1,0 +1,14 @@
+"Create a Langlets course" = "Crear un curso de Langlets";
+"Reading shared video link…" = "Leyendo el enlace del vídeo…";
+"Cancel" = "Cancelar";
+"Share a YouTube or TikTok video link to create a course." = "Comparte un enlace de YouTube o TikTok para crear un curso.";
+"No video link was found." = "No se ha encontrado ningún enlace de vídeo.";
+"Adding to your Queue…" = "Añadiendo a tu cola…";
+"Open Langlets and sign in before sharing a video." = "Abre Langlets e inicia sesión antes de compartir un vídeo.";
+"Already in your Library — no credit used." = "Ya está en tu biblioteca; no se ha usado ningún crédito.";
+"Added to your Queue. We’ll notify you when it’s ready." = "Añadido a tu cola. Te avisaremos cuando esté listo.";
+"Open Langlets and sign in again." = "Abre Langlets e inicia sesión de nuevo.";
+"You’re out of free imports." = "Has agotado tus importaciones gratuitas.";
+"That video can’t be imported." = "No se puede importar ese vídeo.";
+"Something went wrong. Please try again." = "Se ha producido un error. Inténtalo de nuevo.";
+"Couldn’t connect: %@" = "No se pudo conectar: %@";

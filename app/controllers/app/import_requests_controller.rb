@@ -38,7 +38,7 @@ module App
         # link. Note this asks importable? rather than for an id: a TikTok share
         # link has no id in it until oEmbed resolves one.
         @mode = :error
-        @error = "That doesn't look like a video link. Paste a YouTube or TikTok link, or a YouTube video ID."
+        @error = I18n.t("imports.errors.invalid_link_with_id")
       else
         @mode = :preview
         @preview = Imports::Preview.call(
@@ -55,7 +55,7 @@ module App
       # above on purpose: "you typed it wrong" and "this video is gone" send the
       # user to two different next moves.
       @mode = :error
-      @error = "We couldn't read that video. It may be private, age-restricted or deleted."
+      @error = I18n.t("imports.errors.unavailable")
       render "app/import_requests/web/resolve" if web_view?
     rescue Imports::UnsupportedLanguage
       @mode = :error
@@ -78,7 +78,7 @@ module App
       redirect_to_out_of_credits(params[:url])
     rescue VideoSource::UnavailableVideo
       redirect_to new_app_import_request_path(url: params[:url]),
-                  alert: "We couldn't read that video. It may be private, age-restricted or deleted."
+                  alert: I18n.t("imports.errors.unavailable")
     rescue Imports::UnsupportedLanguage
       redirect_to new_app_import_request_path(url: params[:url]),
                   alert: "We don't teach that language yet."

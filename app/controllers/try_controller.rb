@@ -7,6 +7,6 @@ class TryController < ApplicationController
     @video_info = TryVideoInfo.for(@video)
   rescue VideoSource::UnavailableVideo
     redirect_to(native_app? ? onboarding_video_path : root_path,
-                alert: "That doesn't look like an available YouTube or TikTok video.")
+                alert: I18n.t("imports.errors.unavailable"))
   end
 end

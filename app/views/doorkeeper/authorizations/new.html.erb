@@ -1,20 +1,20 @@
 <% content_for :head do %>
-  <title>Authorize <%= @pre_auth.client.name %> - Langlets</title>
+  <title><%= t("supplemental.oauth_title", name: @pre_auth.client.name) %></title>
 <% end %>
 
 <div class="min-h-screen flex items-center justify-center bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
   <div class="w-full max-w-md mx-4 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-8">
     <h1 class="text-xl font-bold mb-4">
-      Connect <span class="text-emerald-600 dark:text-emerald-400"><%= @pre_auth.client.name %></span>
+      <%= t("supplemental.oauth_connect", name: @pre_auth.client.name) %>
     </h1>
 
     <p class="font-semibold text-[15.5px] mb-4">
-      <strong><%= @pre_auth.client.name %></strong> is asking for access to your Langlets account.
+      <%= t("supplemental.oauth_request", name: @pre_auth.client.name) %>
     </p>
 
     <% if @pre_auth.scopes.count > 0 %>
       <div id="oauth-permissions" class="mb-6">
-        <p class="font-semibold text-[15.5px] text-sm mb-2 opacity-80">It will be able to:</p>
+        <p class="font-semibold text-[15.5px] text-sm mb-2 opacity-80"><%= t("supplemental.oauth_able") %></p>
         <ul class="font-semibold text-[15.5px] text-sm space-y-1">
           <% @pre_auth.scopes.each do |scope| %>
             <li>&bull; <%= t scope, scope: [ :doorkeeper, :scopes ], default: scope %></li>
@@ -49,7 +49,7 @@
     </div>
 
     <p class="font-semibold text-[15.5px] text-xs mt-6 opacity-60">
-      You can revoke this access anytime from Connected Apps in your profile menu.
+      <%= t("supplemental.oauth_revoke") %>
     </p>
   </div>
 </div>

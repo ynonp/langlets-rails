@@ -55,6 +55,15 @@ module ApplicationHelper
   def localized_language_name(language)
     return "" if language.nil?
 
+    # Preview/import payloads carry the stable English name, not a Language row.
+    unless language.respond_to?(:iso_name)
+      @language_codes_by_name ||= Language.pluck(:english_name, :iso_name).to_h
+      code = @language_codes_by_name[language.to_s]
+      return language.to_s if code.nil?
+
+      return t("languages.#{code.split('-').first.downcase}", default: language.to_s)
+    end
+
     key = language.iso_name.to_s.split("-").first.downcase
     I18n.exists?("languages.#{key}") ? t("languages.#{key}") : language.english_name
   end

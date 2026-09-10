@@ -29,7 +29,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   WEB_LANGUAGE_BY_HOST = {
     "langlets.app" => "en",
-    "he.langlets.app" => "he"
+    "he.langlets.app" => "he",
+    "es.langlets.app" => "es"
   }.freeze
 
   # What the handoff endpoint answers with. Nobody reads it: the caller is a

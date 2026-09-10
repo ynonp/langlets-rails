@@ -218,7 +218,7 @@
             <%= image_tag video.thumbnail_url, alt: "", loading: "lazy", class: "lp-card-thumb" %>
             <div class="lp-card-body">
               <div class="lp-card-title"><%= video.title %></div>
-              <div class="lp-card-meta"><%= video.clip_language %></div>
+              <div class="lp-card-meta"><%= localized_language_name(video.clip_language) %></div>
             </div>
           </button>
         <% end %>

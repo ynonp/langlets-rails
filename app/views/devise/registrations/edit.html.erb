@@ -4,7 +4,7 @@
       <%= link_to :back, class: "w-11 h-11 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 flex-shrink-0" do %>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <% end %>
-      <h1 class="text-xl font-extrabold tracking-tight">Account</h1>
+      <h1 class="text-xl font-extrabold tracking-tight"><%= t("profile.account.heading") %></h1>
       <div class="w-11"></div>
     </div>
 
@@ -12,41 +12,41 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div>
-        <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5">Email</label>
+        <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5"><%= t("notifications.preferences.email") %></label>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1.5">Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1.5"><%= t("supplemental.waiting_confirmation", email: resource.unconfirmed_email) %></p>
         <% end %>
       </div>
 
       <div>
-        <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5">New password <span class="text-gray-400 dark:text-gray-600">(leave blank to keep current)</span></label>
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "New password", class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
+        <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5"><%= t("supplemental.new_password") %> <span class="text-gray-400 dark:text-gray-600"><%= t("supplemental.keep_password") %></span></label>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: t("supplemental.new_password"), class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
         <% if @minimum_password_length %>
-          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1.5"><%= @minimum_password_length %> characters minimum</p>
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1.5"><%= t("supplemental.minimum_characters", count: @minimum_password_length) %></p>
         <% end %>
       </div>
 
       <div>
-        <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5">Confirm new password</label>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm new password", class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
+        <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5"><%= t("supplemental.confirm_new_password") %></label>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t("supplemental.confirm_new_password"), class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
       </div>
 
       <div>
-        <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5">Current password <span class="text-gray-400 dark:text-gray-600">(to confirm changes)</span></label>
-        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current password", class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
+        <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5"><%= t("supplemental.current_password") %> <span class="text-gray-400 dark:text-gray-600"><%= t("supplemental.confirm_changes") %></span></label>
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: t("supplemental.current_password"), class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
       </div>
 
       <div>
-        <%= f.submit "UPDATE", class: "w-full inline-flex items-center justify-center gap-2 h-[58px] rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors cursor-pointer" %>
+        <%= f.submit t("supplemental.update"), class: "w-full inline-flex items-center justify-center gap-2 h-[58px] rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors cursor-pointer" %>
       </div>
     <% end %>
 
     <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-4.5 shadow-md mt-6">
-      <h3 class="text-lg font-extrabold tracking-tight mb-1.5">Cancel my account</h3>
-      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3">Unhappy? This permanently deletes your account.</p>
-      <%= button_to "Cancel my account", registration_path(resource_name), method: :delete,
-            data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" },
+      <h3 class="text-lg font-extrabold tracking-tight mb-1.5"><%= t("supplemental.cancel_account") %></h3>
+      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3"><%= t("supplemental.cancel_account_intro") %></p>
+      <%= button_to t("supplemental.cancel_account"), registration_path(resource_name), method: :delete,
+            data: { confirm: t("supplemental.are_you_sure"), turbo_confirm: t("supplemental.are_you_sure") },
             class: "w-full inline-flex items-center justify-center gap-2 h-14 rounded-2xl text-white font-extrabold transition-colors bg-red-600 hover:bg-red-700",
             form: { style: "width:100%" } %>
     </div>

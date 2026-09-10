@@ -19,16 +19,16 @@ final class ShareViewController: UIViewController {
     private func buildUI() {
         view.backgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
-        titleLabel.text = "Create a Langlets course"
+        titleLabel.text = localizedAppString("Create a Langlets course", comment: "Share status")
         titleLabel.font = .preferredFont(forTextStyle: .title2)
         titleLabel.textColor = .white
 
-        urlLabel.text = "Reading shared video link…"
+        urlLabel.text = localizedAppString("Reading shared video link…", comment: "Share status")
         urlLabel.font = .preferredFont(forTextStyle: .footnote)
         urlLabel.textColor = UIColor.white.withAlphaComponent(0.65)
         urlLabel.numberOfLines = 2
 
-        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitle(localizedAppString("Cancel", comment: "Share status"), for: .normal)
         cancelButton.setTitleColor(.white, for: .normal)
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
 
@@ -80,13 +80,13 @@ final class ShareViewController: UIViewController {
 
     private func accept(url: URL?) {
         guard let url, Self.isSupportedVideo(url) else {
-            urlLabel.text = "Share a YouTube or TikTok video link to create a course."
-            statusLabel.text = "No video link was found."
+            urlLabel.text = localizedAppString("Share a YouTube or TikTok video link to create a course.", comment: "Share status")
+            statusLabel.text = localizedAppString("No video link was found.", comment: "Share status")
             return
         }
         sharedURL = url
         urlLabel.text = url.absoluteString
-        statusLabel.text = "Adding to your Queue…"
+        statusLabel.text = localizedAppString("Adding to your Queue…", comment: "Share status")
         submit()
     }
 
@@ -109,11 +109,11 @@ final class ShareViewController: UIViewController {
     private func submit() {
         guard let sharedURL else { return }
         guard let token = ShareStore.accessToken else {
-            statusLabel.text = "Open Langlets and sign in before sharing a video."
+            statusLabel.text = localizedAppString("Open Langlets and sign in before sharing a video.", comment: "Share status")
             return
         }
 
-        statusLabel.text = "Adding to your Queue…"
+        statusLabel.text = localizedAppString("Adding to your Queue…", comment: "Share status")
         // Same split as the host app's rootURL — a debug extension posting to
         // production would file real imports against a real account while you
         // think you're testing locally. This target can't see SceneDelegate's
@@ -146,25 +146,25 @@ final class ShareViewController: UIViewController {
         let body = data.flatMap { try? JSONSerialization.jsonObject(with: $0) as? [String: Any] }
 
         if let error {
-            statusLabel.text = "Couldn’t connect: \(error.localizedDescription)"
+            statusLabel.text = String(format: localizedAppString("Couldn’t connect: %@", comment: "Connection error"), error.localizedDescription)
         } else if status == 200 || status == 201 {
             // "ready" now only comes back when a client_token replay finds a
             // finished request: the first POST answers before the language is
             // known, so it can't yet tell that the course was already yours.
             statusLabel.text = body?["status"] as? String == "ready"
-                ? "Already in your Library — no credit used."
-                : "Added to your Queue. We’ll notify you when it’s ready."
+                ? localizedAppString("Already in your Library — no credit used.", comment: "Share status")
+                : localizedAppString("Added to your Queue. We’ll notify you when it’s ready.", comment: "Share status")
             extensionContext?.completeRequest(returningItems: nil)
         } else {
             let description = body?["error_description"] as? String
             switch status {
-            case 401: statusLabel.text = "Open Langlets and sign in again."
+            case 401: statusLabel.text = localizedAppString("Open Langlets and sign in again.", comment: "Share status")
             // Both 402 shapes — an empty balance and a paused Pro library — carry a
             // sentence naming the way forward, and credits cannot be topped up,
             // so prefer the server's copy over anything hardcoded here.
-            case 402: statusLabel.text = description ?? "You’re out of free imports."
-            case 422: statusLabel.text = description ?? "That video can’t be imported."
-            default: statusLabel.text = description ?? "Something went wrong. Please try again."
+            case 402: statusLabel.text = description ?? localizedAppString("You’re out of free imports.", comment: "Share status")
+            case 422: statusLabel.text = description ?? localizedAppString("That video can’t be imported.", comment: "Share status")
+            default: statusLabel.text = description ?? localizedAppString("Something went wrong. Please try again.", comment: "Share status")
             }
         }
     }

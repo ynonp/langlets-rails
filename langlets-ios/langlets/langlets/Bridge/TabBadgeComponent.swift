@@ -16,10 +16,14 @@ final class TabBadgeComponent: BridgeComponent {
         guard message.event == "badgeChanged",
               let data: MessageData = message.data() else { return }
 
+        if let locale = data.locale, ["en", "he", "es"].contains(locale) {
+            UserDefaults(suiteName: NativeShareStore.appGroup)?.set(locale, forKey: "interfaceLocale")
+        }
+
         NotificationCenter.default.post(
             name: .queueBadgeDidChange,
             object: nil,
-            userInfo: ["count": data.count]
+            userInfo: ["count": data.count, "titles": data.titles ?? []]
         )
     }
 }
@@ -27,6 +31,8 @@ final class TabBadgeComponent: BridgeComponent {
 private extension TabBadgeComponent {
     struct MessageData: Decodable {
         let count: Int
+        let titles: [String]?
+        let locale: String?
     }
 }
 

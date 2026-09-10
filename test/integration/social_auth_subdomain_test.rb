@@ -70,6 +70,17 @@ class SocialAuthSubdomainTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "Spanish Google signup uses the canonical callback and returns to Spanish" do
+    email = "spanish-google-signup@example.com"
+    mock_google(email: email, uid: "spanish-signup")
+    host! "es.langlets.app"
+    post user_google_oauth2_omniauth_authorize_path, params: { origin: "https://es.langlets.app/" }
+    assert_redirected_to "https://langlets.app/users/auth/google_oauth2/callback"
+    follow_redirect!
+    assert_redirected_to "https://es.langlets.app/"
+    assert_equal "es", User.find_by!(email: email).native_language.iso_name
+  end
+
   private
 
   def mock_google(email:, uid:)

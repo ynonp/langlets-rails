@@ -14,7 +14,7 @@
         <% if @video_info %>
           <p class="mt-3 text-sm font-semibold text-app-text-2">
             <%= t("try.show.info_line",
-                  language: @video_info.language,
+                  language: localized_language_name(@video_info.language),
                   duration: @video_info.duration,
                   lines: number_with_delimiter(@video_info.line_count),
                   words: number_with_delimiter(@video_info.unique_word_count)) %>

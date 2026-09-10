@@ -10,6 +10,10 @@
           data-controller="audio-cache"
           data-action="click->audio-cache#handleClick:capture audio-cache:play->audio-cache#playEvent audio-cache:preload->audio-cache#preloadEvent audio-cache:stop->audio-cache#stop">
       <%= render "shared/web_header" %>
+      <% flash.to_hash.slice("notice", "alert").each do |kind, message| %>
+        <div class="mx-auto mt-5 w-[calc(100%-2rem)] max-w-5xl rounded-xl border px-4 py-3 text-sm <%= kind == 'alert' ? 'border-[#D98B8B] bg-[#FFFDF8] text-[#9E3410]' : 'border-emerald-300 bg-emerald-50 text-emerald-900' %>"
+             role="<%= kind == 'alert' ? 'alert' : 'status' %>"><%= message %></div>
+      <% end %>
       <%= yield %>
     </main>
 

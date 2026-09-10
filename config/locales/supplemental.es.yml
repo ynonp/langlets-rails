@@ -1,0 +1,122 @@
+---
+es:
+  supplemental:
+    gallery_title: Empieza a practicar un idioma
+    gallery_description: Explora cursos y listas de reproducción para aprender idiomas
+      a partir de vídeos.
+    gallery_intro: Explora todos los cursos y listas de reproducción o filtra la colección
+      por idioma.
+    course: Curso
+    playlist: Lista de reproducción
+    import: Importación
+    clear_search: Borrar búsqueda
+    gallery_empty: Ningún Langlet coincide con esos filtros.
+    gallery_results: Resultados de la biblioteca
+    pagination: Paginación
+    gallery_search: Buscar cursos y listas de reproducción
+    gallery_filter: Filtrar biblioteca
+    queue_intro: Añade un vídeo de YouTube y lo convertiremos en una lección de idiomas.
+    your_imports: Tus importaciones
+    create_lesson: Crear una lección
+    what_you_get: Qué obtendrás
+    synced_transcript: Transcripción y traducción sincronizadas
+    word_practice: Práctica de vocabulario palabra por palabra
+    reusable_lesson: Una lección en tu biblioteca que podrás repasar
+    balance: Saldo disponible
+    import_cost: Cada nueva importación usa 1 crédito.
+    ready_to_learn: Listo para aprender
+    remove: Eliminar
+    cancel_import: Cancelar importación
+    password_title: Cambiar contraseña
+    new_password: Nueva contraseña
+    confirm_new_password: Confirmar nueva contraseña
+    password_submit: CAMBIAR MI CONTRASEÑA
+    back_to_sign_in: Volver a iniciar sesión
+    resend_confirmation: Reenviar confirmación
+    resend_intro: Te enviaremos nuevas instrucciones de confirmación
+    resend_submit: REENVIAR CONFIRMACIÓN
+    confirm_account: Confirmar mi cuenta
+    confirm_intro: 'Puedes confirmar tu correo a través del siguiente enlace:'
+    change_password: Cambiar mi contraseña
+    reset_intro: Alguien ha solicitado un enlace para cambiar tu contraseña. Puedes
+      hacerlo a través del siguiente enlace.
+    ignore_email: Si no lo has solicitado, ignora este correo.
+    reset_notice: Tu contraseña no cambiará hasta que abras el enlace anterior y crees
+      una nueva.
+    password_changed: Te informamos de que tu contraseña ha cambiado.
+    account_locked: Tu cuenta se ha bloqueado debido a un número excesivo de intentos
+      fallidos de inicio de sesión.
+    unlock_intro: 'Pulsa el siguiente enlace para desbloquear tu cuenta:'
+    unlock_account: Desbloquear mi cuenta
+    connections_title: Aplicaciones conectadas - Langlets
+    connections_empty: Aún no hay aplicaciones conectadas.
+    unknown_app: Aplicación desconocida
+    disconnect_app: Desconectar aplicación
+    scopes: Permisos
+    created: Creación
+    last_used: Último uso
+    expires: Caducidad
+    never: Nunca
+    revoke: Revocar
+    revoke_token: "¿Revocar este token?"
+    oauth_able: 'Podrá:'
+    oauth_revoke: Puedes revocar este acceso cuando quieras desde Aplicaciones conectadas
+      en tu menú de perfil.
+    minimum_characters: "%{count} caracteres como mínimo"
+    welcome_email: "¡Te damos la bienvenida, %{email}!"
+    hello_email: "¡Hola, %{email}!"
+    email_changing: Te informamos de que tu dirección de correo está cambiando a %{email}.
+    email_changed: Te informamos de que tu dirección de correo ha cambiado a %{email}.
+    connections_intro: Agentes de IA y herramientas a los que has dado acceso a tu
+      cuenta de Langlets. Revocar un token cierra esa conexión inmediatamente.
+    connections_hint: Cuando conectes un agente de IA (como Claude) o la CLI de Langlets
+      a tu cuenta, sus tokens de acceso aparecerán aquí.
+    revoke_app: "¿Revocar todo el acceso de %{name}?"
+    from_now: Dentro de %{time}
+    oauth_title: Autorizar %{name} - Langlets
+    oauth_connect: Conectar %{name}
+    oauth_request: "%{name} solicita acceso a tu cuenta de Langlets."
+    web_import_intro: Pega cualquier vídeo público de YouTube o TikTok. Crearemos
+      una transcripción traducida y ejercicios de vocabulario a partir de él.
+    first_video: Añade tu primer vídeo
+    queue_empty: No hay importaciones en curso.
+    import_languages: Vídeo en %{source} · traducción al %{target}
+    result_count:
+      one: 1 resultado
+      other: "%{count} resultados"
+    langlet_count:
+      one: 1 Langlet
+      other: "%{count} Langlets"
+    token_count:
+      one: 1 token activo
+      other: "%{count} tokens activos"
+    import_count:
+      one: 1 importación en curso. Esta página se actualiza automáticamente.
+      other: "%{count} importaciones en curso. Esta página se actualiza automáticamente."
+    forgot_password: "¿Has olvidado tu contraseña?"
+    missing_confirmation: "¿No has recibido las instrucciones de confirmación?"
+    missing_unlock: "¿No has recibido las instrucciones de desbloqueo?"
+    provider_sign_in: Iniciar sesión con %{provider}
+    token_revoked: Token revocado.
+    app_disconnected: "%{name} desconectada."
+    current_password: Contraseña actual
+    keep_password: "(déjala en blanco para mantener la actual)"
+    confirm_changes: "(para confirmar los cambios)"
+    update: ACTUALIZAR
+    cancel_account: Eliminar mi cuenta
+    cancel_account_intro: "¿No estás satisfecho? Esto elimina tu cuenta permanentemente."
+    are_you_sure: "¿Estás seguro?"
+    resend_unlock: Reenviar instrucciones de desbloqueo
+    resend_unlock_intro: Te enviaremos nuevas instrucciones de desbloqueo
+    resend_unlock_submit: REENVIAR INSTRUCCIONES
+    waiting_confirmation: 'Pendiente de confirmación: %{email}'
+  seo:
+    new_language: un nuevo idioma
+    course_description: Aprende %{language} con «%{name}», un curso de vídeo interactivo
+      con %{lessons}. Practica la comprensión auditiva y la expresión oral con actividades
+      creadas con IA en Langlets.
+    playlist_description: Una lista seleccionada con %{courses}. Domina «%{name}»
+      paso a paso en Langlets.
+    interactive_courses:
+      one: 1 curso de vídeo interactivo
+      other: "%{count} cursos de vídeo interactivos"

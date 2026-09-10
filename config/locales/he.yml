@@ -1,4 +1,9 @@
 he:
+  imports:
+    errors:
+      invalid_link: "הקישור הזה לא נראה כמו קישור לסרטון. הדביקו קישור מ־YouTube או TikTok."
+      invalid_link_with_id: "הקישור הזה לא נראה כמו קישור לסרטון. הדביקו קישור מ־YouTube או TikTok, או מזהה סרטון של YouTube."
+      unavailable: "לא הצלחנו לקרוא את הסרטון. ייתכן שהוא פרטי, מוגבל גיל, נמחק, חסום באזור שלכם או אינו זמין. נסו קישור אחר."
   channels:
     actions:
       save: "שמירה"

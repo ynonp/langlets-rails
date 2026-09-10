@@ -37,7 +37,7 @@
           <% if pro %>
             <strong class="text-[#C4451C]"><%= t("app.import_requests.new.included_with_pro") %></strong>
           <% else %>
-            <strong class="<%= short ? 'text-[#9E3410]' : 'text-[#C4451C]' %>"><%= pluralize(cost, "credit") %> · <%= balance %> left</strong>
+            <strong class="<%= short ? 'text-[#9E3410]' : 'text-[#C4451C]' %>"><%= t("app.import_requests.new.cost_and_balance", cost: app_credits_label(cost), balance: t("app.common.credits_left", count: balance)) %></strong>
           <% end %>
         </p>
         <% if short %>
