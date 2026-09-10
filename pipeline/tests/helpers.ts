@@ -19,6 +19,7 @@ export interface QueuedModel {
   calls: () => number;
   // The full prompt (message array) each call received.
   prompts: unknown[][];
+  providerOptions: unknown[];
 }
 
 // A model that answers from a queue: strings are returned verbatim (also how
@@ -27,6 +28,7 @@ export interface QueuedModel {
 export function queuedModel(responses: Array<string | object>): QueuedModel {
   let count = 0;
   const prompts: unknown[][] = [];
+  const providerOptions: unknown[] = [];
 
   const model = {
     specificationVersion: "v2",
@@ -39,6 +41,7 @@ export function queuedModel(responses: Array<string | object>): QueuedModel {
     // deno-lint-ignore no-explicit-any
     doGenerate: (options: any) => {
       prompts.push(options.prompt);
+      providerOptions.push(options.providerOptions);
       if (count >= responses.length) throw new Error("mock model exhausted");
       const next = responses[count++];
       const text = typeof next === "string" ? next : JSON.stringify(next);
@@ -51,7 +54,7 @@ export function queuedModel(responses: Array<string | object>): QueuedModel {
     },
   } as unknown as LanguageModel;
 
-  return { model, calls: () => count, prompts };
+  return { model, calls: () => count, prompts, providerOptions };
 }
 
 export function unusedModel(): QueuedModel {

@@ -21,6 +21,7 @@ import { llmLoggingEnabled, withLlmLogging } from "./llmLogging.ts";
 
 export interface ModelRegistry {
   detectLanguage: LanguageModel;
+  detectLanguageFallback?: LanguageModel;
   extractLyrics: LanguageModel;
   reconcileTranscripts: LanguageModel;
   forceAlignmentFallback: LanguageModel;
@@ -57,7 +58,8 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     : (model: LanguageModel, _label: string) => model;
 
   return {
-    detectLanguage: google("gemini-3.7-flash"),
+    detectLanguage: google("gemini-2.5-flash"),
+    detectLanguageFallback: google("gemini-3.7-flash"),
     extractLyrics: llmLoggingEnabled(env)
       ? withLlmLogging(google("gemini-3.7-flash"), "extract_lyrics", { logPrompt: true })
       : google("gemini-3.7-flash"),

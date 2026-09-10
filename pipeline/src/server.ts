@@ -56,7 +56,13 @@ export function createHandler(options: ServerOptions): (request: Request) => Pro
         if (!Array.isArray(payload.supported_languages)) {
           throw new Error("supported_languages is required");
         }
-        return json(200, await detectLanguage(payload, { model: options.models.detectLanguage }));
+        return json(
+          200,
+          await detectLanguage(payload, {
+            model: options.models.detectLanguage,
+            fallbackModel: options.models.detectLanguageFallback,
+          }),
+        );
       } catch (error) {
         return json(422, { error: message(error) });
       }

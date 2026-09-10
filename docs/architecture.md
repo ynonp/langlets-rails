@@ -1070,9 +1070,11 @@ existing spelling-distance lookup. Greek and Swedish still have no dictionary.
 See [Chinese dictionary sources and rebuild instructions](../pipeline/data/CHINESE.md)
 for licensing, filtering, and limitations. Interface copy falls back to English.
 
-YouTube detection is a dedicated Gemini 3.7 Flash video request constrained to
-the database language ISO codes. TikTok detection first downloads verified
-audio with yt-dlp and sends it to ElevenLabs Scribe without a language hint;
+YouTube detection first sends a dedicated Gemini 2.5 Flash video request
+constrained to the database language ISO codes. If that request fails or returns
+an unsupported language, it retries once with Gemini 3.7 Flash at low thinking;
+3.7 is never called after a successful 2.5 result. TikTok detection first
+downloads verified audio with yt-dlp and sends it to ElevenLabs Scribe without a language hint;
 this is the cheaper path and rejects silent/audio-less renditions before they
 reach ElevenLabs. If every configured yt-dlp format and network namespace
 fails, detection falls back to asking ElevenLabs to fetch the canonical TikTok
@@ -2518,7 +2520,11 @@ The single import service for the Add sheet, the share extension and the API. It
 - `:already_queued` — this user already asked; one publication, one charge. Checked inside the published-course branch as well, so a course that publishes while their request is in flight cannot be sold to them twice.
 - `:paused` — theirs, in a Pro library the subscription no longer lends back. Nothing charged, nothing enrolled.
 
-Jobs are enqueued **inside** their transactions — Solid Queue is Postgres-backed, so each job row commits atomically with the state it acts on. Enqueuing after commit would leave a request nothing ever picks up.
+Jobs are normally enqueued **inside** their transactions — Solid Queue is
+Postgres-backed, so each job row commits atomically with the state it acts on.
+`DetectImportLanguageJob` is the exception: the queue schema uses a separate
+database connection, so this fast job explicitly waits for the import transaction
+to commit before it can load the provisional request.
 
 Successful Add Video submissions redirect to `/gallery?imports=pending`, where
 the provisional request is immediately visible as “Detecting language…”.

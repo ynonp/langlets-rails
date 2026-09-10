@@ -182,6 +182,7 @@ Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rai
 
 | Step | Model | Provider |
 |---|---|---|
+| `detect_language` (YouTube) | `gemini-2.5-flash`; `gemini-3.7-flash` at low thinking only after failure | Google Generative AI |
 | `extract_lyrics` (transcript text + normal timing) | Native captions + Scribe, reconciled by `gpt-5.6-sol`; timed YouTube fallback | Supadata + ElevenLabs + OpenAI; Gemini 3.7 Flash fallback |
 | `force_alignment` (word timings) | Forced Alignment API | ElevenLabs |
 | `add_lessons` | `gemini-3.8-flash` | Google Generative AI |

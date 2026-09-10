@@ -27,6 +27,7 @@ export interface DetectionResult {
 
 export interface DetectionOptions {
   model: LanguageModel;
+  fallbackModel?: LanguageModel;
   validateDuration?: typeof validateVideoDuration;
   prepareAudio?: typeof downloadYoutubeAudioToTemp;
   transcribeFile?: typeof transcribeFileWithElevenLabs;
@@ -44,18 +45,10 @@ export async function detectLanguage(
   await (options.validateDuration ?? validateVideoDuration)(payload.youtubeurl);
 
   if (isYoutubeUrl(payload.youtubeurl)) {
-    const allowed = payload.supported_languages.map((language) => language.iso_name).join(", ");
-    const { text } = await generateText({
-      model: options.model,
-      system:
-        `Detect the primary spoken or sung language in this video. Reply with only one ISO code from this list: ${allowed}. Do not choose a language used only in a short intro or outro.`,
-      messages: [{
-        role: "user",
-        content: [{ type: "file", data: new URL(payload.youtubeurl), mediaType: "video/mp4" }],
-      }],
-      temperature: 0,
-    });
-    return { language: resolveLanguage(text, payload.supported_languages), data: {} };
+    return {
+      language: await detectYoutubeLanguage(payload, options),
+      data: {},
+    };
   }
 
   if (isTiktokUrl(payload.youtubeurl)) {
@@ -72,6 +65,53 @@ export async function detectLanguage(
   }
 
   throw new Error("unsupported video provider");
+}
+
+async function detectYoutubeLanguage(
+  payload: DetectionPayload,
+  options: DetectionOptions,
+): Promise<SupportedLanguage> {
+  try {
+    return await detectYoutubeLanguageWithModel(payload, options.model);
+  } catch (primaryError) {
+    if (!options.fallbackModel) throw primaryError;
+
+    console.warn(
+      `Gemini 2.5 Flash language detection failed (${message(primaryError)}); ` +
+        "falling back to Gemini 3.7 Flash with low thinking",
+    );
+    try {
+      return await detectYoutubeLanguageWithModel(payload, options.fallbackModel, {
+        google: { thinkingConfig: { thinkingLevel: "low" } },
+      });
+    } catch (fallbackError) {
+      throw new Error(
+        `language detection failed with both Gemini models: ` +
+          `2.5 Flash: ${message(primaryError)}; 3.7 Flash: ${message(fallbackError)}`,
+        { cause: fallbackError },
+      );
+    }
+  }
+}
+
+async function detectYoutubeLanguageWithModel(
+  payload: DetectionPayload,
+  model: LanguageModel,
+  providerOptions?: { google: { thinkingConfig: { thinkingLevel: "low" } } },
+): Promise<SupportedLanguage> {
+  const allowed = payload.supported_languages.map((language) => language.iso_name).join(", ");
+  const { text } = await generateText({
+    model,
+    system:
+      `Detect the primary spoken or sung language in this video. Reply with only one ISO code from this list: ${allowed}. Do not choose a language used only in a short intro or outro.`,
+    messages: [{
+      role: "user",
+      content: [{ type: "file", data: new URL(payload.youtubeurl), mediaType: "video/mp4" }],
+    }],
+    temperature: 0,
+    providerOptions,
+  });
+  return resolveLanguage(text, payload.supported_languages);
 }
 
 // Scribe v2 reports these supported languages as ISO-639-3 while Langlets'

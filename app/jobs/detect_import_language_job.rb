@@ -1,5 +1,6 @@
 class DetectImportLanguageJob < ApplicationJob
   queue_as :default
+  self.enqueue_after_transaction_commit = true
 
   def perform(import_request_id)
     import_request = ImportRequest.find(import_request_id)

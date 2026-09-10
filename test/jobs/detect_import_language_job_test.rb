@@ -1,6 +1,10 @@
 require "test_helper"
 
 class DetectImportLanguageJobTest < ActiveJob::TestCase
+  test "enqueues only after the import transaction commits" do
+    assert DetectImportLanguageJob.enqueue_after_transaction_commit
+  end
+
   VIDEO_ID = "kJQP7kiw5Fk".freeze
   CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 

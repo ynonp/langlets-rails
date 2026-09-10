@@ -14,19 +14,72 @@ const LANGUAGES = [
   { iso_name: "zh", english_name: "Chinese" },
 ];
 
-Deno.test("YouTube language detection uses Gemini and resolves a seeded language", async () => {
-  const gemini = queuedModel(["es\n"]);
+Deno.test("YouTube language detection uses the primary model without fallback", async () => {
+  const primary = queuedModel(["es\n"]);
+  const fallback = queuedModel(["he\n"]);
   const result = await detectLanguage(
     {
       youtubeurl: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
       supported_languages: LANGUAGES,
     },
-    { model: gemini.model, validateDuration: async () => {} },
+    {
+      model: primary.model,
+      fallbackModel: fallback.model,
+      validateDuration: async () => {},
+    },
   );
 
   assertEquals(result.language, LANGUAGES[1]);
   assertEquals(result.data, {});
-  assertEquals(gemini.calls(), 1);
+  assertEquals(primary.calls(), 1);
+  assertEquals(fallback.calls(), 0);
+});
+
+Deno.test("YouTube language detection falls back with low Gemini thinking", async () => {
+  const primary = queuedModel(["unsupported\n"]);
+  const fallback = queuedModel(["he\n"]);
+  const result = await detectLanguage(
+    {
+      youtubeurl: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+      supported_languages: LANGUAGES,
+    },
+    {
+      model: primary.model,
+      fallbackModel: fallback.model,
+      validateDuration: async () => {},
+    },
+  );
+
+  assertEquals(result.language, LANGUAGES[5]);
+  assertEquals(primary.calls(), 1);
+  assertEquals(fallback.calls(), 1);
+  assertEquals(fallback.providerOptions, [{
+    google: { thinkingConfig: { thinkingLevel: "low" } },
+  }]);
+});
+
+Deno.test("YouTube language detection reports both model failures", async () => {
+  const primary = queuedModel(["unsupported\n"]);
+  const fallback = queuedModel(["also-unsupported\n"]);
+
+  await assertRejects(
+    () =>
+      detectLanguage(
+        {
+          youtubeurl: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+          supported_languages: LANGUAGES,
+        },
+        {
+          model: primary.model,
+          fallbackModel: fallback.model,
+          validateDuration: async () => {},
+        },
+      ),
+    Error,
+    "language detection failed with both Gemini models",
+  );
+  assertEquals(primary.calls(), 1);
+  assertEquals(fallback.calls(), 1);
 });
 
 Deno.test("TikTok downloads audio and reuses ElevenLabs detected transcript", async () => {
