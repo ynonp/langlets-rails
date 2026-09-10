@@ -53,7 +53,9 @@
   # matched (kept in place instead of hiding/replacing).
   cell_base = "group relative flex items-center min-h-[80px] overflow-hidden px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
   cell_state = "data-[state=selected]:border-emerald-400 data-[state=selected]:ring-2 data-[state=selected]:ring-emerald-500/25 data-[state=selected]:bg-emerald-50/70 dark:data-[state=selected]:bg-emerald-900/40 data-[state=matched]:border-emerald-500 data-[state=matched]:bg-emerald-50 dark:data-[state=matched]:bg-emerald-900/40 data-[state=matched]:opacity-[0.6] data-[state=matched]:cursor-default data-[state=matched]:pointer-events-none data-[state=matched]:grayscale"
-  check_classes = "hidden group-data-[state=matched]:block shrink-0 text-base font-bold leading-none text-emerald-600 dark:text-emerald-300"
+  # Keep the check out of the flex layout. Revealing an in-flow checkmark can
+  # make a long label wrap onto another line and change the card's height.
+  check_classes = "hidden group-data-[state=matched]:block absolute end-3 top-1/2 -translate-y-1/2 text-base font-bold leading-none text-emerald-600 dark:text-emerald-300"
 %>
 
 <div
@@ -104,7 +106,7 @@
                 data-audio-url="<%= token[:audio_url] %>"
                 data-action="click->match-tokens-activity#selectToken">
                 <span lang="<%= l1.iso_name %>" class="line-clamp-2 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l1_word] %></span>
-                <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
+                <span class="<%= check_classes %>" aria-hidden="true">✓</span>
               </div>
             <% end %>
           </div>
@@ -122,7 +124,7 @@
                 data-audio-url="<%= token[:audio_url] %>"
                 data-action="click->match-tokens-activity#selectToken">
                 <span lang="<%= l2.iso_name %>" class="line-clamp-3 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l2_translation] %></span>
-                <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
+                <span class="<%= check_classes %>" aria-hidden="true">✓</span>
               </div>
             <% end %>
           </div>
