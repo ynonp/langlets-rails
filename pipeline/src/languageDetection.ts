@@ -1,8 +1,9 @@
 import { generateText } from "ai";
 import type { LanguageModel } from "ai";
-import { downloadYoutubeAudioToTemp } from "./audio.ts";
+import { downloadYoutubeAudioToTemp, TIKTOK_SPEECH_FORMATS } from "./audio.ts";
 import { message } from "./retry.ts";
 import {
+  isNoTimedSpeechError,
   type SpeechToTextResult,
   transcribeFileWithElevenLabs,
   transcribeWithElevenLabs,
@@ -145,23 +146,37 @@ async function transcribeTiktok(
   url: string,
   options: DetectionOptions,
 ): Promise<SpeechToTextResult> {
-  let audio: Awaited<ReturnType<typeof downloadYoutubeAudioToTemp>>;
-  try {
-    // Downloading ourselves is the cheaper path and lets us reject silent or
-    // audio-less TikTok renditions before paying ElevenLabs to process them.
-    audio = await (options.prepareAudio ?? downloadYoutubeAudioToTemp)(url);
-  } catch (error) {
-    // If every yt-dlp format/namespace failed, let ElevenLabs fetch the TikTok
-    // URL itself. This costs more, so it is deliberately the second choice.
-    console.warn(
-      `TikTok audio download failed (${message(error)}); falling back to ElevenLabs URL fetch`,
-    );
-    return await (options.transcribeUrl ?? transcribeWithElevenLabs)(url, null);
+  const prepareAudio = options.prepareAudio ?? downloadYoutubeAudioToTemp;
+  const transcribeFile = options.transcribeFile ?? transcribeFileWithElevenLabs;
+  const failures: string[] = [];
+
+  // Each format is downloaded and transcribed separately. An audible track is
+  // not necessarily the post's speech track: TikTok's standalone `ba` can be
+  // creator music while the muxed video carries the speaker's voice.
+  for (const format of TIKTOK_SPEECH_FORMATS) {
+    let audio: Awaited<ReturnType<typeof downloadYoutubeAudioToTemp>>;
+    try {
+      audio = await prepareAudio(url, [format]);
+    } catch (error) {
+      failures.push(`${format.format}: ${message(error)}`);
+      continue;
+    }
+
+    try {
+      return await transcribeFile(audio.path, null);
+    } catch (error) {
+      if (!isNoTimedSpeechError(error)) throw error;
+      failures.push(`${format.format}: no timed speech`);
+    } finally {
+      await Deno.remove(audio.path).catch(() => {});
+    }
   }
 
-  try {
-    return await (options.transcribeFile ?? transcribeFileWithElevenLabs)(audio.path, null);
-  } finally {
-    await Deno.remove(audio.path).catch(() => {});
-  }
+  // If every local speech candidate was unavailable or contained no words,
+  // let ElevenLabs fetch the canonical post URL as the final fallback.
+  console.warn(
+    `TikTok local speech candidates failed (${failures.join("; ")}); ` +
+      "falling back to ElevenLabs URL fetch",
+  );
+  return await (options.transcribeUrl ?? transcribeWithElevenLabs)(url, null);
 }

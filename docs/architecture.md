@@ -1074,11 +1074,14 @@ YouTube detection first sends a dedicated Gemini 2.5 Flash video request
 constrained to the database language ISO codes. If that request fails or returns
 an unsupported language, it retries once with Gemini 3.7 Flash at low thinking;
 3.7 is never called after a successful 2.5 result. TikTok detection first
-downloads verified audio with yt-dlp and sends it to ElevenLabs Scribe without a language hint;
-this is the cheaper path and rejects silent/audio-less renditions before they
-reach ElevenLabs. If every configured yt-dlp format and network namespace
-fails, detection falls back to asking ElevenLabs to fetch the canonical TikTok
-URL directly. Scribe's returned ISO-639 code selects the language. Its
+downloads verified audio with yt-dlp and sends it to ElevenLabs Scribe without a language hint.
+Its TikTok-specific ladder prefers muxed H.264 and other video-with-audio
+renditions, because TikTok's separate audio-only rendition can contain creator
+music while the post video contains speech. If Scribe returns no timed speech,
+detection advances to the next rendition; other Scribe errors remain fatal. A
+standalone audio rendition is the final local candidate. If every candidate
+either fails to download or contains no timed speech, detection asks ElevenLabs
+to fetch the canonical TikTok URL directly. Scribe's returned ISO-639 code selects the language. Its
 transcript and timed words seed `data["stt_candidates"]["elevenlabs"]`, so
 extraction reuses that paid result while still requesting the independent
 Supadata native candidate. Scribe v2's three-letter codes (`eng`, `spa`, `deu`,
@@ -1547,14 +1550,18 @@ download is verified before it counts:
 - `ffprobe` must report a codec for the first audio stream, and `ffmpeg
   volumedetect` must report a mean volume above **-70 dB**. A file with no
   reading at all is treated as silent — ffmpeg could not decode it either way.
-- A file that fails either check is deleted and the next of five format specs is
+- A file that fails either check is deleted and the next of five general format specs is
   tried: `bestaudio[ext=m4a]` (the audio-only pick that has always served
   YouTube, and the only one needing no post-processing), then
   `ba[acodec!=none]`, then `worst[format_id!*=bytevc1][acodec!=none]` — which
   excludes the silent rendition by name — then the H.264 rendition, then
   yt-dlp's own default. Specs 2-5 are extracted to mono 16 kHz m4a, so callers
   always get m4a regardless of which one won. In practice YouTube is satisfied by
-  the first spec and TikTok by the third.
+  the first spec. TikTok language detection supplies its own muxed-first ladder:
+  H.264 video with audio, the smallest non-`bytevc1` video with audio, any video
+  with audio, and only then TikTok's standalone audio rendition. Each audible
+  candidate is sent to Scribe separately, and a no-timed-speech result advances
+  to the next candidate rather than accepting creator music as the post audio.
 - Only when all five are exhausted does the download fail, with every spec's
   reason in the message.
 - **If `ffprobe`/`ffmpeg` cannot be run at all** (not installed, or not in

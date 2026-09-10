@@ -17,6 +17,7 @@ import {
   meanVolumeProbeCommand,
   parseMeanVolumeDb,
   parsePrintedValue,
+  TIKTOK_SPEECH_FORMATS,
 } from "../src/audio.ts";
 
 const youtubeUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
@@ -70,6 +71,14 @@ Deno.test("the format ladder starts audio-only and ends with yt-dlp's own pick",
   // The silent HEVC rendition yt-dlp does not flag (yt-dlp#15642) is excluded
   // explicitly, so it is never the format that "succeeds".
   assertEquals(AUDIO_FORMATS.some((spec) => spec.format?.includes("format_id!*=bytevc1")), true);
+});
+
+Deno.test("TikTok speech formats prefer muxed H.264 and leave standalone audio last", () => {
+  assertStringIncludes(TIKTOK_SPEECH_FORMATS[0].format ?? "", "format_id*=h264");
+  assertStringIncludes(TIKTOK_SPEECH_FORMATS[0].format ?? "", "vcodec!=none");
+  assertStringIncludes(TIKTOK_SPEECH_FORMATS[0].format ?? "", "acodec!=none");
+  assertEquals(TIKTOK_SPEECH_FORMATS.at(-1)?.format, "ba[acodec!=none]");
+  assertEquals(TIKTOK_SPEECH_FORMATS.every((spec) => spec.extractAudio), true);
 });
 
 Deno.test("printed values are read by tag, not by line position", () => {

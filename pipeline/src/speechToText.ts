@@ -6,10 +6,9 @@
 // jobs at once, returning the transcript *and* per-word timestamps.
 //
 // The important consequence is that TikTok needs no forced alignment.
-// `source_url` accepts a TikTok URL directly, so normally yt-dlp never runs.
-// When TikTok refuses that server-side fetch ElevenLabs answers 400, and only
-// then does the audio get downloaded and uploaded as `file` instead — see
-// steps/extractLyrics.ts.
+// Language detection downloads TikTok's muxed speech candidates and uploads
+// them as `file`, then uses `source_url` only after all local candidates fail.
+// Later extraction normally reuses that paid result.
 
 import type { AlignedWord } from "./alignment.ts";
 
@@ -49,6 +48,21 @@ export class SpeechToTextRequestError extends Error {
     this.name = "SpeechToTextRequestError";
     this.status = status;
   }
+}
+
+// A successful Scribe request can still contain only music or audio events.
+// Keep that outcome distinct so TikTok detection can try another rendition
+// without treating authentication, rate-limit, or service errors as content
+// selection failures.
+export class NoTimedSpeechError extends Error {
+  constructor() {
+    super("ElevenLabs speech-to-text returned no timed words");
+    this.name = "NoTimedSpeechError";
+  }
+}
+
+export function isNoTimedSpeechError(error: unknown): error is NoTimedSpeechError {
+  return error instanceof NoTimedSpeechError;
 }
 
 // True when ElevenLabs refused the request itself rather than failing to serve
@@ -141,7 +155,7 @@ export function parseSpeechToText(payload: unknown): SpeechToTextResult {
     }));
 
   if (words.length === 0) {
-    throw new Error("ElevenLabs speech-to-text returned no timed words");
+    throw new NoTimedSpeechError();
   }
 
   return {

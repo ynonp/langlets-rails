@@ -1,5 +1,7 @@
 import { assertEquals, assertRejects, assertThrows } from "@std/assert";
 import { detectLanguage, resolveLanguage } from "../src/languageDetection.ts";
+import { TIKTOK_SPEECH_FORMATS } from "../src/audio.ts";
+import { NoTimedSpeechError } from "../src/speechToText.ts";
 import { queuedModel, STUB_AUDIO_PATH } from "./helpers.ts";
 
 const LANGUAGES = [
@@ -113,6 +115,78 @@ Deno.test("TikTok downloads audio and reuses ElevenLabs detected transcript", as
       },
     },
   });
+});
+
+Deno.test("TikTok advances from an audible music track to a speech rendition", async () => {
+  const requestedFormats: string[] = [];
+  const transcribedPaths: string[] = [];
+  const result = await detectLanguage(
+    {
+      youtubeurl: "https://www.tiktok.com/@scout/video/6718335390845095173",
+      supported_languages: LANGUAGES,
+    },
+    {
+      model: queuedModel([]).model,
+      validateDuration: async () => {},
+      prepareAudio: (_url, formats) => {
+        requestedFormats.push(formats?.[0]?.format ?? "");
+        return Promise.resolve({
+          path: `/tmp/langlets_candidate_${requestedFormats.length}.m4a`,
+          durationSeconds: 27,
+        });
+      },
+      transcribeFile: (path) => {
+        transcribedPaths.push(path);
+        if (transcribedPaths.length === 1) return Promise.reject(new NoTimedSpeechError());
+        return Promise.resolve({
+          text: "مرحبا",
+          words: [{ text: "مرحبا", start: 0, end: 0.5 }],
+          languageCode: "ara",
+          languageProbability: 0.99,
+        });
+      },
+    },
+  );
+
+  assertEquals(result.language, LANGUAGES[2]);
+  assertEquals(requestedFormats, TIKTOK_SPEECH_FORMATS.slice(0, 2).map((spec) => spec.format));
+  assertEquals(transcribedPaths, [
+    "/tmp/langlets_candidate_1.m4a",
+    "/tmp/langlets_candidate_2.m4a",
+  ]);
+});
+
+Deno.test("TikTok does not retry a rendition after a Scribe service error", async () => {
+  let downloads = 0;
+  let fetchedUrl = false;
+
+  await assertRejects(
+    () =>
+      detectLanguage(
+        {
+          youtubeurl: "https://www.tiktok.com/@scout/video/6718335390845095173",
+          supported_languages: LANGUAGES,
+        },
+        {
+          model: queuedModel([]).model,
+          validateDuration: async () => {},
+          prepareAudio: () => {
+            downloads += 1;
+            return Promise.resolve({ path: STUB_AUDIO_PATH, durationSeconds: 3 });
+          },
+          transcribeFile: () => Promise.reject(new Error("Scribe unavailable")),
+          transcribeUrl: () => {
+            fetchedUrl = true;
+            throw new Error("must not fetch URL");
+          },
+        },
+      ),
+    Error,
+    "Scribe unavailable",
+  );
+
+  assertEquals(downloads, 1);
+  assertEquals(fetchedUrl, false);
 });
 
 Deno.test("TikTok falls back to ElevenLabs URL fetch when yt-dlp cannot produce audio", async () => {

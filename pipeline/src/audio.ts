@@ -67,6 +67,24 @@ export const AUDIO_FORMATS: AudioDownloadOptions[] = [
   { format: "b", extractAudio: true },
 ];
 
+// TikTok's extractor can expose a separate creator-sound track as `ba`. It is
+// often music even when the post's muxed video contains speech, so language
+// detection must prefer audio embedded in the video and use standalone audio
+// only as its final candidate. H.264/AAC is first because it is broadly
+// decodable and avoids TikTok's known silent HEVC renditions.
+export const TIKTOK_SPEECH_FORMATS: AudioDownloadOptions[] = [
+  {
+    format: "b[format_id*=h264][vcodec!=none][acodec!=none]",
+    extractAudio: true,
+  },
+  {
+    format: "worst[format_id!*=bytevc1][vcodec!=none][acodec!=none]",
+    extractAudio: true,
+  },
+  { format: "b[vcodec!=none][acodec!=none]", extractAudio: true },
+  { format: "ba[acodec!=none]", extractAudio: true },
+];
+
 // Below this mean volume the track is digital silence in all but name.
 const SILENCE_THRESHOLD_DB = -70;
 
@@ -212,7 +230,10 @@ export async function detectAudioDefect(audioPath: string): Promise<AudioDefect 
   return classifyAudio(codec, parseMeanVolumeDb(volume.stderr));
 }
 
-export async function downloadYoutubeAudioToTemp(youtubeUrl: string): Promise<DownloadedAudio> {
+export async function downloadYoutubeAudioToTemp(
+  youtubeUrl: string,
+  formats: readonly AudioDownloadOptions[] = AUDIO_FORMATS,
+): Promise<DownloadedAudio> {
   // Before yt-dlp runs, not after: a host that cannot verify cannot produce a
   // usable download, and finding that out first keeps the error readable.
   await ensureAudioVerifiers();
@@ -224,7 +245,7 @@ export async function downloadYoutubeAudioToTemp(youtubeUrl: string): Promise<Do
 
   try {
     for (const networkNamespace of namespaces.length ? namespaces : [undefined]) {
-      for (const spec of AUDIO_FORMATS) {
+      for (const spec of formats) {
         const label = networkNamespace ? `${networkNamespace}/${spec.format}` : spec.format;
         const attempt = await attemptDownload(youtubeUrl, path, { ...spec, networkNamespace });
         if (typeof attempt === "string") {
