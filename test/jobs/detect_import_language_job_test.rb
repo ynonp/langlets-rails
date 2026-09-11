@@ -12,6 +12,7 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     @user = User.create!(email: "detect-job@example.com", password: "password123", confirmed_at: Time.zone.now)
     @spanish = languages(:spanish)
     @english = languages(:english)
+    @hebrew = languages(:hebrew)
     @video = Youtube::Oembed::Video.new(
       video_id: VIDEO_ID,
       title: "Despacito",
@@ -44,10 +45,10 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
                  "nothing is charged until the course reaches their channel"
   end
 
-  test "fails when the detected and translation languages match" do
+  test "defaults an English translation to Hebrew when English is detected" do
     request = create_provisional_request
 
-    assert_raises(Imports::UnsupportedLanguage) do
+    assert_enqueued_with(job: CreateCourseJob) do
       CreateSongProgress.stub(:detect_language, [ @english, {} ]) do
         Youtube::Oembed.stub(:fetch, @video) do
           DetectImportLanguageJob.perform_now(request.id)
@@ -55,7 +56,11 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
       end
     end
 
-    assert request.reload.failed?
+    request.reload
+    assert request.queued?
+    assert_equal "English", request.clip_language
+    assert_equal "Hebrew", request.translation_language
+    assert request.course.course_translations.exists?(language: @hebrew)
     assert_equal 3, @user.reload.credit_balance
   end
 

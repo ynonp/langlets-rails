@@ -25,7 +25,8 @@ module App
     # one is a mistake worth naming, not a query worth running.
     def resolve
       @query = params[:q].to_s.strip
-      @translation_language = default_translation_language
+      homepage_video = HomepageVideos.find_by_url(@query)
+      @translation_language = default_translation_language(clip_language: homepage_video&.clip_language)
 
       # Blank goes back to the empty state, not to an error the user hasn't
       # earned yet — they've typed nothing wrong, they've typed nothing at all.
@@ -44,7 +45,7 @@ module App
         @preview = Imports::Preview.call(
           user: current_user,
           url: VideoSource.loose_canonical(@query),
-          clip_language: HomepageVideos.find_by_url(@query)&.clip_language,
+          clip_language: homepage_video&.clip_language,
           translation_language: @translation_language.english_name
         )
       end
@@ -68,11 +69,12 @@ module App
     end
 
     def create
+      clip_language = HomepageVideos.find_by_url(params[:url])&.clip_language
       result = Imports::Create.call(
         user: current_user,
         url: params[:url],
-        clip_language: HomepageVideos.find_by_url(params[:url])&.clip_language,
-        translation_language: default_translation_language.english_name,
+        clip_language: clip_language,
+        translation_language: default_translation_language(clip_language: clip_language).english_name,
         client_token: params[:client_token].presence
       )
 
@@ -207,8 +209,14 @@ module App
       @translation_language = default_translation_language
     end
 
-    def default_translation_language
-      Current.translation_language || Language.find_by(english_name: "English")
+    def default_translation_language(clip_language: nil)
+      preferred = Current.translation_language || Language.find_by(english_name: "English")
+      resolved_name = Imports::LanguageDefaults.translation_language(
+        clip_language: clip_language,
+        translation_language: preferred.english_name
+      )
+
+      Language.find_by!(english_name: resolved_name)
     end
   end
 end

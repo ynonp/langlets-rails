@@ -211,6 +211,16 @@ module App
       assert_no_match(/Already in your library\./, response.body)
     end
 
+    test "a known Spanish video defaults a Spanish learner's translation to English" do
+      @user.update!(preferences: @user.preferences.merge("native_language" => "es"))
+      spanish_video_url = "https://www.youtube.com/watch?v=x5PJoP9x-Ys"
+
+      stub_video { get resolve_path(q: spanish_video_url), headers: NATIVE }
+
+      assert_response :success
+      assert_select "input[name=translation_language][value=English]"
+    end
+
     test "an Android share import uses the persisted native language" do
       @user.update!(preferences: @user.preferences.merge("native_language" => "he"))
 

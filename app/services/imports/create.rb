@@ -59,7 +59,10 @@ module Imports
       @user = user
       @url = url
       @clip_language = clip_language
-      @translation_language = translation_language
+      @translation_language = LanguageDefaults.translation_language(
+        clip_language: clip_language,
+        translation_language: translation_language
+      )
       @client_token = client_token
       @detected_data = detected_data
       @existing_request = existing_request
@@ -366,6 +369,7 @@ module Imports
       existing_request.update!(
         status: :ready,
         clip_language: clip_language,
+        translation_language: translation_language,
         course: course,
         progress_percent: 100,
         failure_reason: nil

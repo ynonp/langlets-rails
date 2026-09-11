@@ -36,7 +36,10 @@ module Imports
       @user = user
       @url = url
       @clip_language = clip_language
-      @translation_language = translation_language
+      @translation_language = LanguageDefaults.translation_language(
+        clip_language: clip_language,
+        translation_language: translation_language
+      )
     end
 
     # Raises VideoSource::UnavailableVideo for a private, deleted or

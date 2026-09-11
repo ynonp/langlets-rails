@@ -131,6 +131,35 @@ module Imports
       assert_equal 3, @user.reload.credit_balance
     end
 
+    test "defaults supported same-language imports to a useful translation" do
+      {
+        "English" => "Hebrew",
+        "Hebrew" => "English",
+        "Spanish" => "English"
+      }.each_with_index do |(clip_language, expected_translation), index|
+        user = create_user("same-language-#{index}@example.com")
+        video_id = "sameLang%03d" % index
+
+        result = stub_video(video_id: video_id) do
+          call_create(
+            user: user,
+            url: "https://www.youtube.com/watch?v=#{video_id}",
+            clip_language: clip_language,
+            translation_language: clip_language
+          )
+        end
+
+        assert_equal expected_translation, result.import_request.translation_language
+        assert_equal expected_translation, result.course.course_translations.sole.language.english_name
+      end
+    end
+
+    test "still rejects a same-language pair without a configured default" do
+      assert_raises(UnsupportedLanguage) do
+        stub_video { call_create(clip_language: "French", translation_language: "French") }
+      end
+    end
+
     # The rule the whole design turns on: a course somebody else built is not
     # yours until it is in your channel, and putting it there costs what building
     # it would have. No pipeline runs, so it happens on the spot.

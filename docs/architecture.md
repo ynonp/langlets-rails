@@ -1038,8 +1038,11 @@ provisional `ImportRequest`; both have `clip_language` NULL, while the request
 is `detecting`, has no Course, and has not been charged. The form can therefore
 redirect immediately. `DetectImportLanguageJob` calls the pipeline's signed
 `/detect-language` endpoint, maps its result back to an existing `Language`
-row, rejects source = translation, and promotes the same request through the
-normal dedupe/credit/course transaction. A detection error is recorded on the
+row, and promotes the same request through the normal dedupe/credit/course
+transaction. When the selected translation matches the detected source,
+`Imports::LanguageDefaults` changes English to Hebrew, Hebrew to English, and
+Spanish to English before promotion. Other same-language pairs remain invalid.
+A detection error is recorded on the
 provisional progress row, marks the visible request failed, and costs no
 credit.
 
@@ -2517,7 +2520,7 @@ Two users importing the same video deliberately share one pipeline and one cours
 
 - An `:adopted` request is created directly as `ready` rather than passing through `queued`: there is nothing to wait for, and an active row would sit under `idx_import_requests_active_dedupe` for a course that is already finished.
 - `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility. While the language is unknown, `idx_import_requests_detecting_dedupe` separately enforces one detecting row per user, video, and translation language; an ordinary nullable unique key would allow duplicates because PostgreSQL treats NULLs as distinct. Failed imports remain visible and removable, but the Queue does not offer a user retry: an accessible info tooltip explains that the human team is reviewing the automatic import and that the user will be notified when it finishes.
-- `clip_language` and `translation_language` must differ. `Imports::Create` rejects the pair before charging, and the `ImportRequest` model enforces the invariant for console and other direct writes as well.
+- `clip_language` and `translation_language` must differ. Before validation, the import services apply the supported same-language defaults (English → Hebrew, Hebrew → English, Spanish → English); `Imports::Create` rejects any remaining equal pair before charging, and the `ImportRequest` model enforces the invariant for console and other direct writes as well.
 - `progress_percent` is **written forward** by `CreateSongProgress#sync_import_requests_progress`, never computed on read — `data` is a multi-megabyte jsonb blob and the Queue polls.
 
 **`ImportRequest#retry!`** is the operator's way back from a failed import — available in the admin panel and console, never called automatically, and not exposed in the learner Queue. It raises `ImportRequest::NotRetryable` unless the request is `failed`, still has its course and `CreateSongProgress`, and isn't shadowed by another active request for the same tuple (which `idx_import_requests_active_dedupe` would reject anyway). It then, in one transaction:
