@@ -1,7 +1,7 @@
 module SeoHelper
   CANONICAL_HOSTS = %w[langlets.app he.langlets.app es.langlets.app].freeze
 
-  DEFAULT_DESCRIPTION = "Learn languages through interactive video clips. " \
+  DEFAULT_DESCRIPTION = "Learn languages through interactive video clips and music. " \
     "Practice listening, speaking, and comprehension with songs, TV shows, " \
     "and real-world content powered by AI."
 

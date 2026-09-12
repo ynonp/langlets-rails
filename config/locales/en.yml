@@ -43,7 +43,7 @@ en:
     he: "Learn Hebrew from YouTube"
   layouts:
     head:
-      title: "Langlets - Learn Languages Through Interactive Video Clips"
+      title: "Langlets - Turn any video into a language lesson"
   languages:
     en: "English"
     he: "Hebrew"
@@ -628,7 +628,7 @@ en:
         standalone_clips: "Standalone Clips"
       meta:
         title: "Practice your target language with videos you love"
-        description: "Turn any video into comprehensible input, or practice with our existing Langlets collection. Understand every word, save new vocabulary for spaced-repetition practice, and enjoy TV shows, music, authentic native content, and more."
+        description: "Learn languages through interactive video clips and music. Practice listening, speaking, and comprehension with songs, TV shows, and real-world content powered by AI."
       nav:
         home: "Langlets home"
         daily_vocab: "Daily Vocab Practice"
