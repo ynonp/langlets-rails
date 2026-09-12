@@ -265,6 +265,24 @@ module App
       assert_equal 3, @user.reload.credit_balance
     end
 
+    test "approving an already published video opens the course without detection" do
+      published = publish_course!
+
+      stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
+      assert_response :success
+      assert_match "Approve · use 1 credit", response.body
+
+      assert_no_enqueued_jobs only: DetectImportLanguageJob do
+        stub_video do
+          post app_import_requests_path, params: { url: CANONICAL }, headers: NATIVE
+        end
+      end
+
+      assert_redirected_to course_path(published)
+      assert_equal published, @user.import_requests.sole.course
+      assert @user.import_requests.sole.ready?
+    end
+
     test "approving in Add Video creates the request and starts its pipeline job" do
       pipeline_runs = 0
       pipeline_arguments = []

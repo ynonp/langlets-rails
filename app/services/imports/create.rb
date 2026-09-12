@@ -95,6 +95,7 @@ module Imports
       else
         VideoPreflight.call(url).video
       end
+      use_published_source_language!(video) if clip_language.blank?
       return create_detection_request!(video) if clip_language.blank?
 
       validate_languages!
@@ -177,6 +178,19 @@ module Imports
 
     def validate_translation_language!
       raise UnsupportedLanguage, "unknown translation language: #{translation_language.inspect}" if translation_language_record.nil?
+    end
+
+    def use_published_source_language!(video)
+      language = KnownSourceLanguage.for(video: video)
+      return unless language
+
+      @clip_language = language.english_name
+      @clip_language_record = language
+      @translation_language = LanguageDefaults.translation_language(
+        clip_language: @clip_language,
+        translation_language: translation_language
+      )
+      @translation_language_record = nil
     end
 
     # Detection is free — nothing is published by it — but it is the front door

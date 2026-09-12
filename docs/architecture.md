@@ -1030,13 +1030,23 @@ Content has one shared L1 skeleton and any number of sparse L2 translations:
   while everything that *lists* vocabulary does not. That split is the whole
   point of the flag: pausing must not look like deleting.
 
-The import pipeline begins with automatic source-language detection. Add Video
+The import pipeline resolves the video's source language before building. Add Video
 on web and native sends only the URL and translation language; source-language
-selection is not rendered. After the synchronous oEmbed availability check,
-`Imports::Create` immediately creates a provisional `CreateSongProgress` and a
-provisional `ImportRequest`; both have `clip_language` NULL, while the request
-is `detecting`, has no Course, and has not been charged. The form can therefore
-redirect immediately. `DetectImportLanguageJob` calls the pipeline's signed
+selection is not rendered. After provider preflight, `Imports::Create` first
+looks for published courses with the same provider video ID, falling back to
+the canonical URL for legacy courses without an ID match. If those courses
+agree on one source language, it uses that
+language and follows the normal known-language adoption or translation path
+without calling the detection pipeline or creating a provisional progress row.
+The existing same-language translation defaults still apply. Failed or
+incomplete courses do not supply a cached language; conflicting published
+languages also fall through to detection.
+
+When no trustworthy published language exists, `Imports::Create` immediately
+creates a provisional `CreateSongProgress` and a provisional `ImportRequest`;
+both have `clip_language` NULL, while the request is `detecting`, has no Course,
+and has not been charged. The form can therefore redirect immediately.
+`DetectImportLanguageJob` calls the pipeline's signed
 `/detect-language` endpoint, maps its result back to an existing `Language`
 row, and promotes the same request through the normal dedupe/credit/course
 transaction. When the selected translation matches the detected source,
@@ -1837,10 +1847,12 @@ and are not modeled as a separate capability.
   other learner-facing controls, is resolved through the interface locale.
   `CourseBuilder::BuildSong`
   only assigns phrases containing between one and ten `PhraseToken` records—the
-  draggable units learners place—and requires at least two such phrases in a
-  lesson. If a lesson does not meet that threshold, early lessons use their
-  flashcard alternative and later lessons exclude word order before randomly
-  selecting from the remaining activity pool.
+  draggable units learners place—and uses each distinct L1 sentence only once
+  within a lesson, even when the transcript repeats it. It requires at least
+  two distinct eligible sentences in a lesson; the same sentence can still be
+  used in another lesson. If a lesson does not meet that threshold, early lessons
+  use their flashcard alternative and later lessons exclude word order before
+  randomly selecting from the remaining activity pool.
 - **SortPhrasesActivity**: Chronological phrase ordering in a compact, frameless exercise layout. The activity presents its instruction and media hint before a draggable list with visible grip handles, followed by the localized check action and inline result or completion feedback. Its visual states are implemented with Tailwind utilities.
 - **LanguageAlignmentActivity**: Word-level alignment exercises. Review activities
   may retain every prior phrase to define their video playback range, but rendering
@@ -2574,7 +2586,7 @@ the mechanism an ordinary multi-language import uses. The method returns the
 first (primary) request — the one that actually enqueued `CreateCourseJob`.
 
 #### **Imports::Create** (`app/services/imports/create.rb`)
-The single import service for the Add sheet, the share extension and the API. It decides **what has to happen** and deliberately does not decide what it costs — `Channel#publish!` charges for the publication every path ends in (see *What a credit buys*). Order is deliberate: **the video is checked before anything is committed**, so a private or deleted video costs nothing and leaves nothing behind (`Youtube::Oembed` doubles as the availability check). Both the interactive Add sheet and the share-extension API omit `clip_language` and get the provisional background-detection path. Six outcomes:
+The single import service for the Add sheet, the share extension and the API. It decides **what has to happen** and deliberately does not decide what it costs — `Channel#publish!` charges for the publication every path ends in (see *What a credit buys*). Order is deliberate: **the video is checked before anything is committed**, so a private or deleted video costs nothing and leaves nothing behind (`Youtube::Oembed` doubles as the availability check). Both the interactive Add sheet and the share-extension API omit `clip_language`; they use a published course's known source language when available and the provisional background-detection path otherwise. `Imports::Preview` uses the same lookup, so its cost and library state match creation. Six outcomes:
 - `:created` — queued the pipeline (or, with no source language, a detecting request and `DetectImportLanguageJob`). Charged when it publishes.
 - `:adopted` — **somebody else already built it**. There is no pipeline to run, so the course is published into this user's channel on the spot and charged there; the request is written straight to `ready`. This is the case the old `:deduped` handled for free, and getting it free was the inconsistency this design removes.
 - `:deduped` — already in **this user's own** channel and ready. Nothing to publish, so nothing to charge; enrolls if the enrollment had been removed.
@@ -2589,7 +2601,8 @@ database connection, so this fast job explicitly waits for the import transactio
 to commit before it can load the provisional request.
 
 Successful Add Video submissions redirect to `/gallery?imports=pending`, where
-the provisional request is immediately visible as “Detecting language…”. The public homepage flow
+a new video's provisional request is immediately visible as “Detecting language…”. A video with a
+published source language may be adopted immediately or queue only a missing translation. The public homepage flow
 uses `/try` as its single review/approval screen. For a signed-in user, **Create this Langlet** posts
 the canonical URL directly to `App::ImportRequestsController#create`; it does not route through the
 authenticated Add Video preview and ask for a second approval. For a guest, the same decision starts
@@ -2695,26 +2708,25 @@ language preference, ignoring any stale client-supplied language field, so a
 share made after changing that preference imports into the newly selected
 language.
 
-**The endpoint queues; it does not detect.** `Api::V1::ImportRequestsController#create`
+**The endpoint never detects inline.** `Api::V1::ImportRequestsController#create`
 used to run `CreateSongProgress.detect_language` inline so the response could
 carry a post-dedupe status and the final credit balance. That is a pipeline round
 trip which downloads and analyses the video, and the sheet held a spinner for
 roughly ten seconds waiting for it — long enough that users cancelled. It now
-calls `Imports::Create` with no `clip_language`, taking the same provisional
-`detecting` path the Add Video form takes, so `DetectImportLanguageJob` does the
-detection and the reply is one oEmbed call away. The extension's request carries
+calls `Imports::Create` with no `clip_language`. A published course supplies a
+known language immediately; a new video takes the provisional `detecting` path,
+where `DetectImportLanguageJob` does the detection. The extension's request carries
 an 8-second `timeoutInterval`: its only control is Cancel, so a stalled network
 has to become a sentence rather than a spinner, and the `client_token` makes the
 retry that invites free.
 
 Two consequences of moving detection off the request:
 
-- **`status` comes back `detecting`, never `ready`, on a first POST.** Which
-  course a link resolves to depends on the source language, so "already in your
-  Library — no credit used" cannot be known yet. Adoption, the paused-library
-  refusal, and the charge all happen in the job moments later; the Queue and the
-  "your course is ready" push are what report them. The extension's `ready`
-  branch now only fires when a `client_token` replay finds a finished request.
+- **A new video's first POST returns `detecting`.** Which course it resolves to
+  depends on the source language, so adoption and charging wait for the job.
+  A video with an unambiguous published source language can instead return
+  `ready` immediately when the requested translation already exists, or queue
+  translation-only work. The `client_token` still makes replays idempotent.
 - **A detection failure is a failed Queue card, not a 422.** The
   `language_detection_failed` response is gone, because nothing is waiting for
   it.

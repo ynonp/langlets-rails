@@ -51,25 +51,12 @@ module Imports
 
       video = VideoPreflight.call(url).video
 
-      # Detection is the first paid pipeline action, never preview work. Before
-      # it runs we can still recognize a request for this same video already in
-      # flight, but cannot truthfully claim which language-specific course it
-      # will match.
+      use_published_source_language!(video) if clip_language.blank?
+
+      # Detection is the first paid pipeline action, never preview work. If no
+      # published course establishes the source language, we can only recognize
+      # an active request, not a language-specific course.
       if clip_language.blank?
-        published = Course.published
-                          .joins(:course_translations)
-                          .where(youtube_video_id: video.video_id,
-                                 course_translations: {
-                                   language_id: translation_language_record.id,
-                                   status: CourseTranslation.statuses[:ready]
-                                 })
-                          .first
-        if published
-          return result(:in_library, video, course: published, cost: 0) if already_published?(published)
-
-          return result(:importable, video, course: published, cost: cost_for(published))
-        end
-
         mine = user.import_requests.active.find_by(
           youtube_video_id: video.video_id,
           translation_language: translation_language
@@ -135,10 +122,27 @@ module Imports
     def validate_languages!
       raise UnsupportedLanguage, "unknown clip language: #{clip_language.inspect}" if clip_language_record.nil?
       raise UnsupportedLanguage, "unknown translation language: #{translation_language.inspect}" if translation_language_record.nil?
+      raise UnsupportedLanguage, "the video language must differ from the translation language" if clip_language_record == translation_language_record
+    end
+
+    def use_published_source_language!(video)
+      language = KnownSourceLanguage.for(video: video)
+      return unless language
+
+      @clip_language = language.english_name
+      @clip_language_record = language
+      @translation_language = LanguageDefaults.translation_language(
+        clip_language: @clip_language,
+        translation_language: translation_language
+      )
+      @translation_language_record = nil
+      validate_languages!
     end
 
     def published_course_for(video)
-      Course.published.find_by(youtube_video_id: video.video_id, language: clip_language_record)
+      published = Course.published.where(language: clip_language_record)
+      published.find_by(youtube_video_id: video.video_id) ||
+        published.find_by(main_media_url: video.canonical_url)
     end
 
     # Deliberately narrow: only a course sitting in *this user's own* Pro

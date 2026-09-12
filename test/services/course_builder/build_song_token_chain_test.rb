@@ -2,7 +2,7 @@ require "test_helper"
 
 class CourseBuilder::BuildSongTokenChainTest < ActiveSupport::TestCase
   Token = Struct.new(:part_of_speech, :original_text, :translation, :phrase_id)
-  Phrase = Struct.new(:phrase_tokens)
+  Phrase = Struct.new(:phrase_tokens, :text_l1)
 
   test "selects one content-word part of speech with unambiguous answers" do
     tokens = [
@@ -69,10 +69,10 @@ class CourseBuilder::BuildSongTokenChainTest < ActiveSupport::TestCase
 
   test "word order phrases contain no more than ten phrase tokens" do
     phrases = [
-      Phrase.new(Array.new(10) { Token.new }),
-      Phrase.new(Array.new(11) { Token.new }),
-      Phrase.new(Array.new(2) { Token.new }),
-      Phrase.new([])
+      Phrase.new(Array.new(10) { Token.new }, "First line"),
+      Phrase.new(Array.new(11) { Token.new }, "Too long"),
+      Phrase.new(Array.new(2) { Token.new }, "Second line"),
+      Phrase.new([], "No tokens")
     ]
 
     selected = builder.send(:word_order_phrases, phrases)
@@ -80,10 +80,33 @@ class CourseBuilder::BuildSongTokenChainTest < ActiveSupport::TestCase
     assert_equal [ phrases.first, phrases.third ], selected
   end
 
+  test "word order uses each repeated sentence only once within a lesson" do
+    phrases = [
+      Phrase.new(Array.new(3) { Token.new }, "Sing the chorus"),
+      Phrase.new(Array.new(11) { Token.new }, "Another line"),
+      Phrase.new(Array.new(4) { Token.new }, "Sing the chorus"),
+      Phrase.new(Array.new(2) { Token.new }, "A different line")
+    ]
+
+    assert_equal [ phrases.first, phrases.last ], builder.send(:word_order_phrases, phrases)
+  end
+
+  test "word order needs two distinct eligible sentences" do
+    phrases = [
+      Phrase.new(Array.new(3) { Token.new }, "Sing the chorus"),
+      Phrase.new(Array.new(4) { Token.new }, "Sing the chorus"),
+      Phrase.new(Array.new(11) { Token.new }, "Too long")
+    ]
+
+    types = builder.send(:pooled_activity_types, { phrases: phrases })
+
+    refute_includes types, :word_order
+  end
+
   test "word order is removed from the activity pool without two eligible phrases" do
     phrases = [
-      Phrase.new(Array.new(11) { Token.new }),
-      Phrase.new(Array.new(3) { Token.new })
+      Phrase.new(Array.new(11) { Token.new }, "Too long"),
+      Phrase.new(Array.new(3) { Token.new }, "Short line")
     ]
 
     types = builder.send(:pooled_activity_types, { phrases: phrases })
@@ -93,7 +116,7 @@ class CourseBuilder::BuildSongTokenChainTest < ActiveSupport::TestCase
   end
 
   test "word order remains in the activity pool with two eligible phrases" do
-    phrases = [ Phrase.new(Array.new(3) { Token.new }), Phrase.new(Array.new(10) { Token.new }) ]
+    phrases = [ Phrase.new(Array.new(3) { Token.new }, "First line"), Phrase.new(Array.new(10) { Token.new }, "Second line") ]
 
     types = builder.send(:pooled_activity_types, { phrases: phrases })
 

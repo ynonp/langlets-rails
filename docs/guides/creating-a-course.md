@@ -31,6 +31,12 @@ Creating a course runs an AI pipeline that:
 5. **Adds similar sounds** — generates pronunciation-confusion pairs
 6. **Builds the course** — creates Lesson, Phrase, TokenTranslation, and Activity records
 
+For an automatic import of a video with an existing published course, Rails reuses that
+course's source language and skips language detection. It matches the provider video ID,
+or the canonical URL for a legacy course, and detects again if published records
+disagree. The Add Video preview uses the same decision. A ready translation is
+adopted immediately; a missing translation queues only translation work.
+
 The pipeline is driven by two records:
 
 | Record | Purpose |

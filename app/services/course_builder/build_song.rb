@@ -280,7 +280,7 @@ module CourseBuilder
       phrase_list = phrases.is_a?(ActiveRecord::Relation) ? phrases.to_a : phrases
       phrase_list.select do |phrase|
         phrase.phrase_tokens.size.between?(1, MAX_WORD_ORDER_TOKENS)
-      end
+      end.uniq(&:text_l1)
     end
 
     def enough_word_order_phrases?(phrases)

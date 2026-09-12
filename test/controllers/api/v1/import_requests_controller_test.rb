@@ -75,43 +75,38 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 1, @user.import_requests.count
   end
 
-  # Nothing to build, but the request can't know that yet: which course this is
-  # depends on the source language, and the language isn't known until the job
-  # runs. So the answer is "detecting" and the adoption — and the credit that
-  # pays for it — happens moments later, out of the sheet's way.
-  test "an already published video is adopted, and paid for, once detection lands" do
+  test "an already published video is adopted immediately without detection" do
     course = create_translated_course!(name: "Despacito", slug: "despacito-published", main_media_url: CANONICAL,
                             youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
                             user: @other, status: :published)
 
-    stub_video { post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token) }
+    assert_no_enqueued_jobs only: DetectImportLanguageJob do
+      stub_video { post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token) }
+    end
 
-    assert_response :created
-    assert_equal "detecting", response.parsed_body["status"]
-    assert_equal 3, response.parsed_body["credits_left"], "nothing published yet"
-
-    request = ImportRequest.find(response.parsed_body.fetch("id"))
-    stub_video { perform_enqueued_jobs only: DetectImportLanguageJob }
-
-    assert_equal "ready", request.reload.status
-    assert_equal course, request.course
+    assert_response :ok
+    assert_equal "ready", response.parsed_body["status"]
+    assert_equal course.slug, response.parsed_body.dig("course", "slug")
+    assert_equal 2, response.parsed_body["credits_left"]
+    assert_equal course, @user.import_requests.sole.course
     assert_equal 2, @user.reload.credit_balance
     assert @user.default_channel.channel_items.exists?(course: course)
   end
 
-  test "a video already in the sharer's own channel settles free once detection lands" do
+  test "a video already in the sharer's own channel returns ready without detection or charge" do
     course = create_translated_course!(name: "Despacito", slug: "despacito-mine", main_media_url: CANONICAL,
                             youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
                             user: @other, status: :published)
     publish_covering_the_credit(@user.provision_default_channel!, course)
 
-    stub_video { post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token) }
-    assert_response :created
+    assert_no_enqueued_jobs only: DetectImportLanguageJob do
+      stub_video { post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token) }
+    end
 
-    request = ImportRequest.find(response.parsed_body.fetch("id"))
-    stub_video { perform_enqueued_jobs only: DetectImportLanguageJob }
-
-    assert_equal "ready", request.reload.status
+    assert_response :ok
+    assert_equal "ready", response.parsed_body["status"]
+    assert_equal course.slug, response.parsed_body.dig("course", "slug")
+    assert_equal 0, @user.import_requests.count
     assert_equal 3, @user.reload.credit_balance, "nothing left to publish"
   end
 

@@ -7,6 +7,8 @@ module Imports
   # create, same setup, do they agree? A preview that quotes a credit for
   # something Create hands over free is a bug the user pays for.
   class PreviewTest < ActiveSupport::TestCase
+    include ActiveJob::TestHelper
+
     VIDEO_ID = "kJQP7kiw5Fk".freeze
     CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 
@@ -47,6 +49,45 @@ module Imports
       assert preview.importable?
       assert_equal published, preview.course
       assert_equal 1, preview.cost
+    end
+
+    test "automatic preview uses a published source language and agrees with adoption" do
+      published = publish_course!(user: @other)
+
+      preview = stub_video { call_preview(clip_language: nil) }
+      result = stub_video { call_create(clip_language: nil) }
+
+      assert preview.importable?
+      assert_equal published, preview.course
+      assert_equal preview.cost, result.cost
+      assert result.adopted?
+      assert_equal "Spanish", result.import_request.clip_language
+    end
+
+    test "automatic preview applies the stored source language's translation default" do
+      published = publish_course!(user: @other)
+      publish_privately(published, owner: @user)
+
+      preview = stub_video { call_preview(clip_language: nil, translation_language: "Spanish") }
+      result = nil
+      assert_no_enqueued_jobs only: DetectImportLanguageJob do
+        result = stub_video { call_create(clip_language: nil, translation_language: "Spanish") }
+      end
+
+      assert preview.in_library?
+      assert preview.free?
+      assert result.deduped?
+    end
+
+    test "automatic preview recognizes a legacy published course by canonical URL" do
+      published = publish_course!(user: @other)
+      published.update_column(:youtube_video_id, nil)
+      publish_privately(published, owner: @user)
+
+      preview = stub_video { call_preview(clip_language: nil) }
+
+      assert preview.in_library?
+      assert_equal published, preview.course
     end
 
     # The one free duplicate: it is already in their channel, so Approve would

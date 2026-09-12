@@ -56,6 +56,108 @@ module Imports
       assert_equal 3, @user.reload.credit_balance
     end
 
+    test "automatic import reuses a published course's source language without detection" do
+      published = publish_course!(user: @other)
+      result = nil
+
+      assert_no_enqueued_jobs only: DetectImportLanguageJob do
+        result = stub_video do
+          Create.call(user: @user, url: CANONICAL, translation_language: "English")
+        end
+      end
+
+      assert result.adopted?
+      assert_equal published, result.course
+      assert_equal "Spanish", result.import_request.clip_language
+      assert_equal "English", result.import_request.translation_language
+      assert_equal 0, CreateSongProgress.count, "reuse should not create a provisional progress row"
+    end
+
+    test "automatic import adds a new translation to a published video without detection" do
+      published = publish_course!(user: @other)
+      result = nil
+
+      assert_no_enqueued_jobs only: DetectImportLanguageJob do
+        assert_enqueued_with(job: AddCourseTranslationJob) do
+          result = stub_video do
+            Create.call(user: @user, url: CANONICAL, translation_language: "Hebrew")
+          end
+        end
+      end
+
+      assert result.created?
+      assert_equal published, result.course
+      assert_equal "Spanish", result.import_request.clip_language
+      assert published.course_translations.pending.exists?(language: @hebrew)
+    end
+
+    test "automatic import applies the same-language default from a published course" do
+      published = publish_course!(user: @other)
+      result = nil
+
+      assert_no_enqueued_jobs only: DetectImportLanguageJob do
+        result = stub_video do
+          Create.call(user: @user, url: CANONICAL, translation_language: "Spanish")
+        end
+      end
+
+      assert result.adopted?
+      assert_equal published, result.course
+      assert_equal "English", result.import_request.translation_language
+    end
+
+    test "automatic import matches a legacy published course by canonical URL" do
+      published = publish_course!(user: @other)
+      published.update_column(:youtube_video_id, nil)
+      result = nil
+
+      assert_no_enqueued_jobs only: DetectImportLanguageJob do
+        result = stub_video do
+          Create.call(user: @user, url: CANONICAL, translation_language: "English")
+        end
+      end
+
+      assert result.adopted?
+      assert_equal published, result.course
+    end
+
+    test "automatic import detects again when published courses disagree on source language" do
+      publish_course!(user: @other)
+      Course.create!(
+        name: "Despacito", slug: "despacito-english-source",
+        main_media_url: CANONICAL, youtube_video_id: VIDEO_ID,
+        language: @english, user: @other, status: :published
+      )
+      result = nil
+
+      assert_enqueued_with(job: DetectImportLanguageJob) do
+        result = stub_video do
+          Create.call(user: @user, url: CANONICAL, translation_language: "Hebrew")
+        end
+      end
+
+      assert result.import_request.detecting?
+      assert_nil result.import_request.clip_language
+    end
+
+    test "automatic import does not trust an unfinished course's source language" do
+      Course.create!(
+        name: "Despacito", slug: "despacito-unfinished",
+        main_media_url: CANONICAL, youtube_video_id: VIDEO_ID,
+        language: @spanish, user: @other, status: :pending
+      )
+      result = nil
+
+      assert_enqueued_with(job: DetectImportLanguageJob) do
+        result = stub_video do
+          Create.call(user: @user, url: CANONICAL, translation_language: "English")
+        end
+      end
+
+      assert result.import_request.detecting?
+      assert_nil result.import_request.clip_language
+    end
+
     test "dedupes provisional requests before their language is known" do
       first = stub_video do
         Create.call(user: @user, url: CANONICAL, translation_language: "English")
