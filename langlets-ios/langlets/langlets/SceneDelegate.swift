@@ -181,6 +181,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let slug = PushNotifications.shared.consumePendingCourseSlug() {
             tabBarController.showJustImported(courseSlug: slug)
         }
+        if let url = connectionOptions.urlContexts.first?.url {
+            handleAppURL(url)
+        }
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
@@ -207,6 +210,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url else { return }
 
+        handleAppURL(url)
+    }
+
+    private func handleAppURL(_ url: URL) {
         // Handle Google Sign-In callback
         if GIDSignIn.sharedInstance.handle(url) {
             return
@@ -215,6 +222,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if url.scheme == "langlets" && url.host == "auth-success" {
             // OAuth completed — every tab's content predates the session
             oauthDidSucceed()
+            return
+        }
+
+        guard url.scheme == "langlets", var components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let host = components.host?.lowercased(),
+              ["youtube.com", "youtu.be", "tiktok.com"].contains(where: { host == $0 || host.hasSuffix(".\($0)") }) else { return }
+        components.scheme = "https"
+        if let videoURL = components.url {
+            tabBarController.importVideo(videoURL)
         }
     }
 }

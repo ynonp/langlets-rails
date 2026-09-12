@@ -70,6 +70,9 @@ application.register("course-menu", CourseMenuController)
 import CoursePathsController from "./course_paths_controller"
 application.register("course-paths", CoursePathsController)
 
+import DeeplinkImportController from "./deeplink_import_controller"
+application.register("deeplink-import", DeeplinkImportController)
+
 import FindAnswersController from "./find_answers_controller"
 application.register("find-answers", FindAnswersController)
 

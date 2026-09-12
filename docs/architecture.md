@@ -2690,8 +2690,10 @@ The `LangletsShare` extension accepts shared web URLs and plain text, extracts a
 YouTube or TikTok link, and immediately submits it to
 `POST /api/v1/import_requests`. It has no language menus, confirmation button,
 or success screen: after the API accepts the idempotent request it calls
-`completeRequest`. Errors remain visible so authentication, credit, or network
-problems are actionable. The payload contains no translation language: the API
+`completeRequest`. While sharing, the sheet shows only “creating your langlet”
+and Cancel; it does not display the shared URL or queue status. Errors remain
+visible so authentication, credit, or network problems are actionable. The
+payload contains no translation language: the API
 reads the authenticated user's native-language preference and falls back to
 English. The source language is always detected by the pipeline.
 
@@ -2707,6 +2709,28 @@ create action resolve the translation language from the signed-in user's native
 language preference, ignoring any stale client-supplied language field, so a
 share made after changing that preference imports into the newly selected
 language.
+
+#### Native video deeplinks
+
+Both native shells already own the `langlets://` scheme for OAuth. A video link
+such as `langlets://www.youtube.com/watch?v=oLr4fZVSU9E` now opens the app and
+imports that video automatically. The handlers accept YouTube, youtu.be, and
+TikTok hosts (including subdomains), change only the scheme to `https`, and send
+the resulting URL to `/app/import_requests/deeplink?url=…` in the Create tab.
+They leave `auth-success` and `auth-failure` to the existing OAuth handlers.
+iOS handles both `connectionOptions.urlContexts` on a cold launch and
+`scene(_:openURLContexts:)` while running; Android handles both the launch
+intent and `onNewIntent` on its single-task activity.
+
+The GET handoff passes through the native authentication gate, preserving the
+deeplink as the sign-in `returnto` path. It validates that the URL is importable
+and renders a CSRF-protected form which submits the ordinary `Imports::Create`
+POST automatically. A ready existing course opens immediately. A newly queued
+request goes to `/app/import_requests/deeplink_status/:id`, scoped to the
+current user; that page reloads while the request is active and redirects to
+the course when it becomes ready. Failed imports show a safe error and link
+back to Add Video. Android's share intent remains a preview-and-confirm flow;
+this automatic path applies only to the custom-scheme deeplink.
 
 **The endpoint never detects inline.** `Api::V1::ImportRequestsController#create`
 used to run `CreateSongProgress.detect_language` inline so the response could

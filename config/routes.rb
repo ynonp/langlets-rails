@@ -108,6 +108,8 @@ Rails.application.routes.draw do
         post :retry
       end
       collection do
+        get :deeplink
+        get "deeplink_status/:id", action: :deeplink_status, as: :deeplink_status
         # Preview for the Add Video sheet: metadata + duplicate + price, no charge.
         get :resolve
       end

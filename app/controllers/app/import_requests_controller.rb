@@ -14,6 +14,27 @@ module App
       render "app/import_requests/web/new" if web_view?
     end
 
+    # A native custom-scheme link lands here. Keep the first request a GET so
+    # authentication can redirect back to it, then submit the normal CSRF-
+    # protected import POST from the page.
+    def deeplink
+      response.headers["Cache-Control"] = "no-store"
+      @video_url = params[:url].to_s
+      unless VideoSource.importable?(@video_url)
+        return redirect_to new_app_import_request_path, alert: I18n.t("imports.errors.invalid_link")
+      end
+    end
+
+    def deeplink_status
+      @import_request = current_user.import_requests.find(params[:id])
+      response.headers["Cache-Control"] = "no-store"
+      if @import_request.ready? && @import_request.course
+        return redirect_to course_path(@import_request.course)
+      end
+
+      @failed = @import_request.failed? || @import_request.canceled? || (@import_request.ready? && @import_request.course.nil?)
+    end
+
     # Everything below the input in the Add Video sheet: empty state, preview
     # card, duplicate notices, errors. The add-video Stimulus controller reloads
     # this frame as the user types and the server decides which state to draw —
@@ -78,7 +99,11 @@ module App
         client_token: params[:client_token].presence
       )
 
-      redirect_to_result(result)
+      if params[:deeplink] == "1" && result.import_request && !result.in_channel? && !result.paused?
+        redirect_to deeplink_status_app_import_requests_path(id: result.import_request.id)
+      else
+        redirect_to_result(result)
+      end
     rescue Credits::InsufficientCredits
       # Checked in #new too; this is for the race, not the common path.
       redirect_to_out_of_credits(params[:url])

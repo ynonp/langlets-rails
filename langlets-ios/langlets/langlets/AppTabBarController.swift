@@ -150,6 +150,23 @@ final class AppTabBarController: UITabBarController {
         navigators[index].route(proposal)
     }
 
+    /// A custom-scheme video link starts the authenticated import handoff in
+    /// Create. The server handles the POST and eventual course navigation.
+    func importVideo(_ videoURL: URL) {
+        let index = 3
+        closeProfileMenus(except: index)
+        selectedIndex = index
+        needsRoute[index] = false
+
+        let url = rootURL.appending(path: "/app/import_requests/deeplink")
+            .appending(queryItems: [URLQueryItem(name: "url", value: videoURL.absoluteString)])
+        navigators[index].route(VisitProposal(
+            url: url,
+            options: VisitOptions(action: .replace),
+            properties: ["presentation": "replace_root", "animated": false]
+        ))
+    }
+
     /// No tab carries a badge. The Library tab used to show imports still in
     /// flight, which competed with the app icon badge for the same attention
     /// while meaning something else entirely — the icon badge is unread

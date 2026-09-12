@@ -309,7 +309,16 @@ class MainActivity : HotwireActivity() {
             // verifier the abandoned flow left behind so it cannot be spent by a
             // deep link that arrives afterwards.
             "auth-failure" -> AuthHandoff.forget()
-            else -> Unit
+            else -> {
+                val videoUrl = SharedVideoLink.firstSupportedUrl(
+                    uri.buildUpon().scheme("https").build().toString()
+                )
+                if (videoUrl != null) {
+                    val encodedUrl = URLEncoder.encode(videoUrl, Charsets.UTF_8.name())
+                    bottomNavigationController.selectTab(CREATE_TAB_INDEX)
+                    routeSharedVideoWhenReady("${Langlets.rootUrl}/app/import_requests/deeplink?url=$encodedUrl")
+                }
+            }
         }
 
         // Don't replay it if the Activity is recreated (rotation, process death).

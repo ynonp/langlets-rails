@@ -52,6 +52,54 @@ module App
       assert_match "share a YouTube or TikTok video directly", response.body
     end
 
+    test "deeplink prepares a protected automatic import and follows its request to the course" do
+      get deeplink_app_import_requests_path(url: CANONICAL), headers: NATIVE
+      assert_response :success
+      assert_select "form[action=?][method=post][data-controller=deeplink-import]", app_import_requests_path do
+        assert_select "input[name=url][value=?]", CANONICAL
+        assert_select "input[name=deeplink][value=1]"
+      end
+      assert_empty @user.import_requests
+
+      stub_video do
+        post app_import_requests_path, params: { url: CANONICAL, deeplink: "1" }, headers: NATIVE
+      end
+      request = @user.import_requests.sole
+      assert_redirected_to deeplink_status_app_import_requests_path(id: request.id)
+
+      get deeplink_status_app_import_requests_path(id: request.id), headers: NATIVE
+      assert_response :success
+      assert_select "[data-deeplink-import-poll-value=true]"
+
+      course = publish_course!
+      request.update!(status: :ready, course: course, clip_language: "Spanish")
+      get deeplink_status_app_import_requests_path(id: request.id), headers: NATIVE
+      assert_redirected_to course_path(course)
+    end
+
+    test "deeplink rejects a non-video URL without creating an import" do
+      get deeplink_app_import_requests_path(url: "https://example.com/watch?v=#{VIDEO_ID}"), headers: NATIVE
+      assert_redirected_to new_app_import_request_path
+      assert_empty @user.import_requests
+    end
+
+    test "deeplink preserves its destination through native sign in" do
+      sign_out @user
+      path = deeplink_app_import_requests_path(url: CANONICAL)
+      get path, headers: NATIVE
+      assert_redirected_to new_user_session_path(returnto: path)
+    end
+
+    test "deeplink status cannot read another user's import" do
+      other = User.create!(email: "other-import@example.com", password: "password123",
+                           confirmed_at: Time.zone.now)
+      request = other.import_requests.create!(youtube_url: CANONICAL,
+                                              youtube_video_id: VIDEO_ID,
+                                              translation_language: "English", status: :detecting)
+      get deeplink_status_app_import_requests_path(id: request.id), headers: NATIVE
+      assert_response :not_found
+    end
+
     test "the form and pipeline submission are available to web browsers" do
       web = { "User-Agent" => "Mozilla/5.0" }
       get "/app/import_requests/new", headers: web

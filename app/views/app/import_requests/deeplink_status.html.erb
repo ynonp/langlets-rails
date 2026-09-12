@@ -1,0 +1,11 @@
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4"
+     <% unless @failed %>data-controller="deeplink-import" data-deeplink-import-poll-value="true"<% end %>>
+  <%= render "app/shared/header", title: t("app.import_requests.new.title") %>
+  <% if @failed %>
+    <p class="text-app-text-2"><%= @import_request.duration_failure_message.presence || t("imports.errors.unavailable") %></p>
+    <%= link_to t("app.import_requests.new.title"), new_app_import_request_path(url: @import_request.youtube_url), class: "text-app-accent" %>
+  <% else %>
+    <p class="text-app-text-2"><%= @import_request.title.presence || @import_request.youtube_url %></p>
+    <p class="text-app-text-2"><%= t("app.import_requests.status.in_progress", count: 1) %></p>
+  <% end %>
+</div>

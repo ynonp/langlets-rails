@@ -3,7 +3,6 @@ import UniformTypeIdentifiers
 
 final class ShareViewController: UIViewController {
     private let titleLabel = UILabel()
-    private let urlLabel = UILabel()
     private let cancelButton = UIButton(type: .system)
     private let statusLabel = UILabel()
 
@@ -19,14 +18,9 @@ final class ShareViewController: UIViewController {
     private func buildUI() {
         view.backgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
-        titleLabel.text = localizedAppString("Create a Langlets course", comment: "Share status")
+        titleLabel.text = localizedAppString("creating your langlet", comment: "Share status")
         titleLabel.font = .preferredFont(forTextStyle: .title2)
         titleLabel.textColor = .white
-
-        urlLabel.text = localizedAppString("Reading shared video link…", comment: "Share status")
-        urlLabel.font = .preferredFont(forTextStyle: .footnote)
-        urlLabel.textColor = UIColor.white.withAlphaComponent(0.65)
-        urlLabel.numberOfLines = 2
 
         cancelButton.setTitle(localizedAppString("Cancel", comment: "Share status"), for: .normal)
         cancelButton.setTitleColor(.white, for: .normal)
@@ -38,7 +32,7 @@ final class ShareViewController: UIViewController {
         statusLabel.numberOfLines = 0
 
         let stack = UIStackView(arrangedSubviews: [
-            titleLabel, urlLabel, statusLabel, cancelButton
+            titleLabel, statusLabel, cancelButton
         ])
         stack.axis = .vertical
         stack.spacing = 14
@@ -80,13 +74,10 @@ final class ShareViewController: UIViewController {
 
     private func accept(url: URL?) {
         guard let url, Self.isSupportedVideo(url) else {
-            urlLabel.text = localizedAppString("Share a YouTube or TikTok video link to create a course.", comment: "Share status")
             statusLabel.text = localizedAppString("No video link was found.", comment: "Share status")
             return
         }
         sharedURL = url
-        urlLabel.text = url.absoluteString
-        statusLabel.text = localizedAppString("Adding to your Queue…", comment: "Share status")
         submit()
     }
 
@@ -113,7 +104,6 @@ final class ShareViewController: UIViewController {
             return
         }
 
-        statusLabel.text = localizedAppString("Adding to your Queue…", comment: "Share status")
         // Same split as the host app's rootURL — a debug extension posting to
         // production would file real imports against a real account while you
         // think you're testing locally. This target can't see SceneDelegate's
@@ -148,12 +138,6 @@ final class ShareViewController: UIViewController {
         if let error {
             statusLabel.text = String(format: localizedAppString("Couldn’t connect: %@", comment: "Connection error"), error.localizedDescription)
         } else if status == 200 || status == 201 {
-            // "ready" now only comes back when a client_token replay finds a
-            // finished request: the first POST answers before the language is
-            // known, so it can't yet tell that the course was already yours.
-            statusLabel.text = body?["status"] as? String == "ready"
-                ? localizedAppString("Already in your Library — no credit used.", comment: "Share status")
-                : localizedAppString("Added to your Queue. We’ll notify you when it’s ready.", comment: "Share status")
             extensionContext?.completeRequest(returningItems: nil)
         } else {
             let description = body?["error_description"] as? String
