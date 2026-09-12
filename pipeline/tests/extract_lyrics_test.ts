@@ -40,6 +40,32 @@ Deno.test("reconciles conservatively while preserving ElevenLabs timings", async
   assertFalse(store.data.extract_lyrics_in_progress);
 });
 
+Deno.test("YouTube reuses Scribe words saved during language detection", async () => {
+  const saved = speechFixture(1, 2);
+  const supadata = stubTranscribe([transcriptFixture(1, 2)]);
+  const { ctx, store } = makeCtx({
+    data: { stt_candidates: { elevenlabs: { text: saved.text, words: saved.words } } },
+    transcribeVideo: supadata.transcribe,
+    prepareAudio: () => {
+      throw new Error("audio must not be downloaded again");
+    },
+    transcribeSpeechFile: () => {
+      throw new Error("Scribe must not run again");
+    },
+    alignLyrics: () => {
+      throw new Error("forced alignment must not run");
+    },
+    models: { reconcileTranscripts: queuedModel([{ transcript: "Line 1 Line 2" }]).model },
+  });
+
+  await extractLyrics(ctx);
+  await forceAlignment(ctx);
+
+  assertEquals(supadata.calls(), 1);
+  assertEquals(store.data.stt_words, saved.words);
+  assertEquals(store.data.phrases?.[0].words.length, 4);
+});
+
 Deno.test("falls back to complete ElevenLabs wording when Sol makes an unsafe rewrite", async () => {
   const { ctx, store } = makeCtx({
     transcribeVideo: stubTranscribe([transcriptFixture(1, 2)]).transcribe,

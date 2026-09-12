@@ -64,6 +64,35 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     assert_equal 3, @user.reload.credit_balance
   end
 
+  test "joins existing Spanish progress without discarding the detected Scribe transcript" do
+    request = create_provisional_request
+    provisional = request.create_song_progress
+    canonical = CreateSongProgress.create!(
+      youtubeurl: CANONICAL,
+      clip_language: "Spanish",
+      data: { "stt_candidates" => { "supadata" => { "text" => "hola" } } }
+    )
+    detected_data = {
+      "stt_candidates" => {
+        "elevenlabs" => { "text" => "hola", "words" => [ { "text" => "hola", "start" => 0, "end" => 0.5 } ] }
+      }
+    }
+
+    assert_enqueued_with(job: CreateCourseJob) do
+      CreateSongProgress.stub(:detect_language, [ @spanish, detected_data ]) do
+        Youtube::Oembed.stub(:fetch, @video) do
+          DetectImportLanguageJob.perform_now(request.id)
+        end
+      end
+    end
+
+    assert_equal canonical, request.reload.create_song_progress
+    assert_nil CreateSongProgress.find_by(id: provisional.id)
+    assert_equal "hola", canonical.reload.data.dig("stt_candidates", "supadata", "text")
+    assert_equal detected_data.dig("stt_candidates", "elevenlabs"),
+                 canonical.data.dig("stt_candidates", "elevenlabs")
+  end
+
   test "a guest claim reuses detection and joins the admin-owned course" do
     source = Youtube::Oembed.stub(:fetch, @video) do
       Imports::Create.call(

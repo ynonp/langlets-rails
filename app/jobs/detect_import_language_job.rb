@@ -76,8 +76,21 @@ class DetectImportLanguageJob < ApplicationJob
       youtubeurl: import_request.youtube_url,
       clip_language: language.english_name
     )
-    import_request.update!(create_song_progress: canonical)
-    provisional.destroy!
+    CreateSongProgress.transaction do
+      canonical.with_lock do
+        existing_data = canonical.data || {}
+        detected_candidate = detected_data.dig("stt_candidates", "elevenlabs") ||
+                             detected_data.dig(:stt_candidates, :elevenlabs)
+        if detected_candidate && existing_data.dig("stt_candidates", "elevenlabs").nil? &&
+           existing_data["stt_words"].blank? && existing_data["phrases"].blank?
+          canonical.update!(data: existing_data.deep_merge(
+            "stt_candidates" => { "elevenlabs" => detected_candidate }
+          ))
+        end
+        import_request.update!(create_song_progress: canonical)
+        provisional.destroy!
+      end
+    end
   end
 
   def record_detection_error(import_request, error)

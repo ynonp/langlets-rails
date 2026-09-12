@@ -1111,11 +1111,13 @@ existing spelling-distance lookup. Greek and Swedish still have no dictionary.
 See [Chinese dictionary sources and rebuild instructions](../pipeline/data/CHINESE.md)
 for licensing, filtering, and limitations. Interface copy falls back to English.
 
-YouTube detection first sends a dedicated Gemini 2.5 Flash video request
-constrained to the database language ISO codes. If that request fails or returns
-an unsupported language, it retries once with Gemini 3.7 Flash at low thinking;
-3.7 is never called after a successful 2.5 result. TikTok detection first
-downloads verified audio with yt-dlp and sends it to ElevenLabs Scribe without a language hint.
+Automatic detection for both YouTube and TikTok first downloads verified audio
+with yt-dlp and sends it to ElevenLabs Scribe without a language hint. YouTube
+uses the normal audio format ladder; if its download or Scribe request fails, or
+Scribe returns no language, it sends the video to Gemini 2.5 Flash and retries
+with Gemini 3.7 Flash at low thinking only if 2.5 fails or returns an unsupported
+language. A missing audio verifier remains a fatal host configuration error.
+TikTok uses its own audio format ladder.
 Its TikTok-specific ladder prefers muxed H.264 and other video-with-audio
 renditions, because TikTok's separate audio-only rendition can contain creator
 music while the post video contains speech. If Scribe returns no timed speech,
@@ -1123,11 +1125,14 @@ detection advances to the next rendition; other Scribe errors remain fatal. A
 standalone audio rendition is the final local candidate. If every candidate
 either fails to download or contains no timed speech, detection asks ElevenLabs
 to fetch the canonical TikTok URL directly. Scribe's returned ISO-639 code selects the language. Its
-transcript and timed words seed `data["stt_candidates"]["elevenlabs"]`, so
+transcript and timed words seed `data["stt_candidates"]["elevenlabs"]` for either provider, so
 extraction reuses that paid result while still requesting the independent
 Supadata native candidate. Scribe v2's three-letter codes (`eng`, `spa`, `deu`,
 `fra`, `heb`, `ara`, `ell`/`gre`, `swe`) and regional seeded codes (notably `ar-JO`) are normalized
 to the database's base ISO language.
+If promotion joins an existing incomplete progress row, the detected Scribe
+candidate is copied into that row when it has no ElevenLabs candidate or
+completed timed words; other checkpoints remain intact.
 
 After detection the import pipeline is split. `CreateSongProgress` is unique on
 `(youtubeurl, clip_language)` when `clip_language IS NOT NULL`; NULL provisional
@@ -1307,8 +1312,11 @@ Every fresh extraction normally attempts two independent STT sources:
   (`scribe_v2`), which returns text plus per-word timestamps. Scribe `spacing` and `audio_event`
   entries are dropped and its text is rebuilt from the surviving speech words.
 
-For YouTube, the verified yt-dlp download is a preflight: Supadata is not queried until it succeeds.
-Once audio exists, Supadata and the ElevenLabs upload run concurrently as before. If all yt-dlp
+For automatic imports, detection has already saved Scribe's timed words, so
+extraction requests Supadata without downloading or uploading the audio again.
+For imports with an explicit source language and no saved Scribe candidate,
+the verified YouTube yt-dlp download is a preflight: Supadata is not queried until it succeeds.
+Once audio exists, Supadata and the ElevenLabs upload run concurrently. If all yt-dlp
 formats and configured network namespaces fail, neither Supadata nor ElevenLabs is queried. The
 pipeline instead sends the YouTube URL once to Gemini 3.7 Flash and requests the complete transcript
 with required start/end seconds for every word. That response is validated, converted directly to

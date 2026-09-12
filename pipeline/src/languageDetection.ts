@@ -1,6 +1,11 @@
 import { generateText } from "ai";
 import type { LanguageModel } from "ai";
-import { downloadYoutubeAudioToTemp, TIKTOK_SPEECH_FORMATS } from "./audio.ts";
+import {
+  AUDIO_FORMATS,
+  downloadYoutubeAudioToTemp,
+  isAudioVerificationUnavailable,
+  TIKTOK_SPEECH_FORMATS,
+} from "./audio.ts";
 import { message } from "./retry.ts";
 import {
   isNoTimedSpeechError,
@@ -45,27 +50,56 @@ export async function detectLanguage(
 
   await (options.validateDuration ?? validateVideoDuration)(payload.youtubeurl);
 
-  if (isYoutubeUrl(payload.youtubeurl)) {
-    return {
-      language: await detectYoutubeLanguage(payload, options),
-      data: {},
-    };
+  const youtube = isYoutubeUrl(payload.youtubeurl);
+  if (!youtube && !isTiktokUrl(payload.youtubeurl)) throw new Error("unsupported video provider");
+
+  let transcript: SpeechToTextResult;
+  try {
+    transcript = youtube
+      ? await transcribeYoutube(payload.youtubeurl, options)
+      : await transcribeTiktok(payload.youtubeurl, options);
+  } catch (error) {
+    if (!youtube || isAudioVerificationUnavailable(error)) throw error;
+    console.warn(
+      `YouTube audio language detection failed (${message(error)}); falling back to Gemini`,
+    );
+    return { language: await detectYoutubeLanguage(payload, options), data: {} };
   }
 
-  if (isTiktokUrl(payload.youtubeurl)) {
-    const transcript = await transcribeTiktok(payload.youtubeurl, options);
-    if (!transcript.languageCode) throw new Error("ElevenLabs did not detect a language");
-    return {
-      language: resolveLanguage(transcript.languageCode, payload.supported_languages),
-      data: {
-        stt_candidates: {
-          elevenlabs: { text: transcript.text, words: transcript.words },
-        },
-      },
-    };
+  if (!transcript.languageCode) {
+    if (youtube) {
+      console.warn("Scribe did not detect a language; falling back to Gemini");
+      return {
+        language: await detectYoutubeLanguage(payload, options),
+        data: transcriptCandidate(transcript),
+      };
+    }
+    throw new Error("ElevenLabs did not detect a language");
   }
+  return {
+    language: resolveLanguage(transcript.languageCode, payload.supported_languages),
+    data: transcriptCandidate(transcript),
+  };
+}
 
-  throw new Error("unsupported video provider");
+function transcriptCandidate(transcript: SpeechToTextResult): Record<string, unknown> {
+  return {
+    stt_candidates: {
+      elevenlabs: { text: transcript.text, words: transcript.words },
+    },
+  };
+}
+
+async function transcribeYoutube(
+  url: string,
+  options: DetectionOptions,
+): Promise<SpeechToTextResult> {
+  const audio = await (options.prepareAudio ?? downloadYoutubeAudioToTemp)(url, AUDIO_FORMATS);
+  try {
+    return await (options.transcribeFile ?? transcribeFileWithElevenLabs)(audio.path, null);
+  } finally {
+    await Deno.remove(audio.path).catch(() => {});
+  }
 }
 
 async function detectYoutubeLanguage(
@@ -158,6 +192,7 @@ async function transcribeTiktok(
     try {
       audio = await prepareAudio(url, [format]);
     } catch (error) {
+      if (isAudioVerificationUnavailable(error)) throw error;
       failures.push(`${format.format}: ${message(error)}`);
       continue;
     }

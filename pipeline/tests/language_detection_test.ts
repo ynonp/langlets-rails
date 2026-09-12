@@ -1,6 +1,6 @@
 import { assertEquals, assertRejects, assertThrows } from "@std/assert";
 import { detectLanguage, resolveLanguage } from "../src/languageDetection.ts";
-import { TIKTOK_SPEECH_FORMATS } from "../src/audio.ts";
+import { AUDIO_FORMATS, TIKTOK_SPEECH_FORMATS } from "../src/audio.ts";
 import { NoTimedSpeechError } from "../src/speechToText.ts";
 import { queuedModel, STUB_AUDIO_PATH } from "./helpers.ts";
 
@@ -16,7 +16,44 @@ const LANGUAGES = [
   { iso_name: "zh", english_name: "Chinese" },
 ];
 
-Deno.test("YouTube language detection uses the primary model without fallback", async () => {
+Deno.test("YouTube detects spoken language with Scribe and saves timed words", async () => {
+  const model = queuedModel([]);
+  let requestedFormats: typeof AUDIO_FORMATS | undefined;
+  const result = await detectLanguage(
+    {
+      youtubeurl: "https://www.youtube.com/watch?v=oGn-k8qW8VM",
+      supported_languages: LANGUAGES,
+    },
+    {
+      model: model.model,
+      validateDuration: async () => {},
+      prepareAudio: (_url, formats) => {
+        requestedFormats = formats as typeof AUDIO_FORMATS;
+        return Promise.resolve({ path: STUB_AUDIO_PATH, durationSeconds: 281 });
+      },
+      transcribeFile: (_path, languageCode) => {
+        assertEquals(languageCode, null);
+        return Promise.resolve({
+          text: "quiero ser",
+          words: [{ text: "quiero", start: 0, end: 0.5 }],
+          languageCode: "spa",
+          languageProbability: 0.972,
+        });
+      },
+    },
+  );
+
+  assertEquals(requestedFormats, AUDIO_FORMATS);
+  assertEquals(result.language, LANGUAGES[1]);
+  assertEquals(result.data, {
+    stt_candidates: {
+      elevenlabs: { text: "quiero ser", words: [{ text: "quiero", start: 0, end: 0.5 }] },
+    },
+  });
+  assertEquals(model.calls(), 0);
+});
+
+Deno.test("YouTube uses the primary Gemini model when audio is unavailable", async () => {
   const primary = queuedModel(["es\n"]);
   const fallback = queuedModel(["he\n"]);
   const result = await detectLanguage(
@@ -28,6 +65,7 @@ Deno.test("YouTube language detection uses the primary model without fallback", 
       model: primary.model,
       fallbackModel: fallback.model,
       validateDuration: async () => {},
+      prepareAudio: () => Promise.reject(new Error("audio unavailable")),
     },
   );
 
@@ -35,6 +73,36 @@ Deno.test("YouTube language detection uses the primary model without fallback", 
   assertEquals(result.data, {});
   assertEquals(primary.calls(), 1);
   assertEquals(fallback.calls(), 0);
+});
+
+Deno.test("YouTube keeps Scribe timings when only its language label is missing", async () => {
+  const primary = queuedModel(["es"]);
+  const result = await detectLanguage(
+    {
+      youtubeurl: "https://www.youtube.com/watch?v=oGn-k8qW8VM",
+      supported_languages: LANGUAGES,
+    },
+    {
+      model: primary.model,
+      validateDuration: async () => {},
+      prepareAudio: () => Promise.resolve({ path: STUB_AUDIO_PATH, durationSeconds: 281 }),
+      transcribeFile: () =>
+        Promise.resolve({
+          text: "quiero",
+          words: [{ text: "quiero", start: 0, end: 0.5 }],
+          languageCode: null,
+          languageProbability: null,
+        }),
+    },
+  );
+
+  assertEquals(result.language, LANGUAGES[1]);
+  assertEquals(result.data, {
+    stt_candidates: {
+      elevenlabs: { text: "quiero", words: [{ text: "quiero", start: 0, end: 0.5 }] },
+    },
+  });
+  assertEquals(primary.calls(), 1);
 });
 
 Deno.test("YouTube language detection falls back with low Gemini thinking", async () => {
@@ -49,6 +117,7 @@ Deno.test("YouTube language detection falls back with low Gemini thinking", asyn
       model: primary.model,
       fallbackModel: fallback.model,
       validateDuration: async () => {},
+      prepareAudio: () => Promise.reject(new Error("audio unavailable")),
     },
   );
 
@@ -75,6 +144,7 @@ Deno.test("YouTube language detection reports both model failures", async () => 
           model: primary.model,
           fallbackModel: fallback.model,
           validateDuration: async () => {},
+          prepareAudio: () => Promise.reject(new Error("audio unavailable")),
         },
       ),
     Error,

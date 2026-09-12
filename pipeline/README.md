@@ -33,7 +33,16 @@ materialize translations                    (join with semantic phrases)
 finalize_translation                        (payload metadata + lessons snapshot)
 ```
 
-For YouTube, `extract_lyrics` first completes a verified `yt-dlp` audio download. Only after that
+Automatic source-language detection downloads verified audio and uploads it to Scribe v2 for both
+YouTube and TikTok. It saves the detected language and timed transcript together. YouTube uses its
+standard audio format ladder; TikTok tries muxed speech renditions first and advances on a
+no-timed-speech response. YouTube falls back to Gemini 2.5 Flash video detection, then Gemini 3.7
+Flash on model failure, when audio or Scribe cannot provide a language. TikTok retains its direct
+ElevenLabs URL fetch when local speech renditions are unavailable.
+
+When detection saved Scribe's transcript, `extract_lyrics` reuses it and requests only the independent
+Supadata candidate. For imports without that candidate, YouTube `extract_lyrics` first completes a
+verified `yt-dlp` audio download. Only after that
 succeeds does it run two independent paths concurrently: Supadata with `mode=native`, and the
 downloaded audio uploaded to ElevenLabs Scribe (`scribe_v2`). If yt-dlp exhausts every format and
 network namespace, neither paid STT provider is queried. Gemini 3.7 Flash receives the YouTube URL
@@ -140,6 +149,7 @@ one branch failing never discards another branch's completed — and already per
 
 | Step                       | Model                                           | Provider                                               |
 | -------------------------- | ----------------------------------------------- | ------------------------------------------------------ |
+| detect_language            | Scribe v2 / YouTube Gemini video fallback      | ElevenLabs / Gemini 2.5 then 3.7 Flash                 |
 | extract_lyrics             | Dual STT + reconciliation / timed YouTube fallback | Supadata + ElevenLabs + GPT-5.6 Sol / Gemini 3.7 Flash |
 | force_alignment            | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash                          |
 | add_lessons                | `gemini-3.8-flash`                                | Google Generative AI                                   |
