@@ -8,7 +8,7 @@ import { t } from "../utils/i18n"
 // opens its own confirmation sheet rather than window.confirm — unsupported
 // in the Hotwire Native app.
 export default class extends Controller {
-  static targets = ["menuOverlay", "menuPanel", "deleteOverlay", "shareButton", "shareLabel", "copyUrlButton", "toast"]
+  static targets = ["menuOverlay", "menuPanel", "deleteOverlay", "shareButton", "shareLabel", "copyUrlButton", "publicBanner", "publicUrl", "toast"]
 
   openMenu() {
     this.menuOverlayTarget.classList.remove("hidden")
@@ -50,11 +50,15 @@ export default class extends Controller {
         button.dataset.shared = "true"
         this.shareLabelTarget.textContent = t("course_menu.stop_sharing")
         this.copyUrlButtonTarget.classList.remove("hidden")
+        this.publicUrlTarget.href = data.public_url
+        this.publicUrlTarget.textContent = data.public_url
+        this.publicBannerTarget.classList.remove("hidden")
         this.showToast(t("course_menu.shared_message"))
       } else {
         button.dataset.shared = "false"
         this.shareLabelTarget.textContent = t("course_menu.share_to_public_url")
         this.copyUrlButtonTarget.classList.add("hidden")
+        this.publicBannerTarget.classList.add("hidden")
         this.showToast(t("course_menu.unshared_message"))
       }
     } catch (e) {

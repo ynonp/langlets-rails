@@ -666,6 +666,7 @@ en:
         tagline: "© %{year} Langlets · practice languages with native content"
     show:
       lessons: "Lessons"
+      public_langlet: "Public Langlet:"
       done: "%{current}/%{total} done"
       sign_up: "Sign up"
       watch_full_video: "Watch full video"

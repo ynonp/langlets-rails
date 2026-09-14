@@ -603,6 +603,7 @@ he:
         tagline: "‏© %{year} Langlets · מתרגלים שפות עם תוכן מקורי"
     show:
       lessons: "שיעורים"
+      public_langlet: "לנגלט ציבורי:"
       done: "%{current}/%{total} הושלמו"
       sign_up: "הירשמו"
       watch_full_video: "צפייה בסרטון המלא"

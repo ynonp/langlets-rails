@@ -35,6 +35,7 @@
   course_rtl = @course.language&.rtl || false
   preview_embed_url = video_embed_url(@course)
   streak = user_signed_in? ? @streak_info[:count] : 0
+  course_shared = user_signed_in? && current_user.sharing?(@course)
 %>
 
 <div class="min-h-screen flex flex-col bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 mx-auto w-full max-w-[480px]">
@@ -66,13 +67,22 @@
     </header>
 
       <!-- Scrollable content -->
-      <div class="flex-1 overflow-y-auto flex flex-col gap-4 px-5 pb-2">
+      <div class="flex-1 overflow-y-auto flex flex-col gap-4 px-5 pb-2"<%= raw(user_signed_in? ? " data-controller=\"course-paths course-menu\" data-course-paths-course-id-value=\"#{@course.slug}\"" : "") %>>
 
         <% if notice %>
           <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md px-4 py-3 text-emerald-600 dark:text-emerald-400"><%= notice %></div>
         <% end %>
         <% if alert %>
           <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md px-4 py-3 text-red-600 dark:text-red-400"><%= alert %></div>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <div data-course-menu-target="publicBanner" data-testid="course-public-banner"
+               class="<%= 'hidden ' unless course_shared %>w-full rounded-2xl border border-emerald-300 dark:border-emerald-700 bg-emerald-100 dark:bg-emerald-900/50 px-4 py-3 shadow-sm">
+            <p class="text-sm font-extrabold text-emerald-900 dark:text-emerald-100"><%= t('.public_langlet') %></p>
+            <%= link_to course_url(@course), course_url(@course), data: { course_menu_target: 'publicUrl' },
+                  class: 'mt-1 block break-all text-sm font-semibold text-emerald-700 dark:text-emerald-300 underline underline-offset-2' %>
+          </div>
         <% end %>
 
         <% if @translation_needed %>
@@ -109,8 +119,7 @@
             to their own default Channel, or to their Pro library if they
             imported it while subscribed. %>
         <% course_in_my_channel = user_signed_in? && current_user.owns_publication_of?(@course) %>
-        <% course_shared = user_signed_in? && current_user.sharing?(@course) %>
-        <div class="relative bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-5 shadow-md"<%= raw(can_add_to_playlists ? " data-controller=\"course-paths course-menu\" data-course-paths-course-id-value=\"#{@course.slug}\"" : "") %>>
+        <div class="relative bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-5 shadow-md">
           <% if can_add_to_playlists %>
             <button type="button"
                     data-action="course-menu#openMenu"

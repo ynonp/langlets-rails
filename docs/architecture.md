@@ -443,7 +443,16 @@ switches to **Stop sharing**, alongside a **Copy public URL** item, once
 `course_url` without any server round trip or change to sharing state — it
 exists for a course shared on an earlier visit, whose link the viewer just
 wants again; both items are hidden together the moment Stop sharing is
-clicked. `CoursesController#share`/`#unshare` (`POST /courses/:id/share`,
+clicked.
+
+The course page also shows a full-width **Public Langlet** banner near the top
+for a signed-in viewer who currently shares that course. It displays the
+clickable `course_url`, and the `course-menu` controller shows or hides it
+immediately when that viewer shares or stops sharing. The banner follows the
+same per-viewer sharing state as the menu, so another person's public share
+does not appear as the current viewer's share.
+
+`CoursesController#share`/`#unshare` (`POST /courses/:id/share`,
 `POST /courses/:id/unshare`) create or destroy the `ChannelItem` directly
 through `channel.channel_items` rather than going through `Channel#publish!`:
 publishing into an ordinary Channel is priced as an import (see *Channels*

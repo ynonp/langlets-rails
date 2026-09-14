@@ -680,6 +680,7 @@ es:
         tagline: "© %{year} Langlets · practica idiomas con contenido auténtico"
     show:
       lessons: Lecciones
+      public_langlet: "Langlet público:"
       done: "%{current}/%{total} completadas"
       sign_up: Registrarse
       watch_full_video: Ver vídeo completo
