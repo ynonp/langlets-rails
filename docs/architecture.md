@@ -43,15 +43,16 @@ depend on a persistent third-party container registry. PostgreSQL 17 is a Kamal
 accessory on the same private Docker network, persists in its `data` accessory
 directory, and does not publish port 5432 on the host.
 
-Production deploys are started manually from `.github/workflows/deploy.yml`
-using GitHub Actions' **Run workflow** control. The deploy workflow checks out
-the selected branch or commit and serializes deployments so two production
-releases cannot overlap. Its GitHub Actions secrets are `RAILS_MASTER_KEY`,
-`KAMAL_SSH_PRIVATE_KEY`, and `KAMAL_SSH_KNOWN_HOSTS`. The Rails key decrypts the
-production credentials; `.kamal/secrets` derives `DATABASE_URL` and
-`POSTGRES_PASSWORD` from those credentials. Kamal runs the temporary registry
-on the GitHub-hosted runner and makes it available to the production host over
-its SSH tunnel, so no registry port or registry credentials are exposed.
+Production deploys run automatically from `.github/workflows/deploy.yml` after
+each push to `main`, and can also be started manually using GitHub Actions'
+**Run workflow** control. The deploy workflow checks out the triggering commit
+and serializes deployments so two production releases cannot overlap. Its
+GitHub Actions secrets are `RAILS_MASTER_KEY`, `KAMAL_SSH_PRIVATE_KEY`, and
+`KAMAL_SSH_KNOWN_HOSTS`. The Rails key decrypts the production credentials;
+`.kamal/secrets` derives `DATABASE_URL` and `POSTGRES_PASSWORD` from those
+credentials. Kamal runs the temporary registry on the GitHub-hosted runner and
+makes it available to the production host over its SSH tunnel, so no registry
+port or registry credentials are exposed.
 
 The application, Solid Cache, Solid Queue, and Solid Cable share the
 `langlets_production` database and use separate `public`, `cache`, `queue`, and
@@ -250,9 +251,11 @@ The three prospect controllers separate operations from public onboarding:
   token, creating an account when needed and granting Pro through `Prospect#activate!`.
 
 
-Every lesson finish during an attributed session renders `lessons/marketing_finish`
-after the ordinary completion/XP accounting. Untagged sessions use the ordinary
-finish page, even for courses previously used in a campaign. The page
+Every lesson finish by an unauthenticated visitor on a world-readable public or
+system Channel course renders `lessons/marketing_finish` after the ordinary
+completion/XP accounting, regardless of whether the session has an `utm_source`.
+Attributed sessions continue to render it for signed-in learners. Untagged
+signed-in sessions use the ordinary finish page. The marketing finish page
 explains that AI created the lesson, invites the learner to create lessons from
 YouTube/TikTok videos with free Pro, and provides a next-lesson/course link.
 Current Pro users see a Create action. Ordinary course finish pages retain their
@@ -271,7 +274,9 @@ must not be used here; browsers then send `Origin: null` and Rails rejects both
 the email-capture and password-setup POSTs even with a valid authenticity token.
 
 `POST /courses/:course_id/lessons/:lesson_id/prospects` verifies course access,
-lesson membership and session attribution before storing a Prospect.
+lesson membership, and that the invitation is available before storing a
+Prospect. It accepts unauthenticated visitors to world-readable courses without
+campaign attribution; those Prospect rows have a nullable `utm_source`.
 Emails are normalized and protected by a unique `lower(email)` database index.
 First-submission attribution records the session UTM source, course, lesson and locale; duplicate
 submissions retain it. Prospect rows track activation, the eventual account,
@@ -286,9 +291,10 @@ After persisting/finding the prospect and queuing delivery, the controller delet
 `session[:utm_source]`, making `marketing_visit?` false immediately. Persisted
 Prospect attribution is retained. A one-request `flash[:prospect_submitted]`
 shows the email confirmation on the redirected finish page without restoring
-marketing mode; subsequent finishes use the ordinary page. Invalid/rejected
-submissions retain the source so the visitor can retry. A later tagged URL starts
-a new attributed visit.
+marketing attribution. Subsequent public-course finishes still show the join
+invitation to unauthenticated visitors, while untagged signed-in learners return
+to the ordinary page. Invalid/rejected submissions retain the source so the
+visitor can retry. A later tagged URL starts a new attributed visit.
 
 `DeliverProspectEmailsJob` sends a localized invitation with the account email,
 free Pro offer and a setup link, plus a signup notification to `User::ADMIN_EMAIL`.
@@ -1533,10 +1539,14 @@ reasoning effort `none` and temperature 0. The local pool remains concurrent eve
 endpoint serializes requests upstream. The
 token prompt retains the established contextual, natural-translation policy. For English output it
 selects a worked example by the clip/source language; Spanish, French, Arabic, Greek, German,
-Swedish, and Hebrew examples all demonstrate that source language translated into English. For
-other output languages the prompt omits these English-specific examples rather than showing a
-contradictory translation direction. One narrow guard says to translate only the marked token and
-not meaning contributed by adjacent words. A broader standalone-gloss/bound-morpheme policy was tested and rejected because it
+Swedish, and Hebrew examples all demonstrate that source language translated into English. Exact
+English-to-Hebrew and Chinese-target examples cover those output directions; other output
+languages omit English-specific examples rather than showing a contradictory translation
+direction. The prompt requires each output line to end immediately after its part-of-speech tag.
+The response parser is defensive as well: it keeps the gloss through the first supported tag and
+discards anything after it, so a redundant closing pipe or trailing commentary does not fail an
+otherwise valid import or leak into learner-visible text. One narrow guard says to translate only
+the marked token and not meaning contributed by adjacent words. A broader standalone-gloss/bound-morpheme policy was tested and rejected because it
 degraded contextual inflection and produced incorrect dictionary-like glosses such as Hebrew
 `has → יש`. `deno task compare:roosevelt` runs the Roosevelt diagnostic block through the unmodified
 legacy prompt and the guarded production prompt and prints every learner token with its gloss;

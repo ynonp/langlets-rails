@@ -28,7 +28,18 @@ Deno.test("token translation prompt selects its example by clip language", () =>
 });
 
 Deno.test("token translation prompt has source-to-English examples for every supported clip language", () => {
-  for (const language of ["Chinese", "Spanish", "French", "Arabic", "Greek", "German", "Swedish", "Hebrew"]) {
+  for (
+    const language of [
+      "Chinese",
+      "Spanish",
+      "French",
+      "Arabic",
+      "Greek",
+      "German",
+      "Swedish",
+      "Hebrew",
+    ]
+  ) {
     const prompt = addTokenTranslationsPrompt(language, "English");
     assert(prompt.includes(`## Example Input:\n${exampleInputs[language]}`));
     assert(prompt.includes(`## Expected Output:\n${examples[language]}`));
@@ -57,6 +68,15 @@ Deno.test("token translation prompt omits English-output examples for another ou
 
   assert(!prompt.includes("## Example Input:"));
   assert(!prompt.includes("## Expected Output:"));
+});
+
+Deno.test("token translation prompt shows English-to-Hebrew output without a trailing pipe", () => {
+  const prompt = addTokenTranslationsPrompt("English", "Hebrew");
+
+  assert(prompt.includes("## Example Input (English source, Hebrew translation):"));
+  assert(prompt.includes("a (I have *a* dream.) | a [determiner]"));
+  assert(prompt.includes("dream. (I have a *dream.*) | חלום [noun]"));
+  assert(prompt.includes("Do not add another |"));
 });
 
 Deno.test("buildWordLine marks the target word inside its phrase context", () => {
@@ -105,6 +125,15 @@ Deno.test("parseChunkTranslations requires a supported part of speech", () => {
     Error,
     "Missing or invalid part of speech",
   );
+});
+
+Deno.test("parseChunkTranslations ignores everything after the first supported part of speech", () => {
+  const content = [
+    "Is (*Is* a beauty and a beat.) | האם [verb] |",
+    "beauty (a *beauty* and a beat.) | יופי [noun] extra model commentary",
+  ].join("\n");
+
+  assertEquals(parseChunkTranslations(content, 2), ["האם [verb]", "יופי [noun]"]);
 });
 
 Deno.test("assertNotEchoed rejects a chunk that came back in the source language", () => {

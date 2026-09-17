@@ -96,6 +96,6 @@ class LessonsController < ApplicationController
     @next_lesson = @course.lessons.where("lessons.order > ?", @lesson.order).order(:order).first
 
     @continue_path = @next_lesson.present? ? course_lesson_path(@course, @next_lesson) : @course_path
-    render :marketing_finish, layout: "marketing" if marketing_visit? || flash[:prospect_submitted]
+    render :marketing_finish, layout: "marketing" if join_invitation_available_for?(@course) || flash[:prospect_submitted]
   end
 end

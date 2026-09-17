@@ -226,8 +226,11 @@ export function buildWordLine(phrase: Phrase, wordIndex: number): string {
   return `${target} (${context}) |`;
 }
 
-// Expects one "<word> (<context>) | <translation>" line per input line, in
-// order. Ignores any lines that don't contain "|", then validates the count.
+// Expects one "<word> (<context>) | <translation> [part_of_speech]" line per
+// input line, in order. Ignores any lines that don't contain "|", validates
+// the count, and treats the first supported part-of-speech tag as the end of
+// the translation. Models occasionally append a closing pipe or commentary;
+// neither belongs in the persisted learner gloss.
 export function parseChunkTranslations(content: string, expectedCount: number): string[] {
   const translations = content
     .split("\n")
@@ -240,13 +243,15 @@ export function parseChunkTranslations(content: string, expectedCount: number): 
       `Word translation count mismatch: got ${translations.length}, expected ${expectedCount}`,
     );
   }
-  translations.forEach((translation, index) => {
-    const partOfSpeech = translation.match(/\[([a-z_]+)\]\s*$/i)?.[1].toLowerCase();
-    if (!partOfSpeech || !PARTS_OF_SPEECH.has(partOfSpeech)) {
-      throw new Error(`Missing or invalid part of speech on word translation ${index + 1}`);
+  return translations.map((translation, index) => {
+    for (const match of translation.matchAll(/\[([a-z_]+)\]/gi)) {
+      if (PARTS_OF_SPEECH.has(match[1].toLowerCase())) {
+        return translation.slice(0, match.index + match[0].length).trim();
+      }
     }
+
+    throw new Error(`Missing or invalid part of speech on word translation ${index + 1}`);
   });
-  return translations;
 }
 
 // Throw when too much of a chunk came back as the source word.

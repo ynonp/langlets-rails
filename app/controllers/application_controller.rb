@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
     session[:utm_source].present?
   end
 
+  # Guests finishing world-readable courses should always see the join offer,
+  # even when they arrived without campaign attribution. Attributed visits keep
+  # the existing behavior for signed-in learners.
+  def join_invitation_available_for?(course)
+    marketing_visit? || (!user_signed_in? && course.readable_by?(nil))
+  end
+
   # Attribution follows the visitor across pages; untagged visits retain it.
   # Bound user input because Rails stores this session in an encrypted cookie.
   def capture_utm_source

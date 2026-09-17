@@ -8,7 +8,7 @@ class ProspectsController < ApplicationController
     @course = Course.find_by!(slug: params[:course_id])
     return unless authorize_course_read!(@course)
     @lesson = @course.lessons.find_by!(slug: params[:lesson_id])
-    return head :not_found unless marketing_visit?
+    return head :not_found unless join_invitation_available_for?(@course)
     email = Channel.normalize_email(params.dig(:prospect, :email))
     prospect = Prospect.create_or_find_by!(email: email) do |record|
       record.assign_attributes(utm_source: session[:utm_source], course: @course, lesson: @lesson, locale: I18n.locale.to_s)

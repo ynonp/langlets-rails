@@ -129,6 +129,8 @@ Add to each line after the | the translation of <word to translate> in the same 
    part of speech in square brackets. Use exactly one of: noun, proper_noun,
    verb, adjective, adverb, pronoun, determiner, preposition, conjunction,
    auxiliary, particle, interjection, numeral, punctuation, other.
+   End the line immediately after the closing ]. Do not add another | or any
+   explanation after the part-of-speech tag.
 ${scopeGuard}${
     includeScopeGuard ? "5" : "4"
   }. Classify the marked source-language word in this specific context, not the
@@ -152,6 +154,19 @@ ${exampleInputs[clipLanguage]}
 
 ## Expected Output:
 ${examples[clipLanguage]}
+`
+      : clipLanguage === "English" && translationLanguage === "Hebrew"
+      ? `## Example Input (English source, Hebrew translation):
+I (*I* have a dream.) |
+have (I *have* a dream.) |
+a (I have *a* dream.) |
+dream. (I have a *dream.*) |
+
+## Expected Output (Hebrew translation):
+I (*I* have a dream.) | אני [pronoun]
+have (I *have* a dream.) | יש לי [verb]
+a (I have *a* dream.) | a [determiner]
+dream. (I have a *dream.*) | חלום [noun]
 `
       : translationLanguage === "Chinese"
       ? `## Example Input (English source):

@@ -15,8 +15,7 @@ class MarketingTest < ActionDispatch::IntegrationTest
     @channel.publish!(@course)
   end
 
-  test "every lesson finishes with marketing and allows continuing" do
-    enter_marketing
+  test "every public lesson finishes with a join invitation for unregistered visitors" do
     [ @lesson, @next_lesson ].each do |lesson|
       get finish_course_lesson_path(@course, lesson)
       assert_response :success
@@ -27,7 +26,8 @@ class MarketingTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", course_lesson_path(@course, @next_lesson)
   end
 
-  test "ordinary visits use the regular finish and cannot submit prospects" do
+  test "untagged signed-in visits use the regular finish and cannot submit prospects" do
+    sign_in @admin
     get finish_course_lesson_path(@course, @lesson)
     assert_response :success
     assert_select "#marketing-title", count: 0
@@ -59,7 +59,8 @@ class MarketingTest < ActionDispatch::IntegrationTest
     [ "", "   ", [ "campaign" ], { campaign: "bad" } ].each do |source|
       get finish_course_lesson_path(@course, @lesson), params: { utm_source: source }
       assert_response :success
-      assert_select "#marketing-title", count: 0
+      assert_select "#marketing-title"
+      assert_nil request.session[:utm_source]
     end
     enter_marketing
     get course_path(@course), params: { utm_source: "   " }
@@ -91,8 +92,21 @@ class MarketingTest < ActionDispatch::IntegrationTest
     open_session do |visitor|
       visitor.get finish_course_lesson_path(@course, @lesson)
       visitor.assert_response :success
-      visitor.assert_select "#marketing-title", count: 0
+      visitor.assert_select "#marketing-title"
     end
+  end
+
+  test "untagged guest submission records a prospect without attribution" do
+    get finish_course_lesson_path(@course, @lesson)
+    assert_difference "Prospect.count", 1 do
+      assert_enqueued_with(job: DeliverProspectEmailsJob) do
+        submit("organic@example.com")
+      end
+    end
+
+    prospect = Prospect.last
+    assert_nil prospect.utm_source
+    assert_equal [ @course.id, @lesson.id ], [ prospect.course_id, prospect.lesson_id ]
   end
 
   test "signed in marketing visits still record lesson completion" do
@@ -123,11 +137,8 @@ class MarketingTest < ActionDispatch::IntegrationTest
     assert_select '[role="status"]', I18n.t("marketing.email_next")
     assert_select "input[type=email]", count: 0
     get finish_course_lesson_path(@course, @next_lesson)
-    assert_select "#marketing-title", count: 0
-    assert_no_difference "Prospect.count" do
-      assert_no_enqueued_jobs { submit("another@example.com") }
-    end
-    assert_response :not_found
+    assert_select "#marketing-title"
+    assert_select "input[type=email]"
     assert_difference "ActionMailer::Base.deliveries.size", 2 do
       DeliverProspectEmailsJob.perform_now(prospect.id)
     end
