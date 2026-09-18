@@ -526,6 +526,23 @@ iframe. When the full-course
 segment ends, the controller pauses and rewinds to its start, making the next
 play action replay the complete video.
 
+Its transcript header is deliberately two rows on the constrained player:
+"Click a word to see its translation" sits above the controls, and the second
+row contains text-only, pause-after-each-sentence, karaoke (when word timing is
+available), translation, and copy controls. The obsolete back-to-course arrow
+is no longer rendered. Text-only mode pauses playback, hides the media box, and
+lets the transcript consume the full player viewport; showing video again
+restores the same initialized iframe in its paused state.
+
+Sentence-by-sentence mode is owned by the full-player-only Stimulus controller,
+not the shared playback engine, so lesson, hidden-audio, compact, and flashcard
+players are unchanged. Each non-final phrase exposes a server-derived end: the
+latest token end timestamp when available, otherwise the next phrase's start
+timestamp for legacy courses. Crossing that boundary during ordinary playback
+pauses once. Transcript seeks and large native-control scrubs reset the next
+boundary instead of causing an immediate surprise pause. The final sentence
+continues to use the full segment's existing pause-and-rewind end.
+
 The phrase relation is materialized immediately after its translations, tokens,
 and token audio are preloaded. Boundary calculations and rendering then reuse
 that same in-memory graph; calling `first` on an unloaded eager-loaded relation

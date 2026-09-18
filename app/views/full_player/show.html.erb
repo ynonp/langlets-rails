@@ -24,7 +24,7 @@
 %>
 
 <div class="h-dvh-safe min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 mx-auto w-full max-w-[480px]"
-    data-controller="main-video-player watch-video-activity"
+    data-controller="main-video-player watch-video-activity full-player"
     data-main-video-player-provider-value="<%= @video_provider %>"
     data-main-video-player-video-id-value="<%= @video_id %>"
     data-main-video-player-hl-value="<%= l1&.iso_name || 'en' %>"
@@ -37,8 +37,10 @@
       video:end->watch-video-activity#handleVideoEnd
       video:stop->watch-video-activity#handleVideoPause
       video:progress->watch-video-activity#progress
+      video:progress->full-player#progress
       watch-video-activity:pause->main-video-player#stopPlayback
       watch-video-activity:resume->main-video-player#resume
+      full-player:pause->main-video-player#stopPlayback
     "
     data-show-player="true"
     data-segment-start="<%= timestamp_to_seconds(@start_timestamp) %>"
@@ -47,19 +49,14 @@
     data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
   <!-- Video hero -->
-  <%= render "shared/video_media_box", thumbnail_url: course_thumbnail_url(@course) %>
+  <%= render "shared/video_media_box", thumbnail_url: course_thumbnail_url(@course), full_player_controls: true %>
 
   <!-- Breakdown header -->
-  <% back_button = capture do %>
-    <a href="<%= course_path(@course.slug) %>" class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300" aria-label="Back to course">
-      <svg width="8" height="14" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  <% end %>
   <%= render "shared/video_transcript_header",
       word_timing: @word_timing,
       wv_prefs: wv_prefs,
-      leading: back_button,
-      header_class: "flex items-center justify-between px-5 pt-3 pb-1" %>
+      full_player_controls: true,
+      header_class: "px-5 pt-3 pb-2" %>
 
   <!-- Word-by-word breakdown -->
   <%= render "shared/video_transcript_phrases",
@@ -67,6 +64,7 @@
       l1_rtl: l1_rtl,
       l2_rtl: l2_rtl,
       wv_prefs: wv_prefs,
+      sentence_ends: @sentence_ends,
       saved_ids_url: (token_translation_users_path if current_user),
       container_class: "flex-1 overflow-y-auto flex flex-col gap-4 px-5" %>
 

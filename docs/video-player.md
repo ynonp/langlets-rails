@@ -102,6 +102,18 @@ the complete video. It is the most "video-like" of the players:
   highlights the current line as the video plays (driven by the
   [`watch-video-activity`](../app/javascript/controllers/watch_video_activity_controller.js)
   controller listening to `video:progress`).
+- A full-player-only two-row toolbar. The first row explains that clicking a
+  word shows its translation; the second row contains text-only,
+  pause-after-each-sentence, karaoke (when available), translation, and copy.
+  There is no back arrow in this toolbar.
+- Text-only mode pauses playback and collapses the media box, allowing the
+  transcript to fill the complete player viewport. Turning it off restores the
+  existing, still-initialized iframe.
+- Pause-after-each-sentence mode stops after the latest timed word in each
+  non-final phrase, falling back to the next phrase start for legacy courses.
+  A transcript seek or a large native scrub resets the upcoming boundary so a
+  jump never triggers an accidental stop. The final phrase uses the normal
+  segment-end pause and rewind.
 
 > **Karaoke word highlighting.** When the song's token translations carry
 > per-word timestamps (the word-timing pipeline), the transcript additionally
@@ -117,8 +129,8 @@ It plays the whole video as one big segment (`segment-start` → `segment-end`
 spanning the full course). The shared controller still observes native player
 state changes and emits the `video:*` events used by the transcript.
 
-> **Shared transcript UI.** The header controls (karaoke checkbox, translate
-> icon, copy icon) and the word-by-word transcript/translation-popup are the
+> **Shared transcript UI.** The base header controls (karaoke checkbox,
+> translate icon, copy icon) and the word-by-word transcript/translation-popup are the
 > same partials the watch-video activity uses (#2, below) —
 > [`shared/_video_transcript_header`](../app/views/shared/_video_transcript_header.html.erb)
 > and
@@ -127,10 +139,11 @@ state changes and emits the `video:*` events used by the transcript.
 > translate toggle went stale and its transcript container was missing the
 > `saved-ids-url`/`saved-token-classes` values and the translation-pause
 > bindings that #2 had). Change either partial and both players pick it up;
-> each caller only supplies its own wrapper classes (`header_class`,
-> `container_class`), an optional `leading` slot (this page's back-to-course
-> button), and the `word_timing`/`wv_prefs`/`phrases`/`l1_rtl`/`l2_rtl`/
-> `saved_ids_url` locals. The bottom CTA stays per-view since the two pages
+> each caller supplies its own wrapper classes (`header_class`,
+> `container_class`) and the `word_timing`/`wv_prefs`/`phrases`/`l1_rtl`/`l2_rtl`/
+> `saved_ids_url` locals. Full-player reading and sentence controls are enabled
+> with explicit locals and handled by `full-player`; they are not rendered for
+> watch-video activities. The bottom CTA stays per-view since the two pages
 > want different actions (go to the first lesson here vs. this activity's
 > "Start practice").
 

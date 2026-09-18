@@ -4,6 +4,7 @@
 <div
   id="main-player"
   data-main-video-player-target="playerContainer"
+  <% if local_assigns[:full_player_controls] %>data-full-player-target="mediaBox"<% end %>
   data-action="loadedmetadata->main-video-player#setMediaRatio:capture"
   class="flex-shrink-0 sticky top-0 h-[clamp(160px,30vh,280px)] bg-black overflow-hidden <%= container_class %>"
 >

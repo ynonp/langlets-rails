@@ -64,7 +64,9 @@ es:
     ar: Árabe
   shared:
     video_transcript_panel:
-      tap_any_word: Toca cualquier palabra
+      tap_any_word: Haz clic en una palabra para ver su traducción
+      text_only: Solo texto
+      pause_each_sentence: Pausar después de cada frase
       karaoke: Karaoke
       translation: Traducción
       copy_text: Copiar texto

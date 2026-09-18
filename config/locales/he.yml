@@ -53,7 +53,9 @@ he:
     ar: "ערבית"
   shared:
     video_transcript_panel:
-      tap_any_word: "הקישו על מילה כלשהי"
+      tap_any_word: "לחצו על מילה כדי לראות את התרגום שלה"
+      text_only: "טקסט בלבד"
+      pause_each_sentence: "עצירה אחרי כל משפט"
       karaoke: "קריוקי"
       translation: "תרגום"
       copy_text: "העתקת טקסט"

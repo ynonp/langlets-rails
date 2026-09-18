@@ -26,6 +26,7 @@ class FullPlayerController < ApplicationController
     # Get start and end timestamps from phrases
     @start_timestamp = @phrases.first&.timestamp || "00:00"
     @end_timestamp = full_player_end_timestamp(@phrases)
+    @sentence_ends = sentence_end_timestamps(@phrases)
 
     # Karaoke word highlighting is enabled only when tokens carry per-word timestamps.
     @word_timing = helpers.word_timing_enabled?(@phrases)
@@ -41,6 +42,22 @@ class FullPlayerController < ApplicationController
     token_end_timestamps.max_by { |timestamp| Phrase.timestamp_to_seconds(timestamp) } ||
       phrases.last&.timestamp ||
       "00:00"
+  end
+
+  # Timed courses can stop after the sentence's last spoken word. Older
+  # courses fall back to the following sentence's start. The final sentence is
+  # omitted because the full-segment boundary already pauses and rewinds there.
+  def sentence_end_timestamps(phrases)
+    phrases.each_with_index.filter_map do |phrase, index|
+      next if index == phrases.length - 1
+
+      token_end = phrase.phrase_tokens.filter_map(&:end_timestamp).max_by do |timestamp|
+        helpers.timestamp_to_seconds(timestamp)
+      end
+      end_timestamp = token_end || phrases[index + 1].timestamp
+
+      [ phrase.id, helpers.timestamp_to_seconds(end_timestamp) ]
+    end.to_h
   end
 
 end

@@ -53,7 +53,9 @@ en:
     ar: "Arabic"
   shared:
     video_transcript_panel:
-      tap_any_word: "Tap any word"
+      tap_any_word: "Click a word to see its translation"
+      text_only: "Text only"
+      pause_each_sentence: "Pause after each sentence"
       karaoke: "Karaoke"
       translation: "Translation"
       copy_text: "Copy text"

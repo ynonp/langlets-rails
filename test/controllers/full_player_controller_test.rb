@@ -84,7 +84,67 @@ class FullPlayerControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-action*='main-video-player#togglePlayPause']", count: 0
     assert_select "[data-main-video-player-target='playButton']", count: 0
     assert_select "[data-main-video-player-target='progressBarContainer']", count: 0
-    assert_select "a[aria-label='Back to course']"
+    assert_select "a[aria-label='Back to course']", count: 0
+  end
+
+  test "renders reading and sentence playback controls with timed boundaries" do
+    first_phrase = create_translated_phrase!(
+      medium: @medium,
+      l1: @english,
+      l2: @english,
+      text_l1: "First sentence",
+      text_l2: "First sentence",
+      timestamp: "00:01"
+    )
+    first_phrase.phrase_tokens.create!(
+      l1_start_index: 0,
+      l1_end_index: 0,
+      start_timestamp: "00:01.10",
+      end_timestamp: "00:02.50"
+    )
+    create_translated_phrase!(
+      medium: @medium,
+      l1: @english,
+      l2: @english,
+      text_l1: "Second sentence",
+      text_l2: "Second sentence",
+      timestamp: "00:04"
+    )
+
+    get course_full_player_path(@course)
+
+    assert_response :success
+    assert_select "[data-controller~='full-player']"
+    assert_select "[data-full-player-target='textOnlyToggle']"
+    assert_select "[data-full-player-target='sentencePauseToggle']"
+    assert_select "[data-full-player-target='sentence'][data-sentence-end='2.5']", count: 1
+    assert_select "[data-action*='full-player:pause']"
+    assert_select "[data-action*='full-player#progress']"
+    assert_includes response.body, "Click a word to see its translation"
+  end
+
+  test "falls back to the next phrase start for a sentence without word timing" do
+    create_translated_phrase!(
+      medium: @medium,
+      l1: @english,
+      l2: @english,
+      text_l1: "First sentence",
+      text_l2: "First sentence",
+      timestamp: "00:01"
+    )
+    create_translated_phrase!(
+      medium: @medium,
+      l1: @english,
+      l2: @english,
+      text_l1: "Second sentence",
+      text_l2: "Second sentence",
+      timestamp: "00:04"
+    )
+
+    get course_full_player_path(@course)
+
+    assert_response :success
+    assert_select "[data-full-player-target='sentence'][data-sentence-end='4.0']", count: 1
   end
 
   test "loads the complete phrase graph only once" do

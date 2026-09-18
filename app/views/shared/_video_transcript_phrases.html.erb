@@ -1,6 +1,7 @@
 <%
   container_class = local_assigns[:container_class] || "flex-1 overflow-y-auto flex flex-col gap-4 px-5"
   saved_ids_url = local_assigns[:saved_ids_url]
+  sentence_ends = local_assigns[:sentence_ends] || {}
   saved_ids = current_user ? current_user.saved_phrase_tokens.pluck(:id) : []
 %>
 <div
@@ -15,10 +16,14 @@
     style="padding-bottom: calc(16px + env(safe-area-inset-bottom));"
     >
   <div id="phrases-list" data-watch-video-activity-target="phrasesList"
-       data-action="click->main-video-player#seekToTimestamp">
+       data-action="click->main-video-player#seekToTimestamp<%= " click->full-player#seekedToSentence" if sentence_ends.present? %>">
     <% phrases.each do |phrase| %>
       <div
         data-watch-video-activity-target="subtitles"
+        <% if sentence_ends.key?(phrase.id) %>
+          data-full-player-target="sentence"
+          data-sentence-end="<%= sentence_ends.fetch(phrase.id) %>"
+        <% end %>
         data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
         class="phrase block cursor-pointer rounded-2xl px-3.5 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 data-active:bg-emerald-100! dark:data-active:bg-emerald-900/40!"
       >
