@@ -68,11 +68,20 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "watch video uses a deterministic media height" do
-    phrase = Phrase.create!(
+    phrase = create_translated_phrase!(
       medium: @medium,
       l1: languages(:english),
+      l2: languages(:english),
       text_l1: "A test phrase",
+      text_l2: "A test phrase",
       timestamp: "00:01.00"
+    )
+    create_translated_token!(
+      phrase:,
+      translation: "test",
+      language: languages(:english),
+      l1_start_index: 1,
+      l1_end_index: 1
     )
     activity = Activities::WatchVideoActivity.create!(
       lesson: @lesson,
@@ -101,10 +110,13 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     assert_select "#phrases-container" do |phrases_container|
       actions = phrases_container.first["data-action"]
       assert_includes actions, "click->watch-video-activity#handleTranslationClick"
+      assert_includes actions, "translation:show->popover-translation#showPopupForToken"
       assert_includes actions, "click@document->watch-video-activity#resumeAfterTranslation"
       assert_equal "underline decoration-emerald-500 decoration-[2.5px] underline-offset-4",
                    phrases_container.first["data-popover-translation-saved-token-classes-value"]
     end
+
+    assert_select "#phrases-container [data-translation][data-audio-deferred='true']"
   end
 
   test "flashcard shows the shared video player and configures its current phrase" do

@@ -35,7 +35,10 @@ export default class YoutubeAdapter {
   }
 
   seekTo(seconds) {
-    return this.player.seekTo(seconds);
+    // This is always a committed seek, never an in-progress scrub gesture.
+    // Allow YouTube to request an unbuffered target instead of snapping to the
+    // nearest already-loaded position.
+    return this.player.seekTo(seconds, true);
   }
 
   async getCurrentTime() {

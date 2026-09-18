@@ -13,29 +13,84 @@ export default class extends Controller {
   initialize() {
     this.pausedForTranslation = false;
     this.videoPlaying = false;
+    this.translationOpen = false;
+    this.translationPausePending = false;
+    this.translationRequestGeneration = 0;
+  }
+
+  disconnect() {
+    // A pause acknowledgement can arrive after Turbo has replaced this
+    // activity. Invalidate its callback so detached transcript UI and token
+    // audio cannot be revived by the outgoing interaction.
+    this.translationRequestGeneration += 1;
+    this.translationPausePending = false;
   }
 
   handleTranslationClick(event) {
     const token = event.target.closest('[data-translation]');
     if (!token) return;
 
-    if (this.pausedForTranslation) {
+    // This controller owns the complete word-click sequence. Keep the opening
+    // click away from document-level close/resume actions and do not let the
+    // popup or pronunciation get ahead of the provider pause confirmation.
+    event.stopPropagation();
+
+    if (this.translationOpen) {
+      this.translationRequestGeneration += 1;
+      this.translationOpen = false;
+      this.hideTranslation();
+
+      if (!this.pausedForTranslation) return;
       this.pausedForTranslation = false;
       this.dispatch('resume');
       return;
     }
 
-    if (this.videoPlaying) {
-      this.pausedForTranslation = true;
-      this.dispatch('pause');
-    }
+    const generation = ++this.translationRequestGeneration;
+    // Preserve pause ownership synchronously. The provider query below closes
+    // the just-started playback race, while this value covers the ordinary
+    // case without waiting for another iframe round trip.
+    this.pausedForTranslation = this.videoPlaying;
+    this.translationPausePending = true;
+    this.dispatch('pause', {
+      detail: {
+        afterPause: ({ wasPlaying }) => {
+          if (generation !== this.translationRequestGeneration) return;
+
+          this.translationPausePending = false;
+          this.pausedForTranslation = this.pausedForTranslation || wasPlaying;
+          this.translationOpen = true;
+          this.showTranslation(token);
+        }
+      }
+    });
   }
 
   resumeAfterTranslation() {
-    if (!this.pausedForTranslation) return;
+    if (!this.translationOpen && !this.pausedForTranslation) return;
 
+    this.translationRequestGeneration += 1;
+    this.translationOpen = false;
+    if (!this.pausedForTranslation) return;
     this.pausedForTranslation = false;
     this.dispatch('resume');
+  }
+
+  showTranslation(token) {
+    this.containerTarget.dispatchEvent(new CustomEvent('translation:show', {
+      detail: { token }
+    }));
+
+    if (token.dataset.audioUrl) {
+      this.element.dispatchEvent(new CustomEvent('audio-cache:play', {
+        bubbles: true,
+        detail: { url: token.dataset.audioUrl }
+      }));
+    }
+  }
+
+  hideTranslation() {
+    this.containerTarget.dispatchEvent(new CustomEvent('translation:hide'));
   }
 
   // PATCH the current toggle states to the server so they persist across visits.
@@ -126,7 +181,7 @@ export default class extends Controller {
 
   handleVideoStart() {
     this.videoPlaying = true;
-    this.pausedForTranslation = false;
+    if (!this.translationPausePending) this.pausedForTranslation = false;
   }
 
   handleVideoPause() {
@@ -179,7 +234,7 @@ export default class extends Controller {
 
   updateSubtitles(currentTime) {
     const subtitlesLines = this.subtitlesTargets;
-    const index = subtitlesLines.map(item => Number(item.dataset.timestamp)).findLastIndex(t => t < currentTime);
+    const index = subtitlesLines.map(item => Number(item.dataset.timestamp)).findLastIndex(t => t <= currentTime);
 
     if (index !== -1) {
       // Views style the active line via Tailwind data-active: variants.

@@ -2,6 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 import YoutubeAdapter from "../players/youtube_adapter";
 import TiktokAdapter from "../players/tiktok_adapter";
 import { PlayerState } from "../players/player_states";
+import { parkPlayerAt } from "../players/park_player.mjs";
+import { pausePlayerAndWait } from "../players/pause_player.mjs";
 
 // One controller, one event contract, two playback engines. Everything below
 // the adapter boundary (segments, video:* events, the 100ms monitor, the
@@ -49,6 +51,8 @@ export default class extends Controller {
   }
 
   disconnect() {
+    this.playbackCommandGeneration += 1;
+    this.pauseStateListeners.clear();
     this.stopPlaybackMonitoring();
     if (this.player) {
       // Defer player teardown so it doesn't block Turbo navigation. destroy()
@@ -63,6 +67,7 @@ export default class extends Controller {
   }
 
   handleBeforeRender() {
+    this.playbackCommandGeneration += 1;
     this.stopPlaybackMonitoring();
     if (this.player) {
       this.player.pauseVideo();
@@ -124,6 +129,8 @@ export default class extends Controller {
     // Whether the current player has ever entered PLAYING. Guards the seeks
     // that would knock a never-played YouTube player back to UNSTARTED.
     this.hasPlayed = false;
+    this.playbackCommandGeneration = 0;
+    this.pauseStateListeners = new Set();
     this.stopPlayback = this.stopPlayback.bind(this);
   }
 
@@ -150,6 +157,8 @@ export default class extends Controller {
     // Adapters normalize to PlayerState, so this reads the same for every
     // provider and keeps dispatching the video:* contract activities rely on.
     this.player.onStateChange((state) => {
+      this.pauseStateListeners.forEach((listener) => listener(state));
+
       if (state === PlayerState.PAUSED || state === PlayerState.ENDED) {
         this.stopPlaybackMonitoring();
         this.dispatchVideoEvent('stop');
@@ -178,17 +187,60 @@ export default class extends Controller {
 
     const currentTime = await this.player.getCurrentTime();
     if (currentTime < segmentStart) {
-      await this.player.seekTo(segmentStart);
+      await this.parkAtSegmentStart(segmentStart);
     }
   }
 
-  async stopPlayback() {
-    if (this.player) {
-      this.player.pauseVideo();
+  async parkAtSegmentStart(segmentStart = this.segmentStart) {
+    const player = this.player;
+    const target = Number(segmentStart);
+    if (!player || !Number.isFinite(target)) return;
+
+    const generation = ++this.playbackCommandGeneration;
+    this.stopPlaybackMonitoring();
+    const parked = await parkPlayerAt(player, target);
+
+    // Ignore completion from a player that Turbo navigation or a source switch
+    // replaced while its asynchronous commands were still in flight.
+    if (generation !== this.playbackCommandGeneration || player !== this.player) return;
+
+    if (!parked) {
+      console.warn("Video player could not confirm its parked position", { target });
     }
+    this.dispatchVideoEvent('progress', { at: target });
+    this.updateProgressBar(target, target, this.segmentEnd);
+  }
+
+  async stopPlayback(event) {
+    const afterPause = event?.detail?.afterPause;
+    const player = this.player;
+
+    if (!player) {
+      afterPause?.({ confirmed: false, wasPlaying: false });
+      return;
+    }
+
+    // Most pause callers do not need confirmation and should retain the
+    // cheapest path. Translation clicks supply a callback because their popup
+    // and pronunciation must wait until the provider reports that playback
+    // actually stopped.
+    if (typeof afterPause !== 'function') {
+      player.pauseVideo();
+      return;
+    }
+
+    const result = await pausePlayerAndWait(player, (listener) => {
+      this.pauseStateListeners.add(listener);
+      return () => this.pauseStateListeners.delete(listener);
+    });
+
+    // Turbo navigation can replace the player while an iframe command is in
+    // flight. Do not open a popup belonging to the outgoing activity.
+    if (player === this.player) afterPause(result);
   }
 
   async configureSegment(event) {
+    this.playbackCommandGeneration += 1;
     const { videoId, provider, segmentStart, segmentEnd } = event.detail;
     const nextSegmentStart = Number(segmentStart);
     const nextSegmentEnd = Number(segmentEnd);
@@ -225,6 +277,7 @@ export default class extends Controller {
   }
 
   async resume() {
+    this.playbackCommandGeneration += 1;
     if ((this.segmentEnd != null) && (this.segmentStart != null)) {      
       const at = await this.player.getCurrentTime();
       if (at <= this.segmentEnd) {
@@ -234,6 +287,7 @@ export default class extends Controller {
   }
 
   async playSegment(event) {
+    this.playbackCommandGeneration += 1;
     // Initialize player on first playSegment call
     if (!this.playerInitialized) {
       this.initializePlayer();
@@ -285,10 +339,7 @@ export default class extends Controller {
       if (at >= this.segmentEnd) {
         this.stopPlaybackMonitoring();
         this.dispatchVideoEvent('end');
-        await this.player.pauseVideo();
-        await this.player.seekTo(this.segmentStart);
-        this.dispatchVideoEvent('progress', { at: this.segmentStart });
-        this.updateProgressBar(this.segmentStart, this.segmentStart, this.segmentEnd);
+        await this.parkAtSegmentStart();
         return;
       }
       this.dispatchVideoEvent('progress', { at })
@@ -324,11 +375,13 @@ export default class extends Controller {
     // clicked phrase (or any ancestor carrying a timestamp).
     const el = ev.target.closest('[data-timestamp]');
     if (!el) return;
+    this.playbackCommandGeneration += 1;
     this.player.seekTo(el.dataset.timestamp);
   }
 
   async seekToPosition(event) {
     if (!this.player) return;
+    this.playbackCommandGeneration += 1;
 
     // Prevent the event from bubbling up to the YouTube player
     event.preventDefault();

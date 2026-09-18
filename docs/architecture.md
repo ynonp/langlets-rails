@@ -523,8 +523,14 @@ no token timing use the final phrase start as their endpoint. The shared
 segment boundary and dispatch synchronized transcript progress events. The view
 does not place custom playback chrome or click-capturing overlays over the
 iframe. When the full-course
-segment ends, the controller pauses and rewinds to its start, making the next
-play action replay the complete video.
+segment ends, the controller parks the player at its start in a confirmed
+paused state, making the next play action replay the complete video. Parking is
+a shared, provider-neutral transaction: stop monitoring, pause, seek, pause
+again, and verify both state and position with one bounded retry. The second
+pause is necessary for TikTok's independent `postMessage` commands, while
+YouTube committed seeks explicitly allow fetching an unbuffered target. A
+generation guard prevents an operation belonging to a player removed by Turbo
+or replaced by a source switch from updating the new activity's transcript.
 
 Its transcript header is deliberately two rows on the constrained player:
 "Click a word to see its translation" sits above the controls, and the second
@@ -560,12 +566,17 @@ Watch-video activities preload an interactive YouTube iframe with YouTube's
 native controls. Their activity parameters opt into this mode, so the shared
 lesson player omits its click-capturing overlay and custom play/progress chrome
 while retaining the activity's segment boundary and `video:*` event contract.
-Opening a word-translation popup pauses the shared player. The token click is
-stopped before it reaches the document action, so playback stays paused while
-the popup is open; the next outside click closes the popup and resumes the
-segment. The watch-video controller tracks the shared player's play/stop events
-and only marks a translation pause when playback was active, so opening a popup
-while the video is already paused cannot make a later outside click start it.
+Opening a word translation now pauses the shared player before any dependent UI
+or audio work. The main player sends the provider command immediately and the
+watch-video controller opens the already-rendered popup and starts token audio
+only from the provider's `PAUSED`/`ENDED` callback; a bounded 800ms fallback
+keeps a missing iframe callback from making the click inert. Transcript token
+audio is marked deferred so the layout-level capture handler cannot start it
+before that confirmation. The token click is stopped before it reaches the
+document action, so playback stays paused while the popup is open; the next
+outside click closes the popup and resumes the segment. Pause confirmation also
+reports whether the provider was playing, so opening a popup while the video is
+already paused cannot make a later outside click start it.
 Translation-token clicks are
 also excluded from the shared phrase-seek action; only clicks elsewhere on the
 sentence move playback to that phrase. Clicking a word while the popup is open
@@ -579,10 +590,13 @@ frames therefore retain their ten-minute lifetime without treating their
 serialized vocabulary state as authoritative. Save/remove actions still update
 the controller locally for an immediate response.
 When native playback begins before the activity's first phrase, the activity's
-play listener seeks forward to the segment start; playback already at or after
-that boundary is not moved.
-At the segment end, the shared controller emits `video:end`, pauses, and seeks
-back to the segment start so the native play control replays the lesson.
+play listener parks it at the segment start; playback already at or after that
+boundary is not moved. At the segment end, the shared controller emits
+`video:end` and performs the same parking transaction. In both cases the player
+finishes paused at the first phrase, and a synthetic progress update selects
+that phrase immediately (`timestamp <= currentTime`) instead of leaving the
+transcript without an active row at the exact boundary. The native play control
+therefore visibly starts the lesson again from a stable position.
 Hidden and compact activity players remain on the custom controls path.
 
 TikTok publishes its current playback position less frequently than the shared

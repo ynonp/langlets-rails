@@ -68,11 +68,26 @@ export default class extends Controller {
       return;
     }
 
+    this._showPopupForToken(tokenEl);
+
+    // Word audio playback is handled by the audio-cache controller, which
+    // sees the click in the capture phase (before stopPropagation below).
+
+    ev.stopPropagation();
+  }
+
+  showPopupForToken(event) {
+    const tokenEl = event.detail?.token;
+    if (!tokenEl) return;
+
+    this._showPopupForToken(tokenEl);
+  }
+
+  _showPopupForToken(tokenEl) {
     const translation = tokenEl.dataset.translation;
     const tokenId = tokenEl.dataset.tokenId ? parseInt(tokenEl.dataset.tokenId) : null;
 
     this.currentTokenId = tokenId;
-
     this.translationTextTarget.textContent = translation;
 
     // Un-hide first so the popup has a measurable width for clamping.
@@ -81,22 +96,14 @@ export default class extends Controller {
     const rect = tokenEl.getBoundingClientRect();
     const margin = 8;
     const popupWidth = this.translationPopupTarget.offsetWidth;
-
-    // Anchor on the token, then clamp so the popup stays fully on-screen.
     let left = rect.left + (rect.width / 2);
     const maxLeft = window.innerWidth - popupWidth - margin;
     left = Math.max(margin, Math.min(left, maxLeft));
-    const top = rect.bottom + 5;
 
     this.translationPopupTarget.style.left = `${left}px`;
+    const top = rect.bottom + 5;
     this.translationPopupTarget.style.top = `${top}px`;
-
     this._updateSaveButton();
-
-    // Word audio playback is handled by the audio-cache controller, which
-    // sees the click in the capture phase (before stopPropagation below).
-
-    ev.stopPropagation();
   }
 
   _updateSaveButton() {

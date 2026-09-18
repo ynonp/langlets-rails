@@ -71,6 +71,11 @@ The controller is responsible for:
   (`play`, `stop`, `progress`, `end`) to any element marked as a
   `videoListener` target.
 - Driving a progress bar / scrubber and handling seek-on-click.
+- Parking an out-of-bounds seek at the segment start in a confirmed paused
+  state. The shared parking operation pauses before and after seeking, verifies
+  provider state and position with a bounded retry, and only then resets the
+  progress/transcript UI. This accommodates YouTube's stateful `seekTo` and
+  TikTok's independent, fire-and-forget `pause`/`seekTo` messages.
 
 Everything else listed here is a **consumer** of this engine — a different DOM
 layout and a different set of listeners wired to the same controller. The five
@@ -181,14 +186,16 @@ under the `#main-player` container), but:
   phrase, its `video:play` listener immediately seeks to the segment start.
   Playback already within the segment is left unchanged so pause/resume and
   transcript seeks continue from the selected time.
-- Clicking a transcript word pauses playback while its translation popup is
-  open. The popup's existing element/document click actions keep the opening
-  click local; an outside click closes the popup and resumes the segment. Word
-  clicks do not seek, while clicks elsewhere on the sentence seek to its
-  timestamp. The activity tracks `video:play`/`video:stop` and only records a
-  translation-owned pause when playback was active, so a popup opened over an
-  already paused video does not resume it later. Clicking a word while the
-  popup is open closes it and resumes only when the popup initiated the pause.
+- Clicking a transcript word sends the provider pause command first. The
+  translation popup and token pronunciation are deferred until YouTube or
+  TikTok reports `PAUSED`/`ENDED`; an 800ms fallback prevents a missing iframe
+  callback from swallowing the click. The translation and audio URL are
+  already rendered on the token, so no translation or audio network request is
+  awaited. The opening click stays local, an outside click closes the popup,
+  and playback resumes only when the popup interaction paused a playing video.
+  Word clicks do not seek, while clicks elsewhere on the sentence seek to its
+  timestamp. Clicking a word while the popup is open closes it and applies the
+  same pause-ownership rule.
 - When the segment finishes, the player pauses and rewinds to its start so the
   next press of YouTube's play control replays the lesson.
 - It shows the synchronized transcript, a translate icon (colored when

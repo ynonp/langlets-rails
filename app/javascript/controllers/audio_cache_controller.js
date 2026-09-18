@@ -30,6 +30,9 @@ export default class extends Controller {
   handleClick(event) {
     const el = event.target.closest("[data-audio-click]")
     if (!el) return
+    // Video transcripts coordinate pronunciation with a confirmed provider
+    // pause and dispatch audio-cache:play themselves afterward.
+    if (el.dataset.audioDeferred === "true") return
     this.play(el.dataset.audioUrl)
   }
 

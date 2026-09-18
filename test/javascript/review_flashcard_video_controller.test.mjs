@@ -18,6 +18,7 @@ describe("flashcard video", () => {
 
     const adapter = await source("../../app/javascript/players/youtube_adapter.js");
     assert.match(adapter, /return this\.player\.destroy\(\)/);
+    assert.match(adapter, /return this\.player\.seekTo\(seconds, true\)/);
   });
 
   test("correct cards pause on the full-context L2 success message until Next", async () => {
