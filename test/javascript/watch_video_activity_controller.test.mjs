@@ -34,3 +34,23 @@ test("opening a translation suppresses the karaoke word highlight", async () => 
   assert.match(source, /this\.clearKaraokeHighlight\(\);\s+const generation/);
   assert.match(source, /if \(this\.translationOpen\) \{\s+this\.clearKaraokeHighlight\(\);\s+return;/);
 });
+
+test("repeated word clicks keep the translation open", async () => {
+  const controllerPath = new URL(
+    "../../app/javascript/controllers/watch_video_activity_controller.js",
+    import.meta.url,
+  );
+  const source = await readFile(controllerPath, "utf8");
+  const handlerStart = source.indexOf("handleTranslationClick(event)");
+  const handlerEnd = source.indexOf("resumeAfterTranslation()", handlerStart);
+  const handler = source.slice(handlerStart, handlerEnd);
+  const openBranchStart = handler.indexOf("if (this.translationOpen)");
+  const openBranchEnd = handler.indexOf("const generation", openBranchStart);
+  const openBranch = handler.slice(openBranchStart, openBranchEnd);
+
+  assert.match(openBranch, /if \(this\.translationToken === token\) return/);
+  assert.match(openBranch, /this\.showTranslation\(token\)/);
+  assert.doesNotMatch(openBranch, /this\.hideTranslation\(\)/);
+  assert.doesNotMatch(openBranch, /this\.dispatch\('resume'\)/);
+  assert.match(handler, /this\.pausedForTranslation = this\.pausedForTranslation \|\| this\.videoPlaying/);
+});

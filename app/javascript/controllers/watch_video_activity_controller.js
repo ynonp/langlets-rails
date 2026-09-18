@@ -14,6 +14,7 @@ export default class extends Controller {
     this.pausedForTranslation = false;
     this.videoPlaying = false;
     this.translationOpen = false;
+    this.translationToken = null;
     this.translationPausePending = false;
     this.translationRequestGeneration = 0;
   }
@@ -23,6 +24,7 @@ export default class extends Controller {
     // activity. Invalidate its callback so detached transcript UI and token
     // audio cannot be revived by the outgoing interaction.
     this.translationRequestGeneration += 1;
+    this.translationToken = null;
     this.translationPausePending = false;
   }
 
@@ -36,13 +38,13 @@ export default class extends Controller {
     event.stopPropagation();
 
     if (this.translationOpen) {
-      this.translationRequestGeneration += 1;
-      this.translationOpen = false;
-      this.hideTranslation();
-
-      if (!this.pausedForTranslation) return;
-      this.pausedForTranslation = false;
-      this.dispatch('resume');
+      // Treat repeated clicks as selection, not as a popup toggle. This makes
+      // an accidental double click on the same word harmless; another word
+      // replaces the visible translation while playback remains paused.
+      if (this.translationToken === token) return;
+      this.translationToken = token;
+      this.clearKaraokeHighlight();
+      this.showTranslation(token);
       return;
     }
 
@@ -51,7 +53,7 @@ export default class extends Controller {
     // Preserve pause ownership synchronously. The provider query below closes
     // the just-started playback race, while this value covers the ordinary
     // case without waiting for another iframe round trip.
-    this.pausedForTranslation = this.videoPlaying;
+    this.pausedForTranslation = this.pausedForTranslation || this.videoPlaying;
     this.translationPausePending = true;
     this.dispatch('pause', {
       detail: {
@@ -61,6 +63,7 @@ export default class extends Controller {
           this.translationPausePending = false;
           this.pausedForTranslation = this.pausedForTranslation || wasPlaying;
           this.translationOpen = true;
+          this.translationToken = token;
           this.showTranslation(token);
         }
       }
@@ -72,6 +75,7 @@ export default class extends Controller {
 
     this.translationRequestGeneration += 1;
     this.translationOpen = false;
+    this.translationToken = null;
     if (!this.pausedForTranslation) return;
     this.pausedForTranslation = false;
     this.dispatch('resume');

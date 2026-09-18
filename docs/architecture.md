@@ -579,8 +579,10 @@ reports whether the provider was playing, so opening a popup while the video is
 already paused cannot make a later outside click start it.
 Translation-token clicks are
 also excluded from the shared phrase-seek action; only clicks elsewhere on the
-sentence move playback to that phrase. Clicking a word while the popup is open
-closes it and resumes playback.
+sentence move playback to that phrase. Clicking the selected word again while
+the popup is open is idempotent, while clicking another word replaces the
+translation and pronunciation without resuming playback. This prevents a rapid
+duplicate click from immediately dismissing the popup.
 Saved words in the transcript have a solid emerald underline. The translation
 popover controller derives that marker from its saved token IDs and refreshes
 it immediately when the learner saves or removes a word.

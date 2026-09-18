@@ -196,8 +196,9 @@ under the `#main-player` container), but:
   awaited. The opening click stays local, an outside click closes the popup,
   and playback resumes only when the popup interaction paused a playing video.
   Word clicks do not seek, while clicks elsewhere on the sentence seek to its
-  timestamp. Clicking a word while the popup is open closes it and applies the
-  same pause-ownership rule.
+  timestamp. Repeated clicks on the selected word leave the popup open, making
+  accidental double clicks harmless; clicking another word replaces the
+  translation without resuming playback.
 - Opening a translation clears the green karaoke/current-word highlight and
   gives the selected word a solid emerald underline until the popup closes. The
   popup uses fixed viewport coordinates centered beside that word,
