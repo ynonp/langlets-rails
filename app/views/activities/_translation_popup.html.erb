@@ -1,7 +1,16 @@
 <% popup_class = local_assigns[:popup_class] || "hidden absolute bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 p-2 rounded shadow-lg z-30" %>
 <% l1_rtl = local_assigns[:l1_rtl] || false %>
 <div data-popover-translation-target="translationPopup" class="<%= popup_class %>">
-  <div data-popover-translation-target="translationText" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>" class="<%= 'text-right' if l1_rtl %>"></div>
+  <button
+    type="button"
+    data-action="click->popover-translation#closePopup"
+    aria-label="<%= t('.close') %>"
+    title="<%= t('.close') %>"
+    class="absolute top-1 end-1 inline-flex h-9 w-9 items-center justify-center rounded-full text-xl leading-none text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div data-popover-translation-target="translationText" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>" class="min-h-9 pe-9 flex items-center <%= 'text-right' if l1_rtl %>"></div>
   <% if user_signed_in? %>
   <button
     data-popover-translation-target="saveButton"

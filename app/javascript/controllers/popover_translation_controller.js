@@ -58,6 +58,14 @@ export default class extends Controller {
     this.element.dispatchEvent(new CustomEvent('audio-cache:stop', { bubbles: true }));
   }
 
+  closePopup(event) {
+    event.stopPropagation();
+    this.hidePopup();
+    // The transcript controller owns playback pause/resume state. Other popup
+    // consumers can ignore this event and still use the same close control.
+    this.element.dispatchEvent(new CustomEvent('translation:close'));
+  }
+
   showPopup(ev) {
     const tokenEl = ev.target.closest('[data-translation]');
     if (!tokenEl) {

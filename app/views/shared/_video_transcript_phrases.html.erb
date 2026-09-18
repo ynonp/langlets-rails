@@ -11,7 +11,7 @@
     data-popover-translation-saved-token-classes-value="underline decoration-emerald-500 decoration-[2.5px] underline-offset-4"
     id="phrases-container"
     data-watch-video-activity-target="container"
-    data-action="click->watch-video-activity#handleTranslationClick translation:show->popover-translation#showPopupForToken translation:hide->popover-translation#hidePopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup click@document->watch-video-activity#resumeAfterTranslation scroll@document->popover-translation#hidePopup"
+    data-action="click->watch-video-activity#handleTranslationClick translation:show->popover-translation#showPopupForToken translation:hide->popover-translation#hidePopup translation:close->watch-video-activity#resumeAfterTranslation scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup click@document->watch-video-activity#resumeAfterTranslation scroll@document->popover-translation#hidePopup"
     class="<%= container_class %>"
     style="padding-bottom: calc(16px + env(safe-area-inset-bottom));"
     >

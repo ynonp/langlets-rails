@@ -206,6 +206,7 @@ en:
       next: "Next"
     translation_popup:
       save: "Save"
+      close: "Close translation"
     watch_video_activity:
       start_practice: "Start practice"
     read_translated_activity:

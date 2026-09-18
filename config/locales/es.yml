@@ -203,6 +203,7 @@ es:
       next: Siguiente
     translation_popup:
       save: Guardar
+      close: Cerrar traducción
     watch_video_activity:
       start_practice: Empezar a practicar
     read_translated_activity:

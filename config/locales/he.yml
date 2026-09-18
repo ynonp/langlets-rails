@@ -184,6 +184,7 @@ he:
       next: "הבא"
     translation_popup:
       save: "שמירה"
+      close: "סגירת התרגום"
     watch_video_activity:
       start_practice: "מתחילים לתרגל"
     read_translated_activity:

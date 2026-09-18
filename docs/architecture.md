@@ -582,7 +582,11 @@ also excluded from the shared phrase-seek action; only clicks elsewhere on the
 sentence move playback to that phrase. Clicking the selected word again while
 the popup is open is idempotent, while clicking another word replaces the
 translation and pronunciation without resuming playback. This prevents a rapid
-duplicate click from immediately dismissing the popup.
+duplicate click from immediately dismissing the popup. An explicit localized
+close control hides the popup, stops pronunciation, clears the selected-token
+marker, and asks the watch-video controller to resume only when it owns the
+pause. The shared popup remains usable by non-video activities, which ignore
+that playback event.
 Saved words in the transcript have a solid emerald underline. The translation
 popover controller derives that marker from its saved token IDs and refreshes
 it immediately when the learner saves or removes a word.

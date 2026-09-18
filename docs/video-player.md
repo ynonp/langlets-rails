@@ -198,7 +198,10 @@ under the `#main-player` container), but:
   Word clicks do not seek, while clicks elsewhere on the sentence seek to its
   timestamp. Repeated clicks on the selected word leave the popup open, making
   accidental double clicks harmless; clicking another word replaces the
-  translation without resuming playback.
+  translation without resuming playback. The popup's explicit close button
+  stops pronunciation, clears the selection, and resumes playback only when
+  the popup interaction originally paused it; outside-click retains the same
+  ownership rule.
 - Opening a translation clears the green karaoke/current-word highlight and
   gives the selected word a solid emerald underline until the popup closes. The
   popup uses fixed viewport coordinates centered beside that word,
