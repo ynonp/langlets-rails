@@ -187,7 +187,11 @@ export default class extends Controller {
 
     const currentTime = await this.player.getCurrentTime();
     if (currentTime < segmentStart) {
-      await this.parkAtSegmentStart(segmentStart);
+      // This runs in response to the provider entering PLAYING. Reposition the
+      // active playback without using the pause/seek/pause parking transaction
+      // reserved for completed segments.
+      this.playbackCommandGeneration += 1;
+      await this.player.seekTo(segmentStart);
     }
   }
 

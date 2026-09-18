@@ -590,13 +590,14 @@ frames therefore retain their ten-minute lifetime without treating their
 serialized vocabulary state as authoritative. Save/remove actions still update
 the controller locally for an immediate response.
 When native playback begins before the activity's first phrase, the activity's
-play listener parks it at the segment start; playback already at or after that
-boundary is not moved. At the segment end, the shared controller emits
-`video:end` and performs the same parking transaction. In both cases the player
-finishes paused at the first phrase, and a synthetic progress update selects
-that phrase immediately (`timestamp <= currentTime`) instead of leaving the
-transcript without an active row at the exact boundary. The native play control
-therefore visibly starts the lesson again from a stable position.
+play listener seeks directly to the segment start without pausing; playback
+already at or after that boundary is not moved. At the segment end, the shared
+controller emits `video:end` and performs the confirmed parking transaction.
+Only this completion path finishes paused at the first phrase and sends a
+synthetic progress update that selects it immediately (`timestamp <=
+currentTime`) instead of leaving the transcript without an active row at the
+exact boundary. The next native Play action therefore starts the lesson again
+from a stable position, while the initial Play action continues uninterrupted.
 Hidden and compact activity players remain on the custom controls path.
 
 TikTok publishes its current playback position less frequently than the shared

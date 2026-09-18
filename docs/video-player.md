@@ -71,11 +71,13 @@ The controller is responsible for:
   (`play`, `stop`, `progress`, `end`) to any element marked as a
   `videoListener` target.
 - Driving a progress bar / scrubber and handling seek-on-click.
-- Parking an out-of-bounds seek at the segment start in a confirmed paused
-  state. The shared parking operation pauses before and after seeking, verifies
-  provider state and position with a bounded retry, and only then resets the
+- Parking a completed segment at its start in a confirmed paused state. The
+  shared parking operation pauses before and after seeking, verifies provider
+  state and position with a bounded retry, and only then resets the
   progress/transcript UI. This accommodates YouTube's stateful `seekTo` and
-  TikTok's independent, fire-and-forget `pause`/`seekTo` messages.
+  TikTok's independent, fire-and-forget `pause`/`seekTo` messages. The initial
+  `video:play` segment guard uses a direct seek instead, preserving the native
+  Play action's playing state.
 
 Everything else listed here is a **consumer** of this engine — a different DOM
 layout and a different set of listeners wired to the same controller. The five
@@ -183,9 +185,9 @@ under the `#main-player` container), but:
   shared lesson layout renders no chrome of its own over the iframe — see the
   note below.
 - If the native play control starts playback before the activity's first
-  phrase, its `video:play` listener immediately seeks to the segment start.
-  Playback already within the segment is left unchanged so pause/resume and
-  transcript seeks continue from the selected time.
+  phrase, its `video:play` listener immediately seeks to the segment start
+  without pausing. Playback already within the segment is left unchanged so
+  pause/resume and transcript seeks continue from the selected time.
 - Clicking a transcript word sends the provider pause command first. The
   translation popup and token pronunciation are deferred until YouTube or
   TikTok reports `PAUSED`/`ENDED`; an 800ms fallback prevents a missing iframe

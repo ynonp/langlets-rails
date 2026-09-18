@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { describe, test } from "node:test";
 import { parkPlayerAt } from "../../app/javascript/players/park_player.mjs";
 
@@ -10,6 +11,19 @@ const immediateOptions = {
 };
 
 describe("parking a segmented video player", () => {
+  test("initial playback seeks to the segment without parking", async () => {
+    const controller = await readFile(
+      new URL("../../app/javascript/controllers/main_video_player_controller.js", import.meta.url),
+      "utf8",
+    );
+    const start = controller.indexOf("async seekToSegmentStartIfBefore(event)");
+    const end = controller.indexOf("async parkAtSegmentStart", start);
+    const initialPlaybackGuard = controller.slice(start, end);
+
+    assert.match(initialPlaybackGuard, /await this\.player\.seekTo\(segmentStart\)/);
+    assert.doesNotMatch(initialPlaybackGuard, /this\.parkAtSegmentStart/);
+  });
+
   test("pauses on both sides of the seek and confirms the target", async () => {
     const calls = [];
     let state = 1;
