@@ -30,7 +30,7 @@
         <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' if wv_prefs["translation"] %>"
              data-watch-video-activity-target="l1Text"
              dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
-          <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 data-active:bg-emerald-500! data-active:text-white data-active:rounded-md", data: { audio_deferred: true } }) %>
+          <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 data-active:bg-emerald-500! data-active:text-white data-active:rounded-md data-selected:border-transparent data-selected:bg-amber-100! data-selected:text-amber-950! data-selected:ring-2 data-selected:ring-amber-400 dark:data-selected:bg-amber-900/50! dark:data-selected:text-amber-100!", data: { audio_deferred: true } }) %>
         </div>
         <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' unless wv_prefs["translation"] %>"
              data-watch-video-activity-target="l2Text"
@@ -40,5 +40,5 @@
       </div>
     <% end %>
   </div>
-  <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden absolute z-40 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 border border-gray-200 dark:border-gray-700 rounded-2xl p-3 shadow-md min-w-[180px]", l1_rtl: l1_rtl } %>
+  <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden fixed z-40 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 border border-gray-200 dark:border-gray-700 rounded-2xl p-3 shadow-md min-w-[180px] max-w-[calc(100vw-16px)]", l1_rtl: l1_rtl } %>
 </div>

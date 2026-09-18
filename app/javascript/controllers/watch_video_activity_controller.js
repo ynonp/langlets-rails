@@ -46,6 +46,7 @@ export default class extends Controller {
       return;
     }
 
+    this.clearKaraokeHighlight();
     const generation = ++this.translationRequestGeneration;
     // Preserve pause ownership synchronously. The provider query below closes
     // the just-started playback race, while this value covers the ordinary
@@ -154,6 +155,11 @@ export default class extends Controller {
 
     const tokens = this.karaokeTokens;
 
+    if (this.translationOpen) {
+      this.clearKaraokeHighlight();
+      return;
+    }
+
     // The active word is the last one that has already started.
     let activeIndex = -1;
     for (let i = 0; i < tokens.length && tokens[i].start <= currentTime; i++) {
@@ -177,6 +183,12 @@ export default class extends Controller {
     for (const token of tokens) {
       token.span.toggleAttribute('data-active', token === active);
     }
+  }
+
+  clearKaraokeHighlight() {
+    const spans = this.karaokeTokens?.map(({ span }) => span) ||
+      Array.from(this.element.querySelectorAll('[data-token-start][data-active]'));
+    spans.forEach((span) => span.removeAttribute('data-active'));
   }
 
   handleVideoStart() {

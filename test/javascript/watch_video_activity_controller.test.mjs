@@ -23,3 +23,14 @@ test("translation UI and pronunciation run from the confirmed-pause callback", a
   assert.match(source, /this\.showTranslation\(token\)/);
   assert.match(source, /new CustomEvent\('audio-cache:play'/);
 });
+
+test("opening a translation suppresses the karaoke word highlight", async () => {
+  const controllerPath = new URL(
+    "../../app/javascript/controllers/watch_video_activity_controller.js",
+    import.meta.url,
+  );
+  const source = await readFile(controllerPath, "utf8");
+
+  assert.match(source, /this\.clearKaraokeHighlight\(\);\s+const generation/);
+  assert.match(source, /if \(this\.translationOpen\) \{\s+this\.clearKaraokeHighlight\(\);\s+return;/);
+});

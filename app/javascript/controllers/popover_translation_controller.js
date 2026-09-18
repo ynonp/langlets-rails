@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { t } from "../utils/i18n"
+import { adjacentPopoverPosition } from "../utils/popover_position"
 
 export default class extends Controller {
   static targets = ['translationPopup', 'translationText', 'saveButton', 'saveIcon', 'saveText'];
@@ -7,6 +8,7 @@ export default class extends Controller {
 
   initialize() {
     this.currentTokenId = null;
+    this.selectedToken = null;
     this.savedIdsReady = Promise.resolve();
   }
 
@@ -49,6 +51,7 @@ export default class extends Controller {
   }
 
   hidePopup() {
+    this._clearSelectedToken();
     if (this.translationPopupTarget.classList.contains('hidden')) return;
     this.translationPopupTarget.classList.add('hidden');
     // Stop the word audio that was started when the popup opened
@@ -88,22 +91,45 @@ export default class extends Controller {
     const tokenId = tokenEl.dataset.tokenId ? parseInt(tokenEl.dataset.tokenId) : null;
 
     this.currentTokenId = tokenId;
+    this._clearSelectedToken();
+    this.selectedToken = tokenEl;
+    this.selectedToken.setAttribute('data-selected', '');
     this.translationTextTarget.textContent = translation;
 
     // Un-hide first so the popup has a measurable width for clamping.
     this.translationPopupTarget.classList.remove('hidden');
 
-    const rect = tokenEl.getBoundingClientRect();
-    const margin = 8;
-    const popupWidth = this.translationPopupTarget.offsetWidth;
-    let left = rect.left + (rect.width / 2);
-    const maxLeft = window.innerWidth - popupWidth - margin;
-    left = Math.max(margin, Math.min(left, maxLeft));
-
-    this.translationPopupTarget.style.left = `${left}px`;
-    const top = rect.bottom + 5;
-    this.translationPopupTarget.style.top = `${top}px`;
+    this._positionPopupBeside(tokenEl);
     this._updateSaveButton();
+  }
+
+  _clearSelectedToken() {
+    this.selectedToken?.removeAttribute('data-selected');
+    this.selectedToken = null;
+  }
+
+  _positionPopupBeside(tokenEl) {
+    const popup = this.translationPopupTarget;
+    const { left, top } = adjacentPopoverPosition({
+      anchorRect: tokenEl.getBoundingClientRect(),
+      popupWidth: popup.offsetWidth,
+      popupHeight: popup.offsetHeight,
+      viewportWidth: window.innerWidth,
+      viewportHeight: window.innerHeight,
+    });
+
+    if (window.getComputedStyle(popup).position === 'fixed') {
+      popup.style.left = `${left}px`;
+      popup.style.top = `${top}px`;
+      return;
+    }
+
+    // Absolute popups use their offset parent's coordinate system, not the
+    // viewport coordinates returned by getBoundingClientRect().
+    const parent = popup.offsetParent;
+    const parentRect = parent?.getBoundingClientRect() || { left: 0, top: 0 };
+    popup.style.left = `${left - parentRect.left + (parent?.scrollLeft || 0)}px`;
+    popup.style.top = `${top - parentRect.top + (parent?.scrollTop || 0)}px`;
   }
 
   _updateSaveButton() {

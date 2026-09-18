@@ -196,6 +196,11 @@ under the `#main-player` container), but:
   Word clicks do not seek, while clicks elsewhere on the sentence seek to its
   timestamp. Clicking a word while the popup is open closes it and applies the
   same pause-ownership rule.
+- Opening a translation clears the green karaoke/current-word highlight and
+  gives the selected word a distinct amber outlined state until the popup
+  closes. The popup uses fixed viewport coordinates centered beside that word,
+  clamps to the screen edges, and flips above words near the bottom so the
+  transcript's scroll container cannot offset or clip it.
 - When the segment finishes, the player pauses and rewinds to its start so the
   next press of YouTube's play control replays the lesson.
 - It shows the synchronized transcript, a translate icon (colored when
