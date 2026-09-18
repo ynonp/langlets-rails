@@ -30,7 +30,7 @@
         <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' if wv_prefs["translation"] %>"
              data-watch-video-activity-target="l1Text"
              dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
-          <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 data-active:bg-emerald-500! data-active:text-white data-active:rounded-md data-selected:border-transparent data-selected:bg-amber-100! data-selected:text-amber-950! data-selected:ring-2 data-selected:ring-amber-400 dark:data-selected:bg-amber-900/50! dark:data-selected:text-amber-100!", data: { audio_deferred: true } }) %>
+          <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 data-active:bg-emerald-500! data-active:text-white data-active:rounded-md data-selected:border-transparent data-selected:underline data-selected:decoration-emerald-500 data-selected:decoration-[3px] data-selected:underline-offset-4 dark:data-selected:decoration-emerald-400", data: { audio_deferred: true } }) %>
         </div>
         <div class="text-xl font-extrabold leading-relaxed <%= 'hidden' unless wv_prefs["translation"] %>"
              data-watch-video-activity-target="l2Text"

@@ -117,7 +117,7 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_select "#phrases-container [data-translation][data-audio-deferred='true']"
-    assert_select "#phrases-container [data-translation][class*='data-selected:ring-2']"
+    assert_select "#phrases-container [data-translation][class*='data-selected:decoration-emerald-500']"
     assert_select "#phrases-container [data-popover-translation-target='translationPopup']" do |popup|
       assert_includes popup.first["class"], "fixed"
       assert_not_includes popup.first["class"], "absolute"

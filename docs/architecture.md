@@ -3902,9 +3902,10 @@ Users can save individual word/token translations they encounter during lessons 
 - Save button shows 🔖 Save / ✓ Saved state
 - The popup displays the stored translation and, for signed-in users, the save action; it does not link to an external AI explanation service
 - A shown popup marks its source token with `data-selected` and removes that
-  marker when it closes. Shared video transcripts style that state separately
-  from karaoke, suppress the current-word highlight while it is open, and use
-  viewport-clamped fixed positioning adjacent to the source token.
+  marker when it closes. Shared video transcripts use a solid emerald underline
+  for that state, styled separately from karaoke, suppress the current-word
+  highlight while it is open, and use viewport-clamped fixed positioning
+  adjacent to the source token.
 
 #### _translation_popup.html.erb
 - Added Save button with `saveButton`, `saveIcon`, `saveText` targets
