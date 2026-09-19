@@ -601,7 +601,10 @@ duplicate click from immediately dismissing the popup. An explicit localized
 close control hides the popup, stops pronunciation, clears the selected-token
 marker, and asks the watch-video controller to resume only when it owns the
 pause. The shared popup remains usable by non-video activities, which ignore
-that playback event.
+that playback event. Its container direction follows L1 independently of the
+document language; logical-end positioning therefore places the close control
+on the left, with matching reserved padding, for Arabic/Hebrew transcripts in
+an otherwise LTR interface.
 Saved words in the transcript have a solid emerald underline. The translation
 popover controller derives that marker from its saved token IDs and refreshes
 it immediately when the learner saves or removes a word.

@@ -123,6 +123,28 @@ class FullPlayerControllerTest < ActionDispatch::IntegrationTest
     assert_includes response.body, "Click a word to see its translation"
   end
 
+  test "mirrors translation popup chrome for an RTL transcript" do
+    arabic = languages(:arabic)
+    @medium.update!(language: arabic)
+    @course.update!(language: arabic)
+    create_translated_phrase!(
+      medium: @medium,
+      l1: arabic,
+      l2: @english,
+      text_l1: "كلمة",
+      text_l2: "word",
+      timestamp: "00:01"
+    )
+
+    get course_full_player_path(@course)
+
+    assert_response :success
+    assert_select "[data-popover-translation-target=translationPopup][dir=rtl]" do
+      assert_select "button[data-action='click->popover-translation#closePopup'][class*='end-1']", count: 1
+      assert_select "[data-popover-translation-target=translationText][class*='pe-9']", count: 1
+    end
+  end
+
   test "falls back to the next phrase start for a sentence without word timing" do
     create_translated_phrase!(
       medium: @medium,

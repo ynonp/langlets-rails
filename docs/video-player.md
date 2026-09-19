@@ -201,7 +201,9 @@ under the `#main-player` container), but:
   translation without resuming playback. The popup's explicit close button
   stops pronunciation, clears the selection, and resumes playback only when
   the popup interaction originally paused it; outside-click retains the same
-  ownership rule.
+  ownership rule. The popup establishes its own direction from L1 rather than
+  inheriting the interface direction, so its logical-end close button and text
+  padding move to the left for Arabic/Hebrew transcripts even in an English UI.
 - Opening a translation clears the green karaoke/current-word highlight and
   gives the selected word a solid emerald underline until the popup closes. The
   popup uses fixed viewport coordinates centered beside that word,

@@ -1,6 +1,8 @@
 <% popup_class = local_assigns[:popup_class] || "hidden absolute bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 p-2 rounded shadow-lg z-30" %>
 <% l1_rtl = local_assigns[:l1_rtl] || false %>
-<div data-popover-translation-target="translationPopup" class="<%= popup_class %>">
+<div data-popover-translation-target="translationPopup"
+     dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
+     class="<%= popup_class %>">
   <button
     type="button"
     data-action="click->popover-translation#closePopup"
