@@ -32,7 +32,11 @@
 <% end %>
 
 <%
-  course_rtl = @course.language&.rtl || false
+  course_name_rtl = if @course.localized_translation.present?
+    current_translation_language&.rtl? || false
+  else
+    @course.language&.rtl || false
+  end
   preview_embed_url = video_embed_url(@course)
   streak = user_signed_in? ? @streak_info[:count] : 0
   course_shared = user_signed_in? && current_user.sharing?(@course)
@@ -124,20 +128,20 @@
             <button type="button"
                     data-action="course-menu#openMenu"
                     aria-label="<%= t("courses.course_menu.aria_label") %>"
-                    class="absolute top-4 right-4 z-10 w-9 h-9 inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-gray-700 transition-colors shadow-sm">
+                    class="absolute top-4 end-4 z-10 w-9 h-9 inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-gray-700 transition-colors shadow-sm">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="12" r="2.2"/></svg>
             </button>
             <%= render "courses/add_to_paths_modal", course: @course %>
             <%= render "courses/course_menu", course: @course, deletable: course_in_my_channel, shared: course_shared %>
           <% end %>
-          <div class="flex items-center gap-1.5 mb-2 pr-10">
+          <div class="flex items-center gap-1.5 mb-2 pe-10">
             <% if @course.language %>
               <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-mono font-extrabold text-[11px] tracking-wide text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-900/40"><%= lang_badge_code(@course.language) %></span>
             <% end %>
             <span class="text-xs font-semibold text-gray-500 dark:text-gray-400"><%= t("courses.lesson_count", count: @lessons.size) %></span>
           </div>
           <h1 class="truncate text-2xl font-extrabold tracking-tight mb-3.5"
-              dir="<%= course_rtl ? 'rtl' : 'ltr' %>"
+              dir="<%= course_name_rtl ? 'rtl' : 'ltr' %>"
               title="<%= @course.localized_name %>"><%= @course.localized_name %></h1>
 
           <% if preview_embed_url.present? %>

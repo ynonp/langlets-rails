@@ -139,6 +139,26 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "h1.truncate[title=?]", @course.name, text: @course.name
   end
 
+  test "show respects content direction and uses logical menu positioning" do
+    arabic = languages(:arabic)
+    @course.update!(language: arabic, name: "عنوان عربي")
+    @course.course_translations.delete_all
+    @course.lessons.update_all(name: "درس عربي")
+    LessonTranslation.where(lesson_id: @course.lesson_ids).delete_all
+    sign_in @user
+
+    get course_url(@course)
+
+    assert_response :success
+    assert_select "h1[dir=rtl]", text: "عنوان عربي"
+    assert_select "[id^=lesson_] a div[dir=rtl][class*='text-start']", text: "درس عربي", count: 3
+    assert_select "button[data-action='course-menu#openMenu'][class*='end-4']", count: 1
+    assert_select "[data-course-menu-target=menuPanel][class*='end-4']" do
+      assert_select "button[class*='text-start']", minimum: 2
+      assert_select "button[class*='text-left']", count: 0
+    end
+  end
+
   test "a different language subdomain offers a missing course translation" do
     @course.update!(status: :published)
     host! "he.langlets.app"

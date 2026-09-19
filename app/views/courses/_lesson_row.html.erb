@@ -13,6 +13,11 @@
   is_first_incomplete = local_assigns.fetch(:is_first_incomplete, false)
   hue = local_assigns[:hue] || lang_hue(course.language&.iso_name)
   number = local_assigns[:index] ? index.to_i + 1 : lesson.order
+  lesson_name_rtl = if lesson.localized_translation.present?
+    current_translation_language&.rtl? || false
+  else
+    course.language&.rtl || false
+  end
 %>
 <div class="flex items-center gap-3 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl p-2.5 shadow-md <%= "border-2 border-emerald-500" if is_first_incomplete %>" id="<%= dom_id(lesson) %>"
      <%= raw('data-scroll-into-view-target="element"') if is_first_incomplete %>>
@@ -26,7 +31,8 @@
   <% end %>
 
   <%= link_to course_lesson_path(course, lesson), class: "flex-1 min-w-0 no-underline text-inherit" do %>
-    <div class="font-extrabold text-[15.5px] truncate"><%= lesson.localized_name %></div>
+    <div class="font-extrabold text-[15.5px] truncate text-start"
+         dir="<%= lesson_name_rtl ? 'rtl' : 'ltr' %>"><%= lesson.localized_name %></div>
     <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-0.5">
       <%= state == :done ? t("courses.lesson_row.completed") : (state == :progress ? t("courses.lesson_row.in_progress") : t("courses.lesson_row.lesson_number", number: number)) %>
     </div>

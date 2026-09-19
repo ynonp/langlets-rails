@@ -449,7 +449,13 @@ switches to **Stop sharing**, alongside a **Copy public URL** item, once
 `course_url` without any server round trip or change to sharing state — it
 exists for a course shared on an earlier visit, whose link the viewer just
 wants again; both items are hidden together the moment Stop sharing is
-clicked.
+clicked. Its trigger, panel anchor, row alignment, and delete sheet use logical
+inline positioning, so an RTL interface mirrors the menu without pushing it
+outside the course card. Course and lesson names independently use the
+direction of the language actually supplying the displayed name: a localized
+name follows the interface language, while a fallback source name follows the
+course language. Thus Arabic/Hebrew fallback titles align and truncate from
+the correct edge even when the surrounding interface is English.
 
 The course page also shows a full-width **Public Langlet** banner near the top
 for a signed-in viewer who currently shares that course. It displays the
