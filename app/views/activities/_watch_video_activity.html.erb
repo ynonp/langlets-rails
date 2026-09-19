@@ -23,6 +23,7 @@
       video:end->watch-video-activity#handleVideoEnd
       video:stop->watch-video-activity#handleVideoPause
       video:progress->watch-video-activity#progress
+      video:progress->full-player#progress
       watch-video-activity:pause->main-video-player#stopPlayback
       watch-video-activity:resume->main-video-player#resume
     "
@@ -36,7 +37,8 @@
     <%= render "shared/video_transcript_header",
         word_timing: params[:word_timing],
         wv_prefs: wv_prefs,
-        header_class: "order-4 flex items-center justify-between px-5 pt-3 pb-2" %>
+        full_player_controls: true,
+        header_class: "order-4 px-5 pt-3 pb-2" %>
 
     <% if @activity.text_header.present? %>
       <div class="order-4 px-5 pb-2">
@@ -53,6 +55,7 @@
         l1_rtl: l1_rtl,
         l2_rtl: l2_rtl,
         wv_prefs: wv_prefs,
+        sentence_ends: params[:sentence_ends],
         saved_ids_url: (token_translation_users_path if current_user),
         container_class: "order-4 flex-1 overflow-y-auto flex flex-col gap-4 px-5" %>
 

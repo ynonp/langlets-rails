@@ -148,11 +148,11 @@ state changes and emits the `video:*` events used by the transcript.
 > bindings that #2 had). Change either partial and both players pick it up;
 > each caller supplies its own wrapper classes (`header_class`,
 > `container_class`) and the `word_timing`/`wv_prefs`/`phrases`/`l1_rtl`/`l2_rtl`/
-> `saved_ids_url` locals. Full-player reading and sentence controls are enabled
-> with explicit locals and handled by `full-player`; they are not rendered for
-> watch-video activities. The bottom CTA stays per-view since the two pages
-> want different actions (go to the first lesson here vs. this activity's
-> "Start practice").
+> `saved_ids_url` locals. Reading and sentence controls are enabled with an
+> explicit local and handled by `full-player` in both the full-course player
+> and watch-video lesson activities. The bottom CTA stays per-view since the
+> two pages want different actions (go to the first lesson here vs. this
+> activity's "Start practice").
 
 The course page opts the "Watch full video" link out of Turbo hover prefetch.
 Opening the route loads the complete phrase/token/translation/audio graph, so a
@@ -212,7 +212,14 @@ under the `#main-player` container), but:
 - It shows the synchronized transcript, a translate icon (colored when
   translation is on) and a copy icon that copies the currently shown
   language's transcript to the clipboard — both from the shared header
-  partial described under #1 above — and a "Start practice" button that
+  partial described under #1 above. The same header also offers text-only mode,
+  which pauses playback and collapses the shared lesson media box, and
+  pause-after-each-sentence mode. Sentence ends use the latest timed word when
+  available and the next phrase start otherwise; the final sentence remains
+  governed by the activity segment end. Before Turbo replaces the activity,
+  `full-player` restores a media box hidden by text-only mode so that state
+  cannot leak into listen, hidden-audio, mini, or flashcard activities. A
+  "Start practice" button
   appears once the segment finishes (`handleVideoEnd` reveals it and awards
   XP).
 

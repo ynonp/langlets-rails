@@ -5,25 +5,38 @@ import {
   playbackJumped,
 } from "../players/sentence_boundaries.mjs"
 
-// Controls that belong only to the full-course player. Keeping these out of
-// main-video-player prevents reading and sentence-pause modes from changing
-// the watch-video, hidden-audio, compact, or flashcard players.
+// Optional transcript controls used by the full-course player and watch-video
+// lesson activities. Keeping these out of main-video-player prevents reading
+// and sentence-pause modes from changing hidden-audio, compact, listen, or
+// flashcard players.
 export default class extends Controller {
   static targets = ["mediaBox", "sentence", "textOnlyToggle", "sentencePauseToggle"]
 
   connect() {
     this.lastProgressAt = null
     this.nextSentenceIndex = 0
+    this.textOnlyActive = false
+  }
+
+  disconnect() {
+    this.restoreMediaBox()
   }
 
   toggleTextOnly() {
     const textOnly = this.textOnlyToggleTarget.checked
     this.mediaBoxTarget.classList.toggle("hidden", textOnly)
     this.mediaBoxTarget.setAttribute("aria-hidden", String(textOnly))
+    this.textOnlyActive = textOnly
 
     // Reading mode has no visible playback control, so do not leave audio
     // running invisibly when the learner switches into it.
     if (textOnly) this.dispatch("pause")
+  }
+
+  resetForFrameNavigation() {
+    this.restoreMediaBox()
+    this.lastProgressAt = null
+    this.nextSentenceIndex = 0
   }
 
   toggleSentencePause() {
@@ -70,5 +83,13 @@ export default class extends Controller {
     return this.sentenceTargets
       .map((sentence) => Number(sentence.dataset.sentenceEnd))
       .filter(Number.isFinite)
+  }
+
+  restoreMediaBox() {
+    if (!this.textOnlyActive || !this.hasMediaBoxTarget) return
+
+    this.mediaBoxTarget.classList.remove("hidden")
+    this.mediaBoxTarget.setAttribute("aria-hidden", "false")
+    this.textOnlyActive = false
   }
 }

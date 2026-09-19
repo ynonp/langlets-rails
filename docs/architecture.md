@@ -546,14 +546,16 @@ is no longer rendered. Text-only mode pauses playback, hides the media box, and
 lets the transcript consume the full player viewport; showing video again
 restores the same initialized iframe in its paused state.
 
-Sentence-by-sentence mode is owned by the full-player-only Stimulus controller,
-not the shared playback engine, so lesson, hidden-audio, compact, and flashcard
-players are unchanged. Each non-final phrase exposes a server-derived end: the
-latest token end timestamp when available, otherwise the next phrase's start
-timestamp for legacy courses. Crossing that boundary during ordinary playback
-pauses once. Transcript seeks and large native-control scrubs reset the next
-boundary instead of causing an immediate surprise pause. The final sentence
-continues to use the full segment's existing pause-and-rewind end.
+Sentence-by-sentence mode is owned by the optional `full-player` Stimulus
+controller, not the shared playback engine. It is used by the full-course
+player and watch-video lesson activities, while hidden-audio, listen-exercise,
+compact, and flashcard players remain unchanged. Each non-final phrase exposes
+a server-derived end: the latest token end timestamp when available, otherwise
+the next phrase's start timestamp for legacy courses. Crossing that boundary
+during ordinary playback pauses once. Transcript seeks and large native-control
+scrubs reset the next boundary instead of causing an immediate surprise pause.
+The final sentence continues to use the full segment's existing
+pause-and-rewind end.
 
 The phrase relation is materialized immediately after its translations, tokens,
 and token audio are preloaded. Boundary calculations and rendering then reuse
@@ -572,6 +574,13 @@ Watch-video activities preload an interactive YouTube iframe with YouTube's
 native controls. Their activity parameters opt into this mode, so the shared
 lesson player omits its click-capturing overlay and custom play/progress chrome
 while retaining the activity's segment boundary and `video:*` event contract.
+Their shared transcript header exposes the full player's text-only and
+pause-after-each-sentence controls. Text-only pauses playback and collapses the
+shared lesson media box; the lesson Turbo frame restores that box before it
+renders another activity so the hidden state cannot leak. Each non-final phrase
+uses its latest timed token end as the pause boundary, falling back to the next
+phrase start for legacy material, while the final phrase uses the normal
+activity segment end.
 Opening a word translation now pauses the shared player before any dependent UI
 or audio work. The main player sends the provider command immediately and the
 watch-video controller opens the already-rendered popup and starts token audio

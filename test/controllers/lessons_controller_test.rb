@@ -81,14 +81,24 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
       translation: "test",
       language: languages(:english),
       l1_start_index: 1,
-      l1_end_index: 1
+      l1_end_index: 1,
+      start_timestamp: "00:01.10",
+      end_timestamp: "00:02.50"
+    )
+    second_phrase = create_translated_phrase!(
+      medium: @medium,
+      l1: languages(:english),
+      l2: languages(:english),
+      text_l1: "A second phrase",
+      text_l2: "A second phrase",
+      timestamp: "00:04.00"
     )
     activity = Activities::WatchVideoActivity.create!(
       lesson: @lesson,
       order: 2,
       user: @user
     )
-    activity.phrases << phrase
+    activity.phrases << phrase << second_phrase
 
     get course_lesson_url(@course, @lesson, a: activity.order)
 
@@ -105,7 +115,15 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
       actions = watch_activity.first["data-action"]
       assert_includes actions, "watch-video-activity:pause->main-video-player#stopPlayback"
       assert_includes actions, "watch-video-activity:resume->main-video-player#resume"
+      assert_includes actions, "video:progress->full-player#progress"
     end
+
+    assert_select "[data-controller~='full-player'][data-action*='full-player:pause->main-video-player#stopPlayback']"
+    assert_select "turbo-frame#activity[data-action*='turbo:before-frame-render->full-player#resetForFrameNavigation']"
+    assert_select "#main-player[data-full-player-target='mediaBox']"
+    assert_select "[data-full-player-target='textOnlyToggle']"
+    assert_select "[data-full-player-target='sentencePauseToggle']"
+    assert_select "[data-full-player-target='sentence'][data-sentence-end='2.5']", count: 1
 
     assert_select "#phrases-container" do |phrases_container|
       actions = phrases_container.first["data-action"]
