@@ -10,9 +10,9 @@ class ProfileNotificationsTest < ActionDispatch::IntegrationTest
     sign_in @user
   end
 
-  test "an account receives both channels until it says otherwise" do
-    assert_equal %w[email push], @user.notification_delivery
-    assert @user.email_notifications?
+  test "an account receives push but not email until it says otherwise" do
+    assert_equal [ "push" ], @user.notification_delivery
+    assert_not @user.email_notifications?
     assert @user.push_notifications?
   end
 
@@ -22,7 +22,8 @@ class ProfileNotificationsTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "form[action=?]", profile_notifications_path
     assert_select "input[type=checkbox][name=?]", "user[notification_delivery][]", count: 2
-    assert_select "input[type=checkbox][name=?][checked=checked]", "user[notification_delivery][]", count: 2
+    assert_select "#user_notification_delivery_email:not([checked])", count: 1
+    assert_select "#user_notification_delivery_push[checked=checked]", count: 1
   end
 
   test "choosing email only" do

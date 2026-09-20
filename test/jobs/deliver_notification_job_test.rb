@@ -17,10 +17,10 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
 
   # --------------------------------------------------------------- channels
 
-  test "the default is email and push" do
+  test "the default is push only" do
     sent = 0
 
-    assert_emails 1 do
+    assert_emails 0 do
       stub_push(->(_d, _p) { sent += 1; ok }) { perform }
     end
 
@@ -48,6 +48,7 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
   end
 
   test "a failed import sends only the generic notification email" do
+    @user.update!(notification_delivery: [ "email" ])
     notification = Notification.create!(
       user: @user,
       kind: :course_failed,
@@ -94,6 +95,7 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
   # ------------------------------------------------------------ idempotency
 
   test "a re-run does not deliver twice" do
+    @user.update!(notification_delivery: %w[email push])
     sent = 0
 
     assert_emails 1 do
@@ -114,6 +116,7 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
 
   # Neither channel may take the other down with it.
   test "a mailer failure still lets the push through" do
+    @user.update!(notification_delivery: %w[email push])
     sent = 0
 
     NotificationMailer.stub(:notify, ->(*) { raise "SMTP is down" }) do
@@ -125,6 +128,8 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
   end
 
   test "a push failure still lets the email through" do
+    @user.update!(notification_delivery: %w[email push])
+
     assert_emails 1 do
       Push::Notifier.stub(:call, ->(*) { raise "APNs exploded" }) { perform }
     end
@@ -220,6 +225,8 @@ class DeliverNotificationJobTest < ActiveJob::TestCase
   end
 
   test "an unconfigured APNs key still lets the email out" do
+    @user.update!(notification_delivery: %w[email push])
+
     assert_emails 1 do
       Push::ApnsClient.stub(:configured?, false) { perform }
     end

@@ -9,6 +9,7 @@ module App
     before_action :authenticate_user!
     before_action :require_native_app
     before_action :set_queue_badge_count
+    before_action :set_current_streak
 
     private
 
@@ -37,6 +38,10 @@ module App
     # The Queue tab's badge — active imports, on every screen.
     def set_queue_badge_count
       @queue_badge_count = current_user.import_requests.active.count
+    end
+
+    def set_current_streak
+      @current_streak = ActivityLog.current_streak_for_user(current_user)
     end
 
     def set_daily_vocab_reviews

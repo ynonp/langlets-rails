@@ -24,9 +24,7 @@
           <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
         </svg>
         <span class="hidden lg:inline"><%= t("courses.index.nav.daily_vocab") %></span>
-        <% if @daily_vocab_streak.to_i.positive? %>
-          <span aria-label="<%= t("courses.index.nav.day_streak", count: @daily_vocab_streak) %>"><%= @daily_vocab_streak %></span>
-        <% end %>
+        <span aria-label="<%= t("courses.index.nav.day_streak", count: @daily_vocab_streak.to_i) %>"><%= @daily_vocab_streak.to_i %></span>
       <% end %>
     <% end %>
 

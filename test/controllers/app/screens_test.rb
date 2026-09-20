@@ -217,7 +217,7 @@ module App
     end
 
     # The balance lives on the tab that spends it. Home is for what the user
-    # already has, so its header is the wordmark and the avatar, nothing else.
+    # already has, so its header keeps only the wordmark, streak, and avatar.
     test "Home does not show a credits pill" do
       get "/app", headers: NATIVE
 
@@ -596,13 +596,15 @@ module App
     # Notifications, Profile or Sign out. Library and Create shipped without one
     # because the menu lived inside a header only Home rendered; both were dead
     # ends. One shared header on every root is what keeps that from recurring.
-    test "all three tab roots carry the profile menu" do
-      [ app_home_path, app_library_path, new_app_import_request_path ].each do |path|
+    test "all four tab roots carry the profile menu and zero streak" do
+      [ app_home_path, app_library_path, app_vocabulary_entries_path, new_app_import_request_path ].each do |path|
         get path, headers: NATIVE
 
         assert_response :success
         assert_select "details[data-testid='app-profile-menu'][data-controller='profile-menu']",
                       count: 1, message: "#{path} is missing the profile menu"
+        assert_select "[data-testid='app-streak'][aria-label='0 day streak']", text: "0",
+                      count: 1, message: "#{path} is missing the zero streak"
         assert_select "a[href=?]", profile_path, count: 1
       end
     end

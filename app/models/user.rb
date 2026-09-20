@@ -234,15 +234,14 @@ class User < ApplicationRecord
   # as the list of channels that are on — the channels are independent, so a
   # list says everything a "both" option used to, and one more thing besides:
   # the empty list, meaning the notification stays on /notifications and is
-  # delivered nowhere. Both channels is the default, because that is what the
-  # app did before the preference existed.
+  # delivered nowhere. Push is the default; email must be explicitly enabled.
   #
   # This governs the notification subsystem only. Transactional mail that is not
   # a notification — Devise confirmations and password resets, Channel
   # invitations — is unaffected: those are answers to something the user just
   # did, and silently dropping them would break the flow that asked for them.
   NOTIFICATION_DELIVERIES = %w[email push].freeze
-  DEFAULT_NOTIFICATION_DELIVERY = NOTIFICATION_DELIVERIES
+  DEFAULT_NOTIFICATION_DELIVERY = %w[push].freeze
 
   # Anything that isn't a list is a value this code never wrote, so it means
   # "unset" and gets the default — an empty list has to survive the round trip,

@@ -784,7 +784,8 @@ Page views must not add another brand/navigation row.
 The header is one non-wrapping flex row at every breakpoint. Its brand and
 account controls never shrink. Below Tailwind's `lg` breakpoint, Library and
 Create labels are hidden because both destinations remain in the account menu,
-and Daily Vocab collapses to its flame plus optional streak. This keeps the
+and Daily Vocab collapses to its flame plus the streak count, including zero
+for users who have not started a streak. This keeps the
 signed-in mobile web header to one line without removing a route. Desktop
 restores the labels and marks Library or Create with `aria-current="page"`.
 Signed-out visitors get the same brand position and a single Sign in action.
@@ -2560,12 +2561,13 @@ load-and-save loop, because it runs on every app launch.
 
 **Delivery preference.** `users.preferences["notification_delivery"]` is the
 **list** of channels that are on — any of `email` and `push`, defaulting to
-both, chosen with a checkbox each on the Profile page. A list rather than an
-enum because the channels are independent: it says everything a `both` option
-did and adds the empty list, meaning the notification is recorded and delivered
-nowhere. Unset (anything not a list) reads as the default; `[]` is a real
-choice and survives the round trip, which is why the form carries a hidden
-blank — an all-unchecked form otherwise submits nothing under that name.
+push only (email is off), chosen with a checkbox each on the Profile page. A
+list rather than an enum because the channels are independent: it says
+everything a `both` option did and adds the empty list, meaning the notification
+is recorded and delivered nowhere. Unset (anything not a list) reads as the
+default; `[]` is a real choice and survives the round trip, which is why the
+form carries a hidden blank — an all-unchecked form otherwise submits nothing
+under that name.
 `User#notification_delivery=` intersects with the known channels, so what is
 stored is always canonical and never holds a channel the job can't read.
 
@@ -3300,9 +3302,9 @@ This rule **cannot** be expressed in path configuration, and that is a structura
 
 The tab-root profile menu is an HTML `details` element managed by `profile_menu_controller.js`: a document-level click closes it when the tap lands outside the menu. Because each native tab retains its webview and HTML state, `AppTabBarController` also closes open profile menus in tabs moving to the background whenever the user switches tabs, including programmatic cross-tab routing.
 
-**Every tab root renders `app/views/app/shared/_header.html.erb`, and there is only one of these.** A tab root has no back arrow and no native chrome of its own, so the header's avatar is the only route from it to Notifications, Profile and Sign out; a root without one is a dead end the user can leave only by switching tabs. Library and Create were exactly that until this partial became shared, because the menu was inline in a header only Home rendered. Rendering it is what makes the omission impossible to repeat — a new tab root gets the menu by existing.
+**Every tab root renders `app/views/app/shared/_header.html.erb`, and there is only one of these.** A tab root has no back arrow and no native chrome of its own, so the header carries both the always-visible lesson streak (including zero) and the avatar, which is the only route from it to Notifications, Profile and Sign out. A root without the avatar is a dead end the user can leave only by switching tabs. Library and Create were exactly that until this partial became shared, because the menu was inline in a header only Home rendered. Rendering it is what makes the omission impossible to repeat — a new tab root gets the streak and menu by existing.
 
-Its optional `title:` local decides the left-hand side and nothing else. Pass a screen name and the header draws it as that page's `<h1>` (Library, Create); omit it and it falls back to the wordmark, which is what Home wants — Home has no title of its own, the brand *is* its title. Do not render both: `langlets.` above `Library` is two heavy rows naming a brand the user is already inside. The avatar lands in the same place either way. The menu is guarded on `current_user`, so the header is safe to drop into a title row on screens that can render without one.
+Its optional `title:` local decides the left-hand side and nothing else. Pass a screen name and the header draws it as that page's `<h1>` (Library, Create); omit it and it falls back to the wordmark, which is what Home wants — Home has no title of its own, the brand *is* its title. Do not render both: `langlets.` above `Library` is two heavy rows naming a brand the user is already inside. The streak and avatar land in the same place either way. Both controls are guarded on `current_user`, so the header is safe to drop into a title row on screens that can render without one.
 
 Screen furniture belonging to a single tab stays out of the header — see the credits pill on Create.
 
@@ -3962,8 +3964,8 @@ badges, dismissal, and logout links one consistent implementation.
 Library and Create are top-level navigation and are not repeated in the web
 profile menu; Invitations remains hidden there while that feature is unfinished.
 
-The native app avatar is a top-right initials dropdown linking to Notifications, Profile and Logout, plus one language-specific "Practice Words" action for each language in which the user is still practising vocabulary (paused-only languages drop out of that menu with `User#languages_with_saved_words`). It is part of the one shared header, so it appears on all four tab roots:
-- `app/views/app/shared/_header.html.erb` — the header: `title:` or the wordmark on the left, the avatar and its menu on the right. No credits pill (see the Create tab below for where the balance lives)
+The native app header shows the current lesson streak beside the avatar on all four tab roots, including `0` before the user starts a streak. The avatar is a top-right initials dropdown linking to Notifications, Profile and Logout, plus one language-specific "Practice Words" action for each language in which the user is still practising vocabulary (paused-only languages drop out of that menu with `User#languages_with_saved_words`). Both controls are part of the one shared header:
+- `app/views/app/shared/_header.html.erb` — the header: `title:` or the wordmark on the left, then the always-visible streak and avatar menu on the right. No credits pill (see the Create tab below for where the balance lives)
 - `app/views/app/home/index.html.erb` — renders it with no `title:`, so Home gets the wordmark
 - `app/views/app/library/show.html.erb`, `app/views/app/vocabulary_entries/index.html.erb` and `app/views/app/import_requests/new.html.erb` — pass `title:`, so the header draws each screen's own name where Home draws the brand. Library keeps its description in a wrapper with the header so it holds its 4px gap under the title rather than the column's 16px
 
