@@ -6,7 +6,7 @@
     timestamp_start = params[:start_timestamp]
     timestamp_end = params[:end_timestamp]
 
-    wv_prefs = current_user ? current_user.watch_video_preferences : User::WATCH_VIDEO_DEFAULTS
+    wv_prefs = User::WATCH_VIDEO_DEFAULTS
 %>
 
 <%= content_for :head do %>
@@ -31,7 +31,6 @@
     data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-watch-video-activity-word-timing-value="<%= params[:word_timing] ? true : false %>"
-    data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
   <div class="contents">
     <%= render "shared/video_transcript_header",

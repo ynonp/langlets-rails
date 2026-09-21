@@ -136,6 +136,11 @@ It plays the whole video as one big segment (`segment-start` → `segment-end`
 spanning the full course). The shared controller still observes native player
 state changes and emits the `video:*` events used by the transcript.
 
+> **Temporary transcript controls.** Translation starts on the original
+> (L1) text, and karaoke starts enabled when word timing is available. Both
+> controls affect only the current player. Opening another lesson or the full
+> player renders these defaults again; old saved choices are ignored.
+>
 > **Shared transcript UI.** The base header controls (karaoke checkbox,
 > translate icon, copy icon) and the word-by-word transcript/translation-popup are the
 > same partials the watch-video activity uses (#2, below) —

@@ -142,6 +142,29 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "entering a lesson starts video transcript at defaults" do
+    @user.update!(preferences: @user.preferences.merge("watch_video" => { "translation" => true, "karaoke" => false }))
+    phrase = create_translated_phrase!(
+      medium: @medium, l1: languages(:english), l2: languages(:english),
+      text_l1: "Original", text_l2: "Translated", timestamp: "00:01"
+    )
+    phrase.phrase_tokens.create!(
+      l1_start_index: 0, l1_end_index: 0,
+      start_timestamp: "00:01.10", end_timestamp: "00:01.50"
+    )
+    activity = Activities::WatchVideoActivity.create!(lesson: @lesson, order: 2, user: @user)
+    activity.phrases << phrase
+
+    get course_lesson_url(@course, @lesson, a: activity.order)
+
+    assert_response :success
+    assert_select "[data-watch-video-activity-target='showTranslation']:not([checked])"
+    assert_select "[data-watch-video-activity-target='showKaraoke'][checked]"
+    assert_select "[data-watch-video-activity-target='l1Text']:not(.hidden)"
+    assert_select "[data-watch-video-activity-target='l2Text'].hidden"
+    assert_select "[data-watch-video-activity-prefs-url-value]", count: 0
+  end
+
   test "flashcard shows the shared video player and configures its current phrase" do
     phrase = create_translated_phrase!(
       medium: @medium,

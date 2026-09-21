@@ -87,6 +87,30 @@ class FullPlayerControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[aria-label='Back to course']", count: 0
   end
 
+  test "transcript controls start at defaults despite older saved choices" do
+    @user.update!(preferences: @user.preferences.merge("watch_video" => { "translation" => true, "karaoke" => false }))
+    phrase = create_translated_phrase!(
+      medium: @medium, l1: @english, l2: @english,
+      text_l1: "Original", text_l2: "Translated", timestamp: "00:01"
+    )
+    phrase.phrase_tokens.create!(
+      l1_start_index: 0, l1_end_index: 0,
+      start_timestamp: "00:01.10", end_timestamp: "00:01.50"
+    )
+    post user_session_url, params: {
+      user: { email: @user.email, password: "password123" }
+    }
+
+    get course_full_player_path(@course)
+
+    assert_response :success
+    assert_select "[data-watch-video-activity-target='showTranslation']:not([checked])"
+    assert_select "[data-watch-video-activity-target='showKaraoke'][checked]"
+    assert_select "[data-watch-video-activity-target='l1Text']:not(.hidden)"
+    assert_select "[data-watch-video-activity-target='l2Text'].hidden"
+    assert_select "[data-watch-video-activity-prefs-url-value]", count: 0
+  end
+
   test "renders reading and sentence playback controls with timed boundaries" do
     first_phrase = create_translated_phrase!(
       medium: @medium,

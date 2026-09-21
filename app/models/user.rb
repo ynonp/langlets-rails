@@ -207,27 +207,9 @@ class User < ApplicationRecord
     self.preferences = (preferences || {}).merge("native_language" => code)
   end
 
-  # Watch-video activity toggles, stored under preferences["watch_video"].
-  # "translation" is a 2-state L1/L2 language toggle for the lyrics: false (the
-  # default) shows L1, true shows L2.
-  WATCH_VIDEO_PREF_KEYS = %w[translation karaoke].freeze
+  # Initial transcript state for each video player visit. These controls are
+  # temporary; old saved watch_video preferences are deliberately ignored.
   WATCH_VIDEO_DEFAULTS = { "translation" => false, "karaoke" => true }.freeze
-
-  # The user's watch-video toggle choices, merged over the defaults so missing
-  # keys fall back to "on".
-  def watch_video_preferences
-    stored = (preferences || {})["watch_video"]
-    WATCH_VIDEO_DEFAULTS.merge(stored.is_a?(Hash) ? stored.slice(*WATCH_VIDEO_PREF_KEYS) : {})
-  end
-
-  # Merge a partial set of watch-video toggle values into the preferences JSON.
-  # Unknown keys are ignored and values are coerced to booleans.
-  def watch_video_preferences=(values)
-    cleaned = (values || {}).stringify_keys.slice(*WATCH_VIDEO_PREF_KEYS)
-      .transform_values { |v| ActiveModel::Type::Boolean.new.cast(v) }
-    merged = watch_video_preferences.merge(cleaned)
-    self.preferences = (preferences || {}).merge("watch_video" => merged)
-  end
 
   # Which channels this account wants to be told about things over
   # (DeliverNotificationJob). Stored under preferences["notification_delivery"]

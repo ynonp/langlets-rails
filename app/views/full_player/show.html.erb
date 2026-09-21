@@ -20,7 +20,7 @@
   l1_rtl = l1&.rtl || false
   l2_rtl = l2&.rtl || false
 
-  wv_prefs = current_user ? current_user.watch_video_preferences : User::WATCH_VIDEO_DEFAULTS
+  wv_prefs = User::WATCH_VIDEO_DEFAULTS
 %>
 
 <div class="h-dvh-safe min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 mx-auto w-full max-w-[480px]"
@@ -46,7 +46,6 @@
     data-segment-start="<%= timestamp_to_seconds(@start_timestamp) %>"
     data-segment-end="<%= timestamp_to_seconds(@end_timestamp) %>"
     data-watch-video-activity-word-timing-value="<%= @word_timing ? true : false %>"
-    data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
   <!-- Video hero -->
   <%= render "shared/video_media_box", thumbnail_url: course_thumbnail_url(@course), full_player_controls: true %>

@@ -214,9 +214,6 @@ Rails.application.routes.draw do
   # Persist the user's light/dark theme choice.
   patch "preferences/theme", to: "preferences#update", as: :theme_preference
 
-  # Persist the watch-video activity toggles (translation / karaoke).
-  patch "preferences/watch_video", to: "preferences#watch_video", as: :watch_video_preferences
-
   get "review_lessons", to: "review_lessons#show", as: :review_lessons
   get "review_lessons/finish", to: "review_lessons#finish", as: :finish_review_lessons
 

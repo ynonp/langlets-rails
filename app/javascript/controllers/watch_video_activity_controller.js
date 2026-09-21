@@ -8,7 +8,7 @@ const KARAOKE_HOLD_LIMIT = 1.5;
 
 export default class extends Controller {
   static targets = ['subtitles', 'container', 'phrasesList', 'l1Text', 'l2Text', 'showTranslation', 'showKaraoke', 'startPracticeButton', 'copyIcon', 'copyCheckIcon'];
-  static values = { wordTiming: Boolean, prefsUrl: String };
+  static values = { wordTiming: Boolean };
 
   initialize() {
     this.pausedForTranslation = false;
@@ -17,6 +17,16 @@ export default class extends Controller {
     this.translationToken = null;
     this.translationPausePending = false;
     this.translationRequestGeneration = 0;
+  }
+
+  connect() {
+    // Turbo can restore a cached page with the previous checkbox and transcript
+    // DOM state. A new player visit must start from the same defaults as Rails.
+    if (this.hasShowTranslationTarget) this.showTranslationTarget.checked = false;
+    if (this.hasShowKaraokeTarget) this.showKaraokeTarget.checked = true;
+    this.l1TextTargets.forEach(el => el.classList.remove('hidden'));
+    this.l2TextTargets.forEach(el => el.classList.add('hidden'));
+    this.clearKaraokeHighlight();
   }
 
   disconnect() {
@@ -109,26 +119,6 @@ export default class extends Controller {
     this.containerTarget.dispatchEvent(new CustomEvent('translation:hide'));
   }
 
-  // PATCH the current toggle states to the server so they persist across visits.
-  persistPrefs() {
-    if (!this.hasPrefsUrlValue) return;
-
-    const body = {};
-    if (this.hasShowTranslationTarget) body.translation = this.showTranslationTarget.checked;
-    if (this.hasShowKaraokeTarget) body.karaoke = this.showKaraokeTarget.checked;
-
-    const token = document.querySelector('meta[name="csrf-token"]')?.content;
-    fetch(this.prefsUrlValue, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-        "X-CSRF-Token": token || ""
-      },
-      body: JSON.stringify(body)
-    }).catch(() => {});
-  }
-
   progress(ev) {
     const {at} = ev.detail
     this.updateSubtitles(at);
@@ -147,7 +137,6 @@ export default class extends Controller {
     if (!this.showKaraokeTarget.checked && this.karaokeTokens) {
       this.karaokeTokens.forEach(({ span }) => span.removeAttribute('data-active'));
     }
-    this.persistPrefs();
   }
 
   // Karaoke-style highlight. Rather than lighting a word only while playback is
@@ -236,7 +225,6 @@ export default class extends Controller {
     const showL2 = this.showTranslationTarget.checked;
     this.l1TextTargets.forEach(el => el.classList.toggle('hidden', showL2));
     this.l2TextTargets.forEach(el => el.classList.toggle('hidden', !showL2));
-    this.persistPrefs();
   }
 
   // Copies whichever language is currently shown (L1 or L2) across all phrases.
