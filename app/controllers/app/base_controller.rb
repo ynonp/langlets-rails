@@ -54,7 +54,13 @@ module App
 
       @daily_vocab_reviews = lessons.filter_map do |lesson|
         token_count = token_counts.fetch(lesson.id, 0)
-        { lesson: lesson, token_count: token_count } if token_count.positive?
+        if token_count.positive?
+          {
+            lesson: lesson,
+            token_count: token_count,
+            completed_today: current_user.daily_vocab_review_completed_today?(lesson.review_language)
+          }
+        end
       end
     end
 

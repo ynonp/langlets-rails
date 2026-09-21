@@ -430,37 +430,52 @@ class User < ApplicationRecord
     ).exists?
   end
 
+  def daily_vocab_review_completed_today?(language_or_code)
+    language = if language_or_code.is_a?(Language)
+      language_or_code
+    else
+      Language.find_by(iso_name: language_or_code)
+    end
+    return false unless language
+
+    lesson_users.joins(:lesson).where(
+      lessons: { review_language_id: language.id },
+      created_at: Time.zone.now.all_day
+    ).exists?
+  end
+
   def daily_vocab_review_language(preferred_code = nil)
     candidates = languages_with_saved_words
       .distinct(false)
       .group("languages.id")
       .order(Arel.sql("MAX(phrase_token_users.updated_at) DESC, MAX(phrase_token_users.id) DESC"))
+      .to_a
     if preferred_code.present?
-      preferred = candidates.find_by(iso_name: preferred_code)
+      preferred = candidates.find { |language| language.iso_name == preferred_code }
       return preferred if preferred && daily_vocab_review_available?(preferred.iso_name)
     end
 
-    candidates.detect { |language| daily_vocab_review_available?(language.iso_name) }
+    candidates.detect { |language| daily_vocab_review_available?(language.iso_name) } ||
+      preferred || candidates.first
   end
 
   def daily_vocab_review_lessons
-    completed_language_ids = lesson_users.joins(:lesson)
-      .where(lesson_users: { created_at: Time.zone.now.all_day })
-      .where.not(lessons: { review_language_id: nil })
-      .distinct
-      .pluck("lessons.review_language_id")
-
-    active_reviews = lessons.review_lessons
-      .where(review_build_status: [ :started, :pending ])
-      .where.not(review_language_id: completed_language_ids)
+    practiced_language_ids = languages_with_saved_words.pluck(:id)
+    reviews = lessons.review_lessons
+      .where(review_language_id: practiced_language_ids)
+      .where(review_build_status: [ :started, :pending, :finished ])
       .includes(:review_language)
       .order(created_at: :desc)
       .to_a
 
-    active_reviews
+    reviews
       .group_by(&:review_language_id)
       .values
-      .map { |reviews| reviews.find(&:review_started?) || reviews.first }
+      .map do |language_reviews|
+        language_reviews.find(&:review_started?) ||
+          language_reviews.find(&:review_pending?) ||
+          language_reviews.first
+      end
       .sort_by { |lesson| lesson.review_language.english_name }
   end
 

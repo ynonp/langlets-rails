@@ -287,6 +287,7 @@ es:
       index:
         daily_vocab:
           ready: Repaso diario de vocabulario
+          practice_more: Seguir practicando
           words_due:
             one: 1 palabra pendiente
             other: "%{count} palabras pendientes"
@@ -645,6 +646,7 @@ es:
       nav:
         home: Inicio de Langlets
         daily_vocab: Práctica diaria de vocabulario
+        practice_more: Seguir practicando
         day_streak:
           one: Racha de %{count} día
           other: Racha de %{count} día

@@ -3969,11 +3969,15 @@ The native app header shows the current lesson streak beside the avatar on all f
 - `app/views/app/home/index.html.erb` — renders it with no `title:`, so Home gets the wordmark
 - `app/views/app/library/show.html.erb`, `app/views/app/vocabulary_entries/index.html.erb` and `app/views/app/import_requests/new.html.erb` — pass `title:`, so the header draws each screen's own name where Home draws the brand. Library keeps its description in a wrapper with the header so it holds its 4px gap under the title rather than the column's 16px
 
-Daily vocabulary invitations use `User#daily_vocab_review_available?`. The user
+Daily vocabulary due-state uses `User#daily_vocab_review_available?`. The user
 must have a still-practised saved span whose phrase is in the current learning
 language — a language whose words have all been paused stops being offered — and
 must not have a `LessonUser` completion for a review lesson pinned to that
-language during `Time.zone.now.all_day`. When more than one language is due,
+language during `Time.zone.now.all_day`. Completing the daily goal does not hide
+its practice entry: Home and the web header retain a link to the replacement
+review, mark it with a small check, and label it **Practice more**. Due languages
+remain ahead of already-completed languages when choosing the single web-header
+shortcut. When more than one language is due,
 `User#daily_vocab_review_language` chooses the practice language of the most
 recently saved or updated `PhraseTokenUser` (with its id as a deterministic
 tie-breaker), rather than choosing alphabetically. Merely generating or
@@ -3982,20 +3986,22 @@ starting a review does not dismiss the invitation. The final activity emits the 
 lesson id and the server creates the `LessonUser` that dismisses the invitation.
 Activity controllers must use that shared event name rather than Stimulus's
 controller-prefixed `this.dispatch("completed")` event. `App::BaseController`
-resolves every due prebuilt pending or started review for each native app
-Home request. The shared section appears only at the top of the Home tab;
+resolves every current pending or started review for each native app Home
+request, plus the latest finished review while a completed language's queued
+replacement is being built. The shared section appears only at the top of the Home tab;
 Library, Create, and other native app pages do not load or render it. Home
-renders one row per due language, ordered by English language name.
+renders one row per practised language with a review lesson, ordered by English language name.
 Each row reports the number of distinct phrase tokens actually present across
 that review lesson's activities; a token reused by multiple activities counts
-once. Languages without an active lesson, lessons containing no tokens, and
-languages already completed today are omitted. The section-level heading and
+once. Lessons containing no tokens are omitted. Languages completed today use
+the most recent active replacement, or the finished lesson while its queued
+replacement is being built. The section-level heading and
 practice reminder render once for the whole group. The web homepage and gallery put a highlighted
 "Daily Vocab Practice" action first in their navigation and now both render the
-shared authenticated user menu. Web prefers the `?lang=` learning language; on
-an unfiltered URL it uses the first saved-vocabulary language that is still due
-today, so the action does not disappear merely because the catalog is showing
-all languages.
+shared authenticated user menu. Web prefers the `?lang=` learning language when
+it is due; otherwise it chooses the most recently updated language still due,
+then falls back to the preferred or most recently updated practised language so
+the action remains available after today's goal is complete.
 
 On mobile, the courses index and playlist headers keep the profile avatar visible by moving the theme toggle and XP chip into the profile dropdown while keeping desktop header controls unchanged:
 - `courses/index.html.erb`

@@ -674,20 +674,25 @@ module App
       end
 
       LessonUser.create!(user: @user, lesson: spanish_review)
+      spanish_review.update!(review_build_status: :finished)
 
       get app_home_path, headers: NATIVE
       assert_response :success
-      assert_select "[data-testid='daily-vocab-banner']", count: 1
+      assert_select "[data-testid='daily-vocab-banner']", count: 2
       assert_select "[data-testid='daily-vocab-review']" do
         assert_select "a[href=?]", review_lessons_path(language_code: arabic.iso_name), text: /Arabic.*1 word due/m
-        assert_select "a[href=?]", review_lessons_path(language_code: @spanish.iso_name), count: 0
+        assert_select "a[href=?]", review_lessons_path(language_code: @spanish.iso_name), text: /Spanish.*✓.*Practice more/m
       end
 
       LessonUser.create!(user: @user, lesson: arabic_review)
+      arabic_review.update!(review_build_status: :finished)
 
       get app_home_path, headers: NATIVE
       assert_response :success
-      assert_select "[data-testid='daily-vocab-review']", count: 0
+      assert_select "[data-testid='daily-vocab-review']", count: 1
+      assert_select "[data-testid='daily-vocab-banner']", count: 2
+      assert_select "a[href=?]", review_lessons_path(language_code: @spanish.iso_name), text: /Spanish.*✓.*Practice more/m
+      assert_select "a[href=?]", review_lessons_path(language_code: arabic.iso_name), text: /Arabic.*✓.*Practice more/m
     end
 
     test "the queue badge counts only active imports" do

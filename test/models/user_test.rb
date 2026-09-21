@@ -186,6 +186,21 @@ class UserTest < ActiveSupport::TestCase
     assert_equal @arabic, @user.daily_vocab_review_language
   end
 
+  test "daily vocab review remains available for more practice after today's goal" do
+    @user.saved_phrase_tokens << @token_en
+    completed_review = Lesson.create!(
+      user: @user,
+      name: "Review Words (en)",
+      review_language: @english,
+      review_build_status: :finished
+    )
+    LessonUser.create!(user: @user, lesson: completed_review)
+
+    assert_not @user.daily_vocab_review_available?(@english.iso_name)
+    assert @user.daily_vocab_review_completed_today?(@english)
+    assert_equal @english, @user.daily_vocab_review_language
+  end
+
   test "pro! grants entitlement immediately, with no purchase behind it" do
     assert_not @user.pro?
 

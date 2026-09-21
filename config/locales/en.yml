@@ -287,6 +287,7 @@ en:
       index:
         daily_vocab:
           ready: "Daily vocabulary review"
+          practice_more: "Practice more"
           words_due:
             one: "1 word due"
             other: "%{count} words due"
@@ -635,6 +636,7 @@ en:
       nav:
         home: "Langlets home"
         daily_vocab: "Daily Vocab Practice"
+        practice_more: "Practice more"
         day_streak:
           one: "%{count} day streak"
           other: "%{count} day streak"

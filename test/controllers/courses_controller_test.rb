@@ -79,6 +79,26 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "Profile"
   end
 
+  test "daily vocabulary action stays visible as practice more after completion" do
+    save_word_for(@language)
+    review = Lesson.create!(
+      user: @user,
+      name: "Review Words (#{@language.iso_name})",
+      review_language: @language,
+      review_build_status: :finished
+    )
+    LessonUser.create!(user: @user, lesson: review)
+    sign_in @user
+
+    get root_url
+
+    assert_response :success
+    assert_select "[data-testid='daily-vocab-nav'][aria-label='Practice more']" do
+      assert_select "span", text: "✓"
+      assert_select "span", text: "Practice more"
+    end
+  end
+
   test "homepage hero offers Android and iPhone app downloads" do
     assert_equal "application/vnd.android.package-archive", Rack::Mime.mime_type(".apk")
 

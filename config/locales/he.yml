@@ -265,6 +265,7 @@ he:
       index:
         daily_vocab:
           ready: "החזרה היומית על אוצר המילים"
+          practice_more: "תרגול נוסף"
           words_due:
             one: "מילה אחת לחזרה"
             other: "%{count} מילים לחזרה"
@@ -572,6 +573,7 @@ he:
       nav:
         home: "לדף הבית של Langlets"
         daily_vocab: "תרגול אוצר מילים יומי"
+        practice_more: "תרגול נוסף"
         day_streak:
           one: "רצף של יום אחד"
           other: "רצף של %{count} ימים"
