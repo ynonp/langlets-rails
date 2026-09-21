@@ -12,15 +12,18 @@ test("the exact segment start activates the first transcript sentence", async ()
   assert.match(source, /findLastIndex\(t => t <= currentTime\)/);
 });
 
-test("translation UI and pronunciation run from the confirmed-pause callback", async () => {
+test("translation appears before the pause acknowledgement; pronunciation waits", async () => {
   const controllerPath = new URL(
     "../../app/javascript/controllers/watch_video_activity_controller.js",
     import.meta.url,
   );
   const source = await readFile(controllerPath, "utf8");
 
-  assert.match(source, /afterPause: \(\{ wasPlaying \}\) =>/);
-  assert.match(source, /this\.showTranslation\(token\)/);
+  const handler = source.slice(source.indexOf("handleTranslationClick(event)"), source.indexOf("resumeAfterTranslation()"));
+  assert.ok(handler.indexOf("this.showTranslation(token, false)") < handler.indexOf("this.dispatch('pause'"));
+  assert.match(handler, /afterPause: \(\{ wasPlaying \}\) =>/);
+  assert.match(handler, /this\.playTranslationAudio\(this\.translationToken\)/);
+  assert.doesNotMatch(handler.slice(handler.indexOf("afterPause:")), /this\.showTranslation\(token\)/);
   assert.match(source, /new CustomEvent\('audio-cache:play'/);
 });
 
@@ -49,7 +52,7 @@ test("repeated word clicks keep the translation open", async () => {
   const openBranch = handler.slice(openBranchStart, openBranchEnd);
 
   assert.match(openBranch, /if \(this\.translationToken === token\) return/);
-  assert.match(openBranch, /this\.showTranslation\(token\)/);
+  assert.match(openBranch, /this\.showTranslation\(token, !this\.translationPausePending\)/);
   assert.doesNotMatch(openBranch, /this\.hideTranslation\(\)/);
   assert.doesNotMatch(openBranch, /this\.dispatch\('resume'\)/);
   assert.match(handler, /this\.pausedForTranslation = this\.pausedForTranslation \|\| this\.videoPlaying/);

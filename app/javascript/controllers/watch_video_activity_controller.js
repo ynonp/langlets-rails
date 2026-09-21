@@ -21,8 +21,7 @@ export default class extends Controller {
 
   disconnect() {
     // A pause acknowledgement can arrive after Turbo has replaced this
-    // activity. Invalidate its callback so detached transcript UI and token
-    // audio cannot be revived by the outgoing interaction.
+    // activity. Invalidate its callback so detached token audio cannot start.
     this.translationRequestGeneration += 1;
     this.translationToken = null;
     this.translationPausePending = false;
@@ -32,9 +31,7 @@ export default class extends Controller {
     const token = event.target.closest('[data-translation]');
     if (!token) return;
 
-    // This controller owns the complete word-click sequence. Keep the opening
-    // click away from document-level close/resume actions and do not let the
-    // popup or pronunciation get ahead of the provider pause confirmation.
+    // Keep the opening click away from document-level close/resume actions.
     event.stopPropagation();
 
     if (this.translationOpen) {
@@ -44,7 +41,7 @@ export default class extends Controller {
       if (this.translationToken === token) return;
       this.translationToken = token;
       this.clearKaraokeHighlight();
-      this.showTranslation(token);
+      this.showTranslation(token, !this.translationPausePending);
       return;
     }
 
@@ -55,6 +52,11 @@ export default class extends Controller {
     // case without waiting for another iframe round trip.
     this.pausedForTranslation = this.pausedForTranslation || this.videoPlaying;
     this.translationPausePending = true;
+    this.translationOpen = true;
+    this.translationToken = token;
+    // The translation is already in the DOM. Show it in this click task;
+    // only pronunciation needs to wait for the video to become quiet.
+    this.showTranslation(token, false);
     this.dispatch('pause', {
       detail: {
         afterPause: ({ wasPlaying }) => {
@@ -62,9 +64,14 @@ export default class extends Controller {
 
           this.translationPausePending = false;
           this.pausedForTranslation = this.pausedForTranslation || wasPlaying;
-          this.translationOpen = true;
-          this.translationToken = token;
-          this.showTranslation(token);
+          if (this.translationOpen) {
+            this.playTranslationAudio(this.translationToken);
+          } else if (this.pausedForTranslation) {
+            // The learner closed the popup before the provider acknowledged
+            // the pause. Resume after that acknowledgement, not before it.
+            this.pausedForTranslation = false;
+            this.dispatch('resume');
+          }
         }
       }
     });
@@ -73,19 +80,23 @@ export default class extends Controller {
   resumeAfterTranslation() {
     if (!this.translationOpen && !this.pausedForTranslation) return;
 
-    this.translationRequestGeneration += 1;
     this.translationOpen = false;
     this.translationToken = null;
+    if (this.translationPausePending) return;
     if (!this.pausedForTranslation) return;
     this.pausedForTranslation = false;
     this.dispatch('resume');
   }
 
-  showTranslation(token) {
+  showTranslation(token, playAudio = true) {
     this.containerTarget.dispatchEvent(new CustomEvent('translation:show', {
       detail: { token }
     }));
 
+    if (playAudio) this.playTranslationAudio(token);
+  }
+
+  playTranslationAudio(token) {
     if (token.dataset.audioUrl) {
       this.element.dispatchEvent(new CustomEvent('audio-cache:play', {
         bubbles: true,

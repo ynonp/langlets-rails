@@ -752,6 +752,8 @@ he:
     write_missing_word:
       question_of: "שאלה %{current} מתוך %{total}"
       check: "בדיקה"
+      hint: "רמז"
+      placeholder: "הקלידו את המילה החסרה..."
       correct: "✓ נכון! \"%{answer}\""
       wrong_try_again: "✗ לא נכון — נסו שוב!"
       answer_is: "✗ התשובה היא \"%{answer}\". נסו לזכור אותה!"

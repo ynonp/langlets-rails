@@ -225,9 +225,8 @@ export default class extends Controller {
     }
 
     // Most pause callers do not need confirmation and should retain the
-    // cheapest path. Translation clicks supply a callback because their popup
-    // and pronunciation must wait until the provider reports that playback
-    // actually stopped.
+    // cheapest path. Translation clicks supply a callback so pronunciation
+    // waits until the provider reports that playback actually stopped.
     if (typeof afterPause !== 'function') {
       player.pauseVideo();
       return;
@@ -239,7 +238,7 @@ export default class extends Controller {
     });
 
     // Turbo navigation can replace the player while an iframe command is in
-    // flight. Do not open a popup belonging to the outgoing activity.
+    // flight. Do not run the outgoing activity's pronunciation callback.
     if (player === this.player) afterPause(result);
   }
 

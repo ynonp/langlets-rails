@@ -188,12 +188,13 @@ under the `#main-player` container), but:
   phrase, its `video:play` listener immediately seeks to the segment start
   without pausing. Playback already within the segment is left unchanged so
   pause/resume and transcript seeks continue from the selected time.
-- Clicking a transcript word sends the provider pause command first. The
-  translation popup and token pronunciation are deferred until YouTube or
-  TikTok reports `PAUSED`/`ENDED`; an 800ms fallback prevents a missing iframe
-  callback from swallowing the click. The translation and audio URL are
-  already rendered on the token, so no translation or audio network request is
-  awaited. The opening click stays local, an outside click closes the popup,
+- Clicking a transcript word opens its translation popup in the same click task;
+  the translation is already rendered on the token. The provider pause command
+  follows immediately, and token pronunciation waits until YouTube or TikTok
+  reports `PAUSED`/`ENDED`. An 800ms fallback handles a missing iframe callback.
+  Closing the popup during that wait defers playback resume until the pause
+  callback, so a late pause cannot override resume. The opening click stays
+  local, an outside click closes the popup,
   and playback resumes only when the popup interaction paused a playing video.
   Word clicks do not seek, while clicks elsewhere on the sentence seek to its
   timestamp. Repeated clicks on the selected word leave the popup open, making
@@ -358,6 +359,9 @@ original source. The controller waits for provider teardown to finish before
 reusing the player mount, preventing the outgoing iframe from removing its
 replacement. Native play is constrained to the phrase; the ordinary
 segment-end behavior pauses and rewinds it for replay.
+The write-missing-word review activity uses the same card video and segment
+events. Its typing and Hint answer modes share this player; custom vocabulary
+cards without a source medium leave the player hidden.
 
 ---
 

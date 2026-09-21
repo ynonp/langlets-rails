@@ -19,7 +19,11 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     assert lesson.reload.review_started?
     assert_select ".activity-stepnav a[href='#{root_path}']", count: 1
     assert_select "[data-controller~='main-video-player'][data-action*='flashcard-activity:card-change->main-video-player#configureSegment']"
+    assert_select "[data-controller~='main-video-player'][data-action*='write-missing-word-activity:card-change->main-video-player#configureSegment']"
     assert_select "#main-player.hidden[data-main-video-player-target='playerContainer']"
+    assert_select "[data-controller='write-missing-word-activity'][data-main-video-player-target='videoListener videoSegment'][data-show-player='true']"
+    assert_select "[data-write-missing-word-activity-target='completionTranslation']"
+    assert_select "[data-action='click->write-missing-word-activity#continue']"
   end
 
   test "show builds and starts a review when an existing user has none ready" do

@@ -705,6 +705,13 @@ audio and never changes the player's volume.
 When the final flashcard is answered, its completion card replaces the exercise
 at the top of the same post-video region instead of vertically centering in the
 remaining viewport, so the feedback stays visually attached to the video.
+The review lesson's write-missing-word activity uses the same cloze card data,
+video segment, sentence layout, and full-context translation on the success
+bar. Learners type the missing word first; Hint changes that card to the same
+multiple-choice options as flashcards. A correct typed answer or hint choice
+fills the blank and waits for Next instead of advancing on a timer. Incorrect
+typed answers and hint choices let learners try again. Custom
+vocabulary cards without a source medium keep the video box hidden.
 
 ### Homepage language selection
 
@@ -3933,6 +3940,11 @@ Users can save individual word/token translations they encounter during lessons 
   for that state, styled separately from karaoke, suppress the current-word
   highlight while it is open, and use viewport-clamped fixed positioning
   adjacent to the source token.
+- The full player and watch-video activity show the stored translation in the
+  word's click task. Their shared transcript controller pauses the provider
+  immediately afterward and waits for pause acknowledgement before playing
+  token pronunciation. If the popup closes during that wait, playback resumes
+  after acknowledgement so a late pause cannot override it.
 
 #### _translation_popup.html.erb
 - Added Save button with `saveButton`, `saveIcon`, `saveText` targets

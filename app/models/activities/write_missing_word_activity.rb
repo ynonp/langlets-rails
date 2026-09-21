@@ -1,42 +1,23 @@
 module Activities
   class WriteMissingWordActivity < Activity
     def activity_params
-      activity_phrase_tokens = phrase_tokens
-        .includes(:localized_translation, phrase: [ :l1, :localized_translation ], l1_audio_attachment: :blob)
-        .to_a
-
-      cards = activity_phrase_tokens.map do |token|
-        text = token.phrase.text_l1
-        start_idx = token.l1_start_index
-        end_idx = token.l1_end_index
-
-        next nil if start_idx.nil? || end_idx.nil?
-
-        answer = text[start_idx..end_idx]
-        next nil if answer.nil? || answer.blank?
-
-        blank_placeholder = "_" * [ answer.length, 5 ].max
-        phrase_with_blank = text[0...start_idx] + blank_placeholder + text[(end_idx + 1)..]
-
-        {
-          id: token.id,
-          phrase_with_blank: phrase_with_blank,
-          answer: answer,
-          translation: token.translation,
-          audio_url: token.l1_audio_url
-        }
-      end.compact
-
-      all_answers = cards.map { |c| c[:answer] }
-      cards = cards.map do |card|
-        distractors = (all_answers - [ card[:answer] ]).sample(3)
-        card.merge(options: ([ card[:answer] ] + distractors).shuffle)
-      end
+      activity_phrase_tokens = phrase_tokens.includes(
+        :localized_translation,
+        { l1_audio_attachment: :blob },
+        phrase: [ :l1, :localized_translation, :medium, :phrase_tokens ]
+      ).to_a
 
       {
-        cards: cards,
+        phrase_tokens: activity_phrase_tokens,
+        video_player: true,
+        interactive_video_player: true,
         l1: activity_phrase_tokens.first&.phrase&.l1,
-        l2: activity_phrase_tokens.first&.phrase&.l2
+        l2: activity_phrase_tokens.first&.phrase&.l2,
+        unique_words: if lesson.medium
+          lesson.medium.phrases.flat_map { |phrase| phrase.text_l1.tokenize.map(&:to_s) }.uniq
+        else
+          activity_phrase_tokens.flat_map { |token| token.phrase.text_l1.tokenize.map(&:to_s) }.uniq
+        end
       }
     end
   end

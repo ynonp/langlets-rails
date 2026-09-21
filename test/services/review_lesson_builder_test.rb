@@ -194,8 +194,12 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       lesson = ReviewLessonBuilder.new(@user, language_code: @arabic.iso_name).build!
       activity = lesson.activities.find_by!(type: "Activities::WriteMissingWordActivity")
       params = activity.reload.activity_params
+      card = ApplicationController.helpers.prepare_flashcards_for_tokens(params.fetch(:phrase_tokens), params.fetch(:unique_words)).first
 
-      assert_equal "Hi", params.fetch(:cards).first.fetch(:translation)
+      assert_equal "Hi", card.fetch(:translation)
+      assert_equal "Hello world", card.fetch(:phrase_l2)
+      assert_equal @medium.extract_video_id, card.fetch(:video_id)
+      assert card.fetch(:options).include?(card.fetch(:correct))
       assert_equal @english, params.fetch(:l2)
     end
   end
@@ -209,8 +213,10 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       lesson = ReviewLessonBuilder.new(@user, language_code: @arabic.iso_name).build!
       activity = lesson.activities.find_by!(type: "Activities::WriteMissingWordActivity")
       params = activity.reload.activity_params
+      card = ApplicationController.helpers.prepare_flashcards_for_tokens(params.fetch(:phrase_tokens), params.fetch(:unique_words)).first
 
-      assert_equal "שלום", params.fetch(:cards).first.fetch(:translation)
+      assert_equal "שלום", card.fetch(:translation)
+      assert_equal "שלום עולם", card.fetch(:phrase_l2)
       assert_equal @hebrew, params.fetch(:l2)
     end
   end

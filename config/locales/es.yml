@@ -839,6 +839,8 @@ es:
     write_missing_word:
       question_of: Pregunta %{current} de %{total}
       check: Comprobar
+      hint: Pista
+      placeholder: Escribe la palabra que falta...
       correct: "✓ ¡Correcto! «%{answer}»"
       wrong_try_again: "✗ Incorrecto — ¡inténtalo de nuevo!"
       answer_is: "✗ La respuesta es «%{answer}». ¡Intenta recordarla!"

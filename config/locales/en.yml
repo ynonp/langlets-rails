@@ -819,6 +819,8 @@ en:
     write_missing_word:
       question_of: "Question %{current} of %{total}"
       check: "Check"
+      hint: "Hint"
+      placeholder: "Type the missing word..."
       correct: "✓ Correct! \"%{answer}\""
       wrong_try_again: "✗ Wrong — try again!"
       answer_is: "✗ The answer is \"%{answer}\". Try to remember it!"

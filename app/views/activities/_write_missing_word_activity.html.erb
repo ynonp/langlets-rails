@@ -1,67 +1,74 @@
-<%# Expects params[:cards] - array of cards with phrase_with_blank, answer, translation, audio_url, options %>
-<% cards = params[:cards] || [] %>
+<% phrase_tokens = params[:phrase_tokens] || [] %>
+<% cards = prepare_flashcards_for_tokens(phrase_tokens, params[:unique_words]) %>
 <% l1_rtl = params[:l1]&.rtl %>
+<% l2_rtl = params[:l2]&.rtl %>
 
 <div data-controller="write-missing-word-activity"
      data-write-missing-word-activity-cards-value="<%= cards.to_json %>"
      data-write-missing-word-activity-l1-rtl-value="<%= l1_rtl %>"
      data-write-missing-word-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>"
-     class="flex-1 min-h-0 overflow-y-auto flex flex-col items-center bg-emerald-50 dark:bg-gray-950">
-  <div class="w-full max-w-2xl p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
-    <h2 class="text-xl sm:text-2xl md:text-3xl text-gray-900 dark:text-gray-50 mb-2 font-bold"><%= @activity.text_header || t(".title") %></h2>
-
-    <p data-write-missing-word-activity-target="progress" class="text-gray-500 dark:text-gray-400 mb-4"><%= t(".question_of", current: 1, total: cards.length) %></p>
+     data-main-video-player-target="videoListener videoSegment"
+     data-show-player="true"
+     data-action="video:play->main-video-player#seekToSegmentStartIfBefore"
+     class="order-4 flex-1 min-h-0 overflow-y-auto flex flex-col items-center bg-gray-50 dark:bg-gray-950">
+  <div data-write-missing-word-activity-target="activityContent" class="w-full max-w-[460px] px-4 py-3 sm:py-5">
+    <h2 class="sr-only"><%= @activity.text_header || t(".title") %></h2>
+    <p data-write-missing-word-activity-target="progress" class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm mb-2 sm:mb-4"><%= t(".question_of", current: 1, total: cards.length) %></p>
 
     <div data-write-missing-word-activity-target="card"
          dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
-         class="text-gray-900 dark:text-gray-50 flex flex-col gap-4">
+         class="bg-transparent px-1 py-5 text-gray-900 dark:text-gray-50 <%= l1_rtl ? 'text-right' : 'text-left' %>">
+      <div class="flex min-h-[125px] items-center justify-center py-4 text-center sm:min-h-[150px]">
+        <div data-write-missing-word-activity-target="sentence" class="text-gray-900 dark:text-gray-50 font-medium text-2xl sm:text-[28px] leading-relaxed"></div>
+      </div>
 
-      <div data-write-missing-word-activity-target="translation"
-           class="text-yellow-700 dark:text-yellow-300 text-base sm:text-lg font-medium"></div>
-
-      <div data-write-missing-word-activity-target="sentence"
-           class="text-gray-900 dark:text-gray-50 text-lg sm:text-xl leading-relaxed"></div>
-
-      <div data-write-missing-word-activity-target="writeInterface"
-           class="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2">
-        <input
-          type="text"
-          data-write-missing-word-activity-target="answer"
-          data-action="keydown.enter->write-missing-word-activity#checkAnswer"
-          class="flex-1 min-w-0 px-4 py-3 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 text-base sm:text-lg border-2 border-gray-300 dark:border-gray-600 focus:border-emerald-500 focus:outline-none"
-          placeholder="Type the missing word..."
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="off"
-          spellcheck="false"
-        />
-        <div class="flex gap-2">
+      <div data-write-missing-word-activity-target="writeInterface" class="flex flex-col gap-2.5">
+        <input type="text"
+               data-write-missing-word-activity-target="answer"
+               data-action="keydown.enter->write-missing-word-activity#checkAnswer"
+               class="w-full min-h-[58px] px-4 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 text-base border border-gray-200 dark:border-white/10 focus:border-emerald-500 focus:outline-none"
+               placeholder="<%= t('js.write_missing_word.placeholder') %>"
+               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+        <div class="grid grid-cols-2 gap-2.5">
           <button data-action="click->write-missing-word-activity#checkAnswer"
                   data-write-missing-word-activity-target="checkButton"
-                  class="inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors flex-1 sm:flex-none">
-            Check
-          </button>
+                  class="min-h-[58px] rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-bold"><%= t("js.write_missing_word.check") %></button>
           <button data-action="click->write-missing-word-activity#showHint"
                   data-write-missing-word-activity-target="hintButton"
-                  class="px-4 py-3 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-lg text-gray-900 dark:text-gray-50 text-sm font-medium transition-colors duration-200">
-            Hint
-          </button>
+                  class="min-h-[58px] rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-gray-50 font-medium"><%= t("js.write_missing_word.hint") %></button>
         </div>
       </div>
 
-      <div data-write-missing-word-activity-target="hintOptions"
-           class="hidden grid grid-cols-2 gap-3 mt-2">
-      </div>
-
-      <div data-write-missing-word-activity-target="feedback" dir="ltr" class="hidden text-base sm:text-lg font-semibold mt-2"></div>
+      <div data-write-missing-word-activity-target="hintOptions" class="hidden grid grid-cols-2 gap-2.5"></div>
+      <div data-write-missing-word-activity-target="feedback" class="hidden text-base font-semibold mt-3" role="status"></div>
       <div data-write-missing-word-activity-target="stopPracticingContainer"></div>
     </div>
-
   </div>
 
   <%= render "activities/completion_message",
         controller: "write-missing-word-activity",
         target: "completion",
         title: t(".great_work"),
-        next_label: t(".next") %>
+        next_label: t(".next"),
+        phrases: [],
+        dynamic_translation: { rtl: l2_rtl },
+        next_action: "click->write-missing-word-activity#continue" %>
 </div>
+
+<style>
+.flashcard-answer-reveal {
+  text-shadow: 0 0 18px rgb(52 211 153 / 0.7);
+  animation: flashcard-answer-flash-in 650ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes flashcard-answer-flash-in {
+  0% { opacity: 0; transform: scale(0.35) rotate(-6deg); filter: brightness(2.2); }
+  55% { opacity: 1; transform: scale(1.08) rotate(2deg); filter: brightness(1.45); }
+  75% { transform: scale(0.98) rotate(-1deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); filter: brightness(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flashcard-answer-reveal { animation: none; }
+}
+</style>
