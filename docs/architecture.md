@@ -96,7 +96,8 @@ takes to drain.
 PostHog receives server-side events through `posthog-ruby` and `posthog-rails`.
 `config/initializers/posthog.rb` reads the project key from production Rails
 credentials (`posthog.api_key`), with `POSTHOG_API_KEY` as an override, and uses
-the US ingest host unless `POSTHOG_HOST` is set. Production requires a key;
+the US ingest host unless `POSTHOG_HOST` is set. Production requires a key at
+runtime; the credential-free asset precompile build is exempt;
 development and test boot without credentials and do not send events. Automatic
 exception capture is off to keep request data out of analytics; the app ignores
 client-supplied PostHog identity headers.
