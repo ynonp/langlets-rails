@@ -108,7 +108,9 @@ removed before sending; only explicitly supplied properties are retained.
 `ApplicationController#track_event` supplies a stable `user:<id>` distinct ID
 for signed-in users or a random session-scoped guest ID. It adds locale and
 web/native platform, catches SDK errors so analytics cannot fail requests, and
-records `$pageview` for successful HTML GETs. Page paths omit query parameters;
+records `$pageview` for successful HTML GETs. Each page view includes a
+query-free `$current_url` so PostHog's URL / Screen column and web analytics
+recognize the page. Page paths and URLs omit query parameters;
 admin pages, setup-token pages, Turbo frames, and prefetches are excluded.
 Explicit events cover email and social signup/signin, guest video selection, import
 requests/retries, first activity and lesson completion, review completion,

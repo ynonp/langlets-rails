@@ -15,12 +15,13 @@ PostHog.init do |config|
   config.secret_key = posthog_secret_key
   config.host = ENV.fetch("POSTHOG_HOST", "https://us.i.posthog.com")
   config.test_mode = !Rails.env.production?
-  # posthog-rails adds request metadata to every event. Keep only the explicit,
-  # reviewed properties supplied by our controllers.
+  # posthog-rails adds request metadata to every event. Keep the query-free URL
+  # explicitly supplied for page views and remove the remaining implicit data.
   config.before_send = proc do |event|
-    %w[$current_url $request_path $request_method $user_agent $raw_user_agent $ip].each do |key|
+    %w[$request_path $request_method $user_agent $raw_user_agent $ip].each do |key|
       event[:properties]&.delete(key)
     end
+    event[:properties]&.delete("$current_url") unless event[:event] == "$pageview"
     event
   end
 end

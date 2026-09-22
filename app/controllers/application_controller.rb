@@ -182,7 +182,11 @@ class ApplicationController < ActionController::Base
     return if request.headers["Turbo-Frame"].present? || request.headers["Purpose"] == "prefetch"
     return if controller_path.start_with?("admin/") || controller_path == "prospect_setups"
 
-    track_event("$pageview", path: request.path, page: "#{controller_path}##{action_name}")
+    track_event("$pageview", {
+      path: request.path,
+      page: "#{controller_path}##{action_name}",
+      "$current_url" => "#{request.base_url}#{request.path}"
+    })
   end
 
   # A guest who approved a /try preview gets their admin-started import attached

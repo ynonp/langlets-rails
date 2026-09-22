@@ -11,6 +11,10 @@ class PosthogEventsTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal [ "$pageview", "$pageview" ], events.map { |event| event[:event] }
     assert_equal [ home_privacy_path, home_terms_path ], events.map { |event| event[:properties][:path] }
+    assert_equal [
+      "http://www.example.com/home/privacy",
+      "http://www.example.com/home/terms"
+    ], events.map { |event| event[:properties]["$current_url"] }
     assert_equal events.first[:distinct_id], events.last[:distinct_id]
     refute_includes events.to_s, "private-value"
   end
