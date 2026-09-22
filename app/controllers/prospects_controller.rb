@@ -14,6 +14,7 @@ class ProspectsController < ApplicationController
       record.assign_attributes(utm_source: session[:utm_source], course: @course, lesson: @lesson, locale: I18n.locale.to_s)
     end
     DeliverProspectEmailsJob.perform_later(prospect.id)
+    track_event("prospect_submitted", course_id: @course.id, lesson_id: @lesson.id, utm_source: prospect.utm_source)
     session.delete(:utm_source)
     flash[:prospect_submitted] = true
     redirect_to finish_course_lesson_path(@course, @lesson), notice: t("marketing.check_email"), status: :see_other

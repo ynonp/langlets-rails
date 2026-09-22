@@ -5,7 +5,7 @@
     </h1>
 
     <p class="text-gray-500 dark:text-gray-400 mb-6">
-      <strong class="text-gray-900 dark:text-gray-50">Last updated:</strong> July 16, 2026
+      <strong class="text-gray-900 dark:text-gray-50">Last updated:</strong> September 22, 2026
     </p>
 
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
@@ -59,16 +59,15 @@
       Analytics Information
     </h3>
     <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-      We use Microsoft Clarity, a user behavior analytics service provided by Microsoft Corporation, to help us understand how users interact with our application. Microsoft Clarity may collect the following information:
+      We use PostHog to understand how people use Langlets. Our server sends the following analytics information:
     </p>
     <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-4 space-y-2 ml-4">
-      <li>Device and browser information (browser type, operating system, screen resolution)</li>
-      <li>Usage patterns and interactions within the app (clicks, scrolls, page views)</li>
-      <li>Session recordings and heatmaps of user interactions</li>
-      <li>IP address (which may be used to determine general geographic location)</li>
+      <li>Page paths and actions such as account signup, lesson completion, word saving, and video import</li>
+      <li>Language and whether the request came from a native app or web browser</li>
+      <li>A random session identifier for guests or an account identifier for signed-in users</li>
     </ul>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      We do not send your email address or any account identifier to Microsoft Clarity. We also use Cloudflare Web Analytics, which measures aggregate page traffic without using cookies and without fingerprinting visitors.
+      We do not send email addresses, passwords, video URLs, lesson text, or setup tokens to PostHog. We do not use session recordings or heatmaps. We also use Cloudflare Web Analytics, which measures aggregate page traffic without using cookies and without fingerprinting visitors.
     </p>
 
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
@@ -103,7 +102,8 @@
       We do not sell your personal information and we do not share it for advertising. We share limited information with the service providers that make the app work:
     </p>
     <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-4 space-y-2 ml-4">
-      <li><strong class="text-gray-900 dark:text-gray-50">Microsoft</strong> — Clarity analytics, and the Azure Speech service used for pronunciation scoring</li>
+      <li><strong class="text-gray-900 dark:text-gray-50">PostHog</strong> — product analytics</li>
+      <li><strong class="text-gray-900 dark:text-gray-50">Microsoft</strong> — Azure Speech for pronunciation scoring</li>
       <li><strong class="text-gray-900 dark:text-gray-50">Cloudflare</strong> — traffic delivery and cookieless web analytics</li>
       <li><strong class="text-gray-900 dark:text-gray-50">Apple, Google, and GitHub</strong> — only if you choose to sign in with them, and only to authenticate you</li>
       <li><strong class="text-gray-900 dark:text-gray-50">YouTube</strong> — lesson videos are streamed from YouTube's embedded player, so Google may receive your IP address and set cookies under its own privacy policy</li>
@@ -124,20 +124,10 @@
     </h2>
 
     <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-3">
-      Microsoft Clarity
+      PostHog
     </h3>
-    <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-      Our app uses Microsoft Clarity for analytics purposes. Microsoft Clarity's collection and use of data is governed by the Microsoft Privacy Statement, which can be found at:
-      <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline transition-colors duration-200">
-        https://privacy.microsoft.com/en-us/privacystatement
-      </a>
-    </p>
-
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      You can opt out of Microsoft Clarity data collection by visiting:
-      <a href="https://clarity.microsoft.com/terms" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline transition-colors duration-200">
-        https://clarity.microsoft.com/terms
-      </a>
+      PostHog processes the product events described above to help us improve Langlets. See the <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 underline">PostHog privacy policy</a> for details.
     </p>
 
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
@@ -152,7 +142,6 @@
       <li>Delete your account at any time from your profile page, using "Delete my account" — this permanently removes your account and the learning data attached to it, including saved words, progress, XP and streaks, content you created, and any access tokens you issued to connected apps. You can also contact us and we will delete it for you</li>
       <li>Request a copy of your personal information, or ask us to correct it, by contacting us</li>
       <li>Decline or revoke microphone permission in your device settings, which disables only pronunciation practice</li>
-      <li>Opt out of Microsoft Clarity data collection using the link provided above</li>
       <li>Use browser settings to disable cookies</li>
     </ul>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">

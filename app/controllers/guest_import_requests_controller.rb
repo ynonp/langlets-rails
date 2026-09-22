@@ -48,6 +48,7 @@ class GuestImportRequestsController < ApplicationController
       translation_language: source.translation_language
     )
     store_pending(EVALUATION_SIGNUP_COOKIE, evaluation_signup.token, 1.day)
+    track_event("guest_video_selected", provider: evaluation_signup.provider, evaluation_signup_id: evaluation_signup.id)
 
     redirect_to params[:authentication] == "login" ? new_user_session_path : new_user_registration_path
   rescue VideoSource::UnavailableVideo

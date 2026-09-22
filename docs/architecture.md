@@ -91,6 +91,31 @@ takes to drain.
 
 ## Core Architecture
 
+### Product analytics
+
+PostHog receives server-side events through `posthog-ruby` and `posthog-rails`.
+`config/initializers/posthog.rb` reads the project key from production Rails
+credentials (`posthog.api_key`), with `POSTHOG_API_KEY` as an override, and uses
+the US ingest host unless `POSTHOG_HOST` is set. Production requires a key;
+development and test boot without credentials and do not send events. Automatic
+exception capture is off to keep request data out of analytics; the app ignores
+client-supplied PostHog identity headers.
+The SDK's default request URL, IP, method, and user-agent properties are
+removed before sending; only explicitly supplied properties are retained.
+
+`ApplicationController#track_event` supplies a stable `user:<id>` distinct ID
+for signed-in users or a random session-scoped guest ID. It adds locale and
+web/native platform, catches SDK errors so analytics cannot fail requests, and
+records `$pageview` for successful HTML GETs. Page paths omit query parameters;
+admin pages, setup-token pages, Turbo frames, and prefetches are excluded.
+Explicit events cover email and social signup/signin, guest video selection, import
+requests/retries, first activity and lesson completion, review completion,
+course enrollment, saved/removed and manually added words, prospect submission
+and activation, and successful Apple subscription verification. Event properties
+use record IDs and short categorical values; they never include email,
+credentials, lesson content, or video URLs. Clarity is no longer loaded. The
+English and Spanish privacy pages describe this collection.
+
 ### Admin operations panel
 
 `/admin` is an English-language operations area using Rails views and a dedicated,

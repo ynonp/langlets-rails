@@ -132,3 +132,5 @@ gem "srt", "~> 0.1.5"
 gem "doorkeeper", "~> 5.9"
 
 gem "mcp", "~> 0.4"
+gem "posthog-ruby"
+gem "posthog-rails"

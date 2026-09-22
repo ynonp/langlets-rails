@@ -49,6 +49,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         remember_me(@user)
       end
       set_flash_message(:notice, :success, kind: "Google") if is_navigational_format?
+      track_social_auth(@user, "google")
       redirect_to after_sign_in_path_for(@user), allow_other_host: native_app? || web_oauth_origin.present?
     else
       session["devise.google_data"] = request.env["omniauth.auth"].except(:extra)
@@ -66,6 +67,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         remember_me(@user)
       end
       set_flash_message(:notice, :success, kind: "GitHub") if is_navigational_format?
+      track_social_auth(@user, "github")
       redirect_to after_sign_in_path_for(@user), allow_other_host: native_app? || web_oauth_origin.present?
     else
       Rails.logger.info request.env["omniauth.auth"]
@@ -85,6 +87,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         remember_me(@user)
       end
       set_flash_message(:notice, :success, kind: "Apple") if is_navigational_format?
+      track_social_auth(@user, "apple")
       redirect_to after_sign_in_path_for(@user), allow_other_host: native_app? || web_oauth_origin.present?
     else
       Rails.logger.warn "User not persisted: #{@user.errors.full_messages.join(', ')}"
@@ -227,6 +230,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       sign_in(@user, event: :authentication)
       remember_me(@user)
+      track_social_auth(@user, "google")
       redirect_to root_path
     else
       session["devise.google_data"] = { info: { email: identity[:email] } }
@@ -260,6 +264,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       sign_in(@user, event: :authentication)
       remember_me(@user)
+      track_social_auth(@user, "apple")
       redirect_to root_path
     else
       session["devise.apple_data"] = { info: { email: claims[:email] } }
@@ -268,6 +273,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   private
+
+  def track_social_auth(user, provider)
+    track_event("account_signed_up", { method: provider }, user: user) if user.previously_new_record?
+    track_event("account_signed_in", { method: provider }, user: user)
+  end
 
   APPLE_ISSUER = "https://appleid.apple.com"
   # Audiences allowed for native identity tokens: the iOS app's bundle id.

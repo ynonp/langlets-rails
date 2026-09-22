@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :capture_utm_source
   before_action :set_translation_language
   before_action :require_authentication_for_native_app
+  after_action :track_page_view
 
   protected
 
@@ -162,6 +163,27 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def track_event(name, properties = {}, user: current_user, **attributes)
+    return unless Rails.env.production? || Rails.env.test?
+
+    distinct_id = user ? "user:#{user.id}" : (session[:analytics_id] ||= SecureRandom.uuid)
+    PostHog.capture(
+      distinct_id: distinct_id,
+      event: name,
+      properties: properties.merge(attributes).merge(platform: native_app? ? "native" : "web", locale: I18n.locale.to_s)
+    )
+  rescue StandardError => error
+    Rails.logger.warn("PostHog capture failed: #{error.class}: #{error.message}")
+  end
+
+  def track_page_view
+    return unless request.get? && response.successful? && response.media_type == "text/html"
+    return if request.headers["Turbo-Frame"].present? || request.headers["Purpose"] == "prefetch"
+    return if controller_path.start_with?("admin/") || controller_path == "prospect_setups"
+
+    track_event("$pageview", path: request.path, page: "#{controller_path}##{action_name}")
+  end
 
   # A guest who approved a /try preview gets their admin-started import attached
   # after the first successful authentication — once. The legacy raw-URL marker

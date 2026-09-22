@@ -11,6 +11,7 @@ class TokenTranslationUsersController < ApplicationController
     record = current_user.phrase_token_users.find_or_initialize_by(phrase_token_id: token_translation_id)
     record.language = Current.translation_language
     record.save!
+    track_event("word_saved", phrase_token_id: token_translation_id) if record.previously_new_record?
     render json: { saved: true, token_translation_id: token_translation_id }
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotUnique
     render json: { saved: true, token_translation_id: token_translation_id }
@@ -18,7 +19,8 @@ class TokenTranslationUsersController < ApplicationController
 
   def destroy
     token_translation_id = params[:id].to_i
-    current_user.phrase_token_users.where(phrase_token_id: token_translation_id).destroy_all
+    removed = current_user.phrase_token_users.where(phrase_token_id: token_translation_id).destroy_all
+    track_event("word_removed", phrase_token_id: token_translation_id) if removed.any?
     render json: { saved: false, token_translation_id: token_translation_id }
   end
 end

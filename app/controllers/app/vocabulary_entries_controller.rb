@@ -104,6 +104,8 @@ module App
         translation: params[:translation]
       )
 
+      track_event("word_added_manually", language: @language.iso_name)
+
       redirect_to vocabulary_index_path, notice: "“#{params[:word].presence || 'Word'}” added"
     rescue PhraseTokenUser::InputError => error
       render_create_error(I18n.t!(error.code, scope: "app.vocabulary_entries.new.errors"))

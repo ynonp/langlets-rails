@@ -9,6 +9,7 @@ class ProspectSetupsController < ApplicationController
 
   def create
     @prospect.activate!(**params.permit(:password, :password_confirmation).to_h.symbolize_keys)
+    track_event("prospect_activated", { prospect_id: @prospect.id, course_id: @prospect.course_id }, user: @prospect.user)
     redirect_to new_user_session_path, notice: t("marketing.activated"), status: :see_other
   rescue ActiveRecord::RecordInvalid => error
     @errors = error.record.errors.full_messages

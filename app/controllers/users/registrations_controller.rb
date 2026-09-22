@@ -24,7 +24,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # selection through confirmation and the first login.
   def create
     super do |resource|
-      link_pending_evaluation_signup(resource) if resource.persisted?
+      if resource.persisted?
+        link_pending_evaluation_signup(resource)
+        track_event("account_signed_up", { method: "email" }, user: resource)
+      end
     end
   end
 

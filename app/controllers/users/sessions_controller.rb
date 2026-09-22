@@ -11,7 +11,9 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     params[resource_name][:remember_me] = '1' if params[resource_name]
-    super
+    super do |resource|
+      track_event("account_signed_in", { method: "email" }, user: resource)
+    end
   end
 
   # DELETE /resource/sign_out

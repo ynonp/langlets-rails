@@ -35,9 +35,11 @@ class ReviewLessonsController < ApplicationController
 
   def finish
     @lesson = current_user.current_review_lesson(params[:language_code])
+    was_finished = @lesson.review_finished?
     @lesson.update!(review_build_status: :finished) if @lesson.review_started?
     add_lesson_xp
     current_user.refresh_review_lesson!(@lesson.review_language)
+    track_event("review_lesson_completed", lesson_id: @lesson.id, language: @lesson.review_language.iso_name) unless was_finished
 
     @course_path = root_path
     @next_lesson = nil

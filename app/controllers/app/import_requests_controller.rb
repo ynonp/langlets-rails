@@ -99,6 +99,14 @@ module App
         client_token: params[:client_token].presence
       )
 
+      track_event("video_import_requested", {
+        provider: VideoSource.provider(params[:url]),
+        import_request_id: result.import_request&.id,
+        course_id: result.course&.id,
+        in_channel: result.in_channel?,
+        paused: result.paused?
+      })
+
       if params[:deeplink] == "1" && result.import_request && !result.in_channel? && !result.paused?
         redirect_to deeplink_status_app_import_requests_path(id: result.import_request.id)
       else
@@ -168,6 +176,8 @@ module App
       # The new request replaces the failed one — remove the old card from the
       # queue so the user doesn't see both.
       failed.destroy!
+
+      track_event("video_import_retried", import_request_id: result.import_request&.id, provider: VideoSource.provider(failed.youtube_url))
 
       redirect_to_result(result)
     rescue Credits::InsufficientCredits

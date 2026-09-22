@@ -631,6 +631,11 @@ GEM
     pg (1.6.2-x86_64-darwin)
     pg (1.6.2-x86_64-linux)
     pg (1.6.2-x86_64-linux-musl)
+    posthog-rails (3.18.6)
+      posthog-ruby (= 3.23.7)
+      railties (>= 5.2.0)
+    posthog-ruby (3.23.7)
+      concurrent-ruby (~> 1)
     pp (0.6.2)
       prettyprint
     pragmatic_segmenter (0.3.24)
@@ -914,6 +919,8 @@ DEPENDENCIES
   opentelemetry-instrumentation-all (~> 0.80.0)
   opentelemetry-instrumentation-net_http (~> 0.23.0)
   pg (~> 1.5)
+  posthog-rails
+  posthog-ruby
   propshaft
   puma (>= 5.0)
   pycall (~> 1.5)

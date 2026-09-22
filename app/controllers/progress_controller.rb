@@ -155,19 +155,23 @@ class ProgressController < ApplicationController
   
   def mark_activity_completed(activity_id)
     activity = Activity.find(activity_id)
-    ActivityUser.find_or_create_by(
+    completion = ActivityUser.find_or_create_by(
       activity: activity,
       user: current_user
     )
+    if completion.previously_new_record?
+      track_event("activity_completed", activity_id: activity.id, lesson_id: activity.lesson_id, activity_type: activity.type)
+    end
     activity
   end
   
   def mark_lesson_completed(lesson_id)
     lesson = Lesson.find(lesson_id)
-    LessonUser.find_or_create_by(
+    completion = LessonUser.find_or_create_by(
       lesson: lesson,
       user: current_user
     )
+    track_event("lesson_completed", lesson_id: lesson.id, course_id: lesson.course_id) if completion.previously_new_record?
     
     # Log lesson completion with XP and time
     active_time = params[:active_time]&.to_i || 0

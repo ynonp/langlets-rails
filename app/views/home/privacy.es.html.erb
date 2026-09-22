@@ -5,7 +5,7 @@
     </h1>
 
     <p class="text-gray-500 dark:text-gray-400 mb-6">
-      <strong class="text-gray-900 dark:text-gray-50">Última actualización:</strong> 16 de julio de 2026
+      <strong class="text-gray-900 dark:text-gray-50">Última actualización:</strong> 22 de septiembre de 2026
     </p>
 
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
@@ -59,16 +59,15 @@
       Información de análisis
     </h3>
     <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-      Usamos Microsoft Clarity, un servicio de análisis del comportamiento proporcionado por Microsoft Corporation, para entender cómo interactúan los usuarios con nuestra aplicación. Microsoft Clarity puede recopilar la siguiente información:
+      Usamos PostHog para entender cómo se utiliza Langlets. Nuestro servidor envía la siguiente información de análisis:
     </p>
     <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-4 space-y-2 ml-4">
-      <li>Información del dispositivo y navegador (tipo de navegador, sistema operativo y resolución de pantalla)</li>
-      <li>Patrones de uso e interacciones en la aplicación (clics, desplazamientos y páginas vistas)</li>
-      <li>Grabaciones de sesiones y mapas de calor de las interacciones</li>
-      <li>Dirección IP (que puede utilizarse para determinar la ubicación geográfica general)</li>
+      <li>Rutas de páginas y acciones como el registro, la finalización de lecciones, guardar palabras e importar vídeos</li>
+      <li>Idioma y si la solicitud procede de una aplicación nativa o del navegador</li>
+      <li>Un identificador aleatorio de sesión para visitantes o un identificador de cuenta para usuarios registrados</li>
     </ul>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      No enviamos tu dirección de correo ni ningún identificador de cuenta a Microsoft Clarity. También usamos Cloudflare Web Analytics, que mide el tráfico agregado de las páginas sin cookies ni técnicas de identificación por huella digital del navegador.
+      No enviamos direcciones de correo, contraseñas, URL de vídeos, texto de lecciones ni tokens de configuración a PostHog. No usamos grabaciones de sesiones ni mapas de calor. También usamos Cloudflare Web Analytics, que mide el tráfico agregado de las páginas sin cookies ni técnicas de identificación por huella digital del navegador.
     </p>
 
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
@@ -103,7 +102,8 @@
       No vendemos tu información personal ni la compartimos con fines publicitarios. Compartimos información limitada con los proveedores de servicios que permiten que la aplicación funcione:
     </p>
     <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-4 space-y-2 ml-4">
-      <li><strong class="text-gray-900 dark:text-gray-50">Microsoft</strong> — análisis de Clarity y el servicio Azure Speech utilizado para evaluar la pronunciación</li>
+      <li><strong class="text-gray-900 dark:text-gray-50">PostHog</strong> — análisis del uso del producto</li>
+      <li><strong class="text-gray-900 dark:text-gray-50">Microsoft</strong> — Azure Speech para evaluar la pronunciación</li>
       <li><strong class="text-gray-900 dark:text-gray-50">Cloudflare</strong> — distribución del tráfico y análisis web sin cookies</li>
       <li><strong class="text-gray-900 dark:text-gray-50">Apple, Google y GitHub</strong> — solo si eliges iniciar sesión con ellos y únicamente para autenticarte</li>
       <li><strong class="text-gray-900 dark:text-gray-50">YouTube</strong> — los vídeos de las lecciones se transmiten desde el reproductor integrado de YouTube, por lo que Google puede recibir tu dirección IP y establecer cookies conforme a su propia política de privacidad</li>
@@ -124,20 +124,10 @@
     </h2>
 
     <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-3">
-      Microsoft Clarity
+      PostHog
     </h3>
-    <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-      Nuestra aplicación usa Microsoft Clarity con fines de análisis. La recopilación y el uso de datos por parte de Microsoft Clarity se rigen por la Declaración de privacidad de Microsoft, disponible en:
-      <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline transition-colors duration-200">
-        https://privacy.microsoft.com/en-us/privacystatement
-      </a>
-    </p>
-
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      Puedes excluirte de la recopilación de datos de Microsoft Clarity visitando:
-      <a href="https://clarity.microsoft.com/terms" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline transition-colors duration-200">
-        https://clarity.microsoft.com/terms
-      </a>
+      PostHog procesa los eventos descritos anteriormente para ayudarnos a mejorar Langlets. Consulta la <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 underline">política de privacidad de PostHog</a> para más información.
     </p>
 
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
@@ -152,7 +142,6 @@
       <li>Eliminar tu cuenta en cualquier momento desde tu perfil mediante «Eliminar mi cuenta». Esto elimina permanentemente tu cuenta y los datos de aprendizaje asociados, incluidas las palabras guardadas, el progreso, los XP y las rachas, el contenido creado y los tokens de acceso emitidos para aplicaciones conectadas. También puedes contactarnos para que la eliminemos por ti</li>
       <li>Contactarnos para solicitar una copia de tu información personal o pedir que la corrijamos</li>
       <li>Rechazar o revocar el permiso del micrófono en los ajustes del dispositivo; esto solo desactiva la práctica de pronunciación</li>
-      <li>Excluirte de la recopilación de datos de Microsoft Clarity mediante el enlace anterior</li>
       <li>Desactivar las cookies en los ajustes del navegador</li>
     </ul>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">

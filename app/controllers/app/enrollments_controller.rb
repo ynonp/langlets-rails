@@ -13,6 +13,7 @@ module App
       enrollment = Enrollment.find_or_initialize_by(user: current_user, course: @course)
       enrollment.source = :library if enrollment.new_record?
       enrollment.save!
+      track_event("course_added_to_home", course_id: @course.id) if enrollment.previously_new_record?
 
       respond_after_enrollment
     rescue ActiveRecord::RecordNotUnique

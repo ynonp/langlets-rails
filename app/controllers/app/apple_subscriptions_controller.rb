@@ -21,6 +21,8 @@ module App
         return render json: { error: "subscription_not_active" }, status: :unprocessable_content
       end
 
+      track_event("subscription_verified", subscription_id: subscription.id)
+
       render json: { pro: true, redirect: app_pro_success_path }
     rescue ActionController::ParameterMissing, ArgumentError
       render json: { error: "invalid_transaction" }, status: :unprocessable_content
