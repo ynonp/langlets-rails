@@ -96,7 +96,8 @@ takes to drain.
 PostHog receives server-side events through `posthog-ruby` and `posthog-rails`.
 `config/initializers/posthog.rb` reads the project key from production Rails
 credentials (`posthog.api_key`), with `POSTHOG_API_KEY` as an override, and uses
-the US ingest host unless `POSTHOG_HOST` is set. A missing key disables event
+`posthog.secret_key` (or `POSTHOG_SECRET_KEY`) for authenticated server features.
+It uses the US ingest host unless `POSTHOG_HOST` is set. A missing project key disables event
 delivery in every environment without preventing the application from booting;
 development and test do not send events. Automatic
 exception capture is off to keep request data out of analytics; the app ignores
