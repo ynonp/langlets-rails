@@ -119,11 +119,21 @@ Deno.test("parseChunkTranslations validates the line count", () => {
   );
 });
 
-Deno.test("parseChunkTranslations requires a supported part of speech", () => {
+Deno.test("parseChunkTranslations requires a bracketed part of speech", () => {
   assertThrows(
     () => parseChunkTranslations("a | one", 1),
     Error,
-    "Missing or invalid part of speech",
+    "Missing part of speech",
+  );
+});
+
+Deno.test("parseChunkTranslations preserves an unknown part of speech", () => {
+  assertEquals(
+    parseChunkTranslations(
+      "auto, (La verdad que sí, nunca es linda *auto,* autoimponerse) | self- [prefix]",
+      1,
+    ),
+    ["self- [prefix]"],
   );
 });
 

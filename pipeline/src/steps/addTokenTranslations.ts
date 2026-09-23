@@ -33,24 +33,6 @@ const MAX_RETRIES = 2;
 // clip of nothing but names is not a broken run.
 export const MAX_ECHO_RATIO = 0.3;
 export const MIN_ECHO_SAMPLE = 8;
-const PARTS_OF_SPEECH = new Set([
-  "noun",
-  "proper_noun",
-  "verb",
-  "adjective",
-  "adverb",
-  "pronoun",
-  "determiner",
-  "preposition",
-  "conjunction",
-  "auxiliary",
-  "particle",
-  "interjection",
-  "numeral",
-  "punctuation",
-  "other",
-]);
-
 interface WordEntry {
   phraseIndex: number;
   wordIndex: number;
@@ -228,9 +210,11 @@ export function buildWordLine(phrase: Phrase, wordIndex: number): string {
 
 // Expects one "<word> (<context>) | <translation> [part_of_speech]" line per
 // input line, in order. Ignores any lines that don't contain "|", validates
-// the count, and treats the first supported part-of-speech tag as the end of
-// the translation. Models occasionally append a closing pipe or commentary;
-// neither belongs in the persisted learner gloss.
+// the count, and treats the first part-of-speech tag as the end of the
+// translation. The model may return a useful, more specific tag that is not in
+// our prompt vocabulary (for example, "prefix"); preserve it instead of
+// failing the whole import. Models occasionally append a closing pipe or
+// commentary; neither belongs in the persisted learner gloss.
 export function parseChunkTranslations(content: string, expectedCount: number): string[] {
   const translations = content
     .split("\n")
@@ -244,13 +228,12 @@ export function parseChunkTranslations(content: string, expectedCount: number): 
     );
   }
   return translations.map((translation, index) => {
-    for (const match of translation.matchAll(/\[([a-z_]+)\]/gi)) {
-      if (PARTS_OF_SPEECH.has(match[1].toLowerCase())) {
-        return translation.slice(0, match.index + match[0].length).trim();
-      }
+    const match = translation.match(/\[([a-z_]+)\]/i);
+    if (match?.index !== undefined) {
+      return translation.slice(0, match.index + match[0].length).trim();
     }
 
-    throw new Error(`Missing or invalid part of speech on word translation ${index + 1}`);
+    throw new Error(`Missing part of speech on word translation ${index + 1}`);
   });
 }
 

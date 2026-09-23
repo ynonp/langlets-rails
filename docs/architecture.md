@@ -1596,6 +1596,13 @@ After semantic segmentation, lesson rating, sentence translation, and token tran
 concurrently. Sentence translation persists its result under
 `data["translation_lines"][iso]`.
 
+Token translations retain the model's bracketed part-of-speech tag. The prompt
+uses the application's standard vocabulary, but a well-formed tag outside that
+vocabulary (for example, `[prefix]`) is accepted and persisted rather than
+failing the entire course. Downstream activity selectors already opt into the
+specific parts of speech they support, so an unfamiliar tag remains available
+as metadata without entering an incompatible exercise.
+
 `rate_lessons` asks Gemini 3.5 Flash Lite to score each lesson's teaching value. It makes one
 initial request and at most three retries. Rating is a quality filter, not a course-integrity
 requirement: if every attempt fails, the pipeline logs bounded provider diagnostics, stores the
