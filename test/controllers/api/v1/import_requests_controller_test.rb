@@ -132,14 +132,14 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
   test "returns 422 for a long video before creating an import" do
     Youtube::Oembed.stub(:fetch, ->(_url) { oembed_video }) do
-      Imports::VideoPreflight.stub(:fetch_duration, 1_201) do
+      Imports::VideoPreflight.stub(:fetch_duration, 1_501) do
         post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token)
       end
     end
 
     assert_response :unprocessable_entity
     assert_equal "video_too_long", response.parsed_body["error"]
-    assert_match "up to 20 minutes", response.parsed_body["error_description"]
+    assert_match "up to 25 minutes", response.parsed_body["error_description"]
     assert_equal 0, @user.import_requests.count
   end
 

@@ -6,7 +6,7 @@ This guide covers how to create a new language-learning course from a YouTube vi
 
 ## Overview
 
-New imports accept videos up to 20 minutes long. The homepage `/try` flow and
+New imports accept videos up to 25 minutes long. The homepage `/try` flow and
 the authenticated Add Video preview ask Supadata for duration metadata directly
 from Rails before an import or guest signup record is created, and immediately
 explain when a known video is too long. Import creation checks again (normally

@@ -1164,7 +1164,7 @@ A detection error is recorded on the
 provisional progress row, marks the visible request failed, and costs no
 credit.
 
-New video processing has a 20-minute duration limit. Before rendering `/try`, an Add Video preview,
+New video processing has a 25-minute duration limit. Before rendering `/try`, an Add Video preview,
 or creating any import record, `Imports::VideoPreflight` combines the provider's oEmbed availability
 check with a Rails-owned Supadata `/metadata` request. Rails owns the user-facing preflight limit and reads
 the Supadata key from `SUPADATA_KEY`, its legacy/standard `SUPADATA_API_KEY` alias, or the Rails
@@ -1174,12 +1174,12 @@ that network request; failed lookups are not cached, allowing the create request
 to retry. The current top-level `duration` response and the older
 `media.duration` shape
 are both accepted. A known long video is rejected inline or returned to the homepage with localized
-copy that states the 20-minute limit; no request, Course, guest evaluation signup, or credit
+copy that states the 25-minute limit; no request, Course, guest evaluation signup, or credit
 reservation is created. The API returns `video_too_long` with the same explanation.
 
-The pipeline retains its own 20-minute guard (`MAX_VIDEO_MINUTES` in `pipeline/src/videoDuration.ts`) before language detection, including TikTok audio
+The pipeline retains its own 25-minute guard (`MAX_VIDEO_MINUTES` in `pipeline/src/videoDuration.ts`) before language detection, including TikTok audio
 downloads, and again before extraction in `/run`, so direct calls, explicit-language imports, races,
-and retries receive defense in depth. Exactly 20 minutes is accepted. Metadata
+and retries receive defense in depth. Exactly 25 minutes is accepted. Metadata
 requests time out after 15 seconds; missing keys, lookup failures, or missing
 or invalid durations log a warning and **proceed unchecked** to preserve availability, with the later pipeline guards providing another chance to
 discover the duration. A known duration

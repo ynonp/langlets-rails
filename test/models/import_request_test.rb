@@ -8,8 +8,8 @@ require "test_helper"
 # sits in the shared record, looks retried and isn't.
 class ImportRequestTest < ActiveJob::TestCase
   test "duration rejection exposes its actionable message without pipeline diagnostics" do
-    @request.update!(status: :failed, failure_reason: "pipeline http://pipeline:8000 returned 422: Video duration limit: Please choose a video that is 20 minutes or shorter.")
-    assert_equal "Please choose a video that is 20 minutes or shorter.", @request.duration_failure_message
+    @request.update!(status: :failed, failure_reason: "pipeline http://pipeline:8000 returned 422: Video duration limit: Please choose a video that is 25 minutes or shorter.")
+    assert_equal "Please choose a video that is 25 minutes or shorter.", @request.duration_failure_message
     @request.failure_reason = "technical error"
     assert_nil @request.duration_failure_message
     @request.status = :ready

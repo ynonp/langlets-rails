@@ -15,18 +15,18 @@ module Imports
     end
 
     test "returns provider metadata for a video within the limit" do
-      result = with_duration(1199) do
+      result = with_duration(1499) do
         VideoPreflight.call(URL)
       end
 
       assert_equal @video, result.video
-      assert_equal 1199, result.duration_seconds
-      assert_equal 1200, result.maximum_duration_seconds
+      assert_equal 1499, result.duration_seconds
+      assert_equal 1500, result.maximum_duration_seconds
     end
 
     test "accepts a video exactly at the limit" do
       assert_nothing_raised do
-        with_duration(1200) do
+        with_duration(1500) do
           VideoPreflight.call(URL)
         end
       end
@@ -34,12 +34,12 @@ module Imports
 
     test "rejects a known over-limit video before import records are written" do
       error = assert_raises(VideoPreflight::TooLong) do
-        with_duration(1201) do
+        with_duration(1501) do
           VideoPreflight.call(URL)
         end
       end
 
-      assert_equal 20, error.maximum_minutes
+      assert_equal 25, error.maximum_minutes
       assert_equal 0, ImportRequest.count
     end
 
@@ -52,7 +52,7 @@ module Imports
 
       assert_equal @video, result.video
       assert_nil result.duration_seconds
-      assert_equal 1200, result.maximum_duration_seconds
+      assert_equal 1500, result.maximum_duration_seconds
     end
 
     test "does not cache a failed duration lookup" do

@@ -34,7 +34,7 @@ class TryControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_response :success
-    assert_select "[role=alert]", text: /up to 20 minutes/
+    assert_select "[role=alert]", text: /up to 25 minutes/
     assert_select "form[action=?]", guest_import_requests_path, count: 0
   end
 

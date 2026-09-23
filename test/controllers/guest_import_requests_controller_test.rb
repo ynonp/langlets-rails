@@ -19,7 +19,7 @@ class GuestImportRequestsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to root_path
-    assert_match "up to 20 minutes", flash[:alert]
+    assert_match "up to 25 minutes", flash[:alert]
     assert_equal 0, EvaluationSignup.count
     assert_equal 0, ImportRequest.count
   end

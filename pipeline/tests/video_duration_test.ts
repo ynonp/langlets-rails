@@ -32,12 +32,12 @@ Deno.test("rejects videos even a fraction of a second over the limit", async () 
         fetch: metadata(MAX_VIDEO_SECONDS + 0.1),
       }),
     Error,
-    "Please choose a video that is 20 minutes or shorter.",
+    "Please choose a video that is 25 minutes or shorter.",
   );
 });
 
 Deno.test("continues unchecked when duration is missing or unusable", async () => {
-  for (const duration of [undefined, null, 0, -1, "1201", Infinity]) {
+  for (const duration of [undefined, null, 0, -1, "1501", Infinity]) {
     await validateVideoDuration(VIDEO, { apiKey: "test-key", fetch: metadata(duration) });
   }
 });

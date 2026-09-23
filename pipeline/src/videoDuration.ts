@@ -1,5 +1,5 @@
 // Supadata metadata reports media.duration in seconds for both supported providers.
-export const MAX_VIDEO_MINUTES = 20;
+export const MAX_VIDEO_MINUTES = 25;
 export const MAX_VIDEO_SECONDS = MAX_VIDEO_MINUTES * 60;
 export const DURATION_ERROR_PREFIX = "Video duration limit: ";
 

@@ -12,7 +12,7 @@ module Imports
   # request, course, signup placeholder, or credit reservation.
   class VideoPreflight
     ENDPOINT = "https://api.supadata.ai/v1/metadata".freeze
-    MAXIMUM_DURATION_SECONDS = 20.minutes.to_i
+    MAXIMUM_DURATION_SECONDS = 25.minutes.to_i
     OPEN_TIMEOUT = 5
     READ_TIMEOUT = 10
 

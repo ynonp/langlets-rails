@@ -25,7 +25,7 @@ module App
     end
 
     test "web and native import cards show duration rejection without internal diagnostics" do
-      message = "Please choose a video that is 20 minutes or shorter."
+      message = "Please choose a video that is 25 minutes or shorter."
       @user.import_requests.create!(
         youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
         translation_language: "English", status: :failed,
@@ -199,13 +199,13 @@ module App
 
     test "a long video shows the limit inline and offers no import" do
       stub_video do
-        Imports::VideoPreflight.stub(:fetch_duration, 1_201) do
+        Imports::VideoPreflight.stub(:fetch_duration, 1_501) do
           get resolve_path(q: CANONICAL), headers: NATIVE
         end
       end
 
       assert_response :success
-      assert_match "up to 20 minutes", response.body
+      assert_match "up to 25 minutes", response.body
       assert_no_match(/Approve/, response.body)
     end
 
