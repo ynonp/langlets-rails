@@ -42,3 +42,49 @@ export function message(error: unknown): string {
 export function errorClass(error: unknown): string {
   return error instanceof Error ? error.constructor.name : typeof error;
 }
+
+const MAX_DIAGNOSTIC_CHARS = 4_000;
+
+export interface ErrorDiagnostic {
+  error_class: string;
+  error_message: string;
+  provider_status?: number;
+  provider_response?: string;
+  provider_cause?: string;
+}
+
+// AI SDK provider errors carry the useful part of a failed HTTP exchange on
+// enumerable properties, but Error#toString only prints the generic message.
+// Keep the response/cause for diagnosis without logging the request URL (the
+// Google URL can contain the API key) or the submitted prompt.
+export function errorDiagnostics(error: unknown): ErrorDiagnostic {
+  const diagnostic: ErrorDiagnostic = {
+    error_class: errorClass(error),
+    error_message: message(error),
+  };
+
+  if (!error || typeof error !== "object") return diagnostic;
+
+  const providerError = error as Record<string, unknown>;
+  if (typeof providerError.statusCode === "number") {
+    diagnostic.provider_status = providerError.statusCode;
+  }
+  if (typeof providerError.responseBody === "string") {
+    diagnostic.provider_response = truncate(providerError.responseBody);
+  }
+  if (providerError.cause !== undefined) {
+    diagnostic.provider_cause = truncate(message(providerError.cause));
+  }
+
+  return diagnostic;
+}
+
+export function formatErrorDiagnostics(error: unknown): string {
+  return JSON.stringify(errorDiagnostics(error));
+}
+
+function truncate(value: string): string {
+  return value.length <= MAX_DIAGNOSTIC_CHARS
+    ? value
+    : `${value.slice(0, MAX_DIAGNOSTIC_CHARS)}...[truncated]`;
+}

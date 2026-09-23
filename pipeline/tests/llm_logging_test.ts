@@ -1,6 +1,7 @@
 import { assert, assertEquals } from "@std/assert";
 import { generateText } from "ai";
 import { llmLoggingEnabled, sliceText, withLlmLogging } from "../src/llmLogging.ts";
+import { errorDiagnostics } from "../src/retry.ts";
 import { queuedModel } from "./helpers.ts";
 
 function captureLogs<T>(fn: () => Promise<T>): Promise<{ result: T; lines: string[] }> {
@@ -96,4 +97,22 @@ Deno.test("a failing call still logs a marker and rethrows", async () => {
   assert(threw);
   assertEquals(lines.length, 1);
   assert(lines[0].includes("<call failed:"));
+});
+
+Deno.test("provider diagnostics include the response but never the request URL", () => {
+  const error = Object.assign(new Error("Invalid JSON response"), {
+    statusCode: 200,
+    responseBody: "{not valid for the provider schema}",
+    cause: new Error("candidate missing"),
+    url: "https://example.test?key=secret",
+    requestBodyValues: { prompt: "private" },
+  });
+
+  const diagnostic = errorDiagnostics(error);
+
+  assertEquals(diagnostic.provider_status, 200);
+  assertEquals(diagnostic.provider_response, "{not valid for the provider schema}");
+  assertEquals(diagnostic.provider_cause, "candidate missing");
+  assert(!JSON.stringify(diagnostic).includes("secret"));
+  assert(!JSON.stringify(diagnostic).includes("private"));
 });

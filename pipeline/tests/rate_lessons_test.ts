@@ -1,4 +1,4 @@
-import { assertEquals, assertRejects } from "@std/assert";
+import { assertEquals } from "@std/assert";
 import { parseRatings, rateLessons } from "../src/steps/rateLessons.ts";
 import { makeCtx, queuedModel, unusedModel } from "./helpers.ts";
 
@@ -53,18 +53,42 @@ Deno.test("rateLessons is a no-op without lessons", async () => {
   assertEquals(store.data.lesson_ratings, undefined);
 });
 
-Deno.test("rateLessons retries unparsable output and records the response on failure", async () => {
-  const responses = Array(6).fill("I refuse to answer in JSON");
+Deno.test("rateLessons retries three times then retains every lesson", async () => {
+  const responses = Array(4).fill("I refuse to answer in JSON");
   const model = queuedModel(responses);
   const { ctx, store } = makeCtx({
-    data: { lessons: "# A lesson\nline" },
+    data: {
+      lessons: "# A lesson\nline\n\n# Another lesson\nline",
+      errors: [{
+        step: "rate_lessons",
+        occurred_at: "earlier",
+        error_message: "old failure",
+      }],
+    },
     models: { rateLessons: model.model },
   });
 
-  await assertRejects(() => rateLessons(ctx), Error, "No ratings parsed");
-  assertEquals(model.calls(), 6);
+  await rateLessons(ctx);
+  assertEquals(model.calls(), 4);
+  assertEquals(store.data.errors, []);
+  assertEquals(store.data.lesson_ratings, [
+    {
+      index: 1,
+      title: "A lesson",
+      score: 5,
+      reason: "Rating unavailable; lesson retained.",
+    },
+    {
+      index: 2,
+      title: "Another lesson",
+      score: 5,
+      reason: "Rating unavailable; lesson retained.",
+    },
+  ]);
 
-  const error = store.data.errors![0];
-  assertEquals(error.step, "rate_lessons");
-  assertEquals(error.agent_response, "I refuse to answer in JSON");
+  const warning = store.data.warnings![0];
+  assertEquals(warning.step, "rate_lessons");
+  assertEquals(warning.attempts, 4);
+  assertEquals(warning.agent_response, "I refuse to answer in JSON");
+  assertEquals(warning.fallback, "retained_all_lessons");
 });

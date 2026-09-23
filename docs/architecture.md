@@ -1596,6 +1596,16 @@ After semantic segmentation, lesson rating, sentence translation, and token tran
 concurrently. Sentence translation persists its result under
 `data["translation_lines"][iso]`.
 
+`rate_lessons` asks Gemini 3.5 Flash Lite to score each lesson's teaching value. It makes one
+initial request and at most three retries. Rating is a quality filter, not a course-integrity
+requirement: if every attempt fails, the pipeline logs bounded provider diagnostics, stores the
+same details under non-blocking `data["warnings"]`, and writes a score-5 fallback for every lesson
+so all generated lessons are retained. It also clears any older `rate_lessons` error, allowing a
+resumed import to finish instead of failing again on an optional filter. Provider diagnostics
+include the status, response body, and cause when the AI SDK supplies them, but deliberately omit
+request URLs and request bodies because Google URLs may contain API keys and prompts contain course
+text.
+
 Sentence translation enforces its 1:1 line mapping with explicit line numbers rather than with a
 line count. Each input line is sent as `<n>. <text>` and each output line must repeat that number;
 numbering is global across chunks, so a number identifies a line in the whole transcript. Source

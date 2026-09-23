@@ -2,7 +2,7 @@
 // parameters, and error reporting that lands in data.errors — the same shape
 // the Ruby pipeline writes today, so failed LLM responses stay inspectable.
 
-import type { LanguageRef, PipelineError, ProgressData } from "./types.ts";
+import type { LanguageRef, PipelineError, PipelineWarning, ProgressData } from "./types.ts";
 import type { ProgressStore } from "./progress.ts";
 import type { ModelRegistry } from "./models.ts";
 import type { SoundDictionary } from "./fuzzyword.ts";
@@ -10,7 +10,7 @@ import type { TranscriptResult } from "./supadata.ts";
 import type { SpeechToTextResult } from "./speechToText.ts";
 import type { DownloadedAudio } from "./audio.ts";
 import type { Alignment } from "./alignment.ts";
-import { errorClass, message } from "./retry.ts";
+import { errorDiagnostics, message } from "./retry.ts";
 
 export interface PipelineContext {
   store: ProgressStore;
@@ -60,8 +60,7 @@ export async function recordError(
   const entry: PipelineError = {
     step,
     occurred_at: new Date().toISOString(),
-    error_class: errorClass(error),
-    error_message: message(error),
+    ...errorDiagnostics(error),
     input_lines: details.input_lines ?? null,
     agent_response: details.agent_response ?? null,
     ...(details.attempts !== undefined ? { attempts: details.attempts } : {}),
@@ -71,6 +70,33 @@ export async function recordError(
     await ctx.store.append("errors", entry);
   } catch (persistError) {
     console.error(`Failed to persist ${step} failure: ${message(persistError)}`);
+  }
+}
+
+// Persist diagnostics for a quality enhancement that fell back successfully.
+// Warnings are intentionally separate from data.errors: Rails treats every
+// current error as terminal for waiting imports.
+export async function recordWarning(
+  ctx: PipelineContext,
+  step: string,
+  error: unknown,
+  fallback: string,
+  details: FailureDetails = {},
+): Promise<void> {
+  const entry: PipelineWarning = {
+    step,
+    occurred_at: new Date().toISOString(),
+    ...errorDiagnostics(error),
+    fallback,
+    input_lines: details.input_lines ?? null,
+    agent_response: details.agent_response ?? null,
+    ...(details.attempts !== undefined ? { attempts: details.attempts } : {}),
+  };
+
+  try {
+    await ctx.store.append("warnings", entry);
+  } catch (persistError) {
+    console.error(`Failed to persist ${step} warning: ${message(persistError)}`);
   }
 }
 
@@ -88,5 +114,6 @@ export function dataSummary(data: ProgressData): Record<string, unknown> {
     lesson_ratings: data.lesson_ratings?.length ?? 0,
     translations: Object.keys(data.translations ?? {}),
     errors: data.errors?.length ?? 0,
+    warnings: data.warnings?.length ?? 0,
   };
 }

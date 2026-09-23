@@ -9,6 +9,7 @@
 // On by default; set PIPELINE_LOG_LLM=0 to silence.
 
 import { type LanguageModel, wrapLanguageModel } from "ai";
+import { formatErrorDiagnostics } from "./retry.ts";
 
 // Comfortably under Deploy's per-line cap.
 const SLICE_CHARS = 1800;
@@ -43,7 +44,12 @@ export function withLlmLogging(
           logOutput(label, model.modelId, outputText(result), "response");
           return result;
         } catch (error) {
-          logOutput(label, model.modelId, `<call failed: ${error}>`, "response");
+          logOutput(
+            label,
+            model.modelId,
+            `<call failed: ${formatErrorDiagnostics(error)}>`,
+            "response",
+          );
           throw error;
         }
       },

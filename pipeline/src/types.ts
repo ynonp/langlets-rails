@@ -56,6 +56,13 @@ export interface PipelineError {
   error_message: string;
   input_lines?: string[] | null;
   agent_response?: string | null;
+  provider_status?: number;
+  provider_response?: string;
+  provider_cause?: string;
+}
+
+export interface PipelineWarning extends PipelineError {
+  fallback: string;
 }
 
 export interface ProgressData {
@@ -90,6 +97,9 @@ export interface ProgressData {
   similar_sounds?: string;
   translations?: Record<string, TranslationPayload>;
   errors?: PipelineError[];
+  // Non-blocking quality-step failures. Unlike errors, warnings never prevent
+  // Rails from finalizing an otherwise complete course.
+  warnings?: PipelineWarning[];
   // Rails may carry extra keys we don't know about; keep them intact.
   [key: string]: unknown;
 }

@@ -4,11 +4,12 @@
 import { generateText } from "ai";
 import type { LessonRating } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
-import { clearErrors, recordError } from "../context.ts";
+import { clearErrors, recordWarning } from "../context.ts";
 import { rateLessonsPrompt } from "../prompts/rateLessons.ts";
-import { withRetries } from "../retry.ts";
+import { formatErrorDiagnostics, withRetries } from "../retry.ts";
 
-const MAX_RETRIES = 5;
+// One initial call plus three retries.
+const MAX_RETRIES = 3;
 
 export async function rateLessons(ctx: PipelineContext): Promise<void> {
   // Ratings depend only on the grouping and titles, not on word timings.
@@ -45,11 +46,21 @@ export async function rateLessons(ctx: PipelineContext): Promise<void> {
     await ctx.store.set("lesson_ratings", ratings);
     await clearErrors(ctx, "rate_lessons");
   } catch (error) {
-    await recordError(ctx, "rate_lessons", error, {
+    const fallback = keepAllRatings(lessons);
+    console.error(
+      `RateLessons failed; retaining all ${fallback.length} lessons: ${
+        formatErrorDiagnostics(error)
+      }`,
+    );
+
+    // A previous failed run can leave a blocking rate_lessons error behind.
+    // Clear it before marking the optional quality step complete.
+    await clearErrors(ctx, "rate_lessons");
+    await recordWarning(ctx, "rate_lessons", error, "retained_all_lessons", {
       attempts: attempts || undefined,
       agent_response: lastResponse,
     });
-    throw error;
+    await ctx.store.set("lesson_ratings", fallback);
   }
 }
 
@@ -76,4 +87,13 @@ export function parseRatings(content: string): LessonRating[] {
   } catch {
     return [];
   }
+}
+
+function keepAllRatings(lessons: string): LessonRating[] {
+  return lessons.split("\n").filter((line) => line.startsWith("# ")).map((line, index) => ({
+    index: index + 1,
+    title: line.slice(2).trim(),
+    score: 5,
+    reason: "Rating unavailable; lesson retained.",
+  }));
 }
