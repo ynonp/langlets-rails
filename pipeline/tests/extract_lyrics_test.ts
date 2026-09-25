@@ -270,6 +270,7 @@ Deno.test("maps explicit and named clip languages to transcription codes", () =>
   assertEquals(languageCodeForTranscription("Greek"), "el");
   assertEquals(languageCodeForTranscription("Chinese"), "zh");
   assertEquals(languageCodeForTranscription("Swedish"), "sv");
+  assertEquals(languageCodeForTranscription("Russian"), "ru");
   assertEquals(languageCodeForTranscription("French", "fr-CA"), "fr-CA");
   assertEquals(languageCodeForTranscription("Unknown"), null);
 });

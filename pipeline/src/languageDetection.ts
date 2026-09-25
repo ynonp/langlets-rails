@@ -162,6 +162,7 @@ const SCRIBE_ISO_639_3_TO_1: Record<string, string> = {
   fre: "fr",
   gre: "el",
   heb: "he",
+  rus: "ru",
   spa: "es",
   swe: "sv",
 };

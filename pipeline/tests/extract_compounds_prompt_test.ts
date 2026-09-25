@@ -19,3 +19,10 @@ Deno.test("Chinese compounds preserve the complete timed-token input", () => {
   assertEquals(example.output.join(" "), example.input.replaceAll("\n", " "));
   assertStringIncludes(extractCompoundsPrompt("Chinese"), '"北京 大学"');
 });
+
+Deno.test("Russian compounds use the Russian source example", () => {
+  const example = exampleFor("Russian");
+  assertEquals(exampleFor("ru"), example);
+  assertEquals(example.output.join(" "), example.input);
+  assertStringIncludes(extractCompoundsPrompt("Russian"), '"Начальник штаба"');
+});

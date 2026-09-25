@@ -53,3 +53,10 @@ chinese:
   native_name: '中文'
   pronunciation_variant_name: 'zh-CN'
   rtl: false
+
+russian:
+  iso_name: 'ru'
+  english_name: 'Russian'
+  native_name: 'Русский'
+  pronunciation_variant_name: 'ru-RU'
+  rtl: false

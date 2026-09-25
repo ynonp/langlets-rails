@@ -298,7 +298,7 @@ en:
         continue: "Continue"
         latest_imports: "Latest imports"
         view_all: "View all"
-        no_langlets: "No langlets yet. Share any video in Spanish, French, Hebrew, Arabic or German to langlets to turn it into a language practice."
+        no_langlets: "No langlets yet. Share any video in Spanish, French, Hebrew, Arabic, German or Russian to langlets to turn it into a language practice."
       hero:
         just_imported: "JUST IMPORTED"
         start_course: "Start Course"
@@ -646,7 +646,7 @@ en:
         sign_in: "Sign in"
       hero:
         heading: "Turn any video into a language lesson"
-        supported_languages: "Supported languages: Spanish, French, Hebrew, Arabic"
+        supported_languages: "Supported languages: Spanish, French, Hebrew, Arabic, Russian"
         lead: "Free account required — building a lesson takes real processing, and your Langlets are saved to your library."
         android_download_kicker: "Download the"
         android_download_name: "Android app"

@@ -33,6 +33,7 @@ Deno.test("translatePrompt covers every configured language pair", () => {
     ["Spanish", "Hebrew"],
     ["French", "English"],
     ["French", "Hebrew"],
+    ["Russian", "English"],
   ];
 
   for (const [clip, translation] of pairs) {
@@ -108,4 +109,14 @@ Deno.test("Chinese translation fallback preserves numbered Chinese output", () =
   const prompt = translatePrompt("German", "Chinese", 3);
   assertStringIncludes(prompt, "1. 听到你的声音让我很开心");
   assertStringIncludes(prompt, "3. 而我，正慢慢地失去你");
+});
+
+Deno.test("Russian translation examples use Russian in the right direction", () => {
+  const source = translatePrompt("Russian", "English", 3);
+  assertStringIncludes(source, "1. Я так рад слышать твой голос");
+  assertStringIncludes(source, "1. It makes me so happy to hear your voice");
+
+  const target = translatePrompt("German", "Russian", 3);
+  assertStringIncludes(target, "1. Me alegra tanto oír tu voz");
+  assertStringIncludes(target, "1. Я так рад слышать твой голос");
 });

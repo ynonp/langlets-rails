@@ -145,6 +145,7 @@ Also check that the migrations created the exact records and that pipeline type-
 | `el` | Greek | Ελληνικά | No | `el-GR` | `el` | `ell`, `gre` |
 | `sv` | Swedish | Svenska | No | `sv-SE` | `sv` | `swe` |
 | `zh` | Chinese | 中文 | No | `zh-CN` | `zh` | `zho`, `chi` |
+| `ru` | Russian | Русский | No | `ru-RU` | `ru` | `rus` |
 
 ## Troubleshooting
 
@@ -167,6 +168,11 @@ pinyin dictionary with pronunciation matching and support for short words; see
 [Chinese dictionary sources and rebuilding](../../pipeline/data/CHINESE.md).
 The matching step preserves existing word boundaries and skips words with no
 usable reading or audible alternative.
+
+Russian uses `ru-RU-SvetlanaNeural` for speech and the bundled `ru-100k.txt`
+frequency dictionary for similar-sound activities. Sentence and token
+translation prompts contain Russian source and target examples; lesson grouping
+and compound extraction have Russian source examples.
 
 ## Adding an interface/native language
 

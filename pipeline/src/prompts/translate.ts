@@ -49,6 +49,10 @@ const CHINESE = `听到你的声音让我很开心，哪怕是在睡梦中
 终于，你像梦中那样旅行，寻找一个可以回去的地方
 而我，正慢慢地失去你`;
 
+const RUSSIAN = `Я так рад слышать твой голос, даже во сне
+Наконец ты путешествовал, как в своих мечтах, и искал место, куда вернуться
+А я медленно теряю тебя`;
+
 // Worked examples for the pairs we actually see in production. The exact
 // (clip, translation) pair matters far more than either language alone — a
 // model asked to translate Arabic into Hebrew and shown a Spanish->English
@@ -77,6 +81,9 @@ const examples: Record<string, Record<string, Example>> = {
     English: { input: FRENCH, output: ENGLISH },
     Hebrew: { input: FRENCH, output: HEBREW },
   },
+  Russian: {
+    English: { input: RUSSIAN, output: ENGLISH },
+  },
 };
 
 // Every pair without an exact example falls back to an example whose output
@@ -91,6 +98,7 @@ const targetExamples: Record<string, Example> = {
   Chinese: { input: SPANISH, output: CHINESE },
   Hebrew: { input: SPANISH, output: HEBREW },
   Swedish: { input: SPANISH, output: SWEDISH },
+  Russian: { input: SPANISH, output: RUSSIAN },
 };
 
 function exampleFor(

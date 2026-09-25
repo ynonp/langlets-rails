@@ -38,6 +38,7 @@ Deno.test("token translation prompt has source-to-English examples for every sup
       "German",
       "Swedish",
       "Hebrew",
+      "Russian",
     ]
   ) {
     const prompt = addTokenTranslationsPrompt(language, "English");
@@ -375,4 +376,13 @@ Deno.test("Chinese target token example contains Chinese glosses and source POS"
   const prompt = addTokenTranslationsPrompt("English", "Chinese");
   assert(prompt.includes("music (I like listening to *music*.) | 音乐 [noun]"));
   assert(!prompt.includes("| music [noun]"));
+});
+
+Deno.test("Russian token examples match the requested translation language", () => {
+  const source = addTokenTranslationsPrompt("Russian", "English");
+  assert(source.includes("не (Ты *не* хочешь меня видеть) | not [particle]"));
+
+  const target = addTokenTranslationsPrompt("English", "Russian");
+  assert(target.includes("music (I like *music*.) | музыку [noun]"));
+  assert(!target.includes("| music [noun]"));
 });

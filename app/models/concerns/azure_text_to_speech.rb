@@ -42,6 +42,8 @@ module AzureTextToSpeech
         "sv-SE-SofieNeural"
       when "zh", "zh-cn"
         "zh-CN-XiaoxiaoNeural"
+      when "ru", "ru-ru"
+        "ru-RU-SvetlanaNeural"
       else
         "en-US-AriaNeural" # Default to English if language not found
       end
@@ -70,6 +72,8 @@ module AzureTextToSpeech
         "sv-SE"
       when "zh", "zh-cn"
         "zh-CN"
+      when "ru", "ru-ru"
+        "ru-RU"
       else
         "en-US" # Default to US English
       end

@@ -38,6 +38,11 @@ vill (Du *vill* inte ha mig som jag vill ha dig älskling) |
 inte (Du vill *inte* ha mig som jag vill ha dig älskling) |
 dig (Du vill inte ha mig som jag vill ha *dig* älskling) |
 älskling (Du vill inte ha mig som jag vill ha dig *älskling*) |`,
+  Russian: `Ты (*Ты* не хочешь меня видеть) |
+не (Ты *не* хочешь меня видеть) |
+хочешь (Ты не *хочешь* меня видеть) |
+меня (Ты не хочешь *меня* видеть) |
+видеть (Ты не хочешь меня *видеть*) |`,
 };
 
 // Each worked example demonstrates the course's source language translated
@@ -82,6 +87,11 @@ vill (Du *vill* inte ha mig som jag vill ha dig älskling) | want to [auxiliary]
 inte (Du vill *inte* ha mig som jag vill ha dig älskling) | not [adverb]
 dig (Du vill inte ha mig som jag vill ha *dig* älskling) | you [pronoun]
 älskling (Du vill inte ha mig som jag vill ha dig *älskling*) | darling [noun]`,
+  Russian: `Ты (*Ты* не хочешь меня видеть) | you [pronoun]
+не (Ты *не* хочешь меня видеть) | not [particle]
+хочешь (Ты не *хочешь* меня видеть) | want [verb]
+меня (Ты не хочешь *меня* видеть) | me [pronoun]
+видеть (Ты не хочешь меня *видеть*) | to see [verb]`,
 };
 
 export function addTokenTranslationsPrompt(
@@ -178,6 +188,17 @@ music (I like listening to *music*.) |
 I (*I* like listening to music.) | 我 [pronoun]
 like (I *like* listening to music.) | 喜欢 [verb]
 music (I like listening to *music*.) | 音乐 [noun]
+`
+      : translationLanguage === "Russian"
+      ? `## Example Input (English source):
+I (*I* like music.) |
+like (I *like* music.) |
+music (I like *music*.) |
+
+## Expected Output (Russian translation):
+I (*I* like music.) | Я [pronoun]
+like (I *like* music.) | люблю [verb]
+music (I like *music*.) | музыку [noun]
 `
       : ""
   }

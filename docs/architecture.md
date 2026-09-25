@@ -3142,6 +3142,14 @@ The platform integrates audio files using Active Storage attachments on two core
 - **Format**: WAV files generated via Azure Text-to-Speech
 
 ### Language Support
+Russian (`ru`, Русский) is available as a source and translation language. The
+catalog entry is created by an irreversible data migration and included in
+seeds; the pipeline accepts `rus` from Scribe, requests `ru` captions, and uses
+the bundled Russian frequency dictionary for similar-sound activities. Sentence
+and token translation prompts have Russian source and target examples, while
+lesson grouping and compound extraction use Russian source examples. Russian is
+not an interface locale.
+
 - **English**: `en-US-AriaNeural`
 - **Spanish**: `es-ES-ElviraNeural` 
 - **French**: `fr-FR-DeniseNeural`
@@ -3151,6 +3159,7 @@ The platform integrates audio files using Active Storage attachments on two core
 - **Greek**: `el-GR-AthinaNeural`
 - **Swedish**: `sv-SE-SofieNeural`
 - **Chinese (Mandarin)**: `zh-CN-XiaoxiaoNeural`
+- **Russian**: `ru-RU-SvetlanaNeural`
 
 ### Audio Generation Process
 1. **Text Input**: Phrase or token text in source language
@@ -3478,7 +3487,7 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
   **language · lesson count** metadata (for example, **Arabic · 6 lessons**);
   compact mode changes spacing and type size, not which course facts are shown.
 
-- **Empty account state remains instructional.** If the account has no readable, published unfinished enrolled course (including an account whose courses are all complete), Home renders the localized text box beginning **"No langlets yet"** and explaining that sharing a Spanish, French, Hebrew, Arabic, or German video to Langlets creates language practice. The Latest imports Library preview may still appear alongside that account-state message; there is no first-run Create link. A course displayed in the just-imported hero still counts as unfinished, so the empty box does not appear beneath it.
+- **Empty account state remains instructional.** If the account has no readable, published unfinished enrolled course (including an account whose courses are all complete), Home renders the localized text box beginning **"No langlets yet"** and explaining that sharing a Spanish, French, Hebrew, Arabic, German, or Russian video to Langlets creates language practice. The Latest imports Library preview may still appear alongside that account-state message; there is no first-run Create link. A course displayed in the just-imported hero still counts as unfinished, so the empty box does not appear beneath it.
 
 - Native course thumbnails use the same `course_youtube_video_id` fallback as the web cards and request YouTube's `hqdefault` image. This matters for legacy courses whose `youtube_video_id` column is blank but whose `main_media_url` still contains a valid ID; using the column directly produces an empty `/vi//…` image URL.
 - **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.

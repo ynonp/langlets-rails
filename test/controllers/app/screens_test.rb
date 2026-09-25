@@ -406,7 +406,7 @@ module App
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_select "[data-testid='no-langlets']", text: /No langlets yet\. Share any video in Spanish, French, Hebrew, Arabic or German/
+      assert_select "[data-testid='no-langlets']", text: /No langlets yet\. Share any video in Spanish, French, Hebrew, Arabic, German or Russian/
       assert_select "form[action^='/app/import_requests/new']", count: 0
       assert_select "input[name='url']", count: 0
       assert_select "[data-testid='latest-imports']" do

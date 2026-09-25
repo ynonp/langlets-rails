@@ -299,7 +299,7 @@ es:
         latest_imports: Últimas importaciones
         view_all: Ver todos
         no_langlets: Aún no tienes langlets. Comparte cualquier vídeo en español,
-          francés, hebreo, árabe o alemán con Langlets para convertirlo en una práctica
+          francés, hebreo, árabe, alemán o ruso con Langlets para convertirlo en una práctica
           de idiomas.
       hero:
         just_imported: RECIÉN IMPORTADO
@@ -656,7 +656,7 @@ es:
         sign_in: Iniciar sesión
       hero:
         heading: Convierte cualquier vídeo en una lección de idiomas
-        supported_languages: 'Idiomas disponibles: español, francés, hebreo y árabe'
+        supported_languages: 'Idiomas disponibles: español, francés, hebreo, árabe y ruso'
         lead: 'Necesitas una cuenta gratuita: crear una lección requiere procesamiento
           y tus Langlets se guardan en tu biblioteca.'
         android_download_kicker: Descarga la
