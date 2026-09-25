@@ -9,5 +9,5 @@ Rails.application.config.filter_parameters += [
   # web view can only issue a GET), and `token` above already covers the other
   # half. Both are single-use and short-lived, but a request line is the one
   # place a credential survives longest, so neither belongs in a log.
-  :verifier
+  :verifier, :handoff, :google_code
 ]

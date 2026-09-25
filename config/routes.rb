@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     skip_controllers :authorized_applications
   end
   post "/oauth/register", to: "oauth/registrations#create"
+  get "/.well-known/apple-app-site-association", to: "well_known#apple_app_site_association"
   get "/.well-known/oauth-authorization-server", to: "well_known#oauth_authorization_server"
   get "/.well-known/oauth-protected-resource", to: "well_known#oauth_protected_resource"
   get "/.well-known/oauth-protected-resource/mcp", to: "well_known#oauth_protected_resource"
@@ -37,6 +38,37 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      namespace :native do
+        get "onboarding", to: "authentication#onboarding"
+        delete "imports/:id", to: "import_previews#destroy"
+        post "session", to: "authentication#create"
+        delete "session", to: "sessions#destroy"
+        post "registration", to: "authentication#register"
+        patch "password", to: "authentication#reset_password"
+        post "confirmation/verify", to: "authentication#verify_confirmation"
+        post "password", to: "authentication#recover"
+        post "confirmation", to: "authentication#confirm"
+        get "import_preview", to: "import_previews#show"
+        get "bootstrap", to: "account#show"
+        patch "account", to: "account#update"
+        delete "account", to: "account#destroy"
+        post "extension_token", to: "account#extension_token"
+        post "device", to: "account#device"
+        delete "device", to: "account#remove_device"
+        resources :courses, only: [:index, :show] do
+          get :download, on: :member
+          post :action, on: :member
+        end
+        resources :lessons, only: :show
+        get "review/:language", to: "lessons#review"
+        resources :vocabulary, only: :index
+        resources :playlists, only: [:index, :show, :create, :update, :destroy]
+        resources :invitations, only: [:index, :update]
+        resources :connections, only: [:index, :destroy]
+        resources :notifications, only: :index
+        resource :challenge, only: [:show, :update]
+        post "mutations", to: "mutations#create"
+      end
       get "vocabulary", to: "vocabulary#index"
       get "courses", to: "courses#index"
 

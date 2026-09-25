@@ -30,6 +30,8 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v4
+      - name: Test native persistence and API models
+        run: swift test --package-path langlets-ios
       - name: Build iOS simulator app and share extension
         run: >-
           xcodebuild

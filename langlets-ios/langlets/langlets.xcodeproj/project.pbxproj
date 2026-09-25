@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A10000000000000000000001 /* LangletsShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* LangletsShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F725E0B92F8AADF2002916A6 /* HotwireNative in Frameworks */ = {isa = PBXBuildFile; productRef = F725E0B82F8AADF2002916A6 /* HotwireNative */; };
 		F7907DD22F9D00AA00F47E3E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F7907DD12F9D00AA00F47E3E /* GoogleSignIn */; };
 		F7907DD42F9D00AA00F47E3E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7907DD32F9D00AA00F47E3E /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
@@ -54,6 +53,23 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				AppTabBarController.swift,
+				Auth/AuthBridgeComponent.swift,
+				Auth/AuthService.swift,
+				Bridge/AppleAuthComponent.swift,
+				Bridge/ApplePurchaseComponent.swift,
+				Bridge/AudioFeedbackComponent.swift,
+				Bridge/GoogleAuthComponent.swift,
+				Bridge/NativeTokenComponent.swift,
+				Bridge/NotificationPreferenceComponent.swift,
+				Bridge/ProgressHapticComponent.swift,
+				Bridge/PushComponent.swift,
+				Bridge/SignOutComponent.swift,
+				Bridge/TabBadgeComponent.swift,
+				Bridge/TabRefreshComponent.swift,
+				Bridge/TabVisibilityComponent.swift,
+				NavigationViewControllers.swift,
+				WebViewController.swift,
 			);
 			target = F725E08F2F8A7E94002916A6 /* langlets */;
 		};
@@ -91,7 +107,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7907DD42F9D00AA00F47E3E /* GoogleSignInSwift in Frameworks */,
-				F725E0B92F8AADF2002916A6 /* HotwireNative in Frameworks */,
 				F7907DD22F9D00AA00F47E3E /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,7 +176,6 @@
 			);
 			name = langlets;
 			packageProductDependencies = (
-				F725E0B82F8AADF2002916A6 /* HotwireNative */,
 				F7907DD12F9D00AA00F47E3E /* GoogleSignIn */,
 				F7907DD32F9D00AA00F47E3E /* GoogleSignInSwift */,
 			);
@@ -199,7 +213,6 @@
 			mainGroup = F725E0872F8A7E94002916A6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				F725E0B72F8AADF2002916A6 /* XCRemoteSwiftPackageReference "hotwire-native-ios" */,
 				F7907DD02F9D00AA00F47E3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -277,7 +290,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,7 +316,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -335,7 +346,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -368,7 +378,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -528,14 +537,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F725E0B72F8AADF2002916A6 /* XCRemoteSwiftPackageReference "hotwire-native-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hotwired/hotwire-native-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.2;
-			};
-		};
 		F7907DD02F9D00AA00F47E3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -547,11 +548,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F725E0B82F8AADF2002916A6 /* HotwireNative */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F725E0B72F8AADF2002916A6 /* XCRemoteSwiftPackageReference "hotwire-native-ios" */;
-			productName = HotwireNative;
-		};
 		F7907DD12F9D00AA00F47E3E /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F7907DD02F9D00AA00F47E3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;

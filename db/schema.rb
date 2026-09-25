@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_09_25_100200) do
+ActiveRecord::Schema[8.0].define(version: 2026_09_25_110000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -537,6 +537,17 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_25_100200) do
     t.index ["user_id"], name: "index_native_auth_handoffs_on_user_id"
   end
 
+  create_table "native_mutation_receipts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.uuid "operation_id", null: false
+    t.string "payload_digest", null: false
+    t.jsonb "result", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "operation_id"], name: "index_native_mutation_receipts_on_user_id_and_operation_id", unique: true
+    t.index ["user_id"], name: "index_native_mutation_receipts_on_user_id"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "kind", null: false
@@ -849,6 +860,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_25_100200) do
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
   add_foreign_key "native_auth_handoffs", "users"
+  add_foreign_key "native_mutation_receipts", "users", on_delete: :cascade
   add_foreign_key "notifications", "users"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"

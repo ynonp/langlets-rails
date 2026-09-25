@@ -38,7 +38,7 @@ Doorkeeper.configure do
 
   # Never defaults: importing spends the user's credits, so a client has to ask
   # for it explicitly. Used by the iOS app and its share extension.
-  optional_scopes :"imports:read", :"imports:write", :"credits:read"
+  optional_scopes :"imports:read", :"imports:write", :"credits:read", :native
 
   enforce_configured_scopes
 

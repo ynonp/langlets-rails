@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        // The token goes to the server through the bridge, not from here: this
-        // callback has no session, and the web view does.
+        // NativeStore registers this installation with the authenticated API.
         PushNotifications.shared.didRegister(deviceToken: deviceToken)
     }
 

@@ -3302,6 +3302,54 @@ The platform implements a modern, accessible authentication system with the foll
 - **Typography**: System font stack with proper scaling
 - **Responsive Design**: Mobile-first approach with breakpoint optimization
 
+### Native Swift iOS migration (September 2026)
+
+The working iOS source now boots a SwiftUI root from `SceneDelegate`; the learner
+navigation and forms are implemented in `langlets-ios/langlets/langlets/Native`.
+This migration is not yet a device-validated release. See the complete
+[screen inventory and plan](native-ios/migration-plan.md),
+[API and offline contract](native-ios/api.md),
+[OpenAPI specification](native-ios/openapi.json), and
+[implementation status / remaining parity work](native-ios/implementation-status.md).
+The Hotwire section below describes installed older iOS clients and the preserved
+web/native-shell architecture, not the new SwiftUI root.
+
+`/api/v1/native` is an additive bearer-only API with an explicit `native` OAuth
+scope. It exposes account/onboarding, authorized course and lesson downloads,
+vocabulary, playlists, notifications, challenges, invitations, connections and
+idempotent offline mutations. Existing share/import and agent APIs retain their
+contracts. Confirmed password credentials, Google server codes, or the existing
+PKCE browser handoff issue two-hour Doorkeeper sessions with refresh tokens.
+The extension receives only its existing restricted share credential. Native
+email confirmation/recovery forms use Devise and universal links backed by
+`/.well-known/apple-app-site-association`; enabling the Associated Domains
+capability in signing profiles and deploying AASA are release prerequisites.
+
+`NativeMutationReceipt` stores account-scoped UUIDs, normalized payload digests and
+results. The account lock serializes each mutation and receipt in one transaction;
+replays cannot duplicate completion/XP or custom words, and changed UUID payloads
+return 409. Native XP is server-computed. Offline practice timestamps are accepted
+within a seven-day bound, preserving practice dates across delayed sync. Course readability, private vocabulary
+sources and owned playlists are checked independently of client IDs. Course list
+ownership/enrollment/completion data is batched. `Current.translation_language`
+and I18n follow the native account preference.
+
+The client caches account-specific JSON snapshots and lesson position on a disk
+actor with atomic file writes, iOS data protection and backup exclusion. The
+persistent outbox retries on reconnect/foreground and surfaces permanent failures.
+Course bundles carry seven-day offline leases; online 404s remove revoked content.
+Saved vocabulary retains its existing independence from course access. Token audio
+is downloaded with size/checksum validation; phrase pronunciation uses iOS speech
+synthesis because the current Phrase model has no audio attachment. YouTube/TikTok
+remain online provider embeds inside a media-only WKWebView; Rails HTML is not
+used for learner navigation. On-device Speech supports pronunciation practice.
+
+All four tab destinations are native Swift views. Existing web/Android tab URLs
+and served/bundled Hotwire path configurations are unchanged. Legacy iOS bridge
+sources remain in the tree as excluded migration references. The main app target
+no longer links the Hotwire package. No production deploy or App Store
+release is implied by this source migration.
+
 ### Mobile App (Hotwire Native iOS)
 
 The iOS app is a Hotwire Native wrapper around the Rails web application. It uses WKWebView with shared cookies via `WKWebsiteDataStore.default()`, allowing seamless session sharing with Safari.

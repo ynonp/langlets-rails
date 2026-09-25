@@ -1,6 +1,13 @@
 # OAuth discovery documents for AI agents. Doorkeeper 5.9 doesn't ship an
 # RFC 8414 endpoint, so we serve both documents ourselves.
 class WellKnownController < ActionController::API
+  def apple_app_site_association
+    render json: { applinks: { apps: [], details: [ {
+      appID: "U39ZVCW9HE.com.ynonp.langlets",
+      paths: [ "/courses/*", "/daily_challenge", "/daily_practice", "/review_lessons", "/channel_invitations/*", "/users/confirmation", "/users/password/edit" ]
+    } ] } }
+  end
+
   # RFC 8414: OAuth 2.0 Authorization Server Metadata
   def oauth_authorization_server
     base = request.base_url

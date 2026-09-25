@@ -74,3 +74,13 @@ The Linux devbox can build Android, but cannot run Xcode or produce an iOS archi
   sheet. Verify the microphone permission prompt on a Spanish device.
 - Confirm that importing uses Spanish as the translation target and that an
   existing course can request its Spanish translation.
+
+## Swift migration validation
+
+The iOS source now opens SwiftUI rather than the Hotwire Navigator. Run
+`swift test --package-path langlets-ios` before the Xcode command above. The manual
+workflow includes this step. Enable Associated Domains for the existing iOS app
+identifier and refresh its provisioning profile before signing the new entitlements.
+AASA must be deployed for universal-link testing. The [migration status](../native-ios/implementation-status.md)
+is the release checklist and explicitly lists unverified behavior; a successful
+Rails test run alone does not certify this client for TestFlight.

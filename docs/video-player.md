@@ -424,3 +424,15 @@ to video playback must be checked against every player type**:
 
 If you add a new event, value, or target to `main-video-player`, audit each of
 the views listed above and update them as needed.
+
+## Swift native client
+
+The migrating iOS client uses `NativeProviderPlayer` for provider video and SwiftUI
+for the transcript/exercises. It does not execute this document's Stimulus engine.
+`NativePlayback` transports seek/pause/time, native speech handles pronunciation,
+and downloaded token audio uses AVAudioPlayer. Provider video remains online.
+Native full-course, watch, cloze, listening and pronunciation flows must be checked
+on both providers before release. The [native status](native-ios/implementation-status.md)
+records provider timing and device acceptance requirements. Inline word selection,
+pausing for pronunciation, timed highlighting and sentence-boundary pausing are
+implemented in Swift. Existing web players and Android behavior are unchanged.

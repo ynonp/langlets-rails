@@ -31,6 +31,8 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Langlets uses on-device speech recognition to help you practise pronunciation.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Langlets needs microphone access for pronunciation practice activities.</string>
 	<key>UIApplicationSceneManifest</key>
