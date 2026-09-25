@@ -71,7 +71,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
     @request.reload
     assert @request.failed?
     assert_equal "pipeline unreachable", @request.failure_reason
-    assert_equal 3, @user.reload.credit_balance, "a course that was never published was never paid for"
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "a course that was never published was never paid for"
     assert @course.reload.error?
   end
 
@@ -97,7 +97,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
 
     assert_raises(PipelineClient::Error) { run_job(raising: "boom again") }
 
-    assert_equal 3, @user.reload.credit_balance
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
   end
 
   # Everyone attached to a run fails together, and it costs all of them the same
@@ -110,7 +110,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
 
     rider_request.reload
     assert rider_request.failed?
-    assert_equal 3, rider.reload.credit_balance
+    assert_equal User::SIGNUP_CREDITS, rider.reload.credit_balance
     assert_equal 0, rider.credit_ledger_entries.import_refund.count
   end
 

@@ -40,7 +40,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "detecting", body["status"]
     assert_equal "Despacito", body["title"]
     assert_equal VIDEO_ID, body["youtube_video_id"]
-    assert_equal 3, body["credits_left"], "queued, not delivered — the credit moves when it publishes"
+    assert_equal User::SIGNUP_CREDITS, body["credits_left"], "queued, not delivered — the credit moves when it publishes"
     assert body["thumbnail_url"].present?
   end
 
@@ -71,7 +71,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_equal original_id, response.parsed_body.fetch("id")
-    assert_equal 3, response.parsed_body.fetch("credits_left")
+    assert_equal User::SIGNUP_CREDITS, response.parsed_body.fetch("credits_left")
     assert_equal 1, @user.import_requests.count
   end
 
@@ -87,9 +87,9 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_response :ok
     assert_equal "ready", response.parsed_body["status"]
     assert_equal course.slug, response.parsed_body.dig("course", "slug")
-    assert_equal 2, response.parsed_body["credits_left"]
+    assert_equal User::SIGNUP_CREDITS - 1, response.parsed_body["credits_left"]
     assert_equal course, @user.import_requests.sole.course
-    assert_equal 2, @user.reload.credit_balance
+    assert_equal User::SIGNUP_CREDITS - 1, @user.reload.credit_balance
     assert @user.default_channel.channel_items.exists?(course: course)
   end
 
@@ -107,7 +107,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "ready", response.parsed_body["status"]
     assert_equal course.slug, response.parsed_body.dig("course", "slug")
     assert_equal 0, @user.import_requests.count
-    assert_equal 3, @user.reload.credit_balance, "nothing left to publish"
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "nothing left to publish"
   end
 
   test "returns 402 when out of credits" do
@@ -127,7 +127,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :unprocessable_entity
     assert_equal "unavailable_video", response.parsed_body["error"]
-    assert_equal 3, @user.reload.credit_balance
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
   end
 
   test "returns 422 for a long video before creating an import" do
@@ -160,7 +160,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_equal "failed", request.reload.status
-    assert_equal 3, @user.reload.credit_balance
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
   end
 
   test "requires only a url and gets translation language from the user" do
@@ -228,7 +228,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     body = response.parsed_body
     assert_equal "detecting", body["status"]
     assert_equal TIKTOK_ID, body["youtube_video_id"], "the share link was resolved to a post id"
-    assert_equal 3, body["credits_left"]
+    assert_equal User::SIGNUP_CREDITS, body["credits_left"]
   end
 
   # TikTok covers can't be derived from the URL, so the value oEmbed returned is

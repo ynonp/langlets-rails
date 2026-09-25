@@ -1,0 +1,90 @@
+es:
+  daily_challenge:
+    today_eyebrow: El reto de hoy
+    today_title: Un pequeño paso hoy
+    language_names:
+      en: Inglés
+      fr: Francés
+      es: Español
+      he: Hebreo
+      de: Alemán
+      el: Griego
+      sv: Sueco
+      zh: Chino
+      ar-JO: Árabe
+    nav: Reto diario
+    eyebrow: Tus primeros cinco días
+    title: Una pequeña aventura cada día
+    intro: Elige los idiomas y la hora del recordatorio. La primera misión llegará mañana; después de cinco misiones, te recordaremos practicar cada día.
+      al día durante cinco días, desde que te unas. Puedes completar las anteriores
+      cuando quieras.
+    choose_languages: ¿Qué quieres aprender?
+    selection_hint: Elige uno o varios idiomas. Tus misiones incluirán ideas para
+      cada uno.
+    invalid_selection: Elige al menos un idioma y una hora válida.
+    reminder_time_label: ¿A qué hora quieres el recordatorio diario?
+    reminder_time_hint: Elige una hora y zona horaria. La primera misión llegará mañana a esa hora.
+    timezone_label: Tu zona horaria
+    waiting_title: Tu primera misión llega mañana
+    waiting_body: "La enviaremos el %{time}. Mientras tanto, puedes explorar Langlets."
+    no_daily_lesson: Importa un vídeo o guarda palabras para empezar tu lección diaria.
+    practice:
+      title: "Practica %{language} hoy"
+      body: Terminaste las cinco misiones iniciales. Sigue con una lección diaria.
+      open: Abrir la lección de hoy
+    invalid_languages: Elige al menos un idioma disponible.
+    reminders: ¿Cómo te recordamos tu misión?
+    reminders_hint: Estas opciones también se aplican a las otras notificaciones de
+      Langlets. Las notificaciones push están disponibles en iPhone y requieren permiso.
+      En la web o Android, elige correo electrónico. Puedes cambiarlo en tu perfil.
+    channels:
+      email: Correo electrónico
+      push: Notificación push
+    start: ¡Vamos!
+    settings: Idiomas y recordatorios
+    day: Día %{day}
+    progress:
+      one: 1 de 5 misiones completadas
+      other: '%{count} de 5 misiones completadas'
+    preview_import: Ver e importar
+    empty_catalog: Puedes elegir un video que te guste en este idioma con el enlace
+      de abajo.
+    import_cost: Las importaciones usan tus créditos habituales. Verás el coste antes
+      de confirmar.
+    own_video: Elige tu propio video
+    open_library: Abrir tu biblioteca
+    open_vocabulary: Abrir vocabulario
+    complete: ¡Lo hice!
+    completed: ¡Misión completada!
+    locked: Se desbloquea el %{date}
+    quests:
+      song:
+        title: Importa una canción
+        body: Elige una canción en un idioma que estás aprendiendo e impórtala para
+          convertir su letra en tu próximo langlet. Basta con una canción, aunque
+          hayas elegido varios idiomas.
+      vocabulary:
+        title: Guarda cuatro palabras
+        body: Abre un langlet, toca las palabras que quieres recordar y guarda cuatro
+          en tu vocabulario. Elige palabras que puedas usar en tu día a día.
+      story:
+        title: Importa un cuento corto
+        body: Elige un cuento corto en un idioma que estás aprendiendo e impórtalo.
+          Sigue a los personajes y descubre cuánto entiendes.
+      tiktok:
+        title: Importa un video de TikTok
+        body: Busca un video corto con voz clara en un idioma que estás aprendiendo.
+          Importa el enlace y convierte un momento cotidiano en práctica.
+      skim:
+        title: Aprende un langlet de una vez
+        body: Abre un langlet y mira el video. Puedes pulsar «Saltar lección» para
+          recorrer las lecciones sin hacer todos los ejercicios. Sigue la historia
+          a tu ritmo en una sola sesión.
+  notifications:
+    kinds:
+      daily_practice:
+        title: "Es hora de practicar %{language}"
+        body: Tu lección diaria está lista.
+      daily_challenge:
+        title: 'Tu reto de inicio: día %{day}'
+        body: '%{quest_title}: %{quest_body}'

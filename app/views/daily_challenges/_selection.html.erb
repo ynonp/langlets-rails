@@ -1,0 +1,37 @@
+<%= form_with url: destination, method: :post, class: "space-y-6" do %>
+  <fieldset>
+    <legend class="font-bold"><%= t("daily_challenge.reminder_time_label") %></legend>
+    <p class="my-2 text-sm"><%= t("daily_challenge.reminder_time_hint") %></p>
+    <div class="flex flex-wrap gap-3" data-controller="challenge-timezone" data-challenge-timezone-autodetect-value="<%= @challenge.nil? && session[:starter_reminder_timezone].blank? %>">
+      <%= time_field_tag :reminder_time, @reminder_time, required: true, class: "rounded-xl border border-current/30 bg-transparent px-3 py-2" %>
+      <%= select_tag :reminder_timezone, options_for_select(@timezone_options, @reminder_timezone),
+        required: true, aria: { label: t("daily_challenge.timezone_label") },
+        data: { challenge_timezone_target: "select" },
+        class: "max-w-full rounded-xl border border-current/30 bg-transparent px-3 py-2" %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend class="text-xl font-bold"><%= t("daily_challenge.choose_languages") %></legend>
+    <p class="my-3"><%= t("daily_challenge.selection_hint") %></p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      <% @languages.each do |language| %>
+        <label class="flex items-center gap-3 rounded-xl border border-current/20 p-4 cursor-pointer">
+          <%= check_box_tag "language_ids[]", language.id, @selected_language_ids.to_a.include?(language.id), id: "target_language_#{language.id}", class: "h-5 w-5" %>
+          <span><%= language.native_name %><span class="block text-xs opacity-70"><%= language.english_name %></span></span>
+        </label>
+      <% end %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend class="font-bold"><%= t("daily_challenge.reminders") %></legend>
+    <p class="my-2 text-sm"><%= t("daily_challenge.reminders_hint") %></p>
+    <%= hidden_field_tag "notification_delivery[]", "" %>
+    <% User::NOTIFICATION_DELIVERIES.each do |channel| %>
+      <label class="inline-flex items-center gap-2 me-5">
+        <%= check_box_tag "notification_delivery[]", channel, @delivery.include?(channel), id: "challenge_#{channel}" %>
+        <%= t("daily_challenge.channels.#{channel}") %>
+      </label>
+    <% end %>
+  </fieldset>
+  <%= submit_tag t("daily_challenge.start"), class: "rounded-full bg-[#C4451C] px-6 py-3 font-bold text-white cursor-pointer" %>
+<% end %>

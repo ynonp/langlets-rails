@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_09_08_080000) do
+ActiveRecord::Schema[8.0].define(version: 2026_09_25_100200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -240,6 +240,33 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_08_080000) do
     t.index ["subject_type", "subject_id"], name: "index_credit_ledger_entries_on_subject"
     t.index ["user_id", "created_at"], name: "index_credit_ledger_entries_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_credit_ledger_entries_on_user_id"
+  end
+
+  create_table "daily_challenges", force: :cascade do |t|
+    t.bigint "starter_challenge_id", null: false
+    t.integer "day", null: false
+    t.datetime "available_at", null: false
+    t.bigint "notification_id"
+    t.datetime "skipped_at"
+    t.datetime "completed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["available_at"], name: "index_daily_challenges_on_available_at", where: "((notification_id IS NULL) AND (skipped_at IS NULL))"
+    t.index ["notification_id"], name: "index_daily_challenges_on_notification_id"
+    t.index ["starter_challenge_id", "day"], name: "index_daily_challenges_on_starter_challenge_id_and_day", unique: true
+    t.index ["starter_challenge_id"], name: "index_daily_challenges_on_starter_challenge_id"
+    t.check_constraint "day >= 1 AND day <= 5", name: "daily_challenge_day_range"
+  end
+
+  create_table "daily_practice_reminders", force: :cascade do |t|
+    t.bigint "starter_challenge_id", null: false
+    t.date "local_date", null: false
+    t.bigint "notification_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notification_id"], name: "index_daily_practice_reminders_on_notification_id"
+    t.index ["starter_challenge_id", "local_date"], name: "idx_on_starter_challenge_id_local_date_c84d3951ef", unique: true
+    t.index ["starter_challenge_id"], name: "index_daily_practice_reminders_on_starter_challenge_id"
   end
 
   create_table "device_tokens", force: :cascade do |t|
@@ -673,6 +700,29 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_08_080000) do
     t.index ["phrase_id"], name: "index_similar_sounds_on_phrase_id"
   end
 
+  create_table "starter_challenge_languages", force: :cascade do |t|
+    t.bigint "starter_challenge_id", null: false
+    t.bigint "language_id", null: false
+    t.index ["language_id"], name: "index_starter_challenge_languages_on_language_id"
+    t.index ["starter_challenge_id", "language_id"], name: "idx_on_starter_challenge_id_language_id_cecd04178a", unique: true
+    t.index ["starter_challenge_id"], name: "index_starter_challenge_languages_on_starter_challenge_id"
+  end
+
+  create_table "starter_challenges", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "started_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "reminder_minute", default: 540, null: false
+    t.string "reminder_timezone", default: "UTC", null: false
+    t.date "first_challenge_on", null: false
+    t.datetime "next_practice_at", null: false
+    t.index ["next_practice_at"], name: "index_starter_challenges_on_next_practice_at"
+    t.index ["started_at"], name: "index_starter_challenges_on_started_at"
+    t.index ["user_id"], name: "index_starter_challenges_on_user_id", unique: true
+    t.check_constraint "reminder_minute >= 0 AND reminder_minute <= 1439", name: "starter_challenge_reminder_minute_range"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "product_id", null: false
@@ -774,6 +824,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_08_080000) do
   add_foreign_key "courses_playlists", "courses"
   add_foreign_key "courses_playlists", "playlists"
   add_foreign_key "credit_ledger_entries", "users"
+  add_foreign_key "daily_challenges", "notifications", on_delete: :nullify
+  add_foreign_key "daily_challenges", "starter_challenges"
+  add_foreign_key "daily_practice_reminders", "notifications", on_delete: :cascade
+  add_foreign_key "daily_practice_reminders", "starter_challenges"
   add_foreign_key "device_tokens", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
@@ -812,6 +866,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_08_080000) do
   add_foreign_key "prospects", "lessons", on_delete: :nullify
   add_foreign_key "prospects", "users", on_delete: :nullify
   add_foreign_key "similar_sounds", "phrases"
+  add_foreign_key "starter_challenge_languages", "languages"
+  add_foreign_key "starter_challenge_languages", "starter_challenges"
+  add_foreign_key "starter_challenges", "users"
   add_foreign_key "subscriptions", "users"
   add_foreign_key "token_translations", "languages"
   add_foreign_key "token_translations", "phrase_tokens"

@@ -114,7 +114,7 @@ module App
       # The sidebar states the balance and nothing else. It used to carry a
       # "Buy More" PayPal form; individual credits are no longer sold anywhere.
       assert_select "form[action*=?]", "paypal.com", count: 0
-      assert_match "3 credits left", response.body
+      assert_match "#{User::SIGNUP_CREDITS} credits left", response.body
 
       stub_video do
         post "/app/import_requests",
@@ -123,7 +123,7 @@ module App
       end
 
       assert_redirected_to gallery_path(imports: "pending")
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
       assert @user.import_requests.sole.detecting?
     end
 
@@ -212,7 +212,7 @@ module App
     test "resolving charges nothing" do
       stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
 
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
       assert_equal 0, @user.import_requests.count
     end
 
@@ -310,7 +310,7 @@ module App
       assert_match %r{/gallery\?imports=pending}, response.location
       get response.location, headers: NATIVE
       assert_select "[data-import-request-status=detecting]"
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
     end
 
     test "approving an already published video opens the course without detection" do
@@ -367,7 +367,7 @@ module App
 
       import_request = @user.import_requests.sole
       assert import_request.importing?
-      assert_equal 3, @user.reload.credit_balance, "still in flight, so still unpaid"
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "still in flight, so still unpaid"
       assert_equal CANONICAL, import_request.youtube_url
       assert_equal 1, pipeline_runs
       assert_equal CANONICAL, pipeline_arguments.sole.first.fetch(:youtubeurl)

@@ -28,7 +28,7 @@ module App
       # Landing here without an entitlement means nobody has granted it yet.
       # Showing "You're Pro!" then would be a straight lie, so go back to the
       # offer.
-      redirect_to app_pro_path if @subscription.nil?
+      redirect_to app_pro_path unless current_user.pro?
     end
 
     private

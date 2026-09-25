@@ -101,7 +101,9 @@
       "patterns": [
         "/onboarding/welcome",
         "/onboarding/video",
-        "^/try(\\?.*)?$"
+        "^/try(\\?.*)?$",
+        "/onboarding/beta",
+        "/onboarding/language"
       ],
       "properties": {
         "context": "default",

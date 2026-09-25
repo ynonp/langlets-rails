@@ -6,27 +6,27 @@ module Credits
       @user = create_user("ledger@example.com")
     end
 
-    test "a new user starts with three credits and a matching ledger entry" do
+    test "a new user starts with six credits and a matching ledger entry" do
       assert_equal User::SIGNUP_CREDITS, @user.credit_balance
 
       entry = @user.credit_ledger_entries.sole
       assert entry.signup_grant?
-      assert_equal 3, entry.amount
-      assert_equal 3, entry.balance_after
+      assert_equal 6, entry.amount
+      assert_equal 6, entry.balance_after
       assert_equal "signup:#{@user.id}", entry.idempotency_key
     end
 
     test "spend! deducts from the balance and records the entry" do
       entry = Ledger.spend!(user: @user, idempotency_key: "import:1")
 
-      assert_equal 2, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS - 1, @user.reload.credit_balance
       assert entry.import_spend?
       assert_equal(-1, entry.amount)
-      assert_equal 2, entry.balance_after
+      assert_equal User::SIGNUP_CREDITS - 1, entry.balance_after
     end
 
     test "spend! raises InsufficientCredits when the balance is empty" do
-      3.times { |i| Ledger.spend!(user: @user, idempotency_key: "import:#{i}") }
+      User::SIGNUP_CREDITS.times { |i| Ledger.spend!(user: @user, idempotency_key: "import:#{i}") }
       assert_equal 0, @user.reload.credit_balance
 
       assert_raises(InsufficientCredits) do
@@ -43,25 +43,25 @@ module Credits
       second = Ledger.spend!(user: @user, idempotency_key: "import:42")
 
       assert_equal first.id, second.id
-      assert_equal 2, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS - 1, @user.reload.credit_balance
       assert_equal 1, @user.credit_ledger_entries.import_spend.count
     end
 
     test "refund! returns the credit and is also idempotent" do
       Ledger.spend!(user: @user, idempotency_key: "import:7")
-      assert_equal 2, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS - 1, @user.reload.credit_balance
 
       Ledger.refund!(user: @user, idempotency_key: "refund:7")
       Ledger.refund!(user: @user, idempotency_key: "refund:7")
 
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
       assert_equal 1, @user.credit_ledger_entries.import_refund.count
     end
 
     test "grant! adds credits" do
       Ledger.grant!(user: @user, amount: 5, reason: :promo_grant, idempotency_key: "promo:x")
 
-      assert_equal 8, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS + 5, @user.reload.credit_balance
     end
 
     test "amount must be a positive integer" do

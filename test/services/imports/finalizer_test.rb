@@ -60,7 +60,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     enrollment = @user.enrollments.sole
     assert_equal @course, enrollment.course
     assert enrollment.imported?, "they asked for this course, so it's an import not a library add"
-    assert_equal 2, @user.reload.credit_balance, "publishing into their channel is where it is paid for"
+    assert_equal User::SIGNUP_CREDITS - 1, @user.reload.credit_balance, "publishing into their channel is where it is paid for"
   end
 
   test "a course-page translation request is finalized without publishing or charging" do
@@ -99,7 +99,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
 
     assert_equal @course, rider.enrollments.sole.course
     assert rider.enrollments.sole.imported?, "they asked for it themselves"
-    assert_equal 2, rider.reload.credit_balance
+    assert_equal User::SIGNUP_CREDITS - 1, rider.reload.credit_balance
     assert rider.default_channel.channel_items.exists?(course: @course)
   end
 
@@ -165,7 +165,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     @request.reload
     assert @request.failed?
     assert_equal "video is private", @request.failure_reason
-    assert_equal 3, @user.reload.credit_balance, "nothing published, so nothing paid"
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "nothing published, so nothing paid"
     assert @course.reload.error?
   end
 
@@ -180,7 +180,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
 
     assert @request.reload.failed?
     assert_equal "model returned no lessons", @request.failure_reason
-    assert_equal 3, @user.reload.credit_balance
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
   end
 
   # A resumed run skips the steps it already finished, so it never gets the
@@ -195,7 +195,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     finalize
 
     assert @request.reload.importing?, "an error that predates the request belongs to an earlier run"
-    assert_equal 3, @user.reload.credit_balance, "still unpublished, so still unpaid"
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "still unpublished, so still unpaid"
   end
 
   # Phrases on record mean transcription landed, whatever an older entry says.
@@ -218,7 +218,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     @request.reload
     assert @request.failed?
     assert_equal "translation data is missing", @request.failure_reason
-    assert_equal 3, @user.reload.credit_balance, "a course that never published was never charged for"
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "a course that never published was never charged for"
     assert @course.reload.error?
   end
 
@@ -261,7 +261,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
 
     assert @course.reload.published?, "still live for everyone who can pay for it"
     assert rider.reload.enrollments.exists?(course: @course)
-    assert_equal 2, rider.credit_balance
+    assert_equal User::SIGNUP_CREDITS - 1, rider.credit_balance
     assert @request.reload.failed?
   end
 

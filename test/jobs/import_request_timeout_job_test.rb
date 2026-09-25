@@ -47,7 +47,7 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
     @request.reload
     assert @request.failed?
     assert_match(/timed out/, @request.failure_reason)
-    assert_equal 3, @user.reload.credit_balance, "an import that never published was never paid for"
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "an import that never published was never paid for"
     assert @course.reload.error?
   end
 
@@ -77,7 +77,7 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
     run_job
 
     assert @request.reload.ready?
-    assert_equal 3, @user.reload.credit_balance, "already settled; this job touches nothing"
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "already settled; this job touches nothing"
   end
 
   # The last patch and the finalizer that acts on it are not atomic, so an
@@ -89,7 +89,7 @@ class ImportRequestTimeoutJobTest < ActiveJob::TestCase
 
     assert @request.reload.ready?
     assert @course.reload.published?
-    assert_equal 2, @user.reload.credit_balance, "delivered at the last moment, and paid for then"
+    assert_equal User::SIGNUP_CREDITS - 1, @user.reload.credit_balance, "delivered at the last moment, and paid for then"
   end
 
   test "a deleted import request is not an error" do

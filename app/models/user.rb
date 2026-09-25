@@ -38,6 +38,8 @@ class User < ApplicationRecord
   # Everything the app has told this user. The row is created before delivery is
   # attempted, so it is the complete history regardless of the delivery
   # preference below — see Notification.
+  has_one :starter_challenge, dependent: :destroy
+
   has_many :notifications, dependent: :delete_all
 
   # The user's own playlists. System playlists (user_id nil) are not included.
@@ -94,7 +96,7 @@ class User < ApplicationRecord
   # What every new account starts with, and — since credits stopped being sold —
   # every credit an ordinary account will ever have. Past the allowance the way
   # forward is Langlets Pro, whose imports are not metered at all.
-  SIGNUP_CREDITS = 3
+  SIGNUP_CREDITS = 6
 
   # after_create rather than after_create_commit so the user row, the balance and
   # the ledger entry all commit atomically — no window where an account exists
@@ -265,13 +267,19 @@ class User < ApplicationRecord
   # Memoised per instance because Home renders it and then the import path asks
   # again; call `reload` (or re-find the user) after a purchase, exactly as the
   # credit balance requires.
+  def self.beta_pro?
+    Rails.configuration.x.beta_pro == true
+  end
+
   def pro?
+    return true if self.class.beta_pro?
+
     return @pro if defined?(@pro)
 
     @pro = subscriptions.entitling.exists?
   end
 
-  # The subscription behind `pro?`, for screens that name the plan.
+  # A subscription behind Pro, if any. Beta access needs no subscription row.
   def pro_subscription
     subscriptions.entitling.order(expires_at: :desc).first
   end
@@ -299,7 +307,7 @@ class User < ApplicationRecord
   # How much of the signup allowance is gone — what the Pro upsell counts down.
   # Still clamped: the allowance is the only credit an account earns by itself,
   # but a console `admin_adjustment` or `promo_grant` can put more in, and
-  # "you've used 7 of 3 free imports" is nonsense.
+  # "you've used 7 of 6 free imports" is nonsense.
   def free_imports_used
     [ credit_ledger_entries.import_spend.count, SIGNUP_CREDITS ].min
   end

@@ -1,0 +1,7 @@
+<% content_for :title, t("daily_challenge.choose_languages") %>
+<div class="mx-auto max-w-2xl px-5 pt-6 pb-[max(2rem,env(safe-area-inset-bottom,1rem))]">
+  <h1 class="text-3xl font-extrabold mb-4"><%= t("daily_challenge.title") %></h1>
+  <p class="mb-6"><%= t("daily_challenge.intro") %></p>
+  <% if flash[:alert] %><p role="alert" class="mb-4"><%= flash[:alert] %></p><% end %>
+  <%= render "daily_challenges/selection", destination: onboarding_language_path %>
+</div>

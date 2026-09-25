@@ -282,12 +282,12 @@ module App
       assert_response :success
     end
 
-    test "legacy language onboarding urls redirect to Home" do
+    test "signed-in language onboarding urls redirect to the challenge" do
       reset!
       sign_in @user
 
       get onboarding_language_path(returnto: "/app"), headers: NATIVE
-      assert_redirected_to app_home_path
+      assert_redirected_to daily_challenge_path
     end
 
     # The one line this project adds to the web UI.

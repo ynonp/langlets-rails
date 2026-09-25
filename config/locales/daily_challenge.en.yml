@@ -1,0 +1,76 @@
+en:
+  daily_challenge:
+    today_eyebrow: Today’s challenge
+    today_title: One small step today
+    language_names:
+      en: English
+      fr: French
+      es: Spanish
+      he: Hebrew
+      de: German
+      el: Greek
+      sv: Swedish
+      zh: Chinese
+      ar-JO: Arabic
+    nav: Daily challenge
+    eyebrow: Your first five days
+    title: A little adventure, every day
+    intro: Choose the languages you want to learn and when you'd like a reminder. Your first quest arrives tomorrow; after five quests, we'll remind you to practice each day.
+    choose_languages: What would you like to learn?
+    selection_hint: Choose one or more languages. Your quests will include ideas for each.
+    invalid_selection: Choose at least one supported language and a valid reminder time.
+    reminder_time_label: When should we remind you each day?
+    reminder_time_hint: Pick a time and timezone. The first quest arrives tomorrow at that time.
+    timezone_label: Your timezone
+    waiting_title: Your first quest arrives tomorrow
+    waiting_body: "We’ll send it on %{time}. Until then, you can explore Langlets."
+    no_daily_lesson: Import a video or save some words to start your daily lesson.
+    practice:
+      title: "Practice %{language} today"
+      body: Your five starter quests are done. Keep going with a daily lesson.
+      open: Open today’s lesson
+    invalid_languages: Choose at least one supported language.
+    reminders: How should we remind you?
+    reminders_hint: These choices also apply to your other Langlets notifications. Push is currently available in the iPhone app and requires permission. On web or Android, choose email. You can change them anytime in your profile.
+    channels:
+      email: Email
+      push: Push notification
+    start: Let's go
+    settings: Languages and reminders
+    day: Day %{day}
+    progress:
+      one: 1 of 5 quests complete
+      other: "%{count} of 5 quests complete"
+    preview_import: Preview and import
+    empty_catalog: Bring a video you like in this language using the link below.
+    import_cost: Imports use your normal credits. You'll see the cost before confirming.
+    own_video: Choose your own video
+    open_library: Open your library
+    open_vocabulary: Open vocabulary
+    complete: I did it!
+    completed: Quest complete. Nicely done!
+    locked: "Unlocks %{date}"
+    quests:
+      song:
+        title: Import a song
+        body: Pick a song in a language you're learning. Import it to turn the lyrics into your next langlet. One song is enough, even if you chose several languages.
+      vocabulary:
+        title: Save four words
+        body: Open a langlet, tap words you want to remember, and save four to your vocabulary. Choose words you could use in real life.
+      story:
+        title: Import a short story
+        body: Pick a short story in a language you're learning and import it. Follow the characters and see how much you understand.
+      tiktok:
+        title: Import a TikTok clip
+        body: Find a short clip with clear speech in a language you're learning. Import its link and turn an everyday moment into practice.
+      skim:
+        title: Learn a langlet in one go
+        body: Open a langlet and watch the video. You can click “Skip lesson” to skim through the lessons without doing every exercise. Follow the story at your own pace in one sitting.
+  notifications:
+    kinds:
+      daily_practice:
+        title: "Time to practice %{language}"
+        body: Your daily lesson is ready.
+      daily_challenge:
+        title: "Your starter challenge: day %{day}"
+        body: "%{quest_title}: %{quest_body}"

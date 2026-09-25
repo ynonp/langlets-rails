@@ -25,6 +25,7 @@ final class PushNotifications: NSObject {
 
     /// A notification tapped before the web view was ready. Replayed on connect.
     private var pendingCourseSlug: String?
+    private var pendingChallengePath: String?
 
     var isEnabled: Bool {
         get {
@@ -142,12 +143,18 @@ final class PushNotifications: NSObject {
         guard let response = connectionOptions.notificationResponse else { return }
 
         pendingCourseSlug = courseSlug(from: response)
+        pendingChallengePath = response.notification.request.content.userInfo["url"] as? String
     }
 
     /// A slug from a tap that arrived before the navigator was ready.
     func consumePendingCourseSlug() -> String? {
         defer { pendingCourseSlug = nil }
         return pendingCourseSlug
+    }
+
+    func consumePendingChallengePath() -> String? {
+        defer { pendingChallengePath = nil }
+        return pendingChallengePath
     }
 
     private func courseSlug(from response: UNNotificationResponse) -> String? {
@@ -161,13 +168,17 @@ extension PushNotifications: UNUserNotificationCenterDelegate {
                                             didReceive response: UNNotificationResponse,
                                             withCompletionHandler completionHandler: @escaping () -> Void) {
         let slug = response.notification.request.content.userInfo["course_slug"] as? String
+        let path = response.notification.request.content.userInfo["url"] as? String
 
         Task { @MainActor in
-            if let slug {
+            if slug != nil || path != nil {
+                var payload: [String: String] = [:]
+                payload["course_slug"] = slug
+                payload["url"] = path
                 NotificationCenter.default.post(
                     name: PushNotifications.didTapNotification,
                     object: nil,
-                    userInfo: ["course_slug": slug]
+                    userInfo: payload
                 )
             }
             completionHandler()

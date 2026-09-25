@@ -2081,7 +2081,9 @@ and are not modeled as a separate capability.
 
 ### Credits
 
-New accounts get `User::SIGNUP_CREDITS` (3), and that is the whole of it —
+New accounts get `User::SIGNUP_CREDITS` (6): three imports for the starter
+challenge plus three other videos. This applies to new signup grants only;
+existing balances are unchanged. The allowance is fixed —
 **credits cannot be bought**. There is no top-up, on any platform. Past the
 signup allowance the way forward is Langlets Pro, whose imports are not metered
 at all, so credits are strictly a free-tier meter with a fixed size rather than
@@ -2166,7 +2168,7 @@ The only supported way to move credits. Two stores, written together in one tran
 Three rules, each load-bearing:
 1. **Never read-modify-write the balance.** `Ledger` spends with `UPDATE ... WHERE credit_balance >= ?`, so Postgres evaluates the guard under the row lock and exactly one of two concurrent spends wins. `user.credit_balance -= 1; user.save!` is a lost update. There's a real two-thread test for this (`test/services/credits/ledger_test.rb`).
 2. **Every call passes an `idempotency_key`** (`"publish:7:42"`, `"signup:7"`, `"apple:<transactionId>"`), uniquely indexed. GoodJob retries jobs; without the key a retry double-charges. A replay returns the original entry and moves nothing.
-3. **The ledger does not refresh the caller's in-memory user** — it moves the balance with an UPDATE. Call `user.reload` if you need the new value. (`User#grant_signup_credits` does exactly this, which is why `User.create!(...).credit_balance` correctly reads 3.)
+3. **The ledger does not refresh the caller's in-memory user** — it moves the balance with an UPDATE. Call `user.reload` if you need the new value. (`User#grant_signup_credits` does exactly this, which is why `User.create!(...).credit_balance` correctly reads 6.)
 
 `User.has_many :credit_ledger_entries, dependent: :delete_all` — **not** `:destroy`, which would trip the immutability guard and make account deletion impossible.
 
@@ -2227,10 +2229,10 @@ added later be accepted somewhere by omission.
 Credits are the free tier's meter. **Pro** is the entitlement that removes it,
 and it is deliberately *not* "a big pile of credits":
 
-- Every new account, web or native, still gets `User::SIGNUP_CREDITS` (3). Pro
-  changes nothing about signup. Since credits stopped being sold, those 3 are
+- Every new account, web or native, still gets `User::SIGNUP_CREDITS` (6). Pro
+  changes nothing about signup. Since credits stopped being sold, those 6 are
   also the *only* credits a free account will ever have.
-- **Pro is not sold anywhere any more.** `User#pro!` is the only way an
+- **Pro is not sold anywhere any more.** Outside beta, `User#pro!` is the normal way an
   account becomes Pro: a method called by the marketing email setup flow, or by
   the admin panel or console after someone reaches out on the Discord the
   `/app/pro` screen now links to (see *The Pro
@@ -2255,9 +2257,37 @@ and it is deliberately *not* "a big pile of credits":
   to ask whether they are one.
 
 `User#pro?` is the single entitlement predicate, defined as
-`subscriptions.entitling.exists?` — active status *and* an expiry still in the
-future. It is memoised per instance and cleared by `reload`, exactly like
+`User.beta_pro? || subscriptions.entitling.exists?` — beta access, or active status *and* an expiry still in the
+future. The subscription result is memoised per instance and cleared by `reload`, exactly like
 `credit_balance`, so a purchase needs a reload before the new answer shows.
+
+#### Beta Pro access
+
+While `BETA_PRO_ENABLED` is `true` (the default), **every existing and new
+account is Pro**, on web, iOS and Android. `User.beta_pro?` reads
+`config.x.beta_pro`; `User#pro?` checks it before its memoized subscription
+predicate. No subscription rows, expiry dates, backfill, or credit ledger grants
+are manufactured for beta. Imports use the existing Pro pricing and publication
+flow and consume no credits, including for accounts whose balance is zero.
+Explicit subscriptions and console grants are unchanged.
+
+Set `BETA_PRO_ENABLED=false` and restart the app/workers to end the offer.
+Subscription-based access and the retained signup credit balances then apply
+again. As with other Pro access, beta imports live in the Pro library; ending
+beta without another entitlement pauses access to that library under the existing
+rules. Test configuration defaults beta off to retain coverage of paid, expired,
+and metered states; dedicated beta tests enable it explicitly.
+
+Native acquisition now goes Welcome → `/onboarding/beta` → target languages →
+video selection → preview. The extra step explains free Pro and unlimited imports
+while beta lasts, uses safe areas, and keeps native tabs hidden. After beta ends,
+Welcome skips this step and its old URL forwards to language selection. Both
+served path configurations and bundled fallbacks include it; native tab roots
+are unchanged. The web signup welcome/confirmation email includes the same
+explanation while beta is enabled. No new bulk email is sent to existing users.
+English, Hebrew and Spanish copy is provided, with normal English fallbacks.
+The Pro status page accepts beta access without assuming a subscription row,
+and the daily challenge import hint explains that beta imports need no credits.
 
 #### The Pro library (`ProChannel`)
 
@@ -2533,6 +2563,75 @@ settles as `imported` and the question no longer arises.
 - **Why it exists**: enrollment could not be inferred. A created course is `courses.user_id`, a started course is implied by `lesson_users` — but the Library's "+ Learn this" adds a course to Home *before* any lesson is completed, so it needs a record of its own.
 - `source`: `imported` (this user asked for this course, and it was published into their own channel), `library` (added from the catalog with "+ Learn this", which enrolls without publishing and is free), `playlist`. Every `ImportRequest` now settles as `imported`: there is no free rider to tell apart, because riding along on somebody else's run still ends in a publication of your own.
 - `last_practiced_at` is Home's canonical "started" signal: "Keep it going" only includes enrollments where it is non-null, ordered newest first. Resetting a completed course to "not started" deletes the Enrollment altogether, removing it from every Home section while leaving Channel publication—and therefore Library availability—untouched. Starting a lesson again recreates the Enrollment through `LessonUser`'s completion callback.
+
+### Starter challenge and continuing daily practice
+
+`/daily_challenge` is an authenticated page shared by web and native. Web has a
+Daily challenge navigation link; native Home has a challenge card. First use
+selects one or more target languages, email/push preference, a local reminder
+time, and an IANA timezone. The `challenge-timezone` Stimulus controller selects
+the browser/device timezone when available, and the form lets the user correct
+it. The existing account-wide notification preference controls external delivery;
+an empty channel choice still leaves in-app notification history. Push is
+currently iOS APNs only. Target languages are separate from interface language.
+Native guests choose these values at `/onboarding/language`; an
+ApplicationController hook consumes session choices once after authentication.
+
+`StarterChallenge.enroll!` locks the user, validates all inputs, and creates one
+enrollment, its language joins and five `DailyChallenge` rows atomically. It
+stores `first_challenge_on` as the **next date in the selected timezone**. Day
+one unlocks at the chosen local time on that date; days two through five follow
+on consecutive local dates at that time. Local calendar scheduling preserves the
+chosen hour through daylight saving changes. Changing settings reschedules
+unnotified quests without restarting dates or erasing completion. Existing
+accounts can opt in; there is no backfill without language/time selection.
+
+The page initially says when the first quest will arrive. It then shows **one
+current-day quest**: song import, four saved words, short-story import, TikTok
+import, or watching/skimming a langlet via Skip lesson. It never lists future or
+past quest cards. Users mark the current quest complete with “I did it”; this is
+self-reported. Completion is scoped to the account and current local day and is
+idempotent. Signup credits remain six; enrollment grants none.
+
+`SendDailyChallengesJob` runs every five minutes in production and is queued on
+enrollment. Each quest tracks availability, notification, completion and a
+skipped stale reminder. Row locks and unique indexes prevent duplicate creation.
+After downtime, missed previous-day quest reminders are skipped; the worker sends
+only today's due quest. It also requeues created but unsent notifications, and
+`DeliverNotificationJob` locks the notification to avoid concurrent sends.
+`sent_at` means delivery was attempted; a crash after an external send and before
+that stamp can still cause a retry. Delivery suppresses a queued quest or
+practice reminder once its local date has passed, recording an attempt so it
+will not be retried forever.
+
+Starting the **next local date after quest five**, the same scheduler creates one
+`DailyPracticeReminder` row and `daily_practice` notification per local date at
+the user's chosen time, indefinitely. `starter_challenges.next_practice_at` is
+indexed so each scheduler run examines only due accounts; it advances to the
+next local date after delivery and is recalculated when reminder settings change.
+A unique `(starter_challenge_id, local_date)` index and the enrollment lock
+prevent duplicate daily reminders. A missed date is not backfilled. When several selected languages have saved words, reminders
+rotate between them; otherwise the selected languages rotate. The notification
+URL is `/daily_practice?language_code=…`. That authenticated route sends the user
+to the existing review lesson for that language if words are available, otherwise
+to the next incomplete lesson of an enrolled course. With no lesson yet, it
+opens the challenge page with a prompt to import a video or save words. The
+challenge page itself shows a daily lesson action after quest five.
+
+Both notification kinds use existing email/push preference delivery and render
+in the recipient's interface language. English, Hebrew and Spanish copy is
+supplied; other interface locales use the established English fallback. iOS
+routes notification taps for `/daily_challenge` and `/daily_practice` through its
+Home navigator. A native release is needed for that deep-link change. Native tab
+roots are unchanged.
+
+`config/starter_challenge_videos.yml` contains source candidates by language
+and song/story/TikTok. Cards open the normal import preview. Research provenance
+and validation limits are in [starter challenge catalog](starter-challenge-catalog.md).
+
+Tests cover local day boundaries, daylight saving changes, setting updates,
+missed scheduler runs, delivery preferences, notification copy, concurrent
+workers, lesson routing, access control, and native configuration parity.
 
 ### Notifications
 
@@ -3300,10 +3399,12 @@ outright.
 The web course UI exposes the shared Queue/Add Video flow through the user menu.
 Signed-in native users at the web root are redirected to `app_home_path`;
 signed-out native users are redirected to `/onboarding/welcome`. The native
-acquisition flow is three pages: welcome/explanation, `/onboarding/video` with
+acquisition flow during beta is five pages: welcome/explanation, `/onboarding/beta`
+for free Pro and unlimited imports, `/onboarding/language` for
+target languages, reminder channels, local time and timezone, `/onboarding/video` with
 the configured examples and paste field, then the shared `/try` preview. Only
 the preview's creation action enters the existing signup or login page. These
-three paths use the onboarding layout and keep tabs hidden. The served path
+five paths use the onboarding layout and keep tabs hidden. The served path
 configurations and both offline copies list the new paths.
 
 That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
@@ -3452,9 +3553,9 @@ falls back to All rather than leaving a selected pill with no corresponding
 option.
 
 #### Onboarding Flow
-1. **Acquisition**: Signed-out native users start at `/onboarding/welcome`, continue to `/onboarding/video`, and preview the selected video in `/try`. The flow explains the product and asks for content, not a target language.
+1. **Acquisition**: Signed-out native users start at `/onboarding/welcome`, see the unlimited-import explanation at `/onboarding/beta` while beta is enabled, choose target languages, reminder channels, local time and timezone at `/onboarding/language`, continue to `/onboarding/video`, and preview the selected video in `/try`. The language and reminder choices stay in the session until authentication, when they enroll the account in the starter challenge.
 2. **Authentication**: Building the preview enters the shared signup or login flow. The server enforces authentication for protected native app requests via `ApplicationController#require_authentication_for_native_app`.
-3. **Authenticated entry**: Signed-in native users go directly to `/app`; there is no language gate or device/account language restoration. The legacy `/onboarding/language` route redirects to `/app` so old links and cached pages fail safely.
+3. **Authenticated entry**: Signed-in native users go directly to `/app`; there is no language gate or device/account language restoration. Signed-in requests to `/onboarding/language` redirect to `/daily_challenge`, where users can enroll or edit their choices.
 4. **Native chrome**: Acquisition and authentication layouts hide the tab bar. The authenticated app layout reveals it through the tab-badge bridge.
 
 #### OAuth Authentication in Native App

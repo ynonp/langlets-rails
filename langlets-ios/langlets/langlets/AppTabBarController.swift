@@ -123,6 +123,21 @@ final class AppTabBarController: UITabBarController {
     }
 
 
+    // Accept only the local challenge destination, never a URL from an arbitrary host.
+    func showStarterChallenge(path: String) {
+        guard path.range(of: #"^/(?:daily_challenge(?:#day-[1-5])?|daily_practice(?:\?language_code=[A-Za-z-]+)?)$"#, options: .regularExpression) != nil,
+              let url = URL(string: path, relativeTo: rootURL)?.absoluteURL else { return }
+        let index = Self.homeTabIndex
+        closeProfileMenus(except: index)
+        selectedIndex = index
+        needsRoute[index] = false
+        navigators[index].route(VisitProposal(
+            url: url,
+            options: VisitOptions(action: .replace),
+            properties: ["presentation": "replace_root", "animated": false]
+        ))
+    }
+
     /// Land on Home with a freshly imported course as the hero — where a tapped
     /// "your course is ready" notification goes. HomeController reads
     /// `just_imported` and puts that course at the top with the JUST IMPORTED

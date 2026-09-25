@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "daily_practice", to: "daily_practice#show", as: :daily_practice
+  resource :daily_challenge, only: [:show, :create] do
+    post :complete
+  end
   namespace :admin do
     root "dashboard#index"
     resources :users, only: [ :index ] do
@@ -131,8 +135,10 @@ Rails.application.routes.draw do
   get "home/privacy"
   get "home/terms"
   get "support", to: "home#support"
+  get "onboarding/beta", to: "onboarding#beta", as: :onboarding_beta
   get "onboarding/welcome", to: "onboarding#welcome", as: :onboarding_welcome
   get "onboarding/video", to: "onboarding#video", as: :onboarding_video
+  post "onboarding/language", to: "onboarding#save_language", as: :save_onboarding_language
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   get "try", to: "try#show", as: :try
   get "profile", to: "profile#show", as: :profile

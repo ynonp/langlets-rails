@@ -1,0 +1,351 @@
+# Research provenance is retained per entry. Public listings are not an end-to-end import guarantee.
+- language: en
+  category: song
+  title: The Beatles — Here Comes the Sun
+  url: https://www.youtube.com/watch?v=KQetemT1sWc
+  research_url: https://www.youtube.com/watch?v=KQetemT1sWc
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: en
+  category: song
+  title: Louis Armstrong — What a Wonderful World
+  url: https://www.youtube.com/watch?v=rBrd_3VMC3c
+  research_url: https://www.youtube.com/watch?v=rBrd_3VMC3c
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: en
+  category: story
+  title: A story about Aesop
+  url: https://www.youtube.com/watch?v=KhgUrRs2zpw
+  research_url: https://www.youtube.com/watch?v=KhgUrRs2zpw
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: en
+  category: story
+  title: The Wolf and the Kid
+  url: https://www.youtube.com/watch?v=AECEvBIpJN4
+  research_url: https://www.youtube.com/watch?v=AECEvBIpJN4
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: fr
+  category: song
+  title: Gauvain Sers — Ton jean bleu
+  url: https://www.youtube.com/watch?v=ImqYzlZmLkg
+  research_url: https://www.youtube.com/watch?v=ImqYzlZmLkg
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: fr
+  category: story
+  title: Le Renard et la Cigogne
+  url: https://www.youtube.com/watch?v=XuabXPaO41U
+  research_url: https://www.youtube.com/watch?v=XuabXPaO41U
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: fr
+  category: story
+  title: Le Loup et l’Agneau
+  url: https://www.youtube.com/watch?v=WmZKb5WlR8g
+  research_url: https://www.youtube.com/watch?v=WmZKb5WlR8g
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: es
+  category: song
+  title: León Gieco — Solo le pido a Dios
+  url: https://www.youtube.com/watch?v=x5PJoP9x-Ys
+  research_url: https://www.youtube.com/watch?v=x5PJoP9x-Ys
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: es
+  category: song
+  title: Con la misma piedra
+  url: https://www.youtube.com/watch?v=BoD6NCXMKuk
+  research_url: https://www.youtube.com/watch?v=BoD6NCXMKuk
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: es
+  category: story
+  title: El león y el ratón
+  url: https://www.youtube.com/watch?v=yMSEjiGpuTo
+  research_url: https://www.youtube.com/watch?v=yMSEjiGpuTo
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: es
+  category: story
+  title: El león y el ratón — cuento animado
+  url: https://www.youtube.com/watch?v=6gQ6bPIe7lw
+  research_url: https://www.youtube.com/watch?v=6gQ6bPIe7lw
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: he
+  category: song
+  title: אריק איינשטיין — אני ואתה
+  url: https://www.youtube.com/watch?v=gP6PS-poyMg
+  research_url: https://www.youtube.com/watch?v=gP6PS-poyMg
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: he
+  category: song
+  title: אריק איינשטיין — עוף גוזל
+  url: https://www.youtube.com/watch?v=kxDBpbMDsZA
+  research_url: https://www.youtube.com/watch?v=kxDBpbMDsZA
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: he
+  category: story
+  title: האריה והעכבר — דקה של סיפור
+  url: https://www.youtube.com/watch?v=LNL_oD94dDo
+  research_url: https://www.youtube.com/watch?v=LNL_oD94dDo
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: he
+  category: story
+  title: האריה והעכבר עם רשא נאסר
+  url: https://www.youtube.com/watch?v=v2FzOOHXJuI
+  research_url: https://www.youtube.com/watch?v=v2FzOOHXJuI
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: de
+  category: song
+  title: NENA — 99 Luftballons
+  url: https://www.youtube.com/watch?v=Fpu5a0Bl8eY
+  research_url: https://www.youtube.com/watch?v=Fpu5a0Bl8eY
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: de
+  category: song
+  title: Die Gedanken sind frei
+  url: https://www.youtube.com/watch?v=YVc0wBLri1A
+  research_url: https://www.youtube.com/watch?v=YVc0wBLri1A
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: de
+  category: story
+  title: Tom und Anna im Park
+  url: https://www.youtube.com/watch?v=dVsbBpmJnDQ
+  research_url: https://www.youtube.com/watch?v=dVsbBpmJnDQ
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: de
+  category: story
+  title: Der erste Schultag
+  url: https://www.youtube.com/watch?v=084NwDzIhQA
+  research_url: https://www.youtube.com/watch?v=084NwDzIhQA
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: el
+  category: song
+  title: Νάνα Μούσχουρη — Χάρτινο το φεγγαράκι
+  url: https://www.youtube.com/watch?v=CJ7_vaT2uEQ
+  research_url: https://www.youtube.com/watch?v=CJ7_vaT2uEQ
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: el
+  category: song
+  title: Σωκράτης Μάλαμας — Πριγκιπέσσα
+  url: https://www.youtube.com/watch?v=2qCzf347xEA
+  research_url: https://www.youtube.com/watch?v=2qCzf347xEA
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: el
+  category: story
+  title: Ο λαγός και η χελώνα
+  url: https://www.youtube.com/watch?v=MqV3GElSVgk
+  research_url: https://www.youtube.com/watch?v=MqV3GElSVgk
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: sv
+  category: song
+  title: Ted Gärdestad — Sol, vind och vatten
+  url: https://www.youtube.com/watch?v=nqjJWzqvVPs
+  research_url: https://www.youtube.com/watch?v=nqjJWzqvVPs
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: sv
+  category: song
+  title: Idas sommarvisa
+  url: https://www.youtube.com/watch?v=C9lDwkruo7E
+  research_url: https://www.youtube.com/watch?v=C9lDwkruo7E
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: sv
+  category: story
+  title: En berättelse på lätt svenska
+  url: https://www.youtube.com/watch?v=wDBlsLWAAoY
+  research_url: https://www.youtube.com/watch?v=wDBlsLWAAoY
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: sv
+  category: story
+  title: Min vardag — en kort berättelse
+  url: https://www.youtube.com/watch?v=jQZ5RtRupmo
+  research_url: https://www.youtube.com/watch?v=jQZ5RtRupmo
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: zh
+  category: song
+  title: 鄧麗君 — 月亮代表我的心
+  url: https://www.youtube.com/watch?v=lFllkBtIYbI
+  research_url: https://www.youtube.com/watch?v=lFllkBtIYbI
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: zh
+  category: song
+  title: 鄧麗君 — 甜蜜蜜
+  url: https://www.youtube.com/watch?v=KrAc3uKfgQs
+  research_url: https://www.youtube.com/watch?v=KrAc3uKfgQs
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: zh
+  category: story
+  title: 一周的生活
+  url: https://www.youtube.com/watch?v=PcergOJuC1M
+  research_url: https://www.youtube.com/watch?v=PcergOJuC1M
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: zh
+  category: story
+  title: 小张的故事
+  url: https://www.youtube.com/watch?v=Zrj1yyjEnrQ
+  research_url: https://www.youtube.com/watch?v=Zrj1yyjEnrQ
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: ar-JO
+  category: song
+  title: فيروز — نسم علينا الهوى
+  url: https://www.youtube.com/watch?v=5HRvBdWaAY4
+  research_url: https://www.youtube.com/watch?v=5HRvBdWaAY4
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: ar-JO
+  category: song
+  title: فيروز — كان عنا طاحون
+  url: https://www.youtube.com/watch?v=J5CIlkrpVRI
+  research_url: https://www.youtube.com/watch?v=J5CIlkrpVRI
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: ar-JO
+  category: story
+  title: Goldilocks and the Three Bears — Levantine Arabic
+  url: https://www.youtube.com/watch?v=604-EqyH6Zs
+  research_url: https://www.youtube.com/watch?v=604-EqyH6Zs
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: ar-JO
+  category: story
+  title: The Elephant and the Ant — Levantine Arabic
+  url: https://www.youtube.com/watch?v=xElHUzhk2EE
+  research_url: https://www.youtube.com/watch?v=xElHUzhk2EE
+  reviewed_on: '2026-09-24'
+  verification: public_listing
+- language: "fr"
+  category: "song"
+  title: "Francis Cabrel — Je l’aime à mourir"
+  url: "https://www.youtube.com/watch?v=MzvlalfN0Es"
+  research_url: "https://www.youtube.com/watch?v=MzvlalfN0Es"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "el"
+  category: "story"
+  title: "Το λιοντάρι και το ποντίκι"
+  url: "https://www.youtube.com/watch?v=X3jwUvYzLvs"
+  research_url: "https://www.youtube.com/watch?v=X3jwUvYzLvs"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "en"
+  category: "tiktok"
+  title: "English vocabulary at the bank"
+  url: "https://www.tiktok.com/@englishteacherclaire/video/7650597608762658080"
+  research_url: "https://urlebird.com/user/englishteacherclaire/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "en"
+  category: "tiktok"
+  title: "Everyday English: a doggy bag"
+  url: "https://www.tiktok.com/@englishteacherclaire/video/7638709191292505376"
+  research_url: "https://urlebird.com/user/englishteacherclaire/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "fr"
+  category: "tiktok"
+  title: "Je doute ou je me doute ?"
+  url: "https://www.tiktok.com/@frenchschooltv/video/7224535774824303899"
+  research_url: "https://urlebird.com/user/frenchschooltv/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "fr"
+  category: "tiktok"
+  title: "Écrire un email en français"
+  url: "https://www.tiktok.com/@frenchschooltv/video/7327229266897259808"
+  research_url: "https://urlebird.com/user/frenchschooltv/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "de"
+  category: "tiktok"
+  title: "Deutsche Wörter buchstabieren"
+  url: "https://www.tiktok.com/@german_with_joy/video/7152439195758349574"
+  research_url: "https://urlebird.com/user/german_with_joy/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "de"
+  category: "tiktok"
+  title: "Eine lange Reise"
+  url: "https://www.tiktok.com/@german_with_joy/video/7141999020351687942"
+  research_url: "https://urlebird.com/user/german_with_joy/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "es"
+  category: "tiktok"
+  title: "Comparativos en español"
+  url: "https://www.tiktok.com/@mydailyspanish/video/7660687006183312648"
+  research_url: "https://urlebird.com/user/mydailyspanish/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "es"
+  category: "tiktok"
+  title: "Adverbios de frecuencia"
+  url: "https://www.tiktok.com/@mydailyspanish/video/7650281670255349013"
+  research_url: "https://urlebird.com/user/mydailyspanish/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "zh"
+  category: "tiktok"
+  title: "跟猫咪学中文"
+  url: "https://www.tiktok.com/@chineseteacher_nili/video/7626699264894176542"
+  research_url: "https://urlebird.com/user/chineseteacher_nili/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "zh"
+  category: "tiktok"
+  title: "猫咪中文小课堂"
+  url: "https://www.tiktok.com/@chineseteacher_nili/video/7626348904992263454"
+  research_url: "https://urlebird.com/user/chineseteacher_nili/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "sv"
+  category: "tiktok"
+  title: "Svenska för nybörjare"
+  url: "https://www.tiktok.com/@svenskamedanastasia/video/7207014905780751621"
+  research_url: "https://urlebird.com/user/svenskamedanastasia/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "he"
+  category: "tiktok"
+  title: "מה מקור המילה טוסיק?"
+  url: "https://www.tiktok.com/@yiramne/video/7216030907466075394"
+  research_url: "https://urlebird.com/user/yiramne/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "el"
+  category: "tiktok"
+  title: "Το ταξίδι μου με την ελληνική γλώσσα"
+  url: "https://www.tiktok.com/@ellisvsgreek/video/7236787722361277723"
+  research_url: "https://urlebird.com/video/my-journey-with-the-greek-language-lots-of-ups-and-downs-but-i-n-7236787722361277723/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"
+- language: "ar-JO"
+  category: "tiktok"
+  title: "أفعال الأمر — فلسطيني وأردني"
+  url: "https://www.tiktok.com/@schoolofyalla/video/7250529973163822363"
+  research_url: "https://urlebird.com/video/easy-imperative-verbs-in-arabic-palestinianjordanian-arabic-what-7250529973163822363/"
+  reviewed_on: "2026-09-24"
+  verification: "public_listing"

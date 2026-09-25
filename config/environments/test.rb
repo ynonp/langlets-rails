@@ -4,6 +4,8 @@
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
+  # Keep paid/expired/credit behavior covered; beta tests explicitly enable the offer.
+  config.x.beta_pro = false
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.x.pipeline.url = "https://pipeline.test"

@@ -222,7 +222,7 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
     assert source.detecting?
     assert source.course.pending?
     assert_equal source.course, evaluation_signup.course
-    assert_includes response.headers["Set-Cookie"], GuestImportRequestsController::EVALUATION_SIGNUP_COOKIE.to_s
+    assert_includes Array(response.headers["Set-Cookie"]).join("\n"), GuestImportRequestsController::EVALUATION_SIGNUP_COOKIE.to_s
 
     post user_registration_path, params: {
       user: {
@@ -304,13 +304,13 @@ class GuestImportFlowTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "native signed-out flow is welcome then video selection then preview" do
+  test "native signed-out flow is welcome then languages then video selection then preview" do
     get root_path, headers: NATIVE
     assert_redirected_to onboarding_welcome_path
 
     get onboarding_welcome_path, headers: NATIVE
     assert_select "[data-testid=beta-notice]", count: 0
-    assert_select "a[href=?]", onboarding_video_path
+    assert_select "a[href=?]", onboarding_language_path
 
     get onboarding_video_path, headers: NATIVE
     assert_response :success

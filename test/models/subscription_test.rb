@@ -53,11 +53,11 @@ class SubscriptionTest < ActiveSupport::TestCase
     assert_equal 2, @user.free_imports_used
 
     # An account earns nothing past the signup grant, but a console grant can
-    # put more in and push the raw spend count past it. "You've used 5 of 3 free
+    # put more in and push the raw spend count past it. "You've used more than the free allowance of
     # imports" is nonsense, so it clamps.
     Credits::Ledger.grant!(user: @user, amount: 20, reason: :promo_grant, idempotency_key: "promo:1")
-    spend!(3)
-    assert_equal 5, @user.credit_ledger_entries.import_spend.count
+    spend!(User::SIGNUP_CREDITS)
+    assert_equal User::SIGNUP_CREDITS + 2, @user.credit_ledger_entries.import_spend.count
     assert_equal User::SIGNUP_CREDITS, @user.free_imports_used
   end
 

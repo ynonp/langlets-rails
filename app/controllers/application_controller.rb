@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :capture_utm_source
   before_action :set_translation_language
   before_action :require_authentication_for_native_app
+  before_action :enroll_pending_starter_challenge
   after_action :track_page_view
 
   protected
@@ -163,6 +164,25 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def enroll_pending_starter_challenge
+    return unless current_user && session[:starter_language_ids].present?
+
+    StarterChallenge.enroll!(user: current_user, language_ids: session[:starter_language_ids],
+      delivery: session[:starter_delivery] || current_user.notification_delivery,
+      reminder_time: session[:starter_reminder_time] || "09:00",
+      reminder_timezone: session[:starter_reminder_timezone] || "UTC")
+    session.delete(:starter_language_ids)
+    session.delete(:starter_delivery)
+    session.delete(:starter_reminder_time)
+    session.delete(:starter_reminder_timezone)
+    SendDailyChallengesJob.perform_later
+  rescue ArgumentError
+    session.delete(:starter_language_ids)
+    session.delete(:starter_delivery)
+    session.delete(:starter_reminder_time)
+    session.delete(:starter_reminder_timezone)
+  end
 
   def track_event(name, properties = {}, user: current_user, **attributes)
     return unless Rails.env.production? || Rails.env.test?

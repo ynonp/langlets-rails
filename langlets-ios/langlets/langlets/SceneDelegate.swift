@@ -181,6 +181,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let slug = PushNotifications.shared.consumePendingCourseSlug() {
             tabBarController.showJustImported(courseSlug: slug)
         }
+        if let path = PushNotifications.shared.consumePendingChallengePath() {
+            tabBarController.showStarterChallenge(path: path)
+        }
         if let url = connectionOptions.urlContexts.first?.url {
             handleAppURL(url)
         }
@@ -321,8 +324,10 @@ extension SceneDelegate: NavigatorDelegate {
     /// The warm path: a notification tapped while the app was already running.
     /// The cold path is handled in scene(_:willConnectTo:) via connectionOptions.
     @objc private func notificationDidTap(_ notification: Notification) {
-        guard let slug = notification.userInfo?["course_slug"] as? String else { return }
-
-        tabBarController.showJustImported(courseSlug: slug)
+        if let slug = notification.userInfo?["course_slug"] as? String {
+            tabBarController.showJustImported(courseSlug: slug)
+        } else if let path = notification.userInfo?["url"] as? String {
+            tabBarController.showStarterChallenge(path: path)
+        }
     }
 }

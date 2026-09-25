@@ -1,0 +1,18 @@
+en:
+  beta_pro:
+    title: You're Pro during beta
+    body: While Langlets is in beta, everyone gets Langlets Pro for free, including unlimited imports. Import as many songs, stories and video clips as you like — no credits needed.
+    invitation: Try something you love and turn it into your next language lesson.
+    continue: Let's get started
+he:
+  beta_pro:
+    title: יש לכם Pro בתקופת הבטא
+    body: כל עוד לנגלטס בבטא, כולם מקבלים Langlets Pro בחינם, כולל ייבוא ללא הגבלה. אפשר לייבא כמה שירים, סיפורים וסרטונים שרוצים — בלי להשתמש בקרדיטים.
+    invitation: בחרו תוכן שאתם אוהבים והפכו אותו לשיעור הבא שלכם.
+    continue: בואו נתחיל
+es:
+  beta_pro:
+    title: Tienes Pro durante la beta
+    body: Mientras Langlets esté en beta, todo el mundo recibe Langlets Pro gratis, con importaciones ilimitadas. Importa todas las canciones, historias y vídeos que quieras, sin usar créditos.
+    invitation: Elige algo que te guste y conviértelo en tu próxima lección.
+    continue: Empecemos

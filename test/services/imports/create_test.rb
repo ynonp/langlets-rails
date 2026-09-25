@@ -24,7 +24,7 @@ module Imports
 
       assert result.created?
       assert_equal 1, result.cost, "quoted up front"
-      assert_equal 3, @user.reload.credit_balance, "and taken by Channel#publish!, not here"
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "and taken by Channel#publish!, not here"
 
       request = result.import_request
       assert request.queued?
@@ -53,7 +53,7 @@ module Imports
       assert_nil request.clip_language
       assert_nil request.course
       assert_nil request.create_song_progress.clip_language
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
     end
 
     test "automatic import reuses a published course's source language without detection" do
@@ -169,7 +169,7 @@ module Imports
       assert second.already_queued?
       assert_equal first.import_request, second.import_request
       assert_equal 1, @user.import_requests.count
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
     end
 
     # A pending course has no lessons — showing it on Home would offer a course
@@ -222,7 +222,7 @@ module Imports
         assert_raises(Youtube::Oembed::UnavailableVideo) { call_create }
       end
 
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
       assert_equal 0, @user.import_requests.count
     end
 
@@ -230,7 +230,7 @@ module Imports
       assert_raises(UnsupportedLanguage) { stub_video { call_create(clip_language: "Klingon") } }
       assert_raises(UnsupportedLanguage) { stub_video { call_create(translation_language: "Klingon") } }
 
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
     end
 
     test "defaults supported same-language imports to a useful translation" do
@@ -273,7 +273,7 @@ module Imports
       assert result.adopted?
       assert_equal published, result.course
       assert_equal 1, result.cost
-      assert_equal 2, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS - 1, @user.reload.credit_balance
       assert @user.default_channel.channel_items.exists?(course: published)
 
       request = @user.import_requests.sole
@@ -335,7 +335,7 @@ module Imports
       second = stub_video { call_create }
 
       assert second.deduped?
-      assert_equal 2, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS - 1, @user.reload.credit_balance
       assert_equal 1, @user.credit_ledger_entries.import_spend.count
     end
 
@@ -350,7 +350,7 @@ module Imports
       assert result.created?
       assert_equal published, result.course
       assert_equal 1, result.cost, "not in their channel yet, so it is an ordinary import"
-      assert_equal 3, @user.reload.credit_balance, "and charged when it publishes"
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "and charged when it publishes"
       assert published.course_translations.pending.exists?(language: @hebrew)
       assert_equal CreateSongProgress.sole, published.reload.create_song_progress
     end
@@ -389,11 +389,11 @@ module Imports
       # Sharing the run is not a discount: the rider gets their own publication
       # and pays for it when the run lands, exactly like the first importer.
       assert_equal 1, second.cost
-      assert_equal 3, @other.reload.credit_balance, "not yet — nothing has published"
+      assert_equal User::SIGNUP_CREDITS, @other.reload.credit_balance, "not yet — nothing has published"
 
       first.course.published!
       Settlement.complete!(second.import_request)
-      assert_equal 2, @other.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS - 1, @other.reload.credit_balance
     end
 
     test "a failed course does not block a fresh import" do
@@ -432,6 +432,21 @@ module Imports
     # Pro is not a stocked balance: the subscriber's course is published into a
     # ProChannel, and ProChannel#publish! does not charge. Nothing in the credit
     # machinery runs at all.
+    test "beta account with no credits imports and publishes without a subscription or charge" do
+      @user.update!(credit_balance: 0)
+      User.stub(:beta_pro?, true) do
+        assert_empty @user.subscriptions
+        result = stub_video { call_create }
+        assert result.created?
+        assert_equal 0, result.cost
+        result.course.published!
+        Settlement.complete!(result.import_request)
+        assert_equal 0, @user.reload.credit_balance
+        assert_equal 0, @user.credit_ledger_entries.import_spend.count
+        assert @user.pro_channel.channel_items.exists?(course: result.course)
+      end
+    end
+
     test "a Pro import runs without moving a credit, all the way through" do
       go_pro!
 
@@ -443,7 +458,7 @@ module Imports
       result.course.published!
       Settlement.complete!(result.import_request)
 
-      assert_equal 3, @user.reload.credit_balance, "Pro imports are not metered"
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "Pro imports are not metered"
       assert_equal 0, @user.credit_ledger_entries.import_spend.count
       assert @user.pro_channel.channel_items.exists?(course: result.course)
     end
@@ -462,7 +477,7 @@ module Imports
 
       assert result.created?
       assert_equal 0, result.cost
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
     end
 
     # Adoption is the path with no pipeline at all, so it is the one that could
@@ -475,7 +490,7 @@ module Imports
 
       assert result.adopted?
       assert_equal 0, result.cost
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
       assert @user.reload.pro_channel.channel_items.exists?(course: published)
     end
 

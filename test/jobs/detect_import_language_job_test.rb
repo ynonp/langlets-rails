@@ -41,7 +41,7 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     assert_equal "Spanish", request.clip_language
     assert_equal detected_data, request.create_song_progress.data
     assert request.course.pending?
-    assert_equal 3, @user.reload.credit_balance,
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance,
                  "nothing is charged until the course reaches their channel"
   end
 
@@ -61,7 +61,7 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     assert_equal "English", request.clip_language
     assert_equal "Hebrew", request.translation_language
     assert request.course.course_translations.exists?(language: @hebrew)
-    assert_equal 3, @user.reload.credit_balance
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
   end
 
   test "joins existing Spanish progress without discarding the detected Scribe transcript" do

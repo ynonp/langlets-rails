@@ -11,6 +11,9 @@ module Langlets
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
 
+    # All accounts receive Pro while beta is open. Disable without changing subscriptions.
+    config.x.beta_pro = ENV.fetch("BETA_PRO_ENABLED", "true") == "true"
+
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i[en he es ar de fr]
     config.i18n.fallbacks = [:en]

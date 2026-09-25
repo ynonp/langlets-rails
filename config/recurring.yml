@@ -1,4 +1,7 @@
 production:
+  send_daily_challenges:
+    class: SendDailyChallengesJob
+    schedule: every 5 minutes
   cleanup_stale_oauth_registrations:
     class: CleanupStaleOauthRegistrationsJob
     schedule: every day at 4am

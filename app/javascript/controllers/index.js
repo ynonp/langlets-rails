@@ -64,6 +64,9 @@ application.register("bridge--tab-visibility", Bridge__TabVisibilityController)
 import Bridge__WebAuthController from "./bridge/web_auth_controller"
 application.register("bridge--web-auth", Bridge__WebAuthController)
 
+import ChallengeTimezoneController from "./challenge_timezone_controller"
+application.register("challenge-timezone", ChallengeTimezoneController)
+
 import CourseMenuController from "./course_menu_controller"
 application.register("course-menu", CourseMenuController)
 

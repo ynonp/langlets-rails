@@ -34,6 +34,15 @@ module Notifications
       when :course_ready then course_ready
       when :course_failed then course_failed
       when :pro_activated then pro_activated
+      when :daily_practice
+        code = context.fetch(:language_code).to_s
+        raise ArgumentError unless Language.exists?(iso_name: code)
+        Built.new(url: "/daily_practice?language_code=#{ERB::Util.url_encode(code)}",
+          data: { "language_code" => code, "language_name" => context.fetch(:language_name).to_s })
+      when :daily_challenge
+        day = Integer(context.fetch(:day))
+        raise ArgumentError unless (1..5).cover?(day)
+        Built.new(url: "/daily_challenge#day-#{day}", data: { "day" => day })
       else raise UnknownKind, "no content for notification kind #{@kind.inspect}"
       end
     end

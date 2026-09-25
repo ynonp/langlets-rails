@@ -25,7 +25,7 @@ class Notification < ApplicationRecord
   # append-only. Renaming or repurposing one silently rewords every historical
   # row that carries it. Each needs a `notifications.kinds.<name>` entry and a
   # branch in Notifications::Content.
-  enum :kind, { course_ready: 0, course_failed: 1, pro_activated: 2 }, prefix: true
+  enum :kind, { course_ready: 0, course_failed: 1, pro_activated: 2, daily_challenge: 3, daily_practice: 4 }, prefix: true
 
   scope :unread, -> { where(read_at: nil) }
   scope :recent, -> { order(created_at: :desc) }
@@ -71,7 +71,20 @@ class Notification < ApplicationRecord
   # a title. Values the template does not mention are ignored by i18n, which is
   # what lets `course_slug` ride along in the same column for Push::Notifier.
   def interpolations(locale)
+    practice_values = if kind_daily_practice?
+      code = data["language_code"]
+      { language: I18n.t("daily_challenge.language_names.#{code}", locale: locale, default: data["language_name"]) }
+    else
+      {}
+    end
+    quest = DailyChallenge::QUESTS[data["day"].to_i - 1] if kind_daily_challenge? && (1..5).cover?(data["day"].to_i)
+    quest_values = if quest
+      { quest_title: I18n.t("daily_challenge.quests.#{quest}.title", locale: locale),
+        quest_body: I18n.t("daily_challenge.quests.#{quest}.body", locale: locale) }
+    else
+      {}
+    end
     { video_title: I18n.t("notifications.kinds.default_video_title", locale: locale) }
-      .merge((data || {}).symbolize_keys)
+      .merge((data || {}).symbolize_keys).merge(quest_values).merge(practice_values)
   end
 end

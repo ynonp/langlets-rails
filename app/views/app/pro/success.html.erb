@@ -1,7 +1,7 @@
 <% content_for :title, t(".page_title") %>
 
-<%# Reached only once Pro has actually been granted — by console for everyone
-    now, or historically by a verified Apple transaction — so this screen
+<%# Reached only while Pro is active — during beta, by console grant,
+    or through a verified Apple transaction — so this screen
     states rather than promises. It is also where an already-Pro user lands if
     they open the Pro screen again. %>
 <div class="h-dvh-safe app-sheet-pad px-8 flex flex-col items-center justify-center text-center">
@@ -11,7 +11,7 @@
 
   <h1 class="mt-6.5 text-[32px] font-extrabold tracking-[-0.02em]"><%= t(".title") %></h1>
 
-  <p class="mt-3 text-base text-app-text-2 leading-[1.5]"><%= t(".body") %></p>
+  <p class="mt-3 text-base text-app-text-2 leading-[1.5]"><%= (User.beta_pro? ? t("beta_pro.body") : t(".body")) %></p>
 
   <%= link_to t(".cta"), new_app_import_request_path,
               class: "mt-9 rounded-app-card bg-app-accent text-app-on-accent px-10 py-4 text-[17px] font-extrabold" %>
@@ -20,7 +20,7 @@
       cancel; a console grant (Apple::SubscriptionPlans.find returns nil for
       its product id) has nothing there, so the sentence would be pointing
       somewhere that isn't true. %>
-  <% if @subscription.apple_plan %>
+  <% if @subscription&.apple_plan %>
     <p class="mt-4 text-xs text-app-text-3"><%= t(".manage") %></p>
   <% end %>
 </div>

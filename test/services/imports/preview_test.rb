@@ -31,7 +31,7 @@ module Imports
     test "previewing charges nothing and writes nothing" do
       stub_video { call_preview }
 
-      assert_equal 3, @user.reload.credit_balance
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
       assert_equal 0, @user.import_requests.count
       assert_equal 0, Course.where(youtube_video_id: VIDEO_ID).count
       assert_equal 0, CreateSongProgress.count

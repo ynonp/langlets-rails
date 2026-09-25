@@ -64,6 +64,7 @@
                  data: { turbo: false } %>
     <% end %>
     <div class="<%= divider_class %>"></div>
+    <%= render "shared/menu_link", label: t("daily_challenge.nav"), path: daily_challenge_path, class_name: menu_item_class %>
     <%= render "shared/menu_link",
                label: t("shared.menu.notifications"),
                path: notifications_path,

@@ -6,23 +6,43 @@
 # attempts, and the notification is on /notifications either way.
 class DeliverNotificationJob < ApplicationJob
   queue_as :default
+  self.enqueue_after_transaction_commit = true
 
   def perform(notification_id)
     notification = Notification.find_by(id: notification_id)
     return if notification.nil?
-    return if notification.sent_at.present?
+    notification.with_lock do
+      return if notification.sent_at.present?
 
-    user = notification.user
-    deliver_email(notification) if user.email_notifications?
-    deliver_push(notification) if user.push_notifications?
+      unless reminder_current?(notification)
+        notification.update_columns(sent_at: Time.zone.now, updated_at: Time.zone.now)
+        return
+      end
 
-    # Stamped even when a channel failed, and even when the user turned both of
-    # them off: this is the last word on "we tried", and a user who wants
-    # neither should not accumulate work that retries forever.
-    notification.update_columns(sent_at: Time.zone.now, updated_at: Time.zone.now)
+      user = notification.user
+      deliver_email(notification) if user.email_notifications?
+      deliver_push(notification) if user.push_notifications?
+
+      # Stamped even when a channel failed, and even when the user turned both of
+      # them off: this is the last word on "we tried", and a user who wants
+      # neither should not accumulate work that retries forever.
+      notification.update_columns(sent_at: Time.zone.now, updated_at: Time.zone.now)
+    end
   end
 
   private
+
+  def reminder_current?(notification)
+    if notification.kind_daily_challenge?
+      DailyChallenge.find_by(notification_id: notification.id)&.unlocked? == true
+    elsif notification.kind_daily_practice?
+      reminder = DailyPracticeReminder.find_by(notification_id: notification.id)
+      reminder && reminder.local_date == reminder.starter_challenge.local_today
+    else
+      true
+    end
+  end
+
 
   # Neither channel may take the other down with it: a mail server refusing
   # connections must not cost the user their push, and vice versa.

@@ -7,6 +7,11 @@
       thing on this screen that blocks the user from doing anything new. %>
   <%= render "app/home/pro_card" %>
 
+  <%= link_to daily_challenge_path, class: "block rounded-app-card bg-app-card app-hairline p-5", data: { testid: "starter-challenge-link" } do %>
+    <p class="text-app-accent font-bold"><%= t("daily_challenge.nav") %> →</p>
+    <p class="mt-1 text-app-text-2 text-sm"><%= t("daily_challenge.title") %></p>
+  <% end %>
+
   <%= render "app/shared/daily_vocab_card" %>
 
   <%# No paste box here. Pasting a YouTube or TikTok link belongs to the Create
