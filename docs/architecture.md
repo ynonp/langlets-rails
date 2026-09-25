@@ -2571,8 +2571,11 @@ Daily challenge navigation link; native Home has a challenge card. First use
 selects one or more target languages, email/push preference, a local reminder
 time, and an IANA timezone. The `challenge-timezone` Stimulus controller selects
 the browser/device timezone when available, and the form lets the user correct
-it. The existing account-wide notification preference controls external delivery;
-an empty channel choice still leaves in-app notification history. Push is
+it. The reminder controls stay within the page width on narrow native screens.
+Pending quest times shown on the page use the challenge's selected timezone,
+matching the local time used to schedule delivery. The existing account-wide
+notification preference controls external delivery; an empty channel choice
+still leaves in-app notification history. Push is
 currently iOS APNs only. Target languages are separate from interface language.
 Native guests choose these values at `/onboarding/language`; an
 ApplicationController hook consumes session choices once after authentication.

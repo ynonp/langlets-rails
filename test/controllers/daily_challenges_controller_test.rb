@@ -44,6 +44,18 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     assert_select '#day-2 form[action*="complete"]', 0
   end
 
+  test "waiting message uses the chosen reminder timezone" do
+    travel_to Time.utc(2026, 9, 25, 12) do
+      join_challenge(reminder_time: "18:00", reminder_timezone: "Asia/Jerusalem")
+      challenge = @user.reload.starter_challenge
+      assert_equal Time.utc(2026, 9, 26, 15), challenge.pending_quest.available_at
+
+      get daily_challenge_path
+      assert_select '[data-testid="challenge-waiting"]', text: /18:00/
+      assert_select '[data-testid="challenge-waiting"]', text: /15:00/, count: 0
+    end
+  end
+
   test "multiple languages appear when selected" do
     join_challenge(language_ids: [languages(:french).id, languages(:spanish).id])
     travel_to @user.reload.starter_challenge.daily_challenges.find_by!(day: 1).available_at + 1.second

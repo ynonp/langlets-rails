@@ -23,7 +23,7 @@
     <% elsif @current_quest.nil? %>
       <section class="rounded-2xl border border-current/20 p-5 sm:p-7" data-testid="challenge-waiting">
         <h2 class="text-2xl font-bold"><%= t("daily_challenge.waiting_title") %></h2>
-        <p class="mt-4"><%= t("daily_challenge.waiting_body", time: l(@challenge.pending_quest.available_at, format: :long)) %></p>
+        <p class="mt-4"><%= t("daily_challenge.waiting_body", time: l(@challenge.pending_quest.available_at.in_time_zone(@challenge.time_zone), format: :long)) %></p>
       </section>
     <% else %>
       <% quest = @current_quest %>
@@ -64,7 +64,7 @@
               <%= button_to t("daily_challenge.complete"), complete_daily_challenge_path(day: quest.day), class: "mt-6 rounded-full bg-[#C4451C] text-white px-6 py-3 font-bold" %>
             <% end %>
           <% else %>
-            <p class="mt-3 text-sm"><%= t("daily_challenge.locked", date: l(quest.available_at, format: :long)) %></p>
+            <p class="mt-3 text-sm"><%= t("daily_challenge.locked", date: l(quest.available_at.in_time_zone(@challenge.time_zone), format: :long)) %></p>
           <% end %>
         </section>
       <% end %>

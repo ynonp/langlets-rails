@@ -1,13 +1,13 @@
 <%= form_with url: destination, method: :post, class: "space-y-6" do %>
-  <fieldset>
+  <fieldset class="min-w-0">
     <legend class="font-bold"><%= t("daily_challenge.reminder_time_label") %></legend>
     <p class="my-2 text-sm"><%= t("daily_challenge.reminder_time_hint") %></p>
-    <div class="flex flex-wrap gap-3" data-controller="challenge-timezone" data-challenge-timezone-autodetect-value="<%= @challenge.nil? && session[:starter_reminder_timezone].blank? %>">
-      <%= time_field_tag :reminder_time, @reminder_time, required: true, class: "rounded-xl border border-current/30 bg-transparent px-3 py-2" %>
+    <div class="grid min-w-0 grid-cols-1 gap-3" data-controller="challenge-timezone" data-challenge-timezone-autodetect-value="<%= @challenge.nil? && session[:starter_reminder_timezone].blank? %>">
+      <%= time_field_tag :reminder_time, @reminder_time, required: true, class: "w-fit max-w-full rounded-xl border border-current/30 bg-transparent px-3 py-2" %>
       <%= select_tag :reminder_timezone, options_for_select(@timezone_options, @reminder_timezone),
         required: true, aria: { label: t("daily_challenge.timezone_label") },
         data: { challenge_timezone_target: "select" },
-        class: "max-w-full rounded-xl border border-current/30 bg-transparent px-3 py-2" %>
+        class: "block w-full min-w-0 rounded-xl border border-current/30 bg-transparent px-3 py-2" %>
     </div>
   </fieldset>
   <fieldset>
