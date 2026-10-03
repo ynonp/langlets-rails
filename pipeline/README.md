@@ -359,3 +359,24 @@ config.x.pipeline.callback_base_url = "https://langlets.app"
 Development maps the endpoints from `PIPELINE_URL` and `PIPELINE_CALLBACK_BASE_URL`; the latter is
 the one that bites locally because the pipeline runs on another host, where `localhost:3000` is
 itself. Point it at an ngrok tunnel to the local Rails.
+
+## Daily challenge video discovery
+
+`POST /recommend-video` uses the same HMAC authentication as course triggers.
+Rails sends bounded learning context (`learning_language`, up to eight
+`imported_videos`, forty `vocabulary` entries and thirty `previous_suggestions`).
+The handler calls Gemini with Google Search using the existing
+`GOOGLE_GENERATIVE_AI_API_KEY`. `DAILY_RECOMMENDATION_MODEL` defaults to
+`gemini-3.8-flash`. No Rails OpenAI key is needed for daily recommendations.
+
+The response contains `{url, search_suggestions}`. The URL is accepted only when
+it appears in the model's text and matches a resolved grounding source. Google
+citation redirects are inspected with HEAD requests to the known Google endpoint;
+other hosts and arbitrary redirect targets are never fetched. Responses without
+search evidence or with truncated output fail. Searches use natural text because
+the live JSON-constrained trial returned no grounding metadata. No recommendation
+prompts or outputs are logged. Rails performs availability/duration preflight,
+stores the card and displays Google's search suggestions in a sandboxed iframe.
+There is no automatic course import: the learner confirms through the normal UI.
+
+This feature requires deploying both the pipeline endpoint and the Rails client.

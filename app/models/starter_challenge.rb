@@ -29,9 +29,8 @@ class StarterChallenge < ApplicationRecord
 
   def active_day = (local_today - first_challenge_on).to_i + 1
   def practice_started? = active_day > 5
-  def pending_quest = daily_challenges.find_by(day: [active_day, 1].max)
+  def pending_quest = daily_challenges.find_by(day: [ active_day, 1 ].max)
   def current_quest
-    return if practice_started?
     quest = pending_quest
     quest if quest&.unlocked?
   end
@@ -48,7 +47,7 @@ class StarterChallenge < ApplicationRecord
     ids = Array(language_ids).reject(&:blank?).map(&:to_s).uniq
     languages = Language.where(id: ids).to_a
     if languages.empty? || languages.map { |language| language.id.to_s }.sort != ids.sort
-      raise ArgumentError, 'Choose at least one supported language'
+      raise ArgumentError, "Choose at least one supported language"
     end
 
     minute, timezone = parse_reminder!(time: reminder_time, timezone: reminder_timezone)
@@ -57,8 +56,9 @@ class StarterChallenge < ApplicationRecord
       user.update!(notification_delivery: delivery)
       challenge = find_by(user_id: user.id)
       if challenge
-        next_date = [challenge.first_challenge_on + 5, Time.zone.now.in_time_zone(timezone).to_date].max
-        next_date += 1 if challenge.daily_practice_reminders.exists?(local_date: next_date)
+        next_date = [ challenge.first_challenge_on + 5, Time.zone.now.in_time_zone(timezone).to_date ].max
+        next_day = (next_date - challenge.first_challenge_on).to_i + 1
+        next_date += 1 if challenge.daily_challenges.where(day: next_day).where.not(notification_id: nil).exists?
         next_time = ActiveSupport::TimeZone[timezone].local(next_date.year, next_date.month, next_date.day, minute / 60, minute % 60)
         challenge.update!(languages: languages, reminder_minute: minute, reminder_timezone: timezone,
           next_practice_at: next_time)

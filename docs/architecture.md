@@ -2564,7 +2564,7 @@ settles as `imported` and the question no longer arises.
 - `source`: `imported` (this user asked for this course, and it was published into their own channel), `library` (added from the catalog with "+ Learn this", which enrolls without publishing and is free), `playlist`. Every `ImportRequest` now settles as `imported`: there is no free rider to tell apart, because riding along on somebody else's run still ends in a publication of your own.
 - `last_practiced_at` is Home's canonical "started" signal: "Keep it going" only includes enrollments where it is non-null, ordered newest first. Resetting a completed course to "not started" deletes the Enrollment altogether, removing it from every Home section while leaving Channel publication—and therefore Library availability—untouched. Starting a lesson again recreates the Enrollment through `LessonUser`'s completion callback.
 
-### Starter challenge and continuing daily practice
+### Daily challenges and personalized video suggestions
 
 `/daily_challenge` is an authenticated page shared by web and native. Web has a
 Daily challenge navigation link; native Home has a challenge card. First use
@@ -2607,26 +2607,78 @@ that stamp can still cause a retry. Delivery suppresses a queued quest or
 practice reminder once its local date has passed, recording an attempt so it
 will not be retried forever.
 
-Starting the **next local date after quest five**, the same scheduler creates one
-`DailyPracticeReminder` row and `daily_practice` notification per local date at
-the user's chosen time, indefinitely. `starter_challenges.next_practice_at` is
-indexed so each scheduler run examines only due accounts; it advances to the
-next local date after delivery and is recalculated when reminder settings change.
-A unique `(starter_challenge_id, local_date)` index and the enrollment lock
-prevent duplicate daily reminders. A missed date is not backfilled. When several selected languages have saved words, reminders
-rotate between them; otherwise the selected languages rotate. The notification
-URL is `/daily_practice?language_code=…`. That authenticated route sends the user
-to the existing review lesson for that language if words are available, otherwise
-to the next incomplete lesson of an enrolled course. With no lesson yet, it
-opens the challenge page with a prompt to import a video or save words. The
-challenge page itself shows a daily lesson action after quest five.
+Starting the **next local date after quest five**, the same `DailyChallenge`
+model continues with days 6, 7, and onwards. These challenges ask the learner to
+import a related video selected by Gemini. The first five quests keep their
+existing curated song/story/TikTok lists and vocabulary/skimming tasks.
 
-Both notification kinds use existing email/push preference delivery and render
-in the recipient's interface language. English, Hebrew and Spanish copy is
-supplied; other interface locales use the established English fallback. iOS
-routes notification taps for `/daily_challenge` and `/daily_practice` through its
-Home navigator. A native release is needed for that deep-link change. Native tab
-roots are unchanged.
+`SendDailyChallengesJob` scans the indexed `starter_challenges.next_practice_at`
+up to thirty minutes ahead. `DailyChallenge.ensure_personalized_today!` locks the
+enrollment, creates only the current local day's challenge with its scheduled
+`available_at` and learning language, then advances that pointer to tomorrow. The
+existing unique `(starter_challenge_id, day)` index prevents duplicates. Opening
+`/daily_challenge` after day five also ensures today's row exists; background
+preparation begins only within the same thirty-minute window. Preparation after
+midnight or an outage can finish later than the chosen time. Missed dates are
+not backfilled. Learning languages rotate, preferring selected languages with
+practising saved words. Reminder setting changes reschedule unnotified challenges
+without restarting the starter dates or removing completion history.
+
+`PrepareDailyChallengeRecommendationJob` calls `DailyVideoRecommendation`, which
+sends bounded learning context through `PipelineClient.recommend_video` to the
+HMAC-authenticated pipeline endpoint `POST /recommend-video`. The pipeline uses
+its existing `GOOGLE_GENERATIVE_AI_API_KEY` and Gemini's `google_search` tool.
+The model receives up to eight recent ready imports (titles/URLs), forty recent
+practising vocabulary words and translations in the selected language, and thirty
+previous challenge suggestions. No email or account ID is included, and the
+recommendation endpoint does not log prompts or model outputs.
+
+`pipeline/src/videoRecommendation.ts` defaults to `gemini-3.8-flash`, configurable
+with `DAILY_RECOMMENDATION_MODEL` on the pipeline host. Live testing found that
+forcing JSON output could omit grounding metadata, so discovery requests use
+natural text. The pipeline requires a completed response with search queries and
+verifies the returned YouTube link against its grounding sources. Google citation
+redirects are resolved with bounded HEAD requests only to the known Google
+redirect endpoint, without following arbitrary targets. Uncited/model-invented
+links, non-HTTPS/non-YouTube URLs and recent suggestions are rejected. Rails
+additionally rejects any of the learner's imported video IDs. The prompt asks for
+related themes, clear speech, and preferably 2–8 minutes within the existing
+25-minute import limit; learners without history get a beginner suggestion.
+Google's returned search suggestions are persisted with the source card and
+shown in a sandboxed iframe, preserving attribution without executing scripts
+or placing provider HTML into the page's DOM.
+
+The recommendation job calls the existing `Imports::VideoPreflight` to check
+availability and known duration, and persists the source URL, title and thumbnail
+in `daily_challenges.recommended_video`. No admin import, Course, Enrollment,
+credit charge, or catalog publication occurs while preparing a challenge. The
+ready source appears in the exact same preview/import card used on day one.
+The learner previews and confirms it through the normal Add Video flow, which
+retains ordinary language detection, pricing, pipeline reuse and publication.
+Challenge completion remains the existing account-scoped “I did it” action.
+
+Recommendation state progresses pending → searching → ready (or failed). A row-locked ten-minute
+search lease prevents duplicate searches and lets abandoned jobs resume. Search
+or preflight exceptions retry up to three attempts; unfinished records are
+requeued by the scheduler, recovering a lost enqueue. Stale challenges are skipped.
+Search and provider calls happen outside database locks. Missing pipeline configuration/Google credentials or
+failed searches leave a waiting/unavailable page with a Choose your own video
+link; they do not generate an empty reminder or random fallback suggestion.
+
+Notifications remain the existing `daily_challenge` kind. Days 1–5 retain
+`/daily_challenge#day-N`; personalized days use exactly `/daily_challenge`, which
+installed iOS apps already accept. A ready recommendation sends at or after the
+chosen local time, with a bounded title and localized English/Hebrew/Spanish
+copy inviting the learner to import that video. Row locks prevent duplicate
+notifications and the delivery job suppresses stale local dates. No new native
+build is required. iOS/Android tab URLs and served/bundled path configurations
+remain unchanged.
+
+The separate daily practice reminder scheduler is retired. Historical
+`DailyPracticeReminder` rows and notification enum value 4 remain readable for
+compatibility, but no new rows are created and queued legacy practice reminders
+are suppressed. Old `/daily_practice?language_code=…` links redirect to
+`/daily_challenge`, so earlier messages still reach a useful page.
 
 `config/starter_challenge_videos.yml` contains source candidates by language
 and song/story/TikTok. Cards open the normal import preview. Research provenance
@@ -2660,7 +2712,8 @@ The order matters: **record first, deliver second.**
    job means a delivery failure cannot fail the thing that caused it — both
    callers are operations that have already succeeded.
 
-Supported kinds: `course_ready`, `course_failed`, `pro_activated`. Treat the
+Supported kinds: `course_ready`, `course_failed`, `pro_activated`, `daily_challenge`
+(and historical `daily_practice`). Treat the
 enum values as **append-only**: renaming or repurposing one silently rewords
 every historical row that carries it.
 

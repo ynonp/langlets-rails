@@ -60,7 +60,8 @@ class Notification < ApplicationRecord
   # both of them our mistake and neither of them the reader's problem, so this
   # degrades to a plain line and leaves a loud log entry.
   def render(part, locale)
-    I18n.t("notifications.kinds.#{kind}.#{part}", locale: locale, raise: true, **interpolations(locale))
+    copy_kind = kind_daily_challenge? && data["day"].to_i > 5 ? "daily_challenge_recommendation" : kind
+    I18n.t("notifications.kinds.#{copy_kind}.#{part}", locale: locale, raise: true, **interpolations(locale))
   rescue I18n::ArgumentError => e
     Rails.logger.error "Notification #{id} (#{kind}) could not render #{part} in #{locale}: #{e.class}: #{e.message}"
     I18n.t("notifications.unavailable", locale: locale)

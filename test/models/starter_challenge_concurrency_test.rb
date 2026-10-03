@@ -14,7 +14,7 @@ class StarterChallengeConcurrencyTest < ActiveSupport::TestCase
   test "simultaneous enrollment creates one schedule" do
     language_id = languages(:french).id
     race do
-      StarterChallenge.enroll!(user: User.find(@user.id), language_ids: [language_id], delivery: [])
+      StarterChallenge.enroll!(user: User.find(@user.id), language_ids: [ language_id ], delivery: [])
     end
     assert_equal 1, @user.reload.starter_challenge.daily_challenges.group(:starter_challenge_id).count.size
     assert_equal 5, @user.starter_challenge.daily_challenges.count
@@ -22,7 +22,7 @@ class StarterChallengeConcurrencyTest < ActiveSupport::TestCase
   end
 
   test "simultaneous schedulers create one notification" do
-    challenge = StarterChallenge.enroll!(user: @user, language_ids: [languages(:french).id], delivery: [])
+    challenge = StarterChallenge.enroll!(user: @user, language_ids: [ languages(:french).id ], delivery: [])
     day_id = challenge.daily_challenges.find_by!(day: 1).id
     travel_to(challenge.daily_challenges.first.available_at + 1.second) do
       race { DailyChallenge.find(day_id).notify! }
@@ -32,16 +32,17 @@ class StarterChallengeConcurrencyTest < ActiveSupport::TestCase
   end
 
   test "simultaneous daily practice schedulers create one reminder" do
-    challenge = StarterChallenge.enroll!(user: @user, language_ids: [languages(:arabic).id], delivery: [])
+    challenge = StarterChallenge.enroll!(user: @user, language_ids: [ languages(:arabic).id ], delivery: [])
     travel_to challenge.local_time_on(challenge.first_challenge_on + 5) do
-      race { DailyPracticeReminder.deliver_due!(StarterChallenge.find(challenge.id)) }
+      race { DailyChallenge.ensure_personalized_today!(StarterChallenge.find(challenge.id)) }
     end
-    assert_equal 1, challenge.daily_practice_reminders.count
-    assert_equal 1, @user.notifications.where(kind: :daily_practice).count
+    assert_equal 1, challenge.daily_challenges.where("day > 5").count
+    assert_equal 0, @user.notifications.where(kind: [ :daily_practice ]).count
+    assert_equal "pending", challenge.daily_challenges.find_by!(day: 6).recommendation_state
   end
 
   test "simultaneous delivery workers attempt a channel once" do
-    challenge = StarterChallenge.enroll!(user: @user, language_ids: [languages(:french).id], delivery: ["push"])
+    challenge = StarterChallenge.enroll!(user: @user, language_ids: [ languages(:french).id ], delivery: [ "push" ])
     day = challenge.daily_challenges.find_by!(day: 1)
     attempts = Queue.new
     travel_to(day.available_at + 1.second) do

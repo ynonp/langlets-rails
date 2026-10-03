@@ -9,6 +9,10 @@ class PipelineClient
   OPEN_TIMEOUT = 15
 
   class << self
+    def recommend_video(payload)
+      post("/recommend-video", payload, read_timeout: 120)
+    end
+
     def detect_language(payload)
       post("/detect-language", payload, read_timeout: READ_TIMEOUT)
     end

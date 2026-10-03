@@ -142,7 +142,7 @@ Pipeline states via `data` keys:
 
 ## Where the Pipeline Runs
 
-The AI steps run **only** in the Deno pipeline, on a separate host. Rails builds run payloads through `CreateSongProgress` and sends them through the transport-only `PipelineClient`; it stores what comes back and needs no model-provider keys.
+The AI steps run **only** in the Deno pipeline, on a separate host. Rails builds run payloads through `CreateSongProgress` and sends them through the transport-only `PipelineClient`; it stores what comes back and needs no model-provider keys for course creation. Daily challenge video search also runs on the pipeline host, through its signed `/recommend-video` endpoint and existing Google key.
 
 Both entry points go through it:
 
@@ -193,7 +193,7 @@ Watch a run with `journalctl -u langlets-pipeline -f` on the pipeline host. See 
 
 ## Models & Providers
 
-Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rails has no say in it and holds no provider keys.
+Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rails has no say in pipeline model selection. Daily challenge recommendations run on the same pipeline host with its existing Google key; `DAILY_RECOMMENDATION_MODEL` selects that separate search model.
 
 | Step | Model | Provider |
 |---|---|---|

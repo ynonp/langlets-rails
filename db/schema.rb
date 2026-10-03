@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_09_25_120000) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_03_100000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -251,11 +251,18 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_25_120000) do
     t.datetime "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "language_id"
+    t.jsonb "recommended_video", default: {}, null: false
+    t.string "recommendation_state", default: "pending", null: false
+    t.datetime "search_started_at"
+    t.integer "search_attempts", default: 0, null: false
+    t.string "recommendation_failure"
     t.index ["available_at"], name: "index_daily_challenges_on_available_at", where: "((notification_id IS NULL) AND (skipped_at IS NULL))"
+    t.index ["language_id"], name: "index_daily_challenges_on_language_id"
     t.index ["notification_id"], name: "index_daily_challenges_on_notification_id"
     t.index ["starter_challenge_id", "day"], name: "index_daily_challenges_on_starter_challenge_id_and_day", unique: true
     t.index ["starter_challenge_id"], name: "index_daily_challenges_on_starter_challenge_id"
-    t.check_constraint "day >= 1 AND day <= 5", name: "daily_challenge_day_range"
+    t.check_constraint "day >= 1", name: "daily_challenge_positive_day"
   end
 
   create_table "daily_practice_reminders", force: :cascade do |t|
@@ -824,6 +831,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_09_25_120000) do
   add_foreign_key "courses_playlists", "courses"
   add_foreign_key "courses_playlists", "playlists"
   add_foreign_key "credit_ledger_entries", "users"
+  add_foreign_key "daily_challenges", "languages"
   add_foreign_key "daily_challenges", "notifications", on_delete: :nullify
   add_foreign_key "daily_challenges", "starter_challenges"
   add_foreign_key "daily_practice_reminders", "notifications", on_delete: :cascade

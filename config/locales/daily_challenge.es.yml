@@ -15,9 +15,7 @@ es:
     nav: Reto diario
     eyebrow: Tus primeros cinco días
     title: Una pequeña aventura cada día
-    intro: Elige los idiomas y la hora del recordatorio. La primera misión llegará mañana; después de cinco misiones, te recordaremos practicar cada día.
-      al día durante cinco días, desde que te unas. Puedes completar las anteriores
-      cuando quieras.
+    intro: Elige tus idiomas y la hora del recordatorio. Tu primer reto llega mañana; después de cinco retos, recibirás un vídeo relacionado para importar cada día.
     choose_languages: ¿Qué quieres aprender?
     selection_hint: Elige uno o varios idiomas. Tus misiones incluirán ideas para
       cada uno.
@@ -27,6 +25,10 @@ es:
     timezone_label: Tu zona horaria
     waiting_title: Tu primera misión llega mañana
     waiting_body: "La enviaremos el %{time}. Mientras tanto, puedes explorar Langlets."
+    recommendation:
+      waiting_title: "Tu próximo reto diario"
+      preparing: "Estamos buscando un vídeo para ti. Vuelve pronto o elige tu propio vídeo."
+      unavailable: "No encontramos un vídeo hoy. Elige uno que te guste para seguir aprendiendo."
     no_daily_lesson: Importa un vídeo o guarda palabras para empezar tu lección diaria.
     practice:
       title: "Practica %{language} hoy"
@@ -58,6 +60,9 @@ es:
     completed: ¡Misión completada!
     locked: Se desbloquea el %{date}
     quests:
+      recommendation:
+        title: "Importa tu vídeo recomendado"
+        body: "Elegimos un vídeo relacionado con tus importaciones y vocabulario. Mira la vista previa e impórtalo para crear tu próximo langlet."
       song:
         title: Importa una canción
         body: Elige una canción en un idioma que estás aprendiendo e impórtala para
@@ -82,6 +87,9 @@ es:
           a tu ritmo en una sola sesión.
   notifications:
     kinds:
+      daily_challenge_recommendation:
+        title: "Tu reto diario"
+        body: "Importa «%{video_title}», elegido a partir de tus vídeos y vocabulario."
       daily_practice:
         title: "Es hora de practicar %{language}"
         body: Tu lección diaria está lista.

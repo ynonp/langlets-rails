@@ -7,13 +7,13 @@ class StarterChallengeTest < ActiveSupport::TestCase
     @user = User.create!(email: "starter@example.test", password: "password123", confirmed_at: Time.zone.now)
   end
 
-  def enroll(languages = [languages(:french).id], delivery: [], reminder_time: "09:00", reminder_timezone: "UTC")
+  def enroll(languages = [ languages(:french).id ], delivery: [], reminder_time: "09:00", reminder_timezone: "UTC")
     StarterChallenge.enroll!(user: @user, language_ids: languages, delivery: delivery, reminder_time: reminder_time, reminder_timezone: reminder_timezone)
   end
 
   test "enrollment creates five dated quests and retains multiple target languages" do
     travel_to Time.zone.local(2026, 9, 24, 10) do
-      challenge = enroll([languages(:french).id, languages(:spanish).id], delivery: %w[email push])
+      challenge = enroll([ languages(:french).id, languages(:spanish).id ], delivery: %w[email push])
       assert_equal %w[fr es].sort, challenge.languages.pluck(:iso_name).sort
       assert_equal %w[email push], @user.reload.notification_delivery
       assert_equal (1..5).to_a, challenge.daily_challenges.order(:day).pluck(:day)
@@ -29,27 +29,27 @@ class StarterChallengeTest < ActiveSupport::TestCase
     travel_to(day.available_at + 1.second) { day.complete! }
     original_start = challenge.started_at
     travel_to challenge.daily_challenges.find_by!(day: 3).available_at do
-      assert_no_difference ["StarterChallenge.count", "DailyChallenge.count"] do
-        repeated = enroll([languages(:spanish).id])
+      assert_no_difference [ "StarterChallenge.count", "DailyChallenge.count" ] do
+        repeated = enroll([ languages(:spanish).id ])
         assert_equal challenge.id, repeated.id
       end
     end
     assert_equal original_start, challenge.reload.started_at
     assert day.reload.completed_at?
-    assert_equal [languages(:spanish).id], challenge.language_ids
+    assert_equal [ languages(:spanish).id ], challenge.language_ids
   end
 
   test "invalid empty and mixed language selections do not mutate preferences or enroll" do
-    [[], [""], ["bogus"], [languages(:french).id, "-1"]].each do |ids|
-      assert_no_difference ["StarterChallenge.count", "DailyChallenge.count"] do
-        assert_raises(ArgumentError) { enroll(ids, delivery: ["email"]) }
+    [ [], [ "" ], [ "bogus" ], [ languages(:french).id, "-1" ] ].each do |ids|
+      assert_no_difference [ "StarterChallenge.count", "DailyChallenge.count" ] do
+        assert_raises(ArgumentError) { enroll(ids, delivery: [ "email" ]) }
       end
-      assert_equal ["push"], @user.reload.notification_delivery
+      assert_equal [ "push" ], @user.reload.notification_delivery
     end
   end
 
   test "duplicate language ids are normalized and an empty delivery choice is retained" do
-    challenge = enroll(["", languages(:french).id, languages(:french).id.to_s])
+    challenge = enroll([ "", languages(:french).id, languages(:french).id.to_s ])
     assert_equal 1, challenge.languages.count
     assert_equal [], @user.reload.notification_delivery
   end
@@ -79,6 +79,6 @@ class StarterChallengeTest < ActiveSupport::TestCase
   test "unique day and supported day range are enforced" do
     challenge = enroll
     assert_not challenge.daily_challenges.new(day: 1, available_at: Time.zone.now).valid?
-    assert_not challenge.daily_challenges.new(day: 6, available_at: Time.zone.now).valid?
+    assert_not challenge.daily_challenges.new(day: 0, available_at: Time.zone.now).valid?
   end
 end

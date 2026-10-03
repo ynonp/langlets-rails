@@ -2,6 +2,7 @@
 //
 //   POST /run          run the pipeline, respond when it finishes
 //   POST /run?async=1  respond 202 immediately, keep running in the background
+//   POST /recommend-video  grounded Gemini discovery for daily challenges
 //   GET  /health       liveness probe (unsigned)
 //
 // Every POST body must carry the HMAC headers (see hmac.ts); the same secret
@@ -11,6 +12,12 @@
 // data. Note that on serverless platforms background work may be cut short
 // when the isolate shuts down; that is acceptable for the same reason.
 
+import {
+  parseRecommendationContext,
+  type RecommendationContext,
+  recommendVideo,
+  type VideoRecommendation,
+} from "./videoRecommendation.ts";
 import type { TriggerPayload } from "./types.ts";
 import { verifyRequest } from "./hmac.ts";
 import { HttpCallbackClient } from "./callback.ts";
@@ -23,6 +30,7 @@ export interface ServerOptions {
   secret: string;
   models: ModelRegistry;
   baseDelayMs?: number;
+  recommend?: (context: RecommendationContext) => Promise<VideoRecommendation>;
   // Overridable for tests.
   run?: (payload: TriggerPayload, options: {
     models: ModelRegistry;
@@ -42,12 +50,24 @@ export function createHandler(options: ServerOptions): (request: Request) => Pro
       return json(200, { ok: true });
     }
 
-    if (request.method !== "POST" || !["/run", "/detect-language"].includes(url.pathname)) {
+    if (
+      request.method !== "POST" ||
+      !["/run", "/detect-language", "/recommend-video"].includes(url.pathname)
+    ) {
       return json(404, { error: "not found" });
     }
 
     const body = await verifyRequest(options.secret, request);
     if (body === null) return json(401, { error: "invalid signature" });
+
+    if (url.pathname === "/recommend-video") {
+      try {
+        const context = parseRecommendationContext(JSON.parse(body));
+        return json(200, await (options.recommend ?? recommendVideo)(context));
+      } catch (error) {
+        return json(422, { error: message(error) });
+      }
+    }
 
     if (url.pathname === "/detect-language") {
       try {

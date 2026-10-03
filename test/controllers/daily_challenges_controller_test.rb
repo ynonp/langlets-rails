@@ -11,7 +11,7 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
   end
 
   def join_challenge(**extra)
-    post daily_challenge_path, params: { language_ids: [languages(:french).id], notification_delivery: ["email"], reminder_time: "09:00", reminder_timezone: "UTC" }.merge(extra)
+    post daily_challenge_path, params: { language_ids: [ languages(:french).id ], notification_delivery: [ "email" ], reminder_time: "09:00", reminder_timezone: "UTC" }.merge(extra)
   end
 
   test "web starts with language selection and no enrollment on GET" do
@@ -22,7 +22,7 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     assert_select '[data-testid="primary-web-header"]'
     assert_select 'input[name="language_ids[]"]', Language.count
     assert_select 'input[name="reminder_time"][type="time"]'
-    assert_select 'select[name="reminder_timezone"]' 
+    assert_select 'select[name="reminder_timezone"]'
     assert_select 'section[data-testid^="quest"]', 0
     assert_select 'a[href="/daily_challenge"][aria-current="page"]'
   end
@@ -57,15 +57,15 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "multiple languages appear when selected" do
-    join_challenge(language_ids: [languages(:french).id, languages(:spanish).id])
+    join_challenge(language_ids: [ languages(:french).id, languages(:spanish).id ])
     travel_to @user.reload.starter_challenge.daily_challenges.find_by!(day: 1).available_at + 1.second
     get daily_challenge_path
-    assert_select '#day-1 h3', text: languages(:french).native_name
-    assert_select '#day-1 h3', text: languages(:spanish).native_name
+    assert_select "#day-1 h3", text: languages(:french).native_name
+    assert_select "#day-1 h3", text: languages(:spanish).native_name
   end
 
   test "invalid selection renders an accessible error and does not enroll" do
-    [[], ["not-a-language"], [languages(:french).id, -1]].each do |ids|
+    [ [], [ "not-a-language" ], [ languages(:french).id, -1 ] ].each do |ids|
       assert_no_difference "StarterChallenge.count" do
         join_challenge(language_ids: ids)
       end
@@ -86,7 +86,7 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
   test "settings preserve empty delivery preferences and do not restart" do
     join_challenge
     original = @user.reload.starter_challenge.started_at
-    join_challenge(language_ids: [languages(:spanish).id], notification_delivery: [""])
+    join_challenge(language_ids: [ languages(:spanish).id ], notification_delivery: [ "" ])
     assert_equal [], @user.reload.notification_delivery
     assert_equal original, @user.starter_challenge.started_at
     assert_equal 5, @user.starter_challenge.daily_challenges.count
@@ -117,24 +117,49 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "native renders app shell and asks push permission only after opting in" do
-    join_challenge(notification_delivery: ["push"])
+    join_challenge(notification_delivery: [ "push" ])
     get daily_challenge_path, headers: NATIVE
     assert_response :success
-    assert_select 'body[data-native-tabs]'
+    assert_select "body[data-native-tabs]"
     assert_select '[data-bridge--push-ask-value="true"]'
     @user.update!(notification_delivery: [])
     get daily_challenge_path, headers: NATIVE
     assert_select '[data-bridge--push-ask-value="false"]'
   end
 
-  test "after five quests the page shows only daily practice" do
+  test "after five quests the page prepares a daily video challenge" do
     join_challenge
     travel 7.days do
       get daily_challenge_path
       assert_response :success
       assert_select 'form[action*="complete"]', 0
-      assert_select '[data-testid="daily-practice"]'
+      assert_select '[data-testid="daily-practice"]', 0
+      assert_select '[data-testid="challenge-waiting"]'
+      assert @user.starter_challenge.daily_challenges.find_by!(day: @user.starter_challenge.active_day).personalized?
     end
+  end
+
+  test "personalized challenge shows a source import card and allows daily completion" do
+    join_challenge
+    challenge = @user.reload.starter_challenge
+    travel_to challenge.local_time_on(challenge.first_challenge_on + 5)
+    quest = DailyChallenge.ensure_personalized_today!(challenge)
+    url = "https://www.youtube.com/watch?v=kJQP7kiw5Fk"
+    quest.update!(recommendation_state: "ready", recommended_video: { "url" => url, "title" => "French conversation", "search_suggestions" => '<div><a href="https://www.google.com/search?q=french">Google Search</a></div>' })
+    assert_no_difference [ "Course.count", "ImportRequest.count" ] do
+      get daily_challenge_path
+    end
+    assert_select '#day-6 a[href*="url="]', 1
+    assert_select 'iframe[sandbox="allow-popups allow-popups-to-escape-sandbox"][title="Google Search"]', 1
+    assert_select "#day-6", text: /French conversation/
+    assert_select '[data-testid="daily-practice"]', 0
+    assert_select '#day-6 form[action*="complete"]', 1
+    post complete_daily_challenge_path(day: 6)
+    assert_redirected_to daily_challenge_path
+    assert quest.reload.completed_at?
+    travel_to quest.available_at + 1.day
+    get daily_challenge_path
+    assert_select "#day-6", 0
   end
 
   test "Hebrew and Spanish interfaces render without missing translations" do

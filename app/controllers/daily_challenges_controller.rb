@@ -7,12 +7,16 @@ class DailyChallengesController < App::BaseController
     @languages = Language.order(:english_name)
     @selected_language_ids = @challenge&.language_ids || []
     @delivery = current_user.notification_delivery
+    if @challenge&.practice_started?
+      quest = DailyChallenge.ensure_personalized_today!(@challenge)
+      if quest.recommendation_state.in?(%w[pending searching]) && quest.available_at <= Time.zone.now + DailyChallenge::PREPARATION_LEAD
+        PrepareDailyChallengeRecommendationJob.perform_later(quest.id)
+      end
+    end
     @current_quest = @challenge&.current_quest
-    @practice_started = @challenge&.practice_started?
-    @practice_language = @challenge&.practice_language if @practice_started
     @reminder_time = @challenge&.reminder_time || "09:00"
     @reminder_timezone = @challenge&.reminder_timezone || "UTC"
-    @timezone_options = ActiveSupport::TimeZone.all.sort_by(&:to_s).map { |zone| [zone.to_s, zone.tzinfo.identifier] }.uniq { |_, id| id }
+    @timezone_options = ActiveSupport::TimeZone.all.sort_by(&:to_s).map { |zone| [ zone.to_s, zone.tzinfo.identifier ] }.uniq { |_, id| id }
     @catalog = StarterChallengeCatalog.all if @current_quest
   end
 

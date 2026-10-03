@@ -36,8 +36,7 @@ class DeliverNotificationJob < ApplicationJob
     if notification.kind_daily_challenge?
       DailyChallenge.find_by(notification_id: notification.id)&.unlocked? == true
     elsif notification.kind_daily_practice?
-      reminder = DailyPracticeReminder.find_by(notification_id: notification.id)
-      reminder && reminder.local_date == reminder.starter_challenge.local_today
+      false # Historical practice reminders were superseded by daily challenges.
     else
       true
     end
@@ -57,5 +56,4 @@ class DeliverNotificationJob < ApplicationJob
   rescue StandardError => e
     Rails.logger.error "Notification #{notification.id} push failed: #{e.class}: #{e.message}"
   end
-
 end

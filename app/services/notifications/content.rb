@@ -41,8 +41,12 @@ module Notifications
           data: { "language_code" => code, "language_name" => context.fetch(:language_name).to_s })
       when :daily_challenge
         day = Integer(context.fetch(:day))
-        raise ArgumentError unless (1..5).cover?(day)
-        Built.new(url: "/daily_challenge#day-#{day}", data: { "day" => day })
+        raise ArgumentError unless day.positive?
+        if day > 5
+          Built.new(url: "/daily_challenge", data: { "day" => day, "video_title" => video_title(nil) })
+        else
+          Built.new(url: "/daily_challenge#day-#{day}", data: { "day" => day })
+        end
       else raise UnknownKind, "no content for notification kind #{@kind.inspect}"
       end
     end

@@ -15,6 +15,13 @@ class PipelineClientTest < ActiveSupport::TestCase
     Rails.configuration.x.pipeline.url = @old_url
   end
 
+  test "posts video discovery through the existing authenticated pipeline" do
+    request = capture_request(Response.new("200", { url: "https://www.youtube.com/watch?v=kJQP7kiw5Fk" }.to_json)) do
+      assert_equal "https://www.youtube.com/watch?v=kJQP7kiw5Fk", PipelineClient.recommend_video({ learning_language: "French" })["url"]
+    end
+    assert_equal "/recommend-video", request.path
+  end
+
   test "posts signed asynchronous runs to the configured pipeline" do
     request = capture_request(Response.new("202", { accepted: true }.to_json)) do
       assert_equal({ "accepted" => true }, PipelineClient.run({ youtubeurl: "video" }))

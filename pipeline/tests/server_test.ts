@@ -143,3 +143,33 @@ Deno.test("malformed payloads are a 422, not a crash", async () => {
   const body = await response.json();
   assert(body.error.includes("youtubeurl"));
 });
+
+Deno.test("recommendations share HMAC authentication and receive bounded learning context", async () => {
+  const context = {
+    learning_language: "French",
+    imported_videos: [],
+    vocabulary: [],
+    previous_suggestions: [],
+  };
+  const handler = createHandler({
+    secret: SECRET,
+    models: models(),
+    recommend: (received) => {
+      assertEquals(received, context);
+      return Promise.resolve({
+        url: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+        search_suggestions: null,
+      });
+    },
+  });
+  const body = JSON.stringify(context);
+  assertEquals(
+    (await handler(
+      new Request("https://pipeline.example/recommend-video", { method: "POST", body }),
+    )).status,
+    401,
+  );
+  const response = await handler(await signedPost(body, SECRET, "/recommend-video"));
+  assertEquals(response.status, 200);
+  assertEquals((await response.json()).url, "https://www.youtube.com/watch?v=kJQP7kiw5Fk");
+});
