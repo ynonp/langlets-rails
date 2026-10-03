@@ -2625,6 +2625,12 @@ practising saved words. Reminder setting changes reschedule unnotified challenge
 without restarting the starter dates or removing completion history.
 
 `PrepareDailyChallengeRecommendationJob` calls `DailyVideoRecommendation`, which
+backs the user-facing **Daily Langlets** experience: “A daily video we hope you’ll
+like.” Navigation, page headers, onboarding, waiting states, and notifications
+use this welcoming daily-pick wording in English, Hebrew, and Spanish. The first
+five starter activities and later personalized recommendations keep their existing
+schedule and import flow; internal `daily_challenge` names and routes remain stable.
+The service
 sends bounded learning context through `PipelineClient.recommend_video` to the
 HMAC-authenticated pipeline endpoint `POST /recommend-video`. The pipeline uses
 its existing `GOOGLE_GENERATIVE_AI_API_KEY` and Gemini's `google_search` tool.
@@ -2647,26 +2653,31 @@ links, non-HTTPS/non-YouTube URLs and recent suggestions are rejected. Rails
 additionally rejects any of the learner's imported video IDs. The prompt asks for
 related themes, clear speech, and preferably 2–8 minutes within the existing
 25-minute import limit; learners without history get a beginner suggestion.
-Google's returned search suggestions are persisted with the source card and
-shown in a sandboxed iframe, preserving attribution without executing scripts
-or placing provider HTML into the page's DOM.
+Google's returned search suggestions remain persisted with the source card;
+the Daily Langlets page does not render the search panel.
 
 The recommendation job calls the existing `Imports::VideoPreflight` to check
 availability and known duration, and persists the source URL, title and thumbnail
 in `daily_challenges.recommended_video`. No admin import, Course, Enrollment,
 credit charge, or catalog publication occurs while preparing a challenge. The
-ready source appears in the exact same preview/import card used on day one.
+ready source appears as a single full-width thumbnail card with an Import button.
+Curated starter video cards also span the available width. The page has a short
+Daily Langlets heading and tagline, with reminder preferences collapsed behind
+a small settings control. Day counters, completion controls, explanatory footers,
+credit copy, and the Google Search panel are omitted from video cards. Starter
+vocabulary/skimming activities retain their instructions and library links.
 The learner previews and confirms it through the normal Add Video flow, which
 retains ordinary language detection, pricing, pipeline reuse and publication.
-Challenge completion remains the existing account-scoped “I did it” action.
+The account-scoped completion endpoint remains available for compatibility, but
+Daily Langlets no longer presents a manual completion action.
 
 Recommendation state progresses pending → searching → ready (or failed). A row-locked ten-minute
 search lease prevents duplicate searches and lets abandoned jobs resume. Search
 or preflight exceptions retry up to three attempts; unfinished records are
 requeued by the scheduler, recovering a lost enqueue. Stale challenges are skipped.
 Search and provider calls happen outside database locks. Missing pipeline configuration/Google credentials or
-failed searches leave a waiting/unavailable page with a Choose your own video
-link; they do not generate an empty reminder or random fallback suggestion.
+failed searches leave a concise waiting/unavailable message; they do not generate
+an empty reminder or random fallback suggestion.
 
 Notifications remain the existing `daily_challenge` kind. Days 1–5 retain
 `/daily_challenge#day-N`; personalized days use exactly `/daily_challenge`, which

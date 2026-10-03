@@ -40,7 +40,7 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     end
     assert_select '#day-1 a[href*="x5PJoP9x-Ys"]', 0
     assert_select '#day-3 a[href*="url="]', 0
-    assert_select '#day-1 form[action*="complete"]', 1
+    assert_select '#day-1 form[action*="complete"]', 0
     assert_select '#day-2 form[action*="complete"]', 0
   end
 
@@ -60,8 +60,8 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     join_challenge(language_ids: [ languages(:french).id, languages(:spanish).id ])
     travel_to @user.reload.starter_challenge.daily_challenges.find_by!(day: 1).available_at + 1.second
     get daily_challenge_path
-    assert_select "#day-1 h3", text: languages(:french).native_name
-    assert_select "#day-1 h3", text: languages(:spanish).native_name
+    assert_select "#day-1 h2", text: languages(:french).native_name
+    assert_select "#day-1 h2", text: languages(:spanish).native_name
   end
 
   test "invalid selection renders an accessible error and does not enroll" do
@@ -139,7 +139,7 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "personalized challenge shows a source import card and allows daily completion" do
+  test "personalized daily langlets shows only a full width video card and import action" do
     join_challenge
     challenge = @user.reload.starter_challenge
     travel_to challenge.local_time_on(challenge.first_challenge_on + 5)
@@ -150,10 +150,14 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
       get daily_challenge_path
     end
     assert_select '#day-6 a[href*="url="]', 1
-    assert_select 'iframe[sandbox="allow-popups allow-popups-to-escape-sandbox"][title="Google Search"]', 1
-    assert_select "#day-6", text: /French conversation/
+    assert_select 'iframe[title="Google Search"]', 0
+    assert_select '#day-6 [data-testid="daily-langlets-video"]', 1
+    assert_select '#day-6 img.w-full[alt="French conversation"]', 1
+    assert_select '#day-6 a', text: I18n.t("daily_challenge.import_video"), count: 1
+    assert_select '#day-6 h2, #day-6 h3, #day-6 p, #day-6 form', 0
+    assert_select '#day-6 [class*="grid-cols"]', 0
     assert_select '[data-testid="daily-practice"]', 0
-    assert_select '#day-6 form[action*="complete"]', 1
+    assert_select '#day-6 form[action*="complete"]', 0
     post complete_daily_challenge_path(day: 6)
     assert_redirected_to daily_challenge_path
     assert quest.reload.completed_at?

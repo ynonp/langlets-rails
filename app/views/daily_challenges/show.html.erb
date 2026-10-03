@@ -1,75 +1,75 @@
 <% content_for :title, t("daily_challenge.nav") %>
 <div class="mx-auto max-w-4xl px-5 pt-8 pb-[max(7rem,env(safe-area-inset-bottom,1rem))]">
-  <p class="text-sm font-bold uppercase tracking-widest"><%= t("daily_challenge.today_eyebrow") %></p>
-  <h1 class="text-4xl font-extrabold mt-2 mb-4"><%= t("daily_challenge.today_title") %></h1>
+  <div class="flex items-start justify-between gap-4 mb-6">
+    <div>
+      <h1 class="text-3xl font-extrabold"><%= t("daily_challenge.today_title") %></h1>
+      <p class="mt-2 leading-relaxed"><%= t("daily_challenge.title") %></p>
+    </div>
+    <% if @challenge %>
+      <details class="shrink-0" data-testid="daily-langlets-settings">
+        <summary class="cursor-pointer list-none rounded-full p-3" aria-label="<%= t('daily_challenge.settings') %>" title="<%= t('daily_challenge.settings') %>">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M4 7h16M4 17h16" stroke-linecap="round" />
+            <circle cx="9" cy="7" r="3" fill="currentColor" /><circle cx="15" cy="17" r="3" fill="currentColor" />
+          </svg>
+        </summary>
+        <div class="absolute inset-x-5 z-10 mx-auto mt-3 max-w-4xl rounded-2xl <%= native_app? ? 'bg-app-sheet text-app-text' : 'bg-base-100' %> border border-current/20 p-5">
+          <%= render "selection", destination: daily_challenge_path %>
+        </div>
+      </details>
+    <% end %>
+  </div>
   <% if flash[:alert] %><p role="alert" class="my-4 text-red-600"><%= flash[:alert] %></p><% end %>
   <% if @challenge.nil? %>
-    <p class="mb-8"><%= t("daily_challenge.intro") %></p>
     <section role="region" aria-label="<%= t('daily_challenge.choose_languages') %>">
       <%= render "selection", destination: daily_challenge_path %>
     </section>
-  <% else %>
-
-    <details class="mb-8 rounded-2xl border border-current/20 p-5">
-      <summary class="cursor-pointer font-bold"><%= t("daily_challenge.settings") %></summary>
-      <div class="mt-5"><%= render "selection", destination: daily_challenge_path %></div>
-    </details>
-    <% if @current_quest.nil? %>
-      <section class="rounded-2xl border border-current/20 p-5 sm:p-7" data-testid="challenge-waiting">
-        <h2 class="text-2xl font-bold"><%= t(@challenge.practice_started? ? "daily_challenge.recommendation.waiting_title" : "daily_challenge.waiting_title") %></h2>
-        <% pending = @challenge.pending_quest %>
-        <% if pending&.personalized? && pending.available_at <= Time.zone.now %>
-          <p class="mt-4"><%= t(pending.recommendation_state == "failed" ? "daily_challenge.recommendation.unavailable" : "daily_challenge.recommendation.preparing") %></p>
-          <%= link_to t("daily_challenge.own_video"), new_app_import_request_path, class: "inline-block mt-4 underline font-bold" %>
-        <% else %>
-          <p class="mt-4"><%= t("daily_challenge.waiting_body", time: l(pending.available_at.in_time_zone(@challenge.time_zone), format: :long)) %></p>
-        <% end %>
-      </section>
-    <% else %>
-      <% quest = @current_quest %>
-        <section id="day-<%= quest.day %>" class="rounded-2xl border border-current/20 p-5 sm:p-7 scroll-mt-6" data-testid="quest-<%= quest.day %>">
-          <p class="text-sm font-bold"><%= t("daily_challenge.day", day: quest.day) %> <%= '✓' if quest.completed_at? %></p>
-          <h2 class="text-2xl font-bold mt-2"><%= t("daily_challenge.quests.#{quest.quest}.title") %></h2>
-          <% if quest.unlocked? %>
-            <p class="my-4 leading-relaxed"><%= t("daily_challenge.quests.#{quest.quest}.body") %></p>
-            <% if quest.quest.in?(%w[song story tiktok recommendation]) %>
-              <% (quest.personalized? ? [quest.language] : @challenge.languages.order(:english_name)).each do |language| %>
-                <h3 class="mt-5 mb-3 font-bold"><%= language.native_name %></h3>
-                <% videos = quest.videos_for(language.iso_name, catalog: @catalog) %>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <% videos.each do |video| %>
-                    <%= link_to new_app_import_request_path(url: video.fetch("url")), class: "overflow-hidden rounded-xl border border-current/20", data: { turbo: false } do %>
-                      <% if video["thumbnail_url"].present? %>
-                        <%= image_tag video["thumbnail_url"], alt: "", loading: "lazy", class: "w-full aspect-video object-cover" %>
-                      <% else %>
-                        <div class="aspect-video bg-current/10 flex items-center justify-center text-3xl" aria-hidden="true">▶</div>
-                      <% end %>
-                      <div class="p-3"><p class="font-semibold" dir="auto"><%= video.fetch("title") %></p><p class="text-sm mt-2"><%= t("daily_challenge.preview_import") %> →</p></div>
-                    <% end %>
-                  <% end %>
-                </div>
-                <% if quest.personalized? && quest.recommended_video["search_suggestions"].present? %>
-                  <iframe srcdoc="<%= quest.recommended_video["search_suggestions"] %>" sandbox="allow-popups allow-popups-to-escape-sandbox" title="Google Search" class="mt-4 w-full border-0" height="110" loading="lazy"></iframe>
-                <% end %>
-                <% if videos.empty? %><p class="text-sm"><%= t("daily_challenge.empty_catalog") %></p><% end %>
-              <% end %>
-              <p class="my-4 text-sm"><%= (User.beta_pro? ? t("beta_pro.body") : t("daily_challenge.import_cost")) %></p>
-              <%= link_to t("daily_challenge.own_video"), new_app_import_request_path, class: "underline font-bold" %>
-            <% else %>
-              <%= link_to t("daily_challenge.open_library"), (native_app? ? app_library_path : gallery_path), class: "underline font-bold" %>
-              <% if quest.quest == "vocabulary" %>
-                · <%= link_to t("daily_challenge.open_vocabulary"), (native_app? ? app_vocabulary_entries_path : vocabulary_entries_path), class: "underline font-bold" %>
-              <% end %>
-            <% end %>
-            <% if quest.completed_at? %>
-              <p class="mt-6 font-bold"><%= t("daily_challenge.completed") %></p>
-            <% else %>
-              <%= button_to t("daily_challenge.complete"), complete_daily_challenge_path(day: quest.day), class: "mt-6 rounded-full bg-[#C4451C] text-white px-6 py-3 font-bold" %>
-            <% end %>
-          <% else %>
-            <p class="mt-3 text-sm"><%= t("daily_challenge.locked", date: l(quest.available_at.in_time_zone(@challenge.time_zone), format: :long)) %></p>
-          <% end %>
-        </section>
+  <% elsif @current_quest.nil? %>
+    <div data-testid="challenge-waiting">
+      <% pending = @challenge.pending_quest %>
+      <% if pending&.personalized? && pending.available_at <= Time.zone.now %>
+        <p><%= t(pending.recommendation_state == "failed" ? "daily_challenge.recommendation.unavailable" : "daily_challenge.recommendation.preparing") %></p>
+      <% else %>
+        <p><%= t("daily_challenge.waiting_body", time: l(pending.available_at.in_time_zone(@challenge.time_zone), format: :long)) %></p>
       <% end %>
+    </div>
+  <% else %>
+    <% quest = @current_quest %>
+    <section id="day-<%= quest.day %>" class="scroll-mt-6" data-testid="quest-<%= quest.day %>">
+      <% if quest.unlocked? %>
+        <% if quest.quest.in?(%w[song story tiktok recommendation]) %>
+          <% (quest.personalized? ? [quest.language] : @challenge.languages.order(:english_name)).each do |language| %>
+            <% videos = quest.videos_for(language.iso_name, catalog: @catalog) %>
+            <% unless quest.personalized? %><h2 class="mb-3 font-bold"><%= language.native_name %></h2><% end %>
+            <div class="flex flex-col gap-5 mb-5">
+              <% videos.each do |video| %>
+                <article class="w-full overflow-hidden rounded-2xl border border-current/20" data-testid="daily-langlets-video">
+                  <% thumbnail = video["thumbnail_url"].presence || VideoSource.derived_thumbnail_url(video.fetch("url")) %>
+                  <% if thumbnail.present? %>
+                    <%= image_tag thumbnail, alt: video.fetch("title"), loading: "lazy", class: "block w-full aspect-video object-cover" %>
+                  <% else %>
+                    <div class="aspect-video bg-current/10 flex items-center justify-center text-3xl" role="img" aria-label="<%= video.fetch('title') %>">▶</div>
+                  <% end %>
+                  <div class="p-4">
+                    <%= link_to t("daily_challenge.import_video"), new_app_import_request_path(url: video.fetch("url")),
+                      class: "block w-full rounded-full bg-[#C4451C] text-white px-6 py-3 text-center font-bold", data: { turbo: false } %>
+                  </div>
+                </article>
+              <% end %>
+            </div>
+            <% if videos.empty? %><p><%= t("daily_challenge.empty_catalog") %></p><% end %>
+          <% end %>
+        <% else %>
+          <h2 class="text-xl font-bold"><%= t("daily_challenge.quests.#{quest.quest}.title") %></h2>
+          <p class="my-4"><%= t("daily_challenge.quests.#{quest.quest}.body") %></p>
+          <%= link_to t("daily_challenge.open_library"), (native_app? ? app_library_path : gallery_path), class: "underline font-bold" %>
+          <% if quest.quest == "vocabulary" %>
+            · <%= link_to t("daily_challenge.open_vocabulary"), (native_app? ? app_vocabulary_entries_path : vocabulary_entries_path), class: "underline font-bold" %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p><%= t("daily_challenge.locked", date: l(quest.available_at.in_time_zone(@challenge.time_zone), format: :long)) %></p>
+      <% end %>
+    </section>
   <% end %>
 </div>

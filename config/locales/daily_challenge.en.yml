@@ -1,7 +1,7 @@
 en:
   daily_challenge:
-    today_eyebrow: Today’s challenge
-    today_title: One small step today
+    today_eyebrow: Your daily pick
+    today_title: Daily Langlets
     language_names:
       en: English
       fr: French
@@ -12,26 +12,26 @@ en:
       sv: Swedish
       zh: Chinese
       ar-JO: Arabic
-    nav: Daily challenge
+    nav: Daily Langlets
     eyebrow: Your first five days
-    title: A little adventure, every day
-    intro: Choose the languages you want to learn and when you'd like a reminder. Your first quest arrives tomorrow; after five quests, you'll get a related video to import each day.
+    title: A daily video we hope you’ll like
+    intro: A daily video we hope you’ll like. Choose your languages and when you’d like to hear from us. Start with five activities to explore Langlets, then enjoy a video picked for you each day.
     choose_languages: What would you like to learn?
-    selection_hint: Choose one or more languages. Your quests will include ideas for each.
+    selection_hint: Choose one or more languages for your Daily Langlets.
     invalid_selection: Choose at least one supported language and a valid reminder time.
     reminder_time_label: When should we remind you each day?
-    reminder_time_hint: Pick a time and timezone. The first quest arrives tomorrow at that time.
+    reminder_time_hint: Pick a time and timezone. Your first Daily Langlets arrives tomorrow at that time.
     timezone_label: Your timezone
-    waiting_title: Your first quest arrives tomorrow
+    waiting_title: Your first Daily Langlets arrives tomorrow
     waiting_body: "We’ll send it on %{time}. Until then, you can explore Langlets."
     recommendation:
-      waiting_title: "Your next daily challenge"
+      waiting_title: "Your next Daily Langlets"
       preparing: "We’re finding a video for you. Check back soon, or choose your own video."
-      unavailable: "We couldn’t find a video today. Choose a video you like to keep learning."
+      unavailable: "Today’s pick isn’t available. You can still choose a video you like."
     no_daily_lesson: Import a video or save some words to start your daily lesson.
     practice:
       title: "Practice %{language} today"
-      body: Your five starter quests are done. Keep going with a daily lesson.
+      body: Your five starter activities are done. Keep going with a daily lesson.
       open: Open today’s lesson
     invalid_languages: Choose at least one supported language.
     reminders: How should we remind you?
@@ -43,21 +43,22 @@ en:
     settings: Languages and reminders
     day: Day %{day}
     progress:
-      one: 1 of 5 quests complete
-      other: "%{count} of 5 quests complete"
+      one: 1 of 5 starter activities complete
+      other: "%{count} of 5 starter activities complete"
+    import_video: Import
     preview_import: Preview and import
     empty_catalog: Bring a video you like in this language using the link below.
     import_cost: Imports use your normal credits. You'll see the cost before confirming.
     own_video: Choose your own video
     open_library: Open your library
     open_vocabulary: Open vocabulary
-    complete: I did it!
-    completed: Quest complete. Nicely done!
+    complete: Done for today
+    completed: Enjoy the rest of your day!
     locked: "Unlocks %{date}"
     quests:
       recommendation:
-        title: "Import your recommended video"
-        body: "We picked a video related to your imports and vocabulary. Preview it and import it to make your next langlet."
+        title: "A video picked for you"
+        body: "We found a video we hope you’ll like, inspired by your videos and vocabulary. Preview it and make it your next langlet."
       song:
         title: Import a song
         body: Pick a song in a language you're learning. Import it to turn the lyrics into your next langlet. One song is enough, even if you chose several languages.
@@ -76,11 +77,11 @@ en:
   notifications:
     kinds:
       daily_challenge_recommendation:
-        title: "Your daily challenge"
-        body: "Import “%{video_title}”, picked for you from your videos and vocabulary."
+        title: "Your Daily Langlets"
+        body: "Today’s pick: “%{video_title}”. We hope you’ll like it!"
       daily_practice:
         title: "Time to practice %{language}"
         body: Your daily lesson is ready.
       daily_challenge:
-        title: "Your starter challenge: day %{day}"
+        title: "Daily Langlets: day %{day}"
         body: "%{quest_title}: %{quest_body}"

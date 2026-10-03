@@ -1,7 +1,7 @@
 es:
   daily_challenge:
-    today_eyebrow: El reto de hoy
-    today_title: Un pequeño paso hoy
+    today_eyebrow: Nuestra selección de hoy
+    today_title: Langlets diario
     language_names:
       en: Inglés
       fr: Francés
@@ -12,30 +12,29 @@ es:
       sv: Sueco
       zh: Chino
       ar-JO: Árabe
-    nav: Reto diario
+    nav: Langlets diario
     eyebrow: Tus primeros cinco días
-    title: Una pequeña aventura cada día
-    intro: Elige tus idiomas y la hora del recordatorio. Tu primer reto llega mañana; después de cinco retos, recibirás un vídeo relacionado para importar cada día.
+    title: Un vídeo diario que esperamos que te guste
+    intro: Un vídeo diario que esperamos que te guste. Elige tus idiomas y cuándo quieres recibirlo. Empieza con cinco actividades para conocer Langlets y después descubre un vídeo elegido para ti cada día.
     choose_languages: ¿Qué quieres aprender?
-    selection_hint: Elige uno o varios idiomas. Tus misiones incluirán ideas para
-      cada uno.
+    selection_hint: Elige uno o varios idiomas para tu Langlets diario.
     invalid_selection: Elige al menos un idioma y una hora válida.
     reminder_time_label: ¿A qué hora quieres el recordatorio diario?
-    reminder_time_hint: Elige una hora y zona horaria. La primera misión llegará mañana a esa hora.
+    reminder_time_hint: Elige una hora y zona horaria. Tu primer Langlets diario llegará mañana a esa hora.
     timezone_label: Tu zona horaria
-    waiting_title: Tu primera misión llega mañana
-    waiting_body: "La enviaremos el %{time}. Mientras tanto, puedes explorar Langlets."
+    waiting_title: Tu primer Langlets diario llega mañana
+    waiting_body: "Lo enviaremos el %{time}. Mientras tanto, puedes explorar Langlets."
     recommendation:
-      waiting_title: "Tu próximo reto diario"
+      waiting_title: "Tu próximo Langlets diario"
       preparing: "Estamos buscando un vídeo para ti. Vuelve pronto o elige tu propio vídeo."
-      unavailable: "No encontramos un vídeo hoy. Elige uno que te guste para seguir aprendiendo."
+      unavailable: "La selección de hoy no está disponible. Puedes elegir un vídeo que te guste."
     no_daily_lesson: Importa un vídeo o guarda palabras para empezar tu lección diaria.
     practice:
       title: "Practica %{language} hoy"
       body: Terminaste las cinco misiones iniciales. Sigue con una lección diaria.
       open: Abrir la lección de hoy
     invalid_languages: Elige al menos un idioma disponible.
-    reminders: ¿Cómo te recordamos tu misión?
+    reminders: ¿Cómo quieres recibir tu Langlets diario?
     reminders_hint: Estas opciones también se aplican a las otras notificaciones de
       Langlets. Las notificaciones push están disponibles en iPhone y requieren permiso.
       En la web o Android, elige correo electrónico. Puedes cambiarlo en tu perfil.
@@ -46,8 +45,9 @@ es:
     settings: Idiomas y recordatorios
     day: Día %{day}
     progress:
-      one: 1 de 5 misiones completadas
-      other: '%{count} de 5 misiones completadas'
+      one: 1 de 5 actividades iniciales completadas
+      other: '%{count} de 5 actividades iniciales completadas'
+    import_video: Importar
     preview_import: Ver e importar
     empty_catalog: Puedes elegir un video que te guste en este idioma con el enlace
       de abajo.
@@ -56,13 +56,13 @@ es:
     own_video: Elige tu propio video
     open_library: Abrir tu biblioteca
     open_vocabulary: Abrir vocabulario
-    complete: ¡Lo hice!
-    completed: ¡Misión completada!
+    complete: Listo por hoy
+    completed: ¡Que disfrutes el resto del día!
     locked: Se desbloquea el %{date}
     quests:
       recommendation:
-        title: "Importa tu vídeo recomendado"
-        body: "Elegimos un vídeo relacionado con tus importaciones y vocabulario. Mira la vista previa e impórtalo para crear tu próximo langlet."
+        title: "Un vídeo elegido para ti"
+        body: "Encontramos un vídeo que esperamos que te guste, inspirado en tus vídeos y vocabulario. Mira la vista previa y conviértelo en tu próximo langlet."
       song:
         title: Importa una canción
         body: Elige una canción en un idioma que estás aprendiendo e impórtala para
@@ -88,11 +88,11 @@ es:
   notifications:
     kinds:
       daily_challenge_recommendation:
-        title: "Tu reto diario"
-        body: "Importa «%{video_title}», elegido a partir de tus vídeos y vocabulario."
+        title: "Tu Langlets diario"
+        body: "La selección de hoy: «%{video_title}». ¡Esperamos que te guste!"
       daily_practice:
         title: "Es hora de practicar %{language}"
         body: Tu lección diaria está lista.
       daily_challenge:
-        title: 'Tu reto de inicio: día %{day}'
+        title: 'Langlets diario: día %{day}'
         body: '%{quest_title}: %{quest_body}'
