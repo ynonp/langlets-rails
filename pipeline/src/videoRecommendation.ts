@@ -13,16 +13,19 @@ export interface VideoRecommendation {
 
 export function parseRecommendationContext(value: unknown): RecommendationContext {
   const data = value as RecommendationContext;
+  // Match Rails String#length/truncate: emoji count as one Unicode code point,
+  // although JavaScript String#length counts their two UTF-16 code units.
+  const text = (v: unknown, max: number): v is string =>
+    typeof v === "string" && Array.from(v).length <= max;
   if (
     !data || typeof data.learning_language !== "string" || !data.learning_language.trim() ||
-    data.learning_language.length > 100 || !Array.isArray(data.imported_videos) ||
+    !text(data.learning_language, 100) || !Array.isArray(data.imported_videos) ||
     data.imported_videos.length > 8 || !Array.isArray(data.vocabulary) ||
     data.vocabulary.length > 40 ||
     !Array.isArray(data.previous_suggestions) || data.previous_suggestions.length > 30
   ) {
     throw new Error("invalid recommendation context");
   }
-  const text = (v: unknown, max: number): v is string => typeof v === "string" && v.length <= max;
   if (
     !data.imported_videos.every((v) => text(v.title, 200) && text(v.url, 2048)) ||
     !data.vocabulary.every((v) => text(v.word, 100) && text(v.translation, 100)) ||

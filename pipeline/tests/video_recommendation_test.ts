@@ -13,6 +13,26 @@ const context = {
   vocabulary: [],
   previous_suggestions: [],
 };
+Deno.test("accepts Rails character limits for titles and vocabulary containing emoji", () => {
+  const input = {
+    ...context,
+    imported_videos: [{ title: "أ".repeat(198) + "🎬📚", url: URL }],
+    vocabulary: [{ word: "أ".repeat(99) + "📚", translation: "a".repeat(99) + "🎬" }],
+  };
+  assertEquals(parseRecommendationContext(input), input);
+  assertThrows(() =>
+    parseRecommendationContext({
+      ...input,
+      imported_videos: [{ title: "🎬".repeat(201), url: URL }],
+    })
+  );
+  assertThrows(() =>
+    parseRecommendationContext({
+      ...input,
+      vocabulary: [{ word: "📚".repeat(101), translation: "book" }],
+    })
+  );
+});
 function candidate(uri = URL, text = URL) {
   return {
     finishReason: "STOP",

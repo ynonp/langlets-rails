@@ -2632,6 +2632,9 @@ The model receives up to eight recent ready imports (titles/URLs), forty recent
 practising vocabulary words and translations in the selected language, and thirty
 previous challenge suggestions. No email or account ID is included, and the
 recommendation endpoint does not log prompts or model outputs.
+Text limits count Unicode code points on both Rails and the pipeline (200 for
+import titles, 100 for vocabulary fields), so titles containing emoji do not
+fail validation because JavaScript represents an emoji with two UTF-16 units.
 
 `pipeline/src/videoRecommendation.ts` defaults to `gemini-3.8-flash`, configurable
 with `DAILY_RECOMMENDATION_MODEL` on the pipeline host. Live testing found that
