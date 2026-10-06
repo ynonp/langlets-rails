@@ -63,6 +63,38 @@ Deno.test("requires search evidence and completion", async () => {
   await assertRejects(() => groundedVideo({ ...candidate(), groundingMetadata: {} }, context));
   await assertRejects(() => groundedVideo({ ...candidate(), finishReason: "MAX_TOKENS" }, context));
 });
+Deno.test("requires the requested type and tells search to vary creators and topics", async () => {
+  const varied = {
+    ...context,
+    preferred_content_type: "song" as const,
+    excluded_channel: "Yesterday's creator",
+    recent_recommendations: [{ title: "Bakery dialogue", content_type: "dialogue", channel: "Yesterday's creator" }],
+  };
+  const selected = candidate(URL, `${URL}\nContent type: song`);
+  assertEquals((await groundedVideo(selected, varied)).content_type, "song");
+  await assertRejects(() => groundedVideo(candidate(URL, `${URL}\nContent type: dialogue`), varied));
+  await assertRejects(() => groundedVideo(candidate(), varied));
+  const parsed = parseRecommendationContext({
+    ...varied,
+    recent_recommendations: [{ ...varied.recent_recommendations[0], email: "private@example.test" }],
+  });
+  assertEquals(parsed, varied);
+  assertThrows(() => parseRecommendationContext({ ...varied, preferred_content_type: "unknown" }));
+  assertThrows(() => parseRecommendationContext({ ...varied, recent_recommendations: Array(11).fill(varied.recent_recommendations[0]) }));
+  const request: typeof fetch = (_input, init) => {
+    const body = JSON.parse(String(init?.body));
+    const instruction = body.systemInstruction.parts[0].text;
+    assertEquals(instruction.includes("Today MUST be song"), true);
+    assertEquals(instruction.includes("100% in French"), true);
+    assertEquals(instruction.includes("English explanations"), true);
+    assertEquals(instruction.includes("Match the difficulty"), true);
+    assertEquals(instruction.includes("sampled source words"), true);
+    assertEquals(instruction.includes("Exclude every video from the excluded_channel"), true);
+    assertEquals(JSON.parse(body.contents[0].parts[0].text).excluded_channel, varied.excluded_channel);
+    return Promise.resolve(Response.json({ candidates: [selected] }));
+  };
+  assertEquals((await recommendVideo(parsed, { apiKey: "test-key", request })).content_type, "song");
+});
 Deno.test("resolves Google citations without following arbitrary redirect destinations", async () => {
   const uri = "https://vertexaisearch.cloud.google.com/grounding-api-redirect/example";
   const request: typeof fetch = (_input, init) => {

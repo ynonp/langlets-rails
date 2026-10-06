@@ -24,11 +24,12 @@ class PrepareDailyChallengeRecommendationJob < ApplicationJob
     return unless claimed
 
     recommendation = DailyVideoRecommendation.call(user: quest.starter_challenge.user, language: quest.language)
-    video = Imports::VideoPreflight.call(recommendation.url).video
+    video = recommendation.video || Imports::VideoPreflight.call(recommendation.url).video
     quest.with_lock do
       quest.update!(recommendation_state: "ready", recommendation_failure: nil,
         recommended_video: { "url" => video.canonical_url, "title" => video.title.to_s.truncate(200),
-          "thumbnail_url" => video.thumbnail_url, "search_suggestions" => recommendation.search_suggestions })
+          "thumbnail_url" => video.thumbnail_url, "search_suggestions" => recommendation.search_suggestions,
+          "channel" => video.author_name, "content_type" => recommendation.content_type })
     end
     quest.notify!
   rescue StandardError => error

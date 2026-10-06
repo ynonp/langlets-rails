@@ -368,15 +368,31 @@ Rails sends bounded learning context (`learning_language`, up to eight
 The handler calls Gemini with Google Search using the existing
 `GOOGLE_GENERATIVE_AI_API_KEY`. `DAILY_RECOMMENDATION_MODEL` defaults to
 `gemini-3.8-flash`. No Rails OpenAI key is needed for daily recommendations.
+Discovery instructions require 100% spoken/sung content in the learning language,
+excluding bilingual videos and foreign-language explanations, and a comparable
+level to the imported videos and vocabulary. With no saved words, Rails sends
+a bounded random sample of source words from the learner's imported transcripts
+(empty translation strings). Gemini estimates level from this context and search
+evidence; this is not a post-search transcript audit.
 
-The response contains `{url, search_suggestions}`. The URL is accepted only when
+Rails can also send `preferred_content_type` (`dialogue`, `song`, `story`, `culture`),
+`excluded_channel`, and up to ten `recent_recommendations` (title/type/channel).
+For these requests the response includes `content_type`, verified against an explicit
+`Content type: <type>` line in Gemini's natural-text answer. Search instructions
+require a different creator from the excluded channel and varied topics. Rails
+independently verifies the actual channel through provider metadata and rotates
+the type from the latest card. Older clients without variety fields remain supported.
+
+The response contains `{url, search_suggestions, content_type?}`. The URL is accepted only when
 it appears in the model's text and matches a resolved grounding source. Google
 citation redirects are inspected with HEAD requests to the known Google endpoint;
 other hosts and arbitrary redirect targets are never fetched. Responses without
 search evidence or with truncated output fail. Searches use natural text because
 the live JSON-constrained trial returned no grounding metadata. No recommendation
 prompts or outputs are logged. Rails performs availability/duration preflight,
-stores the card and displays Google's search suggestions in a sandboxed iframe.
-There is no automatic course import: the learner confirms through the normal UI.
+stores the card with its verified channel and type. Search suggestions are persisted
+but omitted from the compact Daily Langlets page. The learner's Import button submits
+directly to the normal import service, preserving pricing and deduplication.
 
-This feature requires deploying both the pipeline endpoint and the Rails client.
+This feature requires deploying both the pipeline endpoint and the Rails client;
+deploy the pipeline first so it returns the requested type before Rails requires it.

@@ -36,10 +36,10 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     travel_to @user.reload.starter_challenge.daily_challenges.find_by!(day: 1).available_at + 1.second do
       get daily_challenge_path
       assert_select 'section[data-testid^="quest-"]', 1
-      assert_select '#day-1 a[href*="url="]', minimum: 1
+      assert_select '#day-1 form[action=?][method=post]', app_import_requests_path, minimum: 1
     end
-    assert_select '#day-1 a[href*="x5PJoP9x-Ys"]', 0
-    assert_select '#day-3 a[href*="url="]', 0
+    assert_select '#day-1 input[name=url][value*="x5PJoP9x-Ys"]', 0
+    assert_select '#day-3 form[action=?]', app_import_requests_path, count: 0
     assert_select '#day-1 form[action*="complete"]', 0
     assert_select '#day-2 form[action*="complete"]', 0
   end
@@ -149,15 +149,27 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference [ "Course.count", "ImportRequest.count" ] do
       get daily_challenge_path
     end
-    assert_select '#day-6 a[href*="url="]', 1
+    assert_select '#day-6 form[action=?][method=post][data-turbo=false]', app_import_requests_path, count: 1
+    assert_select '#day-6 input[name=url][value=?]', url
     assert_select 'iframe[title="Google Search"]', 0
     assert_select '#day-6 [data-testid="daily-langlets-video"]', 1
     assert_select '#day-6 img.w-full[alt="French conversation"]', 1
-    assert_select '#day-6 a', text: I18n.t("daily_challenge.import_video"), count: 1
-    assert_select '#day-6 h2, #day-6 h3, #day-6 p, #day-6 form', 0
+    assert_select '#day-6 button.bg-app-accent.text-app-on-accent', text: I18n.t("daily_challenge.import_video"), count: 1
+    assert_select '#day-6 h2, #day-6 h3, #day-6 p, #day-6 a', 0
     assert_select '#day-6 [class*="grid-cols"]', 0
     assert_select '[data-testid="daily-practice"]', 0
     assert_select '#day-6 form[action*="complete"]', 0
+    video = VideoSource::Video.new(video_id: "kJQP7kiw5Fk", title: "French conversation",
+      author_name: "French teacher", thumbnail_url: "https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg", canonical_url: url)
+    preflight = Imports::VideoPreflight::Result.new(video: video, duration_seconds: 120, maximum_duration_seconds: 1500)
+    assert_difference "@user.import_requests.count", 1 do
+      Imports::VideoPreflight.stub(:call, preflight) do
+        post app_import_requests_path, params: { url: url }
+      end
+    end
+    assert_redirected_to gallery_path(imports: "pending")
+    assert_equal url, @user.import_requests.sole.youtube_url
+    assert @user.import_requests.sole.detecting?
     post complete_daily_challenge_path(day: 6)
     assert_redirected_to daily_challenge_path
     assert quest.reload.completed_at?

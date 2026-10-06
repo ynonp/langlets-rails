@@ -2635,9 +2635,34 @@ sends bounded learning context through `PipelineClient.recommend_video` to the
 HMAC-authenticated pipeline endpoint `POST /recommend-video`. The pipeline uses
 its existing `GOOGLE_GENERATIVE_AI_API_KEY` and Gemini's `google_search` tool.
 The model receives up to eight recent ready imports (titles/URLs), forty recent
-practising vocabulary words and translations in the selected language, and thirty
+saved vocabulary words and translations in the selected language, and thirty
 previous challenge suggestions. No email or account ID is included, and the
 recommendation endpoint does not log prompts or model outputs.
+If there are no saved words in the selected language, Rails samples up to forty
+unique source words from twenty random transcript phrases belonging to the
+learner's eight recent ready imports in that language. Translation strings are
+empty for this fallback, and no words are invented when neither source exists.
+Gemini is instructed to use only the learning-language words and imported videos
+to infer a comparable level (vocabulary, sentence complexity, and speaking pace).
+Discovery requires 100% of the spoken/sung content, including introductions and
+endings, to be in the learning language; bilingual lessons and English explanations
+are explicitly excluded. Language purity and level are search/model judgments,
+not an automatic transcript audit; uncertain candidates should be rejected by Gemini.
+Daily Langlets rotates content types across all the learner's selected languages:
+dialogue → song → story → culture → dialogue. The latest prepared card's type
+determines the next type; legacy cards without one use a local-day-based rotation.
+The pipeline receives the requested type, the latest channel to exclude, and up
+to ten recent titles/types/channels to encourage new subjects and creators. Gemini
+must explicitly identify the requested type in its natural-text response; mismatches
+are rejected. Content classification relies on Gemini's assessment of the source,
+while the channel is checked independently using YouTube oEmbed's author name.
+Rails runs the normal availability/duration preflight inside `DailyVideoRecommendation`
+and rejects a missing author or a channel matching the previous card after Unicode,
+whitespace and case normalization. The job reuses that preflight result and persists
+`channel` and `content_type` in `recommended_video`; no schema migration is needed.
+For the latest legacy card without a channel, Rails resolves its author using the
+existing provider metadata lookup and caches it for seven days. A failed lookup
+or rejected type/channel follows the same three-attempt preparation retry policy.
 Text limits count Unicode code points on both Rails and the pipeline (200 for
 import titles, 100 for vocabulary fields), so titles containing emoji do not
 fail validation because JavaScript represents an emoji with two UTF-16 units.
@@ -2656,7 +2681,7 @@ related themes, clear speech, and preferably 2–8 minutes within the existing
 Google's returned search suggestions remain persisted with the source card;
 the Daily Langlets page does not render the search panel.
 
-The recommendation job calls the existing `Imports::VideoPreflight` to check
+The recommendation service calls the existing `Imports::VideoPreflight` to check
 availability and known duration, and persists the source URL, title and thumbnail
 in `daily_challenges.recommended_video`. No admin import, Course, Enrollment,
 credit charge, or catalog publication occurs while preparing a challenge. The
@@ -2664,10 +2689,15 @@ ready source appears as a single full-width thumbnail card with an Import button
 Curated starter video cards also span the available width. The page has a short
 Daily Langlets heading and tagline, with reminder preferences collapsed behind
 a small settings control. Day counters, completion controls, explanatory footers,
-credit copy, and the Google Search panel are omitted from video cards. Starter
+credit copy, and the Google Search panel are omitted from video cards. The Hebrew
+tagline reads “סרטון יומי מומלץ עבורכם”. The Import button uses the shared green
+`bg-app-accent` / `text-app-on-accent` tokens and directly posts the source URL to
+`App::ImportRequestsController#create`, without an intermediate preview screen. Starter
 vocabulary/skimming activities retain their instructions and library links.
-The learner previews and confirms it through the normal Add Video flow, which
-retains ordinary language detection, pricing, pipeline reuse and publication.
+The existing import service retains ordinary availability/duration checks,
+language detection, pricing, deduplication, pipeline reuse and publication. A
+successful submission follows the existing redirect to the pending library or
+an already available course; import errors retain their existing handling.
 The account-scoped completion endpoint remains available for compatibility, but
 Daily Langlets no longer presents a manual completion action.
 

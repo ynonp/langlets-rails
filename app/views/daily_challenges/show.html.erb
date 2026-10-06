@@ -51,8 +51,10 @@
                     <div class="aspect-video bg-current/10 flex items-center justify-center text-3xl" role="img" aria-label="<%= video.fetch('title') %>">▶</div>
                   <% end %>
                   <div class="p-4">
-                    <%= link_to t("daily_challenge.import_video"), new_app_import_request_path(url: video.fetch("url")),
-                      class: "block w-full rounded-full bg-[#C4451C] text-white px-6 py-3 text-center font-bold", data: { turbo: false } %>
+                    <%= button_to t("daily_challenge.import_video"), app_import_requests_path,
+                      method: :post, params: { url: video.fetch("url") },
+                      class: "block w-full rounded-full bg-app-accent text-app-on-accent px-6 py-3 text-center font-bold",
+                      form: { data: { turbo: false } } %>
                   </div>
                 </article>
               <% end %>
