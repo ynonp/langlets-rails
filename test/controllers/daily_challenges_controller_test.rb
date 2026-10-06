@@ -154,7 +154,8 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'iframe[title="Google Search"]', 0
     assert_select '#day-6 [data-testid="daily-langlets-video"]', 1
     assert_select '#day-6 img.w-full[alt="French conversation"]', 1
-    assert_select '#day-6 button.bg-app-accent.text-app-on-accent', text: I18n.t("daily_challenge.import_video"), count: 1
+    assert_select '#day-6 button.bg-app-accent.text-app-on-accent', count: 1
+    assert_select '#day-6 [data-import-submit-target="idle"]', text: I18n.t("daily_challenge.import_video"), count: 1
     assert_select '#day-6 h2, #day-6 h3, #day-6 p, #day-6 a', 0
     assert_select '#day-6 [class*="grid-cols"]', 0
     assert_select '[data-testid="daily-practice"]', 0

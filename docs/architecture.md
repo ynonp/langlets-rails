@@ -2699,7 +2699,12 @@ credit copy, and the Google Search panel are omitted from video cards. The Hebre
 tagline reads “סרטון יומי מומלץ עבורכם”. The Import button uses the shared green
 `bg-app-accent` / `text-app-on-accent` tokens and directly posts the source URL to
 `App::ImportRequestsController#create`, with the account-scoped challenge ID,
-without an intermediate preview screen. Starter
+without an intermediate preview screen. Its `import-submit` Stimulus controller
+immediately disables the button and shows a spinner with localized “Importing…”
+copy on form submission, blocking repeated submissions while the native POST
+and redirect finish. Window `pageshow` and Turbo cache events reset the button
+when returning to the page. The form retains `data-turbo=false` and works as an
+ordinary POST without JavaScript. Starter
 vocabulary/skimming activities retain their instructions and library links.
 The existing import service retains ordinary availability/duration checks,
 language detection, pricing, deduplication, pipeline reuse and publication. For

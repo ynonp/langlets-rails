@@ -48,6 +48,7 @@ es:
       one: 1 de 5 actividades iniciales completadas
       other: '%{count} de 5 actividades iniciales completadas'
     import_video: Importar
+    importing_video: Importando…
     preview_import: Ver e importar
     empty_catalog: Puedes elegir un video que te guste en este idioma con el enlace
       de abajo.

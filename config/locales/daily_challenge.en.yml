@@ -46,6 +46,7 @@ en:
       one: 1 of 5 starter activities complete
       other: "%{count} of 5 starter activities complete"
     import_video: Import
+    importing_video: Importing…
     preview_import: Preview and import
     empty_catalog: Bring a video you like in this language using the link below.
     import_cost: Imports use your normal credits. You'll see the cost before confirming.

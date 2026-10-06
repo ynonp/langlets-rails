@@ -51,10 +51,23 @@
                     <div class="aspect-video bg-current/10 flex items-center justify-center text-3xl" role="img" aria-label="<%= video.fetch('title') %>">▶</div>
                   <% end %>
                   <div class="p-4">
-                    <%= button_to t("daily_challenge.import_video"), app_import_requests_path,
+                    <%= button_to app_import_requests_path,
                       method: :post, params: { url: video.fetch("url"), daily_challenge_id: quest.id },
-                      class: "block w-full rounded-full bg-app-accent text-app-on-accent px-6 py-3 text-center font-bold",
-                      form: { data: { turbo: false } } %>
+                      class: "block w-full rounded-full bg-app-accent text-app-on-accent px-6 py-3 text-center font-bold disabled:opacity-75 disabled:cursor-wait",
+                      data: { import_submit_target: "button" },
+                      form: { data: { turbo: false, controller: "import-submit",
+                        action: "submit->import-submit#submit pageshow@window->import-submit#reset turbo:before-cache@document->import-submit#reset" } } do %>
+                      <span data-import-submit-target="idle"><%= t("daily_challenge.import_video") %></span>
+                      <span data-import-submit-target="loading" hidden role="status" aria-live="polite">
+                        <span class="inline-flex items-center justify-center gap-2">
+                          <svg class="h-5 w-5 animate-spin motion-reduce:animate-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <circle class="opacity-25" cx="12" cy="12" r="9" stroke="currentColor" stroke-width="3" />
+                            <path d="M12 3a9 9 0 0 1 9 9" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                          </svg>
+                          <%= t("daily_challenge.importing_video") %>
+                        </span>
+                      </span>
+                    <% end %>
                   </div>
                 </article>
               <% end %>
