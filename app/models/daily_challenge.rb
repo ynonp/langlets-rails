@@ -6,7 +6,7 @@ class DailyChallenge < ApplicationRecord
   belongs_to :notification, optional: true
   belongs_to :language, optional: true
   validates :language, presence: true, if: :personalized?
-  validates :recommendation_state, inclusion: { in: %w[pending searching ready failed] }
+  validates :recommendation_state, inclusion: { in: %w[pending searching importing ready failed] }
   validates :day, numericality: { only_integer: true, greater_than: 0 }, uniqueness: { scope: :starter_challenge_id }
   validates :available_at, presence: true
   validate :complete_recommendation, if: -> { personalized? && recommendation_state == "ready" }
@@ -14,7 +14,7 @@ class DailyChallenge < ApplicationRecord
   scope :due, -> { where(available_at: ..Time.zone.now, notification_id: nil, skipped_at: nil) }
 
   scope :recommendations_to_prepare, -> {
-    where("day > 5").where(notification_id: nil, skipped_at: nil, recommendation_state: %w[pending searching])
+    where("day > 5").where(notification_id: nil, skipped_at: nil, recommendation_state: %w[pending searching importing])
       .where(available_at: ..(Time.zone.now + PREPARATION_LEAD))
   }
 

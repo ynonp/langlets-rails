@@ -48,6 +48,26 @@ module App
       end
     end
 
+    test "a daily langlets push routed by an older iOS build opens the daily page" do
+      notification = @user.notifications.create!(kind: :daily_challenge, url: "/daily_challenge", data: { "day" => 11 })
+      payload = Push::Notifier.new(notification).payload.fetch(:custom_payload)
+      assert_equal "/daily_challenge", payload.fetch(:url)
+      assert_equal Notification::DAILY_LANGLET_DEEP_LINK, payload.fetch(:course_slug)
+
+      get app_home_path, params: { just_imported: payload.fetch(:course_slug) }, headers: NATIVE
+      assert_redirected_to daily_challenge_path
+      follow_redirect!(headers: NATIVE.dup)
+      assert_response :success
+      assert_select "h1", text: I18n.t("daily_challenge.today_title")
+    end
+
+    test "course ready push keeps its existing home destination" do
+      notification = @user.notifications.create!(kind: :course_ready, url: "/courses/#{@course.slug}", data: { "course_slug" => @course.slug })
+      assert_equal @course.slug, Push::Notifier.new(notification).payload.dig(:custom_payload, :course_slug)
+      get app_home_path, params: { just_imported: @course.slug }, headers: NATIVE
+      assert_response :success
+    end
+
     test "screens render with an empty account" do
       Enrollment.delete_all
 

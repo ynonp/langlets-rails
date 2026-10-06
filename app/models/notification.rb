@@ -19,6 +19,9 @@
 # are copied onto the row, so a notification still reads correctly after the
 # course it is about has been deleted.
 class Notification < ApplicationRecord
+  # Older iOS builds route only `course_slug` through /app?just_imported=...
+  # Reserve a non-course marker so Rails can complete the daily page deep link.
+  DAILY_LANGLET_DEEP_LINK = "__daily_langlets__".freeze
   belongs_to :user
 
   # Persisted as an integer; keep the values stable, and treat them as

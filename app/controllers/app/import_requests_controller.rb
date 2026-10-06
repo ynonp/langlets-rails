@@ -90,7 +90,10 @@ module App
     end
 
     def create
-      clip_language = HomepageVideos.find_by_url(params[:url])&.clip_language
+      daily_challenge = current_user.starter_challenge&.daily_challenges&.find_by(id: params[:daily_challenge_id]) if params[:daily_challenge_id].present?
+      daily_video = daily_challenge&.personalized? && daily_challenge.unlocked? &&
+        VideoSource.loose_canonical(params[:url]) == daily_challenge.recommended_video["url"]
+      clip_language = daily_video ? daily_challenge.language.english_name : HomepageVideos.find_by_url(params[:url])&.clip_language
       result = Imports::Create.call(
         user: current_user,
         url: params[:url],
@@ -107,7 +110,7 @@ module App
         paused: result.paused?
       })
 
-      if params[:deeplink] == "1" && result.import_request && !result.in_channel? && !result.paused?
+      if (params[:deeplink] == "1" || daily_challenge) && result.import_request && !result.in_channel? && !result.paused?
         redirect_to deeplink_status_app_import_requests_path(id: result.import_request.id)
       else
         redirect_to_result(result)

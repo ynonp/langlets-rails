@@ -2,6 +2,7 @@ module App
   # Screen 01. The user's unfinished courses (Enrollments — imported or added
   # from the Library), followed by a four-item preview of the visible Library.
   class HomeController < BaseController
+    before_action :open_daily_langlets_notification
     before_action :set_daily_vocab_reviews
 
     # Within this window a finished import still counts as "just imported" and
@@ -41,6 +42,10 @@ module App
     end
 
     private
+
+    def open_daily_langlets_notification
+      redirect_to daily_challenge_path if params[:just_imported] == Notification::DAILY_LANGLET_DEEP_LINK
+    end
 
     # Either the course the push notification pointed at, or the most recent
     # import that finished in the last day — but only if the user hasn't started

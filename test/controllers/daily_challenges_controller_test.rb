@@ -164,18 +164,66 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     preflight = Imports::VideoPreflight::Result.new(video: video, duration_seconds: 120, maximum_duration_seconds: 1500)
     assert_difference "@user.import_requests.count", 1 do
       Imports::VideoPreflight.stub(:call, preflight) do
-        post app_import_requests_path, params: { url: url }
+        post app_import_requests_path, params: { url: url, daily_challenge_id: quest.id }, headers: NATIVE
       end
     end
-    assert_redirected_to gallery_path(imports: "pending")
+    assert_redirected_to deeplink_status_app_import_requests_path(id: @user.import_requests.sole.id)
     assert_equal url, @user.import_requests.sole.youtube_url
-    assert @user.import_requests.sole.detecting?
+    assert @user.import_requests.sole.queued?
+    assert_equal "French", @user.import_requests.sole.clip_language
     post complete_daily_challenge_path(day: 6)
     assert_redirected_to daily_challenge_path
     assert quest.reload.completed_at?
     travel_to quest.available_at + 1.day
     get daily_challenge_path
     assert_select "#day-6", 0
+  end
+
+  test "importing a prepared daily recommendation opens the course immediately without pipeline work" do
+    join_challenge
+    challenge = @user.reload.starter_challenge
+    travel_to challenge.local_time_on(challenge.first_challenge_on + 5)
+    quest = DailyChallenge.ensure_personalized_today!(challenge)
+    url = "https://www.youtube.com/watch?v=kJQP7kiw5Fk"
+    admin = User.create!(email: User::ADMIN_EMAIL, password: "password123")
+    course = create_translated_course!(name: "French song", slug: "prepared-daily", user: admin,
+      language: languages(:french), translation_language: languages(:english), status: :published,
+      main_media_url: url, youtube_video_id: "kJQP7kiw5Fk")
+    quest.update!(recommendation_state: "ready", recommended_video: { "url" => url, "title" => course.name })
+    video = VideoSource::Video.new(video_id: "kJQP7kiw5Fk", title: course.name, canonical_url: url,
+      author_name: "French teacher", thumbnail_url: "https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg")
+    preflight = Imports::VideoPreflight::Result.new(video: video, duration_seconds: 120, maximum_duration_seconds: 1500)
+    balance = @user.reload.credit_balance
+    assert_no_difference [ "Course.count", "CreateSongProgress.count" ] do
+      assert_no_enqueued_jobs only: [ CreateCourseJob, DetectImportLanguageJob, AddCourseTranslationJob ] do
+        Imports::VideoPreflight.stub(:call, preflight) do
+          post app_import_requests_path, params: { url: url, daily_challenge_id: quest.id }, headers: NATIVE
+        end
+      end
+    end
+    assert_redirected_to course_path(course)
+    assert @user.import_requests.sole.ready?
+    assert @user.enrollments.exists?(course: course)
+    assert_equal balance - Imports::Pricing::CREDIT_COST, @user.reload.credit_balance
+    follow_redirect!(headers: NATIVE.dup)
+    assert_response :success
+  end
+
+  test "another account's challenge cannot supply the import language or change its destination" do
+    other = User.create!(email: "other-daily@example.test", password: "password123")
+    challenge = StarterChallenge.enroll!(user: other, language_ids: [ languages(:french).id ], delivery: [])
+    travel_to challenge.local_time_on(challenge.first_challenge_on + 5)
+    quest = DailyChallenge.ensure_personalized_today!(challenge)
+    url = "https://www.youtube.com/watch?v=kJQP7kiw5Fk"
+    quest.update!(recommendation_state: "ready", recommended_video: { "url" => url, "title" => "French conversation" })
+    video = VideoSource::Video.new(video_id: "kJQP7kiw5Fk", title: "French conversation", canonical_url: url,
+      author_name: "French teacher", thumbnail_url: nil)
+    preflight = Imports::VideoPreflight::Result.new(video: video, duration_seconds: 120, maximum_duration_seconds: 1500)
+    Imports::VideoPreflight.stub(:call, preflight) do
+      post app_import_requests_path, params: { url: url, daily_challenge_id: quest.id }, headers: NATIVE
+    end
+    assert @user.import_requests.sole.detecting?
+    assert_redirected_to gallery_path(imports: "pending")
   end
 
   test "Hebrew and Spanish interfaces render without missing translations" do

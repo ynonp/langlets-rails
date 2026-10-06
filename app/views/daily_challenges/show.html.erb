@@ -52,7 +52,7 @@
                   <% end %>
                   <div class="p-4">
                     <%= button_to t("daily_challenge.import_video"), app_import_requests_path,
-                      method: :post, params: { url: video.fetch("url") },
+                      method: :post, params: { url: video.fetch("url"), daily_challenge_id: quest.id },
                       class: "block w-full rounded-full bg-app-accent text-app-on-accent px-6 py-3 text-center font-bold",
                       form: { data: { turbo: false } } %>
                   </div>

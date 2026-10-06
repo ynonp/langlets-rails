@@ -9,7 +9,7 @@ class DailyChallengesController < App::BaseController
     @delivery = current_user.notification_delivery
     if @challenge&.practice_started?
       quest = DailyChallenge.ensure_personalized_today!(@challenge)
-      if quest.recommendation_state.in?(%w[pending searching]) && quest.available_at <= Time.zone.now + DailyChallenge::PREPARATION_LEAD
+      if quest.recommendation_state.in?(%w[pending searching importing]) && quest.available_at <= Time.zone.now + DailyChallenge::PREPARATION_LEAD
         PrepareDailyChallengeRecommendationJob.perform_later(quest.id)
       end
     end

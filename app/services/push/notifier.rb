@@ -44,7 +44,7 @@ module Push
         custom_payload: {
           notification_id: @notification.id,
           url: @notification.url,
-          course_slug: @notification.data["course_slug"]
+          course_slug: @notification.kind_daily_challenge? ? Notification::DAILY_LANGLET_DEEP_LINK : @notification.data["course_slug"]
         }.compact
       }.compact
     end

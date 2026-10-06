@@ -2683,26 +2683,40 @@ the Daily Langlets page does not render the search panel.
 
 The recommendation service calls the existing `Imports::VideoPreflight` to check
 availability and known duration, and persists the source URL, title and thumbnail
-in `daily_challenges.recommended_video`. No admin import, Course, Enrollment,
-credit charge, or catalog publication occurs while preparing a challenge. The
-ready source appears as a single full-width thumbnail card with an Import button.
+in `daily_challenges.recommended_video`. Before exposing the card or notifying,
+`PrepareDailyChallengeRecommendationJob` imports that video under `User::ADMIN_EMAIL`
+with the known target language and the learner's native translation language.
+It uses the existing `guest_started` preparation mode: shared Course and pipeline
+data are built without enrolling either account, publishing into their channels,
+charging credits, or sending the admin a course-ready notification. The source
+ImportRequest ID is persisted in the card as `source_import_request_id`. The
+card becomes ready only once that request, published Course, and translation
+are all ready. The ready source appears as a full-width thumbnail with an Import button.
 Curated starter video cards also span the available width. The page has a short
 Daily Langlets heading and tagline, with reminder preferences collapsed behind
 a small settings control. Day counters, completion controls, explanatory footers,
 credit copy, and the Google Search panel are omitted from video cards. The Hebrew
 tagline reads “סרטון יומי מומלץ עבורכם”. The Import button uses the shared green
 `bg-app-accent` / `text-app-on-accent` tokens and directly posts the source URL to
-`App::ImportRequestsController#create`, without an intermediate preview screen. Starter
+`App::ImportRequestsController#create`, with the account-scoped challenge ID,
+without an intermediate preview screen. Starter
 vocabulary/skimming activities retain their instructions and library links.
 The existing import service retains ordinary availability/duration checks,
-language detection, pricing, deduplication, pipeline reuse and publication. A
-successful submission follows the existing redirect to the pending library or
-an already available course; import errors retain their existing handling.
+language detection, pricing, deduplication, pipeline reuse and publication. For
+a matching, unlocked personalized card, its known source language skips detection.
+The prepared course is adopted into the learner's channel and opened immediately,
+with ordinary pricing. A missing translation after an interface-language change,
+or an older unprepared card, uses the existing account-scoped import status page,
+which polls and opens the course when ready; it does not send the learner to the
+web pending gallery. Ordinary Add Video imports keep their existing redirect.
 The account-scoped completion endpoint remains available for compatibility, but
 Daily Langlets no longer presents a manual completion action.
 
-Recommendation state progresses pending → searching → ready (or failed). A row-locked ten-minute
-search lease prevents duplicate searches and lets abandoned jobs resume. Search
+Recommendation state progresses pending → searching → importing → ready (or failed).
+The scheduler and daily page requeue importing cards to check course readiness
+without rerunning Gemini or starting another import. Failed or canceled source
+imports leave the card unavailable and send no daily notification.
+A row-locked ten-minute search/preparation lease prevents duplicate work and lets abandoned jobs resume. Search
 or preflight exceptions retry up to three attempts; unfinished records are
 requeued by the scheduler, recovering a lost enqueue. Stale challenges are skipped.
 Search and provider calls happen outside database locks. Missing pipeline configuration/Google credentials or
@@ -2710,8 +2724,7 @@ failed searches leave a concise waiting/unavailable message; they do not generat
 an empty reminder or random fallback suggestion.
 
 Notifications remain the existing `daily_challenge` kind. Days 1–5 retain
-`/daily_challenge#day-N`; personalized days use exactly `/daily_challenge`, which
-installed iOS apps already accept. A ready recommendation sends at or after the
+`/daily_challenge#day-N`; personalized days use exactly `/daily_challenge`. A ready recommendation sends at or after the
 chosen local time, with a bounded title and localized English/Hebrew/Spanish
 copy inviting the learner to import that video. Row locks prevent duplicate
 notifications and the delivery job suppresses stale local dates. No new native
@@ -2995,9 +3008,17 @@ will not present its authorization prompt a second time.
 `Push::Notifier` puts the published course slug in the APNs custom payload
 (`course_slug`, alongside `url` and `notification_id`). Notification taps are handled on both iOS paths: `UNUserNotificationCenterDelegate` for a running app and `UIScene.ConnectionOptions.notificationResponse` for a cold launch. Both reset the Home navigator to `/app?just_imported=<slug>`. `App::HomeController` only resolves that slug through the signed-in user's published enrollments, then renders the newly created course as the **JUST IMPORTED** hero whose **Start Course** button enters the standard course experience. An invalid or unauthorized slug safely falls back to ordinary Home.
 
+For `daily_challenge` pushes the payload retains its daily-page `url` and puts
+the reserved `__daily_langlets__` marker in `course_slug`. Older installed iOS
+builds that only read `course_slug` route to `/app?just_imported=__daily_langlets__`;
+the authenticated Home controller immediately redirects that marker to
+`/daily_challenge`. Current builds also support the daily `url`. This server
+compatibility route works for warm and cold launches without a new native build.
+Already-delivered pushes cannot acquire the new payload retroactively.
+
 Note the notification's own `url` is the course page (`/courses/:slug`), not
 `/app?just_imported=…`: that screen is native-only and bounces a web reader to
-the home page, and the native deep link does not read `url` anyway.
+the home page, and course-ready native deep links prioritize `course_slug`.
 
 **No tab carries a badge.** The Library tab used to show active imports, which
 competed with the app icon badge for the same attention while meaning something
