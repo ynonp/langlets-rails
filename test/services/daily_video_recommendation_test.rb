@@ -64,24 +64,24 @@ class DailyVideoRecommendationTest < ActiveSupport::TestCase
     end
   end
 
-  test "rejects a repeated channel despite a valid grounded URL" do
+  test "allows a familiar channel when learning fit outweighs variety" do
     challenge = StarterChallenge.enroll!(user: @user, language_ids: [ @language.id ], delivery: [])
     challenge.daily_challenges.create!(day: 6, language: @language, available_at: Time.zone.now,
       recommended_video: { "url" => "https://www.youtube.com/watch?v=abcdefghijk", "channel" => " NEW  CREATOR ", "content_type" => "dialogue" })
-    assert_raises(DailyVideoRecommendation::InvalidRecommendation) { recommend }
+    assert_equal "New creator", recommend.video.author_name
   end
 
-  test "resolves the previous channel for legacy cards without saved metadata" do
+  test "resolves legacy channel context without rejecting a suitable creator" do
     challenge = StarterChallenge.enroll!(user: @user, language_ids: [ @language.id ], delivery: [])
     challenge.daily_challenges.create!(day: 6, language: @language, available_at: Time.zone.now,
       recommended_video: { "url" => "https://www.youtube.com/watch?v=abcdefghijk" })
     old_video = @preflight.call(@url).video.with(author_name: "New creator")
     VideoSource.stub(:fetch, old_video) do
-      assert_raises(DailyVideoRecommendation::InvalidRecommendation) { recommend }
+      assert_equal "New creator", recommend.video.author_name
     end
   end
 
-  test "rejects a different content type than requested" do
+  test "rejects an invalid content type" do
     client = Object.new
     client.define_singleton_method(:recommend_video) { |_| { "url" => "https://www.youtube.com/watch?v=kJQP7kiw5Fk", "content_type" => "invalid" } }
     assert_raises(DailyVideoRecommendation::InvalidRecommendation) do
@@ -107,6 +107,44 @@ class DailyVideoRecommendationTest < ActiveSupport::TestCase
   test "no vocabulary and no imports send empty words without invented examples" do
     payload = DailyVideoRecommendation.new(user: @user, language: @language).send(:context)
     assert_empty payload[:vocabulary]
+  end
+
+  test "preserves Palestinian dialect and saved word sentence as primary evidence" do
+    language = languages(:arabic)
+    PhraseTokenUser.create_custom!(user: @user, sentence: "ليش بيقهروني هيك", language: language,
+      token_range: 1..1, translation: "annoy me", translation_language: languages(:english))
+    payload = DailyVideoRecommendation.new(user: @user, language: language).send(:context)
+    assert_equal "Palestinian spoken Arabic (Levantine)", payload[:learning_language]
+    assert_equal "ar-JO", payload[:learning_language_code]
+    assert_equal "العربية الفلسطينية", payload[:learning_language_native_name]
+    assert_equal "saved_words", payload[:vocabulary_source]
+    assert_equal "ليش بيقهروني هيك", payload[:vocabulary].first[:sentence]
+    assert payload[:variety_is_optional]
+  end
+
+  test "completed lesson evidence includes only this learner's target-language lesson content" do
+    course = Course.create!(user: @user, language: @language, name: "French conversation", slug: "completed-context",
+      main_media_url: "https://www.youtube.com/watch?v=abcdefghijk", status: :published)
+    medium = Medium.create!(url: course.main_media_url, language: @language)
+    lesson = course.lessons.create!(user: @user, medium: medium, name: "At the market")
+    other_lesson = course.lessons.create!(user: @user, medium: medium, name: "Unfinished")
+    activity = Activities::WatchVideoActivity.create!(lesson: lesson, user: @user, order: 1)
+    phrase = Phrase.create!(medium: medium, l1: @language, text_l1: "Je voudrais du pain.")
+    activity.phrases << phrase
+    activity.phrases << Phrase.create!(medium: medium, l1: languages(:english), text_l1: "Wrong language")
+    other_lesson.lesson_users.create!(user: User.create!(email: "other-context@example.test", password: "password123"))
+    lesson.lesson_users.create!(user: @user)
+    payload = DailyVideoRecommendation.new(user: @user, language: @language).send(:context)
+    assert_equal 1, payload[:completed_lessons].size
+    assert_equal "At the market", payload[:completed_lessons].first[:lesson_title]
+    assert_equal [ "Je voudrais du pain." ], payload[:completed_lessons].first[:sentences]
+  end
+
+  test "accepts a suitable valid category other than the variety preference" do
+    client = Object.new
+    client.define_singleton_method(:recommend_video) { |_| { "url" => "https://www.youtube.com/watch?v=kJQP7kiw5Fk", "content_type" => "culture" } }
+    result = DailyVideoRecommendation.new(user: @user, language: @language, client: client, preflight: @preflight).call
+    assert_equal "culture", result.content_type
   end
 
   private

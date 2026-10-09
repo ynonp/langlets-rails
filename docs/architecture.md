@@ -2635,34 +2635,54 @@ sends bounded learning context through `PipelineClient.recommend_video` to the
 HMAC-authenticated pipeline endpoint `POST /recommend-video`. The pipeline uses
 its existing `GOOGLE_GENERATIVE_AI_API_KEY` and Gemini's `google_search` tool.
 The model receives up to eight recent ready imports (titles/URLs), forty recent
-saved vocabulary words and translations in the selected language, and thirty
-previous challenge suggestions. No email or account ID is included, and the
-recommendation endpoint does not log prompts or model outputs.
+saved vocabulary words with translations and original sentences, up to eight
+recent completed lessons with course/lesson titles, source URLs and up to five
+source sentences each, and thirty previous challenge suggestions. Completed
+lessons are selected from this user's `LessonUser` records in the target language;
+sentences come from activities in the completed lesson, not unrelated portions of
+its video. Course-less vocabulary review lessons are not included. No email or
+account ID is included, and the recommendation endpoint does not log prompts or
+model outputs. Source sentences are bounded to 500 Unicode code points.
+
+Recommendation context preserves `learning_language_code` and
+`learning_language_native_name`. The `ar-JO` row is explicitly described as
+**Palestinian spoken Arabic (Levantine)** for discovery; database/import language
+identifiers remain unchanged. Gemini must preserve the requested dialect, include
+it in discovery searches, and reject MSA/formal narration or other Arabic dialects
+for Palestinian learners. Uncertain dialect evidence should produce no suggestion.
+
+Saved vocabulary and its original sentences are the strongest signal for learning
+goals, dialect, register and level. Saved words are not assumed to be mastered or
+to imply topic preferences. Completed lessons provide strong engagement, topic and
+sentence-complexity evidence. Imports alone are weak interest signals: inspecting a
+previous daily suggestion does not establish enjoyment or mastery. Recommendation
+history is used for avoiding repetition, not as positive taste evidence.
 If there are no saved words in the selected language, Rails samples up to forty
 unique source words from twenty random transcript phrases belonging to the
-learner's eight recent ready imports in that language. Translation strings are
-empty for this fallback, and no words are invented when neither source exists.
-Gemini is instructed to use only the learning-language words and imported videos
-to infer a comparable level (vocabulary, sentence complexity, and speaking pace).
-Discovery requires 100% of the spoken/sung content, including introductions and
-endings, to be in the learning language; bilingual lessons and English explanations
-are explicitly excluded. Language purity and level are search/model judgments,
-not an automatic transcript audit; uncertain candidates should be rejected by Gemini.
-Daily Langlets rotates content types across all the learner's selected languages:
-dialogue → song → story → culture → dialogue. The latest prepared card's type
-determines the next type; legacy cards without one use a local-day-based rotation.
-The pipeline receives the requested type, the latest channel to exclude, and up
-to ten recent titles/types/channels to encourage new subjects and creators. Gemini
-must explicitly identify the requested type in its natural-text response; mismatches
-are rejected. Content classification relies on Gemini's assessment of the source,
-while the channel is checked independently using YouTube oEmbed's author name.
-Rails runs the normal availability/duration preflight inside `DailyVideoRecommendation`
-and rejects a missing author or a channel matching the previous card after Unicode,
-whitespace and case normalization. The job reuses that preflight result and persists
+learner's eight recent ready imports in that language. `vocabulary_source`
+distinguishes `saved_words` from this `imported_transcript` fallback; translations
+are empty in the fallback, and no words are invented when neither source exists.
+Discovery requires all spoken/sung content to be in the learning language;
+bilingual lessons and English explanations are excluded. Dialect, language purity
+and level remain search/model judgments, not an automatic candidate transcript audit.
+
+Daily Langlets proposes a content-type rotation across the selected languages:
+dialogue → song → story → culture → dialogue. The latest prepared card's actual
+type determines the next preference; legacy cards use a local-day-based rotation.
+Rails sends `variety_is_optional: true`: dialect, vocabulary, completed-lesson
+relevance and level outrank category/creator variety. Gemini may select a different
+valid category or a familiar creator when it fits the learner better. It must
+report the actual category in its natural-text `Content type:` line. The latest
+channel and ten recent titles/types/channels remain variety context. The pipeline
+retains strict requested-type behavior for older clients without the optional flag;
+deploy the pipeline before Rails so the new context is retained.
+
+Rails performs availability/duration preflight and requires a provider-reported
+channel but does not reject a familiar creator. The job persists the actual
 `channel` and `content_type` in `recommended_video`; no schema migration is needed.
-For the latest legacy card without a channel, Rails resolves its author using the
-existing provider metadata lookup and caches it for seven days. A failed lookup
-or rejected type/channel follows the same three-attempt preparation retry policy.
+For legacy cards without a channel, Rails resolves the latest author using the
+provider metadata lookup and caches it for seven days. Lookup or validation
+failures follow the existing three-attempt preparation retry policy.
 Text limits count Unicode code points on both Rails and the pipeline (200 for
 import titles, 100 for vocabulary fields), so titles containing emoji do not
 fail validation because JavaScript represents an emoji with two UTF-16 units.

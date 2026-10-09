@@ -68,19 +68,33 @@ Deno.test("requires the requested type and tells search to vary creators and top
     ...context,
     preferred_content_type: "song" as const,
     excluded_channel: "Yesterday's creator",
-    recent_recommendations: [{ title: "Bakery dialogue", content_type: "dialogue", channel: "Yesterday's creator" }],
+    recent_recommendations: [{
+      title: "Bakery dialogue",
+      content_type: "dialogue",
+      channel: "Yesterday's creator",
+    }],
   };
   const selected = candidate(URL, `${URL}\nContent type: song`);
   assertEquals((await groundedVideo(selected, varied)).content_type, "song");
-  await assertRejects(() => groundedVideo(candidate(URL, `${URL}\nContent type: dialogue`), varied));
+  await assertRejects(() =>
+    groundedVideo(candidate(URL, `${URL}\nContent type: dialogue`), varied)
+  );
   await assertRejects(() => groundedVideo(candidate(), varied));
   const parsed = parseRecommendationContext({
     ...varied,
-    recent_recommendations: [{ ...varied.recent_recommendations[0], email: "private@example.test" }],
+    recent_recommendations: [{
+      ...varied.recent_recommendations[0],
+      email: "private@example.test",
+    }],
   });
   assertEquals(parsed, varied);
   assertThrows(() => parseRecommendationContext({ ...varied, preferred_content_type: "unknown" }));
-  assertThrows(() => parseRecommendationContext({ ...varied, recent_recommendations: Array(11).fill(varied.recent_recommendations[0]) }));
+  assertThrows(() =>
+    parseRecommendationContext({
+      ...varied,
+      recent_recommendations: Array(11).fill(varied.recent_recommendations[0]),
+    })
+  );
   const request: typeof fetch = (_input, init) => {
     const body = JSON.parse(String(init?.body));
     const instruction = body.systemInstruction.parts[0].text;
@@ -90,10 +104,16 @@ Deno.test("requires the requested type and tells search to vary creators and top
     assertEquals(instruction.includes("Match the difficulty"), true);
     assertEquals(instruction.includes("sampled source words"), true);
     assertEquals(instruction.includes("Exclude every video from the excluded_channel"), true);
-    assertEquals(JSON.parse(body.contents[0].parts[0].text).excluded_channel, varied.excluded_channel);
+    assertEquals(
+      JSON.parse(body.contents[0].parts[0].text).excluded_channel,
+      varied.excluded_channel,
+    );
     return Promise.resolve(Response.json({ candidates: [selected] }));
   };
-  assertEquals((await recommendVideo(parsed, { apiKey: "test-key", request })).content_type, "song");
+  assertEquals(
+    (await recommendVideo(parsed, { apiKey: "test-key", request })).content_type,
+    "song",
+  );
 });
 Deno.test("resolves Google citations without following arbitrary redirect destinations", async () => {
   const uri = "https://vertexaisearch.cloud.google.com/grounding-api-redirect/example";
@@ -126,4 +146,64 @@ Deno.test("rejects excessive context and sends the configured Google tool", asyn
     return Promise.resolve(Response.json({ candidates: [candidate()] }));
   };
   assertEquals((await recommendVideo(context, { apiKey: "test-key", request })).url, URL);
+});
+
+Deno.test("preserves bounded learning evidence, strips identities and prioritizes dialect over variety", async () => {
+  const learning = {
+    ...context,
+    learning_language: "Palestinian spoken Arabic (Levantine)",
+    learning_language_code: "ar-JO",
+    learning_language_native_name: "العربية الفلسطينية",
+    vocabulary_source: "saved_words" as const,
+    vocabulary: [{ word: "بيقهروني", translation: "annoy me", sentence: "ليش بيقهروني هيك" }],
+    completed_lessons: [{
+      title: "Conversation",
+      lesson_title: "Relationships",
+      url: URL,
+      sentences: ["شو بدك؟"],
+    }],
+    preferred_content_type: "song" as const,
+    variety_is_optional: true,
+  };
+  const parsed = parseRecommendationContext({
+    ...learning,
+    completed_lessons: [{ ...learning.completed_lessons[0], user_id: 123 }],
+    vocabulary: [{ ...learning.vocabulary[0], email: "private@example.test" }],
+  });
+  assertEquals(parsed, learning);
+  assertThrows(() =>
+    parseRecommendationContext({
+      ...learning,
+      completed_lessons: Array(9).fill(learning.completed_lessons[0]),
+    })
+  );
+  assertThrows(() =>
+    parseRecommendationContext({
+      ...learning,
+      vocabulary: [{ ...learning.vocabulary[0], sentence: "أ".repeat(501) }],
+    })
+  );
+  assertThrows(() =>
+    parseRecommendationContext({
+      ...learning,
+      completed_lessons: [{ ...learning.completed_lessons[0], sentences: Array(6).fill("أ") }],
+    })
+  );
+  const request: typeof fetch = (_input, init) => {
+    const body = JSON.parse(String(init?.body));
+    const instruction = body.systemInstruction.parts[0].text;
+    assertEquals(instruction.includes("reject Modern Standard Arabic"), true);
+    assertEquals(instruction.includes("strongest evidence"), true);
+    assertEquals(instruction.includes("An import alone"), true);
+    assertEquals(instruction.includes("Prefer song"), true);
+    assertEquals(JSON.parse(body.contents[0].parts[0].text), learning);
+    return Promise.resolve(
+      Response.json({ candidates: [candidate(URL, `${URL}\nContent type: dialogue`)] }),
+    );
+  };
+  assertEquals(
+    (await recommendVideo(parsed, { apiKey: "test-key", request })).content_type,
+    "dialogue",
+  );
+  await assertRejects(() => groundedVideo(candidate(), parsed));
 });

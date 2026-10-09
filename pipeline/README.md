@@ -368,20 +368,25 @@ Rails sends bounded learning context (`learning_language`, up to eight
 The handler calls Gemini with Google Search using the existing
 `GOOGLE_GENERATIVE_AI_API_KEY`. `DAILY_RECOMMENDATION_MODEL` defaults to
 `gemini-3.8-flash`. No Rails OpenAI key is needed for daily recommendations.
-Discovery instructions require 100% spoken/sung content in the learning language,
-excluding bilingual videos and foreign-language explanations, and a comparable
-level to the imported videos and vocabulary. With no saved words, Rails sends
-a bounded random sample of source words from the learner's imported transcripts
-(empty translation strings). Gemini estimates level from this context and search
-evidence; this is not a post-search transcript audit.
+Rails additionally sends the explicit language code/native name, a vocabulary-source
+label, saved-word source sentences, and up to eight completed lessons (titles/URL
+and up to five source sentences each). Sentences are bounded to 500 Unicode code
+points. Palestinian `ar-JO` is described as Palestinian spoken Arabic (Levantine),
+with explicit instructions to reject MSA/formal narration and other dialects.
+Saved vocabulary is the strongest learning signal; completed lessons provide strong
+engagement and level evidence. Imports alone are weak evidence of taste or mastery.
+With no saved words, Rails sends a bounded random sample of imported transcript
+words with empty translations. Language/dialect/level fit remains a search-model
+judgment, not an automatic candidate transcript audit.
 
-Rails can also send `preferred_content_type` (`dialogue`, `song`, `story`, `culture`),
+Rails sends `preferred_content_type` (`dialogue`, `song`, `story`, `culture`),
 `excluded_channel`, and up to ten `recent_recommendations` (title/type/channel).
-For these requests the response includes `content_type`, verified against an explicit
-`Content type: <type>` line in Gemini's natural-text answer. Search instructions
-require a different creator from the excluded channel and varied topics. Rails
-independently verifies the actual channel through provider metadata and rotates
-the type from the latest card. Older clients without variety fields remain supported.
+With `variety_is_optional: true`, dialect, vocabulary, completed-lesson relevance
+and suitable difficulty outrank variety. The model can return another valid type
+or a familiar creator. The response's `content_type` is the actual category parsed
+from its explicit `Content type: <type>` line. Older clients without the optional
+flag retain strict requested-type behavior. New context fields are optional,
+validated and explicitly reconstructed to strip extra account fields.
 
 The response contains `{url, search_suggestions, content_type?}`. The URL is accepted only when
 it appears in the model's text and matches a resolved grounding source. Google

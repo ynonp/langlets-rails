@@ -22,13 +22,13 @@ class DailyVideoRecommendation
     response = @client.recommend_video(context)
     url = canonical_video(response.fetch("url"))
     raise InvalidRecommendation, "No verified new video found" unless url && !excluded?(url)
-    raise InvalidRecommendation, "Wrong content type" unless response["content_type"] == preferred_content_type
+    raise InvalidRecommendation, "Invalid content type" unless CONTENT_TYPES.include?(response["content_type"])
     video = @preflight.call(url).video
-    if video.author_name.blank? || same_channel?(video.author_name, excluded_channel)
-      raise InvalidRecommendation, "Channel must differ from the previous recommendation"
+    if video.author_name.blank?
+      raise InvalidRecommendation, "Video must have a channel"
     end
     Result.new(url: url, search_suggestions: response["search_suggestions"],
-      content_type: preferred_content_type, video: video)
+      content_type: response["content_type"], video: video)
   rescue KeyError, TypeError
     raise InvalidRecommendation, "Invalid search response"
   end
@@ -51,9 +51,12 @@ class DailyVideoRecommendation
     words = @user.phrase_token_users.joins(phrase_token: :phrase)
       .where(phrases: { l1_id: @language.id }).order(created_at: :desc).limit(40)
       .includes(phrase_token: [ :phrase, :token_translations ])
-    vocabulary = words.map { |entry| { word: entry.word.to_s.truncate(100), translation: entry.translation.to_s.truncate(100) } }
+    vocabulary = words.map { |entry| { word: entry.word.to_s.truncate(100), translation: entry.translation.to_s.truncate(100), sentence: entry.context.truncate(500) } }
+    vocabulary_source = vocabulary.empty? ? "imported_transcript" : "saved_words"
     vocabulary = imported_vocabulary(recent_imports) if vocabulary.empty?
-    { learning_language: @language.english_name,
+    { learning_language: recommendation_language,
+      learning_language_code: @language.iso_name, learning_language_native_name: @language.native_name,
+      vocabulary_source: vocabulary_source, completed_lessons: completed_lessons, variety_is_optional: true,
       imported_videos: imports.map { |title, url| { title: title.to_s.truncate(200), url: url } },
       vocabulary: vocabulary,
       previous_suggestions: previous_urls,
@@ -63,6 +66,24 @@ class DailyVideoRecommendation
         { title: video["title"].to_s.truncate(200), content_type: video["content_type"],
           channel: video["channel"].to_s.truncate(200) }
       } }
+  end
+
+  # Keep import/pipeline language identifiers stable; make the recommendation's
+  # dialect explicit instead of collapsing the Palestinian row to "Arabic".
+  def recommendation_language
+    @language.iso_name == "ar-JO" ? "Palestinian spoken Arabic (Levantine)" : @language.english_name
+  end
+
+  def completed_lessons
+    @user.lesson_users.joins(lesson: :course).where(courses: { language_id: @language.id })
+      .order(created_at: :desc).limit(8).includes(lesson: :course).map do |completion|
+        lesson = completion.lesson
+        sentences = Phrase.joins(activity_phrases: :activity)
+          .where(activities: { lesson_id: lesson.id }, l1_id: @language.id)
+          .select(:id, :text_l1).distinct.order(:id).limit(5).map(&:text_l1)
+        { title: lesson.course.name.to_s.truncate(200), lesson_title: lesson.name.to_s.truncate(200),
+          url: lesson.course.main_media_url.to_s.truncate(2048), sentences: sentences.map { |text| text.to_s.truncate(500) } }
+      end
   end
 
   def imported_vocabulary(recent_imports)
@@ -105,10 +126,6 @@ class DailyVideoRecommendation
       end
     end
     @excluded_channel
-  end
-
-  def same_channel?(channel, previous)
-    previous.present? && channel.to_s.unicode_normalize(:nfkc).squish.downcase == previous.to_s.unicode_normalize(:nfkc).squish.downcase
   end
 
   def excluded?(url)
