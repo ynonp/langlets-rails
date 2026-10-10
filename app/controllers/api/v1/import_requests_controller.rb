@@ -9,7 +9,7 @@ module Api
       before_action -> { doorkeeper_authorize! :"imports:write" }, only: [ :create ]
 
       def index
-        requests = current_resource_owner.import_requests.recent_first.limit(50)
+        requests = current_resource_owner.import_requests.where(duplicate_of_id: nil).recent_first.limit(50)
 
         render json: { import_requests: requests.map { |r| serialize(r) } }
       end
@@ -20,7 +20,7 @@ module Api
         if params[:client_token].present? &&
            (existing = current_resource_owner.import_requests.find_by(client_token: params[:client_token]))
           return render status: :ok,
-                        json: serialize(existing).merge(credits_left: credits_left)
+                        json: serialize(existing.canonical_request).merge(credits_left: credits_left)
         end
 
         # Deliberately the same provisional `detecting` path the Add Video form

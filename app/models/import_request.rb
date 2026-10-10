@@ -7,6 +7,7 @@ class ImportRequest < ApplicationRecord
   belongs_to :user
   belongs_to :course, optional: true
   belongs_to :create_song_progress, optional: true
+  belongs_to :duplicate_of, class_name: "ImportRequest", optional: true
   has_many :evaluation_signups, foreign_key: :admin_import_request_id, dependent: :restrict_with_exception
 
   enum :status, {
@@ -58,6 +59,12 @@ class ImportRequest < ApplicationRecord
 
   def active?
     detecting? || queued? || importing?
+  end
+
+  # Keep the duplicate's id and client token, while retries and polling follow
+  # the request that actually owns the import and its outcome.
+  def canonical_request
+    duplicate_of || self
   end
 
   # Only expose the duration check's actionable message, never arbitrary pipeline diagnostics.

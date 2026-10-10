@@ -77,6 +77,26 @@ module App
       assert_redirected_to course_path(course)
     end
 
+    test "deeplink polling follows a canceled duplicate to its original request" do
+      first = @user.import_requests.create!(
+        youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
+        clip_language: "Spanish", translation_language: "English", status: :queued
+      )
+      duplicate = @user.import_requests.create!(
+        youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
+        translation_language: "English", status: :canceled, duplicate_of: first
+      )
+
+      get deeplink_status_app_import_requests_path(id: duplicate.id), headers: NATIVE
+      assert_response :success
+      assert_select "[data-deeplink-import-poll-value=true]"
+
+      course = publish_course!
+      first.update!(status: :ready, course: course)
+      get deeplink_status_app_import_requests_path(id: duplicate.id), headers: NATIVE
+      assert_redirected_to course_path(course)
+    end
+
     test "deeplink rejects a non-video URL without creating an import" do
       get deeplink_app_import_requests_path(url: "https://example.com/watch?v=#{VIDEO_ID}"), headers: NATIVE
       assert_redirected_to new_app_import_request_path

@@ -3211,6 +3211,18 @@ that acts on it are not atomic), then fails with the pipeline's own reported
 error as the reason when there is one. Nothing was charged, so nothing is
 returned.
 
+**Duplicates discovered during detection:** a second automatic request for the
+same user/video can enter `detecting` after the first request has been promoted.
+When its detection finishes, `Imports::Create` returns the original active
+request and silently cancels the provisional duplicate under a row lock. Its
+`duplicate_of_id` links to the original request, while its own id and client token
+remain intact. Client-token retries and deeplink status polling follow that link
+to the original's current outcome; the API queue omits the canceled alias.
+Cancellation starts no extra pipeline, charges nothing, sends no failure email,
+and makes the duplicate's scheduled timeout a no-op. The regression in
+`test/jobs/detect_import_language_job_test.rb` covers successful delivery followed
+by the duplicate's deadline; controller tests cover retries and polling.
+
 This replaced a design where the trigger blocked on the run for up to
 `PIPELINE_READ_TIMEOUT` seconds. That held a worker thread per in-flight import,
 and its timeout only fired if the pipeline hung *in the HTTP read* — a run that

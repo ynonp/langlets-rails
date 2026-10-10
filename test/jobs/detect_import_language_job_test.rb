@@ -64,6 +64,62 @@ class DetectImportLanguageJobTest < ActiveJob::TestCase
     assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
   end
 
+  test "a duplicate detected during an existing import does not later report a false timeout" do
+    first = create_provisional_request
+
+    CreateSongProgress.stub(:detect_language, [ @spanish, {} ]) do
+      Youtube::Oembed.stub(:fetch, @video) do
+        DetectImportLanguageJob.perform_now(first.id)
+        first.reload
+        assert first.queued?
+
+        # The first request now has a source language, so a second automatic
+        # import can create a new detecting row before the course is published.
+        duplicate = Imports::Create.call(
+          user: @user, url: CANONICAL, translation_language: "English",
+          client_token: "duplicate-detection"
+        ).import_request
+        assert_not_equal first.id, duplicate.id
+        assert duplicate.detecting?
+
+        assert_no_enqueued_jobs only: [ CreateCourseJob, ActionMailer::MailDeliveryJob ] do
+          DetectImportLanguageJob.perform_now(duplicate.id)
+        end
+        assert duplicate.reload.canceled?
+        assert_equal first, duplicate.duplicate_of
+        assert_equal first.course, duplicate.course
+        assert_equal "duplicate-detection", duplicate.client_token
+        assert_nil duplicate.failure_reason
+
+        replay = Imports::Create.call(
+          user: @user, url: CANONICAL, translation_language: "English",
+          client_token: duplicate.client_token
+        )
+        assert_equal first, replay.import_request
+
+        # Stand in for the pipeline finishing the original course; delivery and
+        # the duplicate's timeout still use the real production handlers.
+        first.course.published!
+        Imports::Settlement.complete!(first)
+        assert first.reload.ready?
+        balance_after_delivery = @user.reload.credit_balance
+
+        travel_to duplicate.created_at + ImportRequest::TIMEOUT + 1.second do
+          assert_no_enqueued_jobs do
+            ImportRequestTimeoutJob.perform_now(duplicate.id)
+          end
+        end
+
+        duplicate.reload
+        assert_not duplicate.failed?,
+          "the same video was delivered by request #{first.id}, but the duplicate failed: #{duplicate.failure_reason}"
+        assert_not duplicate.active?, "the duplicate should be resolved once the video is delivered"
+        assert_equal balance_after_delivery, @user.reload.credit_balance,
+          "the duplicate must not charge for the same course again"
+      end
+    end
+  end
+
   test "joins existing Spanish progress without discarding the detected Scribe transcript" do
     request = create_provisional_request
     provisional = request.create_song_progress

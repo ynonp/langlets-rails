@@ -26,7 +26,7 @@ module App
     end
 
     def deeplink_status
-      @import_request = current_user.import_requests.find(params[:id])
+      @import_request = current_user.import_requests.find(params[:id]).canonical_request
       response.headers["Cache-Control"] = "no-store"
       if @import_request.ready? && @import_request.course
         return redirect_to course_path(@import_request.course)

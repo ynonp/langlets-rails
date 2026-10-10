@@ -156,9 +156,27 @@ module Imports
       Pricing.cost_for(user: user, course: course)
     end
 
-    # Finding work the user already has in flight settles nothing and buys
-    # nothing: the request that is already there carries the charge.
+    # A promotion can discover another request already importing this video.
+    # Resolve the provisional row silently; otherwise its timeout later reports
+    # a failure even though the original import succeeds. Keep its client token
+    # and a link to the original, rather than deleting a request clients poll.
     def already_queued(import_request, course)
+      import_request = import_request.canonical_request
+      if existing_request && existing_request.id != import_request.id
+        existing_request.with_lock do
+          if existing_request.detecting?
+            existing_request.update!(
+              status: :canceled,
+              duplicate_of: import_request,
+              clip_language: clip_language,
+              translation_language: translation_language,
+              course: course || import_request.course,
+              create_song_progress: import_request.create_song_progress,
+              failure_reason: nil
+            )
+          end
+        end
+      end
       Result.new(status: :already_queued, import_request: import_request, course: course, cost: 0)
     end
 

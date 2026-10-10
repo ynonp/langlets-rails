@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_10_03_100000) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_10_101500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -434,9 +434,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_03_100000) do
     t.datetime "updated_at", null: false
     t.string "pipeline_step"
     t.boolean "guest_started", default: false, null: false
+    t.bigint "duplicate_of_id"
     t.index ["client_token"], name: "index_import_requests_on_client_token", unique: true
     t.index ["course_id"], name: "index_import_requests_on_course_id"
     t.index ["create_song_progress_id"], name: "index_import_requests_on_create_song_progress_id"
+    t.index ["duplicate_of_id"], name: "index_import_requests_on_duplicate_of_id"
     t.index ["user_id", "created_at"], name: "index_import_requests_on_user_id_and_created_at"
     t.index ["user_id", "status"], name: "index_import_requests_on_user_id_and_status"
     t.index ["user_id", "youtube_url", "translation_language"], name: "idx_import_requests_resolving_dedupe", unique: true, where: "(status = 6)"
@@ -844,6 +846,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_03_100000) do
   add_foreign_key "evaluation_signups", "import_requests", column: "admin_import_request_id"
   add_foreign_key "import_requests", "courses"
   add_foreign_key "import_requests", "create_song_progresses"
+  add_foreign_key "import_requests", "import_requests", column: "duplicate_of_id", on_delete: :nullify
   add_foreign_key "import_requests", "users"
   add_foreign_key "language_detections", "import_requests"
   add_foreign_key "language_detections", "languages"

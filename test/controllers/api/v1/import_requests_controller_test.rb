@@ -110,6 +110,47 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance, "nothing left to publish"
   end
 
+  test "replaying a duplicate's client token follows the original import through delivery" do
+    first = duplicate = nil
+    params = import_params.merge(client_token: "duplicate-share-request")
+
+    stub_video do
+      post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token)
+      first = ImportRequest.find(response.parsed_body.fetch("id"))
+
+      DetectImportLanguageJob.perform_now(first.id)
+      post api_v1_import_requests_url, params: params, headers: auth_headers(@token)
+      assert_response :created
+      duplicate = ImportRequest.find(response.parsed_body.fetch("id"))
+      DetectImportLanguageJob.perform_now(duplicate.id)
+    end
+
+    assert duplicate.reload.canceled?
+    assert_no_enqueued_jobs do
+      post api_v1_import_requests_url, params: params, headers: auth_headers(@token)
+    end
+    assert_response :ok
+    assert_equal first.id, response.parsed_body["id"]
+    assert_equal "queued", response.parsed_body["status"]
+
+    first.reload.course.published!
+    Imports::Settlement.complete!(first)
+    balance_after_delivery = @user.reload.credit_balance
+
+    assert_no_enqueued_jobs do
+      post api_v1_import_requests_url, params: params, headers: auth_headers(@token)
+    end
+    assert_response :ok
+    assert_equal first.id, response.parsed_body["id"]
+    assert_equal "ready", response.parsed_body["status"]
+    assert_equal first.course.slug, response.parsed_body.dig("course", "slug")
+    assert_equal balance_after_delivery, @user.reload.credit_balance
+
+    get api_v1_import_requests_url, headers: auth_headers(@token)
+    assert_response :success
+    assert_equal [ first.id ], response.parsed_body["import_requests"].pluck("id")
+  end
+
   test "returns 402 when out of credits" do
     User.where(id: @user.id).update_all(credit_balance: 0)
 
