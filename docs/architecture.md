@@ -89,6 +89,29 @@ at once; without the split that flood sits ahead of time-sensitive `default`
 jobs like `CreateCourseJob` and starves the pipeline for as long as the backlog
 takes to drain.
 
+## Daily repository status reports
+
+`.github/workflows/daily-repo-status.md` defines a GitHub Agentic Workflow
+that runs daily or through `workflow_dispatch`. It uses the Copilot engine with
+an explicit `gpt-5-mini` model and the `COPILOT_GITHUB_TOKEN` repository secret.
+The model is pinned because gh-aw's implicit `claude-sonnet-4.6` default was
+rejected by the configured Copilot account. Check model availability for that
+account before changing it.
+
+The agent reads repository activity with read-only GitHub permissions. Its
+safe-output job creates one issue prefixed with `[repo-status]`, applies the
+`report` and `daily-status` labels, and closes older reports. GitHub references
+and mentions are restricted by the workflow's safe-output configuration.
+
+Edit the Markdown source and regenerate the committed
+`.github/workflows/daily-repo-status.lock.yml` with
+`gh aw compile daily-repo-status`; do not edit the generated YAML directly.
+After pushing both files, use
+`gh workflow run daily-repo-status.lock.yml --ref main` to test the current
+configuration. Rerunning an older failed Actions run reuses its original
+commit and will not pick up the fix. Verify both the run's success and its
+new report issue.
+
 ## Core Architecture
 
 ### Product analytics

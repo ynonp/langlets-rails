@@ -9,6 +9,11 @@ on:
   schedule: daily
   workflow_dispatch:
 
+engine:
+  id: copilot
+  # Pin a supported model instead of inheriting gh-aw's subscription-dependent default.
+  model: gpt-5-mini
+
 permissions:
   contents: read
   issues: read
