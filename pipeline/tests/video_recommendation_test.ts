@@ -207,3 +207,28 @@ Deno.test("preserves bounded learning evidence, strips identities and prioritize
   );
   await assertRejects(() => groundedVideo(candidate(), parsed));
 });
+
+Deno.test("returns bounded bilingual video descriptions and requests evidence-based reasons to watch", async () => {
+  const bilingual = { ...context, description_languages: ["fr", "en", "he", "es"] };
+  assertEquals(parseRecommendationContext(bilingual), bilingual);
+  assertThrows(() => parseRecommendationContext({ ...context, description_languages: ["bad"] }));
+  assertThrows(() =>
+    parseRecommendationContext({ ...context, description_languages: Array(5).fill("en") })
+  );
+  const selected = candidate(
+    URL,
+    `${URL}\nDescription [fr]: Une conversation au marché pour découvrir des expressions utiles.\nDescription [en]: A market conversation to discover useful expressions.\nDescription [he]: ${
+      "א".repeat(1001)
+    }\nDescription [de]: ignored`,
+  );
+  const request: typeof fetch = (_input, init) => {
+    const instruction = JSON.parse(String(init?.body)).systemInstruction.parts[0].text;
+    assertEquals(instruction.includes("why it is interesting or useful"), true);
+    assertEquals(instruction.includes("do not invent video details"), true);
+    return Promise.resolve(Response.json({ candidates: [selected] }));
+  };
+  assertEquals((await recommendVideo(bilingual, { apiKey: "test-key", request })).descriptions, {
+    fr: "Une conversation au marché pour découvrir des expressions utiles.",
+    en: "A market conversation to discover useful expressions.",
+  });
+});

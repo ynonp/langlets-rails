@@ -139,7 +139,7 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "personalized daily langlets shows only a full width video card and import action" do
+  test "personalized daily langlets shows a full width video card, import action and bilingual explanation" do
     join_challenge
     challenge = @user.reload.starter_challenge
     travel_to challenge.local_time_on(challenge.first_challenge_on + 5)
@@ -156,7 +156,9 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     assert_select '#day-6 img.w-full[alt="French conversation"]', 1
     assert_select '#day-6 button.bg-app-accent.text-app-on-accent', count: 1
     assert_select '#day-6 [data-import-submit-target="idle"]', text: I18n.t("daily_challenge.import_video"), count: 1
-    assert_select '#day-6 h2, #day-6 h3, #day-6 p, #day-6 a', 0
+    assert_select '#day-6 h2, #day-6 h3, #day-6 a', 0
+    assert_select '#day-6 form + [data-testid="daily-langlets-description"] p[lang=fr][dir=ltr]', text: /French conversation/
+    assert_select '#day-6 [data-testid="daily-langlets-description"] p[lang=en][dir=ltr]', text: /practice listening/
     assert_select '#day-6 [class*="grid-cols"]', 0
     assert_select '[data-testid="daily-practice"]', 0
     assert_select '#day-6 form[action*="complete"]', 0
@@ -178,6 +180,26 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     travel_to quest.available_at + 1.day
     get daily_challenge_path
     assert_select "#day-6", 0
+  end
+
+  test "video descriptions use the target language and account native language with escaped text" do
+    join_challenge(language_ids: [ languages(:arabic).id ])
+    challenge = @user.reload.starter_challenge
+    @user.update!(native_language: languages(:hebrew))
+    travel_to challenge.local_time_on(challenge.first_challenge_on + 5)
+    quest = DailyChallenge.ensure_personalized_today!(challenge)
+    quest.update!(recommendation_state: "ready", recommended_video: {
+      "url" => "https://www.youtube.com/watch?v=kJQP7kiw5Fk", "title" => "Conversation",
+      "descriptions" => { "ar-JO" => "حكي عن الحياة اليومية", "he" => "שיחה יומיומית <script>alert(1)</script>" }
+    })
+    [ {}, NATIVE ].each do |headers|
+      get daily_challenge_path, headers: headers
+      assert_response :success
+      assert_select '[data-testid="daily-langlets-description"] p[lang="ar-JO"][dir=rtl]', text: "حكي عن الحياة اليومية"
+      assert_select '[data-testid="daily-langlets-description"] p[lang=he][dir=rtl]', text: "שיחה יומיומית <script>alert(1)</script>"
+      assert_select '[data-testid="daily-langlets-description"] script', 0
+      assert_select '[data-testid="daily-langlets-description"] p[lang=en]', 0
+    end
   end
 
   test "importing a prepared daily recommendation opens the course immediately without pipeline work" do

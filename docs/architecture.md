@@ -2735,6 +2735,21 @@ charging credits, or sending the admin a course-ready notification. The source
 ImportRequest ID is persisted in the card as `source_import_request_id`. The
 card becomes ready only once that request, published Course, and translation
 are all ready. The ready source appears as a full-width thumbnail with an Import button.
+Beneath Import, the card shows a short explanation of the specific video and why
+it is worth watching, first in the target language and then in the account's
+native language (one paragraph if they match). Each paragraph has its own `lang`
+and `dir`, and ERB escapes the content. Rails requests `description_languages`
+for the target language plus all three supported native languages, so changing
+native-language preferences can use an already prepared translation. Gemini
+produces matching, evidence-based descriptions during the existing grounded
+search; the pipeline parses plain `Description [CODE]: TEXT` lines and Rails
+persists the bounded (1000-character) strings in `recommended_video.descriptions`.
+No extra model call or schema migration is needed. Missing, malformed or overlong
+translations use title-based practice copy from
+`config/daily_langlet_descriptions.yml`, also used by curated starter cards and
+older recommendations. This content catalog includes target languages outside
+Rails' interface locales. Deploy the pipeline to enable video-specific descriptions;
+Rails remains compatible with older pipeline responses.
 Curated starter video cards also span the available width. The page has a short
 Daily Langlets heading and tagline, with reminder preferences collapsed behind
 a small settings control. Day counters, completion controls, explanatory footers,

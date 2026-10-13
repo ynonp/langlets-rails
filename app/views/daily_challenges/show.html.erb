@@ -68,6 +68,14 @@
                         </span>
                       </span>
                     <% end %>
+                    <div class="mt-4 space-y-3" data-testid="daily-langlets-description">
+                      <% [language, current_user.native_language].uniq(&:iso_name).each do |description_language| %>
+                        <% description = daily_langlet_description(video, description_language) %>
+                        <% if description.present? %>
+                          <p lang="<%= description_language.iso_name %>" dir="<%= description_language.rtl? ? 'rtl' : 'ltr' %>" class="text-start leading-relaxed"><%= description %></p>
+                        <% end %>
+                      <% end %>
+                    </div>
                   </div>
                 </article>
               <% end %>

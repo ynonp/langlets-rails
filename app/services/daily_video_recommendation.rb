@@ -7,8 +7,8 @@ class DailyVideoRecommendation
 
   CONTENT_TYPES = %w[dialogue song story culture].freeze
 
-  Result = Data.define(:url, :search_suggestions, :content_type, :video) do
-    def initialize(url:, search_suggestions:, content_type: nil, video: nil)
+  Result = Data.define(:url, :search_suggestions, :content_type, :video, :descriptions) do
+    def initialize(url:, search_suggestions:, content_type: nil, video: nil, descriptions: {})
       super
     end
   end
@@ -28,12 +28,20 @@ class DailyVideoRecommendation
       raise InvalidRecommendation, "Video must have a channel"
     end
     Result.new(url: url, search_suggestions: response["search_suggestions"],
-      content_type: response["content_type"], video: video)
+      content_type: response["content_type"], video: video, descriptions: descriptions(response["descriptions"]))
   rescue KeyError, TypeError
     raise InvalidRecommendation, "Invalid search response"
   end
 
   private
+
+  def descriptions(value)
+    return {} unless value.is_a?(Hash)
+
+    value.slice(@language.iso_name, *User::NATIVE_LANGUAGE_CODES).select do |_, text|
+      text.is_a?(String) && text.present? && text.length <= 1000
+    end
+  end
 
   def canonical_video(url)
     uri = URI.parse(url.to_s)
@@ -55,6 +63,7 @@ class DailyVideoRecommendation
     vocabulary_source = vocabulary.empty? ? "imported_transcript" : "saved_words"
     vocabulary = imported_vocabulary(recent_imports) if vocabulary.empty?
     { learning_language: recommendation_language,
+      description_languages: [ @language.iso_name, *User::NATIVE_LANGUAGE_CODES ].uniq,
       learning_language_code: @language.iso_name, learning_language_native_name: @language.native_name,
       vocabulary_source: vocabulary_source, completed_lessons: completed_lessons, variety_is_optional: true,
       imported_videos: imports.map { |title, url| { title: title.to_s.truncate(200), url: url } },

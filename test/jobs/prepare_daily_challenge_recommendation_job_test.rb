@@ -34,6 +34,7 @@ class PrepareDailyChallengeRecommendationJobTest < ActiveJob::TestCase
     assert_equal @url, @quest.recommended_video["url"]
     assert_equal "French teacher", @quest.recommended_video["channel"]
     assert_equal "dialogue", @quest.recommended_video["content_type"]
+    assert_equal({ "fr" => "Une conversation.", "en" => "A conversation." }, @quest.recommended_video["descriptions"])
     assert_equal [ @quest.recommended_video ], @quest.videos_for("fr")
     assert_empty @quest.videos_for("es")
     travel_to @quest.available_at
@@ -168,7 +169,7 @@ class PrepareDailyChallengeRecommendationJobTest < ActiveJob::TestCase
   private
 
   def prepare
-    DailyVideoRecommendation.stub(:call, ->(**args) { assert_equal @user, args[:user]; assert_equal languages(:french), args[:language]; DailyVideoRecommendation::Result.new(url: @url, search_suggestions: nil, content_type: "dialogue") }) do
+    DailyVideoRecommendation.stub(:call, ->(**args) { assert_equal @user, args[:user]; assert_equal languages(:french), args[:language]; DailyVideoRecommendation::Result.new(url: @url, search_suggestions: nil, content_type: "dialogue", descriptions: { "fr" => "Une conversation.", "en" => "A conversation." }) }) do
       Imports::VideoPreflight.stub(:call, @preflight) { PrepareDailyChallengeRecommendationJob.perform_now(@quest.id) }
     end
   end

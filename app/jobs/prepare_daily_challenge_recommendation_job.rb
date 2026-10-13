@@ -34,7 +34,7 @@ class PrepareDailyChallengeRecommendationJob < ApplicationJob
         quest.update!(recommendation_state: "importing", recommendation_failure: nil,
           recommended_video: { "url" => video.canonical_url, "title" => video.title.to_s.truncate(200),
             "thumbnail_url" => video.thumbnail_url, "search_suggestions" => recommendation.search_suggestions,
-            "channel" => video.author_name, "content_type" => recommendation.content_type })
+            "descriptions" => recommendation.descriptions, "channel" => video.author_name, "content_type" => recommendation.content_type })
       end
     end
     prepare_course(quest)

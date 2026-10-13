@@ -388,7 +388,15 @@ from its explicit `Content type: <type>` line. Older clients without the optiona
 flag retain strict requested-type behavior. New context fields are optional,
 validated and explicitly reconstructed to strip extra account fields.
 
-The response contains `{url, search_suggestions, content_type?}`. The URL is accepted only when
+Rails optionally sends `description_languages` (up to four language codes: the
+target language and English/Hebrew/Spanish). Gemini writes short matching summaries
+of the specific video and its appeal, based on search evidence, in plain
+`Description [CODE]: TEXT` lines. The response includes optional `descriptions`,
+keyed by the requested codes; missing or over-1000-character strings are omitted.
+Rails stores them with the card and displays the target and account native languages
+beneath Import. Older clients and cards remain compatible.
+
+The response contains `{url, search_suggestions, content_type?, descriptions?}`. The URL is accepted only when
 it appears in the model's text and matches a resolved grounding source. Google
 citation redirects are inspected with HEAD requests to the known Google endpoint;
 other hosts and arbitrary redirect targets are never fetched. Responses without

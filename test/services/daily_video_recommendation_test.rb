@@ -17,10 +17,12 @@ class DailyVideoRecommendationTest < ActiveSupport::TestCase
     client = Object.new
     client.define_singleton_method(:recommend_video) do |payload|
       raise "unexpected account data" if JSON.generate(payload).include?("search-learner")
+      raise "missing description languages" unless payload[:description_languages] == %w[fr en he es]
       raise "missing word" unless payload[:vocabulary].first[:word] == entry.word
-      { "url" => "https://youtu.be/kJQP7kiw5Fk", "search_suggestions" => "<div>Google Search</div>", "content_type" => payload[:preferred_content_type] }
+      { "url" => "https://youtu.be/kJQP7kiw5Fk", "search_suggestions" => "<div>Google Search</div>", "content_type" => payload[:preferred_content_type], "descriptions" => { "fr" => "Une conversation au marché.", "en" => "A market conversation.", "he" => "א" * 1001, "es" => [], "unknown" => "ignored" } }
     end
     result = DailyVideoRecommendation.new(user: @user, language: @language, client: client, preflight: @preflight).call
+    assert_equal({ "fr" => "Une conversation au marché.", "en" => "A market conversation." }, result.descriptions)
     assert_equal @url, result.url
     assert_equal "<div>Google Search</div>", result.search_suggestions
   end
