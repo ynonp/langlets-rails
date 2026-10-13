@@ -17,6 +17,7 @@ class PhraseTokenUser < ApplicationRecord
   belongs_to :user
   belongs_to :phrase_token
   belongs_to :language
+  belongs_to :last_review_lesson, class_name: "Lesson", optional: true
   before_validation :pin_available_language, on: :create
   after_commit :refresh_review_lesson, on: [ :create, :update, :destroy ]
 
@@ -29,6 +30,43 @@ class PhraseTokenUser < ApplicationRecord
   # `practising`; anything that lists vocabulary does not.
   scope :practising, -> { where(practicing: true) }
   scope :paused, -> { where(practicing: false) }
+  scope :due, -> { practising.where("next_review_at IS NULL OR next_review_at <= ?", Time.zone.now) }
+
+  REVIEW_INTERVALS = [ 0.days, 1.day, 3.days, 7.days, 14.days, 30.days ].freeze
+  enum :familiarity, { new_word: 0, learning: 1, familiar: 2, confident: 3, strong: 4, mastered: 5 }, prefix: true
+
+  def review_due?
+    practicing? && (next_review_at.nil? || next_review_at <= Time.zone.now)
+  end
+
+  def set_familiarity!(level)
+    raise ArgumentError, "invalid familiarity" unless self.class.familiarities.key?(level)
+
+    User.find(user_id).with_lock do
+      reload
+      now = Time.zone.now
+      update!(familiarity: level, next_review_at: now + REVIEW_INTERVALS.fetch(self.class.familiarities.fetch(level)),
+        last_reviewed_at: now, last_review_lesson: nil)
+    end
+  end
+
+  # Only the final recall exercise schedules a word. Retries and older sessions
+  # cannot advance it twice or overwrite a newer manual familiarity choice.
+  def record_recall!(lesson:, remembered:)
+    User.find(user_id).with_lock do
+      reload
+      started_at = lesson.review_started_at || lesson.created_at
+      return unless practicing?
+      return if last_review_lesson_id == lesson.id
+      return if last_reviewed_at && last_reviewed_at > started_at
+      return if next_review_at && next_review_at > started_at
+
+      now = Time.zone.now
+      level = remembered ? [ self.class.familiarities.fetch(familiarity) + 1, 5 ].min : 0
+      update!(familiarity: level, next_review_at: now + (remembered ? REVIEW_INTERVALS.fetch(level) : 10.minutes),
+        last_reviewed_at: now, last_review_lesson: lesson)
+    end
+  end
 
   def practising? = practicing?
   def paused? = !practicing?

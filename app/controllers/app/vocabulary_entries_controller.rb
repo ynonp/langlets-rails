@@ -48,6 +48,15 @@ module App
     end
 
     def update
+      if params.key?(:familiarity)
+        return head :unprocessable_entity unless PhraseTokenUser.familiarities.key?(params[:familiarity])
+
+        @record.set_familiarity!(params[:familiarity])
+        redirect_to url_for(action: :show, id: @record.id), status: :see_other,
+          notice: I18n.t!("app.vocabulary_entries.familiarity.saved")
+        return
+      end
+
       if params.key?(:practicing)
         @record.update!(practicing: ActiveModel::Type::Boolean.new.cast(params[:practicing]))
         @entry = @record

@@ -371,12 +371,26 @@ class User < ApplicationRecord
       .distinct
   end
 
-  def current_review_lesson(language_code)
+  def current_review_lesson(language_code, start: false)
     language = Language.find_by!(iso_name: language_code)
 
     with_lock do
-      current_review_lesson_for(language) ||
-        ReviewLessonBuilder.new(self, language_code: language.iso_name).build!
+      lesson = current_review_lesson_for(language)
+      builder = ReviewLessonBuilder.new(self, language_code: language.iso_name)
+      if lesson&.review_pending?
+        # A prebuilt extra-practice session may be obsolete by the time new
+        # words become due. Refresh its selection when the learner opens it.
+        expected_ids = builder.fetch_tokens.map(&:id).sort
+        actual_ids = lesson.activities.where(type: "Activities::WriteMissingWordActivity")
+          .joins(:phrase_tokens).pluck("phrase_tokens.id").sort
+        if expected_ids != actual_ids
+          lesson.update!(review_build_status: :expired)
+          lesson = nil
+        end
+      end
+      lesson ||= builder.build!
+      lesson.update!(review_build_status: :started, review_started_at: Time.zone.now) if start && lesson.review_pending?
+      lesson
     end
   end
 
@@ -411,13 +425,19 @@ class User < ApplicationRecord
   def daily_vocab_review_available?(language_code)
     language = Language.find_by(iso_name: language_code)
     return false unless language
-    return false unless phrase_token_users.practising.joins(phrase_token: :phrase)
-      .where(phrases: { l1_id: language.id }).exists?
+    return false if daily_vocab_review_due_count(language).zero?
 
     !lesson_users.joins(:lesson).where(
       lessons: { review_language_id: language.id },
       created_at: Time.zone.now.all_day
     ).exists?
+  end
+
+  def daily_vocab_review_due_count(language_or_code)
+    language = language_or_code.is_a?(Language) ? language_or_code : Language.find_by(iso_name: language_or_code)
+    return 0 unless language
+
+    phrase_token_users.due.joins(phrase_token: :phrase).where(phrases: { l1_id: language.id }).count
   end
 
   def daily_vocab_review_completed_today?(language_or_code)
@@ -458,15 +478,13 @@ class User < ApplicationRecord
       .order(created_at: :desc)
       .to_a
 
-    reviews
-      .group_by(&:review_language_id)
-      .values
-      .map do |language_reviews|
-        language_reviews.find(&:review_started?) ||
-          language_reviews.find(&:review_pending?) ||
-          language_reviews.first
-      end
-      .sort_by { |lesson| lesson.review_language.english_name }
+    grouped = reviews.group_by(&:review_language_id)
+    Language.where(id: practiced_language_ids).map do |language|
+      language_reviews = grouped.fetch(language.id, [])
+      language_reviews.find(&:review_started?) ||
+        language_reviews.find(&:review_pending?) ||
+        language_reviews.first || current_review_lesson(language.iso_name)
+    end.sort_by { |lesson| lesson.review_language.english_name }
   end
 
   def sync_local_xp(local_xp_data)

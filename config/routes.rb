@@ -222,6 +222,7 @@ Rails.application.routes.draw do
 
   get "review_lessons", to: "review_lessons#show", as: :review_lessons
   get "review_lessons/finish", to: "review_lessons#finish", as: :finish_review_lessons
+  post "review_lessons/recall", to: "review_lessons#recall", as: :recall_review_lessons
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

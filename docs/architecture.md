@@ -3567,6 +3567,39 @@ spans share a phrase, while the same word in a different sentence remains a
 separate entry. Re-adding a deleted word reuses its retained phrase and token.
 Only newly created saved entries emit the manual-word-added analytics event.
 
+**Spaced vocabulary reviews** store `familiarity` (0–5), `next_review_at`,
+`last_reviewed_at`, and `last_review_lesson_id` on each `PhraseTokenUser`.
+Existing and newly saved words start at level 0, due immediately (`next_review_at`
+is null). Successful unaided recall advances through 1, 3, 7, 14 and 30-day
+intervals, staying at 30 days thereafter. A wrong attempt or use of Hint in the
+final typing exercise resets the word to level 0 and makes it due in 10 minutes.
+Recognition/matching exercises are preparation; they do not change schedules.
+
+Reviews select up to ten due, unpaused words for one source language, ordered by
+their due time (creation time for new words) and ID. If nothing is due, optional
+extra practice selects saved unpaused words and leaves their schedules unchanged.
+All selected words reach the final typing exercise. Daily review counts use the
+actual due-word scope; when no words are due the CTA offers extra practice.
+The daily-completion check still records the day's goal separately from due dates.
+
+Both vocabulary detail screens have a separate familiarity form, with the six
+levels and the next-review date. Choosing a level reschedules from now using its
+interval; level 0 resets to due now. Paused words retain their familiarity and
+dates until practice is resumed. Familiarity submissions do not save unrelated
+translation edits or change the practice toggle. Labels and feedback are localized
+in English, Spanish and Hebrew.
+
+`POST /review_lessons/recall` requires authentication, CSRF protection, a started
+review owned by the learner, a typing activity in that review, a token belonging
+to that activity and a JSON boolean outcome. The typing controller saves the
+result before showing completion and leaves the card retryable if saving fails.
+Schedule updates and manual changes lock the owning User row. Each word can be
+scheduled only once per review; older sessions cannot overwrite newer results or
+manual changes. Eligibility is checked against `lessons.review_started_at`, with
+creation time as a fallback for sessions started before this feature. This also
+handles reviews prebuilt before their words became due. The lesson foreign key
+nullifies on deletion, preserving word scheduling data.
+
 The model reports only the three input problems a person can correct — a missing sentence, selection, or translation — as stable error codes. The controller translates those codes from `app.vocabulary_entries.new.errors`; malformed token ranges, missing language context, and record failures all use the localized generic save error instead of exposing internal diagnostics.
 
 A pick is a **range**, not a word, because plenty of vocabulary is more than one word — "me souviens", "darse prisa". Two gestures grow it, and both are needed: tapping a word adjacent to the current pick extends it (tapping inside a compound collapses it back to one word, tapping further away starts over), and pressing and dragging across several words selects them in one go. Tapping is the discoverable path and the only one a keyboard can reach — the words are real `<button>`s, so Tab + Enter drives the same code — while dragging is the fast path with a mouse.
@@ -4196,14 +4229,14 @@ Users can save individual word/token translations they encounter during lessons 
 
 ### New Models
 
-#### TokenTranslationUser (`token_translation_users`)
-- **Purpose**: Join table linking users to their saved token translations
+#### PhraseTokenUser (`phrase_token_users`)
+- **Purpose**: Links users to saved phrase tokens, their translation language and review schedule
 - **Key Features**:
-  - Unique constraint per `(user_id, token_translation_id)` pair
-  - Cascade delete when user or token translation is removed
+  - Unique constraint per `(user_id, phrase_token_id)` pair
+  - Practice toggle, familiarity and next-review date per saved word
 - **Relationships**:
   - Belongs to User
-  - Belongs to TokenTranslation
+  - Belongs to PhraseToken and Language
 
 #### Review Lessons (Lesson without course/medium)
 - Lessons now support `course_id: nil` and `medium_id: nil` — enabling standalone review lessons
@@ -4213,14 +4246,16 @@ Users can save individual word/token translations they encounter during lessons 
 #### Review lesson lifecycle
 - Vocabulary reviews use `lessons.review_build_status`: a completed background
   build is `pending`, entering it changes it to `started`, and completion
-  changes it to `finished`.
+  changes it to `finished`. Entering also records `review_started_at`.
 - Saving or unsaving a word expires pending reviews for that word's L1 language
   and queues a replacement build. The user row lock serializes invalidation and
   building so a word change cannot leave a stale pending review behind.
 - `GET /review_lessons?language_code=:code` synchronously creates a pending
   review under that same lock when an existing user has no pending or started
-  review, then opens it. This is a one-time fallback for users whose saved
-  vocabulary predates the prebuild lifecycle, so they never receive a 404.
+  review, then opens it. Before opening a pending review it compares the final
+  recall tokens with the currently eligible selection and rebuilds if they differ.
+  Native daily cards also provision missing reviews for languages with saved
+  practising words, so delayed background work does not hide practice.
 - `CleanupExpiredReviewLessonsJob` runs daily and destroys only `expired`
   reviews. Started reviews are never removed by cleanup.
 
@@ -4242,10 +4277,11 @@ Users can save individual word/token translations they encounter during lessons 
   `pending`. It skips work when that user and language already have a pending
   review, so repeated saves coalesce naturally.
 - Activity composition:
-  - FlashcardActivity (if ≥3 saved tokens, up to 15)
-  - MatchTokensActivity (if ≥3 saved tokens, up to 15)
-  - TokensChainActivity (if ≥4 saved tokens, up to 15)
-  - WriteMissingWordActivity (always, up to 10)
+  - One shared pool of up to 10 selected words
+  - FlashcardActivity (if ≥3 selected tokens, up to 4)
+  - MatchTokensActivity (if ≥3 selected tokens, the whole pool)
+  - TokensChainActivity (if ≥4 selected tokens, the whole pool)
+  - WriteMissingWordActivity (always, the whole pool; schedules recall results)
 - TokensChainActivity uses a frameless exercise layout with an inline matched-word count and progress bar. Each correct translation becomes the next highlighted L1 prompt, while previously found translations are visually muted. Course-built chains contain 4–15 unique word pairs from one content-word category (`noun`, `verb`, `adjective`, or `adverb`); proper nouns and function words are excluded. If no category supplies at least four pairs, the builder omits the activity.
 - MatchTokensActivity uses the same frameless header (inline `0 / X matched` counter + progress bar + small instruction line) and a 2-column grid. Pairs are built as one list, shuffled, and sliced into pages whose size is `ceil(total / ceil(total / max_tokens_in_page))` so the pairs spread as evenly as possible across pages while keeping every page at or below `max_tokens_in_page` (5) pairs. With 8 pairs and `max=5` this gives 4+4 instead of 5+3. Each page's pairs are then split into an L1 list and an L2 list and shuffled independently; the L1 list is rendered in the left column and the L2 list in the right column, so the L1 and L2 cells of the same pair are guaranteed not to be in the same row (cells still match each other via the shared `data-token-id`). Both columns share the same center-aligned cell styling (matching `justify-center text-center` on the box, `text-center` on the word span; cells are `min-h-[80px]` with a uniform `gap-3.5` between boxes and rows so a full 5-pair page stays evenly spaced) so a row reads as a balanced pair regardless of which language is LTR or RTL. Tapping an L1 cell always plays the L1 audio for that pair (first tap, second tap, or switch); tapping an L2 cell is silent. Correct pairs flash green, then stay in place dimmed (lower opacity + grayscale + emerald ✓) instead of being hidden or replaced, mirroring the AudioToTranslation pattern. The next page is revealed only once every pair on the current page is matched, and the transition stays silent until the learner taps an L1 cell.
 - Interactive activities share one Duolingo-style completion bar. It is

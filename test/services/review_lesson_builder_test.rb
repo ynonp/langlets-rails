@@ -98,6 +98,49 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
     assert_nil lesson.course
   end
 
+  test "due words are selected before future reviews and optional practice preserves access" do
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_en2
+    first = @user.phrase_token_users.find_by!(phrase_token: @token_en1)
+    first.set_familiarity!("mastered")
+
+    builder = ReviewLessonBuilder.new(@user, language_code: "en")
+    assert_equal [ @token_en2 ], builder.fetch_tokens
+    assert_equal 1, @user.daily_vocab_review_due_count("en")
+
+    @user.phrase_token_users.find_by!(phrase_token: @token_en2).set_familiarity!("familiar")
+    assert_equal 2, builder.fetch_tokens.size
+    assert_equal 0, @user.daily_vocab_review_due_count("en")
+    assert_not @user.daily_vocab_review_available?("en")
+  end
+
+  test "a review caps its pool at ten and checks recall for every selected word" do
+    12.times do |index|
+      PhraseTokenUser.create_custom!(user: @user, sentence: "word#{index}", language: @english,
+        token_range: 0..0, translation: "meaning#{index}", translation_language: @spanish)
+    end
+    lesson = ReviewLessonBuilder.new(@user, language_code: "en").build!
+    all_ids = lesson.activities.flat_map { |activity| activity.phrase_token_ids }.uniq.sort
+    recall_ids = lesson.activities.find_by!(type: "Activities::WriteMissingWordActivity").phrase_token_ids.sort
+    assert_equal 10, all_ids.size
+    assert_equal all_ids, recall_ids
+  end
+
+  test "opening a prebuilt review refreshes its selection when words become due" do
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_en2
+    @user.phrase_token_users.find_by!(phrase_token: @token_en1).set_familiarity!("learning")
+    @user.phrase_token_users.find_by!(phrase_token: @token_en2).set_familiarity!("mastered")
+    pending = @user.current_review_lesson("en")
+
+    travel_to(2.days.from_now) do
+      current = @user.current_review_lesson("en")
+      assert_not_equal pending.id, current.id
+      assert pending.reload.review_expired?
+      assert_equal [ @token_en1.id ], current.activities.flat_map(&:phrase_token_ids).uniq
+    end
+  end
+
   test "build! creates lesson with language code in name" do
     @user.saved_phrase_tokens << @token_en1
 

@@ -17,6 +17,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert lesson.reload.review_started?
+    assert_not_nil lesson.review_started_at
     assert_select ".activity-stepnav a[href='#{root_path}']", count: 1
     assert_select "[data-controller~='main-video-player'][data-action*='flashcard-activity:card-change->main-video-player#configureSegment']"
     assert_select "[data-controller~='main-video-player'][data-action*='write-missing-word-activity:card-change->main-video-player#configureSegment']"
@@ -76,7 +77,73 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     assert lesson.reload.review_finished?
   end
 
+  test "recall saves first-try success once and a failed recall resets the word" do
+    entry, activity = recall_entry
+    post recall_review_lessons_url, params: { activity_id: activity.id, phrase_token_id: entry.phrase_token_id, remembered: true }, as: :json
+    assert_response :no_content
+    assert entry.reload.familiarity_learning?
+    due_at = entry.next_review_at
+    post recall_review_lessons_url, params: { activity_id: activity.id, phrase_token_id: entry.phrase_token_id, remembered: false }, as: :json
+    assert_response :no_content
+    assert_equal due_at, entry.reload.next_review_at
+
+    travel_to(due_at + 1.second) do
+      # Finish the previous session before taking the next one.
+      activity.lesson.update!(review_build_status: :finished)
+      next_lesson = @user.current_review_lesson("en")
+      next_lesson.update!(review_build_status: :started)
+      next_activity = next_lesson.activities.find_by!(type: "Activities::WriteMissingWordActivity")
+      post recall_review_lessons_url, params: { activity_id: next_activity.id, phrase_token_id: entry.phrase_token_id, remembered: false }, as: :json
+      assert_response :no_content
+      assert entry.reload.familiarity_new_word?
+      assert_equal 10.minutes.from_now, entry.next_review_at
+    end
+  end
+
+  test "recall rejects another user's activity and tokens outside the activity" do
+    entry, activity = recall_entry
+    other_activity = Activities::WriteMissingWordActivity.create!(user: @other_user, lesson: pending_review, order: 2)
+    post recall_review_lessons_url, params: { activity_id: other_activity.id, phrase_token_id: entry.phrase_token_id, remembered: true }, as: :json
+    assert_response :not_found
+    other = PhraseTokenUser.create_custom!(user: @user, sentence: "another word", language: @english,
+      token_range: 1..1, translation: "meaning", translation_language: languages(:spanish))
+    post recall_review_lessons_url, params: { activity_id: activity.id, phrase_token_id: other.phrase_token_id, remembered: true }, as: :json
+    assert_response :not_found
+    assert entry.reload.familiarity_new_word?
+  end
+
+  test "recall requires a started review, a typing exercise and a boolean outcome" do
+    entry, activity = recall_entry
+    post recall_review_lessons_url, params: { activity_id: activity.id, phrase_token_id: entry.phrase_token_id, remembered: "false" }, as: :json
+    assert_response :unprocessable_entity
+    activity.lesson.update!(review_build_status: :finished)
+    post recall_review_lessons_url, params: { activity_id: activity.id, phrase_token_id: entry.phrase_token_id, remembered: true }, as: :json
+    assert_response :unprocessable_entity
+    activity.lesson.update!(review_build_status: :started)
+    flashcard = Activities::FlashcardActivity.create!(user: @user, lesson: activity.lesson, order: 2)
+    flashcard.phrase_tokens << entry.phrase_token
+    post recall_review_lessons_url, params: { activity_id: flashcard.id, phrase_token_id: entry.phrase_token_id, remembered: true }, as: :json
+    assert_response :unprocessable_entity
+    assert entry.reload.familiarity_new_word?
+  end
+
+  test "recall requires authentication" do
+    entry, activity = recall_entry
+    delete destroy_user_session_url
+    post recall_review_lessons_url, params: { activity_id: activity.id, phrase_token_id: entry.phrase_token_id, remembered: true }, as: :json
+    assert_response :unauthorized
+    assert entry.reload.familiarity_new_word?
+  end
+
   private
+
+  def recall_entry
+    entry = PhraseTokenUser.create_custom!(user: @user, sentence: "hello world", language: @english,
+      token_range: 1..1, translation: "mundo", translation_language: languages(:spanish))
+    lesson = @user.current_review_lesson("en")
+    lesson.update!(review_build_status: :started)
+    [ entry, lesson.activities.find_by!(type: "Activities::WriteMissingWordActivity") ]
+  end
 
   def pending_review(language: @english)
     Lesson.create!(

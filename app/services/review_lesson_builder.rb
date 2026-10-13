@@ -3,7 +3,7 @@ class ReviewLessonBuilder
   MIN_TOKENS_FOR_CHAIN = 4
   MAX_TOKENS_PER_ACTIVITY = 15
   MAX_TOKENS_FOR_FLASHCARD = 4
-  MAX_TOKENS_FOR_WRITE = 4
+  MAX_TOKENS_PER_REVIEW = 10
 
   def initialize(user, language_code: nil)
     @user = user
@@ -20,6 +20,13 @@ class ReviewLessonBuilder
       return [] unless @language
       rows = rows.joins(phrase_token: :phrase).where(phrases: { l1_id: @language.id })
     end
+
+    # Prefer overdue/new words. When none are due, keep optional practice
+    # available without moving those words' review dates forward.
+    due_rows = rows.due
+    rows = due_rows if due_rows.exists?
+    rows = rows.order(Arel.sql("COALESCE(phrase_token_users.next_review_at, phrase_token_users.created_at) ASC, phrase_token_users.id ASC"))
+      .limit(MAX_TOKENS_PER_REVIEW)
 
     rows.map do |saved|
       saved.phrase_token.tap do |token|
@@ -49,13 +56,11 @@ class ReviewLessonBuilder
         review_build_status: :pending
       )
       order = 1
-      previous_tokens = []
 
       if tokens.size >= MIN_TOKENS_FOR_MATCH
         a1 = Activities::FlashcardActivity.create!(lesson: lesson, order: order, user: @user)
         a1_tokens = tokens.sample([ MAX_TOKENS_FOR_FLASHCARD, tokens.size ].min)
         a1.phrase_tokens = a1_tokens
-        previous_tokens |= a1_tokens
         order += 1
       end
 
@@ -63,7 +68,6 @@ class ReviewLessonBuilder
         a2 = Activities::MatchTokensActivity.create!(lesson: lesson, order: order, user: @user)
         a2_tokens = tokens.sample([ MAX_TOKENS_PER_ACTIVITY, tokens.size ].min)
         a2.phrase_tokens = a2_tokens
-        previous_tokens |= a2_tokens
         order += 1
       end
 
@@ -71,13 +75,11 @@ class ReviewLessonBuilder
         a3 = Activities::TokensChainActivity.create!(lesson: lesson, order: order, user: @user)
         a3_tokens = tokens.sample([ MAX_TOKENS_PER_ACTIVITY, tokens.size ].min)
         a3.phrase_tokens = a3_tokens
-        previous_tokens |= a3_tokens
         order += 1
       end
 
-      write_pool = previous_tokens.presence || tokens
       a4 = Activities::WriteMissingWordActivity.create!(lesson: lesson, order: order, user: @user)
-      a4.phrase_tokens = write_pool.sample([ MAX_TOKENS_FOR_WRITE, write_pool.size ].min)
+      a4.phrase_tokens = tokens.shuffle
       lesson
     end
   end

@@ -20,7 +20,7 @@ function normalizeText(text) {
 
 export default class extends Controller {
   static targets = ["activityContent", "card", "completion", "completionTranslation", "progress", "sentence", "answer", "feedback", "checkButton", "stopPracticingContainer", "writeInterface", "hintOptions", "hintButton"]
-  static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean }
+  static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean, recallUrl: String, activityId: Number }
 
   connect() {
     this.currentIndex = 0
@@ -33,6 +33,10 @@ export default class extends Controller {
       this.showCompletion()
       return
     }
+
+    this.neededHelp = false
+    this.savingRecall = false
+    this.hintButtonTarget.disabled = false
 
     this.progressTarget.textContent = t("write_missing_word.question_of", { current: this.currentIndex + 1, total: this.cardsValue.length })
     reportActivityProgress(this.element, (this.currentIndex + 1) / this.cardsValue.length)
@@ -99,6 +103,8 @@ export default class extends Controller {
     const card = this.cardsValue[this.currentIndex]
     if (!card?.options || card.options.length < 2) return
 
+    this.neededHelp = true
+
     this.writeInterfaceTarget.classList.add("hidden")
     this.hintOptionsTarget.replaceChildren(...card.options.map(option => {
       const button = document.createElement("button")
@@ -121,6 +127,7 @@ export default class extends Controller {
       selected.classList.add("bg-emerald-500/15", "border-emerald-500", "text-emerald-600", "dark:text-emerald-300")
       this.completeCard(card, 1)
     } else {
+      this.neededHelp = true
       selected.disabled = true
       selected.classList.add("bg-red-500/10", "border-red-500", "text-red-600", "dark:text-red-300")
       this.feedbackTarget.textContent = t("write_missing_word.wrong_try_again")
@@ -140,6 +147,7 @@ export default class extends Controller {
     if (normalizeText(userAnswer) === normalizeText(card.correct)) {
       this.completeCard(card, 2)
     } else {
+      this.neededHelp = true
       this.feedbackTarget.textContent = t("write_missing_word.wrong_try_again")
       this.feedbackTarget.className = "text-base font-semibold mt-3 text-red-600 dark:text-red-400"
       this.answerTarget.disabled = false
@@ -148,7 +156,37 @@ export default class extends Controller {
     }
   }
 
-  completeCard(card, xp) {
+  async completeCard(card, xp) {
+    if (this.savingRecall) return
+    this.savingRecall = true
+    this.hintButtonTarget.disabled = true
+    try {
+      if (this.isReviewLessonValue && this.recallUrlValue) {
+        const response = await fetch(this.recallUrlValue, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": document.querySelector('[name="csrf-token"]')?.content
+          },
+          body: JSON.stringify({
+            activity_id: this.activityIdValue,
+            phrase_token_id: card.id,
+            remembered: !this.neededHelp
+          })
+        })
+        if (!response.ok) throw new Error("Recall save failed")
+      }
+    } catch (_error) {
+      this.savingRecall = false
+      this.answerTarget.disabled = false
+      this.checkButtonTarget.disabled = false
+      this.hintButtonTarget.disabled = false
+      this.hintOptionsTarget.querySelectorAll(".hint-option").forEach(button => button.disabled = false)
+      this.feedbackTarget.textContent = t("write_missing_word.save_failed")
+      this.feedbackTarget.className = "text-base font-semibold mt-3 text-red-600 dark:text-red-400"
+      return
+    }
+
     this.feedbackTarget.classList.add("hidden")
     this.awardXp(xp)
     this.playCardAudio(card)

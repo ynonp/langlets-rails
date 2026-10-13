@@ -19,7 +19,8 @@ class CoursesController < ApplicationController
     @daily_vocab_language = if user_signed_in?
       current_user.daily_vocab_review_language&.iso_name
     end
-    @daily_vocab_completed_today = current_user.daily_vocab_review_completed_today?(@daily_vocab_language) if @daily_vocab_language
+    @daily_vocab_completed_today = current_user.daily_vocab_review_completed_today?(@daily_vocab_language) ||
+      current_user.daily_vocab_review_due_count(@daily_vocab_language).zero? if @daily_vocab_language
     @daily_vocab_streak = ActivityLog.current_streak_for_user(current_user) if @daily_vocab_language
 
     # Everyone sees the published system playlists; signed-in users also see

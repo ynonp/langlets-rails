@@ -47,6 +47,10 @@
             <%= render "practice_toggle", entry: @entry %>
           </div>
         <% end %>
+        <%= render "vocabulary_entries/familiarity", entry: @entry, update_path: vocabulary_entry_path(@entry.id),
+                   wrapper_class: "mt-4 rounded-2xl border border-[#DED4C2] bg-[#FFFDF8] p-6",
+                   text_class: "text-[#55503F]", field_class: "border-[#CFC2AB] bg-[#FFFDF8] text-[#1E1B16]",
+                   button_class: "bg-[#1E1B16] text-[#FAF6EF] hover:bg-[#C4451C]" %>
       </section>
 
       <%# Outside the form above: a dialog nested in a form would put its

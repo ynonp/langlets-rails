@@ -404,6 +404,35 @@ module App
       assert_select "dialog"
     end
 
+    test "familiarity can be changed on both surfaces without saving an unrelated translation" do
+      saved = save_word(text: "no queda tiempo", span: [ 9, 14 ], translation: "time")
+      [ [ "/vocabulary", WEB ], [ "/app/vocabulary", NATIVE ] ].each do |path, headers|
+        get "#{path}/#{saved.id}", headers: headers
+        assert_select "[data-testid=vocabulary-familiarity-form] select[name=familiarity] option", 6
+        assert_select "[data-testid=vocabulary-review-date]"
+
+        patch "#{path}/#{saved.id}", headers: headers, params: { familiarity: "mastered", translation: "unsaved edit" }
+        assert_response :see_other
+        assert_redirected_to "#{path}/#{saved.id}"
+        assert saved.reload.familiarity_mastered?
+        assert_equal "time", saved.translation
+        follow_redirect!(headers: headers.dup)
+        assert_select "[data-testid=vocabulary-review-date]", text: I18n.t!("app.vocabulary_entries.familiarity.next_review", date: I18n.l(saved.next_review_at, format: :short))
+      end
+    end
+
+    test "invalid and other-user familiarity changes are rejected" do
+      saved = save_word(text: "no queda tiempo", span: [ 9, 14 ], translation: "time")
+      patch "/vocabulary/#{saved.id}", headers: WEB, params: { familiarity: "invalid" }
+      assert_response :unprocessable_entity
+      assert saved.reload.familiarity_new_word?
+
+      other = save_word(text: "no queda tiempo", span: [ 9, 14 ], translation: "time", owner: @other)
+      patch "/vocabulary/#{other.id}", headers: WEB, params: { familiarity: "mastered" }
+      assert_response :not_found
+      assert other.reload.familiarity_new_word?
+    end
+
     test "the web practice switch returns the web Turbo Stream partial" do
       saved = save_word(text: "no queda tiempo", span: [ 9, 14 ], translation: "time", practicing: false)
 

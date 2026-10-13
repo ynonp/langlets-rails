@@ -5,6 +5,7 @@
     <div class="min-w-0">
       <p class="text-[22px] font-bold tracking-[-0.22px] text-app-text"><%= entry.word %></p>
       <p class="mt-0.5 text-[15px] text-app-text-dim"><%= entry.translation %></p>
+      <p class="mt-1 text-[12px] text-app-text-3"><%= t("app.vocabulary_entries.familiarity.levels.#{entry.familiarity}") %></p>
     </div>
 
     <% if entry.paused? %>

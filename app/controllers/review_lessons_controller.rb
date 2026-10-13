@@ -3,8 +3,7 @@ class ReviewLessonsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @lesson = current_user.current_review_lesson(params[:language_code])
-    @lesson.update!(review_build_status: :started) if @lesson.review_pending?
+    @lesson = current_user.current_review_lesson(params[:language_code], start: true)
 
     @activities = @lesson.activities.order(order: :asc).load
     @activity = @activities.find { |a| a.order == params[:a].to_i } || @activities.first
@@ -46,5 +45,18 @@ class ReviewLessonsController < ApplicationController
     @continue_path = root_path
 
     render "lessons/finish"
+  end
+
+  def recall
+    activity = current_user.activities.find(params[:activity_id])
+    lesson = activity.lesson
+    return head :unprocessable_entity unless lesson.user_id == current_user.id && lesson.review_started? &&
+      lesson.review_language_id.present? && activity.is_a?(Activities::WriteMissingWordActivity)
+    return head :unprocessable_entity unless [ true, false ].include?(params[:remembered])
+
+    token = activity.phrase_tokens.find(params[:phrase_token_id])
+    entry = current_user.phrase_token_users.find_by(phrase_token: token)
+    entry&.record_recall!(lesson: lesson, remembered: params[:remembered])
+    head :no_content
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_10_10_101500) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_13_173500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -517,6 +517,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_10_101500) do
     t.bigint "user_id", null: false
     t.bigint "review_language_id"
     t.integer "review_build_status"
+    t.datetime "review_started_at"
     t.index ["course_id", "slug"], name: "index_lessons_on_course_id_and_slug", unique: true, where: "(course_id IS NOT NULL)"
     t.index ["course_id"], name: "index_lessons_on_course_id"
     t.index ["medium_id"], name: "index_lessons_on_medium_id"
@@ -613,11 +614,18 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_10_101500) do
     t.datetime "updated_at", null: false
     t.bigint "language_id", null: false
     t.boolean "practicing", default: true, null: false
+    t.integer "familiarity", default: 0, null: false
+    t.datetime "next_review_at"
+    t.datetime "last_reviewed_at"
+    t.bigint "last_review_lesson_id"
     t.index ["language_id"], name: "index_phrase_token_users_on_language_id"
+    t.index ["last_review_lesson_id"], name: "index_phrase_token_users_on_last_review_lesson_id"
     t.index ["phrase_token_id"], name: "index_phrase_token_users_on_phrase_token_id"
     t.index ["user_id", "phrase_token_id"], name: "idx_token_translation_users_unique", unique: true
+    t.index ["user_id", "practicing", "next_review_at"], name: "index_saved_words_on_review_due"
     t.index ["user_id", "practicing"], name: "index_phrase_token_users_on_user_id_and_practicing"
     t.index ["user_id"], name: "index_phrase_token_users_on_user_id"
+    t.check_constraint "familiarity >= 0 AND familiarity <= 5", name: "saved_words_familiarity_range"
   end
 
   create_table "phrase_tokens", force: :cascade do |t|
@@ -864,6 +872,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_10_101500) do
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "phrase_token_users", "languages"
+  add_foreign_key "phrase_token_users", "lessons", column: "last_review_lesson_id", on_delete: :nullify
   add_foreign_key "phrase_token_users", "phrase_tokens"
   add_foreign_key "phrase_token_users", "users"
   add_foreign_key "phrase_tokens", "phrases"

@@ -367,6 +367,10 @@ segment-end behavior pauses and rewinds it for replay.
 The write-missing-word review activity uses the same card video and segment
 events. Its typing and Hint answer modes share this player; custom vocabulary
 cards without a source medium leave the player hidden.
+In vocabulary reviews, the final typing exercise also records spaced-review
+results before showing its success bar. A wrong attempt or Hint counts as
+relearning; an unaided first answer counts as remembered. Course typing exercises
+do not send review results. Card-change and playback events remain the same.
 
 ---
 

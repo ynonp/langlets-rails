@@ -1,0 +1,63 @@
+en:
+  app:
+    vocabulary_entries:
+      familiarity:
+        label: "How well do you know this word?"
+        hint: "Reviews spread out as you remember words. Choosing a level sets the next review: now, 1, 3, 7, 14 or 30 days."
+        save: "Save familiarity"
+        saved: "Familiarity and review date updated"
+        due_now: "Ready to review now"
+        next_review: "Next review: %{date}"
+        paused: "Reviews paused. Your familiarity is saved."
+        levels:
+          new_word: "New / relearning"
+          learning: "Learning"
+          familiar: "Familiar"
+          confident: "Confident"
+          strong: "Very familiar"
+          mastered: "Well known"
+  js:
+    write_missing_word:
+      save_failed: "Could not save your review. Check your connection and try the answer again."
+es:
+  app:
+    vocabulary_entries:
+      familiarity:
+        label: "¿Cuánto conoces esta palabra?"
+        hint: "Los repasos se espacian a medida que recuerdas las palabras. El nivel fija el próximo repaso: ahora, en 1, 3, 7, 14 o 30 días."
+        save: "Guardar nivel"
+        saved: "Nivel y fecha de repaso actualizados"
+        due_now: "Lista para repasar ahora"
+        next_review: "Próximo repaso: %{date}"
+        paused: "Repasos pausados. Tu nivel está guardado."
+        levels:
+          new_word: "Nueva / reaprendiendo"
+          learning: "Aprendiendo"
+          familiar: "Familiar"
+          confident: "Con confianza"
+          strong: "Muy familiar"
+          mastered: "Bien conocida"
+  js:
+    write_missing_word:
+      save_failed: "No se pudo guardar el repaso. Comprueba tu conexión e intenta responder de nuevo."
+he:
+  app:
+    vocabulary_entries:
+      familiarity:
+        label: "עד כמה המילה מוכרת לכם?"
+        hint: "המרווח בין החזרות גדל ככל שזוכרים את המילים. בחירת רמה קובעת את החזרה הבאה: עכשיו, בעוד 1, 3, 7, 14 או 30 ימים."
+        save: "שמירת רמת היכרות"
+        saved: "רמת ההיכרות ומועד החזרה עודכנו"
+        due_now: "מוכנה לחזרה עכשיו"
+        next_review: "החזרה הבאה: %{date}"
+        paused: "החזרות מושהות. רמת ההיכרות נשמרה."
+        levels:
+          new_word: "חדשה / בלמידה מחדש"
+          learning: "בלמידה"
+          familiar: "מוכרת"
+          confident: "מוכרת היטב"
+          strong: "מוכרת מאוד"
+          mastered: "ידועה היטב"
+  js:
+    write_missing_word:
+      save_failed: "לא הצלחנו לשמור את החזרה. בדקו את החיבור ונסו לענות שוב."

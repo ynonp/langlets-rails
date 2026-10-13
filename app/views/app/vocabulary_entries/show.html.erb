@@ -32,6 +32,11 @@
                  class: "mt-1 w-full rounded-app-field bg-app-accent px-4 py-[17px] text-[17px] font-bold text-app-on-accent" %>
   <% end %>
 
+  <%= render "vocabulary_entries/familiarity", entry: @entry, update_path: app_vocabulary_entry_path(@entry.id),
+             wrapper_class: "app-hairline rounded-[18px] bg-app-card px-[18px] py-4",
+             text_class: "text-app-text-2", field_class: "border-white/10 bg-app-inset text-app-text",
+             button_class: "bg-app-accent text-app-on-accent" %>
+
   <div data-controller="vocabulary-confirm">
     <button type="button" data-action="vocabulary-confirm#open"
             data-testid="vocabulary-delete"

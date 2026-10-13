@@ -1,0 +1,18 @@
+<%= form_with url: update_path, method: :patch,
+              data: { testid: "vocabulary-familiarity-form" }, class: wrapper_class do |f| %>
+  <%= f.label :familiarity, t("app.vocabulary_entries.familiarity.label"), class: text_class %>
+  <p class="mt-2 text-sm <%= text_class %>"><%= t("app.vocabulary_entries.familiarity.hint") %></p>
+  <%= f.select :familiarity,
+               PhraseTokenUser.familiarities.keys.map { |level| [ t("app.vocabulary_entries.familiarity.levels.#{level}"), level ] },
+               { selected: entry.familiarity }, class: "mt-3 w-full rounded-lg border p-3 #{field_class}" %>
+  <p data-testid="vocabulary-review-date" class="mt-3 text-sm <%= text_class %>">
+    <% if entry.paused? %>
+      <%= t("app.vocabulary_entries.familiarity.paused") %>
+    <% elsif entry.review_due? %>
+      <%= t("app.vocabulary_entries.familiarity.due_now") %>
+    <% else %>
+      <%= t("app.vocabulary_entries.familiarity.next_review", date: l(entry.next_review_at, format: :short)) %>
+    <% end %>
+  </p>
+  <%= f.submit t("app.vocabulary_entries.familiarity.save"), class: "mt-4 cursor-pointer rounded-full px-5 py-3 font-bold #{button_class}" %>
+<% end %>
