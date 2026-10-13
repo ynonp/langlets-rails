@@ -3554,6 +3554,19 @@ that frame and renders "Content missing".
 
 **Adding a custom word** (`PhraseTokenUser.create_custom!`) is one page, not a wizard: the sentence is typed and saved, and the word is then picked out of the saved phrase rather than typed again. `vocabulary_picker_controller.js` turns the sentence into tappable words and reports whitespace-token indexes.
 
+Successful custom saves redirect with HTTP 303 to the surface's vocabulary list.
+Turbo retains its stream Accept header across that redirect, so an index request
+for the first page renders full HTML even when it accepts Turbo Streams; pages
+after the first retain the append/replace streams used by Load more.
+
+Custom saves lock the owning User row and reuse the phrase by owner, source
+language and whitespace-normalized sentence, then reuse the token by its selected
+character span. Repeated or concurrent submissions therefore return the existing
+saved entry without overwriting its translation or practice state. Different
+spans share a phrase, while the same word in a different sentence remains a
+separate entry. Re-adding a deleted word reuses its retained phrase and token.
+Only newly created saved entries emit the manual-word-added analytics event.
+
 The model reports only the three input problems a person can correct — a missing sentence, selection, or translation — as stable error codes. The controller translates those codes from `app.vocabulary_entries.new.errors`; malformed token ranges, missing language context, and record failures all use the localized generic save error instead of exposing internal diagnostics.
 
 A pick is a **range**, not a word, because plenty of vocabulary is more than one word — "me souviens", "darse prisa". Two gestures grow it, and both are needed: tapping a word adjacent to the current pick extends it (tapping inside a compound collapses it back to one word, tapping further away starts over), and pressing and dragging across several words selects them in one go. Tapping is the discoverable path and the only one a keyboard can reach — the words are real `<button>`s, so Tab + Enter drives the same code — while dragging is the fast path with a mouse.

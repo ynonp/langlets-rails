@@ -31,7 +31,15 @@ module App
 
       respond_to do |format|
         format.html
-        format.turbo_stream
+        format.turbo_stream do
+          if @page > 1
+            render :index
+          else
+            # Turbo keeps its Accept header when following a form redirect.
+            # The first page is a full navigation; only Load more is a stream.
+            render :index, formats: [ :html ], content_type: "text/html"
+          end
+        end
       end
     end
 
@@ -96,7 +104,7 @@ module App
       @language = @language_choices.find { |row| row.iso_name == params[:language] } || @language_choices.first
       @sentence = params[:sentence].to_s
 
-      PhraseTokenUser.create_custom!(
+      entry = PhraseTokenUser.create_custom!(
         user: current_user,
         sentence: @sentence,
         language: @language,
@@ -104,9 +112,10 @@ module App
         translation: params[:translation]
       )
 
-      track_event("word_added_manually", language: @language.iso_name)
+      track_event("word_added_manually", language: @language.iso_name) if entry.previously_new_record?
 
-      redirect_to vocabulary_index_path, notice: "“#{params[:word].presence || 'Word'}” added"
+      redirect_to vocabulary_index_path, status: :see_other,
+        notice: "“#{params[:word].presence || 'Word'}” added"
     rescue PhraseTokenUser::InputError => error
       render_create_error(I18n.t!(error.code, scope: "app.vocabulary_entries.new.errors"))
     rescue PhraseTokenUser::InvalidInput, ActiveRecord::RecordInvalid

@@ -60,6 +60,51 @@ class PhraseTokenUserTest < ActiveSupport::TestCase
       assert_equal "weather", second.translation
     end
 
+    test "repeated saves reuse the normalized phrase and selected span without changing edits" do
+      first = add(sentence: "no queda tiempo", range: 2..2, translation: "time")
+      first.update!(practicing: false)
+      first.token_translation.update!(translation: "edited meaning")
+
+      assert_no_difference [ -> { Phrase.count }, -> { PhraseToken.count },
+                             -> { TokenTranslation.count }, -> { PhraseTokenUser.count } ] do
+        second = add(sentence: "  no   queda\n tiempo ", range: 2..2, translation: "time")
+        assert_equal first.id, second.id
+        assert_equal "edited meaning", second.translation
+        assert second.paused?
+      end
+    end
+
+    test "different spans share one custom phrase" do
+      first = add(sentence: "no queda tiempo", range: 2..2)
+      second = add(sentence: "no queda tiempo", range: 1..1)
+
+      assert_equal first.phrase.id, second.phrase.id
+      assert_not_equal first.id, second.id
+      assert_equal "queda", second.word
+    end
+
+    test "custom duplicate detection is scoped to the user and phrase language" do
+      first = add(sentence: "no queda tiempo", range: 2..2)
+      other = User.create!(email: "other-custom@example.com", password: "password123", confirmed_at: Time.zone.now)
+      second = PhraseTokenUser.create_custom!(user: other, sentence: "no queda tiempo", language: @spanish,
+                                             token_range: 2..2, translation: "time", translation_language: @english)
+      third = add(sentence: "no queda tiempo", range: 2..2, language: languages(:french))
+
+      assert_equal 3, [ first.phrase.id, second.phrase.id, third.phrase.id ].uniq.size
+    end
+
+    test "saving a deleted custom word reuses its phrase and token" do
+      first = add(sentence: "no queda tiempo", range: 2..2)
+      token_id = first.phrase_token_id
+      first.destroy!
+
+      assert_no_difference [ -> { Phrase.count }, -> { PhraseToken.count } ] do
+        restored = add(sentence: "no queda tiempo", range: 2..2)
+        assert_equal token_id, restored.phrase_token_id
+        assert restored.practicing?
+      end
+    end
+
     test "custom words are labelled as the user's own, not as a course" do
       entry = add(sentence: "no queda tiempo", range: 2..2)
 

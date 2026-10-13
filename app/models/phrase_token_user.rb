@@ -89,15 +89,17 @@ class PhraseTokenUser < ApplicationRecord
       start_index, end_index = custom_span(sentence, token_range)
       raise InputError.new(:selection_required) unless start_index
 
-      transaction do
-        phrase = Phrase.create!(user:, l1: language, text_l1: sentence)
-        token = phrase.phrase_tokens.create!(
+      # Serialize custom saves for this owner so concurrent requests cannot
+      # both create the same phrase before either transaction commits.
+      User.find(user.id).with_lock do
+        phrase = user.custom_phrases.order(:id).find_or_create_by!(l1: language, text_l1: sentence)
+        token = phrase.phrase_tokens.find_or_create_by!(
           l1_start_index: start_index,
           l1_end_index: end_index,
           index_type: :character_index
         )
-        token.token_translations.create!(language: translation_language, translation:)
-        user.phrase_token_users.create!(phrase_token: token, language: translation_language)
+        token.token_translations.create_with(translation:).find_or_create_by!(language: translation_language)
+        user.phrase_token_users.create_with(language: translation_language).find_or_create_by!(phrase_token: token)
       end
     end
 

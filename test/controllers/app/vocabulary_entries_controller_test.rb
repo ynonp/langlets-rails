@@ -446,6 +446,41 @@ module App
       assert_equal "tiempo", @user.phrase_token_users.last.word
     end
 
+    test "Turbo custom saves navigate to the full vocabulary list on both surfaces" do
+      [ [ "/vocabulary", WEB ], [ "/app/vocabulary", NATIVE ] ].each do |path, headers|
+        Current.translation_language = @english
+        turbo_headers = headers.merge("Accept" => "text/vnd.turbo-stream.html, text/html, application/xhtml+xml")
+
+        post path, headers: turbo_headers, params: {
+          sentence: "no queda tiempo", language: @spanish.iso_name,
+          token_start: 2, token_end: 2, translation: "time", word: "tiempo"
+        }
+
+        assert_response :see_other
+        assert_redirected_to path
+        follow_redirect!(headers: turbo_headers)
+        assert_response :success
+        assert_equal "text/html", response.media_type
+        assert_select "[data-testid=vocabulary-entry]", 1
+        assert_select "[data-testid=vocabulary-add-form]", false
+      end
+    end
+
+    test "repeated custom saves from the web create one entry" do
+      Current.translation_language = @english
+      params = {
+        sentence: "no queda tiempo", language: @spanish.iso_name,
+        token_start: 2, token_end: 2, translation: "time", word: "tiempo"
+      }
+
+      assert_difference [ -> { Phrase.count }, -> { PhraseToken.count }, -> { PhraseTokenUser.count } ], 1 do
+        3.times do
+          post "/vocabulary", headers: WEB, params: params
+          assert_redirected_to "/vocabulary"
+        end
+      end
+    end
+
     test "a failed web add re-renders the web form rather than the native one" do
       Current.translation_language = @english
 
