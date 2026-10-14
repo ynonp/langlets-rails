@@ -69,6 +69,9 @@ Thruster serves the static file without a Rails controller. The public homepage
 hero links to the versioned APK with a store-style Android download badge and
 to the iPhone beta in TestFlight with a matching badge; other web pages do not
 carry a global app-download strip.
+The current public Android release is 1.2 (version code 4), served at
+`/downloads/android/langlets-1.2.apk`. Upload the matching APK before deploying
+a release-setting change; a missing APK returns an HTML 404 page to downloaders.
 `config/android_release.properties` is the shared version source for Gradle, the web URL, and
 `bin/upload-android-release`; that script verifies the APK signature when the
 Android build tools are available, uploads atomically over SSH, and compares
