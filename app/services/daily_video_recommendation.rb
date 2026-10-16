@@ -7,8 +7,8 @@ class DailyVideoRecommendation
 
   CONTENT_TYPES = %w[dialogue song story culture].freeze
 
-  Result = Data.define(:url, :search_suggestions, :content_type, :video, :descriptions) do
-    def initialize(url:, search_suggestions:, content_type: nil, video: nil, descriptions: {})
+  Result = Data.define(:url, :search_suggestions, :content_type, :video, :descriptions, :duration_seconds) do
+    def initialize(url:, search_suggestions:, content_type: nil, video: nil, descriptions: {}, duration_seconds: nil)
       super
     end
   end
@@ -23,12 +23,13 @@ class DailyVideoRecommendation
     url = canonical_video(response.fetch("url"))
     raise InvalidRecommendation, "No verified new video found" unless url && !excluded?(url)
     raise InvalidRecommendation, "Invalid content type" unless CONTENT_TYPES.include?(response["content_type"])
-    video = @preflight.call(url).video
+    preflight = @preflight.call(url)
+    video = preflight.video
     if video.author_name.blank?
       raise InvalidRecommendation, "Video must have a channel"
     end
     Result.new(url: url, search_suggestions: response["search_suggestions"],
-      content_type: response["content_type"], video: video, descriptions: descriptions(response["descriptions"]))
+      content_type: response["content_type"], video: video, descriptions: descriptions(response["descriptions"]), duration_seconds: preflight.duration_seconds)
   rescue KeyError, TypeError
     raise InvalidRecommendation, "Invalid search response"
   end

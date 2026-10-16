@@ -11,7 +11,8 @@ module Imports
   # the publication every one of these paths ends in, so the price cannot depend
   # on which path was taken (see Imports::Pricing).
   #
-  # Order matters: the video is checked before anything else happens, so a
+  # Order matters: unless reusing a verified prepared daily source, the video
+  # is checked before anything else happens, so a
   # private or deleted video costs nothing and leaves nothing behind. Everything
   # after that is one transaction, and the job is enqueued inside it — Solid Queue
   # is Postgres-backed, so the job row commits atomically with the request.
@@ -55,7 +56,7 @@ module Imports
     def self.call(...) = new(...).call
 
     def initialize(user:, url:, translation_language:, clip_language: nil, client_token: nil,
-                   detected_data: nil, existing_request: nil, guest_started: false)
+                   detected_data: nil, existing_request: nil, guest_started: false, daily_challenge: nil)
       @user = user
       @url = url
       @clip_language = clip_language
@@ -67,6 +68,7 @@ module Imports
       @detected_data = detected_data
       @existing_request = existing_request
       @guest_started = guest_started
+      @daily_challenge = daily_challenge
     end
 
     # Raises VideoSource::UnavailableVideo for a bad/private/deleted video,
@@ -90,7 +92,7 @@ module Imports
       # preflight before that row was written. Refresh provider metadata there
       # without adding another synchronous duration dependency; the pipeline
       # retains its own duration guard.
-      video = if existing_request
+      video = prepared_daily_video || if existing_request
         VideoSource.fetch(url)
       else
         VideoPreflight.call(url).video
@@ -178,6 +180,31 @@ module Imports
         end
       end
       Result.new(status: :already_queued, import_request: import_request, course: course, cost: 0)
+    end
+
+    # A daily card was preflighted and fully imported before being shown. Reuse
+    # that server-owned source instead of waiting for oEmbed and duration APIs
+    # again on the user's click. Never accept metadata or a skip flag from params.
+    def prepared_daily_video
+      challenge = @daily_challenge
+      return unless challenge && !guest_started && existing_request.nil?
+      return unless challenge.starter_challenge.user_id == user.id && challenge.personalized? && challenge.unlocked?
+      return unless challenge.language == clip_language_record
+      metadata = challenge.recommended_video
+      canonical_url = VideoSource.loose_canonical(url)
+      return unless canonical_url.present? && canonical_url == metadata["url"]
+
+      source = ImportRequest.find_by(id: metadata["source_import_request_id"])
+      return unless source&.ready? && source.guest_started? && source.user.email == User::ADMIN_EMAIL
+      return unless source.youtube_url == canonical_url && source.clip_language == clip_language
+      course = source.course
+      return unless course&.published? && course.language == clip_language_record
+      return unless course.main_media_url == canonical_url && course.translation_ready?(translation_language_record)
+
+      VideoSource::Video.new(provider: VideoSource.provider(canonical_url),
+        video_id: source.youtube_video_id, canonical_url: canonical_url,
+        title: metadata.fetch("title"), author_name: metadata["channel"],
+        thumbnail_url: metadata["thumbnail_url"])
     end
 
     def clip_language_record

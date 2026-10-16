@@ -99,7 +99,8 @@ module App
         url: params[:url],
         clip_language: clip_language,
         translation_language: default_translation_language(clip_language: clip_language).english_name,
-        client_token: params[:client_token].presence
+        client_token: params[:client_token].presence,
+        daily_challenge: daily_video ? daily_challenge : nil
       )
 
       track_event("video_import_requested", {

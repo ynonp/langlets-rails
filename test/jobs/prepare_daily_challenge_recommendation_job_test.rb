@@ -31,6 +31,7 @@ class PrepareDailyChallengeRecommendationJobTest < ActiveJob::TestCase
     assert source.ready?
     assert_empty @user.import_requests
     assert_equal "ready", @quest.reload.recommendation_state
+    assert_equal 180, @quest.recommended_video["duration_seconds"]
     assert_equal @url, @quest.recommended_video["url"]
     assert_equal "French teacher", @quest.recommended_video["channel"]
     assert_equal "dialogue", @quest.recommended_video["content_type"]

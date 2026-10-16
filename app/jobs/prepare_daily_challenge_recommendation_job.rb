@@ -29,11 +29,13 @@ class PrepareDailyChallengeRecommendationJob < ApplicationJob
 
     if claimed == :search
       recommendation = DailyVideoRecommendation.call(user: quest.starter_challenge.user, language: quest.language)
-      video = recommendation.video || Imports::VideoPreflight.call(recommendation.url).video
+      preflight = Imports::VideoPreflight.call(recommendation.url) unless recommendation.video
+      video = recommendation.video || preflight.video
+      duration = recommendation.duration_seconds || preflight&.duration_seconds
       quest.with_lock do
         quest.update!(recommendation_state: "importing", recommendation_failure: nil,
           recommended_video: { "url" => video.canonical_url, "title" => video.title.to_s.truncate(200),
-            "thumbnail_url" => video.thumbnail_url, "search_suggestions" => recommendation.search_suggestions,
+            "duration_seconds" => duration, "thumbnail_url" => video.thumbnail_url, "search_suggestions" => recommendation.search_suggestions,
             "descriptions" => recommendation.descriptions, "channel" => video.author_name, "content_type" => recommendation.content_type })
       end
     end

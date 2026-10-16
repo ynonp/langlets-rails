@@ -145,7 +145,7 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     travel_to challenge.local_time_on(challenge.first_challenge_on + 5)
     quest = DailyChallenge.ensure_personalized_today!(challenge)
     url = "https://www.youtube.com/watch?v=kJQP7kiw5Fk"
-    quest.update!(recommendation_state: "ready", recommended_video: { "url" => url, "title" => "French conversation", "search_suggestions" => '<div><a href="https://www.google.com/search?q=french">Google Search</a></div>' })
+    quest.update!(recommendation_state: "ready", recommended_video: { "url" => url, "title" => "French conversation", "duration_seconds" => 185, "search_suggestions" => '<div><a href="https://www.google.com/search?q=french">Google Search</a></div>' })
     assert_no_difference [ "Course.count", "ImportRequest.count" ] do
       get daily_challenge_path
     end
@@ -153,6 +153,10 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     assert_select '#day-6 input[name=url][value=?]', url
     assert_select 'iframe[title="Google Search"]', 0
     assert_select '#day-6 [data-testid="daily-langlets-video"]', 1
+    assert_select '#day-6 [data-testid="daily-langlets-duration"] bdi[dir=ltr]', text: "3:05"
+    quest.update!(recommended_video: quest.recommended_video.except("duration_seconds"))
+    get daily_challenge_path
+    assert_select '[data-testid="daily-langlets-duration"]', 0
     assert_select '#day-6 img.w-full[alt="French conversation"]', 1
     assert_select '#day-6 button.bg-app-accent.text-app-on-accent', count: 1
     assert_select '#day-6 [data-import-submit-target="idle"]', text: I18n.t("daily_challenge.import_video"), count: 1
@@ -212,15 +216,22 @@ class DailyChallengesControllerTest < ActionDispatch::IntegrationTest
     course = create_translated_course!(name: "French song", slug: "prepared-daily", user: admin,
       language: languages(:french), translation_language: languages(:english), status: :published,
       main_media_url: url, youtube_video_id: "kJQP7kiw5Fk")
-    quest.update!(recommendation_state: "ready", recommended_video: { "url" => url, "title" => course.name })
-    video = VideoSource::Video.new(video_id: "kJQP7kiw5Fk", title: course.name, canonical_url: url,
-      author_name: "French teacher", thumbnail_url: "https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg")
-    preflight = Imports::VideoPreflight::Result.new(video: video, duration_seconds: 120, maximum_duration_seconds: 1500)
+    source = admin.import_requests.create!(youtube_url: url, youtube_video_id: course.youtube_video_id,
+      clip_language: "French", translation_language: "English", title: course.name,
+      course: course, status: :ready, guest_started: true)
+    quest.update!(recommendation_state: "ready", recommended_video: {
+      "url" => url, "title" => course.name, "source_import_request_id" => source.id
+    })
     balance = @user.reload.credit_balance
     assert_no_difference [ "Course.count", "CreateSongProgress.count" ] do
       assert_no_enqueued_jobs only: [ CreateCourseJob, DetectImportLanguageJob, AddCourseTranslationJob ] do
-        Imports::VideoPreflight.stub(:call, preflight) do
-          post app_import_requests_path, params: { url: url, daily_challenge_id: quest.id }, headers: NATIVE
+        Imports::VideoPreflight.stub(:call, ->(*) { flunk "prepared daily import must not run external preflight" }) do
+          VideoSource.stub(:fetch, ->(*) { flunk "prepared daily import must not fetch provider metadata" }) do
+            [ {}, NATIVE ].each do |headers|
+              post app_import_requests_path, params: { url: url, daily_challenge_id: quest.id }, headers: headers
+              assert_redirected_to course_path(course)
+            end
+          end
         end
       end
     end

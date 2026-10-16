@@ -1,5 +1,6 @@
 es:
   daily_challenge:
+    video_duration: "Duración del vídeo:"
     today_eyebrow: Nuestra selección de hoy
     today_title: Langlets diario
     language_names:

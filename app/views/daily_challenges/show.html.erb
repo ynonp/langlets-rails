@@ -69,6 +69,9 @@
                       </span>
                     <% end %>
                     <div class="mt-4 space-y-3" data-testid="daily-langlets-description">
+                      <% if (duration = daily_langlet_duration(video)) %>
+                        <p class="text-start text-sm opacity-75" data-testid="daily-langlets-duration"><%= t("daily_challenge.video_duration") %> <bdi dir="ltr"><%= duration %></bdi></p>
+                      <% end %>
                       <% [language, current_user.native_language].uniq(&:iso_name).each do |description_language| %>
                         <% description = daily_langlet_description(video, description_language) %>
                         <% if description.present? %>

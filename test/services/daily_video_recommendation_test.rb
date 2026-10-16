@@ -23,6 +23,7 @@ class DailyVideoRecommendationTest < ActiveSupport::TestCase
     end
     result = DailyVideoRecommendation.new(user: @user, language: @language, client: client, preflight: @preflight).call
     assert_equal({ "fr" => "Une conversation au marché.", "en" => "A market conversation." }, result.descriptions)
+    assert_equal 180, result.duration_seconds
     assert_equal @url, result.url
     assert_equal "<div>Google Search</div>", result.search_suggestions
   end

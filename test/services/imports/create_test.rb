@@ -16,6 +16,41 @@ module Imports
       @hebrew  = languages(:hebrew)
     end
 
+    test "daily cards without a matching ready source and translation retain external preflight" do
+      admin = create_user(User::ADMIN_EMAIL)
+      course = publish_course!(user: admin)
+      enrollment = StarterChallenge.enroll!(user: @user, language_ids: [ @spanish.id ], delivery: [])
+      travel_to enrollment.local_time_on(enrollment.first_challenge_on + 5)
+      daily = DailyChallenge.ensure_personalized_today!(enrollment)
+      source = admin.import_requests.create!(youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
+        clip_language: "Spanish", translation_language: "English", title: course.name,
+        course: course, status: :ready, guest_started: true)
+      daily.update!(recommendation_state: "ready", recommended_video: {
+        "url" => CANONICAL, "title" => course.name, "source_import_request_id" => source.id
+      })
+      options = { user: @user, url: CANONICAL, clip_language: "Spanish",
+        translation_language: "English", daily_challenge: daily }
+
+      # A changed translation, forged account/card pair, changed URL and a
+      # missing source must all use the usual provider checks.
+      cases = [
+        options.merge(translation_language: "Hebrew"),
+        options.merge(user: @other),
+        options.merge(url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+      ]
+      VideoPreflight.stub(:call, ->(*) { raise VideoSource::UnavailableVideo, "preflight reached" }) do
+        cases.each do |arguments|
+          assert_raises(VideoSource::UnavailableVideo) { Create.call(**arguments) }
+        end
+        source.update!(status: :failed)
+        assert_raises(VideoSource::UnavailableVideo) { Create.call(**options) }
+        daily.update!(recommended_video: daily.recommended_video.except("source_import_request_id"))
+        assert_raises(VideoSource::UnavailableVideo) { Create.call(**options) }
+      end
+      assert_empty @user.import_requests
+      assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
+    end
+
     test "creates a course and queues the pipeline, to be paid for on delivery" do
       result = nil
       assert_enqueued_with(job: CreateCourseJob) do

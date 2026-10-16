@@ -2731,6 +2731,10 @@ charging credits, or sending the admin a course-ready notification. The source
 ImportRequest ID is persisted in the card as `source_import_request_id`. The
 card becomes ready only once that request, published Course, and translation
 are all ready. The ready source appears as a full-width thumbnail with an Import button.
+Personalized cards persist provider-reported `duration_seconds` from the existing
+availability preflight and display a localized video-length label with an LTR
+minutes:seconds value beside the descriptions. Missing duration (including older
+and curated cards) omits this line; rendering never fetches provider metadata.
 Beneath Import, the card shows a short explanation of the specific video and why
 it is worth watching, first in the target language and then in the account's
 native language (one paragraph if they match). Each paragraph has its own `lang`
@@ -2761,8 +2765,16 @@ when returning to the page. The form retains `data-turbo=false` and works as an
 ordinary POST without JavaScript. Starter
 vocabulary/skimming activities retain their instructions and library links.
 The existing import service retains ordinary availability/duration checks,
-language detection, pricing, deduplication, pipeline reuse and publication. For
-a matching, unlocked personalized card, its known source language skips detection.
+language detection, pricing, deduplication, pipeline reuse and publication.
+For a matching, unlocked personalized card owned by the importing account,
+`Imports::Create` reuses stored metadata without external oEmbed or duration
+requests only when its admin-owned, guest-started source import is ready,
+the URL and source language match, and the course is published with the requested
+translation ready. This avoids repeating synchronous provider checks on the
+Import click. The service validates the card itself; request parameters cannot
+supply trusted metadata or bypass checks. Missing or inconsistent source records,
+unprepared cards and changed translation languages use the ordinary preflight.
+The known source language still skips detection for matching unlocked cards.
 The prepared course is adopted into the learner's channel and opened immediately,
 with ordinary pricing. A missing translation after an interface-language change,
 or an older unprepared card, uses the existing account-scoped import status page,
