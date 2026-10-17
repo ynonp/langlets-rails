@@ -2,6 +2,8 @@ class SendDailyChallengesJob < ApplicationJob
   queue_as :default
 
   def perform
+    return unless DailyChallenge.delivery_enabled?
+
     Notification.where(kind: :daily_challenge, sent_at: nil).find_each do |notification|
       DeliverNotificationJob.perform_later(notification.id)
     end

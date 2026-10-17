@@ -1,6 +1,10 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  # Paused until daily content selection is improved. This also suppresses
+  # delivery jobs queued before the pause; user preferences remain intact.
+  config.x.daily_langlets_delivery_enabled = false
+
   config.x.pipeline.url = "https://pipeline.langlets.app"
   config.x.pipeline.callback_base_url = "https://langlets.app"
 

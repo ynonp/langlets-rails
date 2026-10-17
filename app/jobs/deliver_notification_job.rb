@@ -34,6 +34,8 @@ class DeliverNotificationJob < ApplicationJob
 
   def reminder_current?(notification)
     if notification.kind_daily_challenge?
+      return false unless DailyChallenge.delivery_enabled?
+
       DailyChallenge.find_by(notification_id: notification.id)&.unlocked? == true
     elsif notification.kind_daily_practice?
       false # Historical practice reminders were superseded by daily challenges.

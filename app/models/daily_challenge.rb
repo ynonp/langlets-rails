@@ -18,6 +18,10 @@ class DailyChallenge < ApplicationRecord
       .where(available_at: ..(Time.zone.now + PREPARATION_LEAD))
   }
 
+  def self.delivery_enabled?
+    Rails.configuration.x.daily_langlets_delivery_enabled != false
+  end
+
   def personalized? = day.to_i > 5
   def quest = personalized? ? "recommendation" : QUESTS.fetch(day - 1)
   def unlocked? = available_at <= Time.zone.now && day == starter_challenge.active_day && (!personalized? || recommendation_state == "ready")
@@ -50,6 +54,8 @@ class DailyChallenge < ApplicationRecord
   end
 
   def notify!
+    return unless self.class.delivery_enabled?
+
     with_lock do
       return if notification_id.present? || skipped_at.present?
       if day < starter_challenge.active_day

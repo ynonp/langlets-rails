@@ -9,6 +9,25 @@ class SendDailyChallengesJobTest < ActiveJob::TestCase
     @challenge = StarterChallenge.enroll!(user: @user, language_ids: [languages(:french).id], delivery: ["email"])
   end
 
+  test "paused daily delivery suppresses scheduling, direct notification and queued email and push" do
+    travel_to @challenge.daily_challenges.first.available_at
+    quest = @challenge.daily_challenges.first
+    quest.notify!
+    notification = quest.reload.notification
+    clear_enqueued_jobs
+    DailyChallenge.stub(:delivery_enabled?, false) do
+      assert_no_enqueued_jobs { SendDailyChallengesJob.perform_now }
+      assert_no_difference "Notification.count" do
+        second = @challenge.daily_challenges.second
+        travel_to(second.available_at) { second.notify! }
+      end
+      Push::Notifier.stub(:call, ->(*) { flunk "paused daily notification must not push" }) do
+        assert_emails(0) { DeliverNotificationJob.perform_now(notification.id) }
+      end
+    end
+    assert notification.reload.sent_at?
+  end
+
   test "five days send one notification each with stable links and no sixth day" do
     (0..4).each do |offset|
       travel_to @challenge.daily_challenges.find_by!(day: offset + 1).available_at do

@@ -2585,6 +2585,17 @@ settles as `imported` and the question no longer arises.
 
 ### Daily challenges and personalized video suggestions
 
+**Production delivery paused (2026-10-17):** content selection is under review.
+Production sets `config.x.daily_langlets_delivery_enabled = false`.
+`DailyChallenge.delivery_enabled?` gates the recurring scheduler and direct
+`notify!` calls. The delivery job also checks it before daily email/push, so
+already queued daily notifications are suppressed and marked attempted rather
+than replayed later. The scheduler does not prepare new recommendations while
+paused. Existing daily pages remain accessible; opening the daily page may still
+prepare a recommendation. User delivery preferences and other notification kinds
+are unchanged. Re-enable explicitly in production configuration when ready.
+
+
 `/daily_challenge` is an authenticated page shared by web and native. Web has a
 Daily challenge navigation link; native Home has a challenge card. First use
 selects one or more target languages, email/push preference, a local reminder
