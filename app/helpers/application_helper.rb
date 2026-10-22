@@ -16,7 +16,7 @@ module ApplicationHelper
   # Course#thumbnail_url reads the stored column then derives, so YouTube rows
   # cost nothing and TikTok rows use the URL captured at import.
   def course_thumbnail_url(course, quality = 'hqdefault')
-    course&.thumbnail_url(quality)
+    course&.thumbnail_url(quality).presence || "/course-placeholder.svg"
   end
 
   def course_youtube_video_id(course)

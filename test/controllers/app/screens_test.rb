@@ -68,6 +68,23 @@ module App
       assert_response :success
     end
 
+    test "native home and library render a course with no thumbnail metadata" do
+      @course.update!(main_media_url: "https://www.tiktok.com/@example/video/1234567890123456789",
+        youtube_video_id: "1234567890123456789", thumbnail_url: nil)
+      @user.import_requests.create!(youtube_url: @medium.url, youtube_video_id: "kJQP7kiw5Fk",
+        clip_language: "Spanish", translation_language: "English", title: @course.name,
+        status: :ready, course: @course)
+
+      get app_home_path, headers: NATIVE
+      assert_response :success
+      assert_select 'img[src="/course-placeholder.svg"]', minimum: 1
+      assert_select 'a[href=?]', course_path(@course), minimum: 1
+
+      get app_library_path, headers: NATIVE
+      assert_response :success
+      assert_select 'img[src="/course-placeholder.svg"]', minimum: 1
+    end
+
     test "screens render with an empty account" do
       Enrollment.delete_all
 

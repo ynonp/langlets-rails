@@ -3747,6 +3747,10 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
 
 - **Empty account state remains instructional.** If the account has no readable, published unfinished enrolled course (including an account whose courses are all complete), Home renders the localized text box beginning **"No langlets yet"** and explaining that sharing a Spanish, French, Hebrew, Arabic, German, or Russian video to Langlets creates language practice. The Latest imports Library preview may still appear alongside that account-state message; there is no first-run Create link. A course displayed in the just-imported hero still counts as unfinished, so the empty box does not appear beneath it.
 
+- Course card views use `course_thumbnail_url`, which falls back to the local
+  `/course-placeholder.svg` when stored or derived provider covers are missing.
+  Missing thumbnail metadata must not make Home, Library or other cards return
+  HTTP 500 by passing nil to Rails `image_tag`.
 - Native course thumbnails use the same `course_youtube_video_id` fallback as the web cards and request YouTube's `hqdefault` image. This matters for legacy courses whose `youtube_video_id` column is blank but whose `main_media_url` still contains a valid ID; using the column directly produces an empty `/vi//…` image URL.
 - **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.
 - Tabs use `presentation: replace_root`; the sheets use `context: modal, modal_style: medium`, which maps onto a real `UISheetPresentationController` detent with no Swift. The sheets are **full pages, not Turbo Frames** — a frame overlay inside the web view fights the native modal and you get two competing dismissal gestures.
