@@ -1,0 +1,310 @@
+<title>Quest: Daily Langlets Pipeline</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Nunito:wght@400;600;800&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: one centered column, sticky XP bar on top, four stage panels that unlock in order. */
+:root{--bg:#fbf8f3;--fg:#241f2d;--muted:#6b6577;--card:#ffffff;--line:#e4ddd0;--accent:#e4572e;--accent2:#2a9d8f;--gold:#e9a820;--code:#f3eee5;--bad:#c0392b;--good:#1f8a4c;
+--display:'Fraunces',Georgia,serif;--body:'Nunito',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16131c;--fg:#f1ecf7;--muted:#a69fb5;--card:#201c29;--line:#383044;--accent:#ff7a52;--accent2:#4cc9b8;--gold:#f2bf4a;--code:#120f18;--bad:#ff7b6b;--good:#5fd68d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#16131c;--fg:#f1ecf7;--muted:#a69fb5;--card:#201c29;--line:#383044;--accent:#ff7a52;--accent2:#4cc9b8;--gold:#f2bf4a;--code:#120f18;--bad:#ff7b6b;--good:#5fd68d;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--body);padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+main{max-width:860px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+h2{font-size:1.5rem}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.hud{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.hud-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.lvl{font-weight:800;white-space:nowrap}
+.bar{flex:1;min-width:120px;height:14px;background:var(--code);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width .6s ease}
+.chip{font-size:.85rem;color:var(--muted);white-space:nowrap}
+.intro{padding:28px 0 8px;display:grid;gap:12px}
+.intro h1{font-size:clamp(1.8rem,5vw,2.8rem)}
+.meta{display:flex;gap:8px;flex-wrap:wrap}
+.tag{background:var(--code);border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.85rem}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:20px;align-items:start;margin-top:12px}
+@media(max-width:760px){.layout{grid-template-columns:minmax(0,1fr)}}
+.patch{background:var(--card);border:1px dashed var(--accent);border-radius:12px;padding:14px;font-size:.88rem;position:sticky;top:calc(env(safe-area-inset-top,0px) + 70px)}
+@media(max-width:760px){.patch{position:static;order:-1}}
+.patch h3{font-size:1rem;margin-bottom:8px}
+.patch li{margin:0 0 8px}.patch ul{padding-left:18px;margin:0}
+.patch code,.stage code{font-family:var(--mono);font-size:.82em;background:var(--code);padding:1px 5px;border-radius:4px}
+.stage{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+.stage.locked{opacity:.55}
+.stage.locked .body{display:none}
+.stage header{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.stage.locked header::after{content:"🔒 finish the previous stage"; font-size:.85rem;color:var(--muted)}
+.stage.done header::after{content:"✔ complete";color:var(--good);font-weight:800;font-size:.9rem}
+.map{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.node{width:100%;text-align:left;background:var(--code);border:2px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:center}
+.node:hover{border-color:var(--accent2)}
+.node.seen{border-color:var(--good)}
+.node .n{background:var(--accent);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-weight:800;flex:none;font-size:.85rem}
+.node small{display:block;color:var(--muted);font-family:var(--mono);font-size:.75rem;overflow-wrap:anywhere}
+.detail{padding:6px 12px 12px 48px;font-size:.95rem}
+.snip{margin:14px 0}
+.snip h3{font-family:var(--mono);font-size:.8rem;font-weight:400;color:var(--muted);margin-bottom:4px;overflow-wrap:anywhere}
+.code{background:var(--code);border:1px solid var(--line);border-radius:10px;overflow-x:auto;padding:8px 0;font:13px/1.6 var(--mono)}
+.ln{display:flex;min-width:max-content;padding:0 12px 0 0;cursor:default;background:none;border:0;text-align:left;width:100%}
+.ln .no{width:44px;text-align:right;padding-right:12px;color:var(--muted);flex:none;user-select:none}
+.ln .t{white-space:pre}
+.ln.note{cursor:pointer;background:color-mix(in srgb,var(--gold) 16%,transparent);border-left:3px solid var(--gold)}
+.ln.note:hover{background:color-mix(in srgb,var(--gold) 30%,transparent)}
+.ln.right{background:color-mix(in srgb,var(--good) 25%,transparent)}
+.ln.wrong{background:color-mix(in srgb,var(--bad) 25%,transparent)}
+.say{background:var(--code);border-left:4px solid var(--accent2);padding:8px 12px;border-radius:0 8px 8px 0;margin-top:6px;font-size:.92rem}
+.challenge{border:2px dashed var(--accent2);border-radius:10px;padding:10px 12px;margin-top:10px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.flip{perspective:900px;height:200px;background:none;border:0;padding:0}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:14px;display:grid;place-items:center;text-align:center;font-size:.92rem;overflow:auto}
+.front{background:linear-gradient(135deg,var(--accent),var(--gold));color:#1b1420;font-weight:800;font-size:1.05rem}
+.back{background:var(--code);border:1px solid var(--line);transform:rotateY(180deg)}
+.boss{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.boss .em{font-size:2.4rem}
+.hp{flex:1;height:18px;border-radius:99px;background:var(--code);border:1px solid var(--line);overflow:hidden}
+.hp>i{display:block;height:100%;width:100%;background:var(--bad);transition:width .5s}
+.opt{display:block;width:100%;text-align:left;background:var(--code);border:2px solid var(--line);border-radius:10px;padding:10px 12px;margin:6px 0}
+.opt:hover:not(:disabled){border-color:var(--accent2)}
+.opt.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 18%,transparent)}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,transparent)}
+.btn{background:var(--accent);color:#1b1420;border:0;border-radius:10px;padding:9px 18px;font-weight:800}
+.btn.alt{background:var(--code);color:var(--fg);border:1px solid var(--line)}
+.order li{list-style:none}
+.picked{display:flex;flex-wrap:wrap;gap:6px;min-height:34px;margin:8px 0;padding:0}
+.picked li{background:var(--accent2);color:#10201e;border-radius:8px;padding:2px 10px;font-weight:800;font-size:.85rem}
+.win{text-align:center;padding:24px 8px}
+.badge{font-size:4rem}
+.shelf{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0;font-size:.9rem}
+.shelf span{background:var(--code);border:1px solid var(--line);border-radius:99px;padding:3px 12px}
+.toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:6px 16px;border-radius:99px;font-weight:800;opacity:0;pointer-events:none;transition:opacity .3s;z-index:20}
+.toast.show{opacity:1}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" onerror="this.remove()">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+
+<div class="hud"><div style="max-width:860px;margin:0 auto" class="hud-row">
+<span class="lvl" id="lvl">Lv 1</span><div class="bar" role="progressbar" aria-label="XP"><i id="xpbar"></i></div>
+<span class="chip" id="xptxt">0 XP</span><span class="chip" id="streak">🔥 0-day streak</span></div></div>
+
+<main>
+<section class="intro">
+<span class="tag">🎯 Quest · 2026-10-22 · studied at commit 4d6b564</span>
+<h1>Quest: The Journey of a Daily Langlet 🎬</h1>
+<p><b>Why it matters.</b> After a learner finishes the five starter quests, Langlets picks one fresh video a day in their language, based on their saved words and finished lessons. The video is imported into a full course <i>before</i> the learner is told about it, so tapping the card opens something already playable.</p>
+<p><b>Who triggers it.</b> A scheduled sweep (<code>SendDailyChallengesJob</code>) and, as a backup, the learner opening <code>/daily_challenge</code>. Heads up: in production, delivery is currently paused, so the card is prepared but no notification is sent.</p>
+<div class="meta"><span class="tag">Rails job + state machine</span><span class="tag">Gemini via pipeline</span><span class="tag">Solid Queue</span></div>
+</section>
+
+<div class="layout"><div>
+<section class="stage" id="s1"><header><h2>🗺️ Stage 1 · The Map</h2></header><div class="body">
+<p>Tap every stop to read it. <span id="mapcount">0/7</span> opened.</p><ul class="map" id="map"></ul></div></section>
+<section class="stage locked" id="s2"><header><h2>💻 Stage 2 · Code Lab</h2></header><div class="body">
+<p>Gold lines have notes. Tap them. Then try the two challenges.</p><div id="snips"></div></div></section>
+<section class="stage locked" id="s3"><header><h2>✨ Stage 3 · Did You Know?</h2></header><div class="body">
+<p>Flip all the cards.</p><div class="cards" id="cards"></div></div></section>
+<section class="stage locked" id="s4"><header><h2>🧠 Stage 4 · Boss Fight</h2></header><div class="body">
+<div class="boss"><span class="em">🐉</span><div style="flex:1"><b>The Flaky Job Dragon</b><div class="hp"><i id="hp"></i></div></div></div>
+<div id="quiz"></div></div></section>
+<section class="stage" id="victory" hidden><div class="win">
+<div class="badge">🎬</div><h2>Daily Langlet Director</h2><p id="final"></p>
+<div class="shelf" id="shelf"></div><button class="btn" id="copy">Copy results</button> <span id="copied" class="chip"></span></div></section>
+</div>
+
+<aside class="patch"><h3>🆕 Patch notes (last 30 days)</h3><ul>
+<li><code>3f3988d</code> Oct 3: first Gemini-search recommendations.</li>
+<li><code>be93403</code> Oct 6: videos are now prepared <i>before</i> delivery.</li>
+<li><code>255c065</code> Oct 9: vocabulary, finished lessons and dialect steer the pick.</li>
+<li><code>443b8e1</code> Oct 13: bilingual descriptions on cards.</li>
+<li><code>2521cc3</code> Oct 16: duration and the prepared import are reused on click, so no repeat provider checks.</li>
+<li><code>5b8c96a</code> Oct 17: <b>delivery paused in production</b> via <code>daily_langlets_delivery_enabled = false</code>. Preparation still runs.</li></ul></aside></div>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var F='app/jobs/prepare_daily_challenge_recommendation_job.rb';
+var STEPS=[
+{t:'Sweep',f:'app/jobs/send_daily_challenges_job.rb:4',d:'A recurring job. It queues unsent notifications, makes sure each learner has today\'s quest row, notifies due quests and queues preparation for quests starting within 30 minutes. It returns at once when delivery is disabled.'},
+{t:'Ensure today\'s quest',f:'app/models/daily_challenge.rb:29 (ensure_personalized_today!)',d:'Under a lock, finds or creates the DailyChallenge for the learner\'s active day, with available_at set to their local reminder time. Personalized quests are day 6 and later; days 1 to 5 use a fixed catalog.'},
+{t:'Pick work',f:'app/models/daily_challenge.rb:16 (recommendations_to_prepare)',d:'Quests with day > 5, no notification, not skipped, in state pending, searching or importing, and available within PREPARATION_LEAD (30 minutes).'},
+{t:'Claim under lock',f:F+':8',d:'Inside with_lock the job decides whether to do anything and what: skip stale days, honor a 10-minute search lease, resume an import, give up after 3 attempts, or mark the quest "searching" and return :search.'},
+{t:'Search + verify',f:'app/services/daily_video_recommendation.rb:21',d:'Sends bounded learner context to the pipeline (Gemini search), accepts only canonical YouTube URLs, rejects already imported or previously suggested videos, and runs a preflight that must find a channel.'},
+{t:'Import the course',f:F+':103 (prepare_course)',d:'Imports the video as the admin user with guest_started, reusing a prior source import if one is stored. Quest becomes "ready" only when the course is published and the translation is ready.'},
+{t:'Notify',f:'app/models/daily_challenge.rb:56 (notify!)',d:'Skips quests from earlier days, and after an outage sends only the latest. Does nothing at all while production delivery is paused.'}];
+var SNIPS=[
+{file:F,start:8,lang:'ruby',code:[
+'claimed = quest.with_lock do',
+'  return if quest.notification_id.present? || quest.skipped_at.present? || quest.recommendation_state.in?(%w[ready failed])',
+'  if quest.day != quest.starter_challenge.active_day',
+'    quest.update!(skipped_at: Time.zone.now)',
+'    return',
+'  end',
+'  return if quest.available_at > Time.zone.now + DailyChallenge::PREPARATION_LEAD',
+'  return if quest.search_started_at && quest.search_started_at > Time.zone.now - DailyChallenge::SEARCH_LEASE',
+'  if quest.recommendation_state == "importing"',
+'    quest.update!(search_started_at: Time.zone.now)',
+'    next :import',
+'  end',
+'  if quest.search_attempts >= 3',
+'    quest.update!(recommendation_state: "failed", recommendation_failure: "Preparation did not complete")',
+'    return',
+'  end'],
+notes:{9:'Terminal states are checked first, so a duplicate job run does nothing.',10:'A quest for a day that has passed is skipped, not prepared late.',14:'Only quests inside the 30-minute preparation window are worked on.',15:'The lease: a second worker within 10 minutes of a search start backs off.',18:'Gotcha: `next :import` returns a value from the lock block; plain `return` leaves the whole method.',20:'Three searches max, then the quest is marked failed.'},
+ch:{q:'Challenge: click the line that stops two workers searching at the same time.',a:15,why:'Line 15 compares search_started_at with SEARCH_LEASE (10 minutes). The lock alone only serializes; the lease is what makes the second worker leave.'}},
+{file:'app/services/daily_video_recommendation.rb',start:21,lang:'ruby',code:[
+'def call',
+'  response = @client.recommend_video(context)',
+'  url = canonical_video(response.fetch("url"))',
+'  raise InvalidRecommendation, "No verified new video found" unless url && !excluded?(url)',
+'  raise InvalidRecommendation, "Invalid content type" unless CONTENT_TYPES.include?(response["content_type"])',
+'  preflight = @preflight.call(url)',
+'  video = preflight.video',
+'  if video.author_name.blank?',
+'    raise InvalidRecommendation, "Video must have a channel"',
+'  end',
+'  Result.new(url: url, search_suggestions: response["search_suggestions"],',
+'    content_type: response["content_type"], video: video, descriptions: descriptions(response["descriptions"]), duration_seconds: preflight.duration_seconds)',
+'rescue KeyError, TypeError',
+'  raise InvalidRecommendation, "Invalid search response"',
+'end'],
+notes:{22:'The client defaults to PipelineClient, injectable for tests.',24:'The AI answer is never trusted: the URL is re-canonicalized and checked against history.',25:'Only dialogue, song, story or culture are accepted.',28:'Missing channel means rejection, because the next day excludes that channel.',33:'`response.fetch` and bad shapes both end up as InvalidRecommendation.'},
+ch:{q:'Challenge: which line breaks when Gemini returns JSON with no "url" key?',a:23,why:'response.fetch("url") raises KeyError, which the rescue at line 33 converts to InvalidRecommendation.'}},
+{file:'app/models/daily_challenge.rb',start:56,lang:'ruby',code:[
+'def notify!',
+'  return unless self.class.delivery_enabled?',
+'',
+'  with_lock do',
+'    return if notification_id.present? || skipped_at.present?',
+'    if day < starter_challenge.active_day',
+'      update!(skipped_at: Time.zone.now)',
+'      return',
+'    end',
+'    return unless unlocked?',
+'    # After an outage, show all unlocked quests but send only the latest.',
+'    if starter_challenge.daily_challenges.where("day > ?", day).where(available_at: ..Time.zone.now).exists?',
+'      update!(skipped_at: Time.zone.now)',
+'    else',
+'      update!(notification: Notifications.deliver(user: starter_challenge.user, kind: :daily_challenge, day: day, title: recommended_video["title"]))',
+'    end',
+'  end',
+'end'],
+notes:{57:'The production pause lives here (commit 5b8c96a).',60:'A guard on notification_id makes notify! safe to call repeatedly.',66:'Outage policy in one comment: unlock everything, notify once.',70:'Setting the notification association is what marks it as sent.'}},
+{file:'app/jobs/send_daily_challenges_job.rb',start:4,lang:'ruby',code:[
+'def perform',
+'  return unless DailyChallenge.delivery_enabled?',
+'',
+'  Notification.where(kind: :daily_challenge, sent_at: nil).find_each do |notification|',
+'    DeliverNotificationJob.perform_later(notification.id)',
+'  end',
+'  StarterChallenge.where(next_practice_at: ..(Time.zone.now + DailyChallenge::PREPARATION_LEAD)).find_each do |challenge|',
+'    DailyChallenge.ensure_personalized_today!(challenge)',
+'  end',
+'  DailyChallenge.due.find_each(&:notify!)',
+'  DailyChallenge.recommendations_to_prepare.find_each do |quest|',
+'    PrepareDailyChallengeRecommendationJob.perform_later(quest.id)',
+'  end',
+'end'],
+notes:{5:'Same pause switch as notify!. Note this means preparation is paused too when run from this sweep.',10:'Quests are created 30 minutes early, which is what gives the preparation time to run.',15:'The sweep only enqueues; the heavy work happens in the per-quest job.'},
+ch:{q:'Challenge: click the line that starts the heavy per-quest work.',a:15,why:'perform_later on line 15 hands each quest to PrepareDailyChallengeRecommendationJob.'}}];
+var CARDS=[
+['🔌 Paused, not removed','Since commit 5b8c96a, production sets daily_langlets_delivery_enabled = false in config/environments/production.rb. Learner preferences are untouched, and the code comment says it pauses until content selection improves.'],
+['📣 Only the latest buzz','After an outage the learner sees every unlocked quest, but notify! marks older ones skipped and sends one notification, for the newest day.'],
+['🕴️ The admin imports for everyone','prepare_course imports the video as the admin user (User::ADMIN_EMAIL) with guest_started: true. Later, Imports::Create only reuses that source after checking it belongs to that admin and the learner\'s own quest matches the URL.']];
+var Q=[
+{k:'mc',topic:'Preparation timing',q:'When does a quest become eligible for preparation?',o:['When the learner opens the app','Within 30 minutes before available_at','At midnight UTC','Only after the notification is sent'],a:1,e:'PREPARATION_LEAD is 30.minutes, used in the recommendations_to_prepare scope and in the job (job:14).'},
+{k:'mc',topic:'Concurrency lease',q:'How does the job avoid two workers searching for the same quest at once?',o:['A Redis mutex','A row lock plus a 10-minute search_started_at lease','A unique Solid Queue key','It does not; duplicates are deduped later'],a:1,e:'with_lock serializes the claim and SEARCH_LEASE makes later claimers return (job:8 and job:15).'},
+{k:'edge',topic:'Retry limit',q:'What if the search or import fails and search_attempts has already reached 3?',o:['It retries forever','The quest is marked "failed"','The learner gets yesterday\'s video','The quest is deleted'],a:1,e:'job:20-22 sets the state to failed with "Preparation did not complete"; the rescue block at the bottom also marks failed when attempts >= 3.'},
+{k:'file',topic:'Excluding repeats',q:'Which method decides a recommended video was already seen?',o:['DailyChallenge#unlocked?','DailyVideoRecommendation#excluded?','Imports::Create#prepared_daily_video','StarterChallenge#active_day'],a:1,e:'excluded? (daily_video_recommendation.rb:141) checks the user\'s imports and previous_urls.'},
+{k:'order',topic:'Flow order',q:'Put the flow in order.',steps:['Sweep ensures today\'s quest','Quest picked by recommendations_to_prepare','Job claims it as "searching"','Pipeline recommends, preflight verifies','Quest goes "importing", course is imported','Quest "ready", notify! runs'],e:'Order follows SendDailyChallengesJob#perform, the job\'s claim block, DailyVideoRecommendation#call, prepare_course and notify!.'}];
+
+var xp=0,streak=0,state={map:new Set(),snip:0,cards:new Set(),score:0,missed:[]};
+function $(i){return document.getElementById(i)}
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1300)}
+function gain(n){xp+=n;var lv=Math.floor(xp/100)+1;$('lvl').textContent='Lv '+lv;$('xpbar').style.width=(xp%100)+'%';$('xptxt').textContent=xp+' XP';toast('+'+n+' XP')}
+function unlock(from,to){$(from).classList.add('done');if(to)$(to).classList.remove('locked');gain(25)}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+
+(function init(){
+ var today=new Date().toISOString().slice(0,10),last=store('ll_last'),s=parseInt(store('ll_streak')||'0',10)||0;
+ if(last!==today){var y=new Date(Date.now()-864e5).toISOString().slice(0,10);s=last===y?s+1:1;store('ll_last',today);store('ll_streak',String(s))}
+ streak=s;$('streak').textContent='🔥 '+streak+'-day streak';
+ // map
+ var ul=$('map');
+ STEPS.forEach(function(st,i){var li=document.createElement('li');
+  li.innerHTML='<button class="node" aria-expanded="false"><span class="n">'+(i+1)+'</span><span><b>'+esc(st.t)+'</b><small>'+esc(st.f)+'</small></span></button><div class="detail" hidden>'+esc(st.d)+'</div>';
+  li.firstChild.onclick=function(){var d=li.lastChild;d.hidden=!d.hidden;this.setAttribute('aria-expanded',!d.hidden);
+   if(!state.map.has(i)){state.map.add(i);this.classList.add('seen');gain(5);$('mapcount').textContent=state.map.size+'/'+STEPS.length;
+    if(state.map.size===STEPS.length)unlock('s1','s2')}};ul.appendChild(li)});
+ $('mapcount').textContent='0/'+STEPS.length;
+ // snippets
+ var box=$('snips');
+ SNIPS.forEach(function(sn,si){var w=document.createElement('div');w.className='snip';
+  w.innerHTML='<h3>'+esc(sn.file)+':'+sn.start+'</h3><div class="code"></div><div class="say" hidden></div>'+(sn.ch?'<div class="challenge"><b>'+esc(sn.ch.q)+'</b></div>':'');
+  var code=w.querySelector('.code'),say=w.querySelector('.say'),chDone=!sn.ch,seen={};
+  sn.code.forEach(function(line,i){var no=sn.start+i,b=document.createElement('button');b.className='ln'+(sn.notes[no]?' note':'');
+   b.innerHTML='<span class="no">'+no+'</span><span class="t">'+esc(line)+'</span>';
+   b.onclick=function(){
+    if(sn.ch&&!chDone){if(no===sn.ch.a){b.classList.add('right');chDone=true;say.hidden=false;say.textContent='✅ '+sn.ch.why;gain(15);done()}else{b.classList.add('wrong');say.hidden=false;say.textContent='Not that one, try again.'}return}
+    if(sn.notes[no]){say.hidden=false;say.textContent='💡 '+sn.notes[no];if(!seen[no]){seen[no]=1;gain(3)}}};
+   code.appendChild(b)});
+  function done(){if(sn.ch){sn.fin=true}if(SNIPS.every(function(x){return !x.ch||x.fin})&&!$('s2').classList.contains('done'))unlock('s2','s3')}
+  box.appendChild(w)});
+ // highlight the line text only if hljs loaded
+ if(window.hljs){document.querySelectorAll('.ln .t').forEach(function(el){try{el.innerHTML=hljs.highlight(el.textContent,{language:'ruby'}).value}catch(e){}})}
+ // cards
+ var cg=$('cards');
+ CARDS.forEach(function(c,i){var b=document.createElement('button');b.className='flip';b.setAttribute('aria-label','Flip card '+(i+1));
+  b.innerHTML='<div class="in"><div class="face front">'+esc(c[0])+'</div><div class="face back">'+esc(c[1])+'</div></div>';
+  b.onclick=function(){b.classList.toggle('on');if(!state.cards.has(i)){state.cards.add(i);gain(10);if(state.cards.size===CARDS.length){unlock('s3','s4');renderQ(0)}}};cg.appendChild(b)});
+ // shelf
+ var badges=[];try{badges=JSON.parse(store('ll_badges')||'[]')}catch(e){}
+ renderShelf(badges);
+ $('copy').onclick=copyRes;
+})();
+
+function renderShelf(b){$('shelf').innerHTML=b.map(function(x){return '<span>'+esc(x)+'</span>'}).join('')}
+var hpLeft=100,retry=false;
+function renderQ(i){
+ var qz=$('quiz');qz.innerHTML='';
+ if(i>=Q.length)return win();
+ var q=Q[i],h=document.createElement('div');h.innerHTML='<p><b>Q'+(i+1)+'/5 · '+esc(q.q)+'</b></p>';retry=false;
+ function resolve(ok,full){
+  if(ok){state.score++;gain(full?30:15);hpLeft-=20;$('hp').style.width=hpLeft+'%';fb(true)}
+  else if(!retry&&q.k!=='order'){retry=true;fb(false,'Wrong. Try once more for half XP.');return false}
+  else{state.missed.push(q.topic);fb(false,'Missed. ')}
+  return true}
+ function fb(ok,msg){var d=h.querySelector('.say')||h.appendChild(Object.assign(document.createElement('div'),{className:'say'}));
+  d.textContent=ok?'✅ Direct hit! '+q.e:(msg||'')+(msg==='Missed. '?q.e:'');}
+ function next(){var b=document.createElement('button');b.className='btn';b.textContent=i===Q.length-1?'Finish':'Next';b.onclick=function(){renderQ(i+1)};h.appendChild(b)}
+ if(q.k==='order'){
+  var picked=[],list=document.createElement('ul'),pk=document.createElement('ol');list.style.padding=0;pk.className='picked';
+  var shuffled=[3,0,5,2,4,1].map(function(idx){return[q.steps[idx],idx]});
+  shuffled.forEach(function(p){var b=document.createElement('button');b.className='opt';b.textContent=p[0];
+   b.onclick=function(){b.disabled=true;picked.push(p[1]);var li=document.createElement('li');li.textContent=p[0];pk.appendChild(li);
+    if(picked.length===q.steps.length){var ok=picked.every(function(v,k){return v===k});list.querySelectorAll('button').forEach(function(x){x.disabled=true});resolve(ok,true);if(ok)fb(true);next()}};
+   var li=document.createElement('li');li.appendChild(b);list.appendChild(li)});
+  var hint=document.createElement('p');hint.className='chip';hint.textContent='Tap the steps in the order they happen:';h.append(hint,pk,list);
+ }else{
+  q.o.forEach(function(t,idx){var b=document.createElement('button');b.className='opt';b.textContent=t;
+   b.onclick=function(){var ok=idx===q.a;if(ok)b.classList.add('right');else b.classList.add('wrong');
+    var fin=resolve(ok,!retry);if(ok||fin){h.querySelectorAll('.opt').forEach(function(x,k){x.disabled=true;if(k===q.a)x.classList.add('right')});next()}else{b.disabled=true}};
+   h.appendChild(b)})}
+ qz.appendChild(h)}
+function win(){
+ $('quiz').innerHTML='<p><b>The dragon is slain! 🐉💥</b></p>';$('s4').classList.add('done');gain(40);
+ var v=$('victory');v.hidden=false;$('final').textContent='Score: '+state.score+'/5 · '+xp+' XP · Level '+(Math.floor(xp/100)+1);
+ var badges=[];try{badges=JSON.parse(store('ll_badges')||'[]')}catch(e){}
+ if(badges.indexOf('🎬 Daily Langlet Director')<0)badges.push('🎬 Daily Langlet Director');store('ll_badges',JSON.stringify(badges));renderShelf(badges);
+ if(window.confetti)try{confetti({particleCount:160,spread:80,origin:{y:.6}})}catch(e){}
+ v.scrollIntoView({behavior:'smooth'})}
+function copyRes(){
+ var t='Date: 2026-10-22\nFlow: Daily Langlets recommendation pipeline\nScore: '+state.score+'/5\nMissed: '+(state.missed.length?state.missed.join(', '):'none');
+ function fallback(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');$('copied').textContent='Copied!'}catch(e){$('copied').textContent='Select and copy:\n'+t}ta.remove()}
+ if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){$('copied').textContent='Copied!'},fallback);else fallback()}
+</script>
