@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quest: Daily Langlets</title>
+<style>
+:root{--bg:#f6f4ff;--card:#fff;--ink:#1d1b2e;--mute:#6b6880;--acc:#6c4cf1;--acc2:#ff7a59;--ok:#1f9d63;--bad:#d64545;--line:#e2def5;--code:#161427;--codeink:#e8e6f7}
+@media (prefers-color-scheme:dark){:root{--bg:#12101f;--card:#1c1930;--ink:#ecebf8;--mute:#9b97b5;--line:#2f2b4a;--code:#0c0b17}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif;padding:0 16px 80px}
+.wrap{max-width:860px;margin:0 auto}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line)}
+.hud{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:14px}
+.bar{flex:1;min-width:140px;height:12px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:width .6s}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:2px 10px}
+h1{margin:20px 0 4px;font-size:1.8rem}h2{margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+.stage.locked{opacity:.45;pointer-events:none;filter:grayscale(1)}
+.stage .hd{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.done-tag{color:var(--ok);font-weight:600}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px}
+button.primary{background:var(--acc);color:#fff;border-color:var(--acc)}
+button:disabled{opacity:.5;cursor:default}
+.map{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.node{text-align:left;width:100%}.node.seen{border-color:var(--ok)}
+.node small{color:var(--mute);display:block;font-family:ui-monospace,monospace;font-size:12px}
+.detail{display:none;padding:8px 12px;border-left:3px solid var(--acc);margin:0 0 6px 10px;font-size:15px}
+.detail.open{display:block}
+.snip{margin:14px 0}.snip .path{font:12px ui-monospace,monospace;color:var(--mute);margin-bottom:4px;word-break:break-all}
+pre{margin:0;background:var(--code);color:var(--codeink);border-radius:12px;padding:8px 0;overflow-x:auto;font:13px/1.55 ui-monospace,monospace}
+.ln{display:block;padding:0 12px 0 8px;white-space:pre;cursor:default}
+.ln b{color:#6e6a92;font-weight:400;display:inline-block;width:2.4em;user-select:none}
+.ln.note{cursor:pointer;background:rgba(108,76,241,.22)}.ln.note:hover{background:rgba(108,76,241,.4)}
+.ln.hit{background:rgba(31,157,99,.35)}.ln.miss{background:rgba(214,69,69,.35)}
+.k{color:#ff9d7a}.s{color:#9be0a8}.c{color:#7f7ba3}
+.annot{display:none;background:var(--card);border:1px solid var(--acc);border-radius:10px;padding:8px 12px;margin-top:6px;font-size:14px}
+.annot.open{display:block}
+.chal{margin-top:6px;font-size:14px;color:var(--acc2);font-weight:600}
+.flips{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.flip{perspective:800px;height:190px;padding:0;border:0;background:none}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;padding:14px;display:flex;align-items:center;justify-content:center;text-align:left;font-size:14px;border:1px solid var(--line);overflow:auto}
+.flip .f{background:var(--acc);color:#fff;font-size:18px;font-weight:700;text-align:center}
+.flip .b{background:var(--card);transform:rotateY(180deg)}
+.boss{display:flex;align-items:center;gap:10px;font-size:34px}
+.hp{flex:1;height:16px;border-radius:99px;background:var(--line);overflow:hidden}.hp>i{display:block;height:100%;width:100%;background:var(--bad);transition:width .5s}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}
+.opt.right{border-color:var(--ok);background:rgba(31,157,99,.15)}.opt.wrong{border-color:var(--bad);background:rgba(214,69,69,.15)}
+.fb{margin-top:8px;font-size:14px}
+.ord li{margin:4px 0}.ord button{width:100%;text-align:left}.ord button.picked{opacity:.4}
+aside.patch{background:var(--card);border:1px dashed var(--acc2);border-radius:16px;padding:14px;margin:16px 0;font-size:14px}
+aside.patch li{margin:6px 0}aside.patch code{font-size:12px}
+.badges span{font-size:28px;margin-right:6px}
+#victory{display:none;text-align:center}
+canvas#cf{position:fixed;inset:0;pointer-events:none;z-index:50}
+code{font-family:ui-monospace,monospace;font-size:.9em}
+</style>
+</head>
+<body>
+<canvas id="cf"></canvas>
+<div class="wrap">
+<header class="top"><div class="hud">
+  <strong>Lv <span id="lvl">1</span></strong>
+  <div class="bar"><i id="xpbar"></i></div>
+  <span class="pill"><span id="xp">0</span> XP</span>
+  <span class="pill">🔥 <span id="streak">1</span></span>
+</div></header>
+
+<h1>🎬 Quest: The Daily Langlets Delivery</h1>
+<p style="color:var(--mute);margin-top:0">Lesson of 2026-10-25 · studied at commit <code>4d6b564</code> · ~12 min</p>
+
+<section class="card" id="intro">
+  <h2>🎯 Quest briefing</h2>
+  <p><b>The flow:</b> every day after a learner's first five curated quests, Langlets picks <i>one personalized video</i> for them, imports it into a ready-to-study course, and only then sends a reminder.</p>
+  <p><b>Why it matters:</b> it is the daily habit loop of the product. The "prepare before notify" ordering means a push never points at an empty or still-importing card.</p>
+  <p><b>Triggered by:</b> <code>SendDailyChallengesJob</code>, a Solid Queue recurring job that runs every 5 minutes in production (<code>config/recurring.yml:2-4</code>). Opening <code>/daily_challenge</code> can also ensure today's row exists (per <code>docs/architecture.md</code>).</p>
+  <p><b>⚠️ Current state:</b> production has <code>config.x.daily_langlets_delivery_enabled = false</code> (<code>config/environments/production.rb:6</code>), so the scheduler job returns immediately there.</p>
+</section>
+
+<aside class="patch" id="patch">
+  <b>🆕 Patch notes (last 3 weeks)</b>
+  <ul>
+    <li><code>be93403</code> · Oct 6 — <b>Prepare before delivery.</b> The prepare job now imports the video and waits for the course to be ready before <code>notify!</code>. Users never get a reminder for a half-built card.</li>
+    <li><code>2521cc3</code> · Oct 16 — Opening a prepared card no longer re-checks the video provider each time.</li>
+    <li><code>5b8c96a</code> · Oct 17 — <b>Production delivery paused</b> via a config kill switch checked in <code>SendDailyChallengesJob</code>, <code>DailyChallenge#notify!</code> and <code>DeliverNotificationJob</code>.</li>
+    <li><code>443b8e1</code>, <code>255c065</code> — bilingual descriptions on cards; recommendation context prioritizes vocabulary, completed lessons and dialect.</li>
+  </ul>
+</aside>
+
+<section class="card stage" id="s1"><div class="hd"><h2>🗺️ Stage 1 · The Map</h2><span id="t1"></span></div>
+  <p style="color:var(--mute);margin:0">Open all 6 nodes to complete the stage.</p>
+  <div class="map" id="map"></div>
+</section>
+
+<section class="card stage locked" id="s2"><div class="hd"><h2>💻 Stage 2 · Code Lab</h2><span id="t2"></span></div>
+  <p style="color:var(--mute);margin:0">Purple lines have notes — click them. Finish the challenges for bonus XP.</p>
+  <div id="lab"></div>
+</section>
+
+<section class="card stage locked" id="s3"><div class="hd"><h2>✨ Stage 3 · Did You Know?</h2><span id="t3"></span></div>
+  <p style="color:var(--mute);margin:0">Flip all cards.</p>
+  <div class="flips" id="flips" style="margin-top:10px"></div>
+</section>
+
+<section class="card stage locked" id="s4"><div class="hd"><h2>🧠 Stage 4 · Boss Fight</h2><span id="t4"></span></div>
+  <div class="boss"><span>🐲</span><div class="hp"><i id="hp"></i></div></div>
+  <div id="quiz" style="margin-top:12px"></div>
+</section>
+
+<section class="card" id="victory">
+  <h2>🏆 Victory!</h2>
+  <div style="font-size:56px">🎬</div>
+  <h3>Badge unlocked: Daily Delivery Dispatcher</h3>
+  <p id="final"></p>
+  <button class="primary" id="copy">Copy results</button>
+  <p id="copied" style="color:var(--ok)"></p>
+  <div class="badges" id="shelf"></div>
+</section>
+</div>
+
+<script>
+// ---------- state ----------
+var xp=0,LV=100,startedAt=new Date().toISOString().slice(0,10);
+var missed=[],score=0;
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function addXP(n){xp+=n;document.getElementById('xp').textContent=xp;document.getElementById('lvl').textContent=1+Math.floor(xp/LV);document.getElementById('xpbar').style.width=(xp%LV)+'%'}
+function unlock(n){var s=document.getElementById('s'+n);if(s)s.classList.remove('locked');var p=document.getElementById('t'+(n-1));if(p)p.innerHTML='<span class="done-tag">✓ done</span>';addXP(30)}
+// streak
+(function(){var last=store('ll_last'),st=parseInt(store('ll_streak')||'0',10),t=startedAt;
+ if(last!==t){var y=new Date(Date.now()-864e5).toISOString().slice(0,10);st=(last===y)?st+1:1;store('ll_last',t);store('ll_streak',String(st))}
+ document.getElementById('streak').textContent=st||1})();
+
+// ---------- stage 1 ----------
+var NODES=[
+['⏰ Scheduler tick','SendDailyChallengesJob#perform · app/jobs/send_daily_challenges_job.rb:4','Every 5 minutes. First line bails out if the kill switch is off. Then it (1) requeues unsent Notifications, (2) ensures today\'s DailyChallenge row for every StarterChallenge due within 30 min, (3) notifies due rows, (4) enqueues preparation for rows that need it.'],
+['📅 Create today\'s row','DailyChallenge.ensure_personalized_today! · app/models/daily_challenge.rb:29','Locks the enrollment, find_or_create_by!(day: active_day) with available_at and language, then moves next_practice_at to tomorrow. The unique (starter_challenge_id, day) index prevents duplicates.'],
+['🔎 Claim + search','PrepareDailyChallengeRecommendationJob#perform · app/jobs/prepare_daily_challenge_recommendation_job.rb:5','Under with_lock it decides what to do: skip stale days, respect a 10-minute lease (SEARCH_LEASE), give up after 3 attempts, or mark "searching". Only then does the slow network work happen, outside the lock.'],
+['🤖 Recommend a video','DailyVideoRecommendation#call · app/services/daily_video_recommendation.rb:21','Sends bounded learning context (saved words, completed lessons, recent imports) to the pipeline host, then validates: YouTube host only, not already imported or recommended, valid content type, channel present.'],
+['📦 Import & wait','PrepareDailyChallengeRecommendationJob#prepare_course · :55','Imports the video under the admin user with guest_started: true, stores source_import_request_id, and flips state to ready only when the ImportRequest, published Course and translation are all ready; otherwise stays "importing" for the next tick.'],
+['🔔 Notify','DailyChallenge#notify! · app/models/daily_challenge.rb:56 → DeliverNotificationJob','Skips stale days, skips if a newer day is already due (only send the latest after an outage), requires unlocked? (ready), then creates a Notification. DeliverNotificationJob locks it and sends email/push once, stamping sent_at.']
+];
+var seen=0,mapEl=document.getElementById('map');
+NODES.forEach(function(n,i){
+ var b=document.createElement('button');b.className='node';b.innerHTML='<b>'+(i+1)+'. '+n[0]+'</b><small>'+n[1]+'</small>';
+ var d=document.createElement('div');d.className='detail';d.textContent=n[2];
+ b.onclick=function(){d.classList.toggle('open');if(!b.classList.contains('seen')){b.classList.add('seen');addXP(8);if(++seen===NODES.length)unlock(2)}};
+ mapEl.appendChild(b);mapEl.appendChild(d)});
+
+// ---------- stage 2 ----------
+var SN=[
+{path:'app/jobs/send_daily_challenges_job.rb:4',start:4,code:[
+'def perform',
+'  return unless DailyChallenge.delivery_enabled?',
+'',
+'  Notification.where(kind: :daily_challenge, sent_at: nil).find_each do |notification|',
+'    DeliverNotificationJob.perform_later(notification.id)',
+'  end',
+'  StarterChallenge.where(next_practice_at: ..(Time.zone.now + DailyChallenge::PREPARATION_LEAD)).find_each do |challenge|',
+'    DailyChallenge.ensure_personalized_today!(challenge)',
+'  end',
+'  DailyChallenge.due.find_each(&:notify!)',
+'  DailyChallenge.recommendations_to_prepare.find_each do |quest|',
+'    PrepareDailyChallengeRecommendationJob.perform_later(quest.id)',
+'  end',
+'end'],
+notes:{1:'Kill switch (commit 5b8c96a). One early return silences the whole scheduler. Production sets it to false.',3:'Self-healing: Notifications created but never sent (e.g. crash) are re-enqueued every tick. DeliverNotificationJob is idempotent on sent_at, so this is safe.',6:'Looks ahead 30 minutes so the row exists early enough to be prepared before its available_at.',9:'Order matters: due rows are notified before new preparation is enqueued; notify! itself refuses until recommendation_state is ready.'},
+chal:{q:'🎯 Click the line that makes preparation start BEFORE the reminder time.',ans:6,why:'PREPARATION_LEAD (30 min) widens the scan window so rows exist and can be prepared ahead of available_at.'}},
+{path:'app/jobs/prepare_daily_challenge_recommendation_job.rb:8',start:8,code:[
+'claimed = quest.with_lock do',
+'  return if quest.notification_id.present? || quest.skipped_at.present? || quest.recommendation_state.in?(%w[ready failed])',
+'  if quest.day != quest.starter_challenge.active_day',
+'    quest.update!(skipped_at: Time.zone.now)',
+'    return',
+'  end',
+'  return if quest.available_at > Time.zone.now + DailyChallenge::PREPARATION_LEAD',
+'  return if quest.search_started_at && quest.search_started_at > Time.zone.now - DailyChallenge::SEARCH_LEASE',
+'  if quest.recommendation_state == "importing"',
+'    quest.update!(search_started_at: Time.zone.now)',
+'    next :import',
+'  end',
+'  if quest.search_attempts >= 3',
+'    quest.update!(recommendation_state: "failed", recommendation_failure: "Preparation did not complete")',
+'    return',
+'  end',
+'  quest.update!(recommendation_state: "searching", search_started_at: Time.zone.now,',
+'    search_attempts: quest.search_attempts + 1)',
+'  :search',
+'end'],
+notes:{0:'with_lock holds a row lock only while deciding. The returned symbol (:search / :import) tells the code after the block what work to do, so slow I/O happens outside the lock.',2:'A card for a past day is marked skipped, never prepared. Missed days are not backfilled.',7:'The lease: if another worker started within the last 10 minutes this one backs off. This is a DB-based mutex with a timeout.',12:'Retry budget: three search attempts, then the card is failed.'},
+chal:{q:'🎯 Click the line that prevents two workers from searching at once.',ans:7,why:'search_started_at within SEARCH_LEASE means someone else is already working, so return.'}},
+{path:'app/services/daily_video_recommendation.rb:21',start:21,code:[
+'def call',
+'  response = @client.recommend_video(context)',
+'  url = canonical_video(response.fetch("url"))',
+'  raise InvalidRecommendation, "No verified new video found" unless url && !excluded?(url)',
+'  raise InvalidRecommendation, "Invalid content type" unless CONTENT_TYPES.include?(response["content_type"])',
+'  preflight = @preflight.call(url)',
+'  video = preflight.video',
+'  if video.author_name.blank?',
+'    raise InvalidRecommendation, "Video must have a channel"',
+'  end',
+'  Result.new(url: url, search_suggestions: response["search_suggestions"],',
+'    content_type: response["content_type"], video: video, descriptions: descriptions(response["descriptions"]), duration_seconds: preflight.duration_seconds)',
+'rescue KeyError, TypeError',
+'  raise InvalidRecommendation, "Invalid search response"',
+'end'],
+notes:{1:'The LLM search runs on the pipeline host (see the file header comment). Rails only sends bounded context.',2:'Never trust the model: the URL is re-canonicalized and must be https on a YouTube host.',3:'excluded? rejects videos the learner already imported or was already recommended.',13:'A malformed response (missing key, wrong type) becomes one clean domain error instead of a crash with a random class.'},
+chal:{q:'🎯 Which line breaks if the pipeline response has no "url" key?',ans:2,why:'response.fetch("url") raises KeyError, which the rescue on line 33 converts to InvalidRecommendation.'}},
+{path:'app/models/daily_challenge.rb:56',start:56,code:[
+'def notify!',
+'  return unless self.class.delivery_enabled?',
+'',
+'  with_lock do',
+'    return if notification_id.present? || skipped_at.present?',
+'    if day < starter_challenge.active_day',
+'      update!(skipped_at: Time.zone.now)',
+'      return',
+'    end',
+'    return unless unlocked?',
+'    # After an outage, show all unlocked quests but send only the latest.',
+'    if starter_challenge.daily_challenges.where("day > ?", day).where(available_at: ..Time.zone.now).exists?',
+'      update!(skipped_at: Time.zone.now)',
+'    else',
+'      update!(notification: Notifications.deliver(user: starter_challenge.user, kind: :daily_challenge, day: day, title: recommended_video["title"]))',
+'    end',
+'  end',
+'end'],
+notes:{4:'Idempotency: a row that already has a notification is never notified twice.',9:'unlocked? (line 27) requires day == active_day and, for personalized cards, recommendation_state == "ready". This is the gate that enforces prepare-before-notify.',11:'After downtime several days may be due; older ones are marked skipped so the learner gets one push, not a pile.'},
+chal:{q:'🎯 Click the line where an unprepared card is stopped from notifying.',ans:9,why:'unlocked? is false until recommendation_state is "ready".'}}
+];
+var lab=document.getElementById('lab'),chalDone=0;
+function hl(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/("[^"]*")/g,'<span class="s">$1</span>').replace(/\b(def|return|unless|if|else|end|do|raise|next|rescue|then)\b/g,'<span class="k">$1</span>')}
+SN.forEach(function(sn,si){
+ var w=document.createElement('div');w.className='snip';
+ w.innerHTML='<div class="path">'+sn.path+'</div>';
+ var pre=document.createElement('pre'),an=document.createElement('div');an.className='annot';
+ var chalEl=document.createElement('div');chalEl.className='chal';chalEl.textContent=sn.chal.q;
+ var solved=false;
+ sn.code.forEach(function(l,i){
+  var s=document.createElement('span');s.className='ln'+(sn.notes[i]!==undefined?' note':'');
+  s.innerHTML='<b>'+(sn.start+i)+'</b>'+hl(l);
+  s.onclick=function(){
+   if(!solved){
+     if(i===sn.chal.ans){solved=true;s.classList.add('hit');chalEl.textContent='✅ '+sn.chal.why;addXP(15);if(++chalDone===SN.length)unlock(3);return}
+     else if(sn.notes[i]===undefined){s.classList.add('miss');setTimeout(function(){s.classList.remove('miss')},600);return}
+   }
+   if(sn.notes[i]!==undefined){an.textContent=sn.notes[i];an.classList.add('open');if(!s.dataset.r){s.dataset.r=1;addXP(3)}}
+  };
+  pre.appendChild(s)});
+ w.appendChild(pre);w.appendChild(an);w.appendChild(chalEl);lab.appendChild(w)});
+
+// ---------- stage 3 ----------
+var FACTS=[
+['🔄 Content rotation','DailyVideoRecommendation cycles CONTENT_TYPES = dialogue, song, story, culture (line 8, added in 3f550a3 on 2026-10-06). If the last card had a type, the next one is the following type; legacy cards without one fall back to the day number.'],
+['👤 Borrowed account','Recommended videos are imported under User::ADMIN_EMAIL with guest_started: true, so the shared Course gets built without charging credits or enrolling either account (prepare_course in the job).'],
+['🧯 Kill switch, three places','The Oct 17 pause (5b8c96a) is checked in the scheduler job, in DailyChallenge#notify!, and in the delivery job, so notifications queued before the pause are suppressed too instead of being replayed later.']];
+var fl=document.getElementById('flips'),flipped=0;
+FACTS.forEach(function(f){var b=document.createElement('button');b.className='flip';b.innerHTML='<div class="in"><div class="f">'+f[0]+'</div><div class="b"></div></div>';b.querySelector('.b').textContent=f[1];
+ b.onclick=function(){if(!b.classList.contains('on')){b.classList.add('on');addXP(10);if(++flipped===FACTS.length)unlock(4),startQuiz()}else b.classList.remove('on')};fl.appendChild(b)});
+
+// ---------- stage 4 ----------
+var Q=[
+{t:'mc',topic:'scheduler cadence',q:'How often does SendDailyChallengesJob run in production?',o:['Once a day at 4am','Every 5 minutes','Every 30 minutes','Only when a user opens the page'],a:1,why:'config/recurring.yml:2-4: schedule "every 5 minutes". (The 4am schedule belongs to a different job.)'},
+{t:'mc',topic:'preparation lead time',q:'When may a card start being prepared?',o:['Only after available_at','Up to 30 minutes before available_at','The day before','Immediately when the row is created, whatever the time'],a:1,why:'PREPARATION_LEAD = 30.minutes is used by recommendations_to_prepare and by the guard in the prepare job (line 14 of the job).'},
+{t:'mc',topic:'outage catch-up (edge case)',q:'What happens if the system was down and both day 7 and day 8 are now due?',o:['Both are notified','Day 7 is marked skipped; only day 8 is notified','Both are skipped','Day 8 waits until tomorrow'],a:1,why:'DailyChallenge#notify! (~lines 66-68): if a later day is already due, the older row gets skipped_at and no Notification. Also stale days are skipped via active_day.'},
+{t:'mc',topic:'repeat-video protection',q:'Which method keeps the learner from being recommended a video they already imported or got before?',o:['DailyVideoRecommendation#excluded?','DailyChallenge#unlocked?','DeliverNotificationJob#reminder_current?','StarterChallenge#active_day'],a:0,why:'daily_video_recommendation.rb:141 checks import_requests by youtube_video_id and previous_urls.'},
+{t:'ord',topic:'flow order',q:'Put the flow in order.',steps:['Scheduler ensures today\'s DailyChallenge row exists','Preparation job is enqueued and claims the row','Pipeline search picks and validates a video','Video is imported until the Course is ready','notify! creates the Notification','DeliverNotificationJob sends email/push'],why:'See the Map: ensure_personalized_today! → recommendations_to_prepare → DailyVideoRecommendation → prepare_course → notify! → DeliverNotificationJob.'}
+];
+var qi=0,retry=false,quizEl=document.getElementById('quiz'),started=false;
+function hit(){var n=Q.length;var hp=document.getElementById('hp');hp.style.width=Math.max(0,100-(100/n)*score)+'%'}
+function startQuiz(){if(started)return;started=true;render()}
+function render(){
+ if(qi>=Q.length)return win();
+ var q=Q[qi];retry=false;quizEl.innerHTML='';
+ var h=document.createElement('p');h.innerHTML='<b>Q'+(qi+1)+'/5.</b> ';h.appendChild(document.createTextNode(q.q));quizEl.appendChild(h);
+ var fb=document.createElement('div');fb.className='fb';
+ var tries=0;
+ function result(ok,btns){
+  if(ok){score+=1;addXP(tries?10:20);hit();fb.innerHTML='✅ '+q.why;nextBtn()}
+  else if(tries<1){tries=1;fb.textContent='❌ Not quite. Retry once for half XP.';btns&&btns()}
+  else{missed.push(q.topic);fb.innerHTML='❌ '+q.why;nextBtn()}
+ }
+ function nextBtn(){var b=document.createElement('button');b.className='primary';b.textContent=qi<Q.length-1?'Next ▶':'Finish';b.onclick=function(){qi++;render()};fb.appendChild(document.createElement('br'));fb.appendChild(b)}
+ if(q.t==='mc'){
+  var bs=[];q.o.forEach(function(o,i){var b=document.createElement('button');b.className='opt';b.textContent=o;bs.push(b);
+   b.onclick=function(){if(b.disabled)return;var ok=i===q.a;
+    if(ok){bs.forEach(function(x){x.disabled=true});b.classList.add('right')}else{b.disabled=true;b.classList.add('wrong');if(tries>=1)bs.forEach(function(x,j){x.disabled=true;if(j===q.a)x.classList.add('right')})}
+    result(ok)};quizEl.appendChild(b)});
+ } else {
+  var order=[],list=document.createElement('ol');list.className='ord';
+  var idx=q.steps.map(function(_,i){return i}).sort(function(){return Math.random()-.5});
+  var pickedEl=document.createElement('div');pickedEl.style.margin='8px 0';pickedEl.textContent='Your order: (tap steps in order)';
+  var btns=[];idx.forEach(function(i){var li=document.createElement('li'),b=document.createElement('button');b.textContent=q.steps[i];btns.push(b);
+   b.onclick=function(){if(b.classList.contains('picked'))return;b.classList.add('picked');order.push(i);pickedEl.textContent='Your order: '+order.map(function(x){return x+1===0?'':'#'+(order.indexOf(x)+1)}).join(' ')+' ('+order.length+'/'+q.steps.length+')';
+     if(order.length===q.steps.length){var ok=order.every(function(v,k){return v===k});btns.forEach(function(x){x.disabled=true});
+       result(ok,function(){order=[];pickedEl.textContent='Your order: (tap steps in order)';btns.forEach(function(x){x.disabled=false;x.classList.remove('picked')})})}};
+   li.appendChild(b);list.appendChild(li)});
+  quizEl.appendChild(list);quizEl.appendChild(pickedEl);
+ }
+ quizEl.appendChild(fb);
+}
+function win(){
+ document.getElementById('s4').querySelector('.hd span').innerHTML='<span class="done-tag">✓ done</span>';
+ addXP(40);var v=document.getElementById('victory');v.style.display='block';
+ document.getElementById('final').textContent='Score '+score+'/5 · '+xp+' XP · Level '+(1+Math.floor(xp/LV));
+ var sh=[];try{sh=JSON.parse(store('ll_badges')||'[]')}catch(e){}
+ if(sh.indexOf('🎬')<0)sh.push('🎬');store('ll_badges',JSON.stringify(sh));
+ document.getElementById('shelf').innerHTML=sh.map(function(b){return '<span>'+b+'</span>'}).join('');
+ v.scrollIntoView({behavior:'smooth'});confetti();
+ document.getElementById('copy').onclick=function(){
+  var txt='Date: '+startedAt+'\nFlow: Daily Langlets recommendation & delivery\nScore: '+score+'/5\nMissed: '+(missed.length?missed.join(', '):'none');
+  var done=function(){document.getElementById('copied').textContent='Copied! Paste it back in the session.'};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,function(){prompt('Copy:',txt)});else prompt('Copy:',txt)};
+}
+// tiny confetti (no dependency)
+function confetti(){var c=document.getElementById('cf'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+ var P=[];for(var i=0;i<140;i++)P.push({x:Math.random()*c.width,y:-20-Math.random()*c.height/2,vx:Math.random()*4-2,vy:2+Math.random()*4,s:4+Math.random()*6,c:'hsl('+Math.random()*360+',90%,60%)'});
+ var t=0;(function f(){x.clearRect(0,0,c.width,c.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;x.fillStyle=p.c;x.fillRect(p.x,p.y,p.s,p.s)});if(++t<200)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})()}
+</script>
+</body>
+</html>
