@@ -25,6 +25,10 @@
   end
 %>
 
+<% if phrases_with_all_tokens.empty? %>
+  <%= render "activities/no_translation_questions" %>
+<% else %>
+
 <div class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center bg-emerald-50 dark:bg-gray-950" data-controller="find-words">
   <div class=" w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md flex flex-col">
     <div class="mb-6">
@@ -194,3 +198,5 @@
     text-decoration: underline;
   }
 </style>
+
+<% end %>

@@ -58,6 +58,10 @@
   check_classes = "hidden group-data-[state=matched]:block absolute end-3 top-1/2 -translate-y-1/2 text-base font-bold leading-none text-emerald-600 dark:text-emerald-300"
 %>
 
+<% if tokens.empty? %>
+  <%= render "activities/no_translation_questions" %>
+<% else %>
+
 <div
     data-controller="match-tokens-activity"
     data-match-tokens-activity-tokens-value="<%= tokens.to_json %>"
@@ -141,3 +145,5 @@
         message: t(".completed"),
         next_label: t(".next") %>
 </div>
+
+<% end %>

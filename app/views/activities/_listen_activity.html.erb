@@ -8,13 +8,11 @@
   .listen-line {
     transform: translateY(calc(var(--listen-slot, 2) * 100%));
     transition: transform 280ms ease, opacity 220ms ease, background-color 220ms ease;
-  }
-  .lyric-card {
-    height: auto;
-    min-height: 120px;
+    height: 50%;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: safe center;
     padding: 24px;
   }
   .listen-line[data-slot="exit"] { --listen-slot: -1; opacity: 0; }
@@ -47,8 +45,8 @@
     listen-activity:pause-video->main-video-player#stopPlayback
     listen-activity:play-video->main-video-player#resume
   ">
-  <div class="order-4 flex min-h-0 flex-1 flex-col bg-white dark:bg-gray-900">
-    <header class="px-5 pt-4 text-center">
+  <div class="order-4 flex min-h-0 flex-1 flex-col overflow-y-auto bg-white dark:bg-gray-900" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+    <header class="shrink-0 px-5 pt-4 text-center">
       <h2 class="text-xl font-extrabold text-gray-900 dark:text-gray-50"><%= @activity.text_header || t(".instruction") %></h2>
       <% if @activity.text_subheader.present? %>
         <p class="mt-1 text-sm text-gray-500 dark:text-gray-400"><%= @activity.text_subheader %></p>
@@ -63,7 +61,7 @@
          data-listen-activity-target="stage">
       <% phrases.each_with_index do |phrase, index| %>
         <%
-          eligible_tokens = phrase.phrase_tokens.select { |token| activity_token_ids.include?(token.id) && similar_sounds_for_token(phrase, token).present? }
+          eligible_tokens = phrase.phrase_tokens.select { |token| activity_token_ids.include?(token.id) && token.translation.present? && similar_sounds_for_token(phrase, token).present? }
           missing_token = eligible_tokens.sample
           alternatives = missing_token ? similar_sounds_for_token(phrase, missing_token) : []
           choices = missing_token && alternatives.present? ? [
@@ -73,7 +71,7 @@
           phrase_end = phrases[index + 1]&.timestamp_seconds || timestamp_to_seconds(params[:end_timestamp])
         %>
         <article
-          class="listen-line lyric-card absolute inset-x-0 top-0"
+          class="listen-line absolute inset-x-0 top-0"
           data-listen-activity-target="phrase"
           data-index="<%= index %>"
           data-start="<%= phrase.timestamp_seconds %>"
@@ -115,7 +113,7 @@
       <% end %>
     </div>
 
-    <div class="hidden min-h-20 items-center justify-center gap-3 px-5 py-4" data-listen-activity-target="wordSelection"></div>
+    <div class="hidden min-h-20 shrink-0 items-center justify-center gap-3 px-5 py-4" data-listen-activity-target="wordSelection"></div>
 
   </div>
 

@@ -8,12 +8,16 @@ export default class extends Controller {
   connect() {
     this.currentIndex = 0
     this.started = false
+    this.playbackEnded = false
+    this.completed = false
     this.pausedForIndex = null
     this.answered = new Set()
     this.showWindow(0, false)
   }
 
   start() {
+    if (this.completed) return
+    this.playbackEnded = false
     this.started = true
     this.startInstructionTarget.classList.add("invisible")
     this.showWindow(this.currentIndex, false)
@@ -22,7 +26,7 @@ export default class extends Controller {
   }
 
   progress({ detail: { at } }) {
-    if (!this.started) return
+    if (!this.started || this.completed) return
 
     const nextIndex = this.phraseTargets.findLastIndex((phrase) => Number(phrase.dataset.start) <= at)
     if (nextIndex < 0) return
@@ -92,6 +96,7 @@ export default class extends Controller {
   }
 
   selectWord(event) {
+    if (this.completed || !this.hasUnansweredBlank(this.currentIndex)) return
     const button = event.currentTarget
     const correct = button.dataset.correct === "true"
     button.classList.add(correct ? "is-correct" : "is-incorrect")
@@ -112,14 +117,25 @@ export default class extends Controller {
     this.pausedForIndex = null
     this.awardXp(2)
 
-    this.element.dispatchEvent(new CustomEvent("listen-activity:play-video"))
+    // The shared player rewinds at segment end. Resolve remaining questions
+    // here instead of resuming the entire clip after its final answer.
+    if (this.playbackEnded) {
+      this.handleVideoEnd()
+    } else {
+      this.element.dispatchEvent(new CustomEvent("listen-activity:play-video"))
+    }
   }
 
   handleVideoEnd() {
-    const finalIndex = this.phraseTargets.length - 1
-    if (this.hasUnansweredBlank(finalIndex)) {
-      this.pauseForQuestion(finalIndex)
-    } else if (this.allQuestionsAnswered()) {
+    if (this.completed) return
+    this.playbackEnded = true
+    const unansweredIndex = this.phraseTargets.findIndex((_, index) => this.hasUnansweredBlank(index))
+    if (unansweredIndex >= 0) {
+      this.currentIndex = unansweredIndex
+      this.stageTarget.classList.remove("hidden")
+      this.showWindow(unansweredIndex, false)
+      this.pauseForQuestion(unansweredIndex)
+    } else {
       this.complete()
     }
   }
@@ -143,11 +159,9 @@ export default class extends Controller {
     return phrase?.dataset.hasMissing === "true" && !this.answered.has(index)
   }
 
-  allQuestionsAnswered() {
-    return this.phraseTargets.every((_, index) => !this.hasUnansweredBlank(index))
-  }
-
   complete() {
+    if (this.completed) return
+    this.completed = true
     this.wordSelectionTarget.classList.add("hidden")
     this.stageTarget.classList.add("hidden")
     this.completionTarget.classList.remove("hidden")

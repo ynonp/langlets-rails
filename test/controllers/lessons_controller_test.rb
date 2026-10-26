@@ -38,6 +38,46 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     }
   end
 
+  test "translation exercises with only copied glosses offer a working Next action" do
+    phrase = create_translated_phrase!(medium: @medium, l1: languages(:english), l2: languages(:english),
+      text_l1: "will", text_l2: "will", timestamp: "00:10")
+    token = create_translated_token!(phrase:, language: languages(:english), translation: "will",
+      l1_start_index: 0, l1_end_index: 3, index_type: :character_index)
+
+    [Activities::FlashcardActivity, Activities::WriteMissingWordActivity, Activities::MatchTokensActivity,
+      Activities::TokensChainActivity, Activities::LanguageAlignmentActivity].each_with_index do |type, index|
+      activity = type.create!(lesson: @lesson, user: @user, order: index + 2)
+      activity.phrase_tokens << token
+      activity.phrases << phrase
+
+      get course_lesson_url(@course, @lesson, a: activity.order)
+      assert_response :success
+      assert_select '[data-testid="no-translation-questions"] a[data-action="click->read-translated-activity#complete"]', count: 1
+      assert_select '[data-testid="no-translation-questions"] a[href]', count: 1
+    end
+  end
+
+  test "listening keeps copied words in the transcript but only blanks translated words" do
+    phrase = create_translated_phrase!(medium: @medium, l1: languages(:english), l2: languages(:english),
+      text_l1: "No one will come", text_l2: "אף אחד לא יבוא", timestamp: "00:10")
+    copied = create_translated_token!(phrase:, language: languages(:english), translation: "will",
+      l1_start_index: 7, l1_end_index: 10, index_type: :character_index,
+      start_timestamp: "00:10.50", end_timestamp: "00:10.70", similar_sound: ["well"])
+    translated = create_translated_token!(phrase:, language: languages(:english), translation: "יבוא",
+      l1_start_index: 12, l1_end_index: 15, index_type: :character_index,
+      start_timestamp: "00:10.80", end_timestamp: "00:11.00", similar_sound: ["calm"])
+    activity = Activities::ListenActivity.create!(lesson: @lesson, user: @user, order: 2)
+    activity.phrases << phrase
+    activity.phrase_tokens << copied << translated
+
+    get course_lesson_url(@course, @lesson, a: activity.order)
+    assert_response :success
+    assert_select '[data-answer="come"]', count: 1
+    assert_select '[data-answer="will"]', count: 0
+    assert_select '.listen-word[data-start="10.5"][data-missing="false"]', text: "will"
+    assert_select '[data-listen-activity-target="translation"]', text: "יבוא"
+  end
+
   test "finish marks lesson complete when an activity was skipped" do
     assert_not ActivityUser.exists?(activity: @speech_activity, user: @user)
 
@@ -78,7 +118,7 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     )
     create_translated_token!(
       phrase:,
-      translation: "test",
+      translation: "example",
       language: languages(:english),
       l1_start_index: 1,
       l1_end_index: 1,
@@ -176,7 +216,7 @@ class LessonsControllerTest < ActionDispatch::IntegrationTest
     )
     token = create_translated_token!(
       phrase:,
-      translation: "missing",
+      translation: "absent",
       language: languages(:english),
       l1_start_index: 2,
       l1_end_index: 2,

@@ -29,7 +29,15 @@ class PhraseToken < ApplicationRecord
   # already has. A native-language change must not turn an English-only saved
   # word into a nil/"null" exercise prompt.
   def effective_translation
-    localized_translation || resolved_translation || available_translation
+    candidate = localized_translation || resolved_translation || available_translation
+    # Keep the provider output for debugging and all L1 spans for playback, but
+    # a copied source word is not a learner translation. Do not fall through to
+    # another language when the preferred language deliberately copied a word.
+    candidate if usable_translation?(candidate)
+  end
+
+  def usable_translation?(candidate)
+    candidate&.translation.present? && normalized_gloss(candidate.translation) != normalized_gloss(original_text)
   end
 
   def translation = effective_translation&.translation
@@ -59,6 +67,11 @@ class PhraseToken < ApplicationRecord
   after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   private
+
+  def normalized_gloss(text)
+    text.to_s.unicode_normalize(:nfc).downcase.strip
+      .gsub(/\A[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+\z/u, "")
+  end
 
   def available_translation
     token_translations.loaded? ? token_translations.first : token_translations.order(:id).first

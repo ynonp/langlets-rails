@@ -1,6 +1,26 @@
 require "test_helper"
 
 class ActivitiesHelperTest < ActionView::TestCase
+  test "translation questions skip copied glosses while timed transcript words remain" do
+    Current.translation_language = languages(:hebrew)
+    medium = Medium.create!(url: "https://www.youtube.com/watch?v=skip-copied", language: languages(:english))
+    phrase = create_translated_phrase!(medium:, l1: languages(:english), l2: languages(:hebrew),
+      text_l1: "I am afraid", text_l2: "אני פוחד", timestamp: "00:10")
+    phrase.build_word_tokens([
+      { "text" => "I", "translation" => "אני [pronoun]", "timestamp" => "00:10" },
+      { "text" => "am", "translation" => "am [auxiliary]", "timestamp" => "00:10.20" },
+      { "text" => "afraid", "translation" => "פוחד [adjective]", "timestamp" => "00:10.40" }
+    ])
+    tokens = phrase.phrase_tokens.reload.order(:l1_start_index).to_a
+
+    assert_equal ["I", "afraid"], prepare_tokens_for_matching(tokens).map { |token| token[:l1_word] }
+    assert_equal ["I", "afraid"], prepare_flashcards_for_tokens(tokens, []).map { |card| card[:correct] }
+    assert_equal "I am afraid", listen_phrase_segments(phrase, missing_token: nil).map { |segment| segment[:text] }.join
+    assert_nil tokens.second.translation
+  ensure
+    Current.reset
+  end
+
   test "timestamp_to_seconds with MM:SS format" do
     assert_equal 30.0, timestamp_to_seconds("00:30")
     assert_equal 60.0, timestamp_to_seconds("01:00")

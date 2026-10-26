@@ -26,6 +26,10 @@
   token_pages = tokens.each_slice(page_size).to_a
 %>
 
+<% if tokens.empty? %>
+  <%= render "activities/no_translation_questions" %>
+<% else %>
+
 <div
     data-controller="tokens-chain-activity"
     data-tokens-chain-activity-tokens-value="<%= tokens.to_json %>"
@@ -146,3 +150,5 @@
   z-index: 10;
 }
 </style>
+
+<% end %>

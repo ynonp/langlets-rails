@@ -11,7 +11,9 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show starts the current pending review without a lesson id" do
-    lesson = pending_review
+    PhraseTokenUser.create_custom!(user: @user, sentence: "hello world", language: @english,
+      token_range: 1..1, translation: "mundo", translation_language: languages(:spanish))
+    lesson = @user.current_review_lesson(@english.iso_name)
 
     get review_lessons_url(language_code: @english.iso_name)
 
@@ -25,6 +27,15 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-controller='write-missing-word-activity'][data-main-video-player-target='videoListener videoSegment'][data-show-player='true']"
     assert_select "[data-write-missing-word-activity-target='completionTranslation']"
     assert_select "[data-action='click->write-missing-word-activity#continue']"
+  end
+
+  test "an empty review remains navigable" do
+    pending_review
+
+    get review_lessons_url(language_code: @english.iso_name)
+
+    assert_response :success
+    assert_select '[data-testid="no-translation-questions"] a[href]', count: 1
   end
 
   test "show builds and starts a review when an existing user has none ready" do

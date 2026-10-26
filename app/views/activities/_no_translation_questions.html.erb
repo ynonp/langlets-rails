@@ -1,0 +1,13 @@
+<%# Existing activities may have no questions after unusable glosses are filtered.
+    Keep their URL and progress intact and let the learner continue normally. %>
+<div class="order-4 flex min-h-0 flex-1 items-center justify-center px-5"
+     style="padding-bottom: env(safe-area-inset-bottom, 0px);"
+     data-controller="read-translated-activity"
+     data-testid="no-translation-questions">
+  <%= link_to_next_activity(
+        t("activities.read_translated_activity.next"),
+        @next_activity_path,
+        class: "inline-flex h-14 w-full max-w-sm items-center justify-center rounded-2xl bg-emerald-500 px-6 font-extrabold text-white hover:bg-emerald-600",
+        data: { action: "click->read-translated-activity#complete" }
+      ) %>
+</div>

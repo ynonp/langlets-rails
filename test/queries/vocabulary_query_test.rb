@@ -33,6 +33,16 @@ class VocabularyQueryTest < ActiveSupport::TestCase
     )
   end
 
+  test "a copied saved gloss is omitted while the vocabulary entry remains" do
+    @token_en.token_translations.update_all(translation: "Hello")
+    @user.saved_phrase_tokens << @token_en
+
+    item = VocabularyQuery.new(user: @user).call[:items].first
+    assert_equal "Hello", item[:word]
+    assert_nil item[:translation]
+    assert_equal "Hello world", item[:context]
+  end
+
   test "returns word, translation and context for saved tokens" do
     @user.saved_phrase_tokens << @token_en
 

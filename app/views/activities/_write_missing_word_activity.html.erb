@@ -3,6 +3,10 @@
 <% l1_rtl = params[:l1]&.rtl %>
 <% l2_rtl = params[:l2]&.rtl %>
 
+<% if cards.empty? %>
+  <%= render "activities/no_translation_questions" %>
+<% else %>
+
 <div data-controller="write-missing-word-activity"
      data-write-missing-word-activity-cards-value="<%= cards.to_json %>"
      data-write-missing-word-activity-l1-rtl-value="<%= l1_rtl %>"
@@ -74,3 +78,5 @@
   .flashcard-answer-reveal { animation: none; }
 }
 </style>
+
+<% end %>

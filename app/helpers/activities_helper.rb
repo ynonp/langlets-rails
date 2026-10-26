@@ -195,6 +195,7 @@ module ActivitiesHelper
     filtered_token_translations = token_translations.select do |t|
       l1_text = t.original_text
       l2_text = t.translation
+      next false if l2_text.blank?
 
       if seen_l1_texts.include?(l1_text) || seen_l2_texts.include?(l2_text)
         false
@@ -258,7 +259,7 @@ module ActivitiesHelper
   end
 
   def prepare_flashcards_for_tokens(token_translations, unique_song_words)
-    token_translations = token_translations.to_a
+    token_translations = token_translations.to_a.select { |token| token.translation.present? }
     l1_texts = token_translations.map { |t| t.original_text }.uniq
     timing_phrases_by_medium = flashcard_timing_phrases_by_medium(token_translations)
 

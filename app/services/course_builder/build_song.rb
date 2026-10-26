@@ -304,11 +304,13 @@ module CourseBuilder
 
     def current_token_translations(phrases)
       phrases.includes(phrase_tokens: :localized_translation).flat_map(&:phrase_tokens)
+        .select { |token| token.translation.present? }
     end
 
     def review_token_translations(review_phrases)
       return [] if review_phrases.empty?
       review_phrases.includes(phrase_tokens: :localized_translation).flat_map(&:phrase_tokens)
+        .select { |token| token.translation.present? }
     end
 
     # A ListenActivity is only solvable when at least one of its phrases has a
@@ -319,7 +321,7 @@ module CourseBuilder
     def listen_blank_tokens(phrases)
       phrase_list = phrases.is_a?(ActiveRecord::Relation) ? phrases.to_a : phrases
       phrase_list.flat_map do |phrase|
-        phrase.phrase_tokens.select { |t| similar_sounds_for_token(phrase, t).present? }
+        phrase.phrase_tokens.select { |t| t.translation.present? && similar_sounds_for_token(phrase, t).present? }
       end
     end
 
@@ -361,7 +363,7 @@ module CourseBuilder
     # unique or the grid can contain ambiguous answers.
     def token_chain_tokens(tokens, limit: MAX_TOKEN_CHAIN_TOKENS)
       eligible_groups = tokens
-        .select { |token| TOKEN_CHAIN_PARTS_OF_SPEECH.include?(token.part_of_speech) }
+        .select { |token| TOKEN_CHAIN_PARTS_OF_SPEECH.include?(token.part_of_speech) && token.translation.present? }
         .group_by(&:part_of_speech)
         .transform_values do |group|
           seen_l1 = Set.new

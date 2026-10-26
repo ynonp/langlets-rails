@@ -27,12 +27,11 @@ class VocabularyQuery < PaginatedQuery
 
   def serialize(saved)
     token = saved.phrase_token
-    translation = saved.token_translation
     phrase = token.phrase
     phrase_translation = phrase.phrase_translations.find { |row| row.language_id == saved.language_id }
     {
       word: token.original_text,
-      translation: translation&.translation,
+      translation: saved.translation,
       language: phrase.l1.iso_name,
       translation_language: saved.language.iso_name,
       context: phrase.text_l1,

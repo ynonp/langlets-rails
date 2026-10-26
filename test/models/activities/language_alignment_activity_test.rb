@@ -69,7 +69,7 @@ class Activities::LanguageAlignmentActivityTest < ActiveSupport::TestCase
     create_translated_token!(
       phrase: phrase,
       language: @language,
-      translation: text.split.first,
+      translation: "translated",
       l1_start_index: 0,
       l1_end_index: text.split.first.length - 1,
       l2_start_index: 0,

@@ -76,7 +76,10 @@ class PhraseTokenUser < ApplicationRecord
   def source_language = phrase.l1
   def translation_language = language
   def word = phrase_token.original_text
-  def translation = token_translation&.translation
+  def translation
+    candidate = token_translation
+    candidate.translation if phrase_token.usable_translation?(candidate)
+  end
   def context = phrase.text_l1.to_s
 
   def before

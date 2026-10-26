@@ -254,6 +254,16 @@ its phrase starts, and an unanswered blank pauses playback at the phrase end.
 This fallback deliberately requires complete word timing rather than mixing
 word and phrase behavior within one exercise.
 
+The exercise region scrolls independently below the video, keeping answer
+buttons reachable on short native viewports and with enlarged text. Its two
+transcript rows have equal heights and scroll long text within each row.
+When the segment ends with unanswered blanks, the activity presents those
+questions in phrase order. Answering them finishes the exercise without
+resuming the clip from the beginning after the shared player's rewind.
+Copied source-language glosses cannot be selected as listening blanks. Their
+source words and timestamps remain in the transcript and participate in word
+highlighting as usual.
+
 ### Arriving here by Turbo-Frame navigation
 
 The lesson layout bakes `preload_player` / `interactive_video_player` into

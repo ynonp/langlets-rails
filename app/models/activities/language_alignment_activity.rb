@@ -10,6 +10,7 @@ module Activities
           phrase: [ :l1, :localized_translation, :phrase_translations ]
         )
         .to_a
+        .select { |token| token.translation.present? }
       first_phrase = selected_tokens.first&.phrase
 
       {

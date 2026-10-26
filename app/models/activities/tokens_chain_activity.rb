@@ -4,6 +4,7 @@ module Activities
       activity_phrase_tokens = phrase_tokens
         .includes(:localized_translation, phrase: [ :l1, :localized_translation ], l1_audio_attachment: :blob)
         .to_a
+        .select { |token| token.translation.present? }
         .first(15)
         .shuffle # Randomize chain order
 

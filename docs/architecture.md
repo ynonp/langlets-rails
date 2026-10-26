@@ -803,6 +803,28 @@ interface language changed. Saving a word follows the same rule: its preference
 is pinned only when that token actually has a translation in the preferred
 language, otherwise the saved row is pinned to an available translation.
 
+Copied token glosses are treated as unavailable translations. `PhraseToken`
+compares the selected gloss with its original L1 span after Unicode NFC
+normalization, lowercasing, and trimming surrounding whitespace, punctuation,
+and symbols; internal punctuation remains significant. This also skips
+identical cognates. The raw provider gloss, source span, grammatical tag,
+timing, audio, and activity associations remain stored, preserving playback,
+word highlighting, positional pipeline arrays, and debugging evidence. A copied
+preferred-language gloss does not fall through to a different language.
+The same rule applies to pinned saved-word display. No migration or course
+rebuild is needed: existing and newly imported copied glosses are suppressed
+through the same accessor.
+
+Translation questions filter out unavailable glosses in course construction,
+flashcard/typing and matching helpers, token chains, language alignment, and
+listening blank selection. Listening still renders every source word. Saved-word
+reviews filter before applying their ten-word cap, scanning bounded pages in
+review order so skipped words cannot crowd out later useful vocabulary.
+Existing token exercises left with no questions render a localized Next action
+using the normal completion event and navigation URL rather than an empty drill.
+Grouping grammatical expressions such as `I am` is independent of this policy;
+the compound-extraction prompt and pipeline output format are unchanged.
+
 Changing the native language does not remove existing Home or Library content.
 
 Web social authentication also initializes this preference from the acquisition
@@ -2026,6 +2048,14 @@ and are not modeled as a separate capability.
   missing normalized rows in a transaction per token and clears that token's
   legacy array only after every row succeeds. `DRY_RUN=1` reports the work
   without writing, and `PHRASE_TOKEN_ID=<id>` can safely scope a trial run.
+  The instruction, transcript stage, and answer buttons share a vertically
+  scrollable exercise region below the video so short Android viewports and
+  enlarged text cannot clip the answers. The stage uses two equal-height rows;
+  long phrases scroll within their row instead of overlapping the next one.
+  At segment end, unanswered blanks remain answerable in phrase order, including
+  any skipped by scrubbing. The last answer completes the exercise without
+  restarting the clip that the shared player has already rewound. Completion
+  and duplicate answer events are guarded against repeated XP or reporting.
 - **FindAnswerActivity**: Question-answer exercises
 
 #### 12. **Playlist** (`playlists`)

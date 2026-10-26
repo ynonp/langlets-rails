@@ -86,6 +86,17 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
     )
   end
 
+  test "copied saved words do not crowd useful words out of a review" do
+    11.times do |index|
+      PhraseTokenUser.create_custom!(user: @user, sentence: "copy#{index}", language: @english,
+        token_range: 0..0, translation: "copy#{index}", translation_language: @spanish)
+    end
+    @user.saved_phrase_tokens << @token_en1
+
+    assert_equal [@token_en1.id], ReviewLessonBuilder.new(@user, language_code: "en").fetch_tokens.map(&:id)
+    assert_nil @user.phrase_token_users.order(:id).first.translation
+  end
+
   test "build! creates lesson without language filter" do
     @user.saved_phrase_tokens << @token_en1
 

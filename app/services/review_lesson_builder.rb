@@ -26,10 +26,17 @@ class ReviewLessonBuilder
     due_rows = rows.due
     rows = due_rows if due_rows.exists?
     rows = rows.order(Arel.sql("COALESCE(phrase_token_users.next_review_at, phrase_token_users.created_at) ASC, phrase_token_users.id ASC"))
-      .limit(MAX_TOKENS_PER_REVIEW)
 
-    rows.map do |saved|
-      saved.phrase_token.tap do |token|
+    # Apply the review cap after skipping unusable glosses. Fetch bounded pages
+    # so copied words cannot crowd out later useful words in a large library.
+    tokens = []
+    offset = 0
+    while tokens.size < MAX_TOKENS_PER_REVIEW
+      batch = rows.offset(offset).limit(MAX_TOKENS_PER_REVIEW).to_a
+      break if batch.empty?
+
+      batch.each do |saved|
+        token = saved.phrase_token
         # The preferred request language wins when this token has it. The
         # language pinned when the word was saved is the first fallback, and
         # PhraseToken itself covers the rare case where that row disappeared
@@ -38,8 +45,11 @@ class ReviewLessonBuilder
           translation.language_id == Current.translation_language_id
         end
         token.resolved_translation = preferred || saved.token_translation
+        tokens << token if token.translation.present?
       end
+      offset += batch.size
     end
+    tokens.first(MAX_TOKENS_PER_REVIEW)
   end
 
   def build!
