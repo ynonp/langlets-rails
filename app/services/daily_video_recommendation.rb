@@ -61,8 +61,11 @@ class DailyVideoRecommendation
       .where(phrases: { l1_id: @language.id }).order(created_at: :desc).limit(40)
       .includes(phrase_token: [ :phrase, :token_translations ])
     vocabulary = words.map { |entry| { word: entry.word.to_s.truncate(100), translation: entry.translation.to_s.truncate(100), sentence: entry.context.truncate(500) } }
-    vocabulary_source = vocabulary.empty? ? "imported_transcript" : "saved_words"
-    vocabulary = imported_vocabulary(recent_imports) if vocabulary.empty?
+    vocabulary_source = "saved_words"
+    if vocabulary.empty?
+      vocabulary = imported_vocabulary(recent_imports)
+      vocabulary_source = "imported_transcript"
+    end
     { learning_language: recommendation_language,
       description_languages: [ @language.iso_name, *User::NATIVE_LANGUAGE_CODES ].uniq,
       learning_language_code: @language.iso_name, learning_language_native_name: @language.native_name,
