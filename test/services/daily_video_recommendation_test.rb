@@ -102,6 +102,7 @@ class DailyVideoRecommendationTest < ActiveSupport::TestCase
     @user.import_requests.create!(youtube_url: course.main_media_url, youtube_video_id: course.youtube_video_id,
       clip_language: "French", translation_language: "English", status: :ready, course: course)
     payload = DailyVideoRecommendation.new(user: @user, language: @language).send(:context)
+    assert_equal "imported_transcript", payload[:vocabulary_source]
     assert_equal %w[Bonjour acheter boulangerie pain], payload[:vocabulary].map { |entry| entry[:word] }.sort
     assert payload[:vocabulary].all? { |entry| entry[:translation] == "" }
     assert_operator payload[:vocabulary].size, :<=, 40
@@ -110,6 +111,7 @@ class DailyVideoRecommendationTest < ActiveSupport::TestCase
   test "no vocabulary and no imports send empty words without invented examples" do
     payload = DailyVideoRecommendation.new(user: @user, language: @language).send(:context)
     assert_empty payload[:vocabulary]
+    assert_equal "imported_transcript", payload[:vocabulary_source]
   end
 
   test "preserves Palestinian dialect and saved word sentence as primary evidence" do
