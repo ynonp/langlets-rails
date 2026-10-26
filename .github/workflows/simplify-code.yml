@@ -1,0 +1,77 @@
+name: Simplify code
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: simplify-code
+  cancel-in-progress: false
+
+jobs:
+  simplify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Ruby and Bundles
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+
+      - name: Configure git credentials
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh auth setup-git
+
+      - name: Run simplify_code.sh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
+          RAILS_ENV: test
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/langlets_test
+        run: |
+          ./simplify_code.sh "$GITHUB_REPOSITORY" --pr --test \
+            "bundle install && bun install && bin/rails db:create db:schema:load && bin/rails test"
+
+      - name: Upload run artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simplify-code-run
+          path: |
+            copilot-runs/*/recommendation.md
+            copilot-runs/*/implementation.md
+            copilot-runs/*/changes.patch
+            copilot-runs/*/tests.log
+          if-no-files-found: ignore
