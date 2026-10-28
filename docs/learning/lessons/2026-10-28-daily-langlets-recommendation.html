@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quest: Daily Langlets</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/ruby.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+<style>
+:root{--bg:#f6f4ff;--card:#fff;--ink:#1d1b2e;--mute:#6b6880;--line:#e3dff5;--pri:#6d4aff;--pri2:#ff7a59;--ok:#12a36b;--bad:#e5484d;--code:#0d1117}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#13111f;--card:#1e1b30;--ink:#f1eefc;--mute:#a29fba;--line:#322e4d;--pri:#9a82ff;--ok:#3ddc97;--bad:#ff6b70}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 80px}
+header{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0 8px;border-bottom:1px solid var(--line)}
+.hrow{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.lvl{font-weight:800}.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:2px 10px;font-size:.85rem}
+.xp{height:12px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:8px}
+.xp i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pri),var(--pri2));transition:width .6s cubic-bezier(.2,.9,.3,1.2)}
+h1{font-size:1.7rem;margin:18px 0 4px}h2{margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:14px 0}
+.stage{opacity:.45;pointer-events:none;filter:grayscale(.6)}.stage.open{opacity:1;pointer-events:auto;filter:none}
+.stage.done .sh::after{content:" ✅"}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.map{display:flex;flex-direction:column;gap:6px}
+.node{display:flex;gap:10px;align-items:center;text-align:left;width:100%;background:var(--bg);color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:10px 12px;font:inherit;cursor:pointer}
+.node.seen{border-color:var(--ok)}.node .n{background:var(--pri);color:#fff;border-radius:50%;min-width:28px;height:28px;display:grid;place-items:center;font-weight:800;font-size:.85rem}
+.nd{display:none;margin:-2px 0 6px 38px;padding:10px 12px;background:var(--bg);border-left:4px solid var(--pri);border-radius:8px;font-size:.93rem}.nd.show{display:block}
+code,.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem}
+.nd code{background:var(--line);padding:1px 5px;border-radius:5px;word-break:break-all}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}.tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer;font:inherit;font-size:.85rem}.tabs button.on{background:var(--pri);color:#fff}
+.path{font-size:.78rem;color:var(--mute);margin-bottom:4px;word-break:break-all}
+.code{background:var(--code);border-radius:10px;padding:8px 0;overflow-x:auto}
+.ln{display:flex;cursor:pointer;color:#e6edf3}.ln:hover{background:#ffffff14}
+.ln .no{min-width:44px;text-align:right;padding-right:10px;color:#7d8590;user-select:none;font-size:.78rem}
+.ln pre{margin:0;white-space:pre}.ln pre code{background:none!important;padding:0!important}
+.ln.note .no::after{content:"💡";margin-left:3px}.ln.note{background:#6d4aff22}
+.ln.ok{background:#12a36b44}.ln.no2{background:#e5484d44}
+.ann{margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--bg);border-left:4px solid var(--pri2);font-size:.93rem;min-height:44px}
+.chal{margin-top:10px;padding:10px 12px;border:2px dashed var(--pri);border-radius:12px}
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.flip{perspective:900px;height:210px;cursor:pointer}.fi{position:relative;height:100%;transition:transform .6s;transform-style:preserve-3d}.flip.f .fi{transform:rotateY(180deg)}
+.fa,.fb{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;padding:14px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.9rem;overflow:auto}
+.fa{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;font-weight:700;font-size:1.05rem}.fb{background:var(--bg);border:2px solid var(--pri);transform:rotateY(180deg)}
+.boss{display:flex;align-items:center;gap:10px}.boss .em{font-size:2.4rem;transition:transform .2s}.boss .em.hit{transform:translateX(8px) rotate(12deg)}
+.hp{flex:1;height:18px;background:var(--line);border-radius:99px;overflow:hidden}.hp i{display:block;height:100%;width:100%;background:var(--bad);transition:width .6s}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;background:var(--bg);color:var(--ink);border:2px solid var(--line);border-radius:10px;font:inherit;cursor:pointer}
+.opt.good{border-color:var(--ok);background:#12a36b22}.opt.bad{border-color:var(--bad);background:#e5484d22}
+.fb2{margin-top:8px;padding:10px;border-radius:10px;background:var(--bg);font-size:.92rem}
+.ord{list-style:none;padding:0;margin:0}.ord li{display:flex;gap:8px;align-items:center;margin:6px 0;padding:8px 10px;background:var(--bg);border:2px solid var(--line);border-radius:10px;cursor:pointer}
+.ord li .pos{background:var(--pri);color:#fff;border-radius:50%;min-width:24px;height:24px;display:grid;place-items:center;font-size:.8rem;visibility:hidden}.ord li.p .pos{visibility:visible}
+.patch{border-left:5px solid var(--pri2)}.patch li{margin:6px 0}
+.shelf{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.vic{text-align:center}.badge{font-size:3.4rem}
+.hidden{display:none}
+@media(max-width:520px){h1{font-size:1.4rem}.ln .no{min-width:34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <div class="hrow"><span class="lvl">⚔️ Level <span id="lvl">1</span> · <span id="xpn">0</span> XP</span>
+ <span><span class="chip">🔥 Streak <b id="streak">1</b></span> <span class="chip" id="shelf-chip">🏅 <b id="nbadge">0</b></span></span></div>
+ <div class="xp"><i id="xpbar"></i></div>
+</header>
+
+<h1>Quest: The Journey of a Daily Langlet 📬🎬</h1>
+<div class="card" id="intro">
+ <h2>🎯 Quest Intro</h2>
+ <p><b>Flow:</b> From day 6 onwards, each user who joined the "Daily Langlets" starter programme gets one personalised video suggestion per day. It's found with Gemini, imported as a ready course in advance, then announced by email and/or push at the user's chosen local time.</p>
+ <p><b>Why it matters:</b> This is the habit loop: it turns a one-time signup into a daily reason to come back, without ever sending an empty or random reminder. Every step is built to survive crashes, duplicate workers and outages.</p>
+ <p><b>Trigger:</b> <code>SendDailyChallengesJob</code>, run every 5 minutes (<code>config/recurring.yml:2-4</code>), or the user opening <code>/daily_challenge</code>.</p>
+ <p class="path">⚠️ Production note: delivery is currently <b>paused</b> (<code>config/environments/production.rb:6</code>), so this lesson also covers how the pause works.</p>
+ <button class="btn" id="startbtn">Start the quest ▶</button>
+</div>
+
+<div class="card patch" id="patch">
+ <b>🆕 Patch Notes: recent commits on this flow</b>
+ <ul>
+  <li><code>5b8c96a</code> (Oct 17) <b>Pause production notifications.</b> Added <code>DailyChallenge.delivery_enabled?</code> and checks in the scheduler, <code>notify!</code> and <code>DeliverNotificationJob</code>. Already-queued notifications are stamped as attempted, not replayed later. Why: content selection is under review. Effect: pages still work, nothing is sent.</li>
+  <li><code>2521cc3</code> (Oct 16) <b>Open prepared videos without repeated provider checks.</b> Video duration is now captured once during preparation and stored in <code>recommended_video</code>. <code>Imports::Create</code> reuses it for matching cards, so the Import click skips a second oEmbed/duration round-trip.</li>
+  <li><code>be93403</code> (Oct 6) <b>Prepare Daily Langlets before delivery.</b> Introduced the preparation-before-send ordering.</li>
+ </ul>
+</div>
+
+<section class="card stage" id="st1"><h2 class="sh">🗺️ Stage 1: The Map</h2>
+ <p>Click every node to open it (<span id="mapcnt">0</span>/7).</p>
+ <div class="map" id="map"></div>
+</section>
+
+<section class="card stage" id="st2"><h2 class="sh">💻 Stage 2: Code Lab</h2>
+ <p>Click lines marked 💡 to read the notes. Then beat each snippet's mini-challenge (<span id="labcnt">0</span>/5).</p>
+ <div class="tabs" id="tabs"></div>
+ <div id="lab"></div>
+</section>
+
+<section class="card stage" id="st3"><h2 class="sh">✨ Stage 3: Did You Know?</h2>
+ <p>Flip all 3 cards (<span id="flipcnt">0</span>/3).</p>
+ <div class="flips" id="flips"></div>
+</section>
+
+<section class="card stage" id="st4"><h2 class="sh">🧠 Stage 4: Boss Fight</h2>
+ <div class="boss"><span class="em" id="bossem">👹</span><div class="hp"><i id="hp"></i></div><b id="hpn">5/5</b></div>
+ <div id="quiz"></div>
+</section>
+
+<section class="card vic hidden" id="victory">
+ <div class="badge">📬</div>
+ <h2>Daily Langlet Dispatcher!</h2>
+ <p id="vsum"></p>
+ <button class="btn" id="copybtn">📋 Copy results</button> <button class="btn alt" id="again">Replay</button>
+ <p class="path" id="copymsg"></p>
+ <div><b>Badge shelf</b><div class="shelf" id="shelf"></div></div>
+</section>
+</div>
+
+<script>
+const DATA={"snips": [{"title": "The scheduler tick", "path": "app/jobs/send_daily_challenges_job.rb", "a": 4, "b": 17, "notes": {"2": "🛑 The pause switch. Production sets config.x.daily_langlets_delivery_enabled = false, so this whole tick does nothing.", "4": "♻️ Self-healing: any daily_challenge Notification never marked sent_at is re-enqueued. DeliverNotificationJob locks it, so duplicates are harmless.", "7": "⏱️ Looks 30 minutes ahead (PREPARATION_LEAD) so the video is ready BEFORE the reminder time.", "10": "🧲 Every 5 min the job calls notify! on rows that are due. notify! is guarded again inside the model.", "11": "🔎 Finds rows still pending/searching/importing and queues the AI-prep job. Lost enqueues get recovered here."}, "challenge": {"q": "Click the line that makes the entire tick a no-op while Daily Langlets is paused.", "ans": 2}, "code": "  def perform\n    return unless DailyChallenge.delivery_enabled?\n\n    Notification.where(kind: :daily_challenge, sent_at: nil).find_each do |notification|\n      DeliverNotificationJob.perform_later(notification.id)\n    end\n    StarterChallenge.where(next_practice_at: ..(Time.zone.now + DailyChallenge::PREPARATION_LEAD)).find_each do |challenge|\n      DailyChallenge.ensure_personalized_today!(challenge)\n    end\n    DailyChallenge.due.find_each(&:notify!)\n    DailyChallenge.recommendations_to_prepare.find_each do |quest|\n      PrepareDailyChallengeRecommendationJob.perform_later(quest.id)\n    end\n  end"}, {"title": "Creating today's row", "path": "app/models/daily_challenge.rb", "a": 29, "b": 39, "notes": {"2": "🔒 Locks the StarterChallenge row, so the scheduler and a user opening the page can't race.", "3": "🚧 practice_started? is active_day > 5. Days 1-5 are curated quests created at enrollment; only day 6+ is personalized.", "4": "🧱 find_or_create_by! plus the unique (starter_challenge_id, day) index (db/schema.rb:263) means duplicates are impossible.", "8": "➡️ Moves the pointer next_practice_at to TOMORROW's local reminder time. Missed dates are never backfilled."}, "challenge": {"q": "Which line makes sure days 1-5 never get a personalized row created here?", "ans": 3}, "code": "  def self.ensure_personalized_today!(challenge)\n    challenge.with_lock do\n      return unless challenge.practice_started?\n      quest = challenge.daily_challenges.find_or_create_by!(day: challenge.active_day) do |daily|\n        daily.available_at = challenge.local_time_on(challenge.local_today)\n        daily.language = challenge.practice_language\n      end\n      challenge.update!(next_practice_at: challenge.local_time_on(challenge.local_today + 1))\n      quest\n    end\n  end"}, {"title": "Claiming the work (lease)", "path": "app/jobs/prepare_daily_challenge_recommendation_job.rb", "a": 8, "b": 28, "notes": {"1": "🔒 The claim happens inside a row lock, but the slow Gemini and provider calls happen OUTSIDE it (after this block).", "3": "🗑️ If the local day moved on (day != active_day) the row is marked skipped, not processed.", "8": "🎟️ A 10-minute lease (SEARCH_LEASE): if another worker started within 10 min, back off. If a worker dies, the lease expires and the job resumes.", "11": "🎁 `next :import` exits just the block with a value, whereas `return` leaves the entire perform. Subtle but deliberate.", "13": "🔁 Capped at 3 attempts, then state becomes failed.", "21": "🚪 claimed is :search, :import or nil (nil means someone else owns it or nothing to do)."}, "challenge": {"q": "Click the line that stops two workers from running the same Gemini search at once.", "ans": 8}, "code": "    claimed = quest.with_lock do\n      return if quest.notification_id.present? || quest.skipped_at.present? || quest.recommendation_state.in?(%w[ready failed])\n      if quest.day != quest.starter_challenge.active_day\n        quest.update!(skipped_at: Time.zone.now)\n        return\n      end\n      return if quest.available_at > Time.zone.now + DailyChallenge::PREPARATION_LEAD\n      return if quest.search_started_at && quest.search_started_at > Time.zone.now - DailyChallenge::SEARCH_LEASE\n      if quest.recommendation_state == \"importing\"\n        quest.update!(search_started_at: Time.zone.now)\n        next :import\n      end\n      if quest.search_attempts >= 3\n        quest.update!(recommendation_state: \"failed\", recommendation_failure: \"Preparation did not complete\")\n        return\n      end\n      quest.update!(recommendation_state: \"searching\", search_started_at: Time.zone.now,\n        search_attempts: quest.search_attempts + 1)\n      :search\n    end\n    return unless claimed"}, {"title": "Sending the notification", "path": "app/models/daily_challenge.rb", "a": 56, "b": 73, "notes": {"2": "🛑 Second pause guard, for direct calls to notify!.", "6": "⏭️ A row from a previous day gets skipped_at, never sent late.", "10": "✅ unlocked? for personalized rows requires recommendation_state == 'ready' (line 27). No ready video means no reminder.", "12": "🌩️ After an outage several rows may be unlocked: only the latest is sent, older ones are marked skipped.", "15": "📬 The one line that creates the Notification (kind: :daily_challenge). Title comes from recommended_video['title']."}, "challenge": {"q": "Click the line that actually creates the user's notification.", "ans": 15}, "code": "  def notify!\n    return unless self.class.delivery_enabled?\n\n    with_lock do\n      return if notification_id.present? || skipped_at.present?\n      if day < starter_challenge.active_day\n        update!(skipped_at: Time.zone.now)\n        return\n      end\n      return unless unlocked?\n      # After an outage, show all unlocked quests but send only the latest.\n      if starter_challenge.daily_challenges.where(\"day > ?\", day).where(available_at: ..Time.zone.now).exists?\n        update!(skipped_at: Time.zone.now)\n      else\n        update!(notification: Notifications.deliver(user: starter_challenge.user, kind: :daily_challenge, day: day, title: recommended_video[\"title\"]))\n      end\n    end\n  end"}, {"title": "The last gate", "path": "app/jobs/deliver_notification_job.rb", "a": 35, "b": 45, "notes": {"3": "🛑 Third layer of the pause: even a notification queued BEFORE the pause is suppressed here.", "5": "🔗 Joins back to the DailyChallenge via notification_id and requires unlocked? to still be true.", "7": "🧓 Legacy daily_practice reminders always return false: retired, but enum value 4 stays readable."}, "challenge": {"q": "Click the line that suppresses already-queued notifications when delivery is paused.", "ans": 3}, "code": "  def reminder_current?(notification)\n    if notification.kind_daily_challenge?\n      return false unless DailyChallenge.delivery_enabled?\n\n      DailyChallenge.find_by(notification_id: notification.id)&.unlocked? == true\n    elsif notification.kind_daily_practice?\n      false # Historical practice reminders were superseded by daily challenges.\n    else\n      true\n    end\n  end"}]};
+const TODAY="2026-10-28", FLOW="Daily Langlets recommendation & delivery";
+const $=s=>document.querySelector(s);
+const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+/* ---------- storage (safe) ---------- */
+const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+/* ---------- XP ---------- */
+let xp=0;
+const need=l=>100+(l-1)*50;
+function lvlOf(x){let l=1,r=x;while(r>=need(l)){r-=need(l);l++}return [l,r]}
+function addXP(n){xp+=n;const [l,r]=lvlOf(xp);$("#lvl").textContent=l;$("#xpn").textContent=xp;$("#xpbar").style.width=(100*r/need(l))+"%"}
+function party(o){try{confetti(Object.assign({particleCount:90,spread:70,origin:{y:.7}},o||{}))}catch(e){}}
+function openStage(id){const s=$(id);s.classList.add("open");s.scrollIntoView({behavior:"smooth",block:"start"})}
+function doneStage(id,next){$(id).classList.add("done");addXP(30);if(next)openStage(next)}
+
+/* ---------- streak ---------- */
+(function(){const last=store.get("langlets_last",null);let st=store.get("langlets_streak",0);
+ const d=new Date(TODAY+"T00:00:00"),prev=new Date(d);prev.setDate(d.getDate()-1);
+ const iso=x=>x.toISOString().slice(0,10);
+ const now=new Date().toISOString().slice(0,10);
+ if(last!==now){st=(last&&last===iso(new Date(Date.now()-864e5)))?st+1:1;store.set("langlets_streak",st);store.set("langlets_last",now)}
+ $("#streak").textContent=st||1;
+ const b=store.get("langlets_badges",[]);$("#nbadge").textContent=b.length;renderShelf(b)})();
+function renderShelf(b){$("#shelf").innerHTML=b.length?b.map(x=>`<span class="chip">${x}</span>`).join(""):'<span class="chip">none yet</span>'}
+
+/* ---------- intro ---------- */
+$("#startbtn").onclick=()=>{addXP(10);$("#startbtn").disabled=true;openStage("#st1")};
+
+/* ---------- Stage 1: map ---------- */
+const NODES=[
+ ["⏰","Scheduler tick","SendDailyChallengesJob#perform","app/jobs/send_daily_challenges_job.rb:4","Runs every 5 minutes in production (<code>config/recurring.yml:2-4</code>). Returns immediately if delivery is paused, re-enqueues unsent notifications, creates today's rows, notifies due rows and enqueues preparation."],
+ ["📅","Create today's row","DailyChallenge.ensure_personalized_today!","app/models/daily_challenge.rb:29","Under a row lock on the StarterChallenge, <code>find_or_create_by!(day: active_day)</code> creates only today's row (day 6 and later), with <code>available_at</code> = the user's local reminder time and a rotating learning language. Then moves <code>next_practice_at</code> to tomorrow."],
+ ["🔒","Claim the work","PrepareDailyChallengeRecommendationJob#perform","app/jobs/prepare_daily_challenge_recommendation_job.rb:8","Inside <code>with_lock</code>: skip if already notified/skipped/ready/failed, skip stale days, respect the 10-minute lease, cap at 3 attempts. Chooses <code>:search</code> or <code>:import</code>."],
+ ["🔍","Gemini finds a video","DailyVideoRecommendation#call","app/services/daily_video_recommendation.rb:21","Sends bounded learning context via <code>PipelineClient.recommend_video</code>. Rejects excluded/unverified URLs, invalid <code>content_type</code> (dialogue/song/story/culture) and videos with no channel name."],
+ ["📦","Import as a course","prepare_course → Imports::Create","app/jobs/prepare_daily_challenge_recommendation_job.rb:55","The import is created under the admin account (<code>User::ADMIN_EMAIL</code>) and is guest-started. The row becomes <code>ready</code> only when the course is published and the translation is ready; otherwise it stays <code>importing</code> or becomes <code>failed</code>."],
+ ["📬","Create the Notification","DailyChallenge#notify!","app/models/daily_challenge.rb:56","Guards: delivery enabled, not already notified/skipped, not a stale day, <code>unlocked?</code> (ready). After an outage only the latest unlocked row is sent. Calls <code>Notifications.deliver</code>."],
+ ["🚀","Deliver email / push","DeliverNotificationJob#perform","app/jobs/deliver_notification_job.rb:11","Locks the notification, re-checks <code>reminder_current?</code>, sends email and/or push (each failure isolated), then stamps <code>sent_at</code> (meaning <i>attempted</i>)."]];
+const seen=new Set();
+NODES.forEach((n,i)=>{const b=document.createElement("button");b.className="node";b.innerHTML=`<span class="n">${i+1}</span><span>${n[0]} <b>${n[1]}</b></span>`;
+ const d=document.createElement("div");d.className="nd";d.innerHTML=`<code>${n[2]}</code><br><code>${n[3]}</code><p style="margin:6px 0 0">${n[4]}</p>`;
+ b.onclick=()=>{d.classList.toggle("show");if(!seen.has(i)){seen.add(i);b.classList.add("seen");addXP(8);$("#mapcnt").textContent=seen.size;if(seen.size===NODES.length)doneStage("#st1","#st2")}};
+ $("#map").append(b,d)});
+
+/* ---------- Stage 2: lab ---------- */
+let cur=0;const solved=new Set();
+function renderLab(){
+ $("#tabs").innerHTML=DATA.snips.map((s,i)=>`<button class="${i===cur?"on":""}" data-i="${i}">${solved.has(i)?"✅ ":""}${s.title}</button>`).join("");
+ $("#tabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;renderLab()});
+ const s=DATA.snips[cur],ch=s.challenge,done=solved.has(cur);
+ const lines=s.code.split("\n");
+ $("#lab").innerHTML=`<div class="path">${s.path}:${s.a}</div><div class="code" id="codebox">${lines.map((l,i)=>{const n=i+1;return `<div class="ln${s.notes[n]?" note":""}" data-n="${n}"><span class="no">${s.a+i}</span><pre><code class="language-ruby">${esc(l)||" "}</code></pre></div>`}).join("")}</div>
+ <div class="ann" id="ann">👆 Click any line. Lines with 💡 have notes.</div>
+ <div class="chal"><b>🎯 Mini-challenge:</b> ${ch.q}<div id="cres" class="path">${done?"✅ Solved!":""}</div></div>`;
+ document.querySelectorAll("#codebox code").forEach(c=>{try{hljs.highlightElement(c)}catch(e){}});
+ const readSet=window._read=window._read||new Set();
+ document.querySelectorAll(".ln").forEach(el=>el.onclick=()=>{const n=+el.dataset.n;
+  if(s.notes[n]){$("#ann").innerHTML=s.notes[n];const k=cur+":"+n;if(!readSet.has(k)){readSet.add(k);addXP(3)}}
+  else $("#ann").textContent="No special note on this line. Try a 💡 line.";
+  if(!solved.has(cur)){ if(n===ch.ans){solved.add(cur);el.classList.add("ok");addXP(15);party({particleCount:40});$("#cres").textContent="✅ Correct!";$("#labcnt").textContent=solved.size;
+     if(solved.size===DATA.snips.length)doneStage("#st2","#st3");else setTimeout(renderLab,900)}
+   else{el.classList.add("no2");$("#cres").textContent="❌ Not that one, try again.";setTimeout(()=>el.classList.remove("no2"),700)}}
+ });
+}
+renderLab();
+
+/* ---------- Stage 3: facts ---------- */
+const FACTS=[
+ ["🛑 Why is the pause check in three places?","The pause lives in <code>send_daily_challenges_job.rb:5</code>, <code>daily_challenge.rb:57</code> and <code>deliver_notification_job.rb:37</code>. The third one catches notifications queued <i>before</i> the pause, and stamps them as attempted (<code>sent_at</code>) so they never replay when re-enabled. Added together in commit <code>5b8c96a</code>."],
+ ["❓ Paused only when exactly <code>false</code>","<code>delivery_enabled?</code> is <code>Rails.configuration.x.daily_langlets_delivery_enabled != false</code> (<code>daily_challenge.rb:22</code>). Unset (nil) counts as <b>enabled</b>, so dev and test work without any config. Only production sets it to false (<code>production.rb:6</code>)."],
+ ["🧬 The oldest surviving lines","<code>git blame</code> shows <code>DailyChallenge</code>'s class line, <code>QUESTS</code> and the <code>notify!</code> lock/skip logic all date back to commit <code>3b4ccc2</code> (Sep 25, 2026, \"Add starter challenge and daily practice system\"). The 30-min lead and 10-min lease constants came a week later in <code>3f3988d</code>."]];
+const flipped=new Set();
+FACTS.forEach((f,i)=>{const d=document.createElement("div");d.className="flip";d.innerHTML=`<div class="fi"><div class="fa">${f[0]}</div><div class="fb"><div>${f[1]}</div></div></div>`;
+ d.onclick=()=>{d.classList.toggle("f");if(!flipped.has(i)){flipped.add(i);addXP(10);$("#flipcnt").textContent=flipped.size;if(flipped.size===3)doneStage("#st3","#st4")}};$("#flips").append(d)});
+
+/* ---------- Stage 4: boss ---------- */
+const Q=[
+ {t:"mc",topic:"Scheduler cadence & lead time",q:"How early before a user's reminder time can the video preparation start, and how often does the scheduler check?",
+  o:["Exactly at reminder time; every minute","30 minutes ahead (PREPARATION_LEAD); every 5 minutes","24 hours ahead; every hour","10 minutes ahead (SEARCH_LEASE); every 5 minutes"],a:1,
+  e:"<code>PREPARATION_LEAD = 30.minutes</code> (daily_challenge.rb:2) is used in the scheduler's <code>StarterChallenge.where</code> and in <code>recommendations_to_prepare</code>; the cron is <code>every 5 minutes</code> (config/recurring.yml:4). SEARCH_LEASE is the 10-min lock on the Gemini work, not the lead time."},
+ {t:"mc",topic:"Which days are personalised",q:"What does <code>ensure_personalized_today!</code> do when the user is still on days 1-5?",
+  o:["Creates a Gemini-based row anyway","Raises an ArgumentError","Returns nil without creating anything, because practice_started? is false","Creates a curated row and notifies"],a:2,
+  e:"<code>return unless challenge.practice_started?</code> (daily_challenge.rb:31). <code>practice_started?</code> is <code>active_day > 5</code> (starter_challenge.rb:31). Days 1-5 are created at enrollment by <code>StarterChallenge.enroll!</code>."},
+ {t:"mc",topic:"Edge: queued notification during pause",q:"What if a notification was queued BEFORE the production pause, and <code>DeliverNotificationJob</code> runs after it?",
+  o:["Email and push are sent as usual","Nothing is sent, but <code>sent_at</code> is stamped so it never replays","Nothing is sent and the job retries forever","Push only, since email is paused"],a:1,
+  e:"<code>reminder_current?</code> returns false (deliver_notification_job.rb:37), and lines 17-20 then run <code>update_columns(sent_at: ...)</code> and return. The same pattern suppresses stale days."},
+ {t:"mc",topic:"Which code prevents duplicate Gemini searches",q:"Which line of <code>PrepareDailyChallengeRecommendationJob</code> backs off when another worker already started within the last 10 minutes?",
+  o:["The <code>search_attempts >= 3</code> check","<code>return if quest.search_started_at && quest.search_started_at > Time.zone.now - DailyChallenge::SEARCH_LEASE</code> (line 15)","<code>return unless quest&.personalized?</code> (line 7)","<code>quest.notify! if ready</code>"],a:1,
+  e:"That's the lease check at prepare_daily_challenge_recommendation_job.rb:15, evaluated inside <code>with_lock</code>. If a worker dies, the lease expires and the job resumes."},
+ {t:"order",topic:"Order of the flow",q:"Put the steps in order:",
+  items:["Scheduler tick: SendDailyChallengesJob runs","ensure_personalized_today! creates today's row","PrepareDailyChallengeRecommendationJob claims it and Gemini picks a video","The video is imported as a course and the row becomes ready","DailyChallenge#notify! creates the Notification","DeliverNotificationJob sends email / push"],
+  e:"See the Map: send_daily_challenges_job.rb:10-15 → daily_challenge.rb:29 → prepare job → prepare_course (line 55 onward) ends with <code>quest.notify! if ready</code> → deliver_notification_job.rb:11."}
+];
+let qi=0,hp=5,score=0,missed=[],tries=0;
+function renderQ(){
+ const q=Q[qi];$("#hp").style.width=(hp/5*100)+"%";$("#hpn").textContent=hp+"/5";tries=0;
+ let h=`<p><b>Q${qi+1}/5</b> · ${q.q}</p>`;
+ if(q.t==="mc")h+=q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("");
+ else{h+=`<p class="path">Click the steps in the order they happen.</p><ul class="ord" id="ord">${q.items.map((x,i)=>`<li data-i="${i}"><span class="pos"></span>${x}</li>`).join("")}</ul><button class="btn" id="chk">Check order</button>`}
+ h+=`<div id="fb"></div>`;$("#quiz").innerHTML=h;
+ if(q.t==="mc")document.querySelectorAll(".opt").forEach(b=>b.onclick=()=>answer(+b.dataset.i===q.a,b));
+ else{const picked=[];const lis=[...document.querySelectorAll("#ord li")];
+  /* shuffle display deterministically */
+  const ord=$("#ord");[...lis].sort((a,b)=>((+a.dataset.i*7+3)%6)-((+b.dataset.i*7+3)%6)).forEach(l=>ord.append(l));
+  document.querySelectorAll("#ord li").forEach(li=>li.onclick=()=>{const i=+li.dataset.i,k=picked.indexOf(i);
+   if(k>=0)picked.splice(k,1);else picked.push(i);
+   document.querySelectorAll("#ord li").forEach(l=>{const p=picked.indexOf(+l.dataset.i);l.classList.toggle("p",p>=0);l.querySelector(".pos").textContent=p+1})});
+  $("#chk").onclick=()=>{ if(picked.length<q.items.length){$("#fb").innerHTML='<div class="fb2">Pick all 6 steps first.</div>';return}
+   answer(picked.every((v,i)=>v===i),null)}}
+}
+function answer(ok,btn){const q=Q[qi];
+ if(ok){const gain=tries?15:30;addXP(gain);score++;hp--;$("#hp").style.width=(hp/5*100)+"%";$("#hpn").textContent=hp+"/5";
+  $("#bossem").classList.add("hit");setTimeout(()=>$("#bossem").classList.remove("hit"),300);
+  if(btn)btn.classList.add("good");party({particleCount:40});
+  $("#fb").innerHTML=`<div class="fb2">✅ ${tries?"Got it on the retry (half XP). ":""}${q.e}</div><button class="btn" id="nx">${qi<4?"Next ▶":"Finish 🏆"}</button>`;
+  document.querySelectorAll(".opt").forEach(b=>b.disabled=true);$("#nx").onclick=nextQ}
+ else if(tries===0){tries=1;if(btn){btn.classList.add("bad");btn.disabled=true}
+  $("#fb").innerHTML='<div class="fb2">❌ Not quite. Retry once for half XP.</div>'}
+ else{missed.push(q.topic);if(btn)btn.classList.add("bad");document.querySelectorAll(".opt").forEach(b=>b.disabled=true);
+  if(q.t==="mc")document.querySelectorAll(".opt")[q.a].classList.add("good");
+  $("#fb").innerHTML=`<div class="fb2">❌ ${q.t==="mc"?"":"Correct order is the list in the Map. "}${q.e}</div><button class="btn" id="nx">${qi<4?"Next ▶":"Finish 🏆"}</button>`;$("#nx").onclick=nextQ}
+}
+function nextQ(){if(qi<4){qi++;renderQ()}else win()}
+renderQ();
+
+/* ---------- victory ---------- */
+function win(){doneStage("#st4",null);const v=$("#victory");v.classList.remove("hidden");
+ $("#vsum").innerHTML=`Score <b>${score}/5</b> · <b>${xp} XP</b> · Badge: <b>📬 Daily Langlet Dispatcher</b>`;
+ const b=store.get("langlets_badges",[]);if(!b.includes("📬 Daily Langlet Dispatcher")){b.push("📬 Daily Langlet Dispatcher");store.set("langlets_badges",b)}
+ $("#nbadge").textContent=b.length;renderShelf(b);v.scrollIntoView({behavior:"smooth"});
+ party({particleCount:220,spread:100});setTimeout(()=>party({particleCount:120,angle:60,spread:70,origin:{x:0}}),300);setTimeout(()=>party({particleCount:120,angle:120,spread:70,origin:{x:1}}),500)}
+$("#copybtn").onclick=async()=>{
+ const txt=`Date: ${TODAY}\nFlow: ${FLOW}\nScore: ${score}/5\nMissed: ${missed.length?missed.join("; "):"none"}`;
+ try{await navigator.clipboard.writeText(txt);$("#copymsg").textContent="Copied! Paste it back to your tutor."}
+ catch(e){$("#copymsg").textContent=txt}};
+$("#again").onclick=()=>location.reload();
+</script>
+</body>
+</html>
