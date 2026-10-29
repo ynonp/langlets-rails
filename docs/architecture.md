@@ -4488,8 +4488,15 @@ by migration; registration capabilities never upgrade existing grants or tokens.
 `add_vocabulary` accepts a sentence, source/translation ISO language codes,
 translation, and inclusive zero-based whitespace word indexes. It delegates to
 `PhraseTokenUser.create_custom!`, including whitespace normalization, compound
-selections, user locking and idempotent saves. Standalone words or phrases use
-that text as the sentence with all words selected. Repeated saves preserve the
+selections, user locking and idempotent saves. The MCP tool requires an example
+sentence demonstrating the vocabulary in use: at least one whitespace word
+outside the selected span must contain a Unicode letter or number. Standalone
+words/phrases and punctuation-only context return a tool error directing the
+agent to retry with a natural example and corrected selection indexes, before
+any records are created. Tool and sentence-field descriptions explain this
+contract. Validation enforces surrounding context, not grammatical quality;
+the shared model and manual vocabulary form retain their existing behavior.
+Repeated saves preserve the
 existing translation and review state. The response includes the saved item ID.
 
 `get_vocabulary` (and the shared REST vocabulary query) additionally returns

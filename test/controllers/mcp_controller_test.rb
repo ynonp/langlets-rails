@@ -199,6 +199,41 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "requires example context before creating any vocabulary records" do
+    writer = create_access_token(@user, scopes: "vocabulary:write")
+    examples = [
+      { sentence: "hola", start_word_index: 0, end_word_index: 0 },
+      { sentence: "  darse   prisa  ", start_word_index: 0, end_word_index: 1 },
+      { sentence: "¡hola! ...", start_word_index: 0, end_word_index: 0 },
+      { sentence: "— darse prisa !", start_word_index: 1, end_word_index: 2 }
+    ]
+    assert_no_difference [ "Phrase.count", "PhraseToken.count", "TokenTranslation.count", "PhraseTokenUser.count" ] do
+      examples.each do |example|
+        result = call_tool("add_vocabulary", custom_arguments.merge(example), token: writer)
+        assert result["isError"]
+        assert_includes result["content"].first["text"], "An example sentence is required"
+        assert_includes result["content"].first["text"], "Retry"
+      end
+    end
+  end
+
+  test "saves words at any position in a sentence with Unicode context" do
+    writer = create_access_token(@user, scopes: "vocabulary:write")
+    [
+      { sentence: "Hola, María.", start_word_index: 0, end_word_index: 0 },
+      { sentence: "María dice hola hoy.", start_word_index: 2, end_word_index: 2 },
+      { sentence: "María dice hola.", start_word_index: 2, end_word_index: 2 }
+    ].each do |example|
+      assert_difference "PhraseTokenUser.count", 1 do
+        result = call_tool("add_vocabulary", custom_arguments.merge(example, translation: "hello"), token: writer)
+        assert_not result["isError"]
+        saved = @user.phrase_token_users.find(JSON.parse(result["content"].first["text"])["id"])
+        assert_equal example[:sentence], saved.context
+        assert_equal "hola", saved.word.downcase
+      end
+    end
+  end
+
   test "updates practice date and schedule while preserving familiarity and pause" do
     writer = create_access_token(@user, scopes: "vocabulary:write")
     saved = @user.phrase_token_users.first
