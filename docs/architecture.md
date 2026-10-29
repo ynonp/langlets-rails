@@ -45,7 +45,8 @@ directory, and does not publish port 5432 on the host.
 
 Production deploys run automatically from `.github/workflows/deploy.yml` after
 each push to `main`, and can also be started manually using GitHub Actions'
-**Run workflow** control. The deploy workflow checks out the triggering commit
+**Run workflow** control. The deploy workflow uses Ubuntu 24.04 because the pinned Ruby 3.3.5 is
+unavailable on Ubuntu 26.04. It checks out the triggering commit
 and serializes deployments so two production releases cannot overlap. Its
 GitHub Actions secrets are `RAILS_MASTER_KEY`, `KAMAL_SSH_PRIVATE_KEY`, and
 `KAMAL_SSH_KNOWN_HOSTS`. The Rails key decrypts the production credentials;
