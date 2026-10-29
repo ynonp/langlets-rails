@@ -4481,7 +4481,9 @@ The authenticated `/mcp` endpoint registers `get_vocabulary`, `get_courses`,
 `add_vocabulary`, and `update_vocabulary_practice`. Writes require the optional
 `vocabulary:write` OAuth scope, advertised by both discovery documents. Default
 and existing tokens retain read-only access; clients must request write access
-through a new authorization (and include it in their registered application scopes).
+through a new authorization. Dynamically registered vocabulary clients are allowed
+to request write consent later, including existing read-only registrations upgraded
+by migration; registration capabilities never upgrade existing grants or tokens.
 
 `add_vocabulary` accepts a sentence, source/translation ISO language codes,
 translation, and inclusive zero-based whitespace word indexes. It delegates to
@@ -4500,3 +4502,15 @@ clears the previous review lesson reference, and preserves familiarity and pause
 state. These are explicit timestamp edits, so historical dates are allowed.
 Both mutations trigger the existing review-lesson refresh callback. No routes
 or native tab configuration change.
+
+
+Every MCP tool inherits `Tools::AuthorizedTool`, which publishes its OAuth
+`securitySchemes` at descriptor top level and in the `_meta` compatibility mirror.
+Read tools declare their read scope; both vocabulary mutations declare
+`vocabulary:write`. Missing scopes produce an MCP error with
+`_meta["mcp/www_authenticate"]`: a Bearer `insufficient_scope` challenge including
+`error_description`, the required `scope`, and this host's protected-resource
+metadata URL. ChatGPT can use this to initiate scope-upgrade consent rather than
+only displaying a text error. Unauthenticated and expired-token requests still
+receive HTTP 401 with OAuth discovery metadata. Refresh the app's tool definitions
+in ChatGPT after deployment; cached descriptors may require recreating the app.

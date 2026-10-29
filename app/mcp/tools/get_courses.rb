@@ -1,5 +1,6 @@
 module Tools
-  class GetCourses < MCP::Tool
+  class GetCourses < AuthorizedTool
+    required_scope "courses:read"
     tool_name "get_courses"
     description "List published langlets courses in a given language. " \
                 "Paginated; newest first. Each course links to its page on the site."
@@ -16,11 +17,8 @@ module Tools
     )
 
     def self.call(language:, page: 1, per_page: PaginatedQuery::DEFAULT_PER_PAGE, server_context: nil)
-      unless server_context[:scopes].include?("courses:read")
-        return MCP::Tool::Response.new(
-          [ { type: "text", text: "This token is missing the courses:read scope" } ], error: true
-        )
-      end
+      auth_error = authorization_error(server_context)
+      return auth_error if auth_error
 
       result = CoursesQuery.new(
         language: language, user: server_context[:user],

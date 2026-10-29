@@ -56,12 +56,14 @@ module Oauth
       false
     end
 
-    # Narrow requested scopes to the configured ones; grant the defaults when
-    # nothing valid was requested.
+    # Registration scopes are capabilities, not token grants. Vocabulary clients
+    # may request write consent later even when initially connecting read-only.
     def allowed_scopes(requested)
       configured = Doorkeeper.configuration.scopes.to_a
       wanted = requested.to_s.split & configured
-      wanted.presence&.join(" ") || Doorkeeper.configuration.default_scopes.to_s
+      wanted = Doorkeeper.configuration.default_scopes.to_a if wanted.empty?
+      wanted |= [ "vocabulary:write" ] if wanted.include?("vocabulary:read")
+      wanted.join(" ")
     end
 
     def rfc_error(code, description)

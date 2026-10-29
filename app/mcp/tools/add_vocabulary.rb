@@ -1,5 +1,6 @@
 module Tools
-  class AddVocabulary < MCP::Tool
+  class AddVocabulary < AuthorizedTool
+    required_scope "vocabulary:write"
     tool_name "add_vocabulary"
     description "Save a word or multiword phrase to your vocabulary. Requires vocabulary:write. " \
                 "Select inclusive zero-based whitespace word indexes in the sentence. " \
@@ -18,9 +19,8 @@ module Tools
     )
 
     def self.call(sentence:, language:, translation_language:, translation:, start_word_index:, end_word_index:, server_context:)
-      unless server_context[:scopes].include?("vocabulary:write")
-        return MCP::Tool::Response.new([ { type: "text", text: "This token is missing the vocabulary:write scope; reconnect requesting this scope" } ], error: true)
-      end
+      auth_error = authorization_error(server_context)
+      return auth_error if auth_error
 
       source = Language.find_by(iso_name: language)
       target = Language.find_by(iso_name: translation_language)

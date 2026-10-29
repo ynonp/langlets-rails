@@ -81,6 +81,15 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     assert_includes names, "get_courses"
     assert_includes names, "add_vocabulary"
     assert_includes names, "update_vocabulary_practice"
+    expected_scopes = {
+      "get_vocabulary" => "vocabulary:read", "get_courses" => "courses:read",
+      "add_vocabulary" => "vocabulary:write", "update_vocabulary_practice" => "vocabulary:write"
+    }
+    tools.each do |tool|
+      expected = [ { "type" => "oauth2", "scopes" => [ expected_scopes.fetch(tool["name"]) ] } ]
+      assert_equal expected, tool["securitySchemes"]
+      assert_equal expected, tool.dig("_meta", "securitySchemes")
+    end
     get_courses = tools.find { |t| t["name"] == "get_courses" }
     assert_equal [ "language" ], get_courses.dig("inputSchema", "required")
   end
@@ -122,12 +131,20 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     result = JSON.parse(@response.body)["result"]
     assert result["isError"]
-    assert_includes result["content"].first["text"], "vocabulary:read"
+    assert_scope_challenge result, "vocabulary:read"
   end
   def call_tool(name, arguments, token: @token)
     mcp_post(rpc("tools/call", { name: name, arguments: arguments }), token: token)
     assert_response :success
     JSON.parse(response.body).fetch("result")
+  end
+
+  def assert_scope_challenge(result, scope)
+    challenge = result.fetch("_meta").fetch("mcp/www_authenticate").sole
+    assert_includes challenge, 'error="insufficient_scope"'
+    assert_includes challenge, 'error_description="'
+    assert_includes challenge, %(scope="#{scope}")
+    assert_includes challenge, 'resource_metadata="http://www.example.com/.well-known/oauth-protected-resource/mcp"'
   end
 
   def custom_arguments
@@ -139,11 +156,12 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference "PhraseTokenUser.count" do
       result = call_tool("add_vocabulary", custom_arguments)
       assert result["isError"]
-      assert_includes result["content"].first["text"], "vocabulary:write"
+      assert_scope_challenge result, "vocabulary:write"
     end
     saved = @user.phrase_token_users.first
     result = call_tool("update_vocabulary_practice", { id: saved.id, last_reviewed_at: 1.day.ago.iso8601 })
     assert result["isError"]
+    assert_scope_challenge result, "vocabulary:write"
     assert_nil saved.reload.last_reviewed_at
   end
 

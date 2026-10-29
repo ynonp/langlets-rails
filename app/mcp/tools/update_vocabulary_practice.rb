@@ -1,5 +1,6 @@
 module Tools
-  class UpdateVocabularyPractice < MCP::Tool
+  class UpdateVocabularyPractice < AuthorizedTool
+    required_scope "vocabulary:write"
     tool_name "update_vocabulary_practice"
     description "Set a saved vocabulary item's last practice time (last_reviewed_at). Requires vocabulary:write. " \
                 "Use the item id from get_vocabulary or add_vocabulary. Supply an ISO 8601 timestamp with timezone; " \
@@ -14,9 +15,8 @@ module Tools
     )
 
     def self.call(id:, last_reviewed_at:, server_context:)
-      unless server_context[:scopes].include?("vocabulary:write")
-        return MCP::Tool::Response.new([ { type: "text", text: "This token is missing the vocabulary:write scope; reconnect requesting this scope" } ], error: true)
-      end
+      auth_error = authorization_error(server_context)
+      return auth_error if auth_error
 
       unless last_reviewed_at.match?(/T.*(?:Z|[+-]\d{2}:\d{2})\z/)
         raise ArgumentError, "last_reviewed_at must be an ISO 8601 timestamp with timezone"
