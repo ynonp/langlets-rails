@@ -36,9 +36,10 @@ Doorkeeper.configure do
   # Agents that request no scope get read access to vocabulary and courses.
   default_scopes :"vocabulary:read", :"courses:read"
 
-  # Never defaults: importing spends the user's credits, so a client has to ask
-  # for it explicitly. Used by the iOS app and its share extension.
-  optional_scopes :"imports:read", :"imports:write", :"credits:read"
+  # Writes never default: clients must explicitly request permission to change
+  # vocabulary or import content (which spends credits). Import scopes are also
+  # used by the iOS app and its share extension.
+  optional_scopes :"vocabulary:write", :"imports:read", :"imports:write", :"credits:read"
 
   enforce_configured_scopes
 

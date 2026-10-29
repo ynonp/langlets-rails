@@ -4472,3 +4472,30 @@ the action remains available after today's goal is complete.
 On mobile, the courses index and playlist headers keep the profile avatar visible by moving the theme toggle and XP chip into the profile dropdown while keeping desktop header controls unchanged:
 - `courses/index.html.erb`
 - `playlists/show.html.erb`
+
+
+### MCP vocabulary writes
+
+The authenticated `/mcp` endpoint registers `get_vocabulary`, `get_courses`,
+`add_vocabulary`, and `update_vocabulary_practice`. Writes require the optional
+`vocabulary:write` OAuth scope, advertised by both discovery documents. Default
+and existing tokens retain read-only access; clients must request write access
+through a new authorization (and include it in their registered application scopes).
+
+`add_vocabulary` accepts a sentence, source/translation ISO language codes,
+translation, and inclusive zero-based whitespace word indexes. It delegates to
+`PhraseTokenUser.create_custom!`, including whitespace normalization, compound
+selections, user locking and idempotent saves. Standalone words or phrases use
+that text as the sentence with all words selected. Repeated saves preserve the
+existing translation and review state. The response includes the saved item ID.
+
+`get_vocabulary` (and the shared REST vocabulary query) additionally returns
+`id`, `last_reviewed_at`, and `next_review_at`. `update_vocabulary_practice`
+accepts this saved-item ID and an ISO 8601 `last_reviewed_at` with timezone.
+It scopes lookup to the authenticated user's saved items, rejects future and
+invalid timestamps, and uses the same User lock as reviews. It reschedules
+`next_review_at` from the supplied time using the current familiarity interval,
+clears the previous review lesson reference, and preserves familiarity and pause
+state. These are explicit timestamp edits, so historical dates are allowed.
+Both mutations trigger the existing review-lesson refresh callback. No routes
+or native tab configuration change.

@@ -7,7 +7,7 @@ class McpController < ActionController::API
     server = MCP::Server.new(
       name: "langlets",
       version: "1.0.0",
-      tools: [ Tools::GetVocabulary, Tools::GetCourses ],
+      tools: [ Tools::GetVocabulary, Tools::GetCourses, Tools::AddVocabulary, Tools::UpdateVocabularyPractice ],
       server_context: { user: @current_user, scopes: @token_scopes, base_url: request.base_url }
     )
     transport = MCP::Server::Transports::StreamableHTTPTransport.new(

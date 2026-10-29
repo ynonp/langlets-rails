@@ -30,6 +30,9 @@ class VocabularyQuery < PaginatedQuery
     phrase = token.phrase
     phrase_translation = phrase.phrase_translations.find { |row| row.language_id == saved.language_id }
     {
+      id: saved.id,
+      last_reviewed_at: saved.last_reviewed_at&.iso8601,
+      next_review_at: saved.next_review_at&.iso8601,
       word: token.original_text,
       translation: saved.translation,
       language: phrase.l1.iso_name,

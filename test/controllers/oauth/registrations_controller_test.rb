@@ -67,11 +67,11 @@ class Oauth::RegistrationsControllerTest < ActionDispatch::IntegrationTest
     post oauth_register_url, params: {
       client_name: "Greedy",
       redirect_uris: [ "https://agent.example.com/callback" ],
-      scope: "vocabulary:read admin:everything",
+      scope: "vocabulary:read vocabulary:write admin:everything",
       token_endpoint_auth_method: "none"
     }, as: :json
 
     assert_response :created
-    assert_equal "vocabulary:read", JSON.parse(@response.body)["scope"]
+    assert_equal "vocabulary:read vocabulary:write", JSON.parse(@response.body)["scope"]
   end
 end

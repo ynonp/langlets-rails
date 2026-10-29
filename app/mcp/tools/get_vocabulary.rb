@@ -2,7 +2,7 @@ module Tools
   class GetVocabulary < MCP::Tool
     tool_name "get_vocabulary"
     description "Get the authenticated user's saved vocabulary words with their translations " \
-                "and the phrase each word was saved from. Paginated; newest first. " \
+                "and the phrase each word was saved from, item IDs and review dates. Paginated; newest first. " \
                 "Optionally filter to one learning language by ISO code."
     input_schema(
       properties: {

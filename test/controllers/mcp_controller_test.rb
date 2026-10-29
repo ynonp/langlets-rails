@@ -71,7 +71,7 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     assert_equal "langlets", body.dig("result", "serverInfo", "name")
   end
 
-  test "lists both tools" do
+  test "lists read and write tools" do
     mcp_post(rpc("tools/list"))
 
     assert_response :success
@@ -79,6 +79,8 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     names = tools.map { |t| t["name"] }
     assert_includes names, "get_vocabulary"
     assert_includes names, "get_courses"
+    assert_includes names, "add_vocabulary"
+    assert_includes names, "update_vocabulary_practice"
     get_courses = tools.find { |t| t["name"] == "get_courses" }
     assert_equal [ "language" ], get_courses.dig("inputSchema", "required")
   end
@@ -121,5 +123,88 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     result = JSON.parse(@response.body)["result"]
     assert result["isError"]
     assert_includes result["content"].first["text"], "vocabulary:read"
+  end
+  def call_tool(name, arguments, token: @token)
+    mcp_post(rpc("tools/call", { name: name, arguments: arguments }), token: token)
+    assert_response :success
+    JSON.parse(response.body).fetch("result")
+  end
+
+  def custom_arguments
+    { sentence: "  darse   prisa hoy ", language: "es", translation_language: "en",
+      translation: "hurry up", start_word_index: 0, end_word_index: 1 }
+  end
+
+  test "write tools reject read-only tokens without mutations" do
+    assert_no_difference "PhraseTokenUser.count" do
+      result = call_tool("add_vocabulary", custom_arguments)
+      assert result["isError"]
+      assert_includes result["content"].first["text"], "vocabulary:write"
+    end
+    saved = @user.phrase_token_users.first
+    result = call_tool("update_vocabulary_practice", { id: saved.id, last_reviewed_at: 1.day.ago.iso8601 })
+    assert result["isError"]
+    assert_nil saved.reload.last_reviewed_at
+  end
+
+  test "adds phrases idempotently and exposes ids and dates" do
+    writer = create_access_token(@user, scopes: "vocabulary:read vocabulary:write")
+    result = nil
+    assert_difference "PhraseTokenUser.count", 1 do
+      result = call_tool("add_vocabulary", custom_arguments, token: writer)
+      assert_not result["isError"]
+    end
+    payload = JSON.parse(result["content"].first["text"])
+    assert_equal "darse prisa", payload["word"]
+    assert_equal "hurry up", payload["translation"]
+    saved = @user.phrase_token_users.find(payload["id"])
+    saved.set_familiarity!("familiar")
+    assert_no_difference "PhraseTokenUser.count" do
+      result = call_tool("add_vocabulary", custom_arguments.merge(translation: "changed"), token: writer)
+      assert_not result["isError"]
+    end
+    assert_equal "hurry up", saved.reload.translation
+    assert_equal "familiar", saved.familiarity
+    result = call_tool("get_vocabulary", {}, token: writer)
+    item = JSON.parse(result["content"].first["text"])["items"].first
+    assert_equal saved.id, item["id"]
+    assert_equal saved.last_reviewed_at.iso8601, item["last_reviewed_at"]
+    assert_equal saved.next_review_at.iso8601, item["next_review_at"]
+  end
+
+  test "invalid language or selection creates no vocabulary" do
+    writer = create_access_token(@user, scopes: "vocabulary:write")
+    assert_no_difference [ "PhraseTokenUser.count", "Phrase.count" ] do
+      [ { language: "zz" }, { start_word_index: 10 }, { translation: " " } ].each do |invalid|
+        assert call_tool("add_vocabulary", custom_arguments.merge(invalid), token: writer)["isError"]
+      end
+    end
+  end
+
+  test "updates practice date and schedule while preserving familiarity and pause" do
+    writer = create_access_token(@user, scopes: "vocabulary:write")
+    saved = @user.phrase_token_users.first
+    saved.set_familiarity!("familiar")
+    saved.update!(practicing: false)
+    practiced = 2.days.ago.change(usec: 0)
+    result = call_tool("update_vocabulary_practice", { id: saved.id, last_reviewed_at: practiced.iso8601 }, token: writer)
+    assert_not result["isError"]
+    assert_equal practiced, saved.reload.last_reviewed_at
+    assert_equal practiced + 3.days, saved.next_review_at
+    assert_equal "familiar", saved.familiarity
+    assert_not saved.practicing?
+    assert_nil saved.last_review_lesson_id
+  end
+
+  test "practice updates reject other owners and malformed or future dates" do
+    writer = create_access_token(@user, scopes: "vocabulary:write")
+    saved = @user.phrase_token_users.first
+    other = User.create!(email: "other-mcp@example.com", password: "password123", confirmed_at: Time.zone.now)
+    other_writer = create_access_token(other, scopes: "vocabulary:write")
+    assert call_tool("update_vocabulary_practice", { id: saved.id, last_reviewed_at: 1.day.ago.iso8601 }, token: other_writer)["isError"]
+    [ "yesterday", "2026-10-20T10:00:00", 1.day.from_now.iso8601 ].each do |invalid|
+      assert call_tool("update_vocabulary_practice", { id: saved.id, last_reviewed_at: invalid }, token: writer)["isError"]
+    end
+    assert_nil saved.reload.last_reviewed_at
   end
 end

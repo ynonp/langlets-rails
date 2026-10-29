@@ -14,6 +14,7 @@ class WellKnownControllerTest < ActionDispatch::IntegrationTest
     assert_equal [ "S256" ], body["code_challenge_methods_supported"]
     assert_equal [ "code" ], body["response_types_supported"]
     assert_includes body["scopes_supported"], "vocabulary:read"
+    assert_includes body["scopes_supported"], "vocabulary:write"
     assert_includes body["token_endpoint_auth_methods_supported"], "none"
   end
 
@@ -26,6 +27,7 @@ class WellKnownControllerTest < ActionDispatch::IntegrationTest
       assert_equal "http://www.example.com/mcp", body["resource"]
       assert_equal [ "http://www.example.com" ], body["authorization_servers"]
       assert_includes body["scopes_supported"], "courses:read"
+      assert_includes body["scopes_supported"], "vocabulary:write"
     end
   end
 end
