@@ -21,11 +21,19 @@ class ReviewLessonBuilder
       rows = rows.joins(phrase_token: :phrase).where(phrases: { l1_id: @language.id })
     end
 
-    # Prefer overdue/new words. When none are due, keep optional practice
+    # Prefer due words. When none are due, keep optional practice
     # available without moving those words' review dates forward.
     due_rows = rows.due
     rows = due_rows if due_rows.exists?
-    rows = rows.order(Arel.sql("COALESCE(phrase_token_users.next_review_at, phrase_token_users.created_at) ASC, phrase_token_users.id ASC"))
+    # Introduce unreviewed words first, starting with the most recently saved.
+    # Reviewed words retain their existing due-date order.
+    rows = rows.order(Arel.sql(<<~SQL.squish))
+      CASE WHEN phrase_token_users.last_reviewed_at IS NULL THEN 0 ELSE 1 END ASC,
+      CASE WHEN phrase_token_users.last_reviewed_at IS NULL THEN phrase_token_users.created_at END DESC,
+      CASE WHEN phrase_token_users.last_reviewed_at IS NULL THEN phrase_token_users.id END DESC,
+      COALESCE(phrase_token_users.next_review_at, phrase_token_users.created_at) ASC,
+      phrase_token_users.id ASC
+    SQL
 
     # Apply the review cap after skipping unusable glosses. Fetch bounded pages
     # so copied words cannot crowd out later useful words in a large library.

@@ -4347,6 +4347,15 @@ Users can save individual word/token translations they encounter during lessons 
   review, so repeated saves coalesce naturally.
 - Activity composition:
   - One shared pool of up to 10 selected words
+  - Selection considers practising words in the requested L1 language with usable
+    translations. If any words are due, future reviews are excluded; otherwise
+    all practising words remain available for optional practice.
+  - Unreviewed words (`last_reviewed_at IS NULL`) take priority, newest saved
+    first (`created_at DESC`, then `id DESC` for ties). Remaining places go to
+    reviewed words ordered by next-review date (falling back to save date), then ID.
+    Activities still shuffle their selected words; this priority controls which
+    words enter the next review, not their presentation order. Started reviews
+    keep their existing selection.
   - FlashcardActivity (if ≥3 selected tokens, up to 4)
   - MatchTokensActivity (if ≥3 selected tokens, the whole pool)
   - TokensChainActivity (if ≥4 selected tokens, the whole pool)

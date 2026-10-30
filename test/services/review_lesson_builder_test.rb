@@ -97,6 +97,36 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
     assert_nil @user.phrase_token_users.order(:id).first.translation
   end
 
+  test "newest unreviewed words take priority over overdue words at the review cap" do
+    @user.saved_phrase_tokens << @token_en1
+    @user.phrase_token_users.find_by!(phrase_token: @token_en1).update!(
+      last_reviewed_at: 10.days.ago, next_review_at: 9.days.ago)
+
+    saved = 12.times.map do |index|
+      entry = PhraseTokenUser.create_custom!(user: @user, sentence: "newword#{index}", language: @english,
+        token_range: 0..0, translation: "meaning#{index}", translation_language: @spanish)
+      entry.update!(created_at: (12 - index).hours.ago)
+      entry
+    end
+
+    selected = ReviewLessonBuilder.new(@user, language_code: "en").fetch_tokens.map(&:id)
+    assert_equal saved.reverse.first(10).map(&:phrase_token_id), selected
+  end
+
+  test "new words with identical save times use newest id before overdue words" do
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_en2
+    @user.saved_phrase_tokens << @token_ar1
+    @user.saved_phrase_tokens << @token_ar2
+    entries = @user.phrase_token_users.order(:id).to_a
+    entries.each { |entry| entry.update!(created_at: 1.day.ago.beginning_of_day) }
+    entries[0].update!(last_reviewed_at: 5.days.ago, next_review_at: 4.days.ago)
+    entries[1].update!(last_reviewed_at: 3.days.ago, next_review_at: 2.days.ago)
+
+    assert_equal [ @token_ar2.id, @token_ar1.id, @token_en1.id, @token_en2.id ],
+      ReviewLessonBuilder.new(@user).fetch_tokens.map(&:id)
+  end
+
   test "build! creates lesson without language filter" do
     @user.saved_phrase_tokens << @token_en1
 
