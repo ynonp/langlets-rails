@@ -12,6 +12,10 @@
   <%= hreflang_tags_for_course(@course) %>
 <% end %>
 
+<% if current_user %>
+  <%= turbo_stream_from current_user, @course, :progress %>
+<% end %>
+
 <% content_for :canonical_url, canonical_url(course_path(@course)) %>
 
 <% content_for :structured_data do %>
@@ -159,7 +163,9 @@
               <% end %>
             <% end %>
             <% if user_signed_in? %>
-              <%= render "courses/mark_done_button", course: @course, all_done: @all_done %>
+              <div id="course-completion-control" data-course-progress-part>
+                <%= render "courses/mark_done_button", course: @course, all_done: @all_done %>
+              </div>
             <% end %>
           </div>
         </div>
@@ -169,7 +175,7 @@
         </p>
 
         <!-- Lessons -->
-        <div class="pb-1.5">
+        <div class="pb-1.5" id="course-lesson-progress" data-course-progress-part data-progress-url="<%= course_path(@course) %>">
           <div class="flex items-baseline justify-between mb-2.5">
             <h2 class="text-lg font-extrabold tracking-tight"><%= t(".lessons") %></h2>
             <span class="text-xs font-semibold text-gray-500 dark:text-gray-400" id="lessons-done-count"><%= t(".done", current: @lessons.count(&:completed?), total: @lessons.size) %></span>

@@ -4530,3 +4530,14 @@ metadata URL. ChatGPT can use this to initiate scope-upgrade consent rather than
 only displaying a text error. Unauthenticated and expired-token requests still
 receive HTTP 401 with OAuth discovery metadata. Refresh the app's tool definitions
 in ChatGPT after deployment; cached descriptors may require recreating the app.
+
+### Returning from native lesson modals
+
+Signed-in course pages subscribe to a signed, user-and-course-scoped Turbo
+Stream. Creating a LessonUser broadcasts a `refresh_course_progress` action
+after commit. The receiving webview fetches the course with its own cookies and
+language context and replaces only the lesson list/count and completion control.
+The retained main webview therefore receives fresh progress while the lesson
+modal stays open, without routing a native visit or resetting the tab stack.
+This ships as a web change and needs no native rebuild. Failed or redirected
+fetches leave the existing page intact.

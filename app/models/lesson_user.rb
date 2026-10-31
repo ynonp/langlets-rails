@@ -7,8 +7,18 @@ class LessonUser < ApplicationRecord
   # Completing a lesson is the signal that the user is actively working through a
   # course, which is what orders Home's "Keep it going" list.
   after_create_commit :touch_enrollment
+  after_create_commit :broadcast_course_progress
 
   private
+
+  def broadcast_course_progress
+    return unless lesson.course
+
+    Turbo::StreamsChannel.broadcast_action_to(
+      user, lesson.course, :progress,
+      action: :refresh_course_progress, target: "course-lesson-progress"
+    )
+  end
 
   # Practising a course you were never enrolled in — a direct link, a learning
   # path — enrolls you in it. Otherwise the course you're part-way through would

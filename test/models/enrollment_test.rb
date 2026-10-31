@@ -28,6 +28,7 @@ class EnrollmentTest < ActiveSupport::TestCase
   end
 
   class LessonProgressTest < ActiveSupport::TestCase
+    include ActionCable::TestHelper
     setup do
       @user     = User.create!(email: "progress@example.com", password: "password123", confirmed_at: Time.zone.now)
       @spanish  = languages(:spanish)
@@ -43,6 +44,16 @@ class EnrollmentTest < ActiveSupport::TestCase
     # Someone can reach a lesson without ever touching Home — a shared link, a
     # learning path. Completing it has to put the course on their Home, or the
     # thing they're part-way through is invisible there.
+    test "completion notifies only the learner's course progress stream" do
+      stream = Turbo::StreamsChannel.send(:stream_name_from, [ @user, @course, :progress ])
+      assert_broadcasts(stream, 1) do
+        LessonUser.create!(lesson: @lesson, user: @user)
+      end
+      payload = JSON.parse(broadcasts(stream).last)
+      assert_includes payload, 'action="refresh_course_progress"'
+      assert_includes payload, 'target="course-lesson-progress"'
+    end
+
     test "completing a lesson enrolls a user who was not enrolled" do
       assert_equal 0, @user.enrollments.where(course: @course).count
 

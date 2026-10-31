@@ -24,3 +24,11 @@ window.Turbo.StreamActions.refresh_native_tab = function () {
 
   window.dispatchEvent(new CustomEvent("native-tab:refresh", { detail: { tab } }))
 }
+
+
+// Update the retained course DOM without asking the native navigator to visit:
+// a visit from the main webview while a lesson is modal can dismiss the lesson.
+import { refreshCourseProgress } from "./utils/refresh_course_progress"
+window.Turbo.StreamActions.refresh_course_progress = function () {
+  return refreshCourseProgress(document.getElementById(this.target))
+}
