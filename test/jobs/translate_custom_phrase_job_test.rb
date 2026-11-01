@@ -48,6 +48,23 @@ class TranslateCustomPhraseJobTest < ActiveJob::TestCase
     assert_empty @phrase.phrase_translations
   end
 
+  test "calls the supported provider model and persists its response" do
+    chat = Minitest::Mock.new
+    chat.expect(:with_instructions, chat) do |instructions|
+      instructions.include?("Spanish") && instructions.include?("English")
+    end
+    chat.expect(:ask, Struct.new(:content).new("There is no time left."), [@phrase.text_l1])
+    factory = ->(**options) {
+      assert_equal({model: "glm-5.3-flash:cloud", provider: :ollama, assume_model_exists: true}, options)
+      chat
+    }
+    RubyLLM.stub(:chat, factory) do
+      TranslateCustomPhraseJob.perform_now(@phrase.id, @language.id)
+    end
+    chat.verify
+    assert_equal "There is no time left.", @phrase.phrase_translations.find_by!(language: @language).text
+  end
+
   test "enqueueing waits for commit" do
     assert TranslateCustomPhraseJob.enqueue_after_transaction_commit
   end
