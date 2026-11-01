@@ -140,7 +140,11 @@ class PhraseTokenUser < ApplicationRecord
           index_type: :character_index
         )
         token.token_translations.create_with(translation:).find_or_create_by!(language: translation_language)
-        user.phrase_token_users.create_with(language: translation_language).find_or_create_by!(phrase_token: token)
+        saved = user.phrase_token_users.create_with(language: translation_language).find_or_create_by!(phrase_token: token)
+        unless phrase.phrase_translations.exists?(language: translation_language)
+          TranslateCustomPhraseJob.perform_later(phrase.id, translation_language.id)
+        end
+        saved
       end
     end
 

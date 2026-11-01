@@ -4507,6 +4507,22 @@ contract. Validation enforces surrounding context, not grammatical quality;
 the shared model and manual vocabulary form retain their existing behavior.
 Repeated saves preserve the
 existing translation and review state. The response includes the saved item ID.
+Custom vocabulary saves (both MCP and manual entry) enqueue
+`TranslateCustomPhraseJob` when the phrase lacks a translation in the requested
+target language. The job uses the existing RubyLLM/Ollama configuration
+(`deepseek-v4-flash:cloud`) to translate the full sentence asynchronously, retries
+temporary failures, and saves a `PhraseTranslation` without overwriting an
+existing translation. Enqueueing waits for the save transaction to commit.
+Repeated saves of older items also enqueue missing translations.
+`BackfillMissingPhraseTranslationsJob` runs every hour in production to recover
+historical gaps and failed translations. It batches custom phrases with saved
+vocabulary, checks each saved item's pinned target language (including paused
+items), and queues one translation per missing phrase/language pair per scan.
+Course phrases, unsaved custom phrases, and existing translations are skipped.
+The translation job checks again before calling the model, so completed work
+is skipped if another enqueue has already filled the gap. MCP inputs remain
+unchanged and no additional client-supplied translation field is required.
+
 
 `get_vocabulary` (and the shared REST vocabulary query) additionally returns
 `id`, `last_reviewed_at`, and `next_review_at`. `update_vocabulary_practice`

@@ -1,4 +1,7 @@
 production:
+  backfill_missing_phrase_translations:
+    class: BackfillMissingPhraseTranslationsJob
+    schedule: every hour
   send_daily_challenges:
     class: SendDailyChallengesJob
     schedule: every 5 minutes
