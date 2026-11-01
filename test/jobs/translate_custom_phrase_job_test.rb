@@ -50,12 +50,14 @@ class TranslateCustomPhraseJobTest < ActiveJob::TestCase
 
   test "calls the supported provider model and persists its response" do
     chat = Minitest::Mock.new
+    chat.expect(:with_temperature, chat, [0.2])
+    chat.expect(:with_params, chat, reasoning_effort: "none")
     chat.expect(:with_instructions, chat) do |instructions|
       instructions.include?("Spanish") && instructions.include?("English")
     end
     chat.expect(:ask, Struct.new(:content).new("There is no time left."), [@phrase.text_l1])
     factory = ->(**options) {
-      assert_equal({model: "glm-5.3-flash:cloud", provider: :ollama, assume_model_exists: true}, options)
+      assert_equal({model: "deepseek-v4-pro:cloud", provider: :ollama, assume_model_exists: true}, options)
       chat
     }
     RubyLLM.stub(:chat, factory) do

@@ -4510,7 +4510,8 @@ existing translation and review state. The response includes the saved item ID.
 Custom vocabulary saves (both MCP and manual entry) enqueue
 `TranslateCustomPhraseJob` when the phrase lacks a translation in the requested
 target language. The job uses the existing RubyLLM/Ollama credentials with
-`glm-5.3-flash:cloud` (the former DeepSeek Flash model was retired) to translate the full sentence asynchronously, retries
+`deepseek-v4-pro:cloud`, temperature 0.2 and reasoning effort `none`, matching
+the course pipeline translation model/settings, to translate the full sentence asynchronously. It retries
 temporary failures, and saves a `PhraseTranslation` without overwriting an
 existing translation. Enqueueing waits for the save transaction to commit.
 Repeated saves of older items also enqueue missing translations.
