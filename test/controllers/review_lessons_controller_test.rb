@@ -20,7 +20,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert lesson.reload.review_started?
     assert_not_nil lesson.review_started_at
-    assert_select ".activity-stepnav a[href='#{root_path}']", count: 1
+    assert_select ".activity-stepnav form[action='#{close_review_lessons_path(lesson_id: lesson.id)}'][method='post']", count: 1
     assert_select "[data-controller~='main-video-player'][data-action*='flashcard-activity:card-change->main-video-player#configureSegment']"
     assert_select "[data-controller~='main-video-player'][data-action*='write-missing-word-activity:card-change->main-video-player#configureSegment']"
     assert_select "#main-player.hidden[data-main-video-player-target='playerContainer']"
@@ -47,13 +47,67 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     assert @user.lessons.review_lessons.last.review_started?
   end
 
-  test "show resumes a started review" do
+  test "activity navigation keeps the started review" do
     lesson = pending_review
     lesson.update!(review_build_status: :started)
 
-    get review_lessons_url(language_code: @english.iso_name)
+    assert_no_difference("Lesson.count") do
+      get review_lessons_url(language_code: @english.iso_name, a: 1)
+    end
 
     assert_response :success
+    assert lesson.reload.review_started?
+  end
+
+  test "close queues a replacement immediately and preserves recall results" do
+    entry, activity = recall_entry
+    post recall_review_lessons_url, params: { activity_id: activity.id, phrase_token_id: entry.phrase_token_id, remembered: true }, as: :json
+    due_at = entry.reload.next_review_at
+    other_language_review = pending_review(language: languages(:arabic))
+    other_language_review.update!(review_build_status: :started)
+
+    assert_no_difference("LessonUser.count") do
+      assert_enqueued_with(job: BuildReviewLessonJob, args: [ @user.id, @english.id ]) do
+        post close_review_lessons_url(lesson_id: activity.lesson_id)
+      end
+    end
+    assert_redirected_to root_path
+    assert activity.lesson.reload.review_expired?
+    perform_enqueued_jobs(only: BuildReviewLessonJob)
+    prepared = @user.current_review_lesson(@english.iso_name)
+    assert prepared.review_pending?
+    assert_no_difference("Lesson.count") do
+      get review_lessons_url(language_code: @english.iso_name)
+    end
+    assert_response :success
+    replacement = @user.current_review_lesson(@english.iso_name)
+    assert_not_equal activity.lesson_id, replacement.id
+    assert replacement.review_started?
+    assert_equal due_at, entry.reload.next_review_at
+    assert other_language_review.reload.review_started?
+  end
+
+  test "background close is idempotent and cannot close another user's review" do
+    lesson = pending_review
+    lesson.update!(review_build_status: :started)
+    post close_review_lessons_url(lesson_id: lesson.id), params: { background: "true" }
+    assert_response :no_content
+    assert_no_enqueued_jobs(only: BuildReviewLessonJob) do
+      post close_review_lessons_url(lesson_id: lesson.id), params: { background: "true" }
+    end
+    assert_response :no_content
+    lesson.update!(user: @other_user)
+    post close_review_lessons_url(lesson_id: lesson.id)
+    assert_response :not_found
+  end
+
+  test "close does not expire a completed review" do
+    lesson = pending_review
+    lesson.update!(review_build_status: :finished)
+    assert_no_enqueued_jobs(only: BuildReviewLessonJob) do
+      post close_review_lessons_url(lesson_id: lesson.id)
+    end
+    assert lesson.reload.review_finished?
   end
 
   test "show only uses the requested language's current review" do

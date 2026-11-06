@@ -47,6 +47,22 @@ class ReviewLessonsController < ApplicationController
     render "lessons/finish"
   end
 
+  def close
+    current_user.with_lock do
+      lesson = current_user.lessons.review_lessons.find(params[:lesson_id])
+      if lesson.review_started?
+        lesson.update!(review_build_status: :expired)
+        current_user.refresh_review_lesson!(lesson.review_language)
+      end
+    end
+
+    if params[:background] == "true"
+      head :no_content
+    else
+      redirect_to root_path, status: :see_other
+    end
+  end
+
   def recall
     activity = current_user.activities.find(params[:activity_id])
     lesson = activity.lesson

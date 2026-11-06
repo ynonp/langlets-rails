@@ -6,12 +6,13 @@
 <% activity_params = @activity.activity_params.merge(is_review_lesson: true, recall_url: recall_review_lessons_path) %>
 
 <div class="h-dvh-safe min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 max-w-[480px] mx-auto w-full"
-    data-controller="main-video-player activity-navigation"
+    data-controller="main-video-player activity-navigation review-session"
+    data-review-session-close-url-value="<%= close_review_lessons_path(lesson_id: @lesson.id) %>"
     data-main-video-player-video-id-value=""
     data-main-video-player-hl-value=""
     data-main-video-player-preload-player-value="false"
     data-main-video-player-interactive-value="true"
-    data-action="flashcard-activity:card-change->main-video-player#configureSegment write-missing-word-activity:card-change->main-video-player#configureSegment"
+    data-action="pagehide@window->review-session#close turbo:before-visit@document->review-session#beforeVisit flashcard-activity:card-change->main-video-player#configureSegment write-missing-word-activity:card-change->main-video-player#configureSegment"
 >
   <%= render "shared/video_media_box", container_class: "hidden order-2" %>
 

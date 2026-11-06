@@ -151,6 +151,9 @@ application.register("progress-tracker", ProgressTrackerController)
 import ReadTranslatedActivityController from "./read_translated_activity_controller"
 application.register("read-translated-activity", ReadTranslatedActivityController)
 
+import ReviewSessionController from "./review_session_controller"
+application.register("review-session", ReviewSessionController)
+
 import ScrollIntoViewController from "./scroll_into_view_controller"
 application.register("scroll-into-view", ScrollIntoViewController)
 

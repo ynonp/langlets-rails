@@ -4325,8 +4325,18 @@ Users can save individual word/token translations they encounter during lessons 
   recall tokens with the currently eligible selection and rebuilds if they differ.
   Native daily cards also provision missing reviews for languages with saved
   practising words, so delayed background work does not hide practice.
+- Closing a started review posts its lesson ID to `POST /review_lessons/close`.
+  Under the user lock it marks that owned session `expired` and immediately
+  queues a replacement build; repeated close requests are harmless. Recall
+  results and activity XP remain saved, without lesson completion XP or a
+  review-completed event. A replacement can reuse unpractised words.
+- The existing X submits a regular POST and redirects Home. `review-session`
+  also sends a CSRF-authenticated beacon on `pagehide` or a Turbo visit leaving
+  the review. Activity navigation and normal completion are excluded. Native
+  dismissals do not guarantee a browser event, so X is the reliable explicit
+  close action. Merely backgrounding the app does not close the session.
 - `CleanupExpiredReviewLessonsJob` runs daily and destroys only `expired`
-  reviews. Started reviews are never removed by cleanup.
+  reviews, including abandoned sessions.
 
 ### New Activity Type
 
