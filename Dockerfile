@@ -51,8 +51,8 @@ RUN bundle install && \
     bundle exec bootsnap precompile --gemfile
 
 # Install node modules
-COPY package.json ./
-RUN npm install --immutable
+COPY package.json package-lock.json ./
+RUN npm ci
 
 # Copy application code
 COPY . .
@@ -61,7 +61,7 @@ COPY . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 SKIP_YARN_INSTALL=1 ./bin/rails assets:precompile
 
 
 RUN rm -rf node_modules

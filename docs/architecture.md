@@ -43,6 +43,10 @@ depend on a persistent third-party container registry. PostgreSQL 17 is a Kamal
 accessory on the same private Docker network, persists in its `data` accessory
 directory, and does not publish port 5432 on the host.
 
+The Docker build installs JavaScript dependencies with `npm ci` using the
+committed `package-lock.json`. Asset precompilation sets `SKIP_YARN_INSTALL=1`
+to reuse that installation for both JavaScript and CSS builds.
+
 Production deploys run automatically from `.github/workflows/deploy.yml` after
 each push to `main`, and can also be started manually using GitHub Actions'
 **Run workflow** control. The deploy workflow uses Ubuntu 24.04 because the pinned Ruby 3.3.5 is
