@@ -33,9 +33,7 @@ module App
 
     def filtered_published_scope
       scope = case @filter
-      when "failed", "pending"
-        @visible_items_scope.none
-      when "playlists"
+      when "failed", "pending", "playlists"
         @visible_items_scope.none
       when "my_imports"
         @visible_items_scope.where(courses: { id: current_user.ready_imported_course_ids })
