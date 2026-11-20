@@ -100,6 +100,9 @@ application.register("homepage-filter", HomepageFilterController)
 import HomepageVideoPickerController from "./homepage_video_picker_controller"
 application.register("homepage-video-picker", HomepageVideoPickerController)
 
+import HowItWorksController from "./how_it_works_controller"
+application.register("how-it-works", HowItWorksController)
+
 import ImportSubmitController from "./import_submit_controller"
 application.register("import-submit", ImportSubmitController)
 

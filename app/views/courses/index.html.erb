@@ -93,7 +93,11 @@
   /* Library */
   .lp-library { background:var(--dark); color:var(--dark-fg); padding:72px 40px 80px; }
   .lp-lib-inner { max-width:1100px; margin:0 auto; }
+  .lp-try-heading { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:40px; line-height:1.05;
+    letter-spacing:-0.03em; margin:0 0 20px; color:var(--dark-fg); text-wrap:balance; }
   .lp-try-form { max-width:680px; margin-bottom:24px; }
+  #try { scroll-margin-top:16px; }
+  @media (prefers-reduced-motion: no-preference) { html:has(.lp) { scroll-behavior:smooth; } }
   .lp-try-label { margin:0 0 12px; color:var(--dark-fg); font-size:20px; line-height:1.4; font-weight:700; }
   .lp-try-form .lp-paste { border-color:#5A5245; }
   .lp-try-or { max-width:800px; color:var(--dark-fg); margin:0 0 22px; font-size:18px; line-height:1.5; }
@@ -139,6 +143,7 @@
     .lp-hero { grid-template-columns:1fr; gap:36px; padding:24px 20px 40px; }
     .lp-h1 { font-size:38px; }
     .lp-library { padding:56px 20px 64px; }
+    .lp-try-heading { font-size:30px; }
     .lp-footer { padding:24px 20px; }
   }
   @media (max-width:560px) {
@@ -194,9 +199,12 @@
     </div>
   </header>
 
+  <%= render "courses/how_it_works" %>
+
   <!-- Try now -->
   <section id="try" class="lp-library" data-controller="homepage-video-picker">
     <div class="lp-lib-inner">
+      <h2 class="lp-try-heading"><%= t(".try_now.heading") %></h2>
       <%= form_with url: try_path, method: :get, data: { turbo: false }, class: "lp-try-form" do %>
         <p class="lp-try-label"><%= t(".try_now.paste_prompt") %></p>
         <div class="lp-paste">

@@ -611,6 +611,26 @@ es:
       log_in: Iniciar sesión
   courses:
     sign_in_to_view: Inicia sesión para ver este Langlet.
+    how_it_works:
+      cta: "Pruébalo con tu propio vídeo →"
+      kicker: "Cómo funciona"
+      heading: "De un vídeo a un curso completo"
+      subhead: "Pega un enlace y Langlets hace el resto: esto es lo que le pasa a tu vídeo."
+      stage:
+        lesson: "Lección %{number}"
+      steps:
+        transcribe:
+          title: "Transcribe y traduce todo el vídeo"
+          body: "Cada frase que se dice se escribe y se traduce a tu idioma, sincronizada con el momento en que se pronuncia."
+        split:
+          title: "Divide en lecciones"
+          body: "La transcripción se divide en líneas cortas y se agrupa en lecciones con título, cada una unos momentos del vídeo que terminas en minutos."
+        words:
+          title: "Traduce cada palabra"
+          body: "Cada palabra tiene su propia traducción en contexto, así que puedes tocar cualquiera que no conozcas mientras miras."
+        practice:
+          title: "Practica en pasos pequeños"
+          body: "Cada lección se convierte en ejercicios rápidos hechos con el propio clip, como completar la palabra que falta mientras suena la escena."
     translation:
       offer: Este curso se creó en %{existing_language}, pero tu interfaz ahora está
         en %{interface_language}. ¿Lo quieres también en %{interface_language}?
@@ -676,6 +696,7 @@ es:
         browse_all: Explorar todos los Langlets
       try_now:
         paste_prompt: Pega cualquier enlace de YouTube o TikTok para crear una lección
+        heading: "Ahora pruébalo con un vídeo que te encante"
         url_placeholder: Pega un enlace de YouTube o TikTok
         url_label: Enlace del vídeo
         submit: Crear mi langlet

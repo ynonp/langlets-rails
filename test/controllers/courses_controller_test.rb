@@ -306,6 +306,45 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_operator body.index('id="try"'), :<, body.index('class="lp-footer"')
   end
 
+  test "homepage explains how Langlets works right after the hero" do
+    get root_url
+
+    assert_response :success
+    assert_select "section#how-it-works[data-controller='how-it-works']" do
+      assert_select "h2", text: "From one video to a full course"
+      assert_select ".lp-hiw-step", count: 4
+      assert_select ".lp-hiw-title", text: "Transcribe & translate the whole video"
+      assert_select ".lp-hiw-title", text: "Split it into lessons"
+      assert_select ".lp-hiw-title", text: "Translate every word"
+      assert_select ".lp-hiw-title", text: "Practice in small bites"
+      %w[transcribe split words practice].each do |scene|
+        assert_select ".hiw-frame[aria-hidden='true'] [data-how-it-works-target='stage'][data-scene=?]", scene, count: 1
+      end
+      # Stages are server-rendered in their finished state for no-JS and reduced motion.
+      assert_select ".hiw-split.is-lines.is-rows .hiw-block.is-on", count: 3
+      assert_select ".hiw-split .hiw-block-title", text: "Saludos de la mañana"
+      assert_select ".hiw-transcribe .hiw-l1", text: "¡Buenos días! ¿Dormiste bien?"
+      assert_select ".hiw-transcribe .hiw-l2", text: "Good morning! Did you sleep well?"
+      assert_select "a.lp-hiw-cta-link[href='#try']", text: "Try it with your own video →"
+      assert_select ".hiw-split .hiw-track .hiw-seg.is-on", count: 3
+      assert_select ".hiw-practice.is-practice.is-solved .hiw-btn-check", text: "Check"
+    end
+
+    body = response.body
+    assert_operator body.index('class="lp-hero"'), :<, body.index('id="how-it-works"')
+    assert_operator body.index('id="how-it-works"'), :<, body.index('id="try"')
+    assert_select "#try h2.lp-try-heading", text: "Now try it with a video you love"
+  end
+
+  test "homepage how it works section is localized on the Hebrew site" do
+    host! "he.langlets.app"
+    get root_path
+
+    assert_response :success
+    assert_select "#how-it-works h2", text: "מסרטון אחד לקורס שלם"
+    assert_select "#how-it-works .hiw-block-chip", text: "שיעור 1"
+  end
+
   test "homepage Try now examples are unchanged when a language is selected" do
     french_course = create_public_course!(
       name: "French homepage course",

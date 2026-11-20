@@ -1,0 +1,382 @@
+<%#
+  "How Langlets works" — four animated illustrations of the pipeline, placed
+  right after the homepage hero. The server renders every illustration in its
+  FINAL state, so visitors without JavaScript (or with reduced motion) still
+  see what each step produces. how_it_works_controller.js resets each stage
+  and replays its timeline while the stage is on screen.
+
+  The sample is deliberately fixed: an English clip translated to Hebrew, the
+  same pair on every locale. Only the chrome around it (step copy, exercise
+  buttons) is localized. The illustration markup mirrors the real lesson UI:
+  shared/_video_transcript_phrases (phrase rows, dotted tokens, active
+  highlight) and activities/_write_missing_word_activity (blank + gloss,
+  input, Check/Hint).
+%>
+<%
+  hiw_phrases = [
+    { source: "¡Buenos días! ¿Dormiste bien?", translation: "Good morning! Did you sleep well?" },
+    { source: "No mucho, los vecinos hicieron ruido.", translation: "Not much, the neighbors were loud." },
+    { source: "Tomemos un café antes del trabajo.", translation: "Let's have a coffee before work." },
+    { source: "Buena idea, conozco este lugar.", translation: "Good idea, I know this place." },
+    { source: "¿Está lejos de aquí?", translation: "Is it far from here?" },
+    { source: "Está a la vuelta de la esquina.", translation: "It's just around the corner." }
+  ]
+  hiw_lessons = hiw_phrases.each_slice(2).to_a
+  hiw_lesson_words = [
+    [ [ "Tomemos", "let's have" ], [ "un", "a" ], [ "café", "coffee" ], [ "antes", "before" ], [ "del", "of the" ], [ "trabajo.", "work" ] ],
+    [ [ "Buena", "good" ], [ "idea,", "idea" ], [ "conozco", "I know" ], [ "este", "this" ], [ "lugar.", "place" ] ]
+  ]
+  # Titles are what the addLessons pipeline step writes for each group (in the
+  # clip's language); seconds size each lesson's slice of the video timeline.
+  hiw_lesson_meta = [
+    { title: "Saludos de la mañana", color: "#10B981", tint: "rgba(16,185,129,.08)", seconds: 7 },
+    { title: "Un café antes del trabajo", color: "#C4451C", tint: "rgba(196,69,28,.07)", seconds: 8 },
+    { title: "¿Dónde está?", color: "#2563EB", tint: "rgba(37,99,235,.07)", seconds: 6 }
+  ]
+  hiw_steps = %w[transcribe split words practice]
+%>
+
+<style>
+  .lp-hiw { padding:72px 40px 88px; border-top:1px solid #E4DCCC; }
+  .lp-hiw-inner { max-width:1100px; margin:0 auto; }
+  .lp-hiw-kicker { margin:0 0 10px; color:var(--accent); font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+  .lp-hiw-h2 { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:42px; line-height:1.05;
+    letter-spacing:-0.03em; margin:0 0 12px; text-wrap:balance; }
+  .lp-hiw-sub { margin:0 0 56px; max-width:620px; color:var(--muted); font-size:17px; line-height:1.55; text-wrap:pretty; }
+  .lp-hiw-steps { display:flex; flex-direction:column; gap:72px; margin:0; padding:0; list-style:none; }
+  .lp-hiw-step { display:grid; grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr); gap:56px; align-items:center; }
+  .lp-hiw-step:nth-child(even) { grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr); }
+  .lp-hiw-step:nth-child(even) .lp-hiw-copy { order:2; }
+  .lp-hiw-num { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; margin-bottom:18px;
+    border:2px solid var(--ink); border-radius:50%; background:var(--card); box-shadow:3px 3px 0 var(--shadow);
+    font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:20px; }
+  .lp-hiw-title { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:30px; line-height:1.1;
+    letter-spacing:-0.02em; margin:0 0 12px; }
+  .lp-hiw-body { margin:0; color:var(--muted); font-size:17px; line-height:1.55; max-width:420px; text-wrap:pretty; }
+  .lp-hiw-cta { display:flex; justify-content:center; margin-top:72px; }
+  .lp-hiw-cta-link { display:inline-flex; align-items:center; padding:15px 32px; font-size:18px; border-radius:12px; color:var(--card); }
+  .lp-hiw-cta-link:hover { color:var(--card); }
+  .lp-hiw-cta-link:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  [dir="rtl"] .lp-hiw-num { box-shadow:-3px 3px 0 var(--shadow); }
+
+  /* ── Stage: a framed slice of the real lesson UI (Inter, emerald, gray) ── */
+  .hiw-frame { border:2px solid var(--ink); border-radius:18px; overflow:hidden; box-shadow:6px 6px 0 var(--shadow); background:#ECFDF5; }
+  [dir="rtl"] .hiw-frame { box-shadow:-6px 6px 0 var(--shadow); }
+  .hiw-stage { position:relative; height:380px; box-sizing:border-box; color:#111827;
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  .hiw-split-view { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); height:100%; }
+  .hiw-panel { position:relative; min-width:0; padding:18px 18px 16px; display:flex; flex-direction:column; gap:6px; overflow:hidden; }
+
+  /* Video: the app's black media box with a drawn café scene. */
+  .hiw-video { position:relative; min-height:0; overflow:hidden; background:#000; container-type:size; }
+  /* The scene keeps a 16:9 shape and covers the box (like object-fit:cover),
+     so the drawing never stretches while the box morphs between layouts. */
+  .hiw-scene { position:absolute; inset:0; }
+  .hiw-video .hiw-scene { inset:auto; left:50%; top:50%; width:max(100cqw, 177.78cqh); height:max(100cqh, 56.25cqw);
+    transform:translate(-50%, -50%); }
+  .hiw-scene {
+    background:
+      radial-gradient(circle at 76% 26%, #F4B860 0 9%, rgba(244,184,96,.25) 10% 19%, transparent 20%),
+      linear-gradient(180deg, #23314A 0%, #3B4762 58%, #3A2E25 58.5%, #241D17 100%); }
+  .hiw-window { position:absolute; top:12%; left:10%; width:34%; height:36%; border:3px solid #4C5874; border-radius:4px;
+    background:linear-gradient(180deg, #5B6E93, #7C8DAF); }
+  .hiw-window::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent 48%, #4C5874 48% 52%, transparent 52%); }
+  .hiw-person { position:absolute; bottom:24%; width:22%; height:34%; border-radius:42% 42% 10% 10%; }
+  .hiw-person::before { content:""; position:absolute; left:50%; bottom:100%; width:62%; aspect-ratio:1; margin-bottom:-6%;
+    transform:translateX(-50%); border-radius:50%; background:var(--skin); }
+  .hiw-person-a { left:16%; background:#C4451C; --skin:#E8C4A0; }
+  .hiw-person-b { right:16%; background:#10B981; --skin:#B9845E; }
+  .hiw-table { position:absolute; left:8%; right:8%; bottom:18%; height:9%; border-radius:6px; background:#8A6A4A; box-shadow:0 6px 0 #5F4630; }
+  .hiw-cup { position:absolute; bottom:27%; width:6%; height:8%; border-radius:2px 2px 6px 6px; background:#FAF6EF; }
+  .hiw-cup-a { left:34%; } .hiw-cup-b { right:34%; }
+  .hiw-cc { position:absolute; top:10px; left:10px; padding:1px 5px; border:2px solid #10B981; border-radius:5px;
+    color:#10B981; font-size:10px; font-weight:800; letter-spacing:.04em; }
+  .hiw-video-bar { position:absolute; left:12px; right:12px; bottom:10px; height:4px; border-radius:2px; background:rgba(255,255,255,.28); }
+  .hiw-video-progress { position:absolute; inset:0; border-radius:2px; background:#10B981; transform-origin:left center; transform:scaleX(1); }
+  .is-animated .hiw-video-progress { transition:transform 1.2s linear; }
+  .hiw-stage.is-playing .hiw-person-a { animation:hiw-talk 0.9s ease-in-out infinite; }
+  .hiw-stage.is-playing .hiw-person-b { animation:hiw-talk 1.1s ease-in-out .45s infinite; }
+  @keyframes hiw-talk { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3%); } }
+
+  /* Phrase rows, as in shared/_video_transcript_phrases. */
+  .hiw-phrase { border-radius:12px; padding:7px 10px; transition:background-color 250ms ease, opacity 300ms ease; }
+  .hiw-phrase.is-active { background:#D1FAE5; }
+  .hiw-l1 { font-size:15px; font-weight:800; line-height:1.35; }
+  .hiw-l2 { font-size:14px; font-weight:600; line-height:1.4; color:#6B7280; margin-top:2px; }
+
+  /* Typewriter: the untyped remainder stays in the flow (transparent) so the
+     layout never jumps while text is being written. */
+  .hiw-ghost { color:transparent; }
+  .is-typing > .hiw-typed::after { content:""; display:inline-block; width:2px; height:1em; margin-inline-end:-2px;
+    vertical-align:-0.15em; background:#10B981; animation:hiw-caret .8s steps(1) infinite; }
+  @keyframes hiw-caret { 50% { opacity:0; } }
+
+  /* Step 1 */
+  .hiw-transcribe .hiw-phrase.is-hidden { opacity:0; }
+
+  /* Step 2 — one continuous transcript → lines → lesson groups → the course
+     page's lesson rows. Stage classes advance the phases: (none) paragraph,
+     .is-lines, then .is-on per block, then .is-rows. */
+  .hiw-split { padding:16px 18px; display:flex; flex-direction:column; gap:12px; }
+  .hiw-timeline { display:flex; align-items:center; gap:10px; flex:none; }
+  .hiw-thumb { width:34px; height:20px; border-radius:4px; position:relative; overflow:hidden; flex:none; }
+  .hiw-track { flex:1; display:flex; height:6px; }
+  .hiw-seg { height:100%; background:#10B981; transition:background-color 450ms ease, margin 450ms ease; }
+  .hiw-seg:first-child { border-radius:3px 0 0 3px; } .hiw-seg:last-child { border-radius:0 3px 3px 0; }
+  .hiw-seg.is-on { background:var(--c); border-radius:3px; }
+  .hiw-seg.is-on:not(:last-child) { margin-right:4px; }
+  .hiw-duration { font-size:11px; font-weight:700; color:#6B7280; }
+
+  .hiw-transcript { margin-block:auto; display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:700; line-height:1.55; }
+  .hiw-split:not(.is-lines) .hiw-transcript { display:block; }
+  .hiw-split:not(.is-lines) .hiw-block, .hiw-split:not(.is-lines) .hiw-block-lines { display:contents; }
+  .hiw-split:not(.is-lines) .hiw-block-head, .hiw-split:not(.is-lines) .hiw-block::before { display:none; }
+  .hiw-line { display:inline-block; }
+  .is-lines .hiw-line { display:block; }
+
+  .hiw-block { position:relative; padding:6px 12px; border-radius:12px; --c:#10B981; --tint:transparent;
+    transition:background-color 500ms ease, box-shadow 500ms ease, padding 500ms ease, border-radius 500ms ease; }
+  .hiw-block.is-on { background:var(--tint); }
+  .hiw-block::before { content:""; position:absolute; inset:0; border:2px solid var(--c); border-radius:inherit;
+    clip-path:inset(0 100% 100% 0); transition:clip-path 650ms cubic-bezier(.65,0,.35,1), border-color 500ms ease; pointer-events:none; }
+  .hiw-block.is-on::before { clip-path:inset(0 0 0 0); }
+  .hiw-block-head { display:flex; align-items:center; gap:10px; max-height:0; opacity:0; overflow:hidden;
+    transition:max-height 400ms ease, opacity 400ms ease, margin 400ms ease; }
+  .hiw-block.is-on .hiw-block-head { max-height:48px; opacity:1; margin-bottom:4px; }
+  .hiw-block-meta { display:flex; align-items:center; gap:8px; min-width:0; flex:1; }
+  .hiw-block-chip { padding:3px 9px; border-radius:999px; background:var(--c); color:#fff; font-size:11px; font-weight:800;
+    white-space:nowrap; line-height:1.3; transition:background-color 400ms ease, color 400ms ease, padding 400ms ease; }
+  .hiw-block-title { font-size:13px; font-weight:800; color:var(--c); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    transition:color 400ms ease, font-size 400ms ease; }
+  .hiw-block-lines { max-height:140px; overflow:hidden; transition:max-height 450ms ease, opacity 300ms ease; }
+  .hiw-row-icon, .hiw-row-play { flex:none; width:0; opacity:0; overflow:hidden; display:flex; align-items:center; justify-content:center;
+    transition:width 400ms ease, opacity 400ms ease; }
+  .hiw-row-play { height:34px; border-radius:50%; background:#10B981; }
+
+  /* Final phase: each group becomes a lesson row from courses/_lesson_row. */
+  .hiw-split.is-rows .hiw-block { background:#fff; padding:9px 10px; border-radius:16px;
+    box-shadow:0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1); }
+  .hiw-split.is-rows .hiw-block:not(:first-child)::before { border-color:transparent; }
+  .hiw-split.is-rows .hiw-block-head { margin-bottom:0; }
+  .hiw-split.is-rows .hiw-block-lines { max-height:0; opacity:0; }
+  .hiw-split.is-rows .hiw-block-meta { flex-direction:column; align-items:flex-start; gap:1px; }
+  .hiw-split.is-rows .hiw-block-title { order:-1; font-size:15.5px; color:#111827; }
+  .hiw-split.is-rows .hiw-block-chip { background:transparent; color:#6B7280; padding:0; font-size:12px; font-weight:600; }
+  .hiw-split.is-rows .hiw-row-icon { width:26px; opacity:1; }
+  .hiw-split.is-rows .hiw-row-play { width:34px; opacity:1; }
+
+  /* Step 3 — word-level translations */
+  .hiw-words { padding:20px 22px; display:flex; flex-direction:column; }
+  .hiw-words-body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:18px; padding-bottom:28px; }
+  .hiw-words-head { display:flex; align-items:center; gap:10px; }
+  .hiw-words-title { font-size:13px; font-weight:800; color:#C4451C; }
+  .hiw-words-phrase { display:flex; flex-wrap:wrap; gap:12px 8px; padding:0 8px; }
+  .hiw-tok { display:inline-flex; flex-direction:column; align-items:center; gap:6px; }
+  .hiw-tok-word { font-size:24px; font-weight:800; line-height:1.3; padding:0 3px; border-radius:5px;
+    border-bottom:2.5px dotted #9CA3AF; transition:background-color 200ms ease, color 200ms ease, border-color 200ms ease; }
+  .hiw-tok.is-active .hiw-tok-word { background:#10B981; color:#fff; border-color:transparent; }
+  .hiw-tok.is-done .hiw-tok-word, .hiw-words:not(.is-animated) .hiw-tok-word { border-bottom:2.5px solid #10B981; }
+  .hiw-gloss { min-height:1.4em; font-size:15px; font-weight:600; color:#047857; line-height:1.4; white-space:nowrap; }
+
+  /* Step 4 — lesson → fill in the blank */
+  .hiw-practice .hiw-video, .hiw-practice .hiw-focus { will-change:transform; }
+  .hiw-practice .hiw-meta, .hiw-practice .hiw-exercise, .hiw-practice .hiw-feedback { display:none; }
+  .hiw-practice.is-practice .hiw-split-view { grid-template-columns:minmax(0,1fr); grid-template-rows:42% minmax(0,1fr); }
+  .hiw-practice.is-practice .hiw-panel { padding:12px 18px 14px; gap:8px; background:#F9FAFB; }
+  .hiw-practice.is-practice .hiw-fade { display:none; }
+  .hiw-practice.is-practice .hiw-meta { display:block; font-size:11.5px; color:#6B7280; }
+  .hiw-practice.is-practice .hiw-focus { background:transparent; text-align:center; padding:2px 4px 0; }
+  .hiw-practice.is-practice .hiw-focus .hiw-l1 { font-size:20px; font-weight:600; }
+  .hiw-practice.is-practice .hiw-exercise { display:flex; }
+  .hiw-practice .hiw-fade { transition:opacity 350ms ease; }
+  .hiw-practice.is-fading .hiw-fade { opacity:0; }
+  .hiw-meta, .hiw-exercise { animation:hiw-rise 450ms ease both; }
+  @keyframes hiw-rise { from { opacity:0; transform:translateY(8px); } }
+
+  .hiw-missing { display:inline-flex; flex-direction:column; align-items:center; vertical-align:top; line-height:inherit; }
+  .hiw-slot { display:inline-block; min-width:0; text-align:center; border-bottom:3px solid transparent;
+    transition:min-width 450ms ease, border-color 300ms ease, color 300ms ease, filter 300ms ease, opacity 300ms ease; }
+  .hiw-missing-gloss { max-height:0; opacity:0; overflow:hidden; font-size:13px; font-style:italic; font-weight:400; color:#6B7280;
+    line-height:1.4; transition:max-height 400ms ease, opacity 400ms ease, margin 400ms ease; }
+  .hiw-stage.is-vanishing .hiw-slot { color:transparent; filter:blur(6px); opacity:0; }
+  .hiw-stage.is-blank .hiw-slot { color:transparent; filter:none; opacity:1; min-width:4.6em; border-bottom-color:#6B7280; }
+  .hiw-stage.is-blank .hiw-missing-gloss { max-height:2em; opacity:1; margin-top:4px; }
+  .hiw-stage.is-solved .hiw-slot { color:#059669; border-bottom-color:#10B981; text-shadow:0 0 14px rgb(52 211 153 / .6);
+    animation:hiw-reveal 650ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+  @keyframes hiw-reveal { 0% { transform:scale(.35) rotate(-6deg); } 55% { transform:scale(1.08) rotate(2deg); } 100% { transform:none; } }
+
+  .hiw-exercise { flex-direction:column; gap:7px; margin-top:auto; }
+  .hiw-input { position:relative; display:flex; align-items:center; min-height:36px; padding:0 12px; border-radius:8px;
+    background:#fff; border:1px solid #E5E7EB; font-size:14px; transition:border-color 200ms ease; }
+  .hiw-input.has-value { border-color:#10B981; }
+  .hiw-input-placeholder { position:absolute; inset-inline:12px; color:#9CA3AF; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .hiw-input.has-value .hiw-input-placeholder { display:none; }
+  .hiw-buttons { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+  .hiw-btn { min-height:36px; display:flex; align-items:center; justify-content:center; border-radius:8px; font-size:14px;
+    transition:transform 120ms ease, background-color 120ms ease; }
+  .hiw-btn-check { background:#10B981; color:#fff; font-weight:700; }
+  .hiw-btn-check.is-pressed { background:#059669; transform:scale(.96); }
+  .hiw-btn-hint { background:#fff; border:1px solid #E5E7EB; font-weight:500; }
+  .hiw-practice.is-solved .hiw-feedback { display:block; }
+  .hiw-feedback { font-size:13px; font-weight:600; color:#059669; text-align:center; animation:hiw-rise 300ms ease both; }
+
+  @media (max-width:860px) {
+    .lp-hiw { padding:56px 20px 64px; }
+    .lp-hiw-h2 { font-size:32px; }
+    .lp-hiw-sub { margin-bottom:40px; }
+    .lp-hiw-steps { gap:56px; }
+    .lp-hiw-step, .lp-hiw-step:nth-child(even) { grid-template-columns:1fr; gap:22px; }
+    .lp-hiw-step:nth-child(even) .lp-hiw-copy { order:0; }
+    .lp-hiw-title { font-size:26px; }
+    .lp-hiw-cta { margin-top:48px; }
+  }
+  @media (max-width:560px) {
+    .hiw-stage { height:440px; }
+    .hiw-panel { padding:14px 12px 12px; }
+    .hiw-l1 { font-size:13.5px; }
+    .hiw-l2 { font-size:12.5px; }
+    .hiw-split { padding:14px 12px; }
+    .hiw-words { padding:16px 12px; }
+    .hiw-words-phrase { gap:10px 4px; padding:0 2px; }
+    .hiw-tok-word { font-size:16px; padding:0 2px; }
+    .hiw-gloss { font-size:12px; }
+    /* Phones show the lesson the way the app does: video on top, transcript below. */
+    .hiw-split-view { grid-template-columns:minmax(0,1fr); grid-template-rows:150px minmax(0,1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hiw-stage *, .hiw-stage *::before, .hiw-stage *::after { animation:none !important; transition:none !important; }
+  }
+</style>
+
+<section class="lp-hiw" id="how-it-works" aria-labelledby="lp-hiw-heading"
+         data-controller="how-it-works">
+  <div class="lp-hiw-inner">
+    <p class="lp-hiw-kicker"><%= t(".kicker") %></p>
+    <h2 class="lp-hiw-h2" id="lp-hiw-heading"><%= t(".heading") %></h2>
+    <p class="lp-hiw-sub"><%= t(".subhead") %></p>
+
+    <ol class="lp-hiw-steps">
+      <% hiw_steps.each_with_index do |step, index| %>
+        <li class="lp-hiw-step">
+          <div class="lp-hiw-copy">
+            <span class="lp-hiw-num" aria-hidden="true"><%= index + 1 %></span>
+            <h3 class="lp-hiw-title"><%= t(".steps.#{step}.title") %></h3>
+            <p class="lp-hiw-body"><%= t(".steps.#{step}.body") %></p>
+          </div>
+
+          <div class="hiw-frame" aria-hidden="true">
+            <% case step %>
+            <% when "transcribe" %>
+              <div class="hiw-stage hiw-transcribe" data-how-it-works-target="stage" data-scene="transcribe">
+                <div class="hiw-split-view">
+                  <%= render "courses/how_it_works_video" %>
+                  <div class="hiw-panel">
+                    <% hiw_phrases.first(4).each do |phrase| %>
+                      <div class="hiw-phrase">
+                        <div class="hiw-l1" dir="ltr" data-type><%= phrase[:source] %></div>
+                        <div class="hiw-l2" dir="ltr" data-type><%= phrase[:translation] %></div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+            <% when "split" %>
+              <div class="hiw-stage hiw-split is-lines is-rows" data-how-it-works-target="stage" data-scene="split">
+                <div class="hiw-timeline" dir="ltr">
+                  <span class="hiw-thumb"><span class="hiw-scene"></span></span>
+                  <span class="hiw-track">
+                    <% hiw_lesson_meta.each do |meta| %>
+                      <span class="hiw-seg is-on" style="--c:<%= meta[:color] %>; flex:<%= meta[:seconds] %>"></span>
+                    <% end %>
+                  </span>
+                  <span class="hiw-duration">0:<%= hiw_lesson_meta.sum { |meta| meta[:seconds] } %></span>
+                </div>
+                <div class="hiw-transcript" dir="ltr">
+                  <% hiw_lessons.each_with_index do |lesson, lesson_index| %>
+                    <% meta = hiw_lesson_meta[lesson_index] %>
+                    <div class="hiw-block is-on" style="--c:<%= meta[:color] %>; --tint:<%= meta[:tint] %>">
+                      <div class="hiw-block-head">
+                        <span class="hiw-row-icon">
+                          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="#D1D5DB" stroke-width="2"/></svg>
+                        </span>
+                        <span class="hiw-block-meta">
+                          <span class="hiw-block-chip" dir="auto"><%= t(".stage.lesson", number: lesson_index + 1) %></span>
+                          <span class="hiw-block-title" data-type><%= meta[:title] %></span>
+                        </span>
+                        <span class="hiw-row-play">
+                          <svg width="14" height="14" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg>
+                        </span>
+                      </div>
+                      <div class="hiw-block-lines">
+                        <% lesson.each do |phrase| %>
+                          <span class="hiw-line"><%= phrase[:source] %></span>
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+
+            <% when "words" %>
+              <div class="hiw-stage hiw-words" data-how-it-works-target="stage" data-scene="words">
+                <div class="hiw-words-head">
+                  <span class="hiw-thumb"><span class="hiw-scene"></span></span>
+                  <span class="hiw-block-chip" style="--c:<%= hiw_lesson_meta[1][:color] %>"><%= t(".stage.lesson", number: 2) %></span>
+                  <span class="hiw-words-title" dir="ltr"><%= hiw_lesson_meta[1][:title] %></span>
+                </div>
+                <div class="hiw-words-body">
+                <% hiw_lesson_words.each do |words| %>
+                  <div class="hiw-words-phrase" dir="ltr">
+                    <% words.each do |word, gloss| %>
+                      <span class="hiw-tok">
+                        <span class="hiw-tok-word"><%= word %></span>
+                        <span class="hiw-gloss" dir="ltr" data-type><%= gloss %></span>
+                      </span>
+                    <% end %>
+                  </div>
+                <% end %>
+                </div>
+              </div>
+
+            <% when "practice" %>
+              <div class="hiw-stage hiw-practice is-practice is-blank is-solved" data-how-it-works-target="stage" data-scene="practice">
+                <div class="hiw-split-view">
+                  <%= render "courses/how_it_works_video" %>
+                  <div class="hiw-panel">
+                    <p class="hiw-meta"><%= t("js.write_missing_word.question_of", current: 1, total: 5) %></p>
+                    <div class="hiw-phrase hiw-focus is-active">
+                      <div class="hiw-l1" dir="ltr">Tomemos un
+                        <span class="hiw-missing"><span class="hiw-slot">café</span><span class="hiw-missing-gloss" dir="ltr">coffee</span></span>
+                        antes del trabajo.</div>
+                      <div class="hiw-l2 hiw-fade" dir="ltr"><%= hiw_phrases[2][:translation] %></div>
+                    </div>
+                    <div class="hiw-phrase hiw-fade">
+                      <div class="hiw-l1" dir="ltr"><%= hiw_phrases[3][:source] %></div>
+                      <div class="hiw-l2" dir="ltr"><%= hiw_phrases[3][:translation] %></div>
+                    </div>
+                    <div class="hiw-exercise">
+                      <div class="hiw-input has-value" dir="ltr">
+                        <span class="hiw-input-placeholder" dir="auto"><%= t("js.write_missing_word.placeholder") %></span>
+                        <span class="hiw-input-text" data-type>café</span>
+                      </div>
+                      <div class="hiw-buttons">
+                        <span class="hiw-btn hiw-btn-check"><%= t("js.write_missing_word.check") %></span>
+                        <span class="hiw-btn hiw-btn-hint"><%= t("js.write_missing_word.hint") %></span>
+                      </div>
+                      <p class="hiw-feedback"><%= t("js.write_missing_word.correct", answer: "café") %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+
+    <div class="lp-hiw-cta">
+      <a href="#try" class="lp-create lp-hiw-cta-link"><%= t(".cta") %></a>
+    </div>
+  </div>
+</section>

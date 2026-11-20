@@ -912,7 +912,42 @@ Sections, all wired to real data:
   `public/product.png` product preview. All remain visible at the mobile breakpoint.
   On the Hebrew site, the Android and iPhone download badges share one row and
   use compact sizing on narrow screens so the longer localized labels still fit.
-- **"Try now"** — the dark section starts directly with a URL field for any
+- **How it works** (`courses/_how_it_works`, `#how-it-works`) — sits directly
+  after the hero. Four numbered steps (transcribe & translate, split into
+  lessons, translate every word, practice) alternate copy and an animated stage.
+  Each stage is hand-built HTML that copies the real lesson UI (Inter, emerald
+  accents, the phrase rows and dotted tokens from
+  `shared/_video_transcript_phrases`, and the blank, gloss, input and
+  Check/Hint buttons from `activities/_write_missing_word_activity`). It is not
+  rendered from those partials, so if the lesson UI changes a lot, update these
+  stages too. The "video" is a drawn café scene (`courses/_how_it_works_video`)
+  that keeps a 16:9 shape and covers its box through container-query units.
+  The sample dialogue is a fixed Spanish clip with an English translation on
+  every locale, matching the hero's product image (Spanish → English). Lesson
+  titles are in Spanish, as `addLessons` writes titles in the clip language.
+  Only the step copy and exercise chrome are localized, under
+  `courses.how_it_works.*` plus the existing `js.write_missing_word.*` keys. The server renders every
+  stage in its **finished** state, which is what no-JS and
+  `prefers-reduced-motion` visitors see. `how_it_works_controller.js` resets
+  each stage and loops its timeline only while that stage is on screen
+  (IntersectionObserver). Leaving the viewport or disconnecting cancels the
+  run. Step 1 plays in two passes, the way the pipeline works: the whole
+  Spanish transcript is typed while the video plays, and only then is each line
+  translated. Step 2 follows the `addLessons` step: one continuous transcript
+  breaks into short lines (FLIP), lines are boxed into colour-coded lessons as
+  the video timeline above is cut into matching segments, each lesson's title
+  is typed, and the boxes settle into `courses/_lesson_row`-style rows (state
+  ring, title, "Lesson N", green play button). The lesson titles and colours
+  live in `hiw_lesson_meta`, and step 3 reuses Lesson 2's title and colour.
+  Typed text keeps its untyped remainder as transparent text so nothing
+  reflows. Step 4 morphs from lesson layout to exercise layout with a FLIP
+  animation. Below 560px, steps 1 and 4 stack the video above the transcript,
+  as the app does on phones. The section ends with a "Try it with your own
+  video" button (`courses.how_it_works.cta`) that smooth-scrolls to `#try`
+  (smooth scrolling is turned off under `prefers-reduced-motion`).
+- **"Try now"** — the dark section opens with a heading
+  (`courses.index.try_now.heading`, "Now try it with a video you love") that
+  follows on from How it works, then a URL field for any
   YouTube or TikTok link and a fresh random sample of up to eight examples from
   `config/homepage_videos.yml` on every page load.
   Submitting the form leads to `/try?url=…`; selecting an example only copies

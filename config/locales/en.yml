@@ -609,6 +609,26 @@ en:
       log_in: "Log in"
   courses:
     sign_in_to_view: "Sign in to view this Langlet."
+    how_it_works:
+      cta: "Try it with your own video →"
+      kicker: "How it works"
+      heading: "From one video to a full course"
+      subhead: "Paste a link and Langlets does the rest — here is what happens to your video."
+      stage:
+        lesson: "Lesson %{number}"
+      steps:
+        transcribe:
+          title: "Transcribe & translate the whole video"
+          body: "Every line that is spoken is written down and translated into your language, synced to the moment it is said."
+        split:
+          title: "Split it into lessons"
+          body: "The transcript is broken into short lines and grouped into titled lessons, each a few moments of the video you can finish in minutes."
+        words:
+          title: "Translate every word"
+          body: "Each word gets its own translation in context, so you can tap anything you don't know while you watch."
+        practice:
+          title: "Practice in small bites"
+          body: "Every lesson becomes quick exercises built from the clip itself — like filling in the missing word while the scene plays."
     translation:
       offer: "This course was created in %{existing_language}, but your interface is now %{interface_language}. Want it in %{interface_language} too?"
       action: "Yes, translate it!"
@@ -663,6 +683,7 @@ en:
         browse_all: "Browse All Langlets"
       try_now:
         paste_prompt: "Paste any YouTube or TikTok link to build"
+        heading: "Now try it with a video you love"
         url_placeholder: "Paste a YouTube or TikTok link"
         url_label: "Video link"
         submit: "Build my langlet"
