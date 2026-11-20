@@ -7,6 +7,22 @@ require "test_helper"
 # `queued` while the course is still `error`, or while a stale pipeline failure
 # sits in the shared record, looks retried and isn't.
 class ImportRequestTest < ActiveJob::TestCase
+  test "unsupported language feedback applies only to the specific failed detection" do
+    @request.update!(status: :failed, failure_reason: "pipeline https://pipeline.langlets.app returned 422: detected unsupported language: jpn")
+    assert @request.unsupported_language?
+    [:en, :he, :es].each do |locale|
+      I18n.with_locale(locale) do
+        assert_equal I18n.t("app.import_requests.status.failed_unsupported_language"), @request.failure_message
+      end
+    end
+    @request.failure_reason = "pipeline returned 500: connection failed"
+    assert_not @request.unsupported_language?
+    assert_equal I18n.t("app.import_requests.status.failed_no_credit"), @request.failure_message
+    @request.failure_reason = "detected unsupported language: jpn"
+    @request.status = :ready
+    assert_not @request.unsupported_language?
+  end
+
   test "duration rejection exposes its actionable message without pipeline diagnostics" do
     @request.update!(status: :failed, failure_reason: "pipeline http://pipeline:8000 returned 422: Video duration limit: Please choose a video that is 25 minutes or shorter.")
     assert_equal "Please choose a video that is 25 minutes or shorter.", @request.duration_failure_message

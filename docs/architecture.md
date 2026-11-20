@@ -4611,3 +4611,14 @@ The retained main webview therefore receives fresh progress while the lesson
 modal stays open, without routing a native visit or resetting the tab stack.
 This ships as a web change and needs no native rebuild. Failed or redirected
 fetches leave the existing page intact.
+
+
+### Unsupported video language feedback
+
+ImportRequest recognizes the pipeline's `detected unsupported language:` 422
+rejection, including historical failed requests. Web/native import cards and the
+native deeplink status page show localized guidance to choose a supported
+language and confirm that no credit was used. The card help text uses the same
+guidance instead of promising a human investigation. Technical failure reasons
+remain available to operators; detection, settlement and operational mail delivery
+are unchanged. No routes or native tab configuration change.

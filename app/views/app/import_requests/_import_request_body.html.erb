@@ -36,10 +36,8 @@
       <% end %>
       <div class="flex items-center gap-1.5">
         <%= app_icon "warning", class: "w-3.5 h-3.5 text-red-400" %>
-        <%# Two different failures needing two different next moves: one is ours
-            to fix, the other is theirs. %>
         <span class="text-red-400 text-xs font-semibold">
-          <%= import_request.insufficient_credits? ? t("app.import_requests.status.failed_insufficient_credits") : t("app.import_requests.status.failed_no_credit") %>
+          <%= import_request.failure_message %>
         </span>
       </div>
 
@@ -63,7 +61,7 @@
       </button>
       <span id="<%= tooltip_id %>" role="tooltip"
             class="pointer-events-none invisible absolute bottom-full end-0 z-20 mb-2 w-64 rounded-lg bg-slate-950 px-3 py-2 text-start text-xs font-medium leading-relaxed text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-        <%= t("app.import_requests.index.failed_help") %>
+        <%= (import_request.unsupported_language? ? import_request.failure_message : t("app.import_requests.index.failed_help")) %>
       </span>
     </span>
   <% elsif import_request.queued? %>

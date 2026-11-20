@@ -484,6 +484,7 @@ en:
         queued: "Queued — up next"
         ready: "Ready"
         failed_insufficient_credits: "Import failed — insufficient credits"
+        failed_unsupported_language: "This video is in a language we do not support yet. Please choose a video in a supported language. No credit was used."
         failed_no_credit: "Import failed — no credit used"
         cancelled: "Cancelled"
         cancel: "Cancel this import"

@@ -482,6 +482,7 @@ es:
         queued: En cola — próximamente
         ready: Listo
         failed_insufficient_credits: Importación fallida — créditos insuficientes
+        failed_unsupported_language: "Este vídeo está en un idioma que todavía no ofrecemos. Elige un vídeo en uno de los idiomas disponibles. No se ha usado ningún crédito."
         failed_no_credit: Importación fallida — no se ha usado ningún crédito
         cancelled: Cancelada
         cancel: Cancelar esta importación

@@ -25,7 +25,7 @@
         <p class="gallery-import-failed"><%= import_request.duration_failure_message %></p>
       <% end %>
       <p class="gallery-import-failed">
-        <%= import_request.insufficient_credits? ? t("app.import_requests.status.failed_insufficient_credits") : t("app.import_requests.status.failed_no_credit") %>
+        <%= import_request.failure_message %>
       </p>
     <% end %>
   </div>

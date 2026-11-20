@@ -365,6 +365,7 @@ he:
         queued: "בתור — הבא בתור"
         ready: "מוכן"
         failed_insufficient_credits: "הייבוא נכשל — אין מספיק נקודות זכות"
+        failed_unsupported_language: "הסרטון בשפה שעדיין אינה נתמכת. בחרו סרטון באחת השפות הנתמכות. לא נוצלה נקודת זכות."
         failed_no_credit: "הייבוא נכשל — לא נוצלה נקודת זכות"
         cancelled: "בוטל"
         cancel: "ביטול הייבוא"

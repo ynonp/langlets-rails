@@ -74,6 +74,19 @@ class ImportRequest < ApplicationRecord
     failure_reason.to_s.split("Video duration limit: ", 2).second
   end
 
+  # Keep compatibility with detection failures already stored by the pipeline.
+  # Match its specific rejection rather than exposing arbitrary diagnostics.
+  def unsupported_language?
+    failed? && failure_reason.to_s.match?(/(?:\A|returned 422: )detected unsupported language: /)
+  end
+
+  def failure_message
+    return I18n.t("app.import_requests.status.failed_unsupported_language") if unsupported_language?
+    return I18n.t("app.import_requests.status.failed_insufficient_credits") if insufficient_credits?
+
+    I18n.t("app.import_requests.status.failed_no_credit")
+  end
+
   # Whether this failed for want of credits rather than for a technical reason.
   # The Queue's ordinary failure copy promises that a human is reviewing the
   # import, which is true of a pipeline error and false of this one — nobody is

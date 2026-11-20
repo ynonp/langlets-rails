@@ -24,6 +24,26 @@ module App
       get "/app?lang=es", headers: NATIVE
     end
 
+    test "unsupported language shows actionable guidance on web native and deeplink pages" do
+      request = @user.import_requests.create!(
+        youtube_url: CANONICAL, youtube_video_id: VIDEO_ID,
+        translation_language: "English", status: :failed,
+        failure_reason: "pipeline http://internal:8000 returned 422: detected unsupported language: jpn"
+      )
+
+      [
+        [ gallery_path(imports: "failed"), { "User-Agent" => "Mozilla/5.0" } ],
+        [ "/app/library?filter=failed", NATIVE ],
+        [ deeplink_status_app_import_requests_path(id: request.id), NATIVE ]
+      ].each do |path, headers|
+        get path, headers: headers
+        assert_response :success
+        assert_includes response.body, I18n.t("app.import_requests.status.failed_unsupported_language")
+        assert_not_includes response.body, I18n.t("app.import_requests.index.failed_help")
+        assert_not_includes response.body, "http://internal:8000"
+      end
+    end
+
     test "web and native import cards show duration rejection without internal diagnostics" do
       message = "Please choose a video that is 25 minutes or shorter."
       @user.import_requests.create!(
