@@ -93,7 +93,7 @@
 
 ### Prerequisites
 
-- **Ruby 3.3.5** or higher
+- **Ruby 4.0.10**
 - **PostgreSQL** - Database server
 - **Node.js** - For JavaScript dependencies
 - **Bun** - Fast JavaScript package manager

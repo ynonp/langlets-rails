@@ -1,6 +1,9 @@
 # Streamable-HTTP MCP endpoint for AI agents. Stateless JSON mode: every POST
 # is self-contained, no sessions or SSE streams (rack-timeout friendly).
 class McpController < ActionController::API
+  PRODUCTION_HOSTS = %w[langlets.app he.langlets.app es.langlets.app].freeze
+  DEVELOPMENT_HOSTS = %w[devbox he.devbox es.devbox].freeze
+
   before_action :authenticate!
 
   def handle
@@ -11,7 +14,8 @@ class McpController < ActionController::API
       server_context: { user: @current_user, scopes: @token_scopes, base_url: request.base_url }
     )
     transport = MCP::Server::Transports::StreamableHTTPTransport.new(
-      server, stateless: true, enable_json_response: true
+      server, stateless: true, enable_json_response: true,
+      allowed_hosts: Rails.env.development? ? DEVELOPMENT_HOSTS : PRODUCTION_HOSTS
     )
 
     status, transport_headers, body = transport.handle_request(request)

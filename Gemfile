@@ -1,13 +1,15 @@
 source "https://rubygems.org"
 
+ruby file: ".ruby-version"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0.2"
+gem "rails", "~> 8.1.4", ">= 8.1.4.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 2.1"
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+gem "puma", "~> 7.2", ">= 7.2.2"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
@@ -71,7 +73,7 @@ gem "pycall", "~> 1.5"
 
 gem "gemini-ai", "~> 4.2"
 
-gem "httparty", "~> 0.23.1"
+gem "httparty", "~> 0.24"
 
 
 gem "pg", "~> 1.5"
@@ -88,9 +90,9 @@ gem "wavefile", "~> 1.1"
 
 gem "aws-sdk-s3", "~> 1.189"
 
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0", ">= 5.0.4"
 
-gem "omniauth", "~> 2.1"
+gem "omniauth", "~> 2.2"
 
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "omniauth-google-oauth2", "~> 1.2"
@@ -109,7 +111,7 @@ gem "apnotic", "~> 1.7"
 
 gem "factory_bot", "~> 6.5"
 
-gem "ruby_llm", "~> 1.14.0"
+gem "ruby_llm", "~> 2.2"
 
 gem "async", "~> 2.23"
 
@@ -131,6 +133,6 @@ gem "srt", "~> 0.1.5"
 
 gem "doorkeeper", "~> 5.9"
 
-gem "mcp", "~> 0.4"
+gem "mcp", "~> 1.2"
 gem "posthog-ruby"
 gem "posthog-rails"

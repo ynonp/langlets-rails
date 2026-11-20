@@ -15,7 +15,6 @@ concurrency:
 
 jobs:
   deploy:
-    # Ruby 3.3.5 is unavailable on Ubuntu 26.04 (the new ubuntu-latest).
     runs-on: ubuntu-24.04
 
     steps:

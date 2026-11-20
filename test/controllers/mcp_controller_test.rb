@@ -2,6 +2,7 @@ require "test_helper"
 
 class McpControllerTest < ActionDispatch::IntegrationTest
   def setup
+    host! "langlets.app"
     @user = User.create!(
       email: "mcp@example.com",
       password: "password123",
@@ -47,7 +48,7 @@ class McpControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :unauthorized
     assert_includes @response.headers["WWW-Authenticate"],
-      %(resource_metadata="http://www.example.com/.well-known/oauth-protected-resource/mcp")
+      %(resource_metadata="http://langlets.app/.well-known/oauth-protected-resource/mcp")
   end
 
   test "rejects expired tokens" do
@@ -144,7 +145,7 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     assert_includes challenge, 'error="insufficient_scope"'
     assert_includes challenge, 'error_description="'
     assert_includes challenge, %(scope="#{scope}")
-    assert_includes challenge, 'resource_metadata="http://www.example.com/.well-known/oauth-protected-resource/mcp"'
+    assert_includes challenge, 'resource_metadata="http://langlets.app/.well-known/oauth-protected-resource/mcp"'
   end
 
   def custom_arguments

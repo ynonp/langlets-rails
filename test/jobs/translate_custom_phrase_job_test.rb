@@ -51,7 +51,7 @@ class TranslateCustomPhraseJobTest < ActiveJob::TestCase
   test "calls the supported provider model and persists its response" do
     chat = Minitest::Mock.new
     chat.expect(:with_temperature, chat, [0.2])
-    chat.expect(:with_params, chat, reasoning_effort: "none")
+    chat.expect(:with_provider_options, chat, reasoning_effort: "none")
     chat.expect(:with_instructions, chat) do |instructions|
       instructions.include?("Spanish") && instructions.include?("English")
     end

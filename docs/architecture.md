@@ -6,7 +6,8 @@
 
 ## Technology Stack
 
-- **Framework**: Ruby on Rails 8.0
+- **Runtime**: Ruby 4.0.10
+- **Framework**: Ruby on Rails 8.1.4.1 (Rails 8.0 configuration defaults for upgrade compatibility)
 - **Database**: PostgreSQL with JSONB support
 - **File Storage**: Active Storage (local/cloud)
 - **Frontend**: Rails views with JavaScript
@@ -49,9 +50,9 @@ to reuse that installation for both JavaScript and CSS builds.
 
 Production deploys run automatically from `.github/workflows/deploy.yml` after
 each push to `main`, and can also be started manually using GitHub Actions'
-**Run workflow** control. The deploy workflow uses Ubuntu 24.04 because the pinned Ruby 3.3.5 is
-unavailable on Ubuntu 26.04. It checks out the triggering commit
-and serializes deployments so two production releases cannot overlap. Its
+**Run workflow** control. The deploy workflow runs on Ubuntu 24.04 and reads the Ruby version from
+`.ruby-version`. Keep that pin in sync with the production Dockerfile. The
+workflow checks out the triggering commit and serializes deployments. Its
 GitHub Actions secrets are `RAILS_MASTER_KEY`, `KAMAL_SSH_PRIVATE_KEY`, and
 `KAMAL_SSH_KNOWN_HOSTS`. The Rails key decrypts the production credentials;
 `.kamal/secrets` derives `DATABASE_URL` and `POSTGRES_PASSWORD` from those
@@ -4535,7 +4536,10 @@ On mobile, the courses index and playlist headers keep the profile avatar visibl
 
 ### MCP vocabulary writes
 
-The authenticated `/mcp` endpoint registers `get_vocabulary`, `get_courses`,
+The authenticated `/mcp` endpoint uses the MCP SDK’s stateless HTTP transport
+with host and origin validation. The transport accepts the three deployed
+Langlets hosts and supports the corresponding devbox hosts in development.
+The endpoint registers `get_vocabulary`, `get_courses`,
 `add_vocabulary`, and `update_vocabulary_practice`. Writes require the optional
 `vocabulary:write` OAuth scope, advertised by both discovery documents. Default
 and existing tokens retain read-only access; clients must request write access

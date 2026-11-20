@@ -102,7 +102,7 @@ module Imports
 
       assert_equal "api.supadata.ai", requested_uri.host
       assert_equal "/v1/metadata", requested_uri.path
-      assert_equal URL, CGI.parse(requested_uri.query).fetch("url").first
+      assert_equal URL, URI.decode_www_form(requested_uri.query).to_h.fetch("url")
       assert_equal "test-key", requested_key
     ensure
       ENV["SUPADATA_KEY"] = old_key
