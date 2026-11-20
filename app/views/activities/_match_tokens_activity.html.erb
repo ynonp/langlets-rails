@@ -45,7 +45,7 @@
   page_size = (total_tokens.to_f / page_count).ceil
   page_size = 1 if page_size < 1
   # Build the full list of pairs, slice into pages, then split each page into
-  # an L1 list and an L2 list so we can render the two columns independently.
+  # independently shuffled L1 and L2 lists rendered in shared grid rows.
   token_pages = tokens.shuffle.each_slice(page_size).to_a
 
   # Shared cell styling. The state variants mirror audio-to-translation: a
@@ -83,8 +83,8 @@
     <div id="match-tokens" class="flex flex-col gap-4">
 
       <!-- Pages: each page holds up to max_tokens_in_page pairs. We split each
-           page's pair list into an L1 list and an L2 list and render the two
-           columns independently. This keeps every L1 cell in the left column
+           page's pair list into an L1 list and an L2 list and render them in
+           shared grid rows. This keeps every L1 cell in the left column
            and every L2 cell in the right column while still allowing the two
            columns to be shuffled in different orders. Cells in the two
            columns still match each other via the shared data-token-id, which
@@ -97,41 +97,25 @@
           class="grid grid-cols-2 gap-x-4 gap-y-3.5 <%= 'hidden' if page_index.positive? %>"
           data-action="touchstart->match-tokens-activity#handleTouchStart:!passive touchend->match-tokens-activity#handleTouchEnd:!passive">
 
-          <!-- L1 column: header + L1 list -->
-          <div class="flex flex-col gap-3.5">
-            <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= t(".words", language: l1.native_name) %></div>
-            <% l1_list.each do |token| %>
+          <!-- Shared grid rows keep both columns aligned when a label wraps. -->
+          <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= t(".words", language: l1.native_name) %></div>
+          <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= t(".translations", language: l2.native_name) %></div>
+          <% l1_list.zip(l2_list).each do |row| %>
+            <% row.each_with_index do |token, column_index| %>
+              <% original = column_index.zero? %>
               <div
                 class="<%= cell_base %> justify-center text-center <%= cell_state %>"
                 data-token-id="<%= token[:id] %>"
-                data-column="l1"
+                data-column="<%= original ? 'l1' : 'l2' %>"
                 data-l1-text="<%= token[:l1_word] %>"
                 data-l2-text="<%= token[:l2_translation] %>"
                 data-audio-url="<%= token[:audio_url] %>"
                 data-action="click->match-tokens-activity#selectToken">
-                <span lang="<%= l1.iso_name %>" class="line-clamp-2 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l1_word] %></span>
+                <span lang="<%= original ? l1.iso_name : l2.iso_name %>" class="<%= original ? 'line-clamp-2' : 'line-clamp-3' %> min-w-0 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= original ? token[:l1_word] : token[:l2_translation] %></span>
                 <span class="<%= check_classes %>" aria-hidden="true">✓</span>
               </div>
             <% end %>
-          </div>
-
-          <!-- L2 column: header + L2 list -->
-          <div class="flex flex-col gap-3.5">
-            <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= t(".translations", language: l2.native_name) %></div>
-            <% l2_list.each do |token| %>
-              <div
-                class="<%= cell_base %> justify-center text-center <%= cell_state %>"
-                data-token-id="<%= token[:id] %>"
-                data-column="l2"
-                data-l1-text="<%= token[:l1_word] %>"
-                data-l2-text="<%= token[:l2_translation] %>"
-                data-audio-url="<%= token[:audio_url] %>"
-                data-action="click->match-tokens-activity#selectToken">
-                <span lang="<%= l2.iso_name %>" class="line-clamp-3 break-words leading-snug text-xl sm:text-2xl font-semibold text-center"><%= token[:l2_translation] %></span>
-                <span class="<%= check_classes %>" aria-hidden="true">✓</span>
-              </div>
-            <% end %>
-          </div>
+          <% end %>
         </div>
       <% end %>
 
