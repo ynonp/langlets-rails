@@ -177,7 +177,8 @@ and compound extraction have Russian source examples.
 
 Japanese uses `ja-JP-NanamiNeural` for speech. Preserve kanji, kana, okurigana
 and pronunciation-relevant marks in timed tokens. The Japanese caption-only
-path uses ICU to add word boundaries for forced alignment. Japanese prompt
+path uses ICU to add word boundaries for forced alignment. Scribe returns
+character timings, which are grouped using the same Japanese word segmenter. Japanese prompt
 examples cover timed words, particles, inflected forms, compounds, and lesson
 grouping. Similar-sound substitutions are available for common words in
 `pipeline/src/japaneseSounds.ts`.

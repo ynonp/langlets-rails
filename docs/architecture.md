@@ -3434,9 +3434,10 @@ lesson grouping and compound extraction use Russian source examples. Russian is
 not an interface locale.
 
 Japanese (`ja`, 日本語) is available for course audio and translations. Scribe
-reports `jpn`, and Supadata requests `ja` native captions. The caption-only
-path segments Japanese text with the Japanese ICU word segmenter before forced
-alignment. Timed transcription, reconciliation, lesson grouping, and compound
+reports `jpn` and returns character-level timings. The Japanese ICU word
+segmenter groups those characters into learner tokens using their original
+timing bounds. Supadata requests `ja` native captions and uses the same word
+segmenter before forced alignment. Timed transcription, reconciliation, lesson grouping, and compound
 prompts preserve the original script and use spaces as token boundaries.
 Sentence and token prompts include Japanese source and target examples. The
 similar-sound activity uses a curated set of common near-neighbor readings and

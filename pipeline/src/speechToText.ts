@@ -11,6 +11,7 @@
 // Later extraction normally reuses that paid result.
 
 import type { AlignedWord } from "./alignment.ts";
+import { segmentJapaneseSpeech } from "./japaneseSegmentation.ts";
 
 const BASE_URL = "https://api.elevenlabs.io";
 const MODEL_ID = "scribe_v2";
@@ -128,10 +129,13 @@ async function postSpeechToText(
     throw new SpeechToTextRequestError(response.status, body);
   }
 
-  return parseSpeechToText(await response.json());
+  return parseSpeechToText(await response.json(), languageCode);
 }
 
-export function parseSpeechToText(payload: unknown): SpeechToTextResult {
+export function parseSpeechToText(
+  payload: unknown,
+  requestedLanguageCode?: string | null,
+): SpeechToTextResult {
   const data = payload as {
     text?: string;
     language_code?: string;
@@ -139,20 +143,23 @@ export function parseSpeechToText(payload: unknown): SpeechToTextResult {
     words?: RawWord[];
   };
 
-  const words = (data.words ?? [])
-    // Keep speech only. Dropping audio_event here is what removes "[cantando]"
-    // and friends: they aren't learning content, and square brackets are
-    // reserved by the app's token markup — the same rule the native-caption
-    // path applies in supadata.ts.
-    .filter((word) =>
-      word.type === "word" && typeof word.text === "string" &&
-      word.text.trim() !== "" && Number.isFinite(word.start) && Number.isFinite(word.end)
-    )
-    .map((word) => ({
-      text: word.text!.trim(),
-      start: word.start!,
-      end: word.end!,
-    }));
+  const code = (data.language_code ?? requestedLanguageCode)?.toLowerCase();
+  const japanese = code === "jpn" || code === "ja" || code === "ja-jp";
+  const entries: Array<AlignedWord | "space"> = [];
+  for (const word of data.words ?? []) {
+    if (japanese && word.type === "spacing") {
+      entries.push("space");
+    } else if (
+      word.type === "word" && typeof word.text === "string" && word.text.trim() &&
+      Number.isFinite(word.start) && Number.isFinite(word.end)
+    ) {
+      // Exclude non-speech cues, which collide with the app's bracket markup.
+      entries.push({ text: word.text.trim(), start: word.start!, end: word.end! });
+    }
+  }
+  const words = japanese
+    ? segmentJapaneseSpeech(entries)
+    : entries.filter((entry) => entry !== "space");
 
   if (words.length === 0) {
     throw new NoTimedSpeechError();
