@@ -1,0 +1,160 @@
+<%# The Dictionary card, as one turbo-frame the card's Stimulus controller
+    reloads (GET …/card) while anything is still being generated. Each reload
+    replaces the frame's contents, including the controller element, so the
+    polling stops by itself the first time the server renders it without
+    `pending`. %>
+<% target = lookup.target_language
+   native = lookup.native_language
+   source = lookup.source_language %>
+<turbo-frame id="dictionary-card" data-testid="dictionary-card">
+  <%# State lives on the inner element: a frame reload replaces the frame's
+      contents but keeps the <turbo-frame> element and its attributes. %>
+  <div data-controller="dictionary-card"
+       data-state="<%= lookup.failed_or_stale? ? 'failed' : lookup.status %>"
+       data-dictionary-card-url-value="<%= card_app_vocabulary_dictionary_lookup_path(lookup) %>"
+       data-dictionary-card-pending-value="<%= lookup.pending? %>"
+       class="flex flex-col gap-4">
+
+    <% if lookup.failed_or_stale? %>
+      <div data-testid="dictionary-failed" class="app-hairline rounded-[24px] bg-app-card px-5 py-7 text-center">
+        <p class="text-[17px] font-bold text-app-text"><%= t("app.dictionary.failed_title") %></p>
+        <p class="mt-1.5 text-[14px] text-app-text-2"><%= t("app.dictionary.failed_body") %></p>
+        <%= button_to t("app.dictionary.try_again"), app_vocabulary_dictionary_lookups_path,
+                      params: { query: lookup.query },
+                      form: { data: { turbo_frame: "_top" } },
+                      class: "mt-5 inline-flex h-11 items-center rounded-full bg-app-pill px-6 text-[15px] font-semibold text-app-accent" %>
+      </div>
+
+    <% elsif lookup.generating? %>
+      <p class="text-[13px] text-app-text-2"><%= t("app.dictionary.writing") %></p>
+      <article class="app-hairline overflow-hidden rounded-[24px] bg-app-card" aria-busy="true">
+        <div class="flex h-[180px] items-center justify-center gap-2 bg-white/[0.03] text-[13px] font-semibold text-app-text-2 animate-pulse">
+          <%= app_icon "sparkle", class: "h-4 w-4" %>
+          <%= t("app.dictionary.drawing") %>
+        </div>
+        <div class="flex flex-col gap-3.5 p-5 animate-pulse">
+          <div class="h-10 w-1/2 rounded-lg bg-white/[0.06]"></div>
+          <div class="h-3 w-1/3 rounded bg-white/[0.06]"></div>
+          <div class="h-4 w-4/5 rounded bg-white/[0.06]"></div>
+          <div class="my-1 h-px bg-white/[0.08]"></div>
+          <div class="h-3 w-2/5 rounded bg-white/[0.06]"></div>
+          <div class="h-3 w-11/12 rounded bg-white/[0.06]"></div>
+          <div class="h-3 w-3/4 rounded bg-white/[0.06]"></div>
+        </div>
+      </article>
+
+    <% else %>
+      <p data-testid="dictionary-direction" class="flex items-center gap-2 text-[13px] text-app-text-2">
+        <span class="rounded-md bg-app-pill px-2 py-[3px] font-semibold text-app-text-dim">
+          <%= source ? localized_language_name(source) : t("app.dictionary.other_language") %>
+          <span class="rtl:hidden">→</span><span class="ltr:hidden">←</span>
+          <%= localized_language_name(lookup.result_language) %>
+        </span>
+        <%= t("app.dictionary.detected") %>
+      </p>
+
+      <article class="app-hairline overflow-hidden rounded-[24px] bg-app-card">
+        <% unless lookup.illustration_unavailable? %>
+          <div class="relative h-[200px] bg-white/[0.03]" data-testid="dictionary-illustration">
+            <% if lookup.illustration_drawn? && lookup.illustration.attached? %>
+              <%= image_tag url_for(lookup.illustration), alt: t("app.dictionary.illustration_alt", word: lookup.headword),
+                            class: "h-full w-full object-cover" %>
+              <span class="absolute start-3 top-3 flex items-center gap-1.5 rounded-xl bg-app-bg/80 px-2.5 py-[5px] text-[12px] font-semibold text-app-text-dim">
+                <%= app_icon "sparkle", class: "h-3 w-3 text-app-accent" %>
+                <%= t("app.dictionary.ai_illustration") %>
+              </span>
+              <%= button_to illustrate_app_vocabulary_dictionary_lookup_path(lookup),
+                            form: { data: { turbo_frame: "_top" }, class: "absolute end-2.5 top-2" },
+                            aria: { label: t("app.dictionary.regenerate") },
+                            class: "flex h-11 w-11 items-center justify-center rounded-full bg-app-bg/80 text-app-text-dim" do %>
+                <%= app_icon "retry", class: "h-[18px] w-[18px]" %>
+              <% end %>
+            <% else %>
+              <div class="flex h-full items-center justify-center gap-2 text-[13px] font-semibold text-app-text-2 animate-pulse">
+                <%= app_icon "sparkle", class: "h-4 w-4" %>
+                <%= t("app.dictionary.drawing") %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="flex flex-col gap-[22px] px-5 pb-6 pt-5">
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center justify-between gap-3">
+              <h1 data-testid="dictionary-headword"
+                  class="min-w-0 break-words text-[40px] font-bold leading-tight text-app-text"
+                  lang="<%= target.iso_name %>" dir="<%= target.rtl? ? 'rtl' : 'ltr' %>"><%= lookup.headword %></h1>
+              <% if lookup.pronunciation.attached? %>
+                <button type="button" data-action="dictionary-card#play"
+                        aria-label="<%= t("app.dictionary.play") %>"
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/10 bg-app-pill text-app-accent">
+                  <%= app_icon "speaker", class: "h-5 w-5" %>
+                </button>
+                <audio data-dictionary-card-target="audio" preload="none" src="<%= url_for(lookup.pronunciation) %>"></audio>
+              <% end %>
+            </div>
+
+            <% chips = [ lookup.transliteration, lookup.part_of_speech, *lookup.grammar_notes ].compact_blank %>
+            <% if chips.any? %>
+              <div class="flex flex-wrap gap-1.5 text-[13px] text-app-text-dim">
+                <% chips.each do |chip| %>
+                  <span class="rounded-md bg-app-pill px-2 py-[3px]" dir="auto"><%= chip %></span>
+                <% end %>
+              </div>
+            <% end %>
+
+            <p data-testid="dictionary-translation"
+               class="mt-1 text-[21px] font-medium leading-snug text-app-text"
+               lang="<%= native.iso_name %>" dir="<%= native.rtl? ? 'rtl' : 'ltr' %>"><%= lookup.translation %></p>
+          </div>
+
+          <% if lookup.explanation.present? %>
+            <section class="flex flex-col gap-2" data-testid="dictionary-explanation">
+              <h2 class="text-[12px] font-bold uppercase tracking-[0.1em] text-app-text-2"><%= t("app.dictionary.about") %></h2>
+              <p class="text-[15px] leading-relaxed text-app-text-dim" lang="<%= native.iso_name %>" dir="auto"><%= lookup.explanation %></p>
+            </section>
+          <% end %>
+
+          <% examples = lookup.example_rows %>
+          <% if examples.any? %>
+            <section class="flex flex-col gap-2.5" data-testid="dictionary-examples">
+              <h2 class="text-[12px] font-bold uppercase tracking-[0.1em] text-app-text-2"><%= t("app.dictionary.examples") %></h2>
+              <% examples.each do |example| %>
+                <div class="flex flex-col gap-1.5 rounded-2xl bg-white/[0.04] px-4 py-3.5">
+                  <p class="text-[20px] leading-normal text-app-text"
+                     lang="<%= target.iso_name %>" dir="<%= target.rtl? ? 'rtl' : 'ltr' %>"><%= example[:before] %><mark class="bg-transparent font-bold text-app-accent"><%= example[:mark] %></mark><%= example[:after] %></p>
+                  <% if example[:translation].present? %>
+                    <p class="text-[15px] leading-snug text-app-text-2"
+                       lang="<%= native.iso_name %>" dir="<%= native.rtl? ? 'rtl' : 'ltr' %>"><%= example[:translation] %></p>
+                  <% end %>
+                </div>
+              <% end %>
+            </section>
+          <% end %>
+        </div>
+      </article>
+
+      <%# Sticky actions, above the native tab bar. %>
+      <div class="fixed inset-x-0 z-30 flex gap-2.5 border-t border-white/[0.06] bg-app-bg px-5 py-3 bottom-[calc(var(--app-tab-bar-height)+env(safe-area-inset-bottom))]">
+        <%= link_to t("app.dictionary.dismiss"), app_vocabulary_entries_path,
+                    data: { turbo_frame: "_top" },
+                    class: "flex h-[54px] items-center rounded-full border border-white/10 bg-app-card px-[22px] text-[16px] font-semibold text-app-text-dim" %>
+        <% if lookup.saved? %>
+          <span data-testid="dictionary-saved"
+                class="flex h-[54px] flex-1 items-center justify-center gap-2 rounded-full bg-app-pill text-[16px] font-bold text-app-accent">
+            <%= app_icon "check", class: "h-[18px] w-[18px]" %>
+            <%= t("app.dictionary.in_vocabulary") %>
+          </span>
+        <% else %>
+          <%= button_to save_app_vocabulary_dictionary_lookup_path(lookup),
+                        form: { data: { turbo_frame: "_top" }, class: "flex flex-1" },
+                        data: { testid: "dictionary-save" },
+                        class: "flex h-[54px] flex-1 items-center justify-center gap-2 rounded-full bg-app-accent text-[16px] font-bold text-app-on-accent" do %>
+            <%= app_icon "plus", class: "h-[18px] w-[18px]" %>
+            <%= t("app.dictionary.save") %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</turbo-frame>

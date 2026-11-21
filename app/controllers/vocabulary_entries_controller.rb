@@ -4,6 +4,7 @@
 class VocabularyEntriesController < App::VocabularyEntriesController
   skip_before_action :require_native_app
   skip_before_action :set_queue_badge_count
+  skip_before_action :require_dictionary_target_language
 
   layout "web"
 

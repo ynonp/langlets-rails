@@ -73,6 +73,7 @@ class User < ApplicationRecord
 
   # Saved L1 spans, pinned to the L2 language active when each was saved.
   has_many :phrase_token_users, dependent: :destroy
+  has_many :dictionary_lookups, dependent: :destroy
   has_many :saved_phrase_tokens, through: :phrase_token_users, source: :phrase_token
 
   # Phrases typed directly into the Vocabulary tab. Course phrases belong to a
@@ -207,6 +208,52 @@ class User < ApplicationRecord
     code = language.respond_to?(:iso_name) ? language.iso_name : language.to_s
     code = "en" unless NATIVE_LANGUAGE_CODES.include?(code)
     self.preferences = (preferences || {}).merge("native_language" => code)
+  end
+
+  # The language the user is learning, stored as an ISO code under
+  # preferences["target_language"]. Drives the Dictionary tab: text typed in
+  # this language is explained in the native language, anything else is
+  # translated into it. Nil until chosen or inferred; an unknown stored code
+  # reads as unset rather than raising.
+  def target_language
+    stored = (preferences || {})["target_language"]
+    Language.find_by(iso_name: stored) if stored.present?
+  end
+
+  def target_language=(language)
+    code = language.respond_to?(:iso_name) ? language.iso_name : language.to_s.presence
+    self.preferences = (preferences || {}).merge("target_language" => code)
+  end
+
+  # Sets the target language only if none is set yet — the automatic paths
+  # (first imported video, first visit to the Dictionary) must never override
+  # an explicit choice. Locks the row so a concurrent preference write (theme,
+  # native language) is not lost to a stale preferences blob.
+  def adopt_target_language!(language)
+    return if language.nil?
+
+    with_lock do
+      next if target_language.present?
+
+      self.target_language = language
+      save!(validate: false)
+    end
+  end
+
+  # What the user is evidently learning when they never said so: the language
+  # most of their saved words are in, else the language most of their imported
+  # videos are in (most recent wins a tie). Nil for an account with neither.
+  def inferred_target_language
+    from_words = Phrase.joins(phrase_tokens: :phrase_token_users)
+      .where(phrase_token_users: { user_id: id })
+      .group(:l1_id).order(Arel.sql("COUNT(*) DESC"), Arel.sql("MAX(phrase_token_users.created_at) DESC"))
+      .limit(1).pick(:l1_id)
+    return Language.find_by(id: from_words) if from_words
+
+    code = ImportRequest.where(user_id: id).where.not(clip_language: [ nil, "" ])
+      .group(:clip_language).order(Arel.sql("COUNT(*) DESC"), Arel.sql("MAX(created_at) DESC"))
+      .limit(1).pick(:clip_language)
+    Language.find_by(iso_name: code) if code
   end
 
   # Initial transcript state for each video player visit. These controls are

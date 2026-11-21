@@ -1,16 +1,35 @@
 <% if flash[:notice].present? %>
   <% undo = flash[:undo] %>
+  <% saved_entry_id = flash[:saved_entry_id] %>
+  <%# Both undo kinds stay until the next navigation (timeout 0): a countdown
+      the user cannot see is a bad thing to hang the only route back on. %>
   <div data-controller="vocabulary-toast"
-       data-vocabulary-toast-timeout-value="<%= undo.present? ? 0 : 4000 %>"
+       data-vocabulary-toast-timeout-value="<%= undo.present? || saved_entry_id.present? ? 0 : 4000 %>"
        data-testid="vocabulary-toast"
+       role="status"
        class="pointer-events-none fixed inset-x-5 z-40 bottom-[calc(var(--app-tab-bar-height)+env(safe-area-inset-bottom)+16px)]">
-    <div class="pointer-events-auto flex items-center justify-between gap-3 rounded-app-field bg-app-credits px-[18px] py-3.5 text-[15px] font-semibold text-app-bg">
-      <span><%= flash[:notice] %></span>
+    <div class="pointer-events-auto flex items-center justify-between gap-3 rounded-app-field bg-app-credits px-[18px] py-3.5 text-[15px] font-semibold text-app-bg shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
+      <span class="flex min-w-0 items-center gap-3">
+        <% if saved_entry_id.present? %>
+          <svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="9" fill="#15803D" />
+            <path d="m7 11.2 2.7 2.6L15 8.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        <% end %>
+        <span dir="auto"><%= flash[:notice] %></span>
+      </span>
 
       <% if undo.present? %>
         <%= button_to t("app.vocabulary_entries.undo"),
                       restore_app_vocabulary_entries_path,
                       params: { phrase_token_id: undo["phrase_token_id"], language_id: undo["language_id"] },
+                      class: "shrink-0 text-[15px] font-bold text-[#0d7a44]" %>
+      <% elsif saved_entry_id.present? %>
+        <%= button_to t("app.vocabulary_entries.undo"),
+                      app_vocabulary_entry_path(saved_entry_id),
+                      method: :delete,
+                      params: { undo_save: 1 },
+                      data: { testid: "dictionary-undo" },
                       class: "shrink-0 text-[15px] font-bold text-[#0d7a44]" %>
       <% else %>
         <button type="button" data-action="vocabulary-toast#dismiss"

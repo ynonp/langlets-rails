@@ -39,10 +39,15 @@ module App
       (owner || @user).phrase_token_users.create!(phrase_token: token, language: @english, practicing: practicing)
     end
 
-    test "the empty state offers adding a word and nothing else" do
+    test "the empty state sits under the Dictionary and lists nothing" do
+      # Without a target language (and nothing to infer it from) the tab asks
+      # for one first; see DictionaryLookupsControllerTest.
+      @user.update!(preferences: { "target_language" => "es" })
+
       get "/app/vocabulary", headers: NATIVE
 
       assert_response :success
+      assert_select "[data-testid=dictionary-form]"
       assert_select "[data-testid=vocabulary-empty]"
       assert_select "[data-testid=vocabulary-entry]", false
     end

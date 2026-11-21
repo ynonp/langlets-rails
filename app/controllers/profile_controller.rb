@@ -25,6 +25,28 @@ class ProfileController < ApplicationController
       notice: I18n.t("profile.native_language.updated", locale: language.iso_name)
   end
 
+  # The language the user is learning. Also the target of the Dictionary tab's
+  # first-run picker, which passes `return_to` so the tab opens right after.
+  # Any language except the one the app already speaks to them in.
+  RETURN_PATHS = %w[/app/vocabulary].freeze
+
+  def update_target_language
+    language = Language.where.not(id: Current.translation_language_id)
+      .find_by(iso_name: params.dig(:user, :target_language))
+    destination = RETURN_PATHS.include?(params[:return_to]) ? params[:return_to] : profile_path
+
+    if language.nil?
+      redirect_to destination, alert: t("profile.target_language.invalid"), status: :see_other
+      return
+    end
+
+    current_user.target_language = language
+    current_user.save!
+
+    redirect_to destination, status: :see_other,
+      notice: t("profile.target_language.updated", language: helpers.localized_language_name(language))
+  end
+
   # The set of channels to deliver over — any of email and push, including
   # neither. Applies to the notification subsystem only — Devise mail and
   # Channel invitations are answers to something the user just did and are not

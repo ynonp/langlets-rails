@@ -833,6 +833,32 @@ the compound-extraction prompt and pipeline output format are unchanged.
 
 Changing the native language does not remove existing Home or Library content.
 
+### Target language preference
+
+`preferences["target_language"]` (an ISO code; `User#target_language`) is the
+language the user is learning. It drives the native Dictionary (see
+"Dictionary" under Vocabulary below) and is chosen on Profile, on both web and
+native, from every language except the one the request speaks
+(`Current.translation_language`). It is set without asking in three ways, and
+none of them ever overrides an existing choice (`User#adopt_target_language!`
+locks the row and only writes when unset):
+
+1. **First imported video.** `ImportRequest` adopts its `clip_language` in an
+   `after_commit` whenever that column changes to a value, so imports whose
+   language is only known after detection count too, and every creation path
+   (app, API, MCP, guest) is covered by the model.
+2. **First Dictionary visit with history.** Opening `/app/vocabulary` with no
+   target language adopts `User#inferred_target_language`: the language most of
+   the user's saved words are in, else the language most of their imported
+   videos are in (most recent breaks ties).
+3. **Otherwise the tab asks.** With no words and no imports the native tab
+   renders `choose_target_language` instead of the list; it submits to
+   `PATCH /profile/target_language` with `return_to=/app/vocabulary` (the only
+   accepted return path) and lands back on the tab.
+
+A target language equal to the request's native language is treated as unset
+(the Dictionary would have nothing to translate between), so the tab asks again.
+
 Web social authentication also initializes this preference from the acquisition
 host. OmniAuth request phases may begin on `he.langlets.app`, but all production
 providers use the single registered `https://langlets.app/users/auth/.../callback`
@@ -3668,6 +3694,91 @@ noise. The chips and search box drive a `vocabulary-results` Turbo Frame, while
 Load more uses Turbo Streams; **each row therefore has to carry
 `data-turbo-frame="_top"`**, or Turbo tries to load the whole detail screen into
 that frame and renders "Content missing".
+
+#### Dictionary (top of the native Vocabulary tab)
+
+The native tab opens on an AI dictionary: one input ("Type anything to
+translate and add it to your vocabulary"), a pill showing the native ⇄ target
+pair (it links to Profile to change the target), and a compact **Your words**
+list below it. The compact rows keep the context phrase and source on a second
+line — the phrase is still what tells two senses of one word apart — and the
+language chips appear only when there is more than one language or something
+paused. The separate search box was removed from the native tab (the `q`
+parameter still works, and the web list keeps its search). "Add from a
+sentence" links to the existing custom-word picker. The web `/vocabulary` page
+has no Dictionary and is not gated on a target language.
+
+**Direction rule.** Every card teaches a *target-language headword* explained
+in the *native language*:
+
+- input written in the target language → the headword is the input, explained
+  in the native language (`direction: "to_native"`);
+- input in any other language (native or a third one) → the headword is its
+  target-language translation, explained in the native language
+  (`direction: "to_target"`).
+
+The model detects the input language; `Dictionary::EntryGenerator` maps its
+code onto ours (`"ar"` → `"ar-JO"` by primary subtag, unknown → `"other"`) and
+re-derives the direction itself, so a model that ignores the rule cannot store a
+card pointing the wrong way.
+
+**Data.** `DictionaryLookup` (table `dictionary_lookups`) stores the query, the
+target and native languages, the detection and direction, and the card:
+headword, transliteration, part of speech, `grammar_notes[]`, translation,
+explanation, `examples` (jsonb `{sentence, highlight, translation}`) and the
+illustration prompt. It has `status` (generating/ready/failed),
+`illustration_status` (drawing/drawn/unavailable), and two attachments,
+`illustration` (WebP) and `pronunciation` (MP3). `phrase_token_id` records the
+token it became once saved.
+
+**Pipeline (all OpenAI, key `openai_api_key` in credentials).**
+
+1. `POST /app/vocabulary/lookups` creates the row; `after_create_commit`
+   enqueues `GenerateDictionaryEntryJob`.
+2. That job makes one structured-output call (`gpt-5.4-mini` through RubyLLM,
+   provider `:openai`). The schema (`DictionaryEntrySchema.for(native:,
+   target:)`) is built per lookup so every field's description names the
+   language it must be in — with a static schema the model drifted into the
+   target language for the explanation (seen with Japanese). The normalizer
+   strips inline markup the model sometimes adds around the headword
+   (`[…]`, `<highlight>…</highlight>`, `*…*`). It then enqueues:
+3. `IllustrateDictionaryEntryJob` — `gpt-image-1-mini`, low quality, 1536×1024
+   WebP (~50 KB) in the app's palette; failure marks the illustration
+   unavailable and the card simply has no picture. Also run by "Regenerate
+   illustration".
+4. `PronounceDictionaryEntryJob` — `gpt-4o-mini-tts`; without it the play
+   button is not rendered.
+
+Typical timing: text ≈ 3–5 s, speech ≈ 2 s, illustration ≈ 8–10 s.
+
+**Screen.** The lookup is pushed as `/app/vocabulary/lookups/:id` (a push
+inside the tab under the existing path-configuration rules — nothing under
+`/app/vocabulary/` except `/new` is modal — so no native rule or tab change was
+needed). It renders a compact input prefilled with the query and the
+`dictionary-card` turbo-frame. The card is polled, not pushed over Action Cable
+(same reasoning as `poll_controller.js`): `dictionary_card_controller.js`
+reloads the frame from `GET …/card` every 1.5 s while the server renders
+`pending` — generating, drawing, or a pronunciation still expected within 20 s.
+A frame reload replaces the frame's *contents* but not the `<turbo-frame>`
+element, so the state attributes live on the inner controller element. A lookup
+still generating after two minutes lost its job and renders as failed with Try
+again.
+
+**Saving.** `DictionaryLookup#save_to_vocabulary!` keeps the vocabulary
+invariant (a saved word is a span inside a phrase): the phrase is an example
+sentence and the span its highlight, preferring an example that uses the
+headword exactly, else the first usable one, else the headword alone as its own
+phrase. It goes through `PhraseTokenUser.save_custom_span!`, the core that
+`create_custom!` now shares, so locking and phrase/token reuse are identical;
+the example's translation is stored directly instead of enqueuing
+`TranslateCustomPhraseJob`. The tab then shows the word with a NEW badge
+(`flash[:saved_entry_id]`) and a "Saved … · added to your practice" toast whose
+Undo is `DELETE /app/vocabulary/:id?undo_save=1` — removing a save just made,
+without the delete toast's own restore.
+
+The native tab label in the iOS/Android apps still says "Vocabulary"; the
+mockup's "Dictionary" title would need a native release to rename the tab, so
+the page title stays "Vocabulary" for now.
 
 **Adding a custom word** (`PhraseTokenUser.create_custom!`) is one page, not a wizard: the sentence is typed and saved, and the word is then picked out of the saved phrase rather than typed again. `vocabulary_picker_controller.js` turns the sentence into tappable words and reports whitespace-token indexes.
 

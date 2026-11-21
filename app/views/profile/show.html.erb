@@ -69,6 +69,31 @@
       </div>
     <% end %>
 
+    <%# -------------------------------------------------- Target language %>
+    <%# Web and native: the language the Dictionary translates into. Set
+        automatically from the first imported video or saved words; this is
+        where it is changed. %>
+    <% target_language = current_user.target_language %>
+    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6" data-testid="profile-target-language">
+      <h2 class="text-lg font-extrabold tracking-tight mb-1.5"><%= t("profile.target_language.heading") %></h2>
+      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-4">
+        <%= t("profile.target_language.description") %>
+      </p>
+
+      <%= form_with url: profile_target_language_path, method: :patch, scope: :user,
+            class: "flex flex-col sm:flex-row gap-3" do |form| %>
+        <%= form.label :target_language, t("profile.target_language.label"), class: "sr-only" %>
+        <%= form.select :target_language,
+              options_for_select(Language.where.not(id: current_translation_language&.id).order(:english_name).map { |language| [localized_language_name(language), language.iso_name] },
+                                 target_language&.iso_name),
+              target_language.nil? ? { include_blank: t("profile.target_language.blank") } : {},
+              required: true,
+              class: "flex-1 h-12 px-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 font-semibold" %>
+        <%= form.submit t("profile.target_language.save"),
+              class: "px-5 h-12 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold cursor-pointer" %>
+      <% end %>
+    </div>
+
     <%# ---------------------------------------------------------------- XP %>
     <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
       <div class="flex items-baseline justify-between mb-1.5">

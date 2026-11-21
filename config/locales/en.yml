@@ -135,6 +135,14 @@ en:
   # The account page. `channels.profile.*` covers the channel card at the top;
   # everything below it lives here.
   profile:
+    target_language:
+      heading: "Language you are learning"
+      description: "The Dictionary translates into this language and explains its words in your native language."
+      label: "Language you are learning"
+      blank: "Choose a language"
+      save: "Save"
+      updated: "You are now learning %{language}."
+      invalid: "Choose a language you are learning."
     native_language:
       heading: "Native language"
       description: "Langlets uses this language for the app and for translations when you share a video."
@@ -330,6 +338,40 @@ en:
     # The Vocabulary tab. The recurring idea in this copy is that a saved word
     # is a span inside a phrase, never a bare dictionary entry — every string
     # that mentions a word mentions the phrase it lives in.
+    # The Dictionary at the top of the Vocabulary tab (DictionaryLookup).
+    dictionary:
+      prompt: "Type anything to translate and add it to your vocabulary"
+      placeholder: "A word, phrase or sentence…"
+      look_up: "Look up"
+      change_language: "Change the language you are learning"
+      your_words: "Your words"
+      add_from_sentence: "Add from a sentence"
+      clear: "Clear"
+      writing: "Writing your card…"
+      detected: "detected automatically"
+      other_language: "Another language"
+      drawing: "Drawing an illustration…"
+      ai_illustration: "AI illustration"
+      illustration_alt: "Illustration of “%{word}”"
+      regenerate: "Regenerate illustration"
+      play: "Play pronunciation"
+      about: "About this word"
+      examples: "Examples"
+      dismiss: "Dismiss"
+      save: "Save to vocabulary"
+      in_vocabulary: "In your vocabulary"
+      saved: "Saved “%{word}” · added to your practice"
+      unsaved: "“%{word}” removed"
+      save_failed: "That word could not be saved."
+      failed_title: "Couldn’t look that up"
+      failed_body: "Something went wrong writing this card."
+      try_again: "Try again"
+      new_badge: "NEW"
+      choose:
+        title: "What are you learning?"
+        body: "Pick the language you are learning. The dictionary translates anything you type into it, and explains its words in %{native}."
+        label: "Language you are learning"
+        submit: "Start"
     vocabulary_entries:
       paused: "Paused"
       undo: "Undo"

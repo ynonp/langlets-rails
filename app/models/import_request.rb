@@ -49,6 +49,13 @@ class ImportRequest < ApplicationRecord
   # the row is visible to the worker that eventually picks the job up.
   after_create_commit :schedule_timeout
 
+  # A user's first imported video tells us what they are learning. The clip
+  # language is known at creation for most imports and only after detection
+  # for the rest, so this watches the column rather than the create. Never
+  # overrides a target language the user already has.
+  after_commit :adopt_user_target_language, on: [ :create, :update ],
+    if: -> { saved_change_to_clip_language? && clip_language.present? }
+
   # What the Queue badge counts, and what the dedupe index covers.
   scope :active, -> { where(status: [ statuses[:detecting], statuses[:queued], statuses[:importing] ]) }
   scope :recent_first, -> { order(created_at: :desc) }
@@ -293,5 +300,12 @@ class ImportRequest < ApplicationRecord
 
   def schedule_timeout
     ImportRequestTimeoutJob.set(wait: TIMEOUT).perform_later(id)
+  end
+
+  def adopt_user_target_language
+    user.adopt_target_language!(Language.find_by(iso_name: clip_language))
+  rescue ActiveRecord::ActiveRecordError => error
+    # A preference is never worth failing an import over.
+    Rails.logger.warn("[ImportRequest #{id}] could not adopt target language: #{error.message}")
   end
 end

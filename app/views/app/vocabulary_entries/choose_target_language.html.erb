@@ -1,0 +1,36 @@
+<% content_for :title, "Vocabulary · langlets." %>
+
+<%# Shown in place of the tab only for a learner with no target language, no
+    saved words and no imported videos — nothing to infer it from. Saving goes
+    through Profile's own action and comes straight back here. %>
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-6" data-testid="dictionary-choose-language">
+  <%= render "app/shared/header", title: t("app.vocabulary_entries.index.title") %>
+
+  <div class="flex flex-col gap-2">
+    <h2 class="text-[26px] font-bold leading-tight tracking-[-0.5px] text-app-text"><%= t("app.dictionary.choose.title") %></h2>
+    <p class="text-[15px] leading-relaxed text-app-text-2">
+      <%= t("app.dictionary.choose.body", native: localized_language_name(current_translation_language)) %>
+    </p>
+  </div>
+
+  <%= form_with url: profile_target_language_path, method: :patch, scope: :user,
+                class: "flex flex-col gap-5" do |f| %>
+    <%= hidden_field_tag :return_to, app_vocabulary_entries_path %>
+    <fieldset class="flex flex-col gap-2.5">
+      <legend class="sr-only"><%= t("app.dictionary.choose.label") %></legend>
+      <% @target_choices.each do |language| %>
+        <label class="app-hairline flex cursor-pointer items-center justify-between gap-3 rounded-app-field bg-app-card px-4 py-3.5 has-[:checked]:ring-1 has-[:checked]:ring-app-accent">
+          <span class="flex flex-col">
+            <span class="text-[16px] font-semibold text-app-text"><%= localized_language_name(language) %></span>
+            <span class="text-[13px] text-app-text-3" lang="<%= language.iso_name %>"><%= language.native_name %></span>
+          </span>
+          <%= f.radio_button :target_language, language.iso_name, required: true,
+                             class: "h-5 w-5 accent-[var(--color-app-accent)]" %>
+        </label>
+      <% end %>
+    </fieldset>
+
+    <%= f.submit t("app.dictionary.choose.submit"),
+                 class: "w-full rounded-app-field bg-app-accent px-4 py-[17px] text-[17px] font-bold text-app-on-accent" %>
+  <% end %>
+</div>

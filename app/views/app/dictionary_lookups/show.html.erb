@@ -1,0 +1,28 @@
+<% content_for :title, "#{@lookup.query} · langlets." %>
+
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4 pb-28">
+  <%# Compact input: a new lookup straight from the card, prefilled with this
+      one so a typo is one edit away. %>
+  <%= form_with url: app_vocabulary_dictionary_lookups_path, method: :post,
+                data: { testid: "dictionary-compact-form" },
+                class: "app-hairline flex h-[52px] items-center gap-2.5 rounded-full bg-app-card ps-4 pe-2 focus-within:ring-1 focus-within:ring-app-accent" do |f| %>
+    <%= app_icon "search", class: "h-[18px] w-[18px] shrink-0 text-app-text-2" %>
+    <label for="dictionary-query" class="sr-only"><%= t("app.dictionary.look_up") %></label>
+    <%= f.text_field :query, id: "dictionary-query", value: @lookup.query,
+                     maxlength: DictionaryLookup::MAX_QUERY_LENGTH,
+                     required: true, autocomplete: "off", autocapitalize: "off",
+                     enterkeyhint: "search", dir: "auto",
+                     class: "min-w-0 flex-1 bg-transparent p-0 text-[19px] font-medium text-app-text outline-none border-0 focus:ring-0" %>
+    <%= link_to app_vocabulary_entries_path,
+                aria: { label: t("app.dictionary.clear") },
+                class: "flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-app-pill text-app-text-2" do %>
+      <%= app_icon "close", class: "h-3 w-3" %>
+    <% end %>
+  <% end %>
+
+  <% if flash[:alert].present? %>
+    <p role="alert" class="rounded-app-field bg-red-500/10 px-4 py-3 text-[14px] font-semibold text-red-300"><%= flash[:alert] %></p>
+  <% end %>
+
+  <%= render "card", lookup: @lookup %>
+</div>

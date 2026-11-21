@@ -98,6 +98,19 @@ Rails.application.routes.draw do
     # controller: pinned — a singular `resource` would otherwise look for
     # App::LibrariesController.
     resource :library, only: [ :show ], controller: "library"
+    # The Dictionary at the top of the native Vocabulary tab: an AI card per
+    # lookup, polled while it is written and illustrated, and saveable as a
+    # vocabulary word. Declared before vocabulary_entries so "lookups" is never
+    # read as an entry id.
+    scope "vocabulary", as: "vocabulary" do
+      resources :dictionary_lookups, path: "lookups", only: [ :create, :show ] do
+        member do
+          get :card
+          post :save
+          post :illustrate
+        end
+      end
+    end
     # The native Vocabulary tab. The browser counterpart is `/vocabulary`.
     resources :vocabulary_entries, path: "vocabulary",
               only: [ :index, :show, :new, :create, :update, :destroy ] do
@@ -144,6 +157,7 @@ Rails.application.routes.draw do
   get "profile", to: "profile#show", as: :profile
   patch "profile/notifications", to: "profile#update_notifications", as: :profile_notifications
   patch "profile/native_language", to: "profile#update_native_language", as: :profile_native_language
+  patch "profile/target_language", to: "profile#update_target_language", as: :profile_target_language
 
   # The notification list, shared by web and the native shell. `read_all` is
   # also the "user entered the app" event the iOS shell reports on every launch

@@ -14,7 +14,12 @@ module App
     # The native Vocabulary tab. VocabularyEntriesController inherits these
     # actions for the web route; each controller's own route and view prefix
     # determine its presentation.
+    include DictionaryTargetLanguage
+
     before_action :set_entry, only: [ :show, :update, :destroy ]
+    # The native tab opens on the Dictionary, which cannot work without knowing
+    # what the learner is learning. The web list has no Dictionary and skips it.
+    before_action :require_dictionary_target_language, only: :index
 
     def index
       @query = params[:q].to_s.strip
@@ -86,6 +91,13 @@ module App
       language_id = @record.language_id
       @record.destroy!
 
+      # The Undo on the Dictionary's "Saved" toast: taking back a save the
+      # user just made is not a deletion worth a second undo.
+      if params[:undo_save].present?
+        redirect_to vocabulary_index_path, notice: t("app.dictionary.unsaved", word: word)
+        return
+      end
+
       redirect_to vocabulary_index_path,
         notice: "“#{word}” deleted",
         flash: { undo: { "phrase_token_id" => token_id, "language_id" => language_id, "word" => word } }
@@ -132,6 +144,14 @@ module App
     end
 
     private
+
+    def require_dictionary_target_language
+      @target_language = dictionary_target_language
+      return if @target_language
+
+      @target_choices = dictionary_target_choices
+      render :choose_target_language
+    end
 
     def vocabulary_index_path
       app_vocabulary_entries_path

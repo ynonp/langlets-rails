@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_11_21_130000) do
+ActiveRecord::Schema[8.0].define(version: 2026_11_21_200000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -289,6 +289,34 @@ ActiveRecord::Schema[8.0].define(version: 2026_11_21_130000) do
     t.index ["token"], name: "index_device_tokens_on_token", unique: true
     t.index ["user_id", "invalidated_at"], name: "index_device_tokens_on_user_id_and_invalidated_at"
     t.index ["user_id"], name: "index_device_tokens_on_user_id"
+  end
+
+  create_table "dictionary_lookups", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "query", null: false
+    t.bigint "target_language_id", null: false
+    t.bigint "native_language_id", null: false
+    t.string "detected_language"
+    t.string "direction"
+    t.integer "status", default: 0, null: false
+    t.integer "illustration_status", default: 0, null: false
+    t.string "headword"
+    t.string "transliteration"
+    t.string "part_of_speech"
+    t.string "grammar_notes", default: [], null: false, array: true
+    t.string "translation"
+    t.text "explanation"
+    t.jsonb "examples", default: [], null: false
+    t.text "illustration_prompt"
+    t.string "failure_reason"
+    t.bigint "phrase_token_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["native_language_id"], name: "index_dictionary_lookups_on_native_language_id"
+    t.index ["phrase_token_id"], name: "index_dictionary_lookups_on_phrase_token_id"
+    t.index ["target_language_id"], name: "index_dictionary_lookups_on_target_language_id"
+    t.index ["user_id", "created_at"], name: "index_dictionary_lookups_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_dictionary_lookups_on_user_id"
   end
 
   create_table "enrollments", force: :cascade do |t|
@@ -847,6 +875,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_11_21_130000) do
   add_foreign_key "daily_practice_reminders", "notifications", on_delete: :cascade
   add_foreign_key "daily_practice_reminders", "starter_challenges"
   add_foreign_key "device_tokens", "users"
+  add_foreign_key "dictionary_lookups", "languages", column: "native_language_id"
+  add_foreign_key "dictionary_lookups", "languages", column: "target_language_id"
+  add_foreign_key "dictionary_lookups", "phrase_tokens", on_delete: :nullify
+  add_foreign_key "dictionary_lookups", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
   add_foreign_key "evaluation_signups", "courses"

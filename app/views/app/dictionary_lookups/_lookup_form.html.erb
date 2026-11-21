@@ -1,0 +1,36 @@
+<%# The Dictionary input at the top of the Vocabulary tab. The pill shows the
+    two languages the Dictionary moves between and opens Profile to change the
+    one being learned; the direction for a given query is decided by the model's
+    detection, never chosen here. %>
+<%= form_with url: app_vocabulary_dictionary_lookups_path, method: :post,
+              data: { testid: "dictionary-form" },
+              class: "flex flex-col gap-2.5" do |f| %>
+  <label for="dictionary-query" class="text-[15px] leading-[1.45] text-app-text-2">
+    <%= t("app.dictionary.prompt") %>
+  </label>
+
+  <div class="app-hairline flex flex-col gap-4 rounded-[22px] bg-app-card px-[18px] pb-3.5 pt-[18px] focus-within:ring-1 focus-within:ring-app-accent">
+    <%= f.text_field :query, id: "dictionary-query",
+                     placeholder: t("app.dictionary.placeholder"),
+                     maxlength: DictionaryLookup::MAX_QUERY_LENGTH,
+                     required: true, autocomplete: "off", autocapitalize: "off",
+                     enterkeyhint: "search", dir: "auto",
+                     class: "w-full bg-transparent p-0 text-[22px] font-medium text-app-text placeholder:text-app-text-3 outline-none border-0 focus:ring-0" %>
+
+    <div class="flex items-center justify-between gap-3">
+      <%= link_to profile_path,
+                  data: { testid: "dictionary-languages" },
+                  aria: { label: t("app.dictionary.change_language") },
+                  class: "flex h-9 min-w-0 items-center gap-2 rounded-full bg-app-pill px-3 text-[13px] font-semibold text-app-text-dim" do %>
+        <span class="truncate"><%= localized_language_name(current_translation_language) %></span>
+        <%= app_icon "swap", class: "h-4 w-4 shrink-0 text-app-text-2" %>
+        <span class="truncate"><%= localized_language_name(target_language) %></span>
+      <% end %>
+
+      <button type="submit" aria-label="<%= t("app.dictionary.look_up") %>"
+              class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-app-accent text-app-on-accent">
+        <%= app_icon "arrow_right", class: "h-[18px] w-[18px] rtl:-scale-x-100" %>
+      </button>
+    </div>
+  </div>
+<% end %>

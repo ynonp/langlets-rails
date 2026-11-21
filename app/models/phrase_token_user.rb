@@ -130,6 +130,20 @@ class PhraseTokenUser < ApplicationRecord
       start_index, end_index = custom_span(sentence, token_range)
       raise InputError.new(:selection_required) unless start_index
 
+      save_custom_span!(user:, sentence:, language:, span: [ start_index, end_index ],
+        translation:, translation_language:)
+    end
+
+    # The shared core of every user-owned save: a phrase this user owns, an
+    # inclusive character span inside it, and what that span means. The
+    # Add-a-word picker reaches it through whitespace-token indexes; the
+    # Dictionary reaches it with the span of its highlighted example word.
+    #
+    # `sentence_translation`, when the caller already has one (the Dictionary's
+    # example translation), is stored instead of asking a model for it later.
+    def save_custom_span!(user:, sentence:, language:, span:, translation:, translation_language:, sentence_translation: nil)
+      start_index, end_index = span
+
       # Serialize custom saves for this owner so concurrent requests cannot
       # both create the same phrase before either transaction commits.
       User.find(user.id).with_lock do
@@ -142,7 +156,11 @@ class PhraseTokenUser < ApplicationRecord
         token.token_translations.create_with(translation:).find_or_create_by!(language: translation_language)
         saved = user.phrase_token_users.create_with(language: translation_language).find_or_create_by!(phrase_token: token)
         unless phrase.phrase_translations.exists?(language: translation_language)
-          TranslateCustomPhraseJob.perform_later(phrase.id, translation_language.id)
+          if sentence_translation.present? && language != translation_language
+            phrase.phrase_translations.create!(language: translation_language, text: sentence_translation.strip)
+          else
+            TranslateCustomPhraseJob.perform_later(phrase.id, translation_language.id)
+          end
         end
         saved
       end

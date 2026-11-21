@@ -1,33 +1,45 @@
+<%# One "Your words" row. Compact (word · meaning · language badge) to sit
+    under the Dictionary, but it still carries the context phrase on a second
+    line: the phrase is what tells two saved senses of one word apart.
+    `fresh` marks the word the Dictionary just saved. %>
+<% fresh = local_assigns[:fresh] %>
 <%= link_to app_vocabulary_entry_path(entry.id),
-            class: "app-hairline block rounded-[20px] bg-app-card px-[18px] pt-[18px] pb-3.5 #{'opacity-55' if entry.paused?}",
+            class: "-mx-2.5 flex items-center gap-3 rounded-[10px] border-t border-white/[0.06] px-2.5 py-2.5 #{fresh ? 'bg-app-accent/10' : ''} #{'opacity-55' if entry.paused?}",
             data: { testid: "vocabulary-entry", turbo_frame: "_top" } do %>
-  <div class="flex items-start justify-between gap-3">
-    <div class="min-w-0">
-      <p class="text-[22px] font-bold tracking-[-0.22px] text-app-text"><%= entry.word %></p>
-      <p class="mt-0.5 text-[15px] text-app-text-dim"><%= entry.translation %></p>
-      <p class="mt-1 text-[12px] text-app-text-3"><%= t("app.vocabulary_entries.familiarity.levels.#{entry.familiarity}") %></p>
+  <div class="min-w-0 flex-1">
+    <div class="flex min-w-0 items-baseline gap-2.5">
+      <p class="shrink-0 text-[19px] font-semibold text-app-text" dir="auto"><%= entry.word %></p>
+      <p class="truncate text-[14px] text-app-text-2" dir="auto"><%= entry.translation %></p>
     </div>
+    <p class="mt-0.5 flex min-w-0 items-baseline gap-1.5 text-[12px] text-app-text-3">
+      <span class="truncate italic" dir="auto"><%= highlighted_vocabulary_context(entry, quoted: true) %></span>
+      <% if entry.source.present? %>
+        <span class="shrink-0" aria-hidden="true">·</span>
+        <span class="max-w-[40%] shrink-0 truncate"><%= entry.source %></span>
+      <% end %>
+    </p>
+  </div>
 
-    <% if entry.paused? %>
-      <span class="flex shrink-0 items-center gap-1.5 text-[12px] font-semibold text-app-text-2">
-        <span class="flex gap-[2px]" aria-hidden="true">
-          <span class="block h-[11px] w-[3px] bg-app-text-2"></span>
-          <span class="block h-[11px] w-[3px] bg-app-text-2"></span>
-        </span>
-        <%= t("app.vocabulary_entries.paused") %>
+  <% if fresh %>
+    <span data-testid="vocabulary-entry-new"
+          class="shrink-0 rounded-md bg-app-accent px-[7px] py-[3px] text-[11px] font-bold tracking-[0.08em] text-app-on-accent">
+      <%= t("app.dictionary.new_badge") %>
+    </span>
+  <% end %>
+
+  <% if entry.paused? %>
+    <span class="flex shrink-0 items-center gap-1 text-[11px] font-semibold text-app-text-2"
+          title="<%= t("app.vocabulary_entries.paused") %>">
+      <span class="flex gap-[2px]" aria-hidden="true">
+        <span class="block h-[10px] w-[3px] bg-app-text-2"></span>
+        <span class="block h-[10px] w-[3px] bg-app-text-2"></span>
       </span>
-    <% end %>
-  </div>
+      <span class="sr-only"><%= t("app.vocabulary_entries.paused") %></span>
+    </span>
+  <% end %>
 
-  <p class="mt-2.5 truncate text-[13px] italic text-app-text-3">
-    <%= highlighted_vocabulary_context(entry, quoted: true) %>
-  </p>
-
-  <div class="mt-2.5 flex items-center gap-2 text-[12px] text-app-text-3">
-    <span class="uppercase tracking-[0.08em]"><%= localized_language_name(entry.source_language) %></span>
-    <% if entry.source.present? %>
-      <span class="h-1 w-1 rounded-full bg-white/15"></span>
-      <span class="truncate"><%= entry.source %></span>
-    <% end %>
-  </div>
+  <span class="shrink-0 rounded-md bg-app-card px-[7px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.08em] text-app-text-2"
+        title="<%= localized_language_name(entry.source_language) %>">
+    <%= entry.source_language.iso_name.split("-").first %>
+  </span>
 <% end %>

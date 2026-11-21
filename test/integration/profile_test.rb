@@ -41,10 +41,10 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "form[action=?][data-controller=native-language][data-turbo=false]", profile_native_language_path
     assert_select "select[name=?]", "user[native_language]"
-    assert_select "option[value=en][selected=selected]"
-    assert_select "option[value=he]"
-    assert_select "option[value=es]"
-    assert_select "option", count: 3
+    assert_select "select[name='user[native_language]'] option[value=en][selected=selected]"
+    assert_select "select[name='user[native_language]'] option[value=he]"
+    assert_select "select[name='user[native_language]'] option[value=es]"
+    assert_select "select[name='user[native_language]'] option", count: 3
     assert_select "input[type=submit][disabled=disabled]"
     assert_select "body[data-native-tabs] .profile-safe-area", count: 1
 

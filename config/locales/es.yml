@@ -135,6 +135,14 @@ es:
       footer_text: 'Elige cómo recibir notificaciones —por correo, push, ambos o ninguno—
         en tu página de perfil:'
   profile:
+    target_language:
+      heading: "Idioma que estudias"
+      description: "El Diccionario traduce a este idioma y explica sus palabras en tu idioma nativo."
+      label: "Idioma que estudias"
+      blank: "Elige un idioma"
+      save: "Guardar"
+      updated: "Ahora estudias %{language}."
+      invalid: "Elige un idioma que estés aprendiendo."
     native_language:
       heading: Idioma nativo
       description: Langlets usa este idioma en la aplicación y en las traducciones
@@ -318,6 +326,39 @@ es:
           title: Langlets Pro
           badge: ACTIVO
           body: Importaciones ilimitadas
+    dictionary:
+      prompt: "Escribe lo que quieras para traducirlo y añadirlo a tu vocabulario"
+      placeholder: "Una palabra, frase u oración…"
+      look_up: "Buscar"
+      change_language: "Cambiar el idioma que estudias"
+      your_words: "Tus palabras"
+      add_from_sentence: "Añadir desde una frase"
+      clear: "Borrar"
+      writing: "Escribiendo tu tarjeta…"
+      detected: "detectado automáticamente"
+      other_language: "Otro idioma"
+      drawing: "Dibujando una ilustración…"
+      ai_illustration: "Ilustración IA"
+      illustration_alt: "Ilustración de «%{word}»"
+      regenerate: "Generar otra ilustración"
+      play: "Escuchar pronunciación"
+      about: "Sobre esta palabra"
+      examples: "Ejemplos"
+      dismiss: "Descartar"
+      save: "Guardar en vocabulario"
+      in_vocabulary: "En tu vocabulario"
+      saved: "«%{word}» guardada · añadida a tu práctica"
+      unsaved: "«%{word}» eliminada"
+      save_failed: "No se pudo guardar esa palabra."
+      failed_title: "No pudimos buscar eso"
+      failed_body: "Algo salió mal al escribir esta tarjeta."
+      try_again: "Intentar de nuevo"
+      new_badge: "NUEVA"
+      choose:
+        title: "¿Qué idioma estudias?"
+        body: "Elige el idioma que estás aprendiendo. El diccionario traduce a él todo lo que escribas y explica sus palabras en %{native}."
+        label: "Idioma que estudias"
+        submit: "Empezar"
     vocabulary_entries:
       paused: En pausa
       undo: Deshacer
