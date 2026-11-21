@@ -35,7 +35,7 @@ module DictionaryEntrySchema
         end
       end
       string :illustration_prompt,
-        description: "In English: one sentence describing a simple, concrete, text-free scene that illustrates the headword's meaning."
+        description: "In English: what to draw. For a word naming a thing (bottle, tree, key), describe only that one thing on its own — no table, shelf, person, background or second object. For an action, quality or abstract idea, describe the single simplest image that shows it, with as few elements as possible."
     end
   end
 end

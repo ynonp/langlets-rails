@@ -10,7 +10,8 @@ class PronounceDictionaryEntryJob < ApplicationJob
     return unless lookup.ready? && lookup.headword.present?
     return if lookup.pronunciation.attached?
 
-    audio = Dictionary::Media.speak(lookup.headword, language: lookup.target_language)
+    audio = Dictionary::Media.speak(lookup.headword, language: lookup.target_language,
+      accent: lookup.user.dictionary_instructions(lookup.target_language))
     lookup.pronunciation.attach(io: StringIO.new(audio), filename: "dictionary-#{lookup.id}.mp3",
       content_type: "audio/mpeg")
   rescue Dictionary::Media::Error, Net::ReadTimeout, Net::OpenTimeout, SocketError => error

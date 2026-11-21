@@ -47,6 +47,23 @@ class ProfileController < ApplicationController
       notice: t("profile.target_language.updated", language: helpers.localized_language_name(language))
   end
 
+  # The learner's Dictionary notes for one language (dialect, register,
+  # script). Applies to the language named in the form, which the page fills
+  # with the current target language; blank clears it.
+  def update_dictionary_instructions
+    language = Language.find_by(iso_name: params.dig(:user, :language))
+    if language.nil?
+      redirect_to profile_path, alert: t("profile.target_language.invalid"), status: :see_other
+      return
+    end
+
+    current_user.set_dictionary_instructions(language, params.dig(:user, :dictionary_instructions))
+    current_user.save!
+
+    redirect_to profile_path, status: :see_other,
+      notice: t("profile.dictionary_instructions.updated", language: helpers.localized_language_name(language))
+  end
+
   # The set of channels to deliver over — any of email and push, including
   # neither. Applies to the notification subsystem only — Devise mail and
   # Channel invitations are answers to something the user just did and are not

@@ -92,6 +92,30 @@
         <%= form.submit t("profile.target_language.save"),
               class: "px-5 h-12 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold cursor-pointer" %>
       <% end %>
+
+      <%# Notes for the current target language only; each language keeps its own. %>
+      <% if target_language %>
+        <%= form_with url: profile_dictionary_instructions_path, method: :patch, scope: :user,
+              data: { testid: "profile-dictionary-instructions" },
+              class: "mt-5 flex flex-col gap-3 border-t border-gray-100 dark:border-gray-800 pt-5" do |form| %>
+          <%= form.hidden_field :language, value: target_language.iso_name %>
+          <div>
+            <%= form.label :dictionary_instructions,
+                  t("profile.dictionary_instructions.heading", language: localized_language_name(target_language)),
+                  class: "block text-sm font-extrabold tracking-tight mb-1" %>
+            <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
+              <%= t("profile.dictionary_instructions.description") %>
+            </p>
+          </div>
+          <%= form.text_area :dictionary_instructions,
+                value: current_user.dictionary_instructions(target_language),
+                rows: 3, maxlength: User::DICTIONARY_INSTRUCTIONS_LIMIT, dir: "auto",
+                placeholder: t("profile.dictionary_instructions.placeholder"),
+                class: "w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 font-semibold text-sm" %>
+          <%= form.submit t("profile.dictionary_instructions.save"),
+                class: "self-start px-5 h-12 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold cursor-pointer" %>
+        <% end %>
+      <% end %>
     </div>
 
     <%# ---------------------------------------------------------------- XP %>

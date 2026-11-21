@@ -158,6 +158,7 @@ Rails.application.routes.draw do
   patch "profile/notifications", to: "profile#update_notifications", as: :profile_notifications
   patch "profile/native_language", to: "profile#update_native_language", as: :profile_native_language
   patch "profile/target_language", to: "profile#update_target_language", as: :profile_target_language
+  patch "profile/dictionary_instructions", to: "profile#update_dictionary_instructions", as: :profile_dictionary_instructions
 
   # The notification list, shared by web and the native shell. `read_all` is
   # also the "user entered the app" event the iOS shell reports on every launch

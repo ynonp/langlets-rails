@@ -3745,9 +3745,24 @@ token it became once saved.
 3. `IllustrateDictionaryEntryJob` — `gpt-image-1-mini`, low quality, 1536×1024
    WebP (~50 KB) in the app's palette; failure marks the illustration
    unavailable and the card simply has no picture. Also run by "Regenerate
-   illustration".
+   illustration". Both the schema's `illustration_prompt` description and the
+   image style prompt ask for *only* the thing the word names (a bottle, not a
+   bottle and a glass on a table), centered with wide margins — the card crops
+   to a wide strip and overlays a label and a button in the top corners.
 4. `PronounceDictionaryEntryJob` — `gpt-4o-mini-tts`; without it the play
    button is not rendered.
+
+**Learner instructions.** Profile's target-language card has a "Dictionary
+instructions for <language>" text area (up to 500 characters), stored per
+language in `preferences["dictionary_instructions"][iso_code]`
+(`User#dictionary_instructions` / `#set_dictionary_instructions`; blank
+clears it), so switching languages keeps each language's notes. They are
+appended to the card prompt, inside delimiters, as notes on dialect, word
+choice, register, script and spelling that cannot change the field languages
+or the output format, and passed to the speech call so the requested variety is
+also what is pronounced. Example: "Use Palestinian colloquial Arabic, not
+Modern Standard Arabic" turns "what" into شو instead of ماذا. Only new lookups
+use updated notes.
 
 Typical timing: text ≈ 3–5 s, speech ≈ 2 s, illustration ≈ 8–10 s.
 

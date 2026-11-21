@@ -135,6 +135,12 @@ es:
       footer_text: 'Elige cómo recibir notificaciones —por correo, push, ambos o ninguno—
         en tu página de perfil:'
   profile:
+    dictionary_instructions:
+      heading: "Instrucciones del Diccionario para %{language}"
+      description: "Notas opcionales que el Diccionario sigue en este idioma: un dialecto, un registro o una preferencia de ortografía. La pronunciación también las sigue."
+      placeholder: "p. ej. Usa el español de México, no el de España"
+      save: "Guardar instrucciones"
+      updated: "Instrucciones del Diccionario para %{language} guardadas."
     target_language:
       heading: "Idioma que estudias"
       description: "El Diccionario traduce a este idioma y explica sus palabras en tu idioma nativo."

@@ -135,6 +135,12 @@ en:
   # The account page. `channels.profile.*` covers the channel card at the top;
   # everything below it lives here.
   profile:
+    dictionary_instructions:
+      heading: "Dictionary instructions for %{language}"
+      description: "Optional notes the Dictionary follows for this language — a dialect, a register or a spelling preference. Pronunciation follows them too."
+      placeholder: "e.g. Use Palestinian colloquial Arabic, not Modern Standard Arabic"
+      save: "Save instructions"
+      updated: "Dictionary instructions for %{language} saved."
     target_language:
       heading: "Language you are learning"
       description: "The Dictionary translates into this language and explains its words in your native language."

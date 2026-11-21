@@ -225,6 +225,24 @@ class User < ApplicationRecord
     self.preferences = (preferences || {}).merge("target_language" => code)
   end
 
+  # The learner's own notes for the Dictionary, per target language — a
+  # dialect, a script preference, a register ("Palestinian colloquial, not
+  # MSA"). Stored under preferences["dictionary_instructions"][iso_code] so
+  # switching languages keeps each language's notes.
+  DICTIONARY_INSTRUCTIONS_LIMIT = 500
+
+  def dictionary_instructions(language)
+    return "" if language.nil?
+
+    (preferences || {}).dig("dictionary_instructions", language.iso_name).to_s
+  end
+
+  def set_dictionary_instructions(language, text)
+    text = text.to_s.strip.first(DICTIONARY_INSTRUCTIONS_LIMIT)
+    all = ((preferences || {})["dictionary_instructions"] || {}).merge(language.iso_name => text)
+    self.preferences = (preferences || {}).merge("dictionary_instructions" => all.compact_blank)
+  end
+
   # Sets the target language only if none is set yet — the automatic paths
   # (first imported video, first visit to the Dictionary) must never override
   # an explicit choice. Locks the row so a concurrent preference write (theme,

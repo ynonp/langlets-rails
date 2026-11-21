@@ -5,9 +5,12 @@ module Dictionary
   # detection, language codes are mapped onto ours, and inline markup around
   # the headword is stripped. No network — RubyLLM.chat is stubbed.
   class EntryGeneratorTest < ActiveSupport::TestCase
-    FakeChat = Struct.new(:content, :asked) do
+    FakeChat = Struct.new(:content, :asked, :instructions) do
       def with_schema(*) = self
-      def with_instructions(*) = self
+      def with_instructions(text)
+        self.instructions = text
+        self
+      end
       def ask(prompt)
         self.asked = prompt
         Struct.new(:content).new(content)
@@ -15,14 +18,15 @@ module Dictionary
     end
 
     setup do
-      user = User.create!(email: "generator@example.com", password: "password123", confirmed_at: Time.zone.now)
+      @user = User.create!(email: "generator@example.com", password: "password123", confirmed_at: Time.zone.now)
+      user = @user
       @lookup = DictionaryLookup.new(user: user, query: "זعيم", target_language: languages(:arabic),
         native_language: languages(:hebrew))
     end
 
     def generate(answer)
-      chat = FakeChat.new(answer)
-      RubyLLM.stub(:chat, chat) { EntryGenerator.call(@lookup).attributes }
+      @chat = FakeChat.new(answer)
+      RubyLLM.stub(:chat, @chat) { EntryGenerator.call(@lookup).attributes }
     end
 
     def answer(**overrides)
@@ -68,6 +72,25 @@ module Dictionary
       attributes = generate(answer("headword" => " ").to_json)
 
       assert_equal @lookup.query, attributes[:headword]
+    end
+
+    test "the learner's notes for the target language are passed to the model" do
+      @user.set_dictionary_instructions(languages(:arabic), "Use Palestinian colloquial Arabic, not MSA.")
+      @user.save!
+
+      generate(answer)
+
+      assert_includes @chat.instructions, "Use Palestinian colloquial Arabic, not MSA."
+    end
+
+    test "without notes, or with notes for another language, none are added" do
+      @user.set_dictionary_instructions(languages(:spanish), "Mexican Spanish.")
+      @user.save!
+
+      generate(answer)
+
+      assert_not_includes @chat.instructions, "learner's own notes"
+      assert_not_includes @chat.instructions, "Mexican Spanish."
     end
   end
 end

@@ -127,6 +127,25 @@ module App
       assert_select "select[name='user[target_language]'] option[value=he]", false
     end
 
+    test "profile edits the dictionary instructions for the current target language" do
+      learn(@arabic)
+
+      get "/profile", headers: NATIVE
+      assert_select "[data-testid=profile-dictionary-instructions] input[name='user[language]'][value='ar-JO']"
+
+      patch "/profile/dictionary_instructions",
+        params: { user: { language: "ar-JO", dictionary_instructions: "Palestinian colloquial, not MSA" } }, headers: NATIVE
+
+      assert_redirected_to "/profile"
+      assert_equal "Palestinian colloquial, not MSA", @user.reload.dictionary_instructions(@arabic)
+    end
+
+    test "profile offers no dictionary instructions before a target language exists" do
+      get "/profile", headers: NATIVE
+
+      assert_select "[data-testid=profile-dictionary-instructions]", false
+    end
+
     # ------------------------------------------------------------ lookups
 
     test "looking something up creates a lookup, queues its generation and opens it" do

@@ -99,4 +99,19 @@ class UserTargetLanguageTest < ActiveSupport::TestCase
 
     assert_equal @french, @user.reload.target_language
   end
+
+  test "dictionary instructions are kept per language, trimmed, capped and cleared when blank" do
+    @user.set_dictionary_instructions(@spanish, "  Mexican Spanish  ")
+    @user.set_dictionary_instructions(@french, "x" * 600)
+    @user.save!
+    @user.reload
+
+    assert_equal "Mexican Spanish", @user.dictionary_instructions(@spanish)
+    assert_equal User::DICTIONARY_INSTRUCTIONS_LIMIT, @user.dictionary_instructions(@french).length
+    assert_equal "", @user.dictionary_instructions(@japanese)
+
+    @user.set_dictionary_instructions(@spanish, " ")
+    @user.save!
+    assert_equal({ "fr" => "x" * 500 }, @user.reload.preferences["dictionary_instructions"])
+  end
 end

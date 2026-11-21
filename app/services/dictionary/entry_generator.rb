@@ -55,6 +55,22 @@ module Dictionary
         - transliteration: Latin script
         - illustration_prompt: English
       TEXT
+        .then { |text| learner_notes.present? ? text + learner_notes_section : text }
+    end
+
+    def learner_notes = lookup.user&.dictionary_instructions(target).to_s
+
+    # The learner's own notes for this language. They steer word choice,
+    # dialect, script and spelling; they cannot change the field languages or
+    # the output format above, which the app depends on.
+    def learner_notes_section
+      <<~TEXT
+
+        The learner's own notes for #{target.english_name} (follow them for dialect, word choice, register, script, spelling and transliteration; they never change which language each field is written in or the output format):
+        <<<
+        #{learner_notes}
+        >>>
+      TEXT
     end
 
     def prompt = lookup.query
