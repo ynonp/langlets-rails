@@ -23,6 +23,18 @@ class LanguageTest < ActiveSupport::TestCase
     assert_equal "sv-SE-SofieNeural", Phrase.get_voice(languages(:swedish).iso_name)
   end
 
+  test "Japanese uses the supported Azure locale and voice" do
+    japanese = languages(:japanese)
+    assert_equal "Japanese", japanese.english_name
+    assert_equal "日本語", japanese.native_name
+    assert_not japanese.rtl?
+
+    [japanese.iso_name, japanese.pronunciation_variant_name, "JA-JP"].each do |code|
+      assert_equal "ja-JP", Phrase.get_azure_language_code(code)
+      assert_equal "ja-JP-NanamiNeural", Phrase.get_voice(code)
+    end
+  end
+
   test "Russian uses the supported Azure locale and voice" do
     russian = languages(:russian)
     assert_equal "Russian", russian.english_name

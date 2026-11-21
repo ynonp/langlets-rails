@@ -11,6 +11,12 @@ The system is in production. Use Rails and React best practices when implementin
 
 We use `docs/architecture.md` to reflect the state of the platform and for future coding agents so after every feature also update this file.
 
+## Japanese course content
+
+- Use `ja` for the catalog and MCP language code, `Japanese` for pipeline payloads, and `ja-JP` for speech.
+- Keep original kanji, hiragana, katakana, okurigana, and punctuation. Timed source spaces delimit tokens. Keep those boundaries when grouping lessons or editing timed examples.
+- Verify imports with Japanese audio. A translated Japanese subtitle track alone does not establish the source language.
+
 ## Deploy
 - Use `kamal deploy` to deploy the app to production
 - pipeline runs on its own server you have access `ynon@pipeline.langlets.app`

@@ -12,6 +12,11 @@ For Chinese, each entry is a meaningful word, which may contain multiple charact
 我喜欢音乐, return 我, 喜欢, 音乐 as three timed entries. Do not return the whole sentence
 as one word or split every character. Use Chinese characters, not pinyin.
 
+For Japanese, use one timed lexical or grammatical unit per entry: for
+昨日は映画を見ました。, return 昨日, は, 映画, を, 見ました。 as five timed entries.
+Keep inflected forms and their okurigana intact. Use the original kanji and kana,
+including katakana long-vowel marks. Do not add readings or rōmaji.
+
 Transcribe the whole video from start to end. Include every repetition in full. For interviews,
 include every speaker. The main content is in ${clipLanguage}; omit intros, outros, or passages in
 other languages. Do not translate, summarize, correct, split, merge, add, or reorder words. Omit

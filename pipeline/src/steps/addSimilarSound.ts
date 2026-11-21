@@ -21,6 +21,8 @@ export async function addSimilarSound(ctx: PipelineContext): Promise<void> {
     for (const phrase of ctx.store.data.phrases ?? []) {
       const line = code === "zh"
         ? buildChineseSimilarSoundLine(dictionary, phrase.text_l1, random)
+        : code === "ja"
+        ? replaceTimedWord(dictionary, phrase.text_l1, random)
         : buildSimilarSoundLine(dictionary, phrase.text_l1, random);
       if (line !== null) results.push(line);
     }
@@ -88,9 +90,18 @@ export function buildChineseSimilarSoundLine(
   phrase: string,
   random: () => number,
 ): string {
+  return replaceTimedWord(dictionary, phrase, random, /^\p{Script=Han}{1,4}$/u);
+}
+
+function replaceTimedWord(
+  dictionary: SoundDictionary | null,
+  phrase: string,
+  random: () => number,
+  eligibleWord?: RegExp,
+): string {
   if (!dictionary) return phrase;
   const candidates = [...phrase.matchAll(/['\p{L}][\p{L}\p{M}]*(?:'[\p{L}\p{M}]+)*/gu)]
-    .filter((match) => /^\p{Script=Han}{1,4}$/u.test(match[0]))
+    .filter((match) => !eligibleWord || eligibleWord.test(match[0]))
     .map((match) => ({ match, alternatives: dictionary.lookup(match[0]) }))
     .filter(({ alternatives }) => alternatives.length > 0);
   if (candidates.length === 0) return phrase;

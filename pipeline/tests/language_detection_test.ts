@@ -15,6 +15,7 @@ const LANGUAGES = [
   { iso_name: "sv", english_name: "Swedish" },
   { iso_name: "zh", english_name: "Chinese" },
   { iso_name: "ru", english_name: "Russian" },
+  { iso_name: "ja", english_name: "Japanese" },
 ];
 
 Deno.test("YouTube detects spoken language with Scribe and saves timed words", async () => {
@@ -297,7 +298,7 @@ Deno.test("TikTok falls back to ElevenLabs URL fetch when yt-dlp cannot produce 
 });
 
 Deno.test("Scribe ISO-639-3 codes map to the Langlets language catalog", () => {
-  const expected = ["eng", "spa", "ara", "deu", "fra", "heb", "ell", "swe", "zho", "rus"];
+  const expected = ["eng", "spa", "ara", "deu", "fra", "heb", "ell", "swe", "zho", "rus", "jpn"];
   expected.forEach((code, index) =>
     assertEquals(resolveLanguage(code, LANGUAGES), LANGUAGES[index])
   );

@@ -71,6 +71,12 @@ l_ru = Language.find_or_create_by!(iso_name: 'ru') do |lang|
   lang.pronunciation_variant_name = 'ru-RU'
 end
 
+Language.find_or_create_by!(iso_name: 'ja') do |lang|
+  lang.english_name = 'Japanese'
+  lang.native_name = '日本語'
+  lang.pronunciation_variant_name = 'ja-JP'
+end
+
 admin = User.find_or_create_by(email: 'ynon@hey.com') do |user|
   user.password = '10203040'
   user.password_confirmation = '10203040'

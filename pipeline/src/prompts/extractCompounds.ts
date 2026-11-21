@@ -31,6 +31,9 @@ For Chinese, the input spaces delimit the existing timed tokens. Keep multi-char
 intact and merge adjacent tokens only for an established lexical unit. Preserve spaces inside
 merged items and the supplied Simplified or Traditional characters; do not add pinyin or split
 an existing timed token into individual characters.
+For Japanese, merge only established lexical units or fixed expressions. Leave ordinary
+case and topic particles separate. Preserve timed token spacing even inside a merged item,
+including the original kanji, kana and okurigana.
 Output only the JSON array.
 
 Example input:
@@ -54,12 +57,17 @@ const LANGUAGE_CODES: Record<string, string> = {
   greek: "el",
   hebrew: "he",
   russian: "ru",
+  japanese: "ja",
   spanish: "es",
   swedish: "sv",
   arabic: "ar",
 };
 
 const EXAMPLES: Record<string, CompoundExample> = {
+  ja: {
+    input: "東京 大学 に 行きました。\n友達 と 映画 を 見ました。",
+    output: ["東京 大学", "に", "行きました。", "友達", "と", "映画", "を", "見ました。"],
+  },
   zh: {
     input: "他 在 北京 大学 学习。\n我 买 了 三 杯 热 茶。",
     output: ["他", "在", "北京 大学", "学习。", "我", "买", "了", "三", "杯", "热", "茶。"],

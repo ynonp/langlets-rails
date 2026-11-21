@@ -93,6 +93,9 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     end
     get_courses = tools.find { |t| t["name"] == "get_courses" }
     assert_equal [ "language" ], get_courses.dig("inputSchema", "required")
+    assert_includes get_courses.dig("inputSchema", "properties", "language", "enum"), "ja"
+    add_vocabulary = tools.find { |t| t["name"] == "add_vocabulary" }
+    assert_includes add_vocabulary.fetch("description"), "昨日 は 映画 を 見ました。"
   end
 
   test "calls get_vocabulary" do

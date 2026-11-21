@@ -3433,6 +3433,16 @@ and token translation prompts have Russian source and target examples, while
 lesson grouping and compound extraction use Russian source examples. Russian is
 not an interface locale.
 
+Japanese (`ja`, 日本語) is available for course audio and translations. Scribe
+reports `jpn`, and Supadata requests `ja` native captions. The caption-only
+path segments Japanese text with the Japanese ICU word segmenter before forced
+alignment. Timed transcription, reconciliation, lesson grouping, and compound
+prompts preserve the original script and use spaces as token boundaries.
+Sentence and token prompts include Japanese source and target examples. The
+similar-sound activity uses a curated set of common near-neighbor readings and
+preserves punctuation and word indexes. MCP exposes `ja` through its language
+catalog. The interface locales are English, Hebrew, and Spanish.
+
 - **English**: `en-US-AriaNeural`
 - **Spanish**: `es-ES-ElviraNeural` 
 - **French**: `fr-FR-DeniseNeural`
@@ -3443,6 +3453,7 @@ not an interface locale.
 - **Swedish**: `sv-SE-SofieNeural`
 - **Chinese (Mandarin)**: `zh-CN-XiaoxiaoNeural`
 - **Russian**: `ru-RU-SvetlanaNeural`
+- **Japanese**: `ja-JP-NanamiNeural`
 
 ### Audio Generation Process
 1. **Text Input**: Phrase or token text in source language
@@ -3816,7 +3827,7 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
   **language · lesson count** metadata (for example, **Arabic · 6 lessons**);
   compact mode changes spacing and type size, not which course facts are shown.
 
-- **Empty account state remains instructional.** If the account has no readable, published unfinished enrolled course (including an account whose courses are all complete), Home renders the localized text box beginning **"No langlets yet"** and explaining that sharing a Spanish, French, Hebrew, Arabic, German, or Russian video to Langlets creates language practice. The Latest imports Library preview may still appear alongside that account-state message; there is no first-run Create link. A course displayed in the just-imported hero still counts as unfinished, so the empty box does not appear beneath it.
+- **Empty account state remains instructional.** If the account has no readable, published unfinished enrolled course (including an account whose courses are all complete), Home renders the localized text box beginning **"No langlets yet"** and explaining that sharing a Spanish, French, Hebrew, Arabic, German, Russian, or Japanese video to Langlets creates language practice. The Latest imports Library preview may still appear alongside that account-state message; there is no first-run Create link. A course displayed in the just-imported hero still counts as unfinished, so the empty box does not appear beneath it.
 
 - Course card views use `course_thumbnail_url`, which falls back to the local
   `/course-placeholder.svg` when stored or derived provider covers are missing.

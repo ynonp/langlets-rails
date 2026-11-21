@@ -13,6 +13,7 @@
 // transposition counted as one edit), matching symspell_rs's default.
 
 import { ChineseSounds } from "./chineseSounds.ts";
+import { japaneseSounds } from "./japaneseSounds.ts";
 
 export interface SoundDictionary {
   lookup(word: string): string[];
@@ -46,6 +47,7 @@ const ENGLISH_NAMES: Record<string, string> = {
   greek: "el",
   hebrew: "he",
   russian: "ru",
+  japanese: "ja",
   spanish: "es",
   swedish: "sv",
   arabic: "ar",
@@ -65,7 +67,7 @@ export function isoCodeFor(clipLanguage: string, iso?: string | null): string | 
 // also has a similar-sound dictionary. Returns null when no dictionary exists.
 export function langCodeFor(clipLanguage: string, iso?: string | null): string | null {
   const code = isoCodeFor(clipLanguage, iso);
-  return code && code in DICTIONARIES ? code : null;
+  return code && (code === "ja" || code in DICTIONARIES) ? code : null;
 }
 
 interface DictEntry {
@@ -126,6 +128,7 @@ export function dictionaryFor(code: string): Promise<SoundDictionary | null> {
 }
 
 async function loadDictionary(code: string): Promise<SoundDictionary | null> {
+  if (code === "ja") return japaneseSounds;
   const file = DICTIONARIES[code];
   if (!file) return null;
 

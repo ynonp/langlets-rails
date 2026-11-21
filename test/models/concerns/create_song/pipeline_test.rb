@@ -61,6 +61,7 @@ class CreateSongPipelineTest < ActiveSupport::TestCase
     end
     assert_includes sent.fetch(:supported_languages), { iso_name: "ar-JO", english_name: "Arabic" }
     assert_includes sent.fetch(:supported_languages), { iso_name: "ru", english_name: "Russian" }
+    assert_includes sent.fetch(:supported_languages), { iso_name: "ja", english_name: "Japanese" }
   end
 
   test "finds the progress record and runs the requested translation" do

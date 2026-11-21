@@ -6,6 +6,8 @@ module Tools
                 "Always provide a natural example sentence in the source language demonstrating the vocabulary in use, " \
                 "with additional words outside the selected vocabulary. Select inclusive zero-based whitespace word indexes. " \
                 "For example: sentence 'Necesito darme prisa hoy.', indexes 1 through 2 saves 'darme prisa'. " \
+                "For Japanese (ja), insert spaces between tokens for indexing while preserving the original script. " \
+                "For example: '昨日 は 映画 を 見ました。', index 2 through 2 saves '映画'. " \
                 "Repeated saves return the existing item without changing its translation or practice state."
     input_schema(
       properties: {

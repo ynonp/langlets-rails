@@ -32,6 +32,8 @@ Reformat the transcript so it is easy for a language student to study. Divide th
 - No line may exceed 20 words.
 - For Chinese, keep multi-character words, numeral-classifier-noun groups, and fixed expressions together. Preserve the supplied script (Simplified or Traditional), punctuation, and word spacing; do not add pinyin.
 
+- For Japanese, break at complete clauses. Keep particles with the preceding phrase, counters with their quantities, and inflected predicates and fixed expressions together. Keep the supplied kanji, kana, punctuation and token spacing.
+
 ### 3. Lesson Grouping
 - Aim for 4–8 lines per lesson. Group lines by topic, scene, or lyrical idea.
 - Create a short, descriptive lesson title in ${clipLanguage} for each group.
@@ -61,6 +63,7 @@ const LANGUAGE_CODES: Record<string, string> = {
   greek: "el",
   hebrew: "he",
   russian: "ru",
+  japanese: "ja",
   spanish: "es",
   swedish: "sv",
   arabic: "ar",
@@ -83,6 +86,23 @@ function lessonExample(
 }
 
 const EXAMPLES: Record<string, LessonExample> = {
+  ja: lessonExample(
+    "朝 は 雨 が 降っていました。 傘 を 持って 出かけました。 駅 まで 歩きました。 電車 は すぐ に 来ました。 昼 に 友達 と 会いました。 一緒 に ご飯 を 食べました。 カフェ で お茶 を 飲みました。 夕方 に 家 へ 帰りました。",
+    "雨の朝",
+    [
+      "朝 は 雨 が 降っていました。",
+      "傘 を 持って 出かけました。",
+      "駅 まで 歩きました。",
+      "電車 は すぐ に 来ました。",
+    ],
+    "友達との昼ご飯",
+    [
+      "昼 に 友達 と 会いました。",
+      "一緒 に ご飯 を 食べました。",
+      "カフェ で お茶 を 飲みました。",
+      "夕方 に 家 へ 帰りました。",
+    ],
+  ),
   zh: lessonExample(
     "今天早上，我走出家门。 街上的商店刚刚开门。 我买了一杯热茶。 然后沿着小路走到河边。 河边有几个人在跑步。 下午，我去看望朋友。 我们一起做了一顿饭。 吃完饭，我们聊了很久。 天黑的时候，我坐车回家。 这真是美好的一天。",
     "清晨的散步",

@@ -49,6 +49,10 @@ const CHINESE = `听到你的声音让我很开心，哪怕是在睡梦中
 终于，你像梦中那样旅行，寻找一个可以回去的地方
 而我，正慢慢地失去你`;
 
+const JAPANESE = `眠っていても、あなたの声が聞けてうれしい
+ようやく夢の中のように旅をして、帰る場所を探していた
+そして私は、少しずつあなたを失っていく`;
+
 const RUSSIAN = `Я так рад слышать твой голос, даже во сне
 Наконец ты путешествовал, как в своих мечтах, и искал место, куда вернуться
 А я медленно теряю тебя`;
@@ -61,6 +65,14 @@ const RUSSIAN = `Я так рад слышать твой голос, даже �
 // as its own "Hebrew" translation while the word-level step (whose examples
 // already keyed off the real target language) got Hebrew right.
 const examples: Record<string, Record<string, Example>> = {
+  Japanese: {
+    English: { input: JAPANESE, output: ENGLISH },
+    Hebrew: { input: JAPANESE, output: HEBREW },
+    Spanish: { input: JAPANESE, output: SPANISH },
+  },
+  English: {
+    Japanese: { input: ENGLISH, output: JAPANESE },
+  },
   Chinese: {
     English: { input: CHINESE, output: ENGLISH },
     Hebrew: { input: CHINESE, output: HEBREW },
@@ -99,6 +111,7 @@ const targetExamples: Record<string, Example> = {
   Hebrew: { input: SPANISH, output: HEBREW },
   Swedish: { input: SPANISH, output: SWEDISH },
   Russian: { input: SPANISH, output: RUSSIAN },
+  Japanese: { input: SPANISH, output: JAPANESE },
 };
 
 function exampleFor(

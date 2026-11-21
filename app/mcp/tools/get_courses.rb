@@ -9,7 +9,7 @@ module Tools
 
     input_schema(
       properties: {
-        language: { type: "string", enum: LANGUAGE_CODES, description: "ISO language code of the courses, e.g. 'es' or 'he'" },
+        language: { type: "string", enum: LANGUAGE_CODES, description: "ISO language code of the courses, e.g. 'es' or 'ja' for Japanese" },
         page: { type: "integer", minimum: 1, description: "Page number, starting at 1" },
         per_page: { type: "integer", minimum: 1, maximum: 100, description: "Items per page (default 25)" }
       },

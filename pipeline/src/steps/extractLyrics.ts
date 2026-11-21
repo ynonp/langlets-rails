@@ -137,7 +137,8 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
       transcriptText = cleanupTranscript(elevenlabs.text);
       sttWords = elevenlabs.words;
     } else if (supadata) {
-      transcriptText = cleanupTranscript(supadata.text);
+      const cleaned = cleanupTranscript(supadata.text);
+      transcriptText = languageCode === "ja" ? segmentJapaneseCaption(cleaned) : cleaned;
     } else if (isYoutubeUrl(ctx.youtubeurl)) {
       const words = await geminiTimedFallback(
         ctx,
@@ -167,6 +168,23 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
     console.error(`Transcript extraction failed: ${message(error)}`);
     throw error;
   }
+}
+
+// Caption cues in Japanese normally contain no word spaces. Give forced
+// alignment lexical boundaries while keeping every original character.
+export function segmentJapaneseCaption(text: string): string {
+  const tokens: string[] = [];
+  for (const { segment, isWordLike } of new Intl.Segmenter("ja", {
+    granularity: "word",
+  }).segment(text)) {
+    if (/^\s+$/u.test(segment)) continue;
+    if (!isWordLike && /^[、。！？!?…」』）】]+$/u.test(segment) && tokens.length > 0) {
+      tokens[tokens.length - 1] += segment;
+    } else {
+      tokens.push(segment);
+    }
+  }
+  return tokens.join(" ");
 }
 
 async function settleCandidates(jobs: Promise<unknown>[]): Promise<void> {
@@ -309,6 +327,7 @@ const LANGUAGE_TO_ISO: Record<string, string> = {
   greek: "el",
   hebrew: "he",
   russian: "ru",
+  japanese: "ja",
   spanish: "es",
   swedish: "sv",
   arabic: "ar",

@@ -146,6 +146,7 @@ Also check that the migrations created the exact records and that pipeline type-
 | `sv` | Swedish | Svenska | No | `sv-SE` | `sv` | `swe` |
 | `zh` | Chinese | 中文 | No | `zh-CN` | `zh` | `zho`, `chi` |
 | `ru` | Russian | Русский | No | `ru-RU` | `ru` | `rus` |
+| `ja` | Japanese | 日本語 | No | `ja-JP` | `ja` | `jpn` |
 
 ## Troubleshooting
 
@@ -173,6 +174,13 @@ Russian uses `ru-RU-SvetlanaNeural` for speech and the bundled `ru-100k.txt`
 frequency dictionary for similar-sound activities. Sentence and token
 translation prompts contain Russian source and target examples; lesson grouping
 and compound extraction have Russian source examples.
+
+Japanese uses `ja-JP-NanamiNeural` for speech. Preserve kanji, kana, okurigana
+and pronunciation-relevant marks in timed tokens. The Japanese caption-only
+path uses ICU to add word boundaries for forced alignment. Japanese prompt
+examples cover timed words, particles, inflected forms, compounds, and lesson
+grouping. Similar-sound substitutions are available for common words in
+`pipeline/src/japaneseSounds.ts`.
 
 ## Adding an interface/native language
 

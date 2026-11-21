@@ -1,4 +1,9 @@
 export const exampleInputs: Record<string, string> = {
+  Japanese: `昨日 (*昨日* は 映画 を 見ました。) |
+は (昨日 *は* 映画 を 見ました。) |
+映画 (昨日 は *映画* を 見ました。) |
+を (昨日 は 映画 *を* 見ました。) |
+見ました (昨日 は 映画 を *見ました*。) |`,
   Chinese: `我 (*我*喜欢听音乐。) |
 喜欢 (我*喜欢*听音乐。) |
 听 (我喜欢*听*音乐。) |
@@ -48,6 +53,11 @@ dig (Du vill inte ha mig som jag vill ha *dig* älskling) |
 // Each worked example demonstrates the course's source language translated
 // into English, matching the direction used for English-language courses.
 export const examples: Record<string, string> = {
+  Japanese: `昨日 (*昨日* は 映画 を 見ました。) | yesterday [noun]
+は (昨日 *は* 映画 を 見ました。) | topic marker [particle]
+映画 (昨日 は *映画* を 見ました。) | movie [noun]
+を (昨日 は 映画 *を* 見ました。) | direct object marker [particle]
+見ました (昨日 は 映画 を *見ました*。) | watched [verb]`,
   Chinese: `我 (*我*喜欢听音乐。) | I [pronoun]
 喜欢 (我*喜欢*听音乐。) | like [verb]
 听 (我喜欢*听*音乐。) | listen to [verb]
@@ -131,6 +141,15 @@ In each phrase I marked the word you need to translate, so each input line is:
 
 Add to each line after the | the translation of <word to translate> in the same context as it appears in <context phrase>
 
+${
+    clipLanguage === "Japanese" && includeScopeGuard
+      ? `
+For Japanese particles, give a concise label in ${translationLanguage} for their contextual
+function when there is no direct equivalent. For a marked inflected form, preserve the
+tense or polarity it carries. Do not add readings or rōmaji.
+`
+      : ""
+  }
 ## Rules
 1. Output exactly one line per input line, in the same order as given.
 2. Keep the left side of the | EXACTLY as the input (the word and its context), unchanged.
@@ -188,6 +207,17 @@ music (I like listening to *music*.) |
 I (*I* like listening to music.) | 我 [pronoun]
 like (I *like* listening to music.) | 喜欢 [verb]
 music (I like listening to *music*.) | 音乐 [noun]
+`
+      : translationLanguage === "Japanese"
+      ? `## Example Input (English source):
+I (*I* watched a movie yesterday.) |
+watched (I *watched* a movie yesterday.) |
+movie (I watched a *movie* yesterday.) |
+
+## Expected Output (Japanese translation):
+I (*I* watched a movie yesterday.) | 私 [pronoun]
+watched (I *watched* a movie yesterday.) | 見た [verb]
+movie (I watched a *movie* yesterday.) | 映画 [noun]
 `
       : translationLanguage === "Russian"
       ? `## Example Input (English source):
