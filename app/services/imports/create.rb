@@ -56,7 +56,8 @@ module Imports
     def self.call(...) = new(...).call
 
     def initialize(user:, url:, translation_language:, clip_language: nil, client_token: nil,
-                   detected_data: nil, existing_request: nil, guest_started: false, daily_challenge: nil)
+                   detected_data: nil, existing_request: nil, guest_started: false, daily_challenge: nil,
+                   check_duration: true)
       @user = user
       @url = url
       @clip_language = clip_language
@@ -69,6 +70,7 @@ module Imports
       @existing_request = existing_request
       @guest_started = guest_started
       @daily_challenge = daily_challenge
+      @check_duration = check_duration
     end
 
     # Raises VideoSource::UnavailableVideo for a bad/private/deleted video,
@@ -91,8 +93,8 @@ module Imports
       # A detection job promoting an existing request already passed duration
       # preflight before that row was written. Refresh provider metadata there
       # without adding another synchronous duration dependency; the pipeline
-      # retains its own duration guard.
-      video = prepared_daily_video || if existing_request
+      # retains its own duration guard, which also covers TikTok API imports.
+      video = prepared_daily_video || if existing_request || !@check_duration
         VideoSource.fetch(url)
       else
         VideoPreflight.call(url).video

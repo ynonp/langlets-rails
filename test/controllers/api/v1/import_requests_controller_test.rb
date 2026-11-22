@@ -272,6 +272,29 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal User::SIGNUP_CREDITS, body["credits_left"]
   end
 
+  test "checks the duration of new TikTok shares in the background" do
+    stub_tiktok do
+      Imports::VideoPreflight.stub(:call, ->(*) { flunk "TikTok share must skip synchronous duration preflight" }) do
+        post api_v1_import_requests_url,
+             params: import_params(url: TIKTOK_SHORT),
+             headers: auth_headers(@token)
+      end
+    end
+
+    assert_response :created
+    request = ImportRequest.find(response.parsed_body.fetch("id"))
+    assert request.detecting?
+
+    message = "Video duration limit: Please choose a video that is 25 minutes or shorter."
+    CreateSongProgress.stub(:detect_language, ->(**) { raise PipelineClient::Error, message }) do
+      assert_raises(PipelineClient::Error) { perform_enqueued_jobs only: DetectImportLanguageJob }
+    end
+
+    assert request.reload.failed?
+    assert_equal message, request.failure_reason
+    assert_equal User::SIGNUP_CREDITS, @user.reload.credit_balance
+  end
+
   # TikTok covers can't be derived from the URL, so the value oEmbed returned is
   # the only one there will ever be. It reaches the Queue card through the course
   # the detection job builds.

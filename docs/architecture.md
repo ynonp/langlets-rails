@@ -1273,7 +1273,7 @@ provisional progress row, marks the visible request failed, and costs no
 credit.
 
 New video processing has a 25-minute duration limit. Before rendering `/try`, an Add Video preview,
-or creating any import record, `Imports::VideoPreflight` combines the provider's oEmbed availability
+or creating an import through the standard preflight path, `Imports::VideoPreflight` combines the provider's oEmbed availability
 check with a Rails-owned Supadata `/metadata` request. Rails owns the user-facing preflight limit and reads
 the Supadata key from `SUPADATA_KEY`, its legacy/standard `SUPADATA_API_KEY` alias, or the Rails
 credential `supadata_key`. Successful
@@ -3221,7 +3221,10 @@ YouTube or TikTok link, and immediately submits it to
 or success screen: after the API accepts the idempotent request it calls
 `completeRequest`. While sharing, the sheet shows only “creating your langlet”
 and Cancel; it does not display the shared URL or queue status. Errors remain
-visible so authentication, credit, or network problems are actionable. The
+visible so authentication, credit, or network problems are actionable. For
+TikTok, the POST still waits for oEmbed to validate the video and resolve short
+links, while the pipeline checks duration in the background for new videos.
+Over-limit videos fail in the Queue without charging a credit. The
 payload contains no translation language: the API
 reads the authenticated user's native-language preference and falls back to
 English. The source language is always detected by the pipeline.
