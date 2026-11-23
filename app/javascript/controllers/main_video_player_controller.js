@@ -16,7 +16,7 @@ const ADAPTERS = {
 };
 
 export default class extends Controller {
-  static targets = ['playerContainer', 'media', 'player', 'progressBar', 'videoListener', 'videoSegment'];
+  static targets = ['playerContainer', 'media', 'player', 'progressBar', 'videoListener', 'videoSegment', 'cardIllustration'];
 
   static values = {
     videoId: String,
@@ -73,12 +73,14 @@ export default class extends Controller {
       this.player.pauseVideo();
     }
     this.playerContainerTarget.classList.add('hidden');
+    this.showCardIllustration(null);
     this.segmentStart = null;
     this.segmentEnd = null;
   }
 
   handleFrameRender() {
     if (!this.hasVideoSegmentTarget) return;
+    if (this.videoSegmentTarget.dataset.cardManagedMedia === 'true') return;
 
     const segmentStart = Number(this.videoSegmentTarget.dataset.segmentStart);
     const segmentEnd = Number(this.videoSegmentTarget.dataset.segmentEnd);
@@ -244,13 +246,17 @@ export default class extends Controller {
 
   async configureSegment(event) {
     this.playbackCommandGeneration += 1;
-    const { videoId, provider, segmentStart, segmentEnd } = event.detail;
+    const { videoId, provider, segmentStart, segmentEnd, illustrationUrl } = event.detail;
     const nextSegmentStart = Number(segmentStart);
     const nextSegmentEnd = Number(segmentEnd);
     if (!videoId || !Number.isFinite(nextSegmentStart) || !Number.isFinite(nextSegmentEnd) || nextSegmentEnd <= nextSegmentStart) {
       this.stopPlaybackMonitoring();
+      this.segmentStart = null;
+      this.segmentEnd = null;
+      const showIllustration = this.hasCardIllustrationTarget && Boolean(illustrationUrl);
+      this.showCardIllustration(showIllustration ? illustrationUrl : null);
+      this.playerContainerTarget.classList.toggle('hidden', !showIllustration);
       if (this.player) await this.player.pauseVideo();
-      this.playerContainerTarget.classList.add('hidden');
       return;
     }
 
@@ -269,6 +275,7 @@ export default class extends Controller {
     this.providerValue = provider || 'youtube';
     this.segmentStart = nextSegmentStart;
     this.segmentEnd = nextSegmentEnd;
+    this.showCardIllustration(null);
     this.playerContainerTarget.classList.remove('hidden');
     this.playerContainerTarget.classList.add('order-2');
     this.initializePlayer();
@@ -276,6 +283,19 @@ export default class extends Controller {
     if (!sourceChanged && this.player && this.hasPlayed) {
       await this.player.pauseVideo();
       await this.player.seekTo(this.segmentStart);
+    }
+  }
+
+  showCardIllustration(url) {
+    if (!this.hasCardIllustrationTarget) return;
+
+    this.mediaTarget.classList.toggle('flex', !url);
+    this.mediaTarget.classList.toggle('hidden', Boolean(url));
+    this.cardIllustrationTarget.classList.toggle('hidden', !url);
+    if (url) {
+      this.cardIllustrationTarget.src = url;
+    } else {
+      this.cardIllustrationTarget.removeAttribute('src');
     }
   }
 

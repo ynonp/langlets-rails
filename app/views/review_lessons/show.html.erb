@@ -14,7 +14,7 @@
     data-main-video-player-interactive-value="true"
     data-action="pagehide@window->review-session#close turbo:before-visit@document->review-session#beforeVisit flashcard-activity:card-change->main-video-player#configureSegment write-missing-word-activity:card-change->main-video-player#configureSegment"
 >
-  <%= render "shared/video_media_box", container_class: "hidden order-2" %>
+  <%= render "shared/video_media_box", container_class: "hidden order-2", card_illustration: true %>
 
   <turbo-frame
     id="activity"

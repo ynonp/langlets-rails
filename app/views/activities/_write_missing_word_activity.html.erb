@@ -1,5 +1,5 @@
 <% phrase_tokens = params[:phrase_tokens] || [] %>
-<% cards = prepare_flashcards_for_tokens(phrase_tokens, params[:unique_words]) %>
+<% cards = prepare_flashcards_for_tokens(phrase_tokens, params[:unique_words], illustration_owner: (current_user if params[:is_review_lesson])) %>
 <% l1_rtl = params[:l1]&.rtl %>
 <% l2_rtl = params[:l2]&.rtl %>
 
@@ -15,6 +15,7 @@
      data-write-missing-word-activity-activity-id-value="<%= @activity.id %>"
      data-main-video-player-target="videoListener videoSegment"
      data-show-player="true"
+     data-card-managed-media="<%= params[:is_review_lesson] || false %>"
      data-action="video:play->main-video-player#seekToSegmentStartIfBefore"
      class="order-4 flex-1 min-h-0 overflow-y-auto flex flex-col items-center bg-gray-50 dark:bg-gray-950">
   <div data-write-missing-word-activity-target="activityContent" class="w-full max-w-[460px] px-4 py-3 sm:py-5">

@@ -375,8 +375,10 @@ reusing the player mount, preventing the outgoing iframe from removing its
 replacement. Native play is constrained to the phrase; the ordinary
 segment-end behavior pauses and rewinds it for replay.
 The write-missing-word review activity uses the same card video and segment
-events. Its typing and Hint answer modes share this player; custom vocabulary
-cards without a source medium leave the player hidden.
+events. Its typing and Hint answer modes share this player. In vocabulary
+reviews, a card without playable video can show its saved Dictionary
+illustration in the same media box. The card-change event selects the media
+for each card and hides the box when neither is available.
 In vocabulary reviews, the final typing exercise also records spaced-review
 results before showing its success bar. A wrong attempt or Hint counts as
 relearning; an unaided first answer counts as remembered. Course typing exercises

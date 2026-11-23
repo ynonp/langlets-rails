@@ -35,4 +35,48 @@ describe("flashcard video", () => {
     assert.match(flashcard, /event\.preventDefault\(\)/);
     assert.match(flashcard, /this\.nextCard\(\)/);
   });
+
+  test("shows an illustration, gives video precedence, and clears media on the next card", async () => {
+    const sourceCode = await source("../../app/javascript/controllers/main_video_player_controller.js");
+    const controllerCode = sourceCode.replace(/^import .*$/gm, "")
+      .replace("extends Controller", "")
+      .replace(/const ADAPTERS = \{[\s\S]*?\};/, "");
+    const { default: Controller } = await import(`data:text/javascript,${encodeURIComponent(controllerCode)}`);
+    const controller = new Controller();
+    const element = () => {
+      const classes = new Set();
+      return {
+        classList: {
+          add: (name) => classes.add(name),
+          remove: (name) => classes.delete(name),
+          contains: (name) => classes.has(name),
+          toggle: (name, show) => show ? classes.add(name) : classes.delete(name),
+        },
+        removeAttribute(name) { delete this[name]; },
+      };
+    };
+    controller.playerContainerTarget = element();
+    controller.mediaTarget = element();
+    controller.cardIllustrationTarget = element();
+    controller.hasCardIllustrationTarget = true;
+    controller.stopPlaybackMonitoring = () => {};
+    controller.initializePlayer = () => {};
+
+    const illustrationUrl = "/word.webp";
+    await controller.configureSegment({ detail: { illustrationUrl } });
+    assert.equal(controller.cardIllustrationTarget.src, illustrationUrl);
+    assert.equal(controller.mediaTarget.classList.contains("hidden"), true);
+    assert.equal(controller.playerContainerTarget.classList.contains("hidden"), false);
+
+    await controller.configureSegment({ detail: {
+      illustrationUrl, videoId: "video", provider: "youtube", segmentStart: 2, segmentEnd: 4,
+    } });
+    assert.equal(controller.cardIllustrationTarget.src, undefined);
+    assert.equal(controller.mediaTarget.classList.contains("hidden"), false);
+    assert.equal(controller.playerContainerTarget.classList.contains("hidden"), false);
+
+    await controller.configureSegment({ detail: {} });
+    assert.equal(controller.cardIllustrationTarget.classList.contains("hidden"), true);
+    assert.equal(controller.playerContainerTarget.classList.contains("hidden"), true);
+  });
 });

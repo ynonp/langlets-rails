@@ -764,8 +764,9 @@ video segment, sentence layout, and full-context translation on the success
 bar. Learners type the missing word first; Hint changes that card to the same
 multiple-choice options as flashcards. A correct typed answer or hint choice
 fills the blank and waits for Next instead of advancing on a timer. Incorrect
-typed answers and hint choices let learners try again. Custom
-vocabulary cards without a source medium keep the video box hidden.
+typed answers and hint choices let learners try again. Vocabulary review cards
+without playable video use the saved Dictionary illustration in the same
+media box when it is available. Cards with neither hide the media box.
 
 ### Homepage language selection
 
@@ -3860,7 +3861,7 @@ A pick is a **range**, not a word, because plenty of vocabulary is more than one
 
 A phrase has exactly one source. Imported and course phrases have a `medium_id` and no `user_id`; custom vocabulary phrases have a `user_id` and no `medium_id`. Both columns retain foreign keys, and the database check constraint `phrases_exactly_one_source` enforces the exclusive-or relationship. This keeps every `Medium` a real, playable media source while giving typed phrases direct ownership. `Phrase#custom?` and `PhraseTokenUser#source` use that ownership to label them "Added by you".
 
-Review lessons can mix saved course tokens with custom tokens. Flashcards therefore attach video provider, video id, and segment timing only when the token's phrase has a medium; custom cards deliberately carry `nil` media fields and use their token audio alone. Course playback paths continue to obtain phrases through `lesson.medium.phrases`, so their playable-medium assumption remains intact.
+Review lessons can mix saved course tokens with custom tokens. Flashcards attach video provider, video id, and segment timing when the token's phrase has a medium. For custom cards, the same payload can carry the latest ready, attached Dictionary illustration for the learner, token, and effective translation language. This is loaded in bulk when rendering the review. Course playback paths continue to obtain phrases through `lesson.medium.phrases`.
 
 **Routes select Vocabulary's presentation.** `/app/vocabulary` resolves to the native controller, `app/views/app/vocabulary_entries/**`, and `layouts/app.html.erb`; `/vocabulary` resolves to the inheriting web controller, `app/views/vocabulary_entries/**`, and `layouts/web.html.erb`. No action checks `native_app?`, `native_preview?`, or a surface parameter. The web surface is entered from the primary header, which links Library · **Vocabulary** · Create; those header links are desktop-only, so Vocabulary also leads the avatar dropdown, which is how a phone browser reaches it at all.
 

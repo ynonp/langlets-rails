@@ -11,8 +11,12 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show starts the current pending review without a lesson id" do
-    PhraseTokenUser.create_custom!(user: @user, sentence: "hello world", language: @english,
+    entry = PhraseTokenUser.create_custom!(user: @user, sentence: "hello world", language: @english,
       token_range: 1..1, translation: "mundo", translation_language: languages(:spanish))
+    lookup = @user.dictionary_lookups.create!(query: "world", target_language: @english,
+      native_language: languages(:spanish), phrase_token: entry.phrase_token,
+      status: :ready, illustration_status: :drawn)
+    lookup.illustration.attach(io: StringIO.new("image"), filename: "world.webp", content_type: "image/webp")
     lesson = @user.current_review_lesson(@english.iso_name)
 
     get review_lessons_url(language_code: @english.iso_name)
@@ -24,7 +28,12 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-controller~='main-video-player'][data-action*='flashcard-activity:card-change->main-video-player#configureSegment']"
     assert_select "[data-controller~='main-video-player'][data-action*='write-missing-word-activity:card-change->main-video-player#configureSegment']"
     assert_select "#main-player.hidden[data-main-video-player-target='playerContainer']"
-    assert_select "[data-controller='write-missing-word-activity'][data-main-video-player-target='videoListener videoSegment'][data-show-player='true']"
+    assert_select "#main-player img.hidden[data-main-video-player-target='cardIllustration'][alt='']"
+    assert_select "[data-controller='write-missing-word-activity'][data-main-video-player-target='videoListener videoSegment'][data-show-player='true']" do |activity|
+      card = JSON.parse(activity.first["data-write-missing-word-activity-cards-value"]).sole
+      assert_nil card["video_id"]
+      assert_equal rails_blob_path(lookup.illustration), card["illustration_url"]
+    end
     assert_select "[data-write-missing-word-activity-target='completionTranslation']"
     assert_select "[data-action='click->write-missing-word-activity#continue']"
   end

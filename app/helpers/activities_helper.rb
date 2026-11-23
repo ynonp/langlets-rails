@@ -258,14 +258,18 @@ module ActivitiesHelper
     end
   end
 
-  def prepare_flashcards_for_tokens(token_translations, unique_song_words)
-    token_translations = token_translations.to_a.select { |token| token.translation.present? }
-    l1_texts = token_translations.map { |t| t.original_text }.uniq
-    timing_phrases_by_medium = flashcard_timing_phrases_by_medium(token_translations)
+  def prepare_flashcards_for_tokens(token_translations, unique_song_words, illustration_owner: nil)
+    translated_tokens = token_translations.filter_map do |token|
+      translation = token.effective_translation
+      [token, translation] if translation
+    end
+    tokens = translated_tokens.map(&:first)
+    l1_texts = tokens.map(&:original_text).uniq
+    timing_phrases_by_medium = flashcard_timing_phrases_by_medium(tokens)
+    illustrations = flashcard_illustrations(tokens, illustration_owner)
 
-    cards = token_translations.map do |t|
+    translated_tokens.map do |t, translation|
       l1_word = t.original_text
-      l2_translation = t.translation
       audio_url = t.l1_audio_url
 
       distractors = flashcard_distractors(
@@ -293,21 +297,31 @@ module ActivitiesHelper
         id: t.id,
         phrase_html: blanked_text,
         phrase_l2: phrase.text_l2,
-        translation: l2_translation,
+        translation: translation.translation,
         correct: l1_word,
         options: options,
         audio_url: audio_url,
+        illustration_url: illustrations[[t.id, translation.language_id]],
         video_id: medium&.extract_video_id,
         video_provider: medium ? (medium.provider || VideoSource::DEFAULT_PROVIDER) : nil,
         segment_start: segment_start,
         segment_end: segment_end
       }
     end
-
-    cards
   end
 
   private
+
+  def flashcard_illustrations(tokens, owner)
+    return {} unless owner
+
+    token_ids = tokens.select { |token| token.phrase.user_id == owner.id }.map(&:id)
+    return {} if token_ids.empty?
+
+    owner.dictionary_lookups.ready.illustration_drawn.where(phrase_token_id: token_ids)
+      .joins(:illustration_attachment).with_attached_illustration.order(id: :asc)
+      .to_h { |lookup| [[lookup.phrase_token_id, lookup.native_language_id], rails_blob_path(lookup.illustration)] }
+  end
 
   def flashcard_distractors(correct_word:, candidate_words:)
     candidate_words

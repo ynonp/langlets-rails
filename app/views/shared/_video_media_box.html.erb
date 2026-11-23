@@ -25,4 +25,8 @@
           class="absolute inset-0 h-full w-full [&>iframe]:absolute [&>iframe]:inset-0 [&>iframe]:h-full [&>iframe]:w-full">
       </div>
     </div>
+    <% if local_assigns[:card_illustration] %>
+      <img alt="" data-main-video-player-target="cardIllustration"
+           class="hidden h-full w-full bg-gray-50 object-contain dark:bg-gray-950">
+    <% end %>
 </div>

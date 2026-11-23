@@ -92,6 +92,7 @@ export default class extends Controller {
       bubbles: true,
       detail: {
         videoId: card.video_id,
+        illustrationUrl: card.illustration_url,
         provider: card.video_provider,
         segmentStart: card.segment_start,
         segmentEnd: card.segment_end,
