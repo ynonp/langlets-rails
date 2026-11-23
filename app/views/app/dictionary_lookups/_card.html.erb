@@ -21,7 +21,7 @@
         <p class="mt-1.5 text-[14px] text-app-text-2"><%= t("app.dictionary.failed_body") %></p>
         <%= button_to t("app.dictionary.try_again"), app_vocabulary_dictionary_lookups_path,
                       params: { query: lookup.query },
-                      form: { data: { turbo_frame: "_top" } },
+                      form: { data: { turbo_frame: "_top", turbo_action: "replace" } },
                       class: "mt-5 inline-flex h-11 items-center rounded-full bg-app-pill px-6 text-[15px] font-semibold text-app-accent" %>
       </div>
 
@@ -136,9 +136,6 @@
 
       <%# Sticky actions, above the native tab bar. %>
       <div class="fixed inset-x-0 z-30 flex gap-2.5 border-t border-white/[0.06] bg-app-bg px-5 py-3 bottom-[calc(var(--app-tab-bar-height)+env(safe-area-inset-bottom))]">
-        <%= link_to t("app.dictionary.dismiss"), app_vocabulary_entries_path,
-                    data: { turbo_frame: "_top" },
-                    class: "flex h-[54px] items-center rounded-full border border-white/10 bg-app-card px-[22px] text-[16px] font-semibold text-app-text-dim" %>
         <% if lookup.saved? %>
           <span data-testid="dictionary-saved"
                 class="flex h-[54px] flex-1 items-center justify-center gap-2 rounded-full bg-app-pill text-[16px] font-bold text-app-accent">
@@ -147,7 +144,7 @@
           </span>
         <% else %>
           <%= button_to save_app_vocabulary_dictionary_lookup_path(lookup),
-                        form: { data: { turbo_frame: "_top" }, class: "flex flex-1" },
+                        form: { data: { turbo_frame: "_top", turbo_action: "replace" }, class: "flex flex-1" },
                         data: { testid: "dictionary-save" },
                         class: "flex h-[54px] flex-1 items-center justify-center gap-2 rounded-full bg-app-accent text-[16px] font-bold text-app-on-accent" do %>
             <%= app_icon "plus", class: "h-[18px] w-[18px]" %>

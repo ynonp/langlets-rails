@@ -207,20 +207,44 @@ module App
       assert_select "[data-dictionary-card-pending-value=false]"
     end
 
-    test "saving adds the word, returns to the tab and marks it new with an undo" do
+    test "saving stays in the lookup so another word can be added" do
       learn(@arabic)
       lookup = ready_lookup
 
       post "/app/vocabulary/lookups/#{lookup.id}/save", headers: NATIVE
 
-      assert_redirected_to "/app/vocabulary"
+      assert_redirected_to "/app/vocabulary/lookups/#{lookup.id}"
       entry = @user.phrase_token_users.last
       assert_equal "زعيم", entry.word
 
       follow_redirect!(headers: NATIVE.dup)
-      assert_select "[data-testid=vocabulary-entry]", 1
-      assert_select "[data-testid=vocabulary-entry-new]"
+      assert_select "form[data-testid=dictionary-compact-form][data-turbo-action=replace] input[name=query][value='']"
+      assert_select "[data-testid=dictionary-saved]"
       assert_select "[data-testid=dictionary-undo]"
+      assert_select "a[href='/app/vocabulary']", text: I18n.t("app.dictionary.done", locale: :he)
+
+      post "/app/vocabulary/lookups", params: { query: "كتاب" }, headers: NATIVE
+      next_lookup = @user.dictionary_lookups.last
+      assert_equal "كتاب", next_lookup.query
+      assert_redirected_to "/app/vocabulary/lookups/#{next_lookup.id}"
+      assert_equal [ entry.id ], @user.phrase_token_users.ids
+
+      next_lookup.update!(status: :ready, headword: "كتاب", translation: "ספר")
+      post "/app/vocabulary/lookups/#{next_lookup.id}/save", headers: NATIVE
+      assert_redirected_to "/app/vocabulary/lookups/#{next_lookup.id}"
+      assert_equal [ "زعيم", "كتاب" ], @user.phrase_token_users.order(:id).map(&:word)
+    end
+
+    test "undo from the lookup keeps the learner in the dictionary" do
+      lookup = ready_lookup
+      entry = lookup.save_to_vocabulary!
+
+      delete "/app/vocabulary/#{entry.id}", params: { undo_save: 1, dictionary_lookup_id: lookup.id }, headers: NATIVE
+
+      assert_redirected_to "/app/vocabulary/lookups/#{lookup.id}"
+      assert_not PhraseTokenUser.exists?(entry.id)
+      follow_redirect!(headers: NATIVE.dup)
+      assert_select "[data-testid=dictionary-save]"
     end
 
     test "undoing a save removes the word without offering to restore it" do
@@ -242,6 +266,31 @@ module App
 
       assert_select "[data-testid=dictionary-saved]"
       assert_select "[data-testid=dictionary-save]", false
+    end
+
+    test "saving while drawing lets the background job finish on the saved word" do
+      learn(@arabic)
+      lookup = ready_lookup(illustration_status: :drawing)
+      IllustrateDictionaryEntryJob.perform_later(lookup.id)
+
+      assert_no_enqueued_jobs(only: IllustrateDictionaryEntryJob) do
+        post "/app/vocabulary/lookups/#{lookup.id}/save", headers: NATIVE
+      end
+      assert_redirected_to "/app/vocabulary/lookups/#{lookup.id}"
+
+      entry = @user.phrase_token_users.find_by!(phrase_token_id: lookup.reload.phrase_token_id)
+      path = "/app/vocabulary/#{entry.id}"
+      frame = "illustration_phrase_token_user_#{entry.id}"
+      get path, headers: NATIVE
+      assert_select "turbo-frame##{frame} [data-dictionary-card-pending-value=true]"
+
+      Dictionary::Media.stub(:illustrate, "generated image") do
+        perform_enqueued_jobs(only: IllustrateDictionaryEntryJob)
+      end
+
+      get path, headers: NATIVE.merge("Turbo-Frame" => frame)
+      assert_select "turbo-frame##{frame} img"
+      assert_select "turbo-frame##{frame} [data-dictionary-card-pending-value]", false
     end
 
     test "regenerating the illustration queues a new drawing" do

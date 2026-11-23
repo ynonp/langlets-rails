@@ -50,6 +50,9 @@ module App
 
     def show
       @entry = PhraseTokenUser.with_sources([ @record ]).first
+      @dictionary_lookup = current_user.dictionary_lookups.ready
+        .where(phrase_token_id: @entry.phrase_token_id, native_language_id: @entry.language_id)
+        .order(id: :desc).first
     end
 
     def update
@@ -94,7 +97,9 @@ module App
       # The Undo on the Dictionary's "Saved" toast: taking back a save the
       # user just made is not a deletion worth a second undo.
       if params[:undo_save].present?
-        redirect_to vocabulary_index_path, notice: t("app.dictionary.unsaved", word: word)
+        lookup = current_user.dictionary_lookups.find_by(id: params[:dictionary_lookup_id], phrase_token_id: token_id)
+        redirect_to lookup ? app_vocabulary_dictionary_lookup_path(lookup) : vocabulary_index_path,
+          status: :see_other, notice: t("app.dictionary.unsaved", word: word)
         return
       end
 

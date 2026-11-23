@@ -2,7 +2,7 @@ module App
   # The Dictionary at the top of the Vocabulary tab. A lookup is created from
   # the tab's input and pushed as its own screen; that screen polls the card
   # partial while the text and then the illustration are generated, and offers
-  # Dismiss (back to the tab) or Save to vocabulary.
+  # Done (back to the tab) or Save to vocabulary.
   class DictionaryLookupsController < BaseController
     include DictionaryTargetLanguage
 
@@ -26,6 +26,7 @@ module App
     end
 
     def show
+      @saved = @lookup.saved?
     end
 
     # The polled card. Renders only the turbo-frame the show page replaces.
@@ -35,11 +36,15 @@ module App
 
     def save
       entry = @lookup.save_to_vocabulary!
-      track_event("dictionary_word_saved", language: @lookup.target_language.iso_name) if entry.previously_new_record?
+      newly_saved = entry.previously_new_record?
+      track_event("dictionary_word_saved", language: @lookup.target_language.iso_name) if newly_saved
 
-      redirect_to app_vocabulary_entries_path, status: :see_other,
-        notice: t("app.dictionary.saved", word: entry.word),
-        flash: { saved_entry_id: entry.id }
+      if newly_saved
+        flash[:notice] = t("app.dictionary.saved", word: entry.word)
+        flash[:dictionary_undo_entry_id] = entry.id
+      end
+
+      redirect_to app_vocabulary_dictionary_lookup_path(@lookup), status: :see_other
     rescue ActiveRecord::RecordInvalid, PhraseTokenUser::InvalidInput
       redirect_to app_vocabulary_dictionary_lookup_path(@lookup), status: :see_other,
         alert: t("app.dictionary.save_failed")

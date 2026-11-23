@@ -3789,10 +3789,16 @@ headword exactly, else the first usable one, else the headword alone as its own
 phrase. It goes through `PhraseTokenUser.save_custom_span!`, the core that
 `create_custom!` now shares, so locking and phrase/token reuse are identical;
 the example's translation is stored directly instead of enqueuing
-`TranslateCustomPhraseJob`. The tab then shows the word with a NEW badge
-(`flash[:saved_entry_id]`) and a "Saved … · added to your practice" toast whose
-Undo is `DELETE /app/vocabulary/:id?undo_save=1` — removing a save just made,
-without the delete toast's own restore.
+`TranslateCustomPhraseJob`. Saving stays on the lookup, clears the search
+input, and shows a confirmation with Undo. Undo removes the vocabulary link
+and returns to the same lookup. Subsequent searches replace the current
+lookup in navigation history so Back can still return to Vocabulary.
+Done is available throughout and returns to the saved words.
+
+Saving while an illustration is drawing leaves the existing background job
+running. The native saved-word detail finds the latest ready lookup for that
+user, token, and translation language. Its illustration frame polls while
+the job is drawing and shows the finished attachment when available.
 
 The native tab label in the iOS/Android apps still says "Vocabulary"; the
 mockup's "Dictionary" title would need a native release to rename the tab, so
