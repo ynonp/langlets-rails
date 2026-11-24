@@ -29,7 +29,11 @@ module Imports
 
     def self.call(url)
       video = VideoSource.fetch(url)
-      duration = duration_for(video)
+      details = details_for(video)
+      duration = details&.fetch(:duration)
+      if video.tiktok? && video.thumbnail_url.blank? && details&.fetch(:thumbnail_url)
+        video = video.with(thumbnail_url: details.fetch(:thumbnail_url))
+      end
 
       raise TooLong, MAXIMUM_DURATION_SECONDS if duration && duration > MAXIMUM_DURATION_SECONDS
 
@@ -40,26 +44,40 @@ module Imports
       )
     end
 
-    def self.duration_for(video)
+    # Also used by the background refresh when TikTok oEmbed omits a cover.
+    def self.tiktok_thumbnail_for(video)
+      details_for(video)&.fetch(:thumbnail_url)
+    end
+
+    def self.details_for(video)
       Rails.cache.fetch(
-        [ "imports-video-preflight", video.provider, video.video_id ],
+        [ "imports-video-details", video.provider, video.video_id ],
         expires_in: 15.minutes,
         skip_nil: true
-      ) { fetch_duration(video.canonical_url) }
+      ) do
+        metadata = fetch_metadata(video.canonical_url)
+        duration = positive_number(metadata["duration"] || metadata.dig("media", "duration"))
+        thumbnail_url = tiktok_thumbnail(metadata, video)
+        { duration:, thumbnail_url: } if duration || thumbnail_url
+      end
     rescue StandardError => error
-      Rails.logger.warn "Video duration preflight failed for #{video.canonical_url.inspect}: #{error.message}"
+      Rails.logger.warn "Video metadata lookup failed for #{video.canonical_url.inspect}: #{error.message}"
       nil
     end
-    private_class_method :duration_for
 
-    def self.fetch_duration(video_url)
+    def self.fetch_metadata(video_url)
       uri = URI(ENDPOINT)
       uri.query = URI.encode_www_form(url: video_url)
-      metadata = JSON.parse(http_get(uri, api_key))
-      duration = positive_number(metadata["duration"] || metadata.dig("media", "duration"))
-      raise "Supadata returned a missing or invalid duration" unless duration
+      JSON.parse(http_get(uri, api_key))
+    end
 
-      duration
+    def self.tiktok_thumbnail(metadata, video)
+      return unless video.tiktok? && metadata["platform"] == "tiktok" && metadata["id"].to_s == video.video_id.to_s
+
+      candidate = URI.parse(metadata.dig("media", "thumbnailUrl").to_s)
+      candidate.to_s if candidate.is_a?(URI::HTTPS) && candidate.host.present?
+    rescue URI::InvalidURIError
+      nil
     end
 
     def self.http_get(uri, key)
@@ -93,6 +111,6 @@ module Imports
       number = Float(value, exception: false)
       number if number&.positive? && number.finite?
     end
-    private_class_method :fetch_duration, :http_get, :api_key, :positive_number
+    private_class_method :details_for, :fetch_metadata, :tiktok_thumbnail, :http_get, :api_key, :positive_number
   end
 end

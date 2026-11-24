@@ -161,6 +161,8 @@ module CourseBuilder
           end
         end
 
+        Courses::ResolveUntitledName.call(course, lesson: created_lessons.first)
+
         course.course_translations.find_or_initialize_by(language: l2).tap do |localized|
           localized.name = course.name
           localized.status = :ready

@@ -1372,6 +1372,11 @@ ChannelItem, and therefore never reaches `Channel#publish!`. In both cases the
 translation attaches phrase, token, lesson, and course translations without
 deleting lessons, activities, progress, or vocabulary.
 
+If provider metadata yields `Untitled Course`, the course builder replaces
+that placeholder with the first retained lesson's title in the clip language.
+It updates matching course translation placeholders in the same transaction
+and keeps the original slug so existing links continue to work.
+
 A course show page whose active language lacks a ready translation displays a
 top banner (including when the mismatch came from a native preference change or
 a web language subdomain). The banner is a friendly offer that names both the
@@ -1489,14 +1494,14 @@ Three asymmetries between the two providers drive most of the design:
   common TikTok paste otherwise.
 - **TikTok covers are not derivable.** YouTube's `img.youtube.com/vi/ID/…` is a
   public static pattern, which is why a gallery of course cards costs zero
-  network calls. TikTok's are signed CDN URLs with an expiry that only oEmbed
-  returns. `courses.thumbnail_url` stores them, captured during
-  `Imports::Create` (which already calls oEmbed before charging a credit).
-  `Course#thumbnail_url` reads the column, then falls back to derivation — that
-  order is why the column is nullable and was never backfilled. It is
-  deliberately left NULL for YouTube. `RefreshTiktokThumbnailUrlsJob` runs
+  network calls. TikTok's are signed CDN URLs with an expiry. Imports use
+  oEmbed first and fall back to Supadata's `media.thumbnailUrl` from the same
+  metadata request that checks duration, after checking the video ID.
+  `courses.thumbnail_url` stores the result.
+  `Course#thumbnail_url` reads the column, then falls back to derivation. The
+  column is deliberately left NULL for YouTube. `RefreshTiktokThumbnailUrlsJob` runs
   daily through Solid Queue and replaces every TikTok course's signed URL with
-  a fresh oEmbed value before its roughly two-day lifetime ends. Each course is
+  a fresh cover from either source before its lifetime ends. Each course is
   isolated: an unavailable post or transient TikTok failure keeps the previous
   URL and cannot prevent later courses from refreshing. Rendering never performs
   this network request.

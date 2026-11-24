@@ -13,8 +13,8 @@ module Tiktok
   #    hands back embed_product_id, the numeric post id. Nothing else can do
   #    this, so a share-sheet link only becomes importable through here.
   # 3. Cover image — TikTok thumbnails are signed CDN URLs with an expiry, so
-  #    unlike YouTube they cannot be derived from the id. This is the only
-  #    source, which is why Imports::Create stores it on courses.thumbnail_url.
+  #    unlike YouTube they cannot be derived from the id. Imports::Create
+  #    stores the cover on courses.thumbnail_url.
   class Oembed
     UnavailableVideo = VideoSource::UnavailableVideo
 

@@ -239,7 +239,7 @@ module App
 
     test "a long video shows the limit inline and offers no import" do
       stub_video do
-        Imports::VideoPreflight.stub(:fetch_duration, 1_501) do
+        Imports::VideoPreflight.stub(:details_for, { duration: 1_501, thumbnail_url: nil }) do
           get resolve_path(q: CANONICAL), headers: NATIVE
         end
       end

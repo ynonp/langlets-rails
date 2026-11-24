@@ -13,7 +13,7 @@ class GuestImportRequestsControllerTest < ActionDispatch::IntegrationTest
     )
 
     VideoSource.stub(:fetch, video) do
-      Imports::VideoPreflight.stub(:fetch_duration, 4_744) do
+      Imports::VideoPreflight.stub(:details_for, { duration: 4_744, thumbnail_url: nil }) do
         post guest_import_requests_path, params: { url: URL }
       end
     end

@@ -27,7 +27,7 @@ class TryControllerTest < ActionDispatch::IntegrationTest
 
   test "homepage rejects a long video before showing signup actions" do
     VideoSource.stub(:fetch, @video) do
-      Imports::VideoPreflight.stub(:fetch_duration, 4_744) do
+      Imports::VideoPreflight.stub(:details_for, { duration: 4_744, thumbnail_url: nil }) do
         get try_path(url: URL)
       end
     end
@@ -42,7 +42,7 @@ class TryControllerTest < ActionDispatch::IntegrationTest
     user = User.create!(email: "try-import@example.com", password: "password123", confirmed_at: Time.zone.now)
     sign_in user
 
-    Imports::VideoPreflight.stub(:fetch_duration, 90) do
+    Imports::VideoPreflight.stub(:details_for, { duration: 90, thumbnail_url: nil }) do
       VideoSource.stub(:fetch, @video) do
         get try_path(url: URL)
       end
@@ -56,7 +56,7 @@ class TryControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href^=?]", new_app_import_request_path, count: 0
 
     assert_enqueued_with(job: DetectImportLanguageJob) do
-      Imports::VideoPreflight.stub(:fetch_duration, 90) do
+      Imports::VideoPreflight.stub(:details_for, { duration: 90, thumbnail_url: nil }) do
         VideoSource.stub(:fetch, @video) do
           post app_import_requests_path, params: { url: URL }
         end

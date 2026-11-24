@@ -173,7 +173,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
 
   test "returns 422 for a long video before creating an import" do
     Youtube::Oembed.stub(:fetch, ->(_url) { oembed_video }) do
-      Imports::VideoPreflight.stub(:fetch_duration, 1_501) do
+      Imports::VideoPreflight.stub(:details_for, { duration: 1_501, thumbnail_url: nil }) do
         post api_v1_import_requests_url, params: import_params, headers: auth_headers(@token)
       end
     end

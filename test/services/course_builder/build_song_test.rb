@@ -33,6 +33,20 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
     )
   end
 
+  test "uses the first retained lesson to name an untitled course" do
+    @course.update!(name: "Untitled Course")
+    @course.course_translations.create!(language: @english, name: "Untitled Course")
+    slug = @course.slug
+
+    CourseBuilder::BuildSong.new(@progress, @course).call(@english)
+
+    @course.reload
+    assert_equal @course.lessons.first.name, @course.name
+    assert_not_equal "Untitled Course", @course.name
+    assert_equal @course.name, @course.course_translations.find_by!(language: @english).name
+    assert_equal slug, @course.slug
+  end
+
   test "phrases have similar sounds after build" do
     builder = CourseBuilder::BuildSong.new(@progress, @course)
     builder.call(@english)

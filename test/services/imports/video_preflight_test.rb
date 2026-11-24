@@ -32,6 +32,24 @@ module Imports
       end
     end
 
+    test "recovers a TikTok cover from the same metadata response used for duration" do
+      video = @video.with(provider: :tiktok, video_id: "6718335390845095173", thumbnail_url: nil)
+      cover = "https://p19-common-sign.tiktokcdn-us.com/cover.jpg"
+      metadata = {
+        "platform" => "tiktok",
+        "id" => video.video_id,
+        "media" => { "duration" => 90, "thumbnailUrl" => cover }
+      }
+
+      VideoSource.stub(:fetch, video) do
+        VideoPreflight.stub(:fetch_metadata, metadata) do
+          result = VideoPreflight.call(URL)
+          assert_equal cover, result.video.thumbnail_url
+          assert_equal 90, result.duration_seconds
+        end
+      end
+    end
+
     test "rejects a known over-limit video before import records are written" do
       error = assert_raises(VideoPreflight::TooLong) do
         with_duration(1501) do
@@ -45,7 +63,7 @@ module Imports
 
     test "keeps the provider availability result when duration lookup is unavailable" do
       result = VideoSource.stub(:fetch, @video) do
-        VideoPreflight.stub(:fetch_duration, ->(_url) { raise Net::ReadTimeout, "offline" }) do
+        VideoPreflight.stub(:fetch_metadata, ->(_url) { raise Net::ReadTimeout, "offline" }) do
           VideoPreflight.call(URL)
         end
       end
@@ -61,11 +79,11 @@ module Imports
 
       Rails.stub(:cache, cache) do
         VideoSource.stub(:fetch, @video) do
-          VideoPreflight.stub(:fetch_duration, lambda { |_url|
+          VideoPreflight.stub(:fetch_metadata, lambda { |_url|
             attempts += 1
             raise Net::ReadTimeout, "offline" if attempts == 1
 
-            90
+            { "duration" => 90 }
           }) do
             assert_nil VideoPreflight.call(URL).duration_seconds
             assert_equal 90, VideoPreflight.call(URL).duration_seconds
@@ -80,7 +98,7 @@ module Imports
       [ [ { duration: 90 }, 90 ], [ { media: { duration: 91 } }, 91 ] ].each do |body, expected|
         VideoPreflight.stub(:api_key, "test-key") do
           VideoPreflight.stub(:http_get, ->(_uri, _key) { body.to_json }) do
-            assert_equal expected, VideoPreflight.send(:fetch_duration, URL)
+            assert_equal expected, VideoPreflight.send(:details_for, @video).fetch(:duration)
           end
         end
       end
@@ -97,7 +115,7 @@ module Imports
         requested_key = key
         { duration: 90 }.to_json
       }) do
-        VideoPreflight.send(:fetch_duration, URL)
+        VideoPreflight.send(:fetch_metadata, URL)
       end
 
       assert_equal "api.supadata.ai", requested_uri.host
@@ -124,7 +142,7 @@ module Imports
 
     def with_duration(duration, &block)
       VideoSource.stub(:fetch, @video) do
-        VideoPreflight.stub(:fetch_duration, duration, &block)
+        VideoPreflight.stub(:fetch_metadata, { "duration" => duration }, &block)
       end
     end
   end

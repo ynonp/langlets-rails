@@ -13,13 +13,14 @@ class RefreshTiktokThumbnailUrlsJob < ApplicationJob
       next unless course.tiktok?
 
       video = VideoSource.fetch(course.main_media_url)
-      next if video.thumbnail_url.blank?
-
       unless video.tiktok? && video.video_id.to_s == course.video_id.to_s
         raise VideoSource::UnavailableVideo, "TikTok oEmbed returned a different video"
       end
 
-      course.update_column(:thumbnail_url, video.thumbnail_url)
+      thumbnail_url = video.thumbnail_url.presence || Imports::VideoPreflight.tiktok_thumbnail_for(video)
+      next if thumbnail_url.blank?
+
+      course.update_column(:thumbnail_url, thumbnail_url)
       refreshed += 1
     rescue StandardError => e
       failed += 1

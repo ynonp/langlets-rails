@@ -42,10 +42,23 @@ class RefreshTiktokThumbnailUrlsJobTest < ActiveJob::TestCase
     video = tiktok_video(thumbnail_url: nil)
 
     VideoSource.stub(:fetch, ->(_url) { video }) do
-      RefreshTiktokThumbnailUrlsJob.perform_now
+      Imports::VideoPreflight.stub(:tiktok_thumbnail_for, nil) do
+        RefreshTiktokThumbnailUrlsJob.perform_now
+      end
     end
 
     assert_equal OLD_THUMBNAIL, course.reload[:thumbnail_url]
+  end
+
+  test "fills a missing cover from Supadata when oEmbed omits it" do
+    course = create_course(TIKTOK_URL, thumbnail_url: nil)
+    VideoSource.stub(:fetch, tiktok_video(thumbnail_url: nil)) do
+      Imports::VideoPreflight.stub(:tiktok_thumbnail_for, NEW_THUMBNAIL) do
+        RefreshTiktokThumbnailUrlsJob.perform_now
+      end
+    end
+
+    assert_equal NEW_THUMBNAIL, course.reload[:thumbnail_url]
   end
 
   test "one failed lookup does not prevent another course from refreshing" do

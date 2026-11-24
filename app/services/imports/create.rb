@@ -99,6 +99,12 @@ module Imports
       else
         VideoPreflight.call(url).video
       end
+      # Language detection refreshes oEmbed. Reuse the provisional or cached
+      # cover, or look it up here for a native share that skipped preflight.
+      if existing_request && video.tiktok? && video.thumbnail_url.blank?
+        cover = existing_request.thumbnail_url.presence || VideoPreflight.tiktok_thumbnail_for(video)
+        video = video.with(thumbnail_url: cover) if cover
+      end
       use_published_source_language!(video) if clip_language.blank?
       return create_detection_request!(video) if clip_language.blank?
 
